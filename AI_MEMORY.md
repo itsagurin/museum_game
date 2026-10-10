@@ -2,7 +2,7 @@
 
 Ustalenia z 10 października 2026 mają pierwszeństwo przed starszymi dokumentami.
 
-- Polski UI, angielski kod; minimalistyczna atmosfera Loóna.
+- Polski UI, angielski kod; minimalistyczna atmosfera Loóna. Nagłówki Plus Jakarta Sans 600, bez dekoracyjnego mikrotekstu; historie pozostają pełną treścią, 16px.
 - Next.js App Router, React, TypeScript, Tailwind, Motion, Zustand, statyczny eksport.
 - Jedna komnata, trzy tematyczne rozdziały: Stańczyk, Bociany, Konstytucja 3 maja.
 - Pixel art: grid.data[y][x] wskazuje palette.id; jeden kwadrat na komórkę, dokładny palette.hex, bez numerów i fotografii. Kontrakt ArtworkExperience({artworkId,onComplete,onExit,data?}) pozostaje bez zmian.

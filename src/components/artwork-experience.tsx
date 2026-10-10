@@ -28,7 +28,7 @@ export function ArtworkExperience({ artworkId, onComplete, onExit, data }: Artwo
   }, [artworkId, data, attempt]);
   return <motion.section className="artwork-experience coloring-experience" aria-label={`Pracownia: ${payload?.title ?? artwork.title}`} initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}>
     <button className="text-button artwork-back" onClick={onExit}><ArrowLeft size={16} aria-hidden />Wróć do domu</button>
-    <div className="artwork-heading"><span className="eyebrow">TWOJA CHWILA ZE SZTUKĄ</span><h1 ref={focusHeading} tabIndex={-1}>{payload?.title ?? artwork.title}</h1><p>{payload?.artist ?? artwork.artist} <span aria-hidden>·</span> {payload?.year ?? artwork.year}</p></div>
+    <div className="artwork-heading"><h1 ref={focusHeading} tabIndex={-1}>{payload?.title ?? artwork.title}</h1></div>
     {payload ? <ColoringCanvas key={payload.id} artwork={payload} onComplete={onComplete} /> : <div className="coloring-loading" role="status"><Sparkles size={25} strokeWidth={1} aria-hidden /><p>{error ? 'Nie udało się przygotować obrazu.' : 'Przygotowujemy Twoje płótno…'}</p>{error && <button className="text-button" onClick={() => { setError(false); setAttempt(previous => previous + 1); }}>Spróbuj ponownie</button>}</div>}
   </motion.section>;
 }

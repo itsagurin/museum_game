@@ -69,7 +69,7 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
     : selected !== null ? `${colors.get(selected)!.name}. Dotknij lub przeciągnij po pikselach tego koloru.` : 'Wybierz kolor. Wypełnij pasujące piksele.';
 
   return <div className="coloring-workspace numbered-workspace">
-    <div className={`coloring-instruction ${feedback?.kind === 'wrong' ? 'is-wrong' : ''}`} role="status" aria-live="polite"><Paintbrush size={15} aria-hidden /><span>{message}</span></div>
+    <div className={`sr-only coloring-instruction ${feedback?.kind === 'wrong' ? 'is-wrong' : ''}`} role="status" aria-live="polite"><Paintbrush size={15} aria-hidden /><span>{message}</span></div>
     <div className={`coloring-frame numbered-frame ${ready ? 'is-complete' : ''}`}>
       <div className="coloring-viewport" style={{ aspectRatio: `${width}/${height}` }}>
         <svg ref={svgRef} className={`coloring-canvas pixel-canvas ${panning ? 'is-panning' : ''}`} viewBox={`0 0 ${width} ${height}`} aria-label={`Kolorowanie: ${artwork.title}`} style={{ aspectRatio: `${width}/${height}`, width: `${zoom * 100}%`, minWidth: `${zoom * 100}%`, maxWidth: 'none' }}
@@ -96,16 +96,15 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
         </svg>
       </div>
     </div>
-    <div className="painting-tools"><span>PALETA OPOWIEŚCI</span><div><button className="text-button" aria-label={zoom === 1 ? 'Powiększ płótno' : 'Pomniejsz płótno'} onClick={() => { setZoom(previous => previous === 1 ? Math.max(2.5, width * 24 / 320) : 1); setPanning(false); }}>{zoom === 1 ? <ZoomIn size={17} aria-hidden /> : <ZoomOut size={17} aria-hidden />}</button><button className="text-button" aria-label="Przesuwaj płótno" aria-pressed={panning} disabled={zoom === 1} onClick={() => setPanning(previous => !previous)}><Hand size={17} aria-hidden /></button><button className="text-button coloring-undo" disabled={!painted.size} onClick={undo}><RotateCcw size={14} aria-hidden />Cofnij</button></div></div>
+    <div className="painting-tools"><div><button className="text-button" aria-label={zoom === 1 ? 'Powiększ płótno' : 'Pomniejsz płótno'} onClick={() => { setZoom(previous => previous === 1 ? Math.max(2.5, width * 24 / 320) : 1); setPanning(false); }}>{zoom === 1 ? <ZoomIn size={17} aria-hidden /> : <ZoomOut size={17} aria-hidden />}</button><button className="text-button" aria-label="Przesuwaj płótno" aria-pressed={panning} disabled={zoom === 1} onClick={() => setPanning(previous => !previous)}><Hand size={17} aria-hidden /></button><button className="text-button coloring-undo" disabled={!painted.size} onClick={undo}><RotateCcw size={14} aria-hidden />Cofnij</button></div></div>
     <div className="numbered-palette" style={{ gridTemplateColumns: `repeat(${Math.min(artwork.palette.length, 6)}, minmax(0, 1fr))` }} role="group" aria-label="Wybierz kolor">{artwork.palette.map(color => {
       const fields = pixels.filter(pixel => pixel.colorId === color.id), filled = fields.filter(pixel => painted.has(pixel.id)).length;
       const done = fields.length > 0 && fields.length === filled;
       return <button key={color.id} className={`paint-brush ${selected === color.id ? 'selected' : ''} ${done ? 'complete' : ''}`} aria-label={`Kolor: ${color.name}`} title={color.name} aria-pressed={selected === color.id} onClick={() => { setSelected(color.id); setPanning(false); setFeedback(null); playColoringSound('select'); }}>
-        <span className="brush-swatch" style={{ backgroundColor: color.hex, color: [1, 3, 5].reduce((sum, offset) => sum + parseInt(color.hex.slice(offset, offset + 2), 16), 0) > 400 ? '#393225' : '#fff5e6' }}>{selected === color.id && <Check size={16} aria-hidden />}</span><span className="brush-shape"><Paintbrush size={18} aria-hidden /></span><span className="brush-count">{done ? <Check size={12} aria-hidden /> : `${filled}/${fields.length}`}</span>
+        <span className="brush-swatch" style={{ backgroundColor: color.hex, color: [1, 3, 5].reduce((sum, offset) => sum + parseInt(color.hex.slice(offset, offset + 2), 16), 0) > 400 ? '#393225' : '#fff5e6' }}>{selected === color.id && <Check size={16} aria-hidden />}</span><span className="brush-shape"><Paintbrush size={18} aria-hidden /></span><span className="brush-count sr-only">{done ? <Check size={12} aria-hidden /> : `${filled}/${fields.length}`}</span>
       </button>;
     })}</div>
-    <div className="coloring-progress"><div className="coloring-progress-track"><span style={{ transform: `scaleX(${painted.size / pixels.length})` }} /></div><span role="status" aria-live="polite">Pokolorowane piksele: {painted.size} / {pixels.length}</span></div>
-    <div className="coloring-footer"><p>{ready ? artwork.cultural_data.trivia : 'Mały piksel, odrobina koloru. Powoli powstaje Twoja opowieść.'}</p><button className="primary-button" disabled={!ready} onClick={onComplete}>{ready ? 'Odkryj opowieść' : 'Dokończ swoje płótno'}<ArrowUpRight size={17} aria-hidden /></button></div>
-    <details className="coloring-context"><summary>O obrazie</summary><p>{artwork.cultural_data.historical_context}</p></details>
+    <div className="coloring-progress"><div className="coloring-progress-track"><span style={{ transform: `scaleX(${painted.size / pixels.length})` }} /></div><span className="sr-only" role="status" aria-live="polite">Pokolorowane piksele: {painted.size} / {pixels.length}</span></div>
+    <div className="coloring-footer"><button className="primary-button" disabled={!ready} onClick={onComplete}>{ready ? 'Odkryj opowieść' : 'Dokończ swoje płótno'}<ArrowUpRight size={17} aria-hidden /></button></div>
   </div>;
 }

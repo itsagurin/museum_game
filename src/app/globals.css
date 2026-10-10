@@ -9,7 +9,7 @@
   --line: #ffffff19;
   background: var(--night);
   color: var(--ink);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-synthesis: none;
 }
 * { box-sizing: border-box; }
@@ -22,7 +22,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 button:active:not(:disabled) { transform: translateY(1px); }
 a { color: inherit; }
 h1, h2, p { margin: 0; }
-h1, h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; text-wrap: balance; }
+h1, h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; text-wrap: balance; }
 h1:focus, h2:focus { outline: none; }
 em { font-weight: 400; color: var(--amber); }
 .experience { position: relative; min-height: 700px; height: 100svh; height: 100dvh; isolation: isolate; overflow: hidden; background: var(--night); }
@@ -43,10 +43,10 @@ em { font-weight: 400; color: var(--amber); }
 .door-light { position: absolute; width: 60vw; height: 70vh; left: 35%; top: 20%; background: radial-gradient(ellipse, #ffe2b0a0, transparent 65%); animation: enter-light 2.2s ease both; }
 .firefly { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #ffd297; box-shadow: 0 0 10px 3px #ffbd5c40; animation: firefly 9s ease-in-out infinite; }
 .app-header { position: relative; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 38px 5.6vw; }
-.brand { display: flex; gap: 13px; align-items: center; text-align: left; padding: 0; min-height: 44px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 25px; line-height: 1; letter-spacing: .25px; }
+.brand { display: flex; gap: 13px; align-items: center; text-align: left; padding: 0; min-height: 44px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 25px; line-height: 1; letter-spacing: .25px; }
 .brand-mark { position: relative; width: 30px; display: grid; place-items: center; color: var(--amber); }
 .brand-mark i { position: absolute; top: 1px; right: 3px; width: 3px; height: 3px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); }
-.brand-subtitle { font-family: 'Manrope', sans-serif; display: block; font-size: 8px; letter-spacing: 1.9px; color: var(--muted); margin-top: 9px; }
+.brand-subtitle { font-family: 'Plus Jakarta Sans', sans-serif; display: block; font-size: 8px; letter-spacing: 1.9px; color: var(--muted); margin-top: 9px; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .icon-button { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: #e8e3dc; border-radius: 50%; transition: background .2s, color .2s; }
 .icon-button:hover { color: var(--amber); background: #ffffff09; }
@@ -89,12 +89,12 @@ em { font-weight: 400; color: var(--amber); }
 .painting.locked { opacity: .67; }
 .painting:hover .painting-frame, .painting:focus-visible .painting-frame { transform: translateY(-5px); }
 .painting.locked:hover .painting-frame { transform: none; }
-.painting-number { position: absolute; top: 12px; font-family: 'Cormorant Garamond', serif; font-size: 14px; letter-spacing: 3px; color: #b8ac9b; }
+.painting-number { position: absolute; top: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; letter-spacing: 3px; color: #b8ac9b; }
 .painting-symbol { color: #dfc69e; margin-bottom: 16px; }
 .painting-placeholder { font-size: 9px; color: #d5c8b8; line-height: 1.8; }
 .painting-theme { position: absolute; bottom: 14px; font-size: 8px; letter-spacing: 1.1px; color: #c3b7a5; }
 .painting-meta { display: flex; flex-direction: column; align-items: center; margin-top: 16px; gap: 8px; }
-.painting-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; line-height: 1.05; color: #fff2da; text-shadow: 0 2px 10px #000; }
+.painting-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; line-height: 1.05; color: #fff2da; text-shadow: 0 2px 10px #000; }
 .painting-state { font-size: 9px; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; color: #ddd0bd; }
 .painting-state i { width: 4px; height: 4px; background: var(--amber); border-radius: 50%; }
 .reward-floor { pointer-events: none; position: absolute; inset: 0; overflow: hidden; }
@@ -128,6 +128,7 @@ em { font-weight: 400; color: var(--amber); }
 .dialog { position: fixed; border: 1px solid #e8b87924; color: var(--ink); border-radius: 12px; background: #1b2028; padding: 48px 38px 34px; width: min(480px, calc(100% - 32px)); max-height: calc(100dvh - 40px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #71634e transparent; box-shadow: 0 30px 100px #0005; }
 .dialog::backdrop { background: #0b101bbd; backdrop-filter: blur(7px); }
 .dialog { max-width: calc(100% - 32px); }
+.settings-dialog { inset: 0; margin: auto; }
 .dialog[open] { animation: dialog-in .35s ease both; }
 .dialog-close { position: absolute; top: 9px; right: 9px; }
 .dialog h2 { font-size: 42px; line-height: 1.1; margin-top: 14px; letter-spacing: -.7px; }
@@ -281,3 +282,58 @@ em { font-weight: 400; color: var(--amber); }
 .pixel-hit:focus-visible { outline: none; stroke: #fff; stroke-width: .15; fill: #d6aa6155; }
 .pixel-hit.matching:not(.painted) { stroke: #b89152; stroke-opacity: .65; }
 .painting-tools button[aria-pressed="true"] { color: var(--amber); }
+
+/* Quiet typography: one headline, one action, no decorative microcopy. */
+.primary-button, .text-button, .reset-button, .paint-brush { border-radius: 999px; }
+h1, h2 { font-weight: 600; letter-spacing: -.045em; }
+em { font-style: normal; font-weight: inherit; }
+.brand { font-size: 22px; font-weight: 600; letter-spacing: -.045em; }
+.welcome-copy { width: min(620px, 49vw); }
+.welcome h1 { font-size: clamp(58px, 5.7vw, 84px); line-height: 1.08; letter-spacing: -.05em; }
+.enter-button { margin-top: 38px; white-space: nowrap; min-width: 240px; }
+.primary-button { font-size: 16px; font-weight: 600; }
+.text-button { font-size: 14px; }
+.room-heading h1 { font-size: clamp(34px, 3.4vw, 48px); margin-top: 0; line-height: 1.18; }
+.painting-title { font-size: 22px; font-weight: 600; letter-spacing: -.04em; line-height: 1.3; }
+.painting-meta { gap: 0; }
+.room-footer { justify-content: flex-end; }
+.dialog h2 { font-size: 36px; line-height: 1.18; margin-top: 0; }
+.intro-dialog h2 { margin: 24px 0 32px; }
+.intro-actions .primary-button { font-size: 14px; }
+.story-dialog h2 { font-size: 40px; }
+.story-prose p { font-size: 16px; line-height: 1.85; }
+.story-prose p:first-child::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
+.cultural-note p { font-size: 16px; line-height: 1.8; margin-top: 0; }
+.story-details summary, .story-details a, .story-details p, .story-reward span { font-size: 14px; }
+.setting-row > div > span { font-size: 16px; }
+.reset-confirm p { font-size: 15px; }
+.finale-dialog h2 { font-size: 40px; }
+.finale-chapters span { font-size: 16px; }
+.coloring-experience .artwork-heading h1 { font-size: 40px; margin-top: 0; line-height: 1.2; }
+.painting-tools { justify-content: flex-end; }
+.painting-tools > div { gap: 12px; }
+.numbered-palette { margin-bottom: 12px; }
+.paint-brush { min-height: 64px; }
+.brush-shape { top: 24px; }
+.coloring-progress { min-height: 2px; }
+.coloring-footer .primary-button { font-size: 15px; }
+.numbered-workspace .coloring-footer { margin-top: 24px; }
+@media (max-width: 650px) {
+  .brand { font-size: 18px; }
+  .welcome-copy { width: 100%; }
+  .welcome h1 { font-size: clamp(42px, 11.5vw, 62px); line-height: 1.1; letter-spacing: -.05em; }
+  .room-heading h1 { font-size: 30px; max-width: 340px; margin: 0 auto; }
+  .painting-title { font-size: 24px; }
+  .room-footer { align-items: stretch; }
+  .dialog h2, .finale-dialog h2 { font-size: 32px; }
+  .story-dialog h2 { font-size: 36px; }
+  .coloring-experience .artwork-heading h1 { font-size: 34px; }
+  .text-button { font-size: 14px; }
+  .paint-brush { min-height: 62px; }
+}
+@media (max-height: 500px) and (min-width: 651px) {
+  .welcome h1 { font-size: 42px; }
+  .enter-button { margin-top: 22px; }
+  .room-heading h1 { font-size: 28px; }
+  .painting-title { font-size: 18px; }
+}

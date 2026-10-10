@@ -45,3 +45,5 @@ output: export; brak runtime API; lokalne fonty i grafiki. Webpack jawnie wybran
 Stańczyk: Muzeum Narodowe w Warszawie. Bociany: Zintegrowana Platforma Edukacyjna. Konstytucja: Cyfrowa Kolekcja Zamku Królewskiego. Dokładne linki w data/artworks.ts.
 
 Dokumenty 01–06 zachowano jako wcześniejszą wizję. Nie przenoszono niezweryfikowanych ciekawostek o skrzydłach husarii ani aktualnej populacji bocianów.
+
+Typografia: lokalny Plus Jakarta Sans (400–700), geometryczne nagłówki 600 inspirowane Loóna; bez sloganów, nadtytułów i małych opisów. Pełne opowieści i niezbędne komunikaty pozostają.
