@@ -1,59 +1,61 @@
-# 🇵🇱 Dziedzictwo: Polish Heritage Hearth (Oikos Polska)
-> **Projekt na hackathon Best Hacks 2026**  
-> *Interaktywna gra narracyjno-renowacyjna (w stylu cozy game / Garden Keeper) ucząca polskiej kultury i historii od zera poprzez restaurację dzieł sztuki i ewolucję tradycyjnego domu.*
+# Dom Opowieści
 
----
+Minimalistyczne doświadczenie na BEST Hacks 2026. Wejdź do przytulnego domu, poznaj Iskrę i odkryj trzy historie polskiego malarstwa. Każda opowieść rozświetla pokój i dodaje nowy przedmiot.
 
-## 📖 Spis Treści Dokumentacji (Hub Pamięci Projektu)
+## Uruchomienie
 
-Ten projekt posiada modularną architekturę pamięci, zaprojektowaną zarówno dla zespołu ludzkiego, jak i dla agentów AI (LLM / pair programmers).
+Node.js 22.13+ i npm (sprawdzone na Node.js 26.8.2).
 
-| Plik | Przeznaczenie |
-| :--- | :--- |
-| **[`AI_MEMORY.md`](./AI_MEMORY.md)** | **Pigułka pamięci AI**: Kontekst, reguły działania agenta, szybki indeks i standardy pracy. |
-| **[`docs/01_VISION_AND_CONCEPT.md`](./docs/01_VISION_AND_CONCEPT.md)** | **Wizja i koncepcja**: Misja projektu, target persona (obcokrajowiec), dlaczego ten format działa. |
-| **[`docs/02_GAME_DESIGN.md`](./docs/02_GAME_DESIGN.md)** | **Game Design Document (GDD)**: Pętla gry (Core Loop), mechanika kolorowanki, mechanika domu. |
-| **[`docs/03_HISTORICAL_CURATION.md`](./docs/03_HISTORICAL_CURATION.md)** | **Baza kultury i historii**: Chronologiczne epoki, obrazy (m.in. Jan Matejko), struktura wiedzy i pop-upów. |
-| **[`docs/04_TECHNICAL_ARCHITECTURE.md`](./docs/04_TECHNICAL_ARCHITECTURE.md)** | **Architektura techniczna**: Stack (React/Next.js/Tailwind), modele danych TypeScript, struktura kodu. |
-| **[`docs/05_HACKATHON_ROADMAP.md`](./docs/05_HACKATHON_ROADMAP.md)** | **Plan i priorytety hackathonu**: Fazy MVP, podział zadań, scenariusz demonstracji dla jurorów. |
-| **[`docs/06_AGENT_RULES_AND_STANDARDS.md`](./docs/06_AGENT_RULES_AND_STANDARDS.md)** | **Zasady dla agentów i developerów**: Standardy kodowania, konwencje nazewnictwa, obsługa błędów. |
+```sh
+npm ci
+npm run dev
+```
 
----
+Otwórz http://localhost:3000. Bez kluczy API, kont i usług zewnętrznych.
 
-## 💡 Idea Projektu w Pigułce (Elevator Pitch)
+## Produkcja
 
-Większość materiałów o polskiej historii jest hermetyczna, pełna dat i trudnych nazwisk, przez co obcokrajowcy (i młodzież) szybko tracą zainteresowanie.
+```sh
+npm run build
+npm start
+```
 
-**Nasze rozwiązanie:**
-Łączymy uzależniający, relaksujący schemat gier renowacyjnych (jak *Gardenscapes*, *Garden Keeper* czy *House Flipper*) z interaktywnym odkrywaniem polskiego dziedzictwa:
-1. **Zrujnowany Dom:** Gracz zaczyna z popadającą w ruinę pradawną chatą.
-2. **Kolorowanka Historyczna:** Wykonuje zadania polegające na renowacji (pokolorowaniu/złożeniu) słynnych polskich dzieł malarstwa (np. Jana Matejki, Józefa Chełmońskiego, Stanisława Wyspiańskiego).
-3. **Pigułka Kultury:** Po ukończeniu obrazu pojawia się lekki, przystępny pop-up wyjaśniający kontekst, obyczaje i ciekawostki epoki (z opcją „Dowiedz się więcej”).
-4. **Rozbudowa i Dekoracja:** Obraz ląduje na ścianie domu, a sam budynek ewoluuje architektonicznie – od wczesnośredniowiecznej drewnianej chaty, przez renesansowy dwór, szlachecki barokowy dworek, aż po czasy współczesne.
+Gotowe pliki są w `out/`. Można je umieścić na hostingu statycznym. `npm start` serwuje eksport na porcie 3000, `npm run preview` na 3002. Serwer Next.js nie jest potrzebny w produkcji.
 
----
+## Funkcje
 
-## 🎯 Główne Cele na Hackathon
+- Polski interfejs na telefon i laptop, szerokie i portretowe sceny.
+- Wejście do domu, jednorazowe wprowadzenie i trzy kolejne rozdziały.
+- Stańczyk → Bociany → Konstytucja 3 maja, opowieści z linkami do źródeł.
+- Przedmioty-nagrody, rozświetlanie pokoju, finał i ponowne czytanie.
+- Lokalny postęp, reset z potwierdzeniem, ograniczenie ruchu, opcjonalny ambient.
+- Obsługa klawiatury, dialogi z fokusem i awaryjne tło.
 
-- [ ] **Działające MVP w przeglądarce:** Responsywna aplikacja webowa.
-- [ ] **Core Gameplay Loop:** Widok domu $\rightarrow$ Przejście do kolorowanki $\rightarrow$ Zakończenie i pop-up edukacyjny $\rightarrow$ Widok ulepszonego domu z nowym detalem i powieszonym obrazem.
-- [ ] **Wielojęzyczność z naciskiem na EN:** Język angielski jako domyślny (dla obcokrajowca bez pojęcia o Polsce) + opcja PL.
-- [ ] **Świetna oprawa wizualna i "Cozy Feeling":** Klimatyczna muzyka ludowa w tle, ciepłe kolory, satysfakcjonujące animacje nagród.
+**Pixel art:** wybierz kolor palety i dotknij lub przeciągnij po pasujących pikselach. Każda komórka grid to jeden niezależny kwadrat. Blady kolor podpowiada właściwą farbę; poprawne dopasowanie wypełnia piksel dokładnym hex palety. Błąd nie zmienia postępu. Dostępne są opcjonalne dźwięki, cofanie, powiększenie, tryb przesuwania, klawiatura i reduced motion. Opowieść otwiera się po wypełnieniu całej siatki.
 
----
+Dane demonstracyjne w `public/artworks/*.json` mają kontrakt `id`, `title`, `artist`, `year` (string), `original_image_url`, `grid: { width, height, data }`, `palette: [{ id, hex, name }]` oraz `cultural_data: { trivia, historical_context }`. Komponent `ArtworkExperience` może też przyjąć otrzymany JSON jako opcjonalny prop `data`. Walidacja odrzuca nieznane kolory, błędne wymiary i nieprawidłowe adresy. Maksymalny rozmiar siatki: 128×128.
 
-## 🛠️ Rekomendowany Stack Technologiczny
+Trzy lokalne reprodukcje i ich źródła: `public/artworks/ATTRIBUTION.md`. Demo ma siatki o szerokości 32 pikseli i pięć kolorów. Renderer obsługuje wymiary i paletę otrzymane w JSON; nie używa original_image_url do rysowania płótna. Każdy piksel zachowuje kolor przypisany przez algorytm. Nieukończona sesja nie zapisuje się po wyjściu; ukończone historie pozostają zapisane.
 
-- **Frontend:** Next.js 14+ (App Router) / React 19, TypeScript
-- **Styling:** Tailwind CSS + Framer Motion (płynne przejścia, renowacje domu)
-- **Silnik minigry (Kolorowanki):** SVG z interaktywnymi ścieżkami (`path`) lub HTML5 Canvas / Fabric.js
-- **Zarządzanie stanem:** Zustand (z persystencją w `localStorage` – brak konieczności skomplikowanego backendu na hackathon)
-- **Assety graficzne:** Wektorowe SVG / stylizowane grafiki 2D wygenerowane lub przygotowane w spójnym stylu cozy low-poly/hand-drawn.
+## Weryfikacja
 
----
+```sh
+npm test
+npm run typecheck
+npm run lint
+npx playwright install chromium
+npm run test:e2e
+npm run build
+```
 
-## 🚀 Jak zacząć pracę?
+Chromium desktop/mobile: pełny cykl, zapis, reset, storage, rzeczywisty Web Audio, ograniczenie ruchu i klawiatura. Rozmiary: 360×800, 390×844, 768×1024, 1440×900 oraz 844×390.
 
-1. Przeczytaj [`AI_MEMORY.md`](./AI_MEMORY.md), aby poznać wytyczne architektoniczne.
-2. Przejrzyj [`docs/02_GAME_DESIGN.md`](./docs/02_GAME_DESIGN.md) i [`docs/04_TECHNICAL_ARCHITECTURE.md`](./docs/04_TECHNICAL_ARCHITECTURE.md).
-3. Śledź kamienie milowe w [`docs/05_HACKATHON_ROADMAP.md`](./docs/05_HACKATHON_ROADMAP.md).
+## Architektura
+
+[Aktualna implementacja](docs/07_IMPLEMENTATION.md) · [Kontekst agentów](AI_MEMORY.md)
+
+Next.js App Router, React, TypeScript strict, Tailwind, Motion, Zustand. Jedna strona, brak backendu. Grafiki ImageGen jako lokalne WebP, Iskra w CSS, ambient w Web Audio bez pobierania mediów. Fonty lokalne z polskimi znakami.
+
+Moduł kolorowania: `src/components/artwork-experience.tsx`, `src/components/coloring-canvas.tsx`, `src/lib/coloring.ts`.
+
+Dokumenty `docs/01`–`docs/06` zachowują wcześniejsze pomysły, w tym nieaktualne EN, epoki i walutę. Obecną implementację opisują README oraz docs/07. UI UX Pro Max wykorzystano do wskazówek projektowych; kierunek wizualny wynika z zatwierdzonej koncepcji.
