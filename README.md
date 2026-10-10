@@ -2,6 +2,12 @@
 > **Projekt na hackathon Best Hacks 2026**  
 > *Interaktywna gra narracyjno-renowacyjna (w stylu cozy game / Garden Keeper) ucząca polskiej kultury i historii od zera poprzez restaurację dzieł sztuki i ewolucję tradycyjnego domu.*
 
+> **Aktualna wizja (10.10.2026):** dom z zewnątrz → wejście przez drzwi → hol z czterema pokojami epok → kolorowanie obrazów po numerach na planszach 15×15. Każdy ukończony obraz automatycznie wyposaża pokój; ukończenie całego pokoju zmienia dom i odblokowuje następną epokę. Sceny są ilustracjami 2D. Zespół: cztery osoby, pozostałe 15 godzin w chwili ustalania planu.
+>
+> **Zacznij od [aktualnego planu projektu](./docs/07_CURRENT_PROJECT_PLAN.md)**. Zawiera ekrany, reguły, kontrakt algorytmu, podział prac, harmonogram i pytania. Starsze opisy poniżej zachowano jako kontekst pierwotnej koncepcji; przy rozbieżności obowiązuje nowy plan i odpowiedzi zespołu.
+
+> **Wygląd nieukończonych obrazów:** przetarta biało-szara kartka papieru z czerwonym krzyżykiem w ramie. Po ukończeniu kolorowania kartkę zastępuje naturalny kolorowy obraz.
+
 ---
 
 ## 📖 Spis Treści Dokumentacji (Hub Pamięci Projektu)
@@ -10,6 +16,7 @@ Ten projekt posiada modularną architekturę pamięci, zaprojektowaną zarówno 
 
 | Plik | Przeznaczenie |
 | :--- | :--- |
+| **[`docs/07_CURRENT_PROJECT_PLAN.md`](./docs/07_CURRENT_PROJECT_PLAN.md)** | **Aktualny plan:** cztery pokoje epok, plansze 15×15, automatyczna progresja, sprint 15h dla czterech osób i decyzje do ustalenia. |
 | **[`AI_MEMORY.md`](./AI_MEMORY.md)** | **Pigułka pamięci AI**: Kontekst, reguły działania agenta, szybki indeks i standardy pracy. |
 | **[`docs/01_VISION_AND_CONCEPT.md`](./docs/01_VISION_AND_CONCEPT.md)** | **Wizja i koncepcja**: Misja projektu, target persona (obcokrajowiec), dlaczego ten format działa. |
 | **[`docs/02_GAME_DESIGN.md`](./docs/02_GAME_DESIGN.md)** | **Game Design Document (GDD)**: Pętla gry (Core Loop), mechanika kolorowanki, mechanika domu. |

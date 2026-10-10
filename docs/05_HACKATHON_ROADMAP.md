@@ -1,5 +1,7 @@
 # ⏱️ 05. Hackathon Roadmap & Pitch Demo Plan
 
+> **Pierwotny plan 24–48h.** Zespół ma obecnie 15 godzin i cztery osoby. Aktualny zakres, podział prac, harmonogram oraz demo czterech pokojów opisuje [plan 07](./07_CURRENT_PROJECT_PLAN.md), który ma pierwszeństwo przed poniższą roadmapą.
+
 > **Format:** Plan działania na hackathon (24–48h)  
 > **Cel nadrzędny:** Doprowadzenie projektu do stanu zachwycającego, stabilnego i w 100% grywalnego demo dla jurorów.
 

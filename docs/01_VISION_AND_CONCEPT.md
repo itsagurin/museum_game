@@ -1,5 +1,7 @@
 # 🏛️ 01. Wizja i Koncepcja Projektu
 
+> **Kontekst pierwotnej wizji.** Aktualna nawigacja, cztery pokoje epok, kolorowanie 15×15 i automatyczne nagrody są opisane w [planie 07](./07_CURRENT_PROJECT_PLAN.md), który ma pierwszeństwo przy rozbieżności.
+
 > **Nazwa robocza:** *Dziedzictwo / Polish Heritage Hearth*  
 > **Kategoria:** Edukacja, Gry, Kultura i Tradycja, Cozy Games  
 > **Wydarzenie:** Hackathon Best Hacks 2026
