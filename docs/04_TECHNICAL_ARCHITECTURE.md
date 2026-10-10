@@ -1,5 +1,7 @@
 # 🏗️ 04. Architektura Techniczna i Modele Danych
 
+> **Architektura pierwotnej koncepcji.** Aktualny plan przewiduje osobne sceny domu, holu i czterech pokojów, regularną siatkę 15×15 i progresję automatyczną. Kontrakty i propozycję zapisu zawiera [plan 07](./07_CURRENT_PROJECT_PLAN.md), który zastępuje dawne modele segmentów i ręcznego `upgradeHouse`. Wersje zależności należy ustalić przy inicjalizacji.
+
 > **Cel:** Nowoczesny, lekki, w 100% niezawodny stack w przeglądarce, pozwalający na błyskawiczne iteracje podczas hackathonu bez zbędnego boilerplate'u.
 
 ---

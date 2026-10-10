@@ -1,5 +1,7 @@
 # 🎮 02. Game Design Document (GDD)
 
+> **Mechaniki pierwotnej koncepcji.** Zespół zastąpił kolorowanie konturów planszą 15×15 i dodał hol z czterema pokojami epok. Ulepszenia są automatyczne. Aktualne zasady i otwarte decyzje zawiera [plan 07](./07_CURRENT_PROJECT_PLAN.md), który ma pierwszeństwo.
+
 > **Tytuł:** *Game Loop, Mechaniki i Doświadczenie Gracza*  
 > **Inspiracje:** *Garden Keeper*, *Gardenscapes*, *Unpacking*, *I Love Hue / Color by Number*, *Passpartout*
 

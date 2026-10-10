@@ -59,3 +59,26 @@ Next.js App Router, React, TypeScript strict, Tailwind, Motion, Zustand. Jedna s
 Moduł kolorowania: `src/components/artwork-experience.tsx`, `src/components/coloring-canvas.tsx`, `src/lib/coloring.ts`.
 
 Dokumenty `docs/01`–`docs/06` zachowują wcześniejsze pomysły, w tym nieaktualne EN, epoki i walutę. Obecną implementację opisują README oraz docs/07. UI UX Pro Max wykorzystano do wskazówek projektowych; kierunek wizualny wynika z zatwierdzonej koncepcji.
+
+## Plan zespołu na kolejną iterację
+
+Powyżej opisano działającą implementację. Poniższy plan z repozytorium zdalnego opisuje kolejną iterację; jego pobranie nie oznacza wdrożenia tych funkcji.
+
+> **Aktualna wizja (10.10.2026):** dom z zewnątrz → wejście przez drzwi → hol z czterema pokojami epok → kolorowanie obrazów po numerach na planszach 15×15. Każdy ukończony obraz automatycznie wyposaża pokój; ukończenie całego pokoju zmienia dom i odblokowuje następną epokę. Sceny są ilustracjami 2D. Zespół: cztery osoby, pozostałe 15 godzin w chwili ustalania planu.
+>
+> **Zacznij od [aktualnego planu projektu](./docs/07_CURRENT_PROJECT_PLAN.md)**. Zawiera ekrany, reguły, kontrakt algorytmu, podział prac, harmonogram i pytania. Starsze opisy poniżej zachowano jako kontekst pierwotnej koncepcji; przy rozbieżności obowiązuje nowy plan i odpowiedzi zespołu.
+
+> **Wygląd nieukończonych obrazów:** przetarta biało-szara kartka papieru z czerwonym krzyżykiem w ramie. Po ukończeniu kolorowania kartkę zastępuje naturalny kolorowy obraz.
+
+---
+
+| Plik | Przeznaczenie |
+| :--- | :--- |
+| **[`docs/07_CURRENT_PROJECT_PLAN.md`](./docs/07_CURRENT_PROJECT_PLAN.md)** | **Aktualny plan:** cztery pokoje epok, plansze 15×15, automatyczna progresja, sprint 15h dla czterech osób i decyzje do ustalenia. |
+| **[`AI_MEMORY.md`](./AI_MEMORY.md)** | **Pigułka pamięci AI**: Kontekst, reguły działania agenta, szybki indeks i standardy pracy. |
+| **[`docs/01_VISION_AND_CONCEPT.md`](./docs/01_VISION_AND_CONCEPT.md)** | **Wizja i koncepcja**: Misja projektu, target persona (obcokrajowiec), dlaczego ten format działa. |
+| **[`docs/02_GAME_DESIGN.md`](./docs/02_GAME_DESIGN.md)** | **Game Design Document (GDD)**: Pętla gry (Core Loop), mechanika kolorowanki, mechanika domu. |
+| **[`docs/03_HISTORICAL_CURATION.md`](./docs/03_HISTORICAL_CURATION.md)** | **Baza kultury i historii**: Chronologiczne epoki, obrazy (m.in. Jan Matejko), struktura wiedzy i pop-upów. |
+| **[`docs/04_TECHNICAL_ARCHITECTURE.md`](./docs/04_TECHNICAL_ARCHITECTURE.md)** | **Architektura techniczna**: Stack (React/Next.js/Tailwind), modele danych TypeScript, struktura kodu. |
+| **[`docs/05_HACKATHON_ROADMAP.md`](./docs/05_HACKATHON_ROADMAP.md)** | **Plan i priorytety hackathonu**: Fazy MVP, podział zadań, scenariusz demonstracji dla jurorów. |
+| **[`docs/06_AGENT_RULES_AND_STANDARDS.md`](./docs/06_AGENT_RULES_AND_STANDARDS.md)** | **Zasady dla agentów i developerów**: Standardy kodowania, konwencje nazewnictwa, obsługa błędów. |

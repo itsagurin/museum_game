@@ -1,5 +1,7 @@
 # 🎨 03. Kuratela Historyczno-Kulturowa (Art & Lore Database)
 
+> **Materiały kandydackie z pierwotnej koncepcji.** Dobór do czterech pokojów, aktualny kontrakt planszy 15×15 i rozdzielenie roku namalowania od przedstawionej epoki opisuje [plan 07](./07_CURRENT_PROJECT_PLAN.md). Starsze teksty wymagają sprawdzenia źródeł przed użyciem w grze; dawny model `ArtworkData` nie jest aktualnym kontraktem algorytmu.
+
 > **Zasada przewodnia:** Opowiadamy o Polsce tak, jakbyśmy opowiadali zafascynowanemu przyjacielowi przy kawie.  
 > Żadnego suchego żargonu akademickiego. Skupiamy się na emocjach, symbolach, kulturze codziennej i uniwersalnych ludzkich historiach.
 
