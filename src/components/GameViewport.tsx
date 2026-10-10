@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { copy } from "@/data/copy";
 import { useGameStore } from "@/store/useGameStore";
+import { sceneSize } from "@/data/scene";
 
 interface GameViewportProps {
   children: ReactNode;
@@ -51,6 +52,8 @@ export function GameViewport({
   const centerCamera = useCallback(() => {
     const viewport = ref.current;
     if (!viewport) return;
+    const scene = viewport.firstElementChild as HTMLElement | null;
+    scene?.style.setProperty("--scene-scale", String(scene.getBoundingClientRect().width / sceneSize.width));
     viewport.scrollLeft = (viewport.scrollWidth - viewport.clientWidth) / 2;
     viewport.scrollTop = Math.max(
       0,

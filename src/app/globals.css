@@ -143,6 +143,40 @@ img {
     transparent 50%
   );
 }
+.room-backdrop,
+.room-background-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.room-background-layer {
+  overflow: hidden;
+}
+.room-level-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(72, 80, 56, 0.2);
+  margin: 0 2px;
+}
+.room-level-label {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.room-level-meter {
+  display: flex;
+  gap: 3px;
+  margin-left: 3px;
+}
+.room-level-meter i {
+  width: 4px;
+  height: 11px;
+  border-radius: 3px;
+  background: rgba(76, 86, 57, 0.14);
+  transition: background-color 0.4s ease;
+}
+.room-level-meter i.filled {
+  background: #5d654e;
+}
 .site-header {
   position: absolute;
   top: max(16px, env(safe-area-inset-top));
@@ -501,7 +535,7 @@ img {
 .wall-artwork {
   position: absolute;
   z-index: 3;
-  transform: rotate(var(--frame-rotation));
+  transform-origin: left top;
 }
 .painting-frame {
   position: relative;
@@ -522,12 +556,6 @@ img {
     2px 3px 0 rgba(36, 28, 20, 0.28),
     inset 0 0 0 1px #c0a076,
     0 7px 8px rgba(35, 28, 21, 0.2);
-}
-.wall-left .painting-frame {
-  transform: skewY(5deg);
-}
-.wall-right .painting-frame {
-  transform: skewY(-5deg);
 }
 .painting-frame:hover {
   filter: brightness(1.1);

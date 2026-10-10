@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/prepare-assets.mjs && next dev --webpack --hostname 0.0.0.0",
+    "dev": "node scripts/dev.mjs",
+    "assets:watch": "node scripts/prepare-assets.mjs --watch",
     "build": "node scripts/prepare-assets.mjs && next build --webpack",
     "start": "serve out --listen 3000",
     "preview": "serve out",

@@ -6,7 +6,7 @@ import type { View } from "@/types/game";
 
 const viewFromHash = (): View => {
   const hash = window.location.hash.slice(1);
-  if (hash === "hall" || isEraId(hash)) return hash;
+  if (hash === "hall" || hash === "library" || isEraId(hash)) return hash;
   return "home";
 };
 

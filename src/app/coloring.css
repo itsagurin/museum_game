@@ -1,0 +1,282 @@
+/* This studio belongs to the house route; prototype styles stay independent. */
+.dialog-backdrop.coloring-backdrop {
+  padding: 0;
+  align-items: stretch;
+  background: #ded9c9;
+}
+.dialog-panel.heritage-coloring {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  border: 0;
+  border-radius: 0;
+  padding: max(16px, env(safe-area-inset-top)) 18px max(18px, env(safe-area-inset-bottom));
+  background: radial-gradient(ellipse at 15% 5%, #f9f7ee 0%, #ece8db 60%, #d9decd 100%);
+  overscroll-behavior: contain;
+}
+.heritage-coloring .dialog-top,
+.heritage-coloring .coloring-heading,
+.heritage-coloring .coloring-workspace {
+  width: min(480px, 100%);
+  margin-inline: auto;
+}
+.heritage-coloring .dialog-top {
+  min-height: 44px;
+  gap: 8px;
+}
+.heritage-coloring .dialog-top h2 {
+  font-size: clamp(26px, 6vw, 36px);
+}
+.heritage-coloring .coloring-heading {
+  margin-block: 8px 12px;
+}
+.heritage-coloring .coloring-heading .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.heritage-coloring .coloring-heading p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.heritage-coloring .coloring-instruction.sr-only,
+.heritage-coloring .coloring-progress > .sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+.heritage-coloring .coloring-instruction.sr-only {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #fff9;
+  border-radius: 12px;
+  background: #ffffff60;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.heritage-coloring .coloring-instruction svg {
+  flex-shrink: 0;
+}
+.heritage-coloring .coloring-instruction.is-wrong {
+  color: #953e30;
+  background: #edd5ce;
+}
+.heritage-coloring .coloring-frame {
+  width: min(100%, max(240px, calc(100dvh - 410px)));
+  margin-inline: auto;
+  padding: 5px;
+  border: 1px solid #fff9;
+  border-radius: 12px;
+  background: #fff5;
+  box-shadow: 0 8px 28px #50432916;
+}
+.heritage-coloring .coloring-viewport {
+  position: relative;
+  overflow: auto;
+  border-radius: 7px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #978063 #eee8d9;
+}
+.heritage-coloring .coloring-canvas {
+  display: block;
+  touch-action: none;
+  user-select: none;
+}
+.heritage-coloring .coloring-canvas.is-panning {
+  touch-action: pan-x pan-y;
+  pointer-events: none;
+}
+.heritage-coloring .pixel-hit {
+  cursor: crosshair;
+}
+.heritage-coloring .pixel-hit.matching:not(.painted) {
+  stroke: #946240;
+  stroke-opacity: .85;
+}
+.heritage-coloring .pixel-hit:focus-visible {
+  outline: none;
+  stroke: #9b4939;
+  stroke-width: .16;
+  fill: #fef3c740;
+}
+.heritage-coloring .painting-tools > div {
+  display: flex;
+  gap: 6px;
+  padding-block: 6px;
+}
+.heritage-coloring .text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 13px;
+  background: #fff5;
+  font-size: 12px;
+}
+.heritage-coloring .coloring-undo {
+  margin-left: auto;
+  padding-inline: 14px;
+}
+.heritage-coloring .dev-color-fill {
+  padding-inline: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #884731;
+}
+.heritage-coloring button:disabled {
+  cursor: default;
+  opacity: .45;
+}
+.heritage-coloring button[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px #9b4939;
+}
+.heritage-coloring .numbered-palette {
+  display: grid;
+  gap: 8px;
+}
+.heritage-coloring .paint-brush {
+  min-height: 56px;
+  border: 1px solid #fff8;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5;
+}
+.heritage-coloring .paint-brush.selected {
+  background: #fff9;
+}
+.heritage-coloring .brush-swatch {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px #0001;
+}
+.heritage-coloring .brush-number {
+  font-size: 13px;
+  font-weight: 600;
+}
+.heritage-coloring .brush-shape {
+  display: none;
+}
+.heritage-coloring .paint-brush.complete::after {
+  content: "✓";
+  position: absolute;
+  margin: 32px 0 0 28px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #dde5ca;
+  color: #43552b;
+  font-size: 11px;
+  line-height: 16px;
+}
+.heritage-coloring .coloring-progress {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.heritage-coloring .coloring-progress-track {
+  height: 4px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #55604415;
+}
+.heritage-coloring .coloring-progress-track span {
+  display: block;
+  height: 100%;
+  background: #89966f;
+  transform-origin: left;
+  transition: transform .2s;
+}
+.heritage-coloring .coloring-footer {
+  margin-top: 14px;
+}
+.heritage-coloring .coloring-footer .primary-button {
+  width: 100%;
+  min-height: 50px;
+}
+.heritage-coloring .revealed-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+.heritage-coloring .revealed-badge {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #59673d;
+}
+.heritage-coloring .revealed-switch {
+  display: flex;
+  gap: 4px;
+}
+.heritage-coloring .switch-tab {
+  padding: 8px 10px;
+  min-height: 44px;
+  border-radius: 12px;
+  background: #fff6;
+}
+.heritage-coloring .revealed-overlay {
+  position: absolute;
+  inset: 0;
+  background: #e7e0d1;
+}
+.heritage-coloring .revealed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.heritage-coloring .revealed-celebration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: #eee3ad;
+}
+.heritage-coloring .celebration-sparkles svg {
+  position: absolute;
+  filter: drop-shadow(0 1px 3px #665134);
+}
+.heritage-coloring .sparkle-1 { top: 8%; left: 8%; }
+.heritage-coloring .sparkle-2 { top: 15%; right: 10%; }
+.heritage-coloring .sparkle-3 { bottom: 12%; right: 8%; }
+.heritage-coloring .reproduction-notice {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.story-restore {
+  margin-bottom: 12px;
+}
+@media (min-width: 700px) and (min-height: 700px) {
+  .dialog-panel.heritage-coloring {
+    padding-top: 34px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heritage-coloring .coloring-progress-track span {
+    transition: none;
+  }
+}

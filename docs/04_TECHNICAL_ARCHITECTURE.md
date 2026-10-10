@@ -1,10 +1,18 @@
 # 🏗️ 04. Architektura Techniczna i Modele Danych
 
-> **Architektura pierwotnej koncepcji.** Aktualny plan przewiduje osobne sceny domu, holu i czterech pokojów, regularną siatkę 15×15 i progresję automatyczną. Kontrakty i propozycję zapisu zawiera [plan 07](./07_CURRENT_PROJECT_PLAN.md), który zastępuje dawne modele segmentów i ręcznego `upgradeHouse`. Wersje zależności należy ustalić przy inicjalizacji.
+> **Architektura pierwotnej koncepcji.** Aktualny plan przewiduje osobne sceny domu, holu i czterech pokojów, docelową siatkę 20×20 i progresję automatyczną. Kontrakty i propozycję zapisu zawiera [plan 07](./07_CURRENT_PROJECT_PLAN.md), który zastępuje dawne modele segmentów i ręcznego `upgradeHouse`. Wersje zależności należy ustalić przy inicjalizacji.
 
 > **Cel:** Nowoczesny, lekki, w 100% niezawodny stack w przeglądarce, pozwalający na błyskawiczne iteracje podczas hackathonu bez zbędnego boilerplate'u.
 
 ---
+
+## Aktualna implementacja rozwoju pokojów
+
+Główny frontend używa `src/types/game.ts`, `src/data/eras.ts` i `src/store/useGameStore.ts`; poniższe przykłady store są archiwalne. `completedArtworkIds` w zapisie `heritage-hearth-ui-v1` pozostaje źródłem postępu. Wczytywanie usuwa nieznane i powtórzone ID. `src/lib/room-development.ts` oblicza poziom 0–9 proporcjonalnie do ukończenia **całej kolekcji epoki**, niezależnie od pięciu widocznych dzieł. Nie zapisujemy osobnego poziomu. Pusta kolekcja nie oznacza ukończonego pokoju.
+
+`Artwork` opisuje dzieło, a osobny `ArtworkSlot` jego potencjalne miejsce na ścianie (geometria i początkowe ID). Kolekcja `artworks` może mieć np. 30 wpisów na epokę, przy stałych pięciu `wallSlots`. Biblioteka `/#library` ma obecnie 83 wpisy z czterech podfolderów epok (21/18/22/22). `wallAssignments` zapisuje ID miejsca → ID dzieła. `src/lib/wall-gallery.ts` waliduje epokę i unikalność, naprawia zapis oraz zamienia miejscami już wiszące obrazy. Wybór nie nalicza ukończenia. Nieukończone dzieła pokazują kartkę z krzyżykiem. Katalog nie ma jeszcze metadanych ani jawnych przypisań do kolorowanek.
+
+Dekorowanie zmienia całą ilustrację: `roomN_level0`–`roomN_level9`, z fallbackiem do niższych wariantów i `roomN.jpg`. `RoomBackdrop` ładuje plik, potem przenika tło bez przebudowy kamery i interakcji. Warianty zachowują wspólny kadr, drzwi i geometrię ścian. `scripts/dev.mjs` obserwuje rekurencyjnie `img/`, a build kopiuje grafiki do statycznego eksportu. Szczegóły w [frontend v1](./10_FRONTEND_V1.md).
 
 ## 💻 1. Wybór Stacku Technologicznego
 

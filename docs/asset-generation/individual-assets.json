@@ -1,0 +1,586 @@
+{
+  "date": "2026-10-11",
+  "generator": "imagegen (built-in)",
+  "method": "Independent transparent PNG reconstruction from the supplied asset sheets, completing occluded parts.",
+  "sources": {
+    "romantyzm": "img/assets_romantyzm_transparent.png",
+    "mloda_polska": "img/assets_mloda_polska_transparent.png"
+  },
+  "assets": [
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/bow.png",
+      "width": 1774,
+      "height": 887,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 1431015,
+      "visibleBounds": {
+        "left": 29,
+        "top": 275,
+        "right": 1743,
+        "bottom": 694
+      },
+      "visibleEdgePixels": 0,
+      "name": "bow",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the violin BOW visible inside open case. Complete thin brown wooden stick, pale horsehair, frog and tip. Remove violin case stand and violin. Preserve gently diagonal horizontal view, fully visible endpoints.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/candelabrum.png",
+      "width": 1328,
+      "height": 1184,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1301859,
+      "visibleBounds": {
+        "left": 313,
+        "top": 36,
+        "right": 1010,
+        "bottom": 1131
+      },
+      "visibleEdgePixels": 0,
+      "name": "candelabrum",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY brass TWO-BRANCH candelabrum with TWO ivory wax candles from piano top. Complete base curved arms stems and both candle tips; retain exact source design and candles unlit. No books piano or paper. Thin branching gaps transparent.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/insurrection_print.png",
+      "width": 1312,
+      "height": 1199,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 794409,
+      "visibleBounds": {
+        "left": 201,
+        "top": 157,
+        "right": 1111,
+        "bottom": 1058
+      },
+      "visibleEdgePixels": 0,
+      "name": "insurrection_print",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the source's smaller framed sepia insurgent print from upper right. Keep original flag figures sepia scene cream paper margin and walnut frame, original perspective. Complete all four corners, opaque paper and artwork. No wall.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/keepsake_box.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1025040,
+      "visibleBounds": {
+        "left": 312,
+        "top": 72,
+        "right": 1237,
+        "bottom": 924
+      },
+      "visibleEdgePixels": 0,
+      "name": "keepsake_box",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY small OPEN walnut keepsake box from piano top, with hinged open lid and small oval golden locket inside. Reconstruct full base and side panels including hidden contacts. No piano or surrounding books/candles. Box and contained locket one sprite.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/letters.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1009344,
+      "visibleBounds": {
+        "left": 174,
+        "top": 200,
+        "right": 1373,
+        "bottom": 881
+      },
+      "visibleEdgePixels": 0,
+      "name": "letters",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the small bundle of folded cream-paper correspondence tied with brown twine from RIGHT end of piano top. All outer page edges and ribbon/twine visible, complete underside reconstructed. No piano. Single bundle sprite.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/piano.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 945081,
+      "visibleBounds": {
+        "left": 57,
+        "top": 91,
+        "right": 1483,
+        "bottom": 958
+      },
+      "visibleEdgePixels": 0,
+      "name": "piano",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. The reference's rectangular walnut square piano ONLY, ivory-and-dark keyboard, turned wooden legs and brass rectangular front plaque. EMPTY uninterrupted wood top: remove all books, keepsake box, locket, candelabrum and letters. Remove stool entirely. Reconstruct FOUR full supporting legs, including the leg partly hidden behind stool, with coherent perspective and same turned carving. Keep back legs subtly offset so visible parts have complete coherent contours; do not add an extra fifth leg. Restore hidden underside/crosspieces. Entire instrument body keyboard and feet must be complete. No stool or other objects.",
+      "finalCorrection": "Keep four complete turned legs and all feet visible. Remove stool and all top accessories; preserve uninterrupted empty wood top and keyboard."
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/piano_stool.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1173350,
+      "visibleBounds": {
+        "left": 263,
+        "top": 160,
+        "right": 1278,
+        "bottom": 943
+      },
+      "visibleEdgePixels": 0,
+      "name": "piano_stool",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. The reference's small green upholstered piano stool ONLY, warm walnut turned legs. Complete cushion, apron and FOUR fully constructed legs all the way to feet. Remove piano behind it and everything else. Preserve source's angle.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/poetry_books.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 848050,
+      "visibleBounds": {
+        "left": 265,
+        "top": 96,
+        "right": 1305,
+        "bottom": 951
+      },
+      "visibleEdgePixels": 0,
+      "name": "poetry_books",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the small cluster of upright navy-blue and burgundy cloth-bound poetry books from LEFT end of piano top, at same angle. Reconstruct complete bottom edges formerly touching piano. No piano, no support, no added books. Books retained together as this one small asset group, readable details no invented text.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/ruins_painting.png",
+      "width": 1142,
+      "height": 1377,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 604592,
+      "visibleBounds": {
+        "left": 111,
+        "top": 138,
+        "right": 1028,
+        "bottom": 1213
+      },
+      "visibleEdgePixels": 0,
+      "name": "ruins_painting",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the source's portrait-format framed moonlit ruined-tower landscape from upper left. Keep original painting CONTENT and wooden frame, original perspective. Complete all four corners and opaque canvas interior. No other artwork or wall.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/travel_trunk.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 735756,
+      "visibleBounds": {
+        "left": 130,
+        "top": 136,
+        "right": 1407,
+        "bottom": 921
+      },
+      "visibleEdgePixels": 0,
+      "name": "travel_trunk",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the closed leather-covered travel trunk in source foreground. Preserve brass corner plates locks hinges straps and side handle, warm tan worn leather. Complete entire trunk silhouette at original angle. No ground shadow.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/violin.png",
+      "width": 1774,
+      "height": 887,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 1047160,
+      "visibleBounds": {
+        "left": 50,
+        "top": 85,
+        "right": 1700,
+        "bottom": 832
+      },
+      "visibleEdgePixels": 0,
+      "name": "violin",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the warm orange-brown violin resting inside source's open case. Remove case, bow and stand. Reconstruct violin's complete body neck scroll pegs strings bridge and tailpiece. Keep source diagonal slightly horizontal orientation, full silhouette, same warm wood. No supports or extras.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/violin_case.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 776192,
+      "visibleBounds": {
+        "left": 117,
+        "top": 138,
+        "right": 1451,
+        "bottom": 958
+      },
+      "visibleEdgePixels": 0,
+      "name": "violin_case",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the OPEN brown violin case, WITHOUT violin and bow and WITHOUT wooden stand. Preserve hinged raised lid and cream padded lining, matching source outer case silhouette. Reconstruct smooth intact EMPTY interior where instruments were. Entire case base lid hinges outer edges complete. No instruments.",
+      "finalCorrection": null
+    },
+    {
+      "era": "romantyzm",
+      "file": "img/romantyzm_assets/violin_stand.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1092311,
+      "visibleBounds": {
+        "left": 130,
+        "top": 161,
+        "right": 1406,
+        "bottom": 916
+      },
+      "visibleEdgePixels": 0,
+      "name": "violin_stand",
+      "source": "img/assets_romantyzm_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the small low walnut rectangular wooden stand/table beneath violin case. Remove case, violin and bow. Restore EMPTY clean rectangular top under case and complete apron, underside and FOUR slender supporting legs. Match original angle wood and proportions; complete feet.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/armchair.png",
+      "width": 1178,
+      "height": 1335,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 973574,
+      "visibleBounds": {
+        "left": 133,
+        "top": 99,
+        "right": 1083,
+        "bottom": 1283
+      },
+      "visibleEdgePixels": 0,
+      "name": "armchair",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the burgundy upholstered walnut armchair. Preserve curved carved arms, upholstered rounded back and seat, same angle. Remove table and everything else. Reconstruct complete FOUR wood legs and feet, including formerly hidden leg, coherent seat/back attachment, complete curved arms.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/books.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 943751,
+      "visibleBounds": {
+        "left": 157,
+        "top": 80,
+        "right": 1375,
+        "bottom": 910
+      },
+      "visibleEdgePixels": 0,
+      "name": "books",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the small group of worn brown and dark-green books from table LOWER SHELF, some horizontal and some leaning upright. Reconstruct book portions hidden by armchair/table. Keep all books together as one compact asset. No shelf, table, armchair or support.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/candlestick.png",
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1300921,
+      "visibleBounds": {
+        "left": 223,
+        "top": 95,
+        "right": 800,
+        "bottom": 1436
+      },
+      "visibleEdgePixels": 0,
+      "name": "candlestick",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY single brass candlestick with ONE ivory wax candle from left table end. Preserve ornamental stem and broad round base, complete candle tip, unlit. No table rose or extra candles.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/inkwell.png",
+      "width": 1371,
+      "height": 1147,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 1143479,
+      "visibleBounds": {
+        "left": 328,
+        "top": 228,
+        "right": 1043,
+        "bottom": 949
+      },
+      "visibleEdgePixels": 0,
+      "name": "inkwell",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY small dark blue-black glass inkwell from table, WITHOUT goose quill. Restore complete rim and opening, whole base. Preserve subtle glass shading and illustrated style. No feather, table or shadows.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/letters.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 993673,
+      "visibleBounds": {
+        "left": 95,
+        "top": 231,
+        "right": 1439,
+        "bottom": 874
+      },
+      "visibleEdgePixels": 0,
+      "name": "letters",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY cream-paper letter bundle tied with twine and red wax seal from right tabletop. Preserve folded pages tying and seal. Complete lower edges, no table or feather.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/mountain_landscape.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 749222,
+      "visibleBounds": {
+        "left": 260,
+        "top": 83,
+        "right": 1279,
+        "bottom": 943
+      },
+      "visibleEdgePixels": 0,
+      "name": "mountain_landscape",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY source framed mountain-lake landscape with solitary traveler from upper right. Keep painting composition mountains lake clouds and traveler, same walnut/gold frame and view. Full four corners, opaque canvas. No wall.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/music_stand.png",
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1110949,
+      "visibleBounds": {
+        "left": 116,
+        "top": 19,
+        "right": 941,
+        "bottom": 1450
+      },
+      "visibleEdgePixels": 0,
+      "name": "music_stand",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the walnut music stand, WITHOUT sheet of paper. Keep full angled rectangular wood support board, decorative column and three curving tripod legs, same original view. Reconstruct board's wood surface beneath paper. Entire three feet visible and separate. No sheet music.",
+      "finalCorrection": "Restore exactly three curved tripod legs with three distinct visible feet, including a smaller rear foot visible between the column and right front foot. Empty wood support board."
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/poet_portrait.png",
+      "width": 1142,
+      "height": 1378,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 630042,
+      "visibleBounds": {
+        "left": 148,
+        "top": 106,
+        "right": 993,
+        "bottom": 1280
+      },
+      "visibleEdgePixels": 0,
+      "name": "poet_portrait",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY source framed portrait of dark-haired man from upper left of artwork pair. Preserve identity expression coat painting and golden/walnut frame, same perspective. Full four frame corners and opaque painting contents. No wall.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/quill.png",
+      "width": 1180,
+      "height": 1333,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 1291567,
+      "visibleBounds": {
+        "left": 260,
+        "top": 65,
+        "right": 1125,
+        "bottom": 1254
+      },
+      "visibleEdgePixels": 0,
+      "name": "quill",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY ivory goose feather from inkwell. Full pointed writing shaft and lower nib reconstructed where hidden inside bottle, keep diagonal upward-right angle and fine feather filaments. Remove inkwell and everything else.",
+      "finalCorrection": "Use a continuous natural hollow feather shaft tapering into an obliquely cut writing point. No metal nib or fittings."
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/rose.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 1307488,
+      "visibleBounds": {
+        "left": 78,
+        "top": 274,
+        "right": 1457,
+        "bottom": 759
+      },
+      "visibleEdgePixels": 0,
+      "name": "rose",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY dried burgundy rose from tabletop, including its complete curved stem and muted green-brown leaves. Preserve sideways orientation; reveal hidden stem portions coherently. No table candle or inkwell.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/sheet_music.png",
+      "width": 1448,
+      "height": 1086,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 683050,
+      "visibleBounds": {
+        "left": 104,
+        "top": 104,
+        "right": 1407,
+        "bottom": 1058
+      },
+      "visibleEdgePixels": 0,
+      "name": "sheet_music",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY cream sheet music from music stand, as one complete illustrated sheet with decorative faint original notation. Keep same tilted perspective and aged paper, full corners and edges. Remove wooden music stand entirely. Paper is opaque, no backdrop.",
+      "finalCorrection": null
+    },
+    {
+      "era": "mloda_polska",
+      "file": "img/mloda_polska_assets/table.png",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "transparentPixels": 818452,
+      "visibleBounds": {
+        "left": 59,
+        "top": 37,
+        "right": 1500,
+        "bottom": 989
+      },
+      "visibleEdgePixels": 0,
+      "name": "table",
+      "source": "img/assets_mloda_polska_transparent.png",
+      "prompt": "Use case: precise-object-edit / background-extraction. Asset type: ONE complete standalone game sprite on genuinely transparent RGBA PNG. The attached sheet is the sole reference for design, coloring and perspective. Extract/reconstruct ONLY the specified object; omit every other object. Preserve this exact object's three-quarter view, dark-brown hand-drawn ink contours, painterly shading, matte walnut/brass/cloth materials, muted warm color palette. Repair all occluded or missing parts with coherent matching anatomy/construction. The user needs independently usable sprites: no occluding objects, no holes where another object used to be, no amputated legs, no cropped parts. Keep only real apertures as transparent. Center entire complete object on a compact canvas with 8–12% clear margin, object large and readable. Preserve original object's design rather than inventing a new model. No room, floor, architecture, extraneous accessories, white or colored backdrop, painted checkerboard, ground/drop shadows, captions, UI or watermark. Real alpha transparency including gaps. New deliverable:  Treat opaque wood metal fabric paper as fully opaque, not translucent. Absolutely NO brown glow, soft halo, outer shadow or vignette around silhouette. ONLY the walnut writing table with shallow drawer brass round knob and open lower shelf. Remove candles rose inkwell quill letters books and armchair ENTIRELY. Reconstruct clean EMPTY tabletop and EMPTY lower shelf where accessories rested. Restore right-side apron and complete FOUR slender supporting legs hidden by armchair, matching same illustrated wood carving and perspective. Complete feet and underside. No chair, no books.",
+      "finalCorrection": "Restore four complete supporting legs and their feet, including the back-right leg below the lower shelf; place the shelf at mid-height to expose the missing lower segment. Empty tabletop and lower shelf."
+    }
+  ]
+}

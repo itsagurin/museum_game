@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useId } from "react";
 import { createPortal } from "react-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useIsPresent, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 
 interface DialogProps {
@@ -11,6 +11,7 @@ interface DialogProps {
   onClose: () => void;
   children: React.ReactNode;
   gentle: boolean;
+  variant?: "default" | "coloring";
 }
 
 export function Dialog({
@@ -19,11 +20,15 @@ export function Dialog({
   onClose,
   children,
   gentle,
+  variant = "default",
 }: DialogProps) {
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  const present = useIsPresent();
   const reduced = useReducedMotion() || gentle;
   useEffect(() => {
+    if (!present) return;
+    const dialogElement = ref.current;
     const previousFocus = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -34,9 +39,9 @@ export function Dialog({
         onClose();
       }
       if (event.key !== "Tab") return;
-      const elements = ref.current?.querySelectorAll<HTMLElement>(
-        'button, a[href], input, select, textarea, [tabindex="0"]',
-      );
+      const elements = Array.from(ref.current?.querySelectorAll<HTMLElement>(
+        'button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]',
+      ) || []).filter((element) => element.getClientRects().length > 0);
       if (!elements?.length) return;
       const first = elements[0];
       const last = elements[elements.length - 1];
@@ -52,13 +57,13 @@ export function Dialog({
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKey);
-      previousFocus?.focus();
+      if (dialogElement?.contains(document.activeElement)) previousFocus?.focus();
     };
-  }, [onClose]);
+  }, [onClose, present]);
 
   return createPortal(
     <motion.div
-      className="dialog-backdrop"
+      className={`dialog-backdrop ${variant === "coloring" ? "coloring-backdrop" : ""}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -68,8 +73,10 @@ export function Dialog({
         ref={ref}
         role="dialog"
         aria-modal="true"
+        aria-hidden={!present}
+        inert={!present}
         aria-labelledby={titleId}
-        className="dialog-panel glass"
+        className={`dialog-panel glass ${variant === "coloring" ? "heritage-coloring" : ""}`}
         initial={{ y: reduced ? 0 : 35, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: reduced ? 0 : 25, opacity: 0 }}

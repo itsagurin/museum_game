@@ -6,16 +6,19 @@ import {
   createJSONStorage,
   type StateStorage,
 } from "zustand/middleware";
-import { artworks } from "@/data/eras";
+import { artworks, wallSlots } from "@/data/eras";
+import { normalizeWallAssignments, placeWallArtwork, type WallAssignments } from "@/lib/wall-gallery";
 import type { Language } from "@/types/game";
 
 interface GameState {
   language: Language;
   gentleMotion: boolean;
   completedArtworkIds: string[];
+  wallAssignments: WallAssignments;
   setLanguage: (language: Language) => void;
   toggleGentleMotion: () => void;
   completeArtwork: (id: string) => void;
+  setWallArtwork: (slotId: string, artworkId: string) => void;
   resetProgress: () => void;
 }
 
@@ -50,6 +53,7 @@ export const useGameStore = create<GameState>()(
       language: "pl",
       gentleMotion: false,
       completedArtworkIds: [],
+      wallAssignments: normalizeWallAssignments({}, wallSlots, artworks),
       setLanguage: (language) => set({ language }),
       toggleGentleMotion: () =>
         set((state) => ({ gentleMotion: !state.gentleMotion })),
@@ -61,17 +65,21 @@ export const useGameStore = create<GameState>()(
             : [...state.completedArtworkIds, id],
         }));
       },
-      resetProgress: () => set({ completedArtworkIds: [] }),
+      setWallArtwork: (slotId, artworkId) => set((state) => ({
+        wallAssignments: placeWallArtwork(slotId, artworkId, wallSlots, artworks, state.wallAssignments),
+      })),
+      resetProgress: () => set({ completedArtworkIds: [], wallAssignments: normalizeWallAssignments({}, wallSlots, artworks) }),
     }),
     {
       name: "heritage-hearth-ui-v1",
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, gentleMotion, completedArtworkIds }) => ({
+      partialize: ({ language, gentleMotion, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
         completedArtworkIds,
+        wallAssignments,
       }),
       merge: (persisted, current) => {
         if (!persisted || typeof persisted !== "object") return current;
@@ -80,12 +88,13 @@ export const useGameStore = create<GameState>()(
           ...current,
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
+          wallAssignments: normalizeWallAssignments(saved.wallAssignments, wallSlots, artworks),
           completedArtworkIds: Array.isArray(saved.completedArtworkIds)
-            ? saved.completedArtworkIds.filter(
+            ? [...new Set(saved.completedArtworkIds.filter(
                 (id): id is string =>
                   typeof id === "string" &&
                   artworks.some((artwork) => artwork.id === id),
-              )
+              ))]
             : [],
         };
       },

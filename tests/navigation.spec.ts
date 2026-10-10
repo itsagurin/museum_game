@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { artworks, eras } from "../src/data/eras";
 
 test("home, hall, four rooms, stories and browser back work", async ({
   page,
@@ -16,10 +17,10 @@ test("home, hall, four rooms, stories and browser back work", async ({
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Hol");
   const rooms = [
-    "Początki Polski",
-    "Dawna Rzeczpospolita",
-    "Droga do niepodległości",
-    "Polska nowoczesna",
+    "Oświecenie",
+    "Romantyzm",
+    "Pozytywizm",
+    "Młoda Polska",
   ];
   for (let index = 0; index < rooms.length; index++) {
     await page
@@ -31,11 +32,11 @@ test("home, hall, four rooms, stories and browser back work", async ({
       rooms[index],
     );
     await expect(
-      page.getByRole("button", { name: /Obraz \d — Czeka na kolory/ }),
+      page.getByRole("button", { name: / — Czeka na kolory$/ }),
     ).toHaveCount(5);
   }
   await page
-    .getByRole("button", { name: "Historia obrazu — Obraz 1", exact: true })
+    .getByRole("button", { name: "Historia obrazu — Obraz 01", exact: true })
     .click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(
@@ -47,13 +48,13 @@ test("home, hall, four rooms, stories and browser back work", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(rooms[2]);
   await page
     .getByRole("button", {
-      name: "Następna epoka: Polska nowoczesna",
+      name: "Następna epoka: Młoda Polska",
       exact: true,
     })
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(rooms[3]);
   await page
-    .getByRole("button", { name: "Obraz 1 — Czeka na kolory", exact: true })
+    .getByRole("button", { name: "Obraz 01 — Czeka na kolory", exact: true })
     .click();
   await expect(page.getByRole("dialog")).toContainText(
     "Pracownia będzie wkrótce gotowa",
@@ -66,7 +67,7 @@ test("language, reduced motion, progress and deep links survive reload", async (
 }) => {
   await page.goto("/#era-2");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Dawna Rzeczpospolita",
+    "Romantyzm",
   );
   await page.getByRole("button", { name: "Switch to English" }).click();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
@@ -75,17 +76,15 @@ test("language, reduced motion, progress and deep links survive reload", async (
   await page.getByRole("button", { name: "Close", exact: true }).click();
   await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "The Commonwealth",
+    "Romanticism",
   );
   await expect(page.locator(".heritage-app")).toHaveClass(/gentle-motion/);
-  await page.evaluate(() => {
+  await page.evaluate((completedIds) => {
     const key = "heritage-hearth-ui-v1";
     const saved = JSON.parse(localStorage.getItem(key)!);
-    saved.state.completedArtworkIds = [1, 2, 3, 4, 5].map(
-      (number) => `era-1-art-${number}`,
-    );
+    saved.state.completedArtworkIds = completedIds;
     localStorage.setItem(key, JSON.stringify(saved));
-  });
+  }, artworks.filter((artwork) => artwork.eraId === "era-1").map((artwork) => artwork.id));
   await page.goto("/#home");
   await page.reload();
   await expect(page.locator(".home-canvas > img")).toHaveAttribute(
@@ -119,7 +118,7 @@ test("blocked storage and a missing scene image keep navigation usable", async (
   await page.route("**/art/room1.jpg", (route) => route.abort());
   await page.goto("/#era-1");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Początki Polski",
+    "Oświecenie",
   );
   await expect(
     page.getByText("Ta ilustracja jest chwilowo niedostępna."),
@@ -127,10 +126,10 @@ test("blocked storage and a missing scene image keep navigation usable", async (
   await page.getByRole("button", { name: "Switch to English" }).click();
   await expect(page.getByRole("status")).toContainText("Saving is unavailable");
   await page
-    .getByRole("button", { name: "Next era: The Commonwealth", exact: true })
+    .getByRole("button", { name: "Next era: Romanticism", exact: true })
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "The Commonwealth",
+    "Romanticism",
   );
 });
 
@@ -140,7 +139,7 @@ test("narrow phones fill the screen and can pan or show the entire room", async 
   await page.setViewportSize({ width: 320, height: 700 });
   await page.goto("/#era-4");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Polska nowoczesna",
+    "Młoda Polska",
   );
   await expect(page.locator(".room-canvas")).toBeVisible();
   const dimensions = await page
@@ -200,10 +199,7 @@ test("narrow phones fill the screen and can pan or show the entire room", async 
 
 for (const completedRooms of [0, 1, 2, 3, 4]) {
   test(`hall illustration and four doors work after ${completedRooms} restored rooms`, async ({ page }) => {
-    await page.addInitScript((count) => {
-      const completedArtworkIds = Array.from({ length: count }, (_, era) =>
-        [1, 2, 3, 4, 5].map((number) => `era-${era + 1}-art-${number}`),
-      ).flat();
+    await page.addInitScript((completedArtworkIds) => {
       localStorage.setItem(
         "heritage-hearth-ui-v1",
         JSON.stringify({
@@ -211,7 +207,7 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
           state: { language: "pl", completedArtworkIds },
         }),
       );
-    }, completedRooms);
+    }, artworks.filter((artwork) => eras.slice(0, completedRooms).some((era) => era.id === artwork.eraId)).map((artwork) => artwork.id));
     await page.goto("/#hall");
     const stage = Math.min(completedRooms + 1, 4);
     const hallImage = page.locator(".hall-canvas > img");
@@ -220,10 +216,10 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
       (image as HTMLImageElement).naturalWidth,
     )).toBe(896);
     const rooms = [
-      "Początki Polski",
-      "Dawna Rzeczpospolita",
-      "Droga do niepodległości",
-      "Polska nowoczesna",
+      "Oświecenie",
+      "Romantyzm",
+      "Pozytywizm",
+      "Młoda Polska",
     ];
     for (let index = 0; index < rooms.length; index++) {
       await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
@@ -250,7 +246,7 @@ test("mouse dragging the scene does not open a painting", async ({ page }) => {
   ).toBeVisible();
   const before = await viewport.evaluate((element) => element.scrollLeft);
   const painting = await page
-    .getByRole("button", { name: "Obraz 3 — Czeka na kolory", exact: true })
+    .getByRole("button", { name: "Obraz 03 — Czeka na kolory", exact: true })
     .boundingBox();
   expect(painting).not.toBeNull();
   const startX = painting!.x + painting!.width / 2;

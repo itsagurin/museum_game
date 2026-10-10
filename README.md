@@ -14,7 +14,11 @@
 
 ## Działający frontend v1
 
-**Pełnoekranowa gra**: dom, hol, cztery pokoje, przesuwana kamera, przejścia, nałożony glass header, PL/EN i kartki z historiami. Kolorowanie 20×20 dostarcza osobna osoba. Wszystkie pokoje są dostępne do prezentacji interfejsu; integracja progresji i nagród jest kolejnym etapem.
+**Pełnoekranowa gra**: dom, hol, cztery pokoje, przesuwana kamera, przejścia, glass header i PL/EN. Aktualne epoki: **Oświecenie, Romantyzm, Pozytywizm, Młoda Polska**.
+
+**Biblioteka 83 obrazów** jest dostępna z ekranu domu oraz pod `http://localhost:3000/#library`. Filtry epok, wyszukiwanie, duży podgląd i wybór jednego z pięciu miejsc na ścianie. W pokoju **„Zmień obrazy”** oraz kliknięcie ukończonej ramy otwierają kolekcję tej epoki. Można wybrać dowolne dzieło; nieukończone pokazuje kartkę z krzyżykiem. Ustawienie zapisuje się lokalnie, a wybór już wiszącego obrazu zamienia dwa miejsca bez zmiany postępu. Reprodukcje mają tymczasowe numery; tytuły, autorzy i plansze kolorowania czekają na dane zespołu.
+
+**Dekoracje pokojów:** 10 poziomów 0–9, rozłożonych na ukończenie całej kolekcji epoki (21/18/22/22 dzieła). Dodawaj tła `img/room1_level0.jpg`–`room1_level9.jpg`, analogicznie dla pokojów 2–4 (także PNG/WebP/JPEG). Nowy wariant przenika po załadowaniu; brakujące pliki zastępują niższe poziomy lub `roomN.jpg`. Zachowaj identyczny kadr 896×1200, ściany i drzwi. `npm run dev` obserwuje też podfoldery kolekcji w `img/`. [Szczegóły](./docs/10_FRONTEND_V1.md).
 
 ```bash
 npm ci
@@ -29,7 +33,7 @@ Podłączone są wszystkie cztery ilustracje holu `img/hall1.jpg`–`hall4.jpg`,
 
 Branch `frontend` zawiera zmiany z `main` do commita `38834b9`. Główna strona `/` zachowuje pełnoekranowy dom, hol i cztery pokoje. Prototyp „Dom Opowieści” z trzema obrazami, kolorowaniem i nagrodami jest dostępny pod `/prototype/`. Oba interfejsy mają osobne layouty, style i klucze zapisu; można rozwijać je bez nadpisywania pracy drugiej osoby.
 
-Moduł kolegi: `src/components/artwork-experience.tsx` i `src/components/coloring-canvas.tsx`. Powiązanie konkretnych dzieł z pięcioma miejscami w każdej epoce pozostaje do ustalenia; callback `onRestoreArtwork` w głównym froncie jest zachowany. Dane i grafiki `public/artworks/` oraz `public/assets/` pochodzą z main. [Opis prototypu](./docs/12_MAIN_PROTOTYPE.md).
+Moduł kolegi: `src/components/artwork-experience.tsx` i `src/components/coloring-canvas.tsx`. Adapter `HeritageGame` pozostaje gotowy do podłączenia jawnych `coloringArtworkId`, bez zapisu do store prototypu. **Nowe 83 reprodukcje nie mają jeszcze plansz ani nazw**, zgodnie z decyzją użytkownika. Dawne testowe przypisanie pięciu obrazów do pokoju III zastąpił nowy katalog. Baza `artworks_db.json` i algorytm pozostają zachowane; `/prototype/` nadal udostępnia trzy działające kolorowanki. [Opis prototypu](./docs/12_MAIN_PROTOTYPE.md).
 
 Wymagany Node.js 22.12 lub nowszy. Wspólne sprawdzenia: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, `npm run test:e2e`. Testy przeglądarkowe obejmują oba adresy. Skrypt `prepare-assets.mjs` kopiuje nasze ilustracje; skrypt main do przygotowania jego grafik zachowano jako `prepare-story-assets.mjs`.
 

@@ -1,6 +1,6 @@
 # 07. Aktualny plan: dom, cztery epoki i kolorowanie 20×20
 
-> Aktualizacja: 10 października 2026. Etap: pierwsza implementacja frontendu.
+> Aktualizacja: 11 października 2026. Etap: frontend z biblioteką 83 reprodukcji.
 > Ten dokument zastępuje wcześniejsze założenia dotyczące nawigacji, kolorowania i progresji w dokumentach 01–06.
 > **Ustalone** oznacza instrukcję zespołu. **Propozycja** oznacza rozwiązanie do omówienia. **Otwarte** oznacza brak decyzji.
 
@@ -10,10 +10,13 @@
 - Hol ma cztery wersje materiałów zgodne z epokami, przy tej samej kamerze i czterech drzwiach. Pliki `hall1.jpg`–`hall4.jpg`; prompty w [dokumencie 11](./11_HALL_PROMPTS_FOUR_ERAS.md).
 - Kolorowanie **20×20** i jego logikę implementuje inny członek zespołu. Wcześniejszy kontrakt poniżej jest propozycją, nie zobowiązaniem dla właściciela minigry.
 - Stack: Next.js + TypeScript + Tailwind + Zustand. Polski domyślnie, przełącznik na angielski.
-- Nazwa Dziedzictwo zostaje. Cztery robocze epoki zaakceptowane, ale zespół planuje zmianę ich nazw i grafik; dane są konfigurowalne.
-- Mała kartka pod każdym obrazem otwiera historię i ciekawostkę. Lista dzieł i lista nagród nie są jeszcze gotowe.
+- Nazwa Dziedzictwo zostaje. Aktualne epoki: Oświecenie, Romantyzm, Pozytywizm i Młoda Polska; przypisanie reprodukcji wynika z dostarczonych podfolderów.
+- Mała kartka pod każdym obrazem otwiera historię i ciekawostkę. Dostarczono 83 reprodukcje bez tytułów, autorów i plansz; obecnie mają numery katalogowe. Lista nagród nie jest jeszcze gotowa.
 - Lokalny zapis wystarczy. Nie potrzeba tutoriala ani audio. Kod w obecnym repozytorium, hosting zespołu.
-- Wszystkie pokoje w v1 są dostępne do oceny UI. Docelowe odblokowania i wyposażenie po integracji minigry.
+- Wszystkie pokoje w v1 są dostępne do oceny UI. Docelowe blokady epok pozostają do podłączenia.
+- **Dekorowanie przez zmianę całego tła:** 10 poziomów `level0`–`level9`, pliki `img/roomN_levelM.jpg` (również JPEG/PNG/WebP). Kolejny poziom dodaje wyposażenie wewnątrz nowej ilustracji, bez osobnych nakładek mebli. Kadr, narożnik, ściany, drzwi i wolne miejsca pod ramy muszą pozostać identyczne.
+- **Zatwierdzona progresja:** `floor(9 × ukończone / wszystkie obrazy epoki)`. Awans rozłożony na całą kolekcję, nie na pięć widocznych dzieł. Dla 30 obrazów progi to 4, 7, 10, 14, 17, 20, 24, 27 i 30. Poziom 9 wymaga ukończenia całej niepustej kolekcji. Ponowne malowanie nie nalicza postępu.
+- **Biblioteka wdrożona:** dostęp z landing page i `/#library`, podział 21/18/22/22, filtry, wyszukiwanie i podgląd. W pokoju „Zmień obrazy” lub kliknięcie ukończonej ramy pozwala wybrać dzieło tej samej epoki, także nieukończone. Nieukończone pokazuje kartkę z krzyżykiem. Zapisane przypisania pięciu miejsc zachowują geometrię i postęp; wybór już wiszącego obrazu zamienia miejsca. Kolorowanie nowych reprodukcji czeka na jawne przypisanie przez kolegę.
 - **Implementacja i adapter dla kolegi:** [10_FRONTEND_V1.md](./10_FRONTEND_V1.md).
 
 Dalsze sekcje zachowują plan pełnej gry oraz starsze propozycje. Powyższe decyzje i najnowsze instrukcje użytkownika mają pierwszeństwo.
@@ -34,7 +37,7 @@ Gra ma dwie pętle nagród:
 1. Strona główna przedstawia dom z zewnątrz.
 2. Kliknięcie drzwi prowadzi do wnętrza z czterema drzwiami do pokojów.
 3. Każdy pokój przedstawia inną epokę Polski.
-4. Epoki mają obejmować drogę od powstania Polski do współczesności; konkretne cztery rozdziały są jeszcze propozycją.
+4. Aktualny podział kolekcji: Oświecenie, Romantyzm, Pozytywizm, Młoda Polska. Wcześniejszy podział od powstania Polski do współczesności jest archiwalną propozycją.
 5. W miejscach nieukończonych obrazów na ścianach wiszą przetarte biało-szare kartki papieru z czerwonym krzyżykiem. Kartka nie przedstawia reprodukcji dzieła.
 6. Główna mechanika to kolorowanie po numerach na planszy **20×20 = 400 pól**.
 7. Algorytm przygotowujący plansze tworzy członek zespołu.
@@ -58,16 +61,16 @@ Gra ma dwie pętle nagród:
 
 ### Otwarte decyzje o największym wpływie
 
-- Dokładne epoki i lista obrazów, liczba obrazów na prezentację.
+- Tytuły, autorzy i jawne przypisanie plansz do dostarczonych 83 reprodukcji; liczba zadań na prezentację.
 - Format wyniku algorytmu, liczba kolorów, obsługa proporcji oryginału.
 - Czy „powrót do naturalnego obrazu” to odsłonięcie oryginału, czy inne przetwarzanie?
 - Dotknięcia/przeciąganie oraz obsługa błędów; priorytet telefonu jest potwierdzony.
 - Charakter zmian domu: kolejne architektury czy renowacja jednej bryły?
 - Format, terminy i osoba odpowiedzialna za dostarczenie grafik.
 
-## 3. Cztery rozdziały historii — propozycja
+## 3. Cztery rozdziały historii — archiwalna propozycja
 
-To cztery szerokie rozdziały gry, obejmujące różne epoki, a nie ścisła periodyzacja historii sztuki. Taki podział pozwala dojść do współczesności przy czterech drzwiach.
+Poniższy dawny podział zastąpiły Oświecenie, Romantyzm, Pozytywizm i Młoda Polska. To cztery szerokie rozdziały pierwotnej propozycji gry, obejmujące różne epoki, a nie ścisła periodyzacja historii sztuki. Taki podział pozwala dojść do współczesności przy czterech drzwiach.
 
 | Kolejność | Robocza nazwa pokoju | Zakres narracji | Charakter wnętrza | Przykładowe nagrody do doboru |
 | --- | --- | --- | --- | --- |
@@ -255,9 +258,9 @@ Frontend zaczyna od jednej ręcznie przygotowanej, zgodnej planszy testowej. Aut
 
 ### Ukończenie obrazu
 
-Po poprawnym wypełnieniu 400 pól aplikacja w jednej operacji zapisuje ukończenie. Obraz uzyskuje kolorowy wariant na ścianie. Wyposażenie przypisane do tego dzieła staje się widoczne. Powtórna operacja ukończenia nie tworzy kolejnej nagrody.
+Po ukończeniu planszy aplikacja zapisuje unikalne ID dzieła i odsłania kolorową reprodukcję. Rozmiar planszy pozostaje odpowiedzialnością autora minigry; obecna baza testowa ma 32×32. Powtórna operacja ukończenia nie tworzy kolejnej nagrody.
 
-Każdy obraz ma własną nagrodę lub zestaw wyposażenia. Dzięki temu kolejność malowania nie wpływa na poprawność wyglądu pokoju.
+Poziom pokoju wyliczamy z całej kolekcji epoki według wzoru powyżej. Ukończenie może przekroczyć kolejny próg; wtedy tło płynnie przechodzi do odpowiedniego `roomN_levelM`. Brak pliku oznacza użycie najwyższego dostępnego niższego poziomu albo dotychczasowego `roomN.jpg`. Kolejność malowania nie wpływa na wygląd przy tej samej liczbie ukończeń. Wyposażenie jest częścią tła, więc nie przypisujemy oddzielnej grafiki mebla każdemu dziełu.
 
 ### Ukończenie pokoju
 

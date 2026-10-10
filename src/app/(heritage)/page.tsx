@@ -1,5 +1,5 @@
-import { HeritageApp } from "@/components/HeritageApp";
+import { HeritageGame } from "@/components/HeritageGame";
 
 export default function Page() {
-  return <HeritageApp />;
+  return <HeritageGame />;
 }
