@@ -186,6 +186,30 @@ em { font-weight: 400; color: var(--amber); }
 .coloring-instruction svg { color: var(--amber); }
 .coloring-frame { position: relative; padding: 7px; border: 1px solid #b5a17d55; background: #342d25; box-shadow: 0 22px 60px #0005; transition: box-shadow 1s, border-color 1s; }
 .coloring-frame.is-complete { border-color: #e8b87999; box-shadow: 0 20px 60px #0005, 0 0 50px #e8b87915; }
+.coloring-frame.is-revealed { border-color: #ffd285cc; box-shadow: 0 24px 60px #0008, 0 0 45px #e8b87940; }
+.revealed-overlay { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 4; overflow: hidden; }
+.revealed-image { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
+.revealed-shimmer { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 20%, #fff6da60 48%, #e8b87980 52%, transparent 80%); animation: shimmer-sweep 1.2s cubic-bezier(.16,1,.3,1) forwards; pointer-events: none; }
+@keyframes shimmer-sweep { 0% { transform: translateX(-100%); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } }
+.revealed-celebration { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+.celebration-sparkles { position: absolute; inset: 0; }
+.celebration-sparkles svg { position: absolute; color: #ffd88a; filter: drop-shadow(0 0 6px #ffd88abb); animation: sparkle-float 2.4s ease-in-out infinite alternate; }
+.sparkle-1 { top: 12%; left: 8%; animation-delay: 0s; }
+.sparkle-2 { top: 18%; right: 12%; animation-delay: .4s; }
+.sparkle-3 { bottom: 14%; left: 50%; transform: translateX(-50%); animation-delay: .8s; }
+@keyframes sparkle-float { 0% { transform: scale(.8) translateY(0) rotate(0deg); opacity: .7; } 100% { transform: scale(1.15) translateY(-5px) rotate(12deg); opacity: 1; } }
+.revealed-banner { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding: 4px 6px; background: #171d27cc; backdrop-filter: blur(8px); border: 1px solid #e8b87940; border-radius: 999px; animation: banner-in .4s ease-out; }
+@keyframes banner-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.revealed-badge { display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; color: #ffdfa0; padding-left: 9px; }
+.revealed-badge svg { color: #ffc86b; }
+.revealed-switch { display: flex; align-items: center; background: #00000055; border-radius: 999px; padding: 2px; gap: 2px; }
+.switch-tab { display: inline-flex; align-items: center; padding: 5px 12px; font-size: 10px; font-weight: 600; border-radius: 999px; border: none; background: transparent; color: #a79c89; cursor: pointer; transition: all .2s; }
+.switch-tab:hover { color: #fff; }
+.switch-tab.is-active { background: #e8b879; color: #241c12; box-shadow: 0 2px 6px #0005; }
+.painting-discovered-img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+.completed-badge { position: absolute; bottom: 3px; right: 3px; background: #e8b879; color: #241c12; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px #0009; }
+.story-artwork-header { width: 100%; max-height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 18px; border: 1px solid #e8b87933; box-shadow: 0 8px 24px #0006; }
+.story-artwork-image { width: 100%; height: 100%; object-fit: cover; display: block; }
 .coloring-canvas { display: block; width: 100%; height: auto; overflow: hidden; touch-action: manipulation; }
 .coloring-outline { stroke: #fff6df; stroke-opacity: .48; stroke-width: .055; transition: stroke-opacity .7s; }
 .coloring-outline.painted { stroke-opacity: .1; }
@@ -227,7 +251,7 @@ em { font-weight: 400; color: var(--amber); }
 .numbered-workspace .coloring-region:hover { fill: #ae976122; }
 .numbered-workspace .coloring-region:focus-visible { fill: #c49e6245; }
 .numbered-workspace .coloring-canvas > g:has(.coloring-region:focus-visible) > .coloring-outline { stroke: #9a6b2c; stroke-opacity: 1; stroke-width: .13; }
-.coloring-viewport { overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #b8a57d #e6decc; }
+.coloring-viewport { position: relative; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #b8a57d #e6decc; }
 .numbered-canvas { min-width: 100%; touch-action: pan-x pan-y; }
 .region-number text, .wrong-number { font: 500 .73px 'Manrope', sans-serif; fill: #726d60; }
 .region-number.matching text { fill: #7d551f; font-weight: 700; }

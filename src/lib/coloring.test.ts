@@ -47,6 +47,11 @@ describe('coloring JSON and connected regions', () => {
         }
         expect(remaining.size).toBe(0);
       }
+      expect(art.original_image_url).toBe(`/artworks/${name}.webp`);
+      expect(art.cultural_data.trivia.length).toBeGreaterThan(10);
+      expect(art.cultural_data.historical_context.length).toBeGreaterThan(10);
+      const webpPath = `public${art.original_image_url}`;
+      expect(readFileSync(webpPath).length).toBeGreaterThan(1000);
     }
   });
 });

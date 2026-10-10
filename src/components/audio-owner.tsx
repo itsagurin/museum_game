@@ -24,7 +24,7 @@ export function AudioOwner({ enabled, reading, completed }: { enabled: boolean; 
     document.addEventListener('visibilitychange', visibility);
     const feedback = (event: Event) => {
       const kind = (event as CustomEvent<ColoringSound>).detail;
-      if (!settings.current.enabled || !settings.current.unlocked || document.hidden || !['select', 'correct', 'wrong'].includes(kind)) return;
+      if (!settings.current.enabled || !settings.current.unlocked || document.hidden || !['select', 'correct', 'wrong', 'complete'].includes(kind)) return;
       try { engine.current?.feedback(kind); } catch { /* Optional effects never block painting. */ }
     };
     window.addEventListener(coloringSoundEvent, feedback);

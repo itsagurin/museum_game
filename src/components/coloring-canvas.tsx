@@ -1,6 +1,6 @@
 'use client';
-import { useMemo, useRef, useState } from 'react';
-import { ArrowUpRight, Check, Hand, Paintbrush, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowUpRight, Check, Eye, Grid, Hand, Paintbrush, RotateCcw, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { paintResult, type ColoringArtwork } from '@/lib/coloring';
 import { playColoringSound } from '@/lib/audio';
@@ -19,6 +19,9 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [zoom, setZoom] = useState(1);
   const [panning, setPanning] = useState(false);
+  const [revealed, setRevealed] = useState(false);
+  const [mode, setMode] = useState<'original' | 'pixels'>('original');
+  const [imageFailed, setImageFailed] = useState(false);
   const dragging = useRef(false);
   const lastPixel = useRef<number | null>(null);
   const paintedRef = useRef(painted);
@@ -28,7 +31,31 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
   const svgRef = useRef<SVGSVGElement>(null);
   const { width, height } = artwork.grid;
   const ready = pixels.every(pixel => painted.has(pixel.id) && settled.has(pixel.id));
+
+  // Preload original image for instantaneous, zero-jank reveal transition
+  useEffect(() => {
+    if (!artwork.original_image_url) return;
+    const img = new Image();
+    img.src = artwork.original_image_url;
+  }, [artwork.original_image_url]);
+
+  // When all pixels are painted, wait a fraction of a second, then play animation and reveal the original
+  useEffect(() => {
+    if (!ready) return;
+    const timer = window.setTimeout(() => {
+      setRevealed(true);
+      setZoom(1);
+      setPanning(false);
+      playColoringSound('complete');
+    }, reduced ? 40 : 420);
+    return () => {
+      window.clearTimeout(timer);
+      setRevealed(false);
+    };
+  }, [ready, reduced]);
+
   const paint = (pixel: Pixel) => {
+    if (ready) return;
     const result = paintResult(pixel.colorId, selected, paintedRef.current.has(pixel.id));
     if (result === 'ignored') return;
     setFeedback({ key: ++feedbackKey.current, kind: result, pixel });
@@ -40,6 +67,7 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
     }
   };
   const paintAt = (clientX: number, clientY: number) => {
+    if (ready) return;
     const bounds = svgRef.current?.getBoundingClientRect();
     if (!bounds) return;
     const x = Math.floor((clientX - bounds.left) / bounds.width * width);
@@ -63,14 +91,55 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
     const next = new Map(paintedRef.current); next.delete(last); paintedRef.current = next; setPainted(next);
     setSettled(previous => { const next = new Set(previous); next.delete(last); return next; });
     setFeedback(null);
+    setRevealed(false);
   };
-  const message = panning ? 'Przeciągnij płótno. Wybierz kolor, aby wrócić do malowania.' : ready ? 'Pięknie. Twoja opowieść jest gotowa.' : feedback?.kind === 'wrong'
+  const message = revealed
+    ? mode === 'original'
+      ? `Oryginalne arcydzieło: ${artwork.title} (${artwork.artist}, ${artwork.year}).`
+      : 'Pomalowane przez Ciebie piksele.'
+    : panning
+    ? 'Przeciągnij płótno. Wybierz kolor, aby wrócić do malowania.'
+    : ready
+    ? 'Pięknie. Twoja opowieść jest gotowa.'
+    : feedback?.kind === 'wrong'
     ? `Ten piksel ma inny kolor. Wybierz: ${colors.get(feedback.pixel.colorId)!.name}.`
-    : selected !== null ? `${colors.get(selected)!.name}. Dotknij lub przeciągnij po pikselach tego koloru.` : 'Wybierz kolor. Wypełnij pasujące piksele.';
+    : selected !== null
+    ? `${colors.get(selected)!.name}. Dotknij lub przeciągnij po pikselach tego koloru.`
+    : 'Wybierz kolor. Wypełnij pasujące piksele.';
 
   return <div className="coloring-workspace numbered-workspace">
     <div className={`sr-only coloring-instruction ${feedback?.kind === 'wrong' ? 'is-wrong' : ''}`} role="status" aria-live="polite"><Paintbrush size={15} aria-hidden /><span>{message}</span></div>
-    <div className={`coloring-frame numbered-frame ${ready ? 'is-complete' : ''}`}>
+
+    {revealed && (
+      <div className="revealed-banner" role="region" aria-label="Odrodzone arcydzieło">
+        <div className="revealed-badge">
+          <Sparkles size={14} aria-hidden />
+          <span>Arcydzieło odrodzone</span>
+        </div>
+        <div className="revealed-switch" role="group" aria-label="Wybierz widok">
+          <button
+            type="button"
+            className={`switch-tab ${mode === 'original' ? 'is-active' : ''}`}
+            onClick={() => setMode('original')}
+            aria-pressed={mode === 'original'}
+          >
+            <Eye size={12} aria-hidden style={{ display: 'inline', marginRight: 4 }} />
+            Oryginał
+          </button>
+          <button
+            type="button"
+            className={`switch-tab ${mode === 'pixels' ? 'is-active' : ''}`}
+            onClick={() => setMode('pixels')}
+            aria-pressed={mode === 'pixels'}
+          >
+            <Grid size={12} aria-hidden style={{ display: 'inline', marginRight: 4 }} />
+            Piksele
+          </button>
+        </div>
+      </div>
+    )}
+
+    <div className={`coloring-frame numbered-frame ${ready ? 'is-complete' : ''} ${revealed ? 'is-revealed' : ''}`}>
       <div className="coloring-viewport" style={{ aspectRatio: `${width}/${height}` }}>
         <svg ref={svgRef} className={`coloring-canvas pixel-canvas ${panning ? 'is-panning' : ''}`} viewBox={`0 0 ${width} ${height}`} aria-label={`Kolorowanie: ${artwork.title}`} style={{ aspectRatio: `${width}/${height}`, width: `${zoom * 100}%`, minWidth: `${zoom * 100}%`, maxWidth: 'none' }}
           onPointerDown={event => { if (event.button !== 0 || panning) return; dragging.current = true; lastPixel.current = null; event.currentTarget.setPointerCapture(event.pointerId); paintAt(event.clientX, event.clientY); }}
@@ -94,6 +163,47 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
             {feedback && <motion.rect key={feedback.key} x={feedback.pixel.x} y={feedback.pixel.y} width="1" height="1" pointerEvents="none" fill={feedback.kind === 'wrong' ? '#d15e4c' : '#fff6da'} stroke={feedback.kind === 'wrong' ? '#ac3d30' : '#edd6a3'} strokeWidth=".12" initial={{ opacity: .8 }} animate={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? .15 : .5 }} />}
           </AnimatePresence>
         </svg>
+
+        <AnimatePresence>
+          {revealed && !imageFailed && (
+            <motion.div
+              className="revealed-overlay"
+              style={{ pointerEvents: mode === 'original' ? 'auto' : 'none' }}
+              initial={{ opacity: 0, scale: 1.03, filter: 'blur(8px)' }}
+              animate={{ opacity: mode === 'original' ? 1 : 0, scale: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: reduced ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={artwork.original_image_url}
+                alt={artwork.title}
+                className="revealed-image"
+                onError={() => setImageFailed(true)}
+              />
+              <div className="revealed-shimmer" aria-hidden />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {revealed && (
+            <motion.div
+              className="revealed-celebration"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reduced ? 0 : 0.5 }}
+              aria-hidden
+            >
+              <div className="celebration-sparkles">
+                <Sparkles size={22} className="sparkle-1" />
+                <Sparkles size={16} className="sparkle-2" />
+                <Sparkles size={20} className="sparkle-3" />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
     <div className="painting-tools"><div><button className="text-button" aria-label={zoom === 1 ? 'Powiększ płótno' : 'Pomniejsz płótno'} onClick={() => { setZoom(previous => previous === 1 ? Math.max(2.5, width * 24 / 320) : 1); setPanning(false); }}>{zoom === 1 ? <ZoomIn size={17} aria-hidden /> : <ZoomOut size={17} aria-hidden />}</button><button className="text-button" aria-label="Przesuwaj płótno" aria-pressed={panning} disabled={zoom === 1} onClick={() => setPanning(previous => !previous)}><Hand size={17} aria-hidden /></button><button className="text-button coloring-undo" disabled={!painted.size} onClick={undo}><RotateCcw size={14} aria-hidden />Cofnij</button></div></div>
@@ -105,6 +215,6 @@ export function ColoringCanvas({ artwork, onComplete }: { artwork: ColoringArtwo
       </button>;
     })}</div>
     <div className="coloring-progress"><div className="coloring-progress-track"><span style={{ transform: `scaleX(${painted.size / pixels.length})` }} /></div><span className="sr-only" role="status" aria-live="polite">Pokolorowane piksele: {painted.size} / {pixels.length}</span></div>
-    <div className="coloring-footer"><button className="primary-button" disabled={!ready} onClick={onComplete}>{ready ? 'Odkryj opowieść' : 'Dokończ swoje płótno'}<ArrowUpRight size={17} aria-hidden /></button></div>
+    <div className="coloring-footer"><button className={`primary-button ${revealed ? 'is-revealed' : ''}`} disabled={!ready} onClick={onComplete}>{ready ? 'Odkryj opowieść' : 'Dokończ swoje płótno'}<ArrowUpRight size={17} aria-hidden /></button></div>
   </div>;
 }

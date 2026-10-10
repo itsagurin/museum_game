@@ -1,5 +1,5 @@
 export type AudioTarget = 'off' | 'quiet' | 'normal';
-export type ColoringSound = 'select' | 'correct' | 'wrong';
+export type ColoringSound = 'select' | 'correct' | 'wrong' | 'complete';
 export const coloringSoundEvent = 'dom-opowiesci:coloring-sound';
 export function playColoringSound(kind: ColoringSound) {
   window.dispatchEvent(new CustomEvent(coloringSoundEvent, { detail: kind }));
@@ -52,6 +52,10 @@ export class AmbientSound {
   }
   feedback(kind: ColoringSound) {
     if (this.context.state !== 'running') return;
+    if (kind === 'complete') {
+      this.chime();
+      return;
+    }
     if (kind === 'select') this.tone(700, 460, 0, .09, .025, 'sine');
     if (kind === 'wrong') {
       this.tone(260, 190, 0, .2, .035, 'triangle');

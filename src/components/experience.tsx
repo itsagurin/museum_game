@@ -35,13 +35,29 @@ function Guardian({ small = false }: { small?: boolean }) {
 function Painting({ artwork, status, onSelect }: { artwork: Artwork; status: 'locked' | 'available' | 'completed'; onSelect: () => void }) {
   const statusLabel = { locked: 'Zamknięta', available: 'Dostępna', completed: 'Odkryta' }[status];
   return <button className={`painting ${status}`} onClick={onSelect} aria-label={`${artwork.title} — ${statusLabel}`} aria-disabled={status === 'locked'}>
-    <span className="painting-frame"><span className="painting-inner"><span className="painting-symbol">{status === 'locked' ? <LockKeyhole size={20} strokeWidth={1.2} aria-hidden /> : status === 'completed' ? <Check size={25} strokeWidth={1.2} aria-hidden /> : <Sparkles size={24} strokeWidth={1.1} aria-hidden />}</span></span></span>
+    <span className="painting-frame">
+      <span className="painting-inner">
+        {status === 'completed' ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`/artworks/${artwork.id}.webp`} alt="" className="painting-discovered-img" onError={e => { e.currentTarget.style.display = 'none'; }} />
+            <span className="painting-symbol completed-badge"><Check size={14} strokeWidth={2.5} aria-hidden /></span>
+          </>
+        ) : (
+          <span className="painting-symbol">{status === 'locked' ? <LockKeyhole size={20} strokeWidth={1.2} aria-hidden /> : <Sparkles size={24} strokeWidth={1.1} aria-hidden />}</span>
+        )}
+      </span>
+    </span>
     <span className="painting-meta"><span className="painting-title">{artwork.title}</span></span>
   </button>;
 }
 
 function Story({ artwork, onClose }: { artwork: Artwork; onClose: () => void }) {
   return <Dialog title={`Opowieść: ${artwork.title}`} onClose={onClose} className="story-dialog">
+    <div className="story-artwork-header">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={`/artworks/${artwork.id}.webp`} alt={artwork.title} className="story-artwork-image" onError={e => { e.currentTarget.style.display = 'none'; }} />
+    </div>
     <h2>{artwork.title}</h2>
     <div className="story-rule"><Sparkles size={16} strokeWidth={1.2} aria-hidden /></div>
     <div className="story-prose">{artwork.story.map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>
