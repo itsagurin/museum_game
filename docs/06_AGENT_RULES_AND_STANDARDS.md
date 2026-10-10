@@ -1,6 +1,6 @@
 # 🤖 06. Zasady Pracy dla Agentów AI i Standardy Kodu
 
-> **Aktualizacja:** przed pracą czytaj [plan 07](./07_CURRENT_PROJECT_PLAN.md). Standardy jakości poniżej pozostają przydatne, lecz przykłady store, konturów SVG, waluty i renowacji odnoszą się do wcześniejszej koncepcji. Aktualna gra ma plansze 15×15, cztery pokoje oraz automatyczne nagrody i odblokowania. Otwarte propozycje planu nie są potwierdzonymi decyzjami zespołu.
+> **Aktualizacja:** przed pracą czytaj [plan 07](./07_CURRENT_PROJECT_PLAN.md) i [frontend v1](./10_FRONTEND_V1.md). Standardy jakości poniżej pozostają przydatne, lecz przykłady store, konturów SVG, waluty i renowacji odnoszą się do wcześniejszej koncepcji. Aktualna gra ma plansze **20×20**, kolorowanie dostarcza osobny członek zespołu. Pierwsza wersja to dom, hol i cztery pokoje z nowoczesnym UI glass. **Polski jest domyślny**, EN jest opcją. Bez tutoriala i audio. Otwarte propozycje planu nie są potwierdzonymi decyzjami zespołu.
 
 > **Dla kogo:** Każdy agent LLM oraz programista pracujący nad kodem repozytorium *Best Hacks 2026*.  
 > **Priorytet:** Stabilność, czytelność, szybkość wprowadzania zmian i spójność z wizją gry.

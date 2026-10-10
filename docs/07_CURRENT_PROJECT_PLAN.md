@@ -1,8 +1,22 @@
-# 07. Aktualny plan: dom, cztery epoki i kolorowanie 15×15
+# 07. Aktualny plan: dom, cztery epoki i kolorowanie 20×20
 
-> Aktualizacja: 10 października 2026. Etap: ustalanie wizji, przed implementacją.
+> Aktualizacja: 10 października 2026. Etap: pierwsza implementacja frontendu.
 > Ten dokument zastępuje wcześniejsze założenia dotyczące nawigacji, kolorowania i progresji w dokumentach 01–06.
 > **Ustalone** oznacza instrukcję zespołu. **Propozycja** oznacza rozwiązanie do omówienia. **Otwarte** oznacza brak decyzji.
+
+## Najnowsze zatwierdzone decyzje
+
+- Pierwsza wersja jest **pełnoekranową grą**: dom, hol i cztery pokoje wypełniają ekran, a header i przyciski glass są nakładane na ilustrację. Kamera ma przesuwanie i opcję pokazania całej sceny; strona nie przewija się poza grą.
+- Hol ma cztery wersje materiałów zgodne z epokami, przy tej samej kamerze i czterech drzwiach. Pliki `hall1.jpg`–`hall4.jpg`; prompty w [dokumencie 11](./11_HALL_PROMPTS_FOUR_ERAS.md).
+- Kolorowanie **20×20** i jego logikę implementuje inny członek zespołu. Wcześniejszy kontrakt poniżej jest propozycją, nie zobowiązaniem dla właściciela minigry.
+- Stack: Next.js + TypeScript + Tailwind + Zustand. Polski domyślnie, przełącznik na angielski.
+- Nazwa Dziedzictwo zostaje. Cztery robocze epoki zaakceptowane, ale zespół planuje zmianę ich nazw i grafik; dane są konfigurowalne.
+- Mała kartka pod każdym obrazem otwiera historię i ciekawostkę. Lista dzieł i lista nagród nie są jeszcze gotowe.
+- Lokalny zapis wystarczy. Nie potrzeba tutoriala ani audio. Kod w obecnym repozytorium, hosting zespołu.
+- Wszystkie pokoje w v1 są dostępne do oceny UI. Docelowe odblokowania i wyposażenie po integracji minigry.
+- **Implementacja i adapter dla kolegi:** [10_FRONTEND_V1.md](./10_FRONTEND_V1.md).
+
+Dalsze sekcje zachowują plan pełnej gry oraz starsze propozycje. Powyższe decyzje i najnowsze instrukcje użytkownika mają pierwszeństwo.
 
 ## 1. Wizja w jednym zdaniu
 
@@ -10,7 +24,7 @@ Gracz wchodzi do domu polskiej historii, przywraca kolory obrazom w czterech pok
 
 Gra ma dwie pętle nagród:
 
-- Obraz → kolorowanie 15×15 → odsłonięcie oryginału → wyposażenie pokoju.
+- Obraz → kolorowanie 20×20 → odsłonięcie oryginału → wyposażenie pokoju.
 - Wszystkie obrazy pokoju → ukończenie epoki → ulepszenie domu z zewnątrz → odblokowanie następnych drzwi.
 
 ## 2. Ustalenia zespołu i decyzje otwarte
@@ -22,12 +36,14 @@ Gra ma dwie pętle nagród:
 3. Każdy pokój przedstawia inną epokę Polski.
 4. Epoki mają obejmować drogę od powstania Polski do współczesności; konkretne cztery rozdziały są jeszcze propozycją.
 5. W miejscach nieukończonych obrazów na ścianach wiszą przetarte biało-szare kartki papieru z czerwonym krzyżykiem. Kartka nie przedstawia reprodukcji dzieła.
-6. Główna mechanika to kolorowanie po numerach na planszy **15×15 = 225 pól**.
+6. Główna mechanika to kolorowanie po numerach na planszy **20×20 = 400 pól**.
 7. Algorytm przygotowujący plansze tworzy członek zespołu.
 8. Ukończenie obrazu przywraca naturalny kolorowy obraz na ścianę i automatycznie dodaje wyposażenie z epoki.
 9. Ukończenie wszystkich obrazów pokoju automatycznie ulepsza dom oraz odblokowuje następny pokój.
-10. Oprawa to ilustracje 2D; zespół zapewni grafiki i ustali styl.
+10. Oprawa to ilustracje 2D z kreskowymi konturami, malarskim cieniowaniem i elementami realizmu, zgodnie z dwiema referencjami wnętrza dostarczonymi przez użytkownika. Użytkownik zajmuje się frontendem i będzie generował grafiki w Google Flow. Lista assetów i prompty są w [dokumencie 08](./08_ASSET_PROMPTS_GOOGLE_FLOW.md).
 11. Pozostało **15 godzin**, pracują **cztery osoby, każda z własnym Codexem**.
+12. Aplikacja jest **mobile-first**: podstawowe urządzenie to telefon, pionowa orientacja i obsługa dotykiem. Dom, hol i pokoje komponujemy pod ekran telefonu; komputer jest adaptacją układu mobilnego.
+13. Tło każdego pokoju pokazuje **wewnętrzny narożnik i dwie szerokie ściany**, z drzwiami do **poprzedniej i następnej epoki** na lewej i prawej stronie. Ściany są puste, bez wyznaczonych miejsc ani układu obrazów. Frontend rozmieszcza na nich początkowo pięć obrazów, z możliwością późniejszego rozszerzenia. Aktualne prompty: [dokument 09](./09_ROOM_PROMPTS_CORNER_VIEW.md). Liczba obowiązkowych zadań na demo pozostaje do ustalenia.
 
 ### Propozycje robocze
 
@@ -38,14 +54,14 @@ Gra ma dwie pętle nagród:
 - Brak wymaganej waluty lub zakupów: nagrody przyznawane automatycznie. Dawne „Inspiration Points” pozostają pomysłem dodatkowym do decyzji.
 - Plansze są przygotowane przed grą, a aplikacja wczytuje gotowe dane.
 - Po ukończeniu planszy aplikacja odsłania zachowany oryginał obrazu.
-- Dotychczasowe EN jako język domyślny, opcja PL i lokalny zapis postępu pozostają propozycją kontynuacji wcześniejszych ustaleń.
+- Potwierdzono PL jako język domyślny, przełącznik EN i lokalny zapis postępu.
 
 ### Otwarte decyzje o największym wpływie
 
 - Dokładne epoki i lista obrazów, liczba obrazów na prezentację.
 - Format wyniku algorytmu, liczba kolorów, obsługa proporcji oryginału.
 - Czy „powrót do naturalnego obrazu” to odsłonięcie oryginału, czy inne przetwarzanie?
-- Klikanie/przeciąganie, obsługa błędów, priorytet telefonu.
+- Dotknięcia/przeciąganie oraz obsługa błędów; priorytet telefonu jest potwierdzony.
 - Charakter zmian domu: kolejne architektury czy renowacja jednej bryły?
 - Format, terminy i osoba odpowiedzialna za dostarczenie grafik.
 
@@ -69,7 +85,7 @@ Wyposażenie trzeba wybrać dla konkretnego charakteru pokoju; lista powyżej ni
 - Pokój 3: Józef Chełmoński, **„Bociany”**, 1900. [Materiały MNK](https://media.mnk.pl/aktualnosci/chelmonski).
 - Pokój 4: Tadeusz Makowski, **„Kapela dziecięca”**, 1922, jako wejście do sztuki XX wieku. [Materiały edukacyjne MNW](https://www.mnw.art.pl/gfx/muzeumnarodowe/userfiles/adlugolecka/tadeusz_makowski.pdf). Dzieło nie reprezentuje samo w sobie współczesnej Polski: aby rzeczywiście dojść do XXI wieku, trzeba dodać współczesne dzieło dopuszczone do użycia lub przygotowaną przez zespół ilustrację oznaczoną jako współczesna interpretacja.
 
-Lista jest propozycją. Każdy kandydat musi przejść próbę czytelności w 15×15, mieć reprodukcję odpowiedniej jakości i zapisane źródło oraz warunki wykorzystania. Same monumentalne sceny z wieloma postaciami mogą słabo czytać się w 225 polach. Ostateczny wybór następuje po obejrzeniu wyników algorytmu.
+Lista jest propozycją. Każdy kandydat musi przejść próbę czytelności w 20×20, mieć reprodukcję odpowiedniej jakości i zapisane źródło oraz warunki wykorzystania. Same monumentalne sceny z wieloma postaciami mogą słabo czytać się w 400 polach. Ostateczny wybór następuje po obejrzeniu wyników algorytmu.
 
 ## 4. Mapa aplikacji i nawigacja
 
@@ -79,9 +95,9 @@ flowchart TD
     B -->|Dostępne drzwi| C[Pokój epoki]
     B -->|Zablokowane drzwi| L[Informacja o warunku odblokowania]
     L --> B
-    C -->|Kliknięcie kartki z czerwonym krzyżykiem| D[Kolorowanie 15×15]
+    C -->|Kliknięcie kartki z czerwonym krzyżykiem| D[Kolorowanie 20×20]
     D -->|Wyjście z zapisem| C
-    D -->|225 poprawnych pól| E[Odsłonięcie oryginału i ciekawostka]
+    D -->|400 poprawnych pól| E[Odsłonięcie oryginału i ciekawostka]
     E --> F[Pokój: kolorowy obraz i nowe wyposażenie]
     F -->|Pozostały obrazy| C
     F -->|Wszystkie obrazy ukończone| G[Ukończenie epoki]
@@ -107,7 +123,7 @@ Podgląd ukończonego obrazu i ciekawostka mogą być oknami w pokoju. Finał mo
 
 ### A. Dom z zewnątrz
 
-Dom jest centralnym elementem ilustracji. Widoczne drzwi reagują na najechanie i dotknięcie. Dodatkowy opis „Wejdź do domu” pomaga odkryć interakcję. W rogu znajdują się ustawienia języka i dźwięku, jeśli trafią do zakresu.
+Dom jest centralnym elementem pionowej ilustracji, proponowana proporcja 9:16. Zajmuje większość szerokości telefonu, z widocznym dachem i wejściem. Drzwi są wyraźnie oznaczone i reagują na dotknięcie. Przycisk „Wejdź do domu” w dolnej strefie ekranu pomaga odkryć interakcję i wejść wygodnie kciukiem. W górnej strefie znajdują się tytuł oraz ustawienia języka i dźwięku, jeśli trafią do zakresu. Hover jest dodatkiem dla komputera.
 
 Postęp globalny pokazujemy jako „Ukończone epoki: 0/4”. Kliknięcie drzwi może uruchamiać krótkie zbliżenie lub przenikanie scen. Osoba wracająca do gry widzi aktualny wygląd domu; nadal może wejść drzwiami.
 
@@ -121,11 +137,13 @@ Wszystkie drzwi są widoczne od początku. Każde mają nazwę rozdziału i ozna
 - Dostępne: zaproszenie do wejścia, postęp np. „1/2 obrazy”.
 - Ukończone: wyraźne oznaczenie i możliwość ponownego wejścia.
 
-Na telefonie można pokazywać hol w układzie dopasowanym do pionowego ekranu albo panoramę z przewijaniem — to decyzja wizualna przed przygotowaniem finalnej ilustracji. Każde drzwi mają tekstowy odpowiednik dostępny z klawiatury.
+Hol projektujemy jako pionową scenę. Proponowany układ ilustracji: krótki hol z płytką perspektywą, dwoje drzwi po lewej i dwoje po prawej. Wszystkie cztery muszą być widoczne i dostatecznie duże na telefonie. Podpisy i kłódki dodajemy we frontendzie. Proponujemy obszary dotyku co najmniej 48×48 CSS px; nie wymagamy hover do odkrycia interakcji. Każde drzwi mają tekstowy odpowiednik dostępny również z klawiatury.
 
 ### C. Pokój epoki
 
 Scena zawiera ściany, podłogę, miejsca na meble i ramy na obrazy. W każdej ramie nieukończonego dzieła znajduje się przetarta biało-szara kartka papieru z czerwonym krzyżykiem. Faktura papieru ma ślady zużycia i przetarcia. Kliknięcie kartki otwiera kolorowanie przypisanego obrazu. Także po rozpoczęciu malowania kartka pozostaje na ścianie aż do ukończenia; postęp można oznaczyć osobnym licznikiem.
+
+Tło jest puste, z widokiem na wewnętrzny narożnik pokoju w dalszym kadrze. Kamera na wysokości oczu jest odsunięta kilka metrów i pokazuje dwie szerokie ściany, których pionowy styk jest blisko środka kadru. Widać fragment sufitu i większą powierzchnię podłogi. Generator nie wyznacza miejsc, rzędów ani stref dla obrazów. Frontend rozmieszcza obrazy na obu ścianach po obejrzeniu tła, uwzględniając perspektywę każdej płaszczyzny. Na lewej i prawej ścianie są zamknięte drzwi do poprzedniej i następnej epoki; całe skrzydła oraz ościeżnice mieszczą się w kadrze z pasem ściany po zewnętrznej stronie. Prawe drzwi zachowują regułę odblokowania po ukończeniu pokoju. Propozycja przypadków granicznych: pierwsze lewe drzwi wracają do holu, a ostatnie prawe prowadzą do finału/ukończonego domu. Powrót do holu pozostaje także w interfejsie. Meble nie zasłaniają obu przejść.
 
 Po ukończeniu kolorowania kartkę zastępuje naturalna kolorowa reprodukcja w tej samej ramie. Ponowne kliknięcie otwiera duży podgląd i opis, zamiast ponownie naliczać nagrodę. W nagłówku są nazwa epoki, licznik ukończonych obrazów i powrót do holu.
 
@@ -133,16 +151,16 @@ Wyposażenie pojawia się w konkretnym miejscu po ukończeniu przypisanego obraz
 
 ### D. Kolorowanie
 
-- Główna plansza ma 15 kolumn i 15 wierszy.
+- Główna plansza ma 20 kolumn i 20 wierszy.
 - Każde nieukończone pole pokazuje numer koloru.
 - Paleta pokazuje kolor, numer i liczbę pozostałych pól.
 - Wybrany kolor jest oznaczony także obrysem/tekstem.
 - Postęp: liczba poprawnych pól i procent.
 - Podświetlenie pasujących pól: propozycja pomocy.
 - Wyjście zapisuje stan; użytkownik może wrócić do tej samej planszy.
-- Opcjonalne przybliżenie i przesuwanie pomagają na małych ekranach.
+- Przybliżenie i przesuwanie umożliwiają precyzyjne malowanie na telefonie. Paleta i przyciski znajdują się pod kwadratową planszą, w pionowym układzie.
 
-Przy planszy szerokiej na 300 px pojedyncze pole ma tylko 20 px. Samo pomniejszenie widoku nie rozwiąże obsługi telefonu. Jeśli telefon jest wymagany, przewidujemy powiększenie planszy i rozdzielenie gestu malowania od przesuwania.
+Przy planszy szerokiej na 300 px pojedyncze pole ma tylko 20 px. Samo pomniejszenie widoku nie rozwiąże obsługi telefonu. Telefon jest urządzeniem podstawowym, więc przewidujemy powiększenie planszy i rozdzielenie gestu malowania od przesuwania. Propozycja: jawne tryby „Maluj” oraz „Przesuń” i dostępne przyciski zoomu. Jeśli dopuszczamy przeciąganie pędzla, przewijanie strony nie może przejmować gestu malowania.
 
 ### E. Ukończenie obrazu
 
@@ -162,13 +180,13 @@ Po czwartym pokoju dom osiąga ostatni wariant. Gracz może obejrzeć ukończone
 4. Powtórne dotknięcie poprawnego pola nie zmienia postępu.
 5. Przeciąganie, jeśli wdrożone, maluje wyłącznie pasujące, nieukończone pola.
 6. Wyjście i odświeżenie zachowują postęp.
-7. Ukończenie wymaga wszystkich 225 poprawnych pól.
+7. Ukończenie wymaga wszystkich 400 poprawnych pól.
 8. Proponowana paleta startowa: 6–8 kolorów; wartość potwierdzamy z autorem algorytmu i po próbie obrazu.
 9. Jeśli kolor nie ma już niepomalowanych pól, oznaczamy go jako ukończony. Automatyczny wybór kolejnego koloru wymaga decyzji.
 
 Kolory białe i czarne także są numerowanymi kolorami do wypełnienia. Propozycja kontraktu nie zawiera pustych, niegrywalnych pól; jeśli algorytm ich potrzebuje, trzeba osobno określić maskę aktywnych pól i mianownik postępu.
 
-225 ręcznych kliknięć przy założeniu 1–2 pól na sekundę daje ok. 2–4 minuty samego wypełniania, bez wyszukiwania numerów. To szacunek, który trzeba zweryfikować testem. Cztery obrazy oznaczają 900 pól, pięć obrazów 1125. Przeciąganie wpływa zarówno na wygodę, jak i długość rozgrywki.
+400 ręcznych kliknięć przy założeniu 1–2 pól na sekundę daje ok. 3–7 minut samego wypełniania, bez wyszukiwania numerów. To szacunek, który trzeba zweryfikować testem. Cztery obrazy oznaczają 1600 pól, pięć obrazów 2000. Przeciąganie wpływa zarówno na wygodę, jak i długość rozgrywki.
 
 ## 7. Algorytm i umowa danych
 
@@ -177,7 +195,7 @@ Kolory białe i czarne także są numerowanymi kolorami do wypełnienia. Propozy
 ```text
 Kolorowa reprodukcja
   → ustalone dopasowanie proporcji
-  → pomniejszenie do 15×15
+  → pomniejszenie do 20×20
   → ograniczenie do ustalonej palety
   → przypisanie numeru koloru każdemu polu
   → JSON + zachowany oryginał
@@ -193,8 +211,8 @@ interface PaintingPuzzle {
   schemaVersion: 1;
   artworkId: string;
   puzzleVersion: string;
-  width: 15;
-  height: 15;
+  width: 20;
+  height: 20;
   originalImageUrl: string;
   imageFit: 'contain' | 'crop';
   palette: Array<{
@@ -207,14 +225,14 @@ interface PaintingPuzzle {
 
 Wymagania kontraktu:
 
-- `cells` ma dokładnie 225 elementów.
+- `cells` ma dokładnie 400 elementów.
 - Kolejność wierszowa, od lewej do prawej, od góry do dołu.
-- Indeks pola: `row * 15 + column`, wiersz i kolumna od 0 do 14.
+- Indeks pola: `row * 20 + column`, wiersz i kolumna od 0 do 19.
 - Numery kolorów są dodatnimi, unikalnymi liczbami całkowitymi, zaczynając od 1.
 - Każdy numer pola występuje w palecie; aplikacja korzysta z mapy numerów, nie zakłada indeksu tablicy.
 - Kolory mają format `#RRGGBB`.
 - `artworkId` jest identyczny z identyfikatorem dzieła w danych aplikacji.
-- `originalImageUrl` wskazuje zachowaną reprodukcję, a nie powiększoną miniaturę 15×15.
+- `originalImageUrl` wskazuje zachowaną reprodukcję, a nie powiększoną miniaturę 20×20.
 - `puzzleVersion` zmienia się, kiedy zmienia się plansza albo znaczenie numerów kolorów.
 - JSON nie zawiera tekstów historycznych i ustawień pokojów; te dane należą do aplikacji.
 - Format folderu plików i sposób dostarczania trzeba wspólnie potwierdzić.
@@ -227,7 +245,7 @@ Jeśli przejście z kwadratowej planszy do prostokątnego obrazu wygląda źle, 
 
 ### Powrót do naturalnego obrazu
 
-Redukcja do 225 pól usuwa szczegóły, dlatego nie pozwala dokładnie odtworzyć oryginału. Proponowany efekt jest prezentacją: zapisujemy kolorową reprodukcję i odsłaniamy ją po rozwiązaniu planszy. Jeżeli zespół oczekuje osobnej rekonstrukcji lub generowania obrazu, wymaga to innego kontraktu, oceny jakości i czasu; nie traktujemy tego jako uzgodnionego zakresu.
+Redukcja do 400 pól usuwa szczegóły, dlatego nie pozwala dokładnie odtworzyć oryginału. Proponowany efekt jest prezentacją: zapisujemy kolorową reprodukcję i odsłaniamy ją po rozwiązaniu planszy. Jeżeli zespół oczekuje osobnej rekonstrukcji lub generowania obrazu, wymaga to innego kontraktu, oceny jakości i czasu; nie traktujemy tego jako uzgodnionego zakresu.
 
 ### Integracja bez oczekiwania na algorytm
 
@@ -237,7 +255,7 @@ Frontend zaczyna od jednej ręcznie przygotowanej, zgodnej planszy testowej. Aut
 
 ### Ukończenie obrazu
 
-Po poprawnym wypełnieniu 225 pól aplikacja w jednej operacji zapisuje ukończenie. Obraz uzyskuje kolorowy wariant na ścianie. Wyposażenie przypisane do tego dzieła staje się widoczne. Powtórna operacja ukończenia nie tworzy kolejnej nagrody.
+Po poprawnym wypełnieniu 400 pól aplikacja w jednej operacji zapisuje ukończenie. Obraz uzyskuje kolorowy wariant na ścianie. Wyposażenie przypisane do tego dzieła staje się widoczne. Powtórna operacja ukończenia nie tworzy kolejnej nagrody.
 
 Każdy obraz ma własną nagrodę lub zestaw wyposażenia. Dzięki temu kolejność malowania nie wpływa na poprawność wyglądu pokoju.
 
@@ -264,7 +282,7 @@ Stan nagród nie zależy od obejrzenia animacji ani kliknięcia przycisku „odb
 
 Kontynuujemy kierunek dotychczasowej dokumentacji: React/Next.js, TypeScript strict, Tailwind i Zustand z lokalnym zapisem. Wersje zależności dobieramy do faktycznie inicjalizowanego projektu; wcześniejsze numery wersji nie są wymogiem.
 
-Sceny są ilustracjami 2D z warstwami i klikalnymi obszarami. Planszę można zbudować jako SVG z 225 prostokątami i numerami. To regularna siatka, więc wcześniejszy model dowolnych konturów `<path>` nie jest podstawą tej minigry. Biblioteka animacji jest opcjonalna; pierwsza wersja może korzystać z przejść CSS.
+Sceny są ilustracjami 2D z warstwami i klikalnymi obszarami. Planszę można zbudować jako SVG z 400 prostokątami i numerami. To regularna siatka, więc wcześniejszy model dowolnych konturów `<path>` nie jest podstawą tej minigry. Biblioteka animacji jest opcjonalna; pierwsza wersja może korzystać z przejść CSS.
 
 ### Definicje zawartości
 
@@ -336,7 +354,7 @@ src/
 | Wyposażenie | Nagroda dla każdego obrazu | PNG/WebP z przezroczystością lub SVG; wspólna skala |
 | Reprodukcje obrazów | Przynajmniej 4 | Kolorowe oryginały; źródło i warunki użycia |
 | Kartka nieukończonego obrazu | 1 współdzielona grafika | Przetarty biało-szary papier z czerwonym krzyżykiem; dopasowany do ram |
-| Plansze | Jedna na obraz | JSON zgodny z kontraktem, 225 pól |
+| Plansze | Jedna na obraz | JSON zgodny z kontraktem, 400 pól |
 | Ramy i oznaczenia | Zestaw współdzielony | Ramy obrazów, kłódka, status ukończenia |
 
 Nieukończone dzieła korzystają ze współdzielonej grafiki przetartej biało-szarej kartki z czerwonym krzyżykiem. Kolorowe reprodukcje wyświetlamy na ścianach dopiero po ukończeniu kolorowania. Grafiki scen nie powinny zawierać wtopionych napisów, jeśli planujemy dwa języki.
@@ -345,19 +363,23 @@ Przed produkcją finalnych assetów uzgadniamy bazową rozdzielczość, kadr, pu
 
 Najpierw potrzebne są robocze grafiki we właściwym rozmiarze i układzie. Finalne ilustracje mogą podmienić pliki bez zmiany logiki.
 
+Szczegółowe prompty do Google Flow, nazwy plików, kierunek stylistyczny i kolejność generowania zawiera [08_ASSET_PROMPTS_GOOGLE_FLOW.md](./08_ASSET_PROMPTS_GOOGLE_FLOW.md). Użytkownik potwierdził, że zajmuje się frontendem; opisy ról poniżej pozostają propozycją rozdzielenia pracy pozostałych osób.
+
+**Aktualny stan grafik:** pięć etapów domu, cztery puste pokoje i kartka z krzyżykiem są już dostarczone w `img/`, wszystkie w rozmiarze 896×1200. Cztery tła pokojów obejrzano; mają narożnik, dwie puste ściany, całe drzwi i wolną podłogę. W integracji zachowujemy rzeczywiste proporcje tych plików. Obszary dotyku drzwi ustalamy osobno dla każdego pokoju. Wyposażenie i osobna ilustracja holu pozostają do przygotowania. Rejestr pokojów zawiera [dokument 09](./09_ROOM_PROMPTS_CORNER_VIEW.md).
+
 ## 11. Zakres na 15 godzin
 
 ### Podstawowy zakres proponowany do potwierdzenia
 
 - Wszystkie cztery drzwi i cztery pokoje.
 - Przynajmniej jeden działający obraz w każdym pokoju.
-- Plansza 15×15, numery, paleta, poprawne liczenie postępu.
+- Plansza 20×20, numery, paleta, poprawne liczenie postępu.
 - Naturalny kolorowy obraz po ukończeniu.
 - Nagroda wyposażenia za każdy obraz.
 - Automatyczne ukończenie pokoju, zmiana domu i odblokowanie następnych drzwi.
 - Zapis postępu i możliwość powrotu do malowania.
 - Krótkie opisy pomagające zrozumieć związek sztuki z historią.
-- Uzgodniony priorytet urządzeń i języka.
+- Działająca obsługa na telefonie w pionie oraz uzgodniony język gry.
 - Udostępnione działające demo, onepager i prezentacja.
 
 ### Pierwsze rozszerzenie
@@ -382,7 +404,7 @@ Przypisanie nazwisk wymaga odpowiedzi zespołu. Poniższy podział zakłada, że
 
 | Osoba | Odpowiedzialność | Główne pliki | Pierwszy rezultat |
 | --- | --- | --- | --- |
-| A | Algorytm, dopasowanie obrazu, paleta, walidacja wyników | Generator poza frontendem i `data/puzzles/` | Jeden prawdziwy JSON 15×15 + oryginał |
+| A | Algorytm, dopasowanie obrazu, paleta, walidacja wyników | Generator poza frontendem i `data/puzzles/` | Jeden prawdziwy JSON 20×20 + oryginał |
 | B | Plansza, interakcje, zapis i reguły progresji | `components/painting/`, `store/`, logika i typy | Kolorowanie planszy testowej z zapisem |
 | C | Dom, hol, pokoje, nawigacja i integracja frontendu | `app/`, `components/scenes/` | Przejście dom → hol → pokój → plansza |
 | D | Assety, katalog dzieł, wyposażenie, teksty, onepager | `public/assets/`, dane zawartości, `components/story/` | Robocze sceny i dane pierwszego obrazu |
@@ -409,7 +431,7 @@ Godziny liczymy od startu uzgodnionego sprintu. Nie są datami ani godzinami zeg
 | 1–4 h | Pierwszy działający fragment | A: realna plansza; B: malowanie/zapis; C: nawigacja; D: robocze assety | Można wejść do pokoju i pomalować realny obraz |
 | 4–7 h | Pełna pętla i pierwsza integracja | Nagroda mebla, ukończenie pokoju, elewacja, następne drzwi | Jedna epoka działa od wejścia do nagrody domu |
 | 7–10 h | Wypełnić cztery pokoje | Pozostałe plansze, sceny, teksty, dane | Można przejść całą grę na roboczych grafikach |
-| 10–12 h | Dopracować odbiór | Finalne grafiki, telefon według zakresu, animacja oryginału, opcjonalny drugi obraz | Gotowy wariant prezentacyjny |
+| 10–12 h | Dopracować odbiór | Finalne grafiki, dopracowanie telefonu, animacja oryginału, opcjonalny drugi obraz | Gotowy wariant prezentacyjny |
 | 12–14 h | Ustabilizować i przygotować ocenę | Test pętli, publikacja, onepager, prezentacja, nagranie | Demo dostępne i sprawdzone na docelowym urządzeniu |
 | 14–15 h | Bufor i próba prezentacji | Poprawki blokujące, próba z zapisanym stanem | Zespół potrafi pokazać rezultat w kilka minut |
 
@@ -438,10 +460,14 @@ Kryteria w zadaniu obejmują realizację, aspekt techniczny, design/funkcjonalno
 - URL zablokowanego pokoju nie omija progresji.
 - Po ukończeniu czwartego pokoju nie próbujemy odblokować nieistniejącego piątego.
 - Reset startuje od początkowego domu i pierwszych drzwi.
+- Cała pętla działa dotykiem na telefonie w pionie, bez konieczności hover lub obrócenia ekranu.
+- Dom i cztery drzwi pozostają widoczne na wąskim ekranie; obszary dotyku skalują się razem ze sceną.
+- Planszę można powiększyć i przesunąć bez przypadkowego malowania; paleta pozostaje dostępna.
+- Nagłówek i dolne sterowanie uwzględniają wcięcia oraz dolny pasek systemowy telefonu. Układ reaguje na zmianę wysokości dostępnego widoku przez pasek przeglądarki.
 
 ### Dane i wygląd
 
-- Każda plansza ma 225 pól, poprawną paletę i dostępny oryginał.
+- Każda plansza ma 400 pól, poprawną paletę i dostępny oryginał.
 - Obrazy należą do istniejących pokojów, a nagrody do właściwych epok.
 - Każdy pokój ma przynajmniej jeden wymagany obraz.
 - Wszystkie docelowe grafiki mają czytelne, zgodne obszary kliknięcia.
@@ -484,9 +510,9 @@ Odpowiedzi można podać numerami. Pytania nie są prośbą o zgodę na każde d
 
 ### Algorytm i obraz
 
-6. Czy autor algorytmu akceptuje kontrakt v1: 225 numerów + paleta HEX + ID + wersja planszy?
+6. Czy autor algorytmu akceptuje kontrakt v1: 400 numerów + paleta HEX + ID + wersja planszy?
 7. Ile kolorów zwraca algorytm: stała liczba czy zależna od dzieła? Czy potrafi ograniczyć liczbę podobnych barw?
-8. Jak dopasowujemy prostokątne obrazy: margines czy kadr? Czy wszystkie 225 pól są aktywne?
+8. Jak dopasowujemy prostokątne obrazy: margines czy kadr? Czy wszystkie 400 pól są aktywne?
 9. Czy naturalny obraz po ukończeniu to zachowany oryginał? Jeśli nie, jaki dokładnie jest oczekiwany rezultat i kto go wytwarza?
 10. Kiedy będzie gotowy pierwszy realny wynik oraz gdzie będą dostarczane JSON i reprodukcje?
 
@@ -494,7 +520,7 @@ Odpowiedzi można podać numerami. Pytania nie są prośbą o zgodę na każde d
 
 11. Zły kolor: odrzucamy bez kary czy pozwalamy pomalować i poprawiać?
 12. Pojedyncze klikanie czy także przeciąganie? Czy przybliżanie planszy jest wymagane?
-13. Telefon i komputer od razu, czy komputer jest priorytetem demo?
+13. Na jakich telefonach i przeglądarkach sprawdzamy demo: Android/Chrome, iPhone/Safari czy oba? **Ustalone:** mobile-first, telefon w pionie jest priorytetem.
 14. Czy podświetlenie pasujących pól jest zawsze aktywne, opcjonalne czy wyłączone? Czy po ukończeniu koloru automatycznie wybieramy następny?
 15. Czy w pokoju można wybierać obrazy w dowolnej kolejności i wracać do poprzednich epok?
 16. Czy przy kartce rozpoczętego obrazu pokazujemy procent kolorowania, czy samą informację „W trakcie”? **Ustalone:** przetarta biało-szara kartka z czerwonym krzyżykiem pozostaje do ukończenia.
@@ -504,7 +530,7 @@ Odpowiedzi można podać numerami. Pytania nie są prośbą o zgodę na każde d
 
 18. Czy dom zmienia bryłę według epok, czy odnawiamy jedną bryłę? Jak mają wyglądać jego pięć stanów?
 19. Jakie meble/elementy odpowiadają każdemu obrazowi i gdzie mają się pojawiać?
-20. Jakie są docelowy styl, rozdzielczości, formaty, kadry oraz termin dostarczenia assetów? **Wiadomo:** ilustracje 2D, grafiki i styl zapewnia zespół.
+20. Jakie są docelowe rozdzielczości, formaty, kadry oraz termin dostarczenia assetów? **Ustalone:** styl kreskowy z elementami realizmu według dwóch referencji, ilustracje 2D generowane przez użytkownika w Google Flow. Propozycje parametrów i prompty są w dokumencie 08.
 21. Po ukończeniu epoki automatycznie pokazujemy dom, czy użytkownik wybiera moment przejścia?
 22. Czy hol też zmienia wygląd, czy ewoluuje wyłącznie dom z zewnątrz?
 

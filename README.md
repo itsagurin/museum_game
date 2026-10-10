@@ -2,11 +2,28 @@
 > **Projekt na hackathon Best Hacks 2026**  
 > *Interaktywna gra narracyjno-renowacyjna (w stylu cozy game / Garden Keeper) ucząca polskiej kultury i historii od zera poprzez restaurację dzieł sztuki i ewolucję tradycyjnego domu.*
 
-> **Aktualna wizja (10.10.2026):** dom z zewnątrz → wejście przez drzwi → hol z czterema pokojami epok → kolorowanie obrazów po numerach na planszach 15×15. Każdy ukończony obraz automatycznie wyposaża pokój; ukończenie całego pokoju zmienia dom i odblokowuje następną epokę. Sceny są ilustracjami 2D. Zespół: cztery osoby, pozostałe 15 godzin w chwili ustalania planu.
+> **Aktualna wizja (10.10.2026):** dom z zewnątrz → wejście przez drzwi → hol z czterema pokojami epok → kolorowanie obrazów po numerach na planszach 20×20. Każdy ukończony obraz automatycznie wyposaża pokój; ukończenie całego pokoju zmienia dom i odblokowuje następną epokę. Sceny są ilustracjami 2D. Zespół: cztery osoby, pozostałe 15 godzin w chwili ustalania planu.
 >
 > **Zacznij od [aktualnego planu projektu](./docs/07_CURRENT_PROJECT_PLAN.md)**. Zawiera ekrany, reguły, kontrakt algorytmu, podział prac, harmonogram i pytania. Starsze opisy poniżej zachowano jako kontekst pierwotnej koncepcji; przy rozbieżności obowiązuje nowy plan i odpowiedzi zespołu.
 
 > **Wygląd nieukończonych obrazów:** przetarta biało-szara kartka papieru z czerwonym krzyżykiem w ramie. Po ukończeniu kolorowania kartkę zastępuje naturalny kolorowy obraz.
+
+> **Platforma:** mobile-first — telefon w pionie, duże obszary dotyku, pionowe ilustracje domu, holu i pokojów (proponowane 9:16). Plansza 20×20 pozostaje kwadratowa z możliwością powiększenia i przesuwania.
+
+> **Dostarczone grafiki:** pięć etapów domu (`img/house0.jpg`–`house4.jpg`), cztery pokoje (`img/room1.jpg`–`room4.jpg`) i kartka z krzyżykiem. Pliki mają 896×1200; frontend zachowuje ich rzeczywiste proporcje i widoczność obu drzwi pokojów.
+
+## Działający frontend v1
+
+**Pełnoekranowa gra**: dom, hol, cztery pokoje, przesuwana kamera, przejścia, nałożony glass header, PL/EN i kartki z historiami. Kolorowanie 20×20 dostarcza osobna osoba. Wszystkie pokoje są dostępne do prezentacji interfejsu; integracja progresji i nagród jest kolejnym etapem.
+
+```bash
+npm ci
+npm run dev
+```
+
+Strona: `http://localhost:3000`. `npm run build` tworzy `out/` na hosting statyczny zespołu. **[Instrukcja integracji i uruchomienia](./docs/10_FRONTEND_V1.md)** opisuje dane epok, grafiki i callback kolorowania.
+
+Podłączone są wszystkie cztery ilustracje holu `img/hall1.jpg`–`hall4.jpg`, z osobno dopasowanymi obszarami drzwi. Hol zmienia wygląd wraz z ukończonymi pokojami. [Prompty do Flow](./docs/11_HALL_PROMPTS_FOUR_ERAS.md). Polski jest domyślny; bez logowania, tutoriala i dźwięków. Starsza koncepcja poniżej jest materiałem archiwalnym.
 
 ---
 
@@ -16,7 +33,9 @@ Ten projekt posiada modularną architekturę pamięci, zaprojektowaną zarówno 
 
 | Plik | Przeznaczenie |
 | :--- | :--- |
-| **[`docs/07_CURRENT_PROJECT_PLAN.md`](./docs/07_CURRENT_PROJECT_PLAN.md)** | **Aktualny plan:** cztery pokoje epok, plansze 15×15, automatyczna progresja, sprint 15h dla czterech osób i decyzje do ustalenia. |
+| **[`docs/09_ROOM_PROMPTS_CORNER_VIEW.md`](./docs/09_ROOM_PROMPTS_CORNER_VIEW.md)** | **Aktualne pokoje:** cztery prompty do Flow, widok na narożnik, puste ściany i drzwi do poprzedniej/następnej epoki. |
+| **[`docs/08_ASSET_PROMPTS_GOOGLE_FLOW.md`](./docs/08_ASSET_PROMPTS_GOOGLE_FLOW.md)** | **Grafiki frontendu:** prompty do Google Flow, kreskowy styl z realizmem, dom i jego etapy, hol, pokoje, papier i wyposażenie. |
+| **[`docs/07_CURRENT_PROJECT_PLAN.md`](./docs/07_CURRENT_PROJECT_PLAN.md)** | **Aktualny plan:** cztery pokoje epok, plansze 20×20, automatyczna progresja, sprint 15h dla czterech osób i decyzje do ustalenia. |
 | **[`AI_MEMORY.md`](./AI_MEMORY.md)** | **Pigułka pamięci AI**: Kontekst, reguły działania agenta, szybki indeks i standardy pracy. |
 | **[`docs/01_VISION_AND_CONCEPT.md`](./docs/01_VISION_AND_CONCEPT.md)** | **Wizja i koncepcja**: Misja projektu, target persona (obcokrajowiec), dlaczego ten format działa. |
 | **[`docs/02_GAME_DESIGN.md`](./docs/02_GAME_DESIGN.md)** | **Game Design Document (GDD)**: Pętla gry (Core Loop), mechanika kolorowanki, mechanika domu. |
@@ -44,7 +63,7 @@ Większość materiałów o polskiej historii jest hermetyczna, pełna dat i tru
 
 - [ ] **Działające MVP w przeglądarce:** Responsywna aplikacja webowa.
 - [ ] **Core Gameplay Loop:** Widok domu $\rightarrow$ Przejście do kolorowanki $\rightarrow$ Zakończenie i pop-up edukacyjny $\rightarrow$ Widok ulepszonego domu z nowym detalem i powieszonym obrazem.
-- [ ] **Wielojęzyczność z naciskiem na EN:** Język angielski jako domyślny (dla obcokrajowca bez pojęcia o Polsce) + opcja PL.
+- [ ] **Wielojęzyczność:** Polski domyślnie + przełącznik na angielski.
 - [ ] **Świetna oprawa wizualna i "Cozy Feeling":** Klimatyczna muzyka ludowa w tle, ciepłe kolory, satysfakcjonujące animacje nagród.
 
 ---

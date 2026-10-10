@@ -3,7 +3,7 @@
 > **Status:** AKTYWNA PAMIĘĆ PROJEKTU  
 > **Kontekst:** Hackathon *Best Hacks 2026*  
 > **Język kodu:** TypeScript / React  
-> **Język UI gry:** Angielski (domyślny - dla obcokrajowców) + Polski (opcjonalny)  
+> **Język UI gry:** Polski domyślnie + przełącznik na angielski
 > **Język dokumentacji:** Polski
 
 ## Aktualizacja wizji — 10.10.2026
@@ -14,18 +14,27 @@ Ustalone przez zespół:
 
 - Strona główna: dom z zewnątrz; kliknięcie drzwi prowadzi do holu.
 - Hol: cztery drzwi do czterech pokojów epok Polski, od powstania państwa do współczesności.
-- Pokój: w ramach nieukończonych obrazów wiszą przetarte biało-szare kartki papieru z czerwonym krzyżykiem. Kliknięcie kartki otwiera kolorowanie po numerach na **siatce 15×15** przygotowywanej algorytmem członka zespołu. Kartka pozostaje do ukończenia, a następnie zastępuje ją kolorowy obraz.
+- Pokój: w ramach nieukończonych obrazów wiszą przetarte biało-szare kartki papieru z czerwonym krzyżykiem. Kliknięcie kartki otwiera kolorowanie po numerach na **siatce 20×20** przygotowywanej algorytmem członka zespołu. Kartka pozostaje do ukończenia, a następnie zastępuje ją kolorowy obraz.
 - Ukończenie obrazu: naturalny kolorowy obraz na ścianie i automatyczne wyposażenie pokoju z odpowiedniej epoki.
 - Ukończenie wszystkich obrazów pokoju: automatyczne ulepszenie domu i odblokowanie następnych drzwi.
-- Oprawa: ilustracje 2D, grafiki i styl zapewnia zespół.
+- Oprawa: ilustracje 2D, kreskowe ciemnobrązowe kontury, malarskie cieniowanie i realistyczne materiały według dwóch referencji wnętrza. Użytkownik zajmuje się frontendem i generuje grafiki w Google Flow. Prompty i lista assetów: [08_ASSET_PROMPTS_GOOGLE_FLOW.md](./docs/08_ASSET_PROMPTS_GOOGLE_FLOW.md).
+- Platforma: **mobile-first**, telefon w pionie i sterowanie dotykiem. Podstawowe sceny mają proponowane proporcje **9:16** (cel 1080×1920); hol ma cztery czytelne drzwi, a kwadratowa plansza 20×20 wymaga przybliżenia i przesuwania. Nie opieraj interakcji na hover. Komputer jest adaptacją układu mobilnego.
+- Każdy pokój pokazuje **wewnętrzny narożnik i dwie szerokie ściany** oraz dwoje drzwi: poprzednia/następna epoka, po lewej i prawej. Generator nie wyznacza miejsc, rzędów ani stref dla obrazów. Frontend rozmieszcza początkowo pięć obrazów na obu ścianach, z możliwością rozszerzenia. Tło nie zawiera ram ani obrazów. Prompty: [09_ROOM_PROMPTS_CORNER_VIEW.md](./docs/09_ROOM_PROMPTS_CORNER_VIEW.md). Liczba wymaganych zadań jest osobną decyzją.
+- Kadr pokoju jest **dalszy i szeroki**, z odsuniętą kamerą na wysokości oczu. Drzwi i ościeżnice są widoczne w całości z marginesami po bokach; pozostają duże powierzchnie ścian, więcej podłogi i niewielki fragment sufitu. Bez czarnych pasów. Kolejne epoki bazują na zaakceptowanym dalszym kadrze.
+- **Gotowe assety w `img/`:** `house0.jpg`–`house4.jpg`, `room1.jpg`–`room4.jpg`, `hall1.jpg`–`hall4.jpg`, `blank_paper_crossmark.jpg`; wszystkie 896×1200. Pokoje i hole obejrzano; zachowaj faktyczne proporcje obrazów, bez rozciągania do proponowanego wcześniej 9:16. Obszary drzwi są dopasowane osobno dla każdego pokoju i każdej ilustracji holu. Wyposażenie nie jest jeszcze obecne w katalogu.
 - Organizacja: cztery osoby, każda z Codexem; 15 godzin pozostałych w chwili planowania.
-- Obecny etap: planowanie. Nie rozpoczynaj implementacji na podstawie samego zlecenia przygotowania planu.
+- **Aktualny układ: pełnoekranowa gra.** Sceny od krawędzi do krawędzi, bez okienka i strony z bocznym opisem. Header i kontrolki glass są nakładane na obraz. Kamera przesuwa się palcem / myszą, ma strzałki i opcję pokazania całej sceny.
+- Hol ma cztery podłączone warianty epok (`hall1.jpg`–`hall4.jpg`) i cztery drzwi. Układy są w `src/data/halls.ts`: bliższe lewe → I, dalsze lewe → II, dalsze prawe → III, bliższe prawe → IV. Materiały i pozycje drzwi różnią się między wariantami, więc nie używaj wspólnych współrzędnych. Wygląd: 0 ukończonych pokojów → hall1, 1 → hall2, 2 → hall3, 3–4 → hall4. Prompty: [11_HALL_PROMPTS_FOUR_ERAS.md](./docs/11_HALL_PROMPTS_FOUR_ERAS.md).
+- **Obecny etap: implementacja pierwszej wersji frontendu, zlecona przez użytkownika.** Dom → hol → cztery pokoje, animacje, nowoczesne panele glass i header. Kolorowanie 20×20 implementuje inna osoba.
+- Potwierdzony stack: Next.js, TypeScript, Tailwind, Zustand. Lokalny zapis wystarczy; bez logowania, tutoriala i dźwięków. Hosting zespołu, eksport statyczny `out/`.
+- Małe kartki pod obrazami otwierają historię i ciekawostkę. Lista dzieł i nagród nadal do dostarczenia.
+- W pierwszym froncie wszystkie pokoje można obejrzeć. Blokady progresji będą podłączone później. Szczegóły uruchomienia i adaptera minigry: [10_FRONTEND_V1.md](./docs/10_FRONTEND_V1.md).
 
-Robocze propozycje wymagające potwierdzenia:
+Starsze propozycje (stosuj tylko w zakresie zgodnym z najnowszymi decyzjami):
 
 - Cztery rozdziały: początki/średniowiecze, dawna Rzeczpospolita, droga do niepodległości, Polska XX–XXI wieku.
-- Dane algorytmu: paleta HEX i 225 numerów w kolejności wierszowej; dokładny kontrakt opisuje plan.
-- Odsłonięcie zachowanego oryginału po ukończeniu, zamiast próby odzyskania szczegółów z 225 pól.
+- Dane algorytmu: paleta HEX i 400 numerów w kolejności wierszowej; dokładny kontrakt opisuje plan.
+- Odsłonięcie zachowanego oryginału po ukończeniu, zamiast próby odzyskania szczegółów z 400 pól.
 - Dostęp do pierwszego pokoju od początku; pozostałe kolejno, z możliwością powrotu.
 - React/Next.js, TypeScript, lokalny zapis; EN/PL i warstwa edukacyjna do potwierdzenia na demo.
 
@@ -83,7 +92,7 @@ Gdy potrzebujesz szczegółowych informacji, odwołuj się do odpowiedniego plik
 2. **Visual Feedback First:** Każda interakcja użytkownika (pokolorowanie segmentu, kliknięcie „Ulepsz dom”) musi mieć satysfakcjonujący feedback wizualny (konfetti, dźwięk, płynna animacja Framer Motion).
 3. **Data-Driven Design:** Wszelkie dane o obrazach, epokach, meblach i tekstach historycznych muszą znajdować się w plikach JSON lub plikach danych TypeScript w folderze `src/data/` (nigdy hardkodowane wewnątrz komponentów widoku!).
 4. **Resilience & Fault Tolerance:** Kod nie może rzucać niespójnych błędów runtime podczas demo. Wszystkie ścieżki assetów muszą posiadać fallbacki.
-5. **Language Standards:** Kod, komentarze i nazwy zmiennych w języku angielskim. Treści w grze domyślnie po angielsku (z prostym, zrozumiałym słownictwem), z opcjonalnym przełącznikiem na język polski.
+5. **Language Standards:** Kod, komentarze i nazwy zmiennych w języku angielskim. Treści w grze domyślnie po polsku, z przełącznikiem na język angielski.
 
 ---
 
