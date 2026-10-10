@@ -30,6 +30,8 @@ Ustalone przez zespół:
 - Małe kartki pod obrazami otwierają historię i ciekawostkę. Lista dzieł i nagród nadal do dostarczenia.
 - W pierwszym froncie wszystkie pokoje można obejrzeć. Blokady progresji będą podłączone później. Szczegóły uruchomienia i adaptera minigry: [10_FRONTEND_V1.md](./docs/10_FRONTEND_V1.md).
 
+- **Scalenie main → frontend:** pobrano main do `38834b9`. Główna strona `/` zachowuje nasz dom, hol i cztery pokoje. Prototyp kolegi „Dom Opowieści” z trzema obrazami, kolorowaniem, audio i nagrodami działa osobno pod `/prototype/`; nie zastępuje wizji użytkownika. Layouty i CSS są rozdzielone przez route groups `(heritage)` i `(prototype)`. Moduł `ArtworkExperience` i wszystkie dane obrazów z main są zachowane; przypisanie dzieł do pięciu miejsc każdej epoki wymaga ustalenia, callback `onRestoreArtwork` pozostaje punktem integracji. `StoryDialog.tsx` to dawny `dialog.tsx` z main (kolizja wielkości liter). Node.js ≥22.12; sprawdzenia obejmują testy Vitest i oba zestawy Playwright. Szczegóły: [12_MAIN_PROTOTYPE.md](./docs/12_MAIN_PROTOTYPE.md).
+
 Starsze propozycje (stosuj tylko w zakresie zgodnym z najnowszymi decyzjami):
 
 - Cztery rozdziały: początki/średniowiecze, dawna Rzeczpospolita, droga do niepodległości, Polska XX–XXI wieku.

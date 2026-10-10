@@ -8,3 +8,7 @@ playwright-report/
 *.tsbuildinfo
 .env*
 !.env.example
+coverage/
+.superpowers/
+.DS_Store
+.env*.local

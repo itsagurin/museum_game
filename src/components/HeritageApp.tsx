@@ -5,6 +5,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useSyncExternalStore,
   type CSSProperties,
 } from "react";
 import {
@@ -58,6 +59,13 @@ const hallDoorStyle = (region: Region): CSSProperties => ({
   transform: "translateX(-50%)",
 });
 const noteUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/note.svg`;
+const subscribeFullscreen = (notify: () => void) => {
+  document.addEventListener("fullscreenchange", notify);
+  return () => document.removeEventListener("fullscreenchange", notify);
+};
+const readFullscreenAvailable = () => document.fullscreenEnabled === true;
+const readFullscreen = () => Boolean(document.fullscreenElement);
+const serverFullscreen = () => false;
 
 function GameScene({
   children,
@@ -101,8 +109,12 @@ export function HeritageApp({
   const [panel, setPanel] = useState<Panel | null>(null);
   const [resetConfirm, setResetConfirm] = useState(false);
   const [storageUnavailable, setStorageUnavailable] = useState(false);
-  const [fullscreenAvailable, setFullscreenAvailable] = useState(false);
-  const [fullscreen, setFullscreen] = useState(false);
+  const fullscreenAvailable = useSyncExternalStore(
+    subscribeFullscreen, readFullscreenAvailable, serverFullscreen,
+  );
+  const fullscreen = useSyncExternalStore(
+    subscribeFullscreen, readFullscreen, serverFullscreen,
+  );
   const appRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
   const previousView = useRef(view);
@@ -153,12 +165,6 @@ export function HeritageApp({
       previousView.current = view;
     }
   }, [view, closePanel]);
-  useEffect(() => {
-    setFullscreenAvailable(document.fullscreenEnabled === true);
-    const update = () => setFullscreen(Boolean(document.fullscreenElement));
-    document.addEventListener("fullscreenchange", update);
-    return () => document.removeEventListener("fullscreenchange", update);
-  }, []);
 
   const toggleFullscreen = async () => {
     try {

@@ -9,7 +9,7 @@ import "@fontsource/cormorant-garamond/latin-ext-500.css";
 import "@fontsource/cormorant-garamond/latin-ext-600.css";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
-import "./globals.css";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Dziedzictwo — Polish Heritage Hearth",

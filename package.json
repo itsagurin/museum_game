@@ -2,34 +2,48 @@
   "name": "dziedzictwo",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "node scripts/prepare-assets.mjs && next dev --hostname 0.0.0.0",
-    "build": "node scripts/prepare-assets.mjs && next build",
-    "typecheck": "node scripts/prepare-assets.mjs && tsc --noEmit",
+    "dev": "node scripts/prepare-assets.mjs && next dev --webpack --hostname 0.0.0.0",
+    "build": "node scripts/prepare-assets.mjs && next build --webpack",
+    "start": "serve out --listen 3000",
     "preview": "serve out",
+    "lint": "eslint .",
+    "typecheck": "node scripts/prepare-assets.mjs && tsc --noEmit",
+    "test": "vitest run",
     "test:e2e": "playwright test"
   },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.0",
+    "sharp": "^0.35.5",
+    "vitest": "^5.0.3"
+  },
   "dependencies": {
-    "@fontsource/cormorant-garamond": "^5.2.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/dm-sans": "^5.2.0",
     "framer-motion": "14.1.0",
-    "lucide-react": "^0.577.0",
-    "next": "16.4.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "zustand": "5.0.15"
+    "lucide-react": "^1.55.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zustand": "^5.0.15",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "motion": "^14.1.0"
   },
   "overrides": {
     "compression": "^1.8.2"
   },
-  "devDependencies": {
-    "@playwright/test": "^1.58.0",
-    "@tailwindcss/postcss": "4.3.3",
-    "@types/node": "^20.19.0",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "serve": "^14.2.4",
-    "tailwindcss": "4.3.3",
-    "typescript": "^5.9.0"
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

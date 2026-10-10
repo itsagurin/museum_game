@@ -25,6 +25,15 @@ Strona: `http://localhost:3000`. `npm run build` tworzy `out/` na hosting statyc
 
 Podłączone są wszystkie cztery ilustracje holu `img/hall1.jpg`–`hall4.jpg`, z osobno dopasowanymi obszarami drzwi. Hol zmienia wygląd wraz z ukończonymi pokojami. [Prompty do Flow](./docs/11_HALL_PROMPTS_FOUR_ERAS.md). Polski jest domyślny; bez logowania, tutoriala i dźwięków. Starsza koncepcja poniżej jest materiałem archiwalnym.
 
+## Połączenie z main
+
+Branch `frontend` zawiera zmiany z `main` do commita `38834b9`. Główna strona `/` zachowuje pełnoekranowy dom, hol i cztery pokoje. Prototyp „Dom Opowieści” z trzema obrazami, kolorowaniem i nagrodami jest dostępny pod `/prototype/`. Oba interfejsy mają osobne layouty, style i klucze zapisu; można rozwijać je bez nadpisywania pracy drugiej osoby.
+
+Moduł kolegi: `src/components/artwork-experience.tsx` i `src/components/coloring-canvas.tsx`. Powiązanie konkretnych dzieł z pięcioma miejscami w każdej epoce pozostaje do ustalenia; callback `onRestoreArtwork` w głównym froncie jest zachowany. Dane i grafiki `public/artworks/` oraz `public/assets/` pochodzą z main. [Opis prototypu](./docs/12_MAIN_PROTOTYPE.md).
+
+Wymagany Node.js 22.12 lub nowszy. Wspólne sprawdzenia: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, `npm run test:e2e`. Testy przeglądarkowe obejmują oba adresy. Skrypt `prepare-assets.mjs` kopiuje nasze ilustracje; skrypt main do przygotowania jego grafik zachowano jako `prepare-story-assets.mjs`.
+
+
 ---
 
 ## 📖 Spis Treści Dokumentacji (Hub Pamięci Projektu)

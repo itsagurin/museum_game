@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-Adres: `http://localhost:3000`. Node.js 20.9 lub nowszy; zalecany Node.js 22 LTS i zgodna z nim wersja npm.
+Adres: `http://localhost:3000`. Po scaleniu main wymagany jest Node.js 22.12 lub nowszy i zgodna z nim wersja npm. Prototyp kolegi działa osobno pod `/prototype/`; główny frontend pozostaje pod `/`.
 
 ```bash
 npm run typecheck
