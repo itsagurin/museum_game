@@ -1,5 +1,5 @@
 export type AudioTarget = 'off' | 'quiet' | 'normal';
-export type ColoringSound = 'select' | 'correct' | 'wrong' | 'complete';
+export type ColoringSound = 'select' | 'correct' | 'wrong' | 'complete' | 'auto-fill' | 'cancel-auto-fill';
 export const coloringSoundEvent = 'dom-opowiesci:coloring-sound';
 export function playColoringSound(kind: ColoringSound) {
   window.dispatchEvent(new CustomEvent(coloringSoundEvent, { detail: kind }));

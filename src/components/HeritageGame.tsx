@@ -10,6 +10,7 @@ import type { ColoringArtwork } from "@/lib/coloring";
 import type { RestoreArtworkRequest } from "@/types/game";
 import { HeritageApp } from "./HeritageApp";
 import { ColoringCanvas } from "./coloring-canvas";
+import { ColoringAudio } from "./coloring-audio";
 import { Dialog } from "./Dialog";
 
 function ColoringStudio({ request, onComplete }: {
@@ -36,6 +37,7 @@ function ColoringStudio({ request, onComplete }: {
 
   return (
     <>
+      <ColoringAudio />
       <div className="coloring-heading">
         <span className="eyebrow">{request.era.name[language]}</span>
         {request.artwork.artist && <p className="artwork-credit">{request.artwork.artist}{request.artwork.year && ` · ${request.artwork.year}`}</p>}

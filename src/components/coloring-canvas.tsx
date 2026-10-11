@@ -60,6 +60,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
       .map(pixel => ({ pixel, distance: Math.hypot(pixel.x - origin.x, pixel.y - origin.y) }))
       .sort((a, b) => a.distance - b.distance);
     if (!targets.length) return;
+    playColoringSound('auto-fill');
     // The fifth pixel and its colour wave form a single undo action.
     paintActions.current.at(-1)!.push(...targets.map(({ pixel }) => pixel.id));
     filling.current = true;
@@ -162,6 +163,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
     }
   };
   const undo = () => {
+    playColoringSound('cancel-auto-fill');
     if (fillFrame.current !== null) window.cancelAnimationFrame(fillFrame.current);
     fillFrame.current = null;
     filling.current = false;
