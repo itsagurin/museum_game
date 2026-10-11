@@ -2,44 +2,44 @@
 
 **Pokoloruj sztukę. Odkryj historię. Ożyw swój dom.**
 
-Best Hacks 2026 · **Kategoria główna: Sztuka** · Kontekst: Historia i Tradycja
+Best Hacks 2026 · Sztuka, Historia i Tradycja
 
-Gra przeglądarkowa, w której odkrywanie polskiego malarstwa staje się przyjemnością: przywracasz kolory dziełom, poznajesz ich historie i rozwijasz własny wirtualny dom.
+Gra przeglądarkowa, która łączy odkrywanie polskiego malarstwa z kolorowaniem po numerach i rozwojem własnego wirtualnego domu. Każde ukończone dzieło staje się częścią osobistej kolekcji i przybliża jego historię.
 
-## Problem i odbiorcy
+**83 dzieła · 4 epoki · 47 dekoracji · plansze 32×32**
 
-Część młodych osób kojarzy sztukę z obowiązkową lekcją, długim opisem lub biernym oglądaniem eksponatów. W świecie rozrywki dostępnej na wyciągnięcie ręki taki kontakt z kulturą może przegrywać z grami, które dają sprawczość i widoczny postęp. Brakuje przystępnego pierwszego kroku, który pozwala zacząć bez wiedzy o sztuce. Projekt kierujemy do młodzieży i młodych dorosłych lubiących gry mobilne i kreatywną rozrywkę.
+## Przebieg aplikacji i rozwój pokoju
 
-## Rozwiązanie
+Pusty pokój → kolorowanie → historia obrazu → kolekcja → wyposażony pokój.
 
-Dziedzictwo łączy edukację z relaksującą grą. Gracz odwiedza cztery pokoje inspirowane Oświeceniem, Romantyzmem, Pozytywizmem i Młodą Polską. Kolorując piksele po numerach, stopniowo odsłania reprodukcję dzieła. Poznaje autora, tytuł i ciekawostki, wybiera obrazy na ściany, a postępy odblokowują meble i dekoracje związane z epoką. Ukończenie kolekcji pokoju zmienia wygląd domu i holu.
+## Problem, na który odpowiadamy
 
-**Pętla gry:** wybierz dzieło → pokoloruj → odkryj oryginał i opowieść → rozwiń pokój → wróć po kolejne dzieło.
+Kontakt ze sztuką bywa bierny: oglądamy reprodukcję lub czytamy opis, ale brakuje nam powodu, żeby zatrzymać się przy dziele. Rozbudowane teksty, specjalistyczne pojęcia i brak kontekstu mogą utrudniać pierwszy krok. Projekt odpowiada na trzy bariery: wysoki próg wejścia, małą sprawczość odbiorcy i brak widocznego postępu. Kierujemy go do młodzieży i młodych dorosłych, zwłaszcza osób rozpoczynających przygodę ze sztuką i lubiących kreatywne gry mobilne.
 
-## Trzy inspiracje, jedno doświadczenie
+## Cel projektu
 
-- **Duolingo — prosta nauka:** przystępne porcje wiedzy, niski próg wejścia i poznawanie kultury krok po kroku.
-- **Pixel Art — przyjemny proces:** intuicyjne kolorowanie po numerach, satysfakcja z każdego wypełnionego fragmentu.
-- **Garden Keeper — widoczna progresja:** rozwijający się dom i nowe wyposażenie jako nagrody za kolejne ukończone dzieła.
+Chcemy rozbudzić ciekawość polskiego dziedzictwa i ułatwić poznawanie malarstwa bez wcześniejszej wiedzy. Łączymy spokojną, twórczą aktywność z krótką opowieścią o dziele oraz nagrodą widoczną we własnym domu. Dom jest metaforą odkrywanej kultury: im więcej obrazów poznajesz, tym bogatsza staje się Twoja przestrzeń.
 
-## Wyróżnik i znaczenie dla kultury
+## Rozwiązanie i przebieg gry
 
-Łączymy autentyczne dzieła polskiego malarstwa, krótkie opowieści i rozwój osobistej kolekcji w jednej pętli gry. Każdy ukończony obraz pozostaje częścią domu gracza, a wyposażenie przybliża życie i obyczaje epoki. Wpisujemy się w kategorię **Sztuka**, popularyzując malarstwo poprzez aktywny kontakt z dziełami; historia i tradycja nadają im kontekst. Naszym celem jest rozbudzenie ciekawości prowadzącej do dalszego odkrywania kultury.
+Gracz wchodzi do domu, przechodzi przez hol i wybiera jeden z czterech pokojów: Oświecenie, Romantyzm, Pozytywizm lub Młoda Polska. W pracowni dobiera kolory i wypełnia piksele planszy 32×32. Ukończenie odsłania reprodukcję oraz historię i ciekawostkę. Dzieło trafia do kolekcji, a gracz wybiera jego miejsce na ścianie. Kolejne ukończone obrazy podnoszą poziom pokoju od 0 do 9 i odblokowują wyposażenie. Ukończenie kolekcji epoki zmienia także wygląd domu i holu.
 
-## Potrzeba, konkurencja i przewaga
+## Korzyści dla użytkownika
 
-**Sygnał zainteresowania:** Pixel Art ma ponad 100 mln pobrań w Google Play — to dowód popularności kolorowania jako rozrywki. [Źródło: Google Play][1]. Potrzebę naszej gry i jej efekt edukacyjny sprawdzimy w testach z młodzieżą: ukończenie pierwszego obrazu, chęć powrotu i zapamiętanie ciekawostki.
+Użytkownik otrzymuje relaksującą aktywność, którą wykonuje we własnym tempie, oraz prosty sposób na poznanie autorów, dzieł i ich kontekstu. Obraz obserwowany podczas kolorowania zyskuje znaczenie dzięki opowieści. Własna kolekcja, wybór ekspozycji i nowe dekoracje dają poczucie sprawczości oraz satysfakcję z postępu. Gra działa na telefonie i komputerze, bez instalacji i zakładania konta. Ukończone dzieła i układ ścian zapisują się lokalnie w przeglądarce, więc można wrócić do swojej kolekcji.
 
-**Alternatywy:** Pixel Art, gry rozwijające dom lub ogród oraz cyfrowe galerie muzealne. Nasza proponowana przewaga to połączenie twórczej aktywności, wiedzy o konkretnym dziele i trwałej nagrody. Zakładamy, że sprawczość i widoczny postęp zachęcą do kolejnego kontaktu ze sztuką; skuteczność tej hipotezy wymaga testów.
+## Co wyróżnia Dziedzictwo?
 
-**Kierunek biznesowy:** pilotaże ze szkołami i muzeami; docelowo płatne kolekcje tematyczne przygotowywane dla instytucji kultury.
+Jedna pętla łączy autentyczne polskie malarstwo, kreatywne kolorowanie, opowieść i trwałą nagrodę w postaci rozwijającego się wnętrza. Dekoracje również mają ciekawostki związane z epoką. Inspiracje to przystępność nauki Duolingo, mechanika kolorowania Pixel Art i rozwój przestrzeni znany z Garden Keeper.
 
-## Prototyp i technologie
+## Gotowy prototyp i dalszy rozwój
 
-**83 dzieła do kolorowania · 4 pokoje epok · 47 dekoracji do zdobycia.**
+Prototyp obejmuje 83 dzieła, cztery pokoje epok, 47 dekoracji, wyszukiwanie i filtry biblioteki oraz powiększanie i przesuwanie planszy. Interfejs obsługuje PL/EN; opisy dzieł są obecnie po polsku.
 
-Responsywna aplikacja na telefon i komputer, biblioteka obrazów, kolorowanki 32×32 oraz lokalny zapis postępu bez logowania.
+Następny krok to testy z użytkownikami: ukończenie pierwszego obrazu, chęć powrotu i zapamiętanie ciekawostki. Planujemy tłumaczenia treści oraz pilotaże ze szkołami i muzeami; kolekcje tematyczne mogą stać się ofertą dla instytucji kultury.
 
-**Technologie:** Next.js, React, TypeScript, Tailwind CSS, Zustand, SVG i Framer Motion. Autorski algorytm zespołu przygotowuje reprodukcje jako plansze do kolorowania.
+## Tech stack i realizacja
 
-[1]: https://play.google.com/store/apps/details?hl=pl&id=com.europosit.pixelcoloring "Pixel Art — karta aplikacji w Google Play; dostęp: 11.10.2026"
+Next.js 16 i React 19 • TypeScript • Tailwind CSS 4 • Zustand + localStorage • SVG • Framer Motion / Motion • dane JSON • eksport statyczny. Plansze i palety przygotowuje algorytm zespołu; jakość kodu wspierają Vitest i Playwright.
+
+Ilustracje: aktualne ekrany aplikacji. Pierwszy i ostatni pokazują ten sam pokój Romantyzmu na poziomach 0/9 i 9/9.

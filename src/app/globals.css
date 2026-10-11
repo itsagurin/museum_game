@@ -511,9 +511,9 @@ img {
 }
 .era-door-number {
   position: absolute;
-  top: 18%;
+  top: -6px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -100%);
   display: grid;
   place-items: center;
   width: 38px;
@@ -523,62 +523,10 @@ img {
   font-size: 25px;
   color: #433d2f;
 }
-.era-door-label {
-  position: absolute;
-  top: 64%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(108px, 12vw, 150px);
-  min-height: 48px;
-  border-radius: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  padding: 9px;
-  font-size: 12px;
-  line-height: 1.3;
-  background: rgba(249, 245, 225, 0.78);
-}
-.hall-door-hit[data-depth="far"] .era-door-label {
-  top: 24%;
-  min-height: 38px;
-  padding: 5px;
-}
-.hall-door-hit[data-depth="far"] .era-door-number {
-  top: -4%;
-}
-.hall-door-hit[data-era="era-1"] .era-door-label {
-  left: 100%;
-  transform: translateX(-10%);
-}
-.hall-door-hit[data-era="era-4"] .era-door-label {
-  left: 0;
-  transform: translateX(-90%);
-}
-.overview .hall-door-hit[data-depth="near"] .era-door-label {
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(96px, 12vw, 150px);
-}
-.locked-camera .hall-door-hit .era-door-label {
-  width: clamp(96px, 12vw, 150px);
-  padding: 6px;
-  gap: 4px;
-  font-size: 11px;
-}
 .locked-camera .hall-door-hit .era-door-number {
   width: 30px;
   height: 30px;
   font-size: 22px;
-}
-@media (min-aspect-ratio: 1/1) {
-  .locked-camera .hall-door-hit[data-depth="near"] .era-door-label {
-    top: 55%;
-  }
-}
-.era-door-label svg {
-  flex-shrink: 0;
 }
 .wall-artwork {
   position: absolute;
@@ -864,16 +812,6 @@ img {
   align-items: center;
   gap: 15px;
 }
-.story-icon {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  background: #e7e3d1;
-  border-radius: 16px;
-  color: #898566;
-  flex-shrink: 0;
-}
 .story-heading .eyebrow {
   font-size: 7px;
   letter-spacing: 1.4px;
@@ -891,6 +829,39 @@ img {
   line-height: 1.8;
   margin: 22px 0;
   color: var(--muted);
+}
+.dialog-panel.story-dialog {
+  max-width: 650px;
+  max-height: calc(100dvh - 24px);
+  padding: 16px;
+}
+.story-dialog .dialog-top { margin-bottom: 12px; }
+.artwork-discovery { display: grid; gap: 10px; }
+.story-preview { margin: 0; height: clamp(90px, 22dvh, 190px); }
+.story-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.story-image-fallback { display: grid; place-content: center; justify-items: center; gap: 8px; height: 100%; font-size: 12px; color: var(--muted); }
+.story-dialog .story-heading { margin: 0; }
+.story-dialog .story-heading h3 { font-size: 20px; line-height: 1.15; margin: 3px 0; }
+.story-dialog .artwork-credit { font-size: 11px; margin: 4px 0 0; }
+.story-dialog .fun-fact { padding: 12px; gap: 8px; margin: 0; }
+.story-dialog .fun-fact p { font-size: 12px; line-height: 1.5; }
+.story-history { border: 1px solid rgba(113, 122, 92, 0.22); border-radius: 12px; padding: 0 12px; }
+.story-history summary { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 12px; cursor: pointer; list-style: none; }
+.story-history summary::-webkit-details-marker { display: none; }
+.story-history summary svg:last-child { margin-left: auto; }
+.story-history[open] summary svg:last-child { transform: rotate(180deg); }
+.story-history .story-body { font-size: 12px; line-height: 1.6; margin: 10px 0 12px; }
+.story-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.story-actions > button { min-height: 48px; padding: 9px 12px; margin: 0; font-size: 11px; gap: 8px; }
+.story-actions > button:only-child { grid-column: 1 / -1; }
+@media (max-height: 700px) and (max-width: 600px) {
+  .story-preview { height: clamp(64px, 14dvh, 100px); }
+}
+@media (min-width: 650px) {
+  .artwork-discovery { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; }
+  .story-preview { grid-row: 1 / 3; height: clamp(160px, 42dvh, 300px); }
+  .story-dialog .story-heading, .story-dialog .fun-fact { grid-column: 2; }
+  .story-history, .story-actions { grid-column: 1 / -1; }
 }
 .artwork-credit { font-size: 12px; line-height: 1.5; color: var(--muted); margin: 6px 0 12px; }
 .story-style { font-size: 11px; line-height: 1.5; color: var(--muted); margin: 0 0 12px; }
@@ -1093,10 +1064,6 @@ img {
   }
   .status-label {
     font-size: 9px;
-  }
-  .era-door-label {
-    font-size: 10px;
-    padding: 7px;
   }
   .era-door-number {
     width: 31px;

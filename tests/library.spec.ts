@@ -3,6 +3,53 @@ import { artworks, eras } from "../src/data/eras";
 import curiosities from "../src/data/artworks_curiosities.json" with { type: "json" };
 import metadata from "../src/data/artworks_qa.json" with { type: "json" };
 
+test("painting and curiosity fit the screen before optionally opening the history", async ({ page }) => {
+  const samples = [
+    artworks.find((artwork) => artwork.title.pl.startsWith("Stańczyk"))!,
+    artworks.find((artwork) => artwork.sourceFile === "era3_pozytywizm/07_07.jpg")!,
+  ];
+  await page.goto("/");
+  for (const artwork of samples) {
+    await page.evaluate((artwork) => {
+      localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({
+        version: 1,
+        state: {
+          language: "pl", gentleMotion: true, completedArtworkIds: [artwork.id],
+          wallAssignments: { [`${artwork.eraId}-slot-1`]: artwork.id },
+        },
+      }));
+    }, artwork);
+    await page.goto(`/#${artwork.eraId}`);
+    await page.reload();
+    await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
+    await page.getByRole("button", { name: `Historia obrazu — ${artwork.title.pl}`, exact: true }).click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog.getByRole("heading", { name: "Ciekawostka", exact: true })).toBeVisible();
+    const image = dialog.locator(".story-preview img");
+    await expect(image).toHaveAttribute("src", artwork.originalImage!);
+    await expect.poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    const history = dialog.locator(".story-history");
+    await expect(dialog.locator(".story-body")).not.toBeVisible();
+    for (const [width, height] of [[320, 568], [390, 720], [1440, 1000]]) {
+      await page.setViewportSize({ width, height });
+      const panel = (await dialog.boundingBox())!;
+      for (const element of [image, dialog.locator(".fun-fact")]) {
+        const box = (await element.boundingBox())!;
+        expect(box.y).toBeGreaterThanOrEqual(panel.y);
+        expect(box.y + box.height).toBeLessThanOrEqual(Math.min(panel.y + panel.height, height));
+      }
+    }
+    await history.locator("summary").focus();
+    await page.keyboard.press("Enter");
+    await expect(history).toHaveAttribute("open", "");
+    await expect(dialog.locator(".story-body")).toBeVisible();
+    await expect(dialog.locator(".story-body")).toHaveText(artwork.story!.pl);
+    await page.keyboard.press("Enter");
+    await expect(dialog.locator(".story-body")).not.toBeVisible();
+    await page.keyboard.press("Escape");
+  }
+});
+
 test("supplied titles, artists and stories work without losing saved progress", async ({ page }) => {
   const artwork = artworks.find((entry) => entry.sourceFile === "era1_oswiecenie/01_canaletto_warszawa_praga.jpg")!;
   const curiosity = curiosities.find((entry) => entry.filename === `assets/artworks/${artwork.sourceFile}`)!;

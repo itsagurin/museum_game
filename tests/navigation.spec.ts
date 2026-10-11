@@ -271,6 +271,7 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
     )).toBe(896);
     await page.reload();
     await expect(page.locator(".camera-controls")).toHaveCount(0);
+    await expect(page.locator(".era-door-label, .room-status")).toHaveCount(0);
     await expect.poll(async () => {
       const scene = await page.locator(".hall-canvas").boundingBox();
       return Math.abs(scene!.x + scene!.width / 2 - page.viewportSize()!.width / 2);
@@ -287,7 +288,10 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
       expect(box).not.toBeNull();
       expect(box!.width).toBeGreaterThanOrEqual(44);
       const screen = page.viewportSize()!;
-      for (const element of [door, door.locator(".era-door-label"), door.locator(".era-door-number")]) {
+      const number = door.locator(".era-door-number");
+      const numberBounds = (await number.boundingBox())!;
+      expect(numberBounds.y + numberBounds.height).toBeLessThan(box!.y);
+      for (const element of [door, number]) {
         const bounds = (await element.boundingBox())!;
         expect(bounds.x).toBeGreaterThanOrEqual(0);
         expect(bounds.y).toBeGreaterThanOrEqual(0);

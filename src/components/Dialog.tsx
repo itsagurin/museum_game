@@ -11,7 +11,7 @@ interface DialogProps {
   onClose: () => void;
   children: React.ReactNode;
   gentle: boolean;
-  variant?: "default" | "coloring";
+  variant?: "default" | "coloring" | "story";
 }
 
 export function Dialog({
@@ -40,7 +40,7 @@ export function Dialog({
       }
       if (event.key !== "Tab") return;
       const elements = Array.from(ref.current?.querySelectorAll<HTMLElement>(
-        'button:not(:disabled), a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]',
+        'button:not(:disabled), summary, a[href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]',
       ) || []).filter((element) => element.getClientRects().length > 0);
       if (!elements?.length) return;
       const first = elements[0];
@@ -76,7 +76,7 @@ export function Dialog({
         aria-hidden={!present}
         inert={!present}
         aria-labelledby={titleId}
-        className={`dialog-panel glass ${variant === "coloring" ? "heritage-coloring" : ""}`}
+        className={`dialog-panel glass ${variant === "coloring" ? "heritage-coloring" : variant === "story" ? "story-dialog" : ""}`}
         initial={{ y: reduced ? 0 : 35, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: reduced ? 0 : 25, opacity: 0 }}

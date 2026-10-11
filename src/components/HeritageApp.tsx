@@ -49,6 +49,7 @@ import { RestoredArtwork } from "./RestoredArtwork";
 import { RoomBackdrop } from "./RoomBackdrop";
 import { getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
 import { ArtworkLibrary } from "./ArtworkLibrary";
+import { ArtworkStory } from "./ArtworkStory";
 import { RoomDecorations } from "./RoomDecorations";
 import { getNewDecorations, getRoomArtworkPlacement } from "@/data/room-decorations";
 
@@ -407,10 +408,6 @@ export function HeritageApp({
                       <span className="era-door-number glass">
                         {era.numeral}
                       </span>
-                      <span className="era-door-label glass">
-                        {era.name[language]}
-                        <ArrowUpRight size={14} />
-                      </span>
                     </button>
                   ))
                 ) : (
@@ -538,35 +535,28 @@ export function HeritageApp({
                 </>
               ) : (
                 <>
-                  <div className="room-status glass">
-                    {activeEra && roomProgress ? (
-                      <>
-                        <Paintbrush size={15} />
-                        <span>
-                          {roomProgress.completedCount} / {roomProgress.totalCount}
-                        </span>
-                        <span className="status-label">{t.restored}</span>
-                        <span className="room-level-divider" aria-hidden="true" />
-                        <span className="room-level-label">{t.roomLevel} {roomProgress.level} / {MAX_ROOM_LEVEL}</span>
-                        <span
-                          className="room-level-meter"
-                          role="progressbar"
-                          aria-label={t.roomDevelopment}
-                          aria-valuemin={0}
-                          aria-valuemax={MAX_ROOM_LEVEL}
-                          aria-valuenow={roomProgress.level}
-                          aria-valuetext={`${t.roomLevel} ${roomProgress.level} / ${MAX_ROOM_LEVEL}`}
-                        >
-                          {Array.from({ length: MAX_ROOM_LEVEL }, (_, index) => <i key={index} className={index < roomProgress.level ? "filled" : ""} />)}
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <DoorOpen size={15} />
-                        <span>{t.hallHint}</span>
-                      </>
-                    )}
-                  </div>
+                  {activeEra && roomProgress && (
+                    <div className="room-status glass">
+                      <Paintbrush size={15} />
+                      <span>
+                        {roomProgress.completedCount} / {roomProgress.totalCount}
+                      </span>
+                      <span className="status-label">{t.restored}</span>
+                      <span className="room-level-divider" aria-hidden="true" />
+                      <span className="room-level-label">{t.roomLevel} {roomProgress.level} / {MAX_ROOM_LEVEL}</span>
+                      <span
+                        className="room-level-meter"
+                        role="progressbar"
+                        aria-label={t.roomDevelopment}
+                        aria-valuemin={0}
+                        aria-valuemax={MAX_ROOM_LEVEL}
+                        aria-valuenow={roomProgress.level}
+                        aria-valuetext={`${t.roomLevel} ${roomProgress.level} / ${MAX_ROOM_LEVEL}`}
+                      >
+                        {Array.from({ length: MAX_ROOM_LEVEL }, (_, index) => <i key={index} className={index < roomProgress.level ? "filled" : ""} />)}
+                      </span>
+                    </div>
+                  )}
                   <nav className="era-switcher glass" aria-label={t.rooms}>
                     {activeEra && <button className="room-library-toggle icon-button" aria-label={t.changePaintings} onClick={() => openLibrary(activeEra.id)}><Images size={19} /></button>}
                     <button
@@ -611,12 +601,13 @@ export function HeritageApp({
                   : panel.type === "info"
                     ? t.info
                     : panel.type === "story"
-                      ? t.story
+                      ? t.fact
                       : t.studioTitle
               }
               closeLabel={t.close}
               onClose={closePanel}
               gentle={gentleMotion}
+              variant={panel.type === "story" ? "story" : "default"}
             >
               {panel.type === "settings" ? (
                 <>
@@ -704,47 +695,14 @@ export function HeritageApp({
                   </button>
                 </>
               ) : panel.type === "story" ? (
-                <>
-                  <div className="story-heading">
-                    <span className="story-icon">
-                      <BookOpen size={23} />
-                    </span>
-                    <div>
-                      <span className="eyebrow">
-                        {getEra(panel.artwork.eraId).name[language]}
-                      </span>
-                      <h3>{panel.artwork.title[language]}</h3>
-                      {panel.artwork.artist && <p className="artwork-credit">{panel.artwork.artist}{panel.artwork.year && ` · ${panel.artwork.year}`}</p>}
-                    </div>
-                  </div>
-                  {panel.artwork.style && <p className="story-style" lang={panel.artwork.contentLanguage}>{panel.artwork.style}</p>}
-                  <p className="story-body" lang={panel.artwork.contentLanguage}>
-                    {panel.artwork.story?.[language] || t.emptyStory}
-                  </p>
-                  <div className="fun-fact">
-                    <Sparkles size={18} />
-                    <div>
-                      <h4>{t.fact}</h4>
-                      <p lang={panel.artwork.contentLanguage}>{panel.artwork.funFact?.[language] || t.emptyFact}</p>
-                    </div>
-                  </div>
-                  {panel.artwork.coloringArtworkId && onRestoreArtwork && (
-                    <button
-                      className="primary-button full-width story-restore"
-                      onClick={() => restoreArtwork(panel.artwork)}
-                    >
-                      {completed.includes(panel.artwork.id) ? t.repaint : t.restore}
-                      <Paintbrush size={16} />
-                    </button>
-                  )}
-                  <button
-                    className="secondary-button full-width"
-                    onClick={closePanel}
-                  >
-                    {t.returnRoom}
-                    <ArrowRight size={16} />
-                  </button>
-                </>
+                <ArtworkStory
+                  key={panel.artwork.id}
+                  artwork={panel.artwork}
+                  language={language}
+                  completed={completed.includes(panel.artwork.id)}
+                  onRestore={onRestoreArtwork ? () => restoreArtwork(panel.artwork) : undefined}
+                  onClose={closePanel}
+                />
               ) : panel.type === "studio" ? (
                 <>
                   <div className="studio-preview">
