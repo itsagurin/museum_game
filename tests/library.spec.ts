@@ -1,13 +1,58 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
+import curiosities from "../src/data/artworks_curiosities.json" with { type: "json" };
+import metadata from "../src/data/artworks_qa.json" with { type: "json" };
+
+test("supplied titles, artists and stories work without losing saved progress", async ({ page }) => {
+  const artwork = artworks.find((entry) => entry.sourceFile === "era1_oswiecenie/01_canaletto_warszawa_praga.jpg")!;
+  const curiosity = curiosities.find((entry) => entry.filename === `assets/artworks/${artwork.sourceFile}`)!;
+  const oldMetadata = metadata.find((entry) => entry.filename === curiosity.filename)!;
+  await page.addInitScript((id) => {
+    if (!localStorage.getItem("heritage-hearth-ui-v1")) localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({ version: 1, state: { completedArtworkIds: [id], gentleMotion: true } }));
+  }, artwork.id);
+  await page.goto("/#library");
+  const search = page.getByRole("searchbox", { name: "Szukaj obrazu", exact: true });
+  await search.fill("bellotto");
+  await expect(page.locator(".library-artwork-card")).toHaveCount(7);
+  await search.fill("widok warszawy od strony pragi");
+  await expect(page.locator(".library-artwork-card")).toHaveCount(1);
+  await expect(page.locator(".library-artwork-card")).toContainText("Bernardo Bellotto (Canaletto) · 1770");
+  await page.getByRole("button", { name: "Widok Warszawy od strony Pragi — Oświecenie", exact: true }).click();
+  await expect(page.locator(".library-detail h2")).toHaveText("Widok Warszawy od strony Pragi");
+  await expect(page.locator(".library-detail .artwork-credit")).toHaveText("Bernardo Bellotto (Canaletto) · 1770");
+  await page.getByLabel("Miejsce na ścianie", { exact: true }).selectOption("era-1-slot-5");
+  await page.getByRole("button", { name: "Zawieś w pokoju", exact: true }).click();
+  await expect(page.locator('[data-slot-id="era-1-slot-5"] .painting-frame')).toHaveAttribute("aria-label", "Widok Warszawy od strony Pragi — Odnowiony");
+  await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
+  await page.getByRole("button", { name: "Historia obrazu — Widok Warszawy od strony Pragi", exact: true }).click();
+  await expect(page.locator(".story-body")).toHaveText(artwork.story!.pl);
+  await expect(page.locator(".fun-fact p")).toHaveText(curiosity.curiosity);
+  for (const pair of oldMetadata.qa_pairs) {
+    await expect(page.getByRole("dialog")).not.toContainText(pair.question);
+    await expect(page.getByRole("dialog")).not.toContainText(pair.answer);
+  }
+  await page.keyboard.press("Escape");
+  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "The painting’s story — Widok Warszawy od strony Pragi", exact: true }).click();
+  await expect(page.locator(".story-body")).toHaveAttribute("lang", "pl");
+  await expect(page.locator(".fun-fact p")).toHaveText(curiosity.curiosity);
+  await expect(page.locator(".fun-fact p")).toHaveAttribute("lang", "pl");
+  await page.getByRole("button", { name: "Paint again", exact: true }).click();
+  await expect(page.getByLabel("Painting: Widok Warszawy od strony Pragi", { exact: true })).toBeVisible();
+  await expect(page.locator(".coloring-heading .artwork-credit")).toHaveText("Bernardo Bellotto (Canaletto) · 1770");
+  await page.keyboard.press("Escape");
+  await page.reload();
+  await expect(page.locator('[data-slot-id="era-1-slot-5"] .painting-frame')).toHaveAttribute("aria-label", "Widok Warszawy od strony Pragi — Restored");
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1")!).state);
+  expect(saved.completedArtworkIds).toEqual([artwork.id]);
+  expect(saved.wallAssignments["era-1-slot-5"]).toBe(artwork.id);
+});
 
 test("landing page opens all uploaded paintings, era filters and search", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
-  const camera = (await page.locator(".camera-controls").boundingBox())!;
-  const homeActions = (await page.locator(".home-actions").boundingBox())!;
-  expect(camera.y + camera.height).toBeLessThanOrEqual(homeActions.y);
+  await expect(page.locator(".camera-controls")).toHaveCount(0);
   await page.locator(".home-library-button").click();
   await expect(page).toHaveURL(/#library$/);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Biblioteka obrazów");
@@ -40,7 +85,7 @@ for (const era of eras) test(`${era.name.pl}: room picker stays in its era and s
   await expect(page.getByRole("button", { name: "Wróć do kolekcji", exact: true })).toBeFocused();
   await page.getByLabel("Miejsce na ścianie", { exact: true }).selectOption(`${era.id}-slot-3`);
   await expect(page.locator(".library-detail")).toContainText("Do ukończenia kolorowania");
-  await expect(page.locator(".library-detail")).toContainText("Pracownia tego obrazu będzie dostępna wkrótce");
+  await expect(page.getByRole("button", { name: "Otwórz pracownię", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Zawieś w pokoju", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(era.name.pl);
   const frame = page.locator(`[data-slot-id="${era.id}-slot-3"]`);
@@ -75,8 +120,8 @@ test("occupied paintings swap positions without changing completion, and restore
   await expect(page.locator('[data-slot-id="era-1-slot-2"] .painting-frame')).toHaveAttribute("aria-label", `${collection[5].title.pl} — Czeka na kolory`);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1")!).state.completedArtworkIds)).toEqual([collection[0].id]);
   await expect(page.locator(".room-status")).toContainText("1 / 21");
-  await page.getByRole("button", { name: "Historia obrazu — Obraz 06", exact: true }).click();
-  await expect(page.getByRole("dialog")).toContainText("Obraz 06");
+  await page.getByRole("button", { name: `Historia obrazu — ${collection[5].title.pl}`, exact: true }).click();
+  await expect(page.getByRole("dialog")).toContainText(collection[5].title.pl);
 });
 
 test("library works in English, survives browser back and fits a 320px phone", async ({ page }) => {
@@ -86,8 +131,9 @@ test("library works in English, survives browser back and fits a 320px phone", a
   await page.getByRole("button", { name: "Switch to English", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Painting library");
   await page.locator(".library-era-filters").getByRole("button", { name: "Romanticism", exact: true }).click();
-  await page.getByRole("button", { name: "Painting 18 — Romanticism", exact: true }).click();
-  await expect(page.locator(".library-detail")).toContainText("available soon");
+  const lastRomantic = artworks.filter((artwork) => artwork.eraId === "era-2").at(-1)!;
+  await page.getByRole("button", { name: `${lastRomantic.title.en} — Romanticism`, exact: true }).click();
+  await expect(page.getByRole("button", { name: "Open the studio", exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await expect(page.getByLabel("Wall position", { exact: true })).toHaveValue("era-2-slot-1");
   await page.getByRole("button", { name: "Back to the collection", exact: true }).click();
@@ -103,7 +149,8 @@ test("library works in English, survives browser back and fits a 320px phone", a
 test("unavailable reproduction does not prevent choosing a wall position", async ({ page }) => {
   await page.route("**/art/era1_oswiecenie/**", (route) => route.abort());
   await page.goto("/#library");
-  await page.getByRole("button", { name: "Obraz 06 — Oświecenie", exact: true }).click();
+  const artwork = artworks.filter((entry) => entry.eraId === "era-1")[5];
+  await page.getByRole("button", { name: `${artwork.title.pl} — Oświecenie`, exact: true }).click();
   await expect(page.locator(".library-detail-image .library-image-fallback")).toBeVisible();
   await page.getByRole("button", { name: "Zawieś w pokoju", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Oświecenie");

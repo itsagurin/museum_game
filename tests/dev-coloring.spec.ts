@@ -1,18 +1,19 @@
 import { test, expect, type Page } from "@playwright/test";
 import { artworks } from "../src/data/eras";
-import database from "../src/data/artworks_db.json" with { type: "json" };
+import { catalogPaintings } from "./helpers/catalog-coloring";
 
-const painting = database[0];
-const catalogEntry = artworks.find((artwork) => artwork.coloringArtworkId === painting.id);
+const { painting, artwork: catalogEntry } = catalogPaintings[0];
+const matchingId = painting.grid.data[0][0];
+const matchingColor = painting.palette.find((color) => color.id === matchingId)!;
+const wrongColor = painting.palette.find((color) => color.id !== matchingId)!;
 const collectionCount = artworks.filter((artwork) => artwork.eraId === catalogEntry?.eraId).length;
 const countFor = (id: number) => painting.grid.data.flat().filter((color) => color === id).length;
 
 async function openStudio(page: Page) {
-  test.skip(!catalogEntry, "This database fixture is not bound to an uploaded catalog painting yet.");
   await page.goto(`/#${catalogEntry!.eraId}`);
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
   await page.getByRole("button", { name: `${catalogEntry!.title.pl} — Czeka na kolory`, exact: true }).click();
-  await expect(page.getByLabel("Kolorowanie: Stańczyk", { exact: true })).toBeVisible();
+  await expect(page.getByLabel(`Kolorowanie: ${catalogEntry.title.pl}`, { exact: true })).toBeVisible();
   const dev = page.getByRole("button", { name: "DEV: wypełniaj cały kolor", exact: true });
   test.skip(await dev.count() === 0, "Dev tools are disabled in this build; run against npm run dev or build with NEXT_PUBLIC_ENABLE_DEV_TOOLS=1.");
   return dev;
@@ -20,8 +21,8 @@ async function openStudio(page: Page) {
 
 test("dev fill paints only the matching colour and undo preserves earlier individual pixels", async ({ page, isMobile }) => {
   const dev = await openStudio(page);
-  const canvas = page.getByLabel("Kolorowanie: Stańczyk", { exact: true });
-  const field = canvas.locator('.pixel-hit[data-color-id="1"]').first();
+  const canvas = page.getByLabel(`Kolorowanie: ${catalogEntry.title.pl}`, { exact: true });
+  const field = canvas.locator(`.pixel-hit[data-color-id="${matchingId}"]`).first();
   const tap = async () => {
     const box = (await field.boundingBox())!;
     const x = box.x + box.width / 2, y = box.y + box.height / 2;
@@ -29,24 +30,24 @@ test("dev fill paints only the matching colour and undo preserves earlier indivi
     else await page.mouse.click(x, y);
   };
   await expect(dev).toHaveAttribute("aria-pressed", "false");
-  await page.getByRole("button", { name: "Kolor 1: Czerń węglowa", exact: true }).click();
+  await page.getByRole("button", { name: `Kolor ${matchingColor.id}: ${matchingColor.name}`, exact: true }).click();
   await tap();
   await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(1);
   await dev.click();
-  await page.getByRole("button", { name: "Kolor 2: Czerń węglowa", exact: true }).click();
+  await page.getByRole("button", { name: `Kolor ${wrongColor.id}: ${wrongColor.name}`, exact: true }).click();
   await tap();
   await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(1);
-  await page.getByRole("button", { name: "Kolor 1: Czerń węglowa", exact: true }).click();
+  await page.getByRole("button", { name: `Kolor ${matchingColor.id}: ${matchingColor.name}`, exact: true }).click();
   await tap();
-  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(countFor(1));
-  await expect(canvas.locator('.pixel-hit.painted:not([data-color-id="1"])')).toHaveCount(0);
+  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(countFor(matchingId));
+  await expect(canvas.locator(`.pixel-hit.painted:not([data-color-id="${matchingId}"])`)).toHaveCount(0);
   await tap();
-  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(countFor(1));
+  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(countFor(matchingId));
   await page.getByRole("button", { name: "Cofnij", exact: true }).click();
   await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(1);
   await expect(field).toHaveAttribute("aria-pressed", "true");
   await dev.click();
-  await canvas.locator('.pixel-hit[data-color-id="1"]:not(.painted)').first().press("Enter");
+  await canvas.locator(`.pixel-hit[data-color-id="${matchingId}"]:not(.painted)`).first().press("Enter");
   await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(2);
   await page.keyboard.press("Escape");
   await expect(page.locator(".room-status")).toContainText(`0 / ${collectionCount}`);
@@ -56,7 +57,7 @@ test("one matching pixel per colour completes the painting and still supports un
   await page.emulateMedia({ reducedMotion: "reduce" });
   const dev = await openStudio(page);
   await dev.click();
-  const canvas = page.getByLabel("Kolorowanie: Stańczyk", { exact: true });
+  const canvas = page.getByLabel(`Kolorowanie: ${catalogEntry.title.pl}`, { exact: true });
   for (const color of painting.palette) {
     await page.getByRole("button", { name: `Kolor ${color.id}: ${color.name}`, exact: true }).click();
     await canvas.locator(`.pixel-hit[data-color-id="${color.id}"]`).first().press("Enter");
@@ -74,7 +75,7 @@ test("one matching pixel per colour completes the painting and still supports un
   await expect(page.getByRole("button", { name: "Odkryj opowieść", exact: true })).toBeEnabled();
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
   await expect(page.getByRole("dialog")).toHaveCount(1);
-  await expect(page.getByRole("dialog")).toContainText(painting.cultural_data.historical_context);
+  await expect(page.getByRole("dialog")).toContainText(catalogEntry.title.pl);
   await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
   await expect(page.locator(".room-status")).toContainText(`1 / ${collectionCount}`);
   await page.reload();

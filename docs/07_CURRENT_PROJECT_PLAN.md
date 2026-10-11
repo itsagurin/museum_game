@@ -1,6 +1,6 @@
 # 07. Aktualny plan: dom, cztery epoki i kolorowanie 20×20
 
-> Aktualizacja: 11 października 2026. Etap: frontend z biblioteką 83 reprodukcji.
+> Aktualizacja: 11 października 2026. Etap: frontend z biblioteką i 83 działającymi planszami kolorowania.
 > Ten dokument zastępuje wcześniejsze założenia dotyczące nawigacji, kolorowania i progresji w dokumentach 01–06.
 > **Ustalone** oznacza instrukcję zespołu. **Propozycja** oznacza rozwiązanie do omówienia. **Otwarte** oznacza brak decyzji.
 
@@ -11,12 +11,12 @@
 - Kolorowanie **20×20** i jego logikę implementuje inny członek zespołu. Wcześniejszy kontrakt poniżej jest propozycją, nie zobowiązaniem dla właściciela minigry.
 - Stack: Next.js + TypeScript + Tailwind + Zustand. Polski domyślnie, przełącznik na angielski.
 - Nazwa Dziedzictwo zostaje. Aktualne epoki: Oświecenie, Romantyzm, Pozytywizm i Młoda Polska; przypisanie reprodukcji wynika z dostarczonych podfolderów.
-- Mała kartka pod każdym obrazem otwiera historię i ciekawostkę. Dostarczono 83 reprodukcje bez tytułów, autorów i plansz; obecnie mają numery katalogowe. Lista nagród nie jest jeszcze gotowa.
+- Mała kartka pod każdym obrazem otwiera historię i ciekawostkę. Dostarczono 83 reprodukcje oraz odpowiadające im JSON-y 32×32; tytuły, autorzy, daty, opisy stylu i dwie ciekawostki dla każdego obrazu zostały dostarczone w `artworks_qa.json` i są podłączone do UI. Treści są po polsku również przy angielskim interfejsie. 47 dodatków pokojów ma ustalone poziomy, pozycje i ciekawostki PL/EN.
 - Lokalny zapis wystarczy. Nie potrzeba tutoriala ani audio. Kod w obecnym repozytorium, hosting zespołu.
 - Wszystkie pokoje w v1 są dostępne do oceny UI. Docelowe blokady epok pozostają do podłączenia.
-- **Dekorowanie przez zmianę całego tła:** 10 poziomów `level0`–`level9`, pliki `img/roomN_levelM.jpg` (również JPEG/PNG/WebP). Kolejny poziom dodaje wyposażenie wewnątrz nowej ilustracji, bez osobnych nakładek mebli. Kadr, narożnik, ściany, drzwi i wolne miejsca pod ramy muszą pozostać identyczne.
+- **Dekorowanie osobnymi PNG:** obecne puste tła `room1.jpg`–`room4.jpg` pozostają na każdym poziomie. Poziom 0 jest pusty; poziomy 1–9 dodają wyposażenie wyłącznie właściwej epoki. Ustalone miejsca i grupy nagród, referencje dla romantyzmu i Młodej Polski, hover z uniesieniem, dymki po dotknięciu, PL/EN, źródła i animacja odkrycia. Puste ramy pomijamy. Układ pięciu obrazów dostosowuje się do wyposażenia. [Specyfikacja](./13_ROOM_DECORATIONS.md).
 - **Zatwierdzona progresja:** `floor(9 × ukończone / wszystkie obrazy epoki)`. Awans rozłożony na całą kolekcję, nie na pięć widocznych dzieł. Dla 30 obrazów progi to 4, 7, 10, 14, 17, 20, 24, 27 i 30. Poziom 9 wymaga ukończenia całej niepustej kolekcji. Ponowne malowanie nie nalicza postępu.
-- **Biblioteka wdrożona:** dostęp z landing page i `/#library`, podział 21/18/22/22, filtry, wyszukiwanie i podgląd. W pokoju „Zmień obrazy” lub kliknięcie ukończonej ramy pozwala wybrać dzieło tej samej epoki, także nieukończone. Nieukończone pokazuje kartkę z krzyżykiem. Zapisane przypisania pięciu miejsc zachowują geometrię i postęp; wybór już wiszącego obrazu zamienia miejsca. Kolorowanie nowych reprodukcji czeka na jawne przypisanie przez kolegę.
+- **Biblioteka wdrożona:** dostęp z landing page i `/#library`, podział 21/18/22/22, filtry, wyszukiwanie i podgląd. W pokoju „Zmień obrazy” lub kliknięcie ukończonej ramy pozwala wybrać dzieło tej samej epoki, także nieukończone. Nieukończone pokazuje kartkę z krzyżykiem. Zapisane przypisania pięciu miejsc zachowują geometrię i postęp; wybór już wiszącego obrazu zamienia miejsca. Kolorowanie wszystkich reprodukcji jest podłączone przez dokładną nazwę pliku i epokę. Siatki 32×32 zachowujemy bez zmian, JSON pobieramy tylko dla wybranego dzieła.
 - **Implementacja i adapter dla kolegi:** [10_FRONTEND_V1.md](./10_FRONTEND_V1.md).
 
 Dalsze sekcje zachowują plan pełnej gry oraz starsze propozycje. Powyższe decyzje i najnowsze instrukcje użytkownika mają pierwszeństwo.
@@ -61,7 +61,7 @@ Gra ma dwie pętle nagród:
 
 ### Otwarte decyzje o największym wpływie
 
-- Tytuły, autorzy i jawne przypisanie plansz do dostarczonych 83 reprodukcji; liczba zadań na prezentację.
+- Tytuły, autorzy i historie dostarczonych 83 reprodukcji; liczba zadań na prezentację. Plansze są już dostarczone i podłączone.
 - Format wyniku algorytmu, liczba kolorów, obsługa proporcji oryginału.
 - Czy „powrót do naturalnego obrazu” to odsłonięcie oryginału, czy inne przetwarzanie?
 - Dotknięcia/przeciąganie oraz obsługa błędów; priorytet telefonu jest potwierdzony.
@@ -260,7 +260,7 @@ Frontend zaczyna od jednej ręcznie przygotowanej, zgodnej planszy testowej. Aut
 
 Po ukończeniu planszy aplikacja zapisuje unikalne ID dzieła i odsłania kolorową reprodukcję. Rozmiar planszy pozostaje odpowiedzialnością autora minigry; obecna baza testowa ma 32×32. Powtórna operacja ukończenia nie tworzy kolejnej nagrody.
 
-Poziom pokoju wyliczamy z całej kolekcji epoki według wzoru powyżej. Ukończenie może przekroczyć kolejny próg; wtedy tło płynnie przechodzi do odpowiedniego `roomN_levelM`. Brak pliku oznacza użycie najwyższego dostępnego niższego poziomu albo dotychczasowego `roomN.jpg`. Kolejność malowania nie wpływa na wygląd przy tej samej liczbie ukończeń. Wyposażenie jest częścią tła, więc nie przypisujemy oddzielnej grafiki mebla każdemu dziełu.
+Poziom pokoju wyliczamy z całej kolekcji epoki według wzoru powyżej. Przekroczenie progu odblokowuje grupę PNG ustaloną dla tej epoki i poziomu. Kolejność malowania nie wpływa na wyposażenie przy tej samej liczbie ukończeń. Po powrocie z podsumowania nowe przedmioty świecą i unoszą się na stałe miejsca; komunikat informuje o nagrodzie, a ciekawostkę otwiera dotknięcie przedmiotu. Tło pozostaje puste, pięć obrazów zajmuje wolną część ścian, a zablokowane dodatki są całkowicie niewidoczne. Wyposażenie wynika z ukończeń, nie ma osobnego licznika do zapisywania.
 
 ### Ukończenie pokoju
 

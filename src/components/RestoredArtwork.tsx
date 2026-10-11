@@ -2,27 +2,17 @@
 
 import { useState } from "react";
 import { ImageOff } from "lucide-react";
-import { findColoringArtwork } from "@/data/coloring-library";
 import type { Artwork } from "@/types/game";
 
 export function RestoredArtwork({ artwork }: { artwork: Artwork }) {
   const [failed, setFailed] = useState(false);
-  const painting = findColoringArtwork(artwork.coloringArtworkId);
+  const [previewFailed, setPreviewFailed] = useState(false);
 
-  // Preserve the painted result when an external reproduction is unavailable.
-  if (failed && painting) {
-    const colors = new Map(painting.palette.map((color) => [color.id, color.hex]));
+  // The algorithm supplies a local pixel preview for missing reproductions.
+  if (failed && artwork.coloredPreview && !previewFailed) {
     return (
-      <svg
-        className="original-artwork pixel-preview"
-        viewBox={`0 0 ${painting.grid.width} ${painting.grid.height}`}
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-      >
-        {painting.grid.data.flatMap((row, y) => row.map((id, x) => (
-          <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" fill={colors.get(id)} shapeRendering="crispEdges" />
-        )))}
-      </svg>
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={artwork.coloredPreview} className="original-artwork pixel-preview" alt="" draggable={false} onError={() => setPreviewFailed(true)} />
     );
   }
 

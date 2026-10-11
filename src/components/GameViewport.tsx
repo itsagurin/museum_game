@@ -26,6 +26,7 @@ interface GameViewportProps {
   className: string;
   focalY: number;
   label: string;
+  lockCamera?: boolean;
 }
 
 export function GameViewport({
@@ -33,6 +34,7 @@ export function GameViewport({
   className,
   focalY,
   label,
+  lockCamera = false,
 }: GameViewportProps) {
   const ref = useRef<HTMLDivElement>(null);
   const drag = useRef<{
@@ -54,6 +56,11 @@ export function GameViewport({
     if (!viewport) return;
     const scene = viewport.firstElementChild as HTMLElement | null;
     scene?.style.setProperty("--scene-scale", String(scene.getBoundingClientRect().width / sceneSize.width));
+    // Fixed home and hall compositions are positioned before hydration by CSS.
+    if (lockCamera) {
+      setAxis(null);
+      return;
+    }
     viewport.scrollLeft = (viewport.scrollWidth - viewport.clientWidth) / 2;
     viewport.scrollTop = Math.max(
       0,
@@ -71,7 +78,7 @@ export function GameViewport({
             ? "y"
             : null,
     );
-  }, [focalY, overview]);
+  }, [focalY, lockCamera, overview]);
 
   useEffect(() => {
     const viewport = ref.current;
@@ -99,7 +106,7 @@ export function GameViewport({
   };
 
   const pointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse" || event.button !== 0 || overview) return;
+    if (event.pointerType !== "mouse" || event.button !== 0 || lockCamera || overview) return;
     drag.current = {
       x: event.clientX,
       y: event.clientY,
@@ -133,7 +140,7 @@ export function GameViewport({
     <>
       <div
         ref={ref}
-        className={`game-viewport ${overview ? "overview" : ""}`}
+        className={`game-viewport ${overview ? "overview" : ""} ${lockCamera ? "locked-camera" : ""}`}
         aria-label={label}
         onPointerDown={pointerDown}
         onPointerMove={pointerMove}
@@ -149,7 +156,7 @@ export function GameViewport({
       >
         <div className={`scene-canvas ${className}`}>{children}</div>
       </div>
-      <div className="camera-controls glass" aria-label={t.camera}>
+      {!lockCamera && <div className="camera-controls glass" aria-label={t.camera}>
         {axis && (
           <button
             className="icon-button"
@@ -180,7 +187,7 @@ export function GameViewport({
             )}
           </button>
         )}
-      </div>
+      </div>}
       {axis && (
         <div className="camera-hint">
           <Move size={12} />

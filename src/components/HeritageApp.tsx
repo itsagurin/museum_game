@@ -49,6 +49,10 @@ import { RestoredArtwork } from "./RestoredArtwork";
 import { RoomBackdrop } from "./RoomBackdrop";
 import { getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
 import { ArtworkLibrary } from "./ArtworkLibrary";
+import { RoomDecorations } from "./RoomDecorations";
+import { getNewDecorations, getRoomArtworkPlacement } from "@/data/room-decorations";
+
+const noRewards: string[] = [];
 
 type Panel =
   | { type: "settings" | "info" }
@@ -117,6 +121,10 @@ export function HeritageApp({
   const [panel, setPanel] = useState<Panel | null>(null);
   const [resetConfirm, setResetConfirm] = useState(false);
   const [storageUnavailable, setStorageUnavailable] = useState(false);
+  const [pendingRewards, setPendingRewards] = useState<Partial<Record<EraId, string[]>>>({});
+  const consumeRewards = useCallback((ids: string[]) => {
+    setPendingRewards((current) => Object.fromEntries(Object.entries(current).map(([era, rewards]) => [era, rewards.filter((id) => !ids.includes(id))])));
+  }, []);
   const [libraryContext, setLibraryContext] = useState<{ eraId?: EraId; slotId?: string; returnView: Exclude<View, "library"> }>({ returnView: "home" });
   const fullscreenAvailable = useSyncExternalStore(
     subscribeFullscreen, readFullscreenAvailable, serverFullscreen,
@@ -188,7 +196,11 @@ export function HeritageApp({
         era: getEra(artwork.eraId),
         language,
         onComplete: () => {
+          const before = getRoomProgress(artwork.eraId, artworks, useGameStore.getState().completedArtworkIds).level;
           completeArtwork(artwork.id);
+          const after = getRoomProgress(artwork.eraId, artworks, useGameStore.getState().completedArtworkIds).level;
+          const newObjects = getNewDecorations(artwork.eraId, before, after).map(({ id }) => id);
+          if (newObjects.length) setPendingRewards((current) => ({ ...current, [artwork.eraId]: [...new Set([...(current[artwork.eraId] ?? []), ...newObjects])] }));
           setPanel({ type: "story", artwork });
         },
         onClose: closePanel,
@@ -326,6 +338,7 @@ export function HeritageApp({
                 />
               ) : <>
               <GameViewport
+                lockCamera={view === "home" || view === "hall"}
                 className={
                   view === "home"
                     ? "home-canvas"
@@ -348,7 +361,6 @@ export function HeritageApp({
                     baseImage={activeEra.image}
                     level={roomProgress.level}
                     alt={activeEra.name[language]}
-                    gentle={Boolean(reducedMotion)}
                   />
                 ) : view === "hall" && !hallImageName ? (
                   <HallBackdrop stage={hallStage} />
@@ -369,7 +381,7 @@ export function HeritageApp({
                 {view === "home" ? (
                   <button
                     className="house-door-hit"
-                    style={regionStyle({ x: 44, y: 51, width: 15, height: 17 })}
+                    style={regionStyle({ x: 47, y: 52, width: 8, height: 7 })}
                     onClick={() => navigate("hall")}
                     aria-label={t.enter}
                   >
@@ -404,15 +416,18 @@ export function HeritageApp({
                 ) : (
                   activeEra && (
                     <>
+                      <RoomDecorations eraId={activeEra.id} level={roomProgress?.level ?? 0} language={language} gentle={Boolean(reducedMotion)} active={!panel} pendingIds={pendingRewards[activeEra.id] ?? noRewards} onRewardsShown={consumeRewards} />
                       {getWallArtworks(activeEra.id, wallAssignments)
-                        .map(({ artwork, slot }) => (
+                        .map(({ artwork, slot }) => {
+                          const placement = getRoomArtworkPlacement(activeEra.id, slot.number, roomProgress?.level ?? 0);
+                          return (
                           <div
                             key={slot.id}
                             data-slot-id={slot.id}
-                            className={`wall-artwork wall-${slot.placement.wall}`}
+                            className={`wall-artwork wall-${placement.wall} ${(roomProgress?.level ?? 0) > 0 ? "furnished-artwork" : ""}`}
                             style={{
-                              ...regionStyle(slot.placement),
-                              ...artworkProjection(slot.placement, activeEra.wallPerspective[slot.placement.wall]),
+                              ...regionStyle(placement),
+                              ...artworkProjection(placement, activeEra.wallPerspective[placement.wall]),
                             }}
                           >
                             <button
@@ -448,7 +463,7 @@ export function HeritageApp({
                               </span>
                             </button>
                           </div>
-                        ))}
+                        ); })}
                       <button
                         className="room-door-hit"
                         style={regionStyle(activeEra.doors.previous)}
@@ -653,6 +668,7 @@ export function HeritageApp({
                           className="danger-button"
                           onClick={() => {
                             resetProgress();
+                            setPendingRewards({});
                             closePanel();
                           }}
                         >
@@ -698,16 +714,18 @@ export function HeritageApp({
                         {getEra(panel.artwork.eraId).name[language]}
                       </span>
                       <h3>{panel.artwork.title[language]}</h3>
+                      {panel.artwork.artist && <p className="artwork-credit">{panel.artwork.artist}{panel.artwork.year && ` · ${panel.artwork.year}`}</p>}
                     </div>
                   </div>
-                  <p className="story-body">
+                  {panel.artwork.style && <p className="story-style" lang={panel.artwork.contentLanguage}>{panel.artwork.style}</p>}
+                  <p className="story-body" lang={panel.artwork.contentLanguage}>
                     {panel.artwork.story?.[language] || t.emptyStory}
                   </p>
                   <div className="fun-fact">
                     <Sparkles size={18} />
                     <div>
                       <h4>{t.fact}</h4>
-                      <p>{panel.artwork.funFact?.[language] || t.emptyFact}</p>
+                      <p lang={panel.artwork.contentLanguage}>{panel.artwork.funFact?.[language] || t.emptyFact}</p>
                     </div>
                   </div>
                   {panel.artwork.coloringArtworkId && onRestoreArtwork && (

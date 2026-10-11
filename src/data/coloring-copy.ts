@@ -1,6 +1,6 @@
 export const coloringCopy = {
   pl: {
-    originalDescription: (title: string, artist: string, year: string) => `Oryginalne arcydzieło: ${title} (${artist}, ${year}).`,
+    originalDescription: (title: string, artist: string, year: string) => `Oryginalne arcydzieło: ${title}${[artist, year].filter(Boolean).length ? ` (${[artist, year].filter(Boolean).join(", ")})` : ""}.`,
     pixelsDescription: "Pomalowane przez Ciebie piksele.",
     panInstruction: "Przeciągnij płótno. Wybierz kolor, aby wrócić do malowania.",
     ready: "Pięknie. Twoja opowieść jest gotowa.",
@@ -29,7 +29,7 @@ export const coloringCopy = {
     unavailable: "Reprodukcja jest niedostępna. Twój pokolorowany obraz został zachowany.",
   },
   en: {
-    originalDescription: (title: string, artist: string, year: string) => `Original masterpiece: ${title} (${artist}, ${year}).`,
+    originalDescription: (title: string, artist: string, year: string) => `Original masterpiece: ${title}${[artist, year].filter(Boolean).length ? ` (${[artist, year].filter(Boolean).join(", ")})` : ""}.`,
     pixelsDescription: "The pixels you painted.",
     panInstruction: "Drag the canvas. Choose a colour to return to painting.",
     ready: "Beautiful. Your story is ready.",

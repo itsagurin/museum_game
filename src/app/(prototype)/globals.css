@@ -191,13 +191,6 @@ em { font-weight: 400; color: var(--amber); }
 .revealed-image { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
 .revealed-shimmer { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 20%, #fff6da60 48%, #e8b87980 52%, transparent 80%); animation: shimmer-sweep 1.2s cubic-bezier(.16,1,.3,1) forwards; pointer-events: none; }
 @keyframes shimmer-sweep { 0% { transform: translateX(-100%); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } }
-.revealed-celebration { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
-.celebration-sparkles { position: absolute; inset: 0; }
-.celebration-sparkles svg { position: absolute; color: #ffd88a; filter: drop-shadow(0 0 6px #ffd88abb); animation: sparkle-float 2.4s ease-in-out infinite alternate; }
-.sparkle-1 { top: 12%; left: 8%; animation-delay: 0s; }
-.sparkle-2 { top: 18%; right: 12%; animation-delay: .4s; }
-.sparkle-3 { bottom: 14%; left: 50%; transform: translateX(-50%); animation-delay: .8s; }
-@keyframes sparkle-float { 0% { transform: scale(.8) translateY(0) rotate(0deg); opacity: .7; } 100% { transform: scale(1.15) translateY(-5px) rotate(12deg); opacity: 1; } }
 .revealed-banner { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding: 4px 6px; background: #171d27cc; backdrop-filter: blur(8px); border: 1px solid #e8b87940; border-radius: 999px; animation: banner-in .4s ease-out; }
 @keyframes banner-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 .revealed-badge { display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; color: #ffdfa0; padding-left: 9px; }

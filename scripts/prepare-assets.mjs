@@ -2,21 +2,22 @@ import { mkdir, copyFile, readdir, readFile, writeFile } from "node:fs/promises"
 import { watch } from "node:fs";
 import { dirname, join, posix } from "node:path";
 import { fileURLToPath } from "node:url";
+import { prepareDecorationGeometry } from "./decoration-geometry.mjs";
 
 export async function prepareAssets(root = process.cwd()) {
   const output = join(root, "public", "art");
   await mkdir(output, { recursive: true });
   await mkdir(join(root, "src", "data"), { recursive: true });
-  const collectImages = async (relative = "") => {
+  const collectAssets = async (relative = "") => {
     const entries = await readdir(join(root, "img", relative), { withFileTypes: true });
     const groups = await Promise.all(entries.map(async (entry) => {
       const name = posix.join(relative, entry.name);
-      if (entry.isDirectory()) return collectImages(name);
-      return entry.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(name) ? [name] : [];
+      if (entry.isDirectory()) return collectAssets(name);
+      return entry.isFile() && /\.(jpg|jpeg|png|webp|json)$/i.test(name) ? [name] : [];
     }));
     return groups.flat();
   };
-  const files = (await collectImages()).sort();
+  const files = (await collectAssets()).sort();
   await Promise.all(files.map(async (name) => {
     await mkdir(dirname(join(output, name)), { recursive: true });
     await copyFile(join(root, "img", name), join(output, name));
@@ -27,6 +28,7 @@ export async function prepareAssets(root = process.cwd()) {
   if (await readFile(manifestPath, "utf8").catch(() => null) !== manifest) {
     await writeFile(manifestPath, manifest);
   }
+  await prepareDecorationGeometry(root, files);
 }
 
 export function watchAssets(root = process.cwd()) {

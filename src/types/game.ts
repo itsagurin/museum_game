@@ -33,10 +33,16 @@ export interface Artwork {
   eraId: EraId;
   number: number;
   title: Localized;
+  artist?: string;
+  year?: string;
+  style?: string;
+  contentLanguage?: Language;
   story?: Localized;
   funFact?: Localized;
   originalImage?: string;
   coloringArtworkId?: string;
+  coloringSource?: string;
+  coloredPreview?: string;
   sourceFile?: string;
 }
 /** Five wall positions are separate from the era's complete artwork collection. */

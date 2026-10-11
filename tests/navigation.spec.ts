@@ -1,6 +1,62 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
 
+const youngPolandFirst = artworks.find((artwork) => artwork.eraId === "era-4")!;
+
+test("home stays centered before hydration, on reload and after rotation", async ({
+  page,
+  browser,
+  baseURL,
+}) => {
+  const expectCenteredHome = async (homePage: typeof page) => {
+    await expect.poll(async () => {
+      const box = await homePage.locator(".home-canvas").boundingBox();
+      const screen = homePage.viewportSize()!;
+      return box ? Math.abs(box.x + box.width / 2 - screen.width / 2) : Infinity;
+    }).toBeLessThan(1);
+    const box = (await homePage.locator(".home-canvas").boundingBox())!;
+    const screen = homePage.viewportSize()!;
+    expect(box.x).toBeLessThanOrEqual(1);
+    expect(box.y).toBeLessThanOrEqual(1);
+    expect(box.x + box.width).toBeGreaterThanOrEqual(screen.width - 1);
+    expect(box.y + box.height).toBeGreaterThanOrEqual(screen.height - 1);
+  };
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/#home");
+  await expectCenteredHome(page);
+  await page.locator(".house-door-hit").focus();
+  await page.locator(".game-viewport").evaluate((element) => element.scrollTo(0, 0));
+  await expectCenteredHome(page);
+  await page.reload();
+  await expectCenteredHome(page);
+  await page.setViewportSize({ width: 844, height: 390 });
+  await expectCenteredHome(page);
+  await page.reload();
+  await expectCenteredHome(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator(".house-door-hit").click();
+  await expect(page).toHaveURL(/#hall$/);
+
+  // The server-rendered home must also be centered while JS is still loading.
+  const context = await browser.newContext({
+    baseURL,
+    javaScriptEnabled: false,
+    viewport: { width: 390, height: 844 },
+  });
+  try {
+    const unhydratedPage = await context.newPage();
+    await unhydratedPage.goto("/#home");
+    await expectCenteredHome(unhydratedPage);
+    await unhydratedPage.reload();
+    await expectCenteredHome(unhydratedPage);
+    await unhydratedPage.setViewportSize({ width: 844, height: 390 });
+    await expectCenteredHome(unhydratedPage);
+  } finally {
+    await context.close();
+  }
+});
+
 test("home, hall, four rooms, stories and browser back work", async ({
   page,
 }) => {
@@ -36,7 +92,7 @@ test("home, hall, four rooms, stories and browser back work", async ({
     ).toHaveCount(5);
   }
   await page
-    .getByRole("button", { name: "Historia obrazu — Obraz 01", exact: true })
+    .getByRole("button", { name: `Historia obrazu — ${youngPolandFirst.title.pl}`, exact: true })
     .click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(
@@ -54,11 +110,9 @@ test("home, hall, four rooms, stories and browser back work", async ({
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(rooms[3]);
   await page
-    .getByRole("button", { name: "Obraz 01 — Czeka na kolory", exact: true })
+    .getByRole("button", { name: `${youngPolandFirst.title.pl} — Czeka na kolory`, exact: true })
     .click();
-  await expect(page.getByRole("dialog")).toContainText(
-    "Pracownia będzie wkrótce gotowa",
-  );
+  await expect(page.getByLabel(`Kolorowanie: ${youngPolandFirst.title.pl}`, { exact: true })).toBeVisible();
   expect(errors).toEqual([]);
 });
 
@@ -215,6 +269,12 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
     await expect.poll(() => hallImage.evaluate((image) =>
       (image as HTMLImageElement).naturalWidth,
     )).toBe(896);
+    await page.reload();
+    await expect(page.locator(".camera-controls")).toHaveCount(0);
+    await expect.poll(async () => {
+      const scene = await page.locator(".hall-canvas").boundingBox();
+      return Math.abs(scene!.x + scene!.width / 2 - page.viewportSize()!.width / 2);
+    }).toBeLessThan(1);
     const rooms = [
       "Oświecenie",
       "Romantyzm",
@@ -222,11 +282,18 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
       "Młoda Polska",
     ];
     for (let index = 0; index < rooms.length; index++) {
-      await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
       const door = page.locator(`.hall-door-hit[data-era="era-${index + 1}"]`);
       const box = await door.boundingBox();
       expect(box).not.toBeNull();
       expect(box!.width).toBeGreaterThanOrEqual(44);
+      const screen = page.viewportSize()!;
+      for (const element of [door, door.locator(".era-door-label"), door.locator(".era-door-number")]) {
+        const bounds = (await element.boundingBox())!;
+        expect(bounds.x).toBeGreaterThanOrEqual(0);
+        expect(bounds.y).toBeGreaterThanOrEqual(0);
+        expect(bounds.x + bounds.width).toBeLessThanOrEqual(screen.width);
+        expect(bounds.y + bounds.height).toBeLessThanOrEqual(screen.height);
+      }
       await door.click();
       await expect(page.getByRole("heading", { level: 1 })).toHaveText(rooms[index]);
       await expect(page.locator(".room-canvas")).toBeVisible();
@@ -246,7 +313,7 @@ test("mouse dragging the scene does not open a painting", async ({ page }) => {
   ).toBeVisible();
   const before = await viewport.evaluate((element) => element.scrollLeft);
   const painting = await page
-    .getByRole("button", { name: "Obraz 03 — Czeka na kolory", exact: true })
+    .getByRole("button", { name: `${artworks.filter((artwork) => artwork.eraId === "era-1")[2].title.pl} — Czeka na kolory`, exact: true })
     .boundingBox();
   expect(painting).not.toBeNull();
   const startX = painting!.x + painting!.width / 2;

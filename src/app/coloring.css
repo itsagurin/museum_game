@@ -100,6 +100,8 @@
 }
 .heritage-coloring .pixel-hit {
   cursor: crosshair;
+  /* Native SVG focus outlines scale with the grid and cover nearby pixels. */
+  outline: none;
 }
 .heritage-coloring .pixel-hit.matching:not(.painted) {
   stroke: #946240;
@@ -248,19 +250,6 @@
   height: 100%;
   object-fit: contain;
 }
-.heritage-coloring .revealed-celebration {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  color: #eee3ad;
-}
-.heritage-coloring .celebration-sparkles svg {
-  position: absolute;
-  filter: drop-shadow(0 1px 3px #665134);
-}
-.heritage-coloring .sparkle-1 { top: 8%; left: 8%; }
-.heritage-coloring .sparkle-2 { top: 15%; right: 10%; }
-.heritage-coloring .sparkle-3 { bottom: 12%; right: 8%; }
 .heritage-coloring .reproduction-notice {
   margin: 10px 0 0;
   color: var(--muted);
@@ -270,6 +259,17 @@
 .story-restore {
   margin-bottom: 12px;
 }
+.heritage-coloring .coloring-loading {
+  width: min(480px, 100%);
+  margin: 50px auto;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.heritage-coloring .pixel-preview { image-rendering: pixelated; }
 @media (min-width: 700px) and (min-height: 700px) {
   .dialog-panel.heritage-coloring {
     padding-top: 34px;

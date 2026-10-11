@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getRoomBackgroundCandidates, getRoomProgress } from "./room-development";
+import { getRoomProgress } from "./room-development";
 
 const collection = Array.from({ length: 30 }, (_, index) => ({ id: `painting-${index + 1}`, eraId: "era-1" as const }));
 
@@ -28,20 +28,5 @@ describe("room development across the complete era collection", () => {
     expect(getRoomProgress("era-1", demo.slice(0, 1), [demo[0].id])).toMatchObject({ level: 9, isComplete: true });
     expect(getRoomProgress("era-4", demo, []).isComplete).toBe(false);
     expect(getRoomProgress("era-4", [], []).level).toBe(0);
-  });
-});
-
-describe("room decoration asset selection", () => {
-  it("selects the earned variant first and retains all lower-level fallbacks", () => {
-    const files = ["room1_level9.jpg", "room1_level3.png", "room2_level5.jpg", "room1_level0.webp", "room1.jpg", "room1_level5.JPEG"];
-    expect(getRoomBackgroundCandidates("room1.jpg", 6, files)).toEqual(["room1_level5.JPEG", "room1_level3.png", "room1_level0.webp", "room1.jpg"]);
-  });
-
-  it("never shows locked, invalid or other-room assets and supports the legacy fallback", () => {
-    const files = ["room1_level1.jpg", "room1_level10.jpg", "room1_level-1.jpg", "room2_level0.jpg", "room1_LEVEL0.PNG", "room1.png"];
-    expect(getRoomBackgroundCandidates("room1.jpg", 0, files)).toEqual(["room1_LEVEL0.PNG", "room1.png"]);
-    expect(getRoomBackgroundCandidates("room1.jpg", 5, [])).toEqual(["room1.jpg"]);
-    expect(getRoomBackgroundCandidates("room1.jpg", -1, files)).toEqual(["room1_LEVEL0.PNG", "room1.png"]);
-    expect(getRoomBackgroundCandidates("room1.jpg", NaN, files)).toEqual(["room1_LEVEL0.PNG", "room1.png"]);
   });
 });

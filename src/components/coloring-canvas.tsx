@@ -210,24 +210,6 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
           )}
         </AnimatePresence>
 
-        <AnimatePresence>
-          {revealed && (
-            <motion.div
-              className="revealed-celebration"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: reduced ? 0 : 0.5 }}
-              aria-hidden
-            >
-              <div className="celebration-sparkles">
-                <Sparkles size={22} className="sparkle-1" />
-                <Sparkles size={16} className="sparkle-2" />
-                <Sparkles size={20} className="sparkle-3" />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
     {revealed && imageFailed && <p className="reproduction-notice" role="status">{t.unavailable}</p>}

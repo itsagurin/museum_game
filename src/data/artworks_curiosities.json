@@ -1,0 +1,749 @@
+[
+  {
+    "filename": "assets/artworks/era1_oswiecenie/01_canaletto_warszawa_praga.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Widok Warszawy od strony Pragi",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1770",
+    "curiosity": "Drewniane wielkie łodzie na Wiśle to tak zwana szkuty i galary, którymi spławiano polskie zboże aż do Gdańska – to właśnie handel tym zbożem dawał wtedy Rzeczypospolitej największe bogactwo."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/02_canaletto_krakowskie_przedmiescie_plac_zamkowy.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Krakowskie Przedmieście w stronę Placu Zamkowego",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1767–1768",
+    "curiosity": "Na tej ulicy widać zderzenie dwóch światów – tradycyjna polska szlachta z wąsami i wygolonymi głowami w żupanach mija się z modnisiami w perukach i francuskich frakach, którzy chcieli europejskich reform."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/03_canaletto_kolumna_zygmunta.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Krakowskie Przedmieście od Kolumny Zygmunta",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1768",
+    "curiosity": "Tuż obok kolumny widać wielką ceglaną bramę, której dzisiaj w Warszawie w ogóle nie ma – to była średniowieczna Brama Krakowska, którą niedługo później rozebrano, bo blokowała ruch wozów i karet."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/05_canaletto_plac_krasinskich.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Plac Krasińskich z Pałacem Rzeczypospolitej",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1778",
+    "curiosity": "Przed tym ogromnym pałacem stoją uzbrojeni żołnierze w białych mundurach, bo mieścił się tu najwyższy sąd państwa. Magnaci przyjeżdżali tu złotymi karetami zaprzężonymi w czwórki koni załatwiać swoje najgrubsze spory majątkowe."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/07_canaletto_kosciol_wizytek.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Kościół Wizytek w Warszawie",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1777",
+    "curiosity": "Na pierwszym planie widać służących w czerwonych mundurach niosących damę w zamykanej drewnianej skrzyni z oknami. Była to tak zwana lektyka – najwygodniejszy sposób podróżowania po warszawskim bruku, gdy na ulicach po deszczu stało po kolana błoto."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/08_canaletto_kosciol_sakramentek.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Widok Warszawy z tarasu Zamku Królewskiego",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1773",
+    "curiosity": "Eleganccy panowie w perukach wyszli prosto z zamku na nowo zbudowany taras, żeby podziwiać widok na rzekę. W tym samym czasie w dole pod skarpą zwykli flisacy i przewoźnicy ciężko pracują przy rozładunku drewna na Wiśle."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/10_canaletto_wjazd_ossolinskiego.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Wjazd Jerzego Ossolińskiego do Rzymu w 1633 r.",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1779",
+    "curiosity": "Polski poseł kazał specjalnie podbić konie luźnymi, złotymi podkowami, które same odpadały na rzymskim bruku. Ludzie rzucali się pod kopyta, żeby zbierać złoto, a cała Europa mówiła o bajecznym bogactwie Polski."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/11_bacciarelli_koronacyjny.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret Stanisława Augusta w stroju koronacyjnym",
+    "artist": "Marcello Bacciarelli",
+    "year": "1768–1771",
+    "curiosity": "Król pozuje w hiszpańskim stroju ze srebrnego atłasu i wielkim płaszczu z gronostajów, ale ta korona leżąca na stoliku była ostatnią nową koroną w historii Polski. Król zamówił ten portret, żeby pokazać się Europie jako władca nowoczesny, ale wierny tradycji."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/12_bacciarelli_z_klepsydra.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret Stanisława Augusta Poniatowskiego z klepsydrą",
+    "artist": "Marcello Bacciarelli",
+    "year": "1793",
+    "curiosity": "Król nie ma na sobie korony ani zbroi, tylko zwykły brązowy surdut, bo portret powstał tuż po przegranej wojnie z Rosją i drugim rozbiorze. Załamany władca patrzy na klepsydrę, wiedząc, że czas istnienia Polski jako państwa bezpowrotnie dobiega końca."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/14_bacciarelli_lubomirska.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret Izabeli z Czartoryskich Lubomirskiej z pieskiem",
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1775–1780",
+    "curiosity": "Ta arystokratka, zwana „Błękitną Markizą”, była jedną z najbogatszych kobiet w Europie i słynęła z tego, że nigdy nie rozstawała się ze swoimi miniaturowymi pieskami. Ma na sobie ogromną, pudrowaną mąką fryzurę, którą układano godzinami na drucianym stelażu."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/15_bacciarelli_jozef_poniatowski.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret księcia Józefa Poniatowskiego w mundurze",
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1790",
+    "curiosity": "Młody książę Józef, bratanek króla i późniejszy bohater narodowy, ma na piersi zawieszony srebrny ryngraf z białym orłem. Jako dowódca nowej armii Sejmu Czteroletniego miał zerwać z wizerunkiem salonowego dandysa i stać się twardym obrońcą ojczyzny."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/17_bacciarelli_akademia_krakowska.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret doktora Walentego Gagatkiewicza",
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1790",
+    "curiosity": "Ten poważny pan na obrazie to nadworny lekarz króla, a portret przez ponad 200 lat uchodził za zaginiony i odnaleziono go dopiero niedawno na aukcji w Paryżu. Zamiast herbu szlacheckiego lekarz ma przy sobie książki medyczne, bo w tych czasach wiedza i rozum stawały się ważniejsze od pochodzenia."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/18_norblin_swieto_bielany.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Święto na Bielanach",
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1785",
+    "curiosity": "Ten festyn na Bielanach to był jedyny dzień w roku, kiedy kobiety miały prawo wejść na teren surowego klasztoru mnichów kamedułów. Z tej okazji cała Warszawa – od arystokratów po miejską biedotę – zjeżdżała się do lasu pić, tańczyć i bujać się na wielkich huśtawkach."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/20_norblin_targ_praga.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Targ na Pradze pod Warszawą",
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1785–1790",
+    "curiosity": "Praga była wtedy wielkim podmiejskim centrum handlu końmi i bydłem, gdzie panował potworny kurz, hałas i tłok. Chłopi zjeżdżali się tu prostymi wozami z całego Mazowsza, a szlachta i kupcy dobijali targu uderzeniem w dłoń i kieliszkiem wódki."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/21_norblin_kawiarnia.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Wybór Piasta na króla (Pierwszy Piast)",
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1790",
+    "curiosity": "Obraz pokazuje legendarną scenę, gdy tłum ludzi przychodzi do prostej drewnianej chaty wiejskiego kołodzieja, żeby wybrać go na króla. Miało to przypominać szlachcie, że prawdziwa polska siła wywodzi się z prostej, uczciwej pracy na roli, a nie z kłótni w pałacach."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/22_norblin_sejmik.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Sejmik szlachecki w kościele",
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1790",
+    "curiosity": "Szlachta zebrała się wewnątrz kościoła na głosowanie, ale zamiast spokoju widać bijatykę, wymachiwanie szablami i picie wódki z butli. Magnaci celowo upijali biedniejszych szlachciców, żeby ci głosowali tak, jak im kazano, co często kończyło się krwawymi awanturami."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/23_norblin_wieszanie_zdrajcow.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Wieszanie zdrajców na Rynku Starego Miasta (9 maja 1794)",
+    "artist": "Jan Piotr Norblin",
+    "year": "1794",
+    "curiosity": "Tłum mieszkańców Warszawy wpadł w taki szał z powodu zdrady ojczyzny, że wyciągnął przywódców zdrady targowickiej z aresztu i powiesił ich bez sądu na rynku. Wśród wisielców był hetman i biskupi, którzy brali od carycy Rosji stałe pensje za rozbicie Polski."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/24_norblin_raclawice.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Starcie kosynierów z wojskami rosyjskimi (Racławice)",
+    "artist": "Jan Piotr Norblin",
+    "year": "1794",
+    "curiosity": "Polskim powstańcom tak bardzo brakowało karabinów, że wiejscy kowale musieli na szybko przekuwać zwykłe kosy do zboża na sztorc. Chłopi w białych sukmanach ruszyli z tymi kosami prosto pod ogień rosyjskich armat i zdobyli je w kilkanaście minut."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/25_smuglewicz_przysiega_kosciuszki.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Przysięga Tadeusza Kościuszki na Rynku w Krakowie",
+    "artist": "Franciszek Smuglewicz",
+    "year": "1797",
+    "curiosity": "Kościuszko na krakowskim rynku nie założył bogatego munduru ze złotem, tylko ubrał się w białą sukmanę, jaką nosili najbiedniejsi chłopi. Zrobił to celowo, żeby pokazać całemu narodowi, że bez udziału chłopów Polska nie ma szans wygrać walki o wolność."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/26_smuglewicz_rodzina_prozorow.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Portret rodziny Prozorów",
+    "artist": "Franciszek Smuglewicz",
+    "year": "1789",
+    "curiosity": "Cała rodzina stoi w eleganckim salonie wokół marmurowego pomnika z urną, żeby uczcić zmarłego ojca patrioty. Chłopcy stojący po prawej stronie ubrani są już w mundury Szkoły Rycerskiej, bo od małego szkolono ich na obrońców reformowanego państwa."
+  },
+  {
+    "filename": "assets/artworks/era1_oswiecenie/29_vogel_lazienki.jpg",
+    "era_key": "era1_oswiecenie",
+    "era_name": "Oświecenie",
+    "title": "Łazienki Królewskie: Pałac Na Wyspie",
+    "artist": "Zygmunt Vogel",
+    "year": "1790",
+    "curiosity": "Ten piękny pałac na wodzie był kiedyś zwykłą łaźnią magnacką, w której król Stanisław August urządził swoją letnią rezydencję. Po stawie pływały małe gondole, a król organizował tu słynne obiady czwartkowe dla poetów i uczonych."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/01_01 copy.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Pożegnanie powstańca (z cyklu Polonia)",
+    "artist": "Artur Grottger",
+    "year": "1866",
+    "curiosity": "Młoda dziewczyna ma na sobie całkowicie czarną suknię na znak żałoby narodowej i ze łzami żegna narzeczonego idącego do lasu na powstanie. Przypina mu do kurtki biało-czerwoną kokardę, wiedząc, że najpewniej widzi go żywego po raz ostatni w życiu."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/01_01.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Portret Adama Mickiewicza na Judahu skale",
+    "artist": "Walenty Wańkowicz",
+    "year": "1827–1828",
+    "curiosity": "Mickiewicz stoi na stromej krymskiej skale z rozwianymi włosami, owinięty w wielką kaukaską pelerynę zwaną burką. Malarz przedstawił go jako samotnego geniusza i pielgrzyma, który tęskni za utraconą ojczyzną, patrząc na wzburzone morze."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/02_02.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Szarża w wąwozie Somosierra",
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1837",
+    "curiosity": "Polscy kawalerzyści pędzą konno przez wąski hiszpański wąwóz prosto pod lufy hiszpańskich armat, które dziesiątkowały wojska Napoleona. Wjechali na tę przełęcz w zaledwie osiem minut pod gradem kul, dokonując ataku uznawanego za jedno z najbardziej szalonych zwycięstw w historii wojen."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/03_03.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Seńko (Portret chłopa w kapeluszu)",
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1846",
+    "curiosity": "To nie jest żaden król ani generał, tylko zwykły wiejski fornal Seńko ze wsi Krzysztoforzyce, który całe życie ciężko pracował na pańszczyźnie. Malarz namalował go z niezwykłą powagą i szacunkiem, pokazując zmęczenie i dumę na jego zniszczonej twarzy."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/08_08.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Starzec siedzący na stopniach",
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1840",
+    "curiosity": "Zgarbiony, stary żebrak siedzi w poszarpanych łachmanach na zimnych kamiennych schodach bogatej kamienicy. Artysta pokazał ludzką biedę bez upiększania, używając szarych i ziemistych kolorów, żeby poruszyć sumienia bogatych mieszczan."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/09_09.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Wzięcie Arsenału w nocy 29 listopada 1830 r.",
+    "artist": "Marcin Zaleski",
+    "year": "1831",
+    "curiosity": "W ciemną listopadową noc tłum mieszkańców Warszawy i młodzi podchorążowie rzucili się na magazyn broni, wyłamując wrota siekierami. Wynoszono tysiące karabinów skałkowych i rozdawano każdemu na ulicy, co dało początek Powstaniu Listopadowemu."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/11_11.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Widok Placu Teatralnego w Warszawie",
+    "artist": "Marcin Zaleski",
+    "year": "1838",
+    "curiosity": "Wielki gmach Teatru Wielkiego dopiero co został zbudowany i był dumą miasta, ale nad placem wisi ponure, szare niebo. Po klęsce powstania listopadowego Warszawa była pod twardą okupacją carską, a na placu widać patrole i powozy rosyjskich urzędników."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/13_13.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Bitwa pod Raszynem 1809",
+    "artist": "January Suchodolski",
+    "year": "1855",
+    "curiosity": "Dowódca idzie na czele wojska prosto pod lufy armat z fajką w zębach. Zapalił ją specjalnie, żeby pokazać totalny spokój i powstrzymać panikę wśród swoich młodych, wystraszonych żołnierzy."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/14_14.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Portret księcia Józefa Poniatowskiego",
+    "artist": "Josef Grassi",
+    "year": "po 1810",
+    "curiosity": "Książę Józef był wielkim ulubieńcem kobiet i symbolem elegancji, a na piersi nosi najwyższe odznaczenie wojenne Virtuti Militari, którego był pierwszym kawalerem w historii. Portret ten wisiał w niemal każdym polskim dworku jako znak nadziei na wolność u boku Napoleona."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/15_15.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Obrona Jasnej Góry przed Szwedami",
+    "artist": "January Suchodolski",
+    "year": "1845",
+    "curiosity": "Mnisi w białych habitach stoją na murach klasztoru ramię w ramię z żołnierzami przy huczących armatach. Obraz namalowano w czasach zaborów, żeby przypomnieć Polakom, że nawet garstka obrońców z wiarą potrafiła odeprzeć potężną szwedzką armię."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/17_17.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Portret generała Henryka Dembińskiego",
+    "artist": "Henryk Rodakowski",
+    "year": "1852",
+    "curiosity": "Siwy generał siedzi zamyślony na wygnaniu w Paryżu w wielkim czarnym płaszczu z czerwoną podszewką. Przegrał dwa wielkie powstania – w Polsce i na Węgrzech – a na jego twarzy widać cały ból tułacza, który wie, że już nigdy nie zobaczy wolnej ojczyzny."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/20_20.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Śmierć Barbary Radziwiłłówny",
+    "artist": "Józef Simmler",
+    "year": "1860",
+    "curiosity": "Młody król Zygmunt August siedzi zrozpaczony przy łożu i trzyma za rękę swoją zmarłą żonę Barbarę, którą poślubił z wielkiej miłości wbrew wściekłości matki i szlachty. Obraz wywołał łzy u tysięcy ludzi, bo Polacy pod zaborami widzieli w zmarłej królowej symbol umierającej Polski."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/21_21.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Kucie kos (cykl Polonia)",
+    "artist": "Artur Grottger",
+    "year": "1863",
+    "curiosity": "W ciemną noc w wiejskiej kuźni kowale przy blasku ognia i iskier przekuwają rolnicze kosy ze sztorcowych na pionowe ostrza. Za posiadanie broni groził wtedy Sybir, więc powstańcy styczniowi musieli potajemnie tworzyć broń z narzędzi rolniczych tuż przed wymarszem do lasu."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/22_22.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Stańczyk w czasie balu na dworze królowej Bony",
+    "artist": "Jan Matejko",
+    "year": "1862",
+    "curiosity": "Wszyscy na zamku świetnie bawią się na balu, a królewski błazen siedzi sam w ciemnym pokoju i załamuje ręce. Właśnie dostał list, że wrogowie zdobyli ważną polską twierdzę, ale dwór ma to gdzieś i woli dalej pić i tańczyć."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/23_23.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "W saskim ogrodzie (Żałoba narodowa)",
+    "artist": "Artur Grottger",
+    "year": "1863",
+    "curiosity": "Te kobiety ubrane są od stóp do głów na czarno i nie mają żadnego złota, tylko czarne żelazne łańcuszki przypominające kajdany. Był to cichy protest warszawianek przeciwko carowi po tym, jak rosyjskie wojsko otworzyło ogień do bezbronnych demonstrantów."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/27_27.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Bitwa (z cyklu Lithuania)",
+    "artist": "Artur Grottger",
+    "year": "1864",
+    "curiosity": "W gęstym dymie w środku litewskiego lasu powstańcy toczą ostatnią, desperacką walkę z przeważającymi siłami carskimi. Walczą myśliwskimi strzelbami i przekutymi kosami, wiedząc, że po klęsce czeka ich tylko szubienica albo dożywotnie katorgi na Syberii."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/30_30.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Ostatnie chwile Fryderyka Chopina",
+    "artist": "Teofil Kwiatkowski",
+    "year": "1849–1850",
+    "curiosity": "Wielki kompozytor umiera na gruźlicę w paryskim pokoju, a wokół łóżka klęczą jego siostra i najbliżsi przyjaciele z emigracji. Chopin tak bardzo tęsknił za Polską, że poprosił przed śmiercią, by po zgonie wyjęto z jego ciała serce i potajemnie przewieziono je w słoiku do Warszawy."
+  },
+  {
+    "filename": "assets/artworks/era2_romantyzm/romant1.jpg",
+    "era_key": "era2_romantyzm",
+    "era_name": "Romantyzm",
+    "title": "Śmierć księcia Józefa Poniatowskiego w Elsterze",
+    "artist": "January Suchodolski",
+    "year": "1840",
+    "curiosity": "Ranny książę na spienionym koniu rzuca się w głąb wezbranej rzeki, uciekając przed niewolą po przegranej bitwie pod Lipskiem. Wolał utonąć w rzece niż oddać swoją szablę wrogom, krzycząc według legendy: „Bóg mi powierzył honor Polaków, Jemu samemu go oddam!”"
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/02_02.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Rejtan – Upadek Polski",
+    "artist": "Jan Matejko",
+    "year": "1866",
+    "curiosity": "Ten facet na ziemi rozdarł na sobie koszulę i własnym ciałem blokuje drzwi. Krzyczy, że zdrajcy podpiszą rozbiór Polski tylko po jego trupie, podczas gdy posłowie uciekają z sali z kieszeniami wypchanymi rosyjskimi monetami."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/03_03.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Unia Lubelska",
+    "artist": "Jan Matejko",
+    "year": "1869",
+    "curiosity": "Król Zygmunt August unosi krzyż w sali pełnej senatorów w sobolich futrach, świętując zjednoczenie Polski i Litwy w jedno wielkie państwo. Matejko namalował ten obraz na 300-lecie unii, żeby przypomnieć Polakom pod zaborami, jak potężne potrafiło być ich państwo, gdy działało wspólnie."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/04_04.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Astronom Kopernik, czyli rozmowa z Bogiem",
+    "artist": "Jan Matejko",
+    "year": "1873",
+    "curiosity": "Kopernik klęczy na dachu wieży we Fromborku pod osłoną nocy i rozkłada ręce w zachwycie, patrząc w niebo. Właśnie zrozumiał, że to Ziemia krąży wokół Słońca, dokonując odkrycia za pomocą prostych drewnianych patyków i cyrkla, bez żadnego teleskopu."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/05_05.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Zawieszenie dzwonu Zygmunta",
+    "artist": "Jan Matejko",
+    "year": "1874",
+    "curiosity": "Dziesiątki rzemieślników i robotników ciągną za grube liny, wciągając olbrzymi dzwon na sam szczyt wawelskiej wieży, a król z królową Boną przyglądają się temu z bliska. Nawet królewski Stańczyk bawi się sznurem od dzwonu, który do dziś bije w Krakowie tylko w najważniejsze święta narodowe."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/06_06.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Bitwa pod Grunwaldem",
+    "artist": "Jan Matejko",
+    "year": "1878",
+    "curiosity": "W samym centrum obrazu wódz Krzyżaków w białym płaszczu z czarnym krzyżem ginie powalony nie przez króla, lecz przez dwóch zwykłych pieszych wojowników z toporem i włócznią. W tle widać księcia Witolda pędzącego z uniesionym mieczem w czerwonym kubraku bez zbroi, zagrzewającego wojsko do ostatecznego rozbicia wroga."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/07_07.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Portret żony artysty w sukni ślubnej",
+    "artist": "Jan Matejko",
+    "year": "1879",
+    "curiosity": "Matejko namalował swoją żonę Teodorę w sukni ślubnej dopiero kilkanaście lat po ślubie, kiedy ich małżeństwo przechodziło potworne kryzysy i ciągłe awantury. Suknię z ciężkiego atłasu zaprojektował sam malarz, a Teodora była tak zazdrosna o inne modelki, że kazała mężowi malować niemal wszystkie kobiety z jej twarzą."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/08_08.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Hołd pruski",
+    "artist": "Jan Matejko",
+    "year": "1882",
+    "curiosity": "Niemiecki książę klęczy w zbroi przed polskim królem na krakowskim rynku i oddaje mu sztandar ze swoim herbem jako lennik. Matejko namalował to w czasach, gdy Prusacy brutalnie tępili język polski w szkołach, żeby przypomnieć im, kto komu kiedyś składał hołd na kolanach."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/09_09.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Patrol powstańczy (Pikieta)",
+    "artist": "Maksymilian Gierymski",
+    "year": "1872",
+    "curiosity": "Powstańcy na koniach zatrzymali się na piaszczystej drodze obok krzyża i wypytują wieśniaka z wozu, czy w okolicy nie ma carskich kozaków. Nie ma tu żadnego patosu ani bohaterstwa – tylko strach, zmęczenie, chłód i nerwowe rozglądanie się po pustej drodze."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/11_11.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Wiosna w małym miasteczku",
+    "artist": "Maksymilian Gierymski",
+    "year": "1872",
+    "curiosity": "Ulica polskiego miasteczka po wiosennych roztopach zamieniła się w jedno wielkie grzęzawisko błota, po którym swobodnie spacerują gęsi. Zamiast pięknych pałaców malarz pokazał prawdziwą, biedną i zacofaną prowincję, którą pozytywiści chcieli uczyć i rozwijać."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/12_12.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Żydówka z pomarańczami (Pomarańczarka)",
+    "artist": "Aleksander Gierymski",
+    "year": "1881",
+    "curiosity": "Starsza uboga handlarka z warszawskiego Powiśla marznie na ulicy z koszami egzotycznych wtedy pomarańczy. W spracowanych, zniszczonych palcach trzyma druty i wełnę – robi pończochy w każdej wolnej minucie, żeby zarobić choć parę dodatkowych groszy na jedzenie."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/13_13.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "W altanie",
+    "artist": "Aleksander Gierymski",
+    "year": "1882",
+    "curiosity": "Ludzie przebrani w dawne stroje sprzed stu lat piją wino przy stole ogrodowym, ale malarz męczył się z tym obrazem przez całe lata. Malował go w plenerze w pełnym słońcu tak obsesyjnie, badając jak światło przenika przez liście, że niemal przypłacił to załamaniem nerwowym."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/14_14.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Święto Trąbek I",
+    "artist": "Aleksander Gierymski",
+    "year": "1884",
+    "curiosity": "O zmierzchu tłum żydowskich mieszkańców Warszawy zebrał się nad brzegiem Wisły przy drewnianych barkach, by odprawić modlitwę w Nowy Rok. Trzęsą kieszeniami nad wodą, symbolicznie wyrzucając do rzeki swoje grzechy z całego roku, by zacząć życie z czystym kontem."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/15_15.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Piaskarze",
+    "artist": "Aleksander Gierymski",
+    "year": "1887",
+    "curiosity": "Robotnicy stoją po pas w wodzie i ręcznymi wielkimi łopatami ładują mokry piasek z dna Wisły na drewniane łodzie, a w tle widać żelazny most. To był jeden z najcięższych zawodów w Warszawie – dzięki ich morderczej pracy rąk powstawały kamienice i fabryki rozwijającego się miasta."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/17_17.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Babie lato",
+    "artist": "Józef Chełmoński",
+    "year": "1875",
+    "curiosity": "Wiejska dziewczyna po prostu odpoczywa na polu i bawi się unoszącymi się nitkami, pilnując stada z psem. Kiedy wystawiono ten obraz w Warszawie, wybuchła afera – bogaci ludzie byli oburzeni, że malarz śmiał pokazać brudne, bose stopy zamiast eleganckiej panny."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/18_18.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Sprawa u wójta",
+    "artist": "Józef Chełmoński",
+    "year": "1873",
+    "curiosity": "W dusznej wiejskiej izbie chłopi kłócą się zawzięcie przed wójtem z carskim łańcuchem na szyi o kawałek zaoranej miedzy lub skradzioną kurę. Malarz idealnie podpatrzył autentyczne wiejskie charaktery – od cwaniaków i krzykaczy po wystraszonych starców w kożuchach."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/20_20.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Czwórka",
+    "artist": "Józef Chełmoński",
+    "year": "1881",
+    "curiosity": "Cztery konie w szalonym pędzie galopują przez głębokie błoto prosto na widza, tak że niemal czuć pryskające spod kopyt grudy ziemi. Woźnica w wielkiej czapie ledwo trzyma lejce, popisując się brawurą na ukraińskim targu końskim."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/21_21.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Krzyż w zadymce",
+    "artist": "Józef Chełmoński",
+    "year": "1888",
+    "curiosity": "Drewniany przydrożny krzyż stoi samotnie pośród szalejącej śnieżycy, a na jego ramionach przysiadły czarne wrony. Na pustych mazowieckich bezdrożach taki krzyż był dla zagubionych zimą wędrowców jedyną szansą na odnalezienie drogi i ocalenie przed zamarznięciem."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/22_22.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Czarniecki pod Koldyngą",
+    "artist": "Józef Brandt",
+    "year": "1870",
+    "curiosity": "Polscy husarze z końmi płyną na małych drewnianych łodziach przez lodowate morze, żeby zdobyć duńską twierdzę zajętą przez Szwedów. Konie płynęły wpław obok łodzi trzymane za uzdy – to o tej niezwykłej morskiej wyprawie śpiewamy do dziś w polskim hymnie: „jak Czarniecki do Poznania”."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/23_23.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Wyjazd z Wilanowa Jana III i Marysieńki Sobieskich",
+    "artist": "Józef Brandt",
+    "year": "1887",
+    "curiosity": "Złota królewska karoca wyjeżdża z pałacowego dziedzińca w otoczeniu husarzy w lamparcich skórach i grającej orkiestry janczarskiej. Król Sobieski uwielbiał orientalny przepych, a malarz pokazał ten moment tak widowiskowo, jak kadr z wielkiego historycznego filmu."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/25_25.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Pochodnie Nerona (Świeczniki chrześcijaństwa)",
+    "artist": "Henryk Siemiradzki",
+    "year": "1876",
+    "curiosity": "Rzymski cesarz Neron kazał owinąć pierwszych chrześcijan w słomę, oblać smołą i podpalić na słupach, żeby oświetlali mu nocny spacer po ogrodzie. Cesarz siedzi z kielichem w złotej lektyce niesionej przez niewolników i z uśmiechem przygląda się męce ludzi, których fałszywie oskarżył o podpalenie Rzymu."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/27_27.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Żydzi modlący się w synagodze podczas Jom Kippur",
+    "artist": "Maurycy Gottlieb",
+    "year": "1878",
+    "curiosity": "Malarz przedstawił w świątyni samego siebie w trzech różnych momentach życia: jako małego chłopca, młodzieńca i dorosłego mężczyznę z medalionem. Zmarł tragicznie zaledwie rok po ukończeniu tego obrazu w wieku 23 lat, z powodu powikłań po zapaleniu gardła i złamanego serca."
+  },
+  {
+    "filename": "assets/artworks/era3_pozytywizm/28_28.jpg",
+    "era_key": "era3_pozytywizm",
+    "era_name": "Pozytywizm",
+    "title": "Pisarz Tory",
+    "artist": "Maurycy Gottlieb",
+    "year": "1876",
+    "curiosity": "Starszy człowiek w wielkim skupieniu kaligrafuje święty tekst gęsim piórem na cielęcym pergaminie. Pisarz tory nie mógł popełnić ani jednej pomyłki – gdyby pomylił choćby jedną literę, cały kilkumetrowy pergamin musiał zostać zniszczony i zakopany w ziemi."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/01_01.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "W pracowni",
+    "artist": "Olga Boznańska",
+    "year": "1890",
+    "curiosity": "Artystka uciekła z konserwatywnego Krakowa do Monachium, bo w Polsce kobietom nie pozwalano studiować na Akademii Sztuk Pięknych. Widać tu jej codzienne, surowe życie – zamiast modnych salonowych sukien nosiła zgrzebny fartuch i całymi dniami malowała pośród desek i blejtramów."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/02_02.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Dziewczynka z chryzantemami",
+    "artist": "Olga Boznańska",
+    "year": "1894",
+    "curiosity": "Ta mała blada dziewczynka z niesamowitymi, hipnotyzującymi oczami trzyma w dłoniach chryzantemy, które kojarzyły się wtedy wyłącznie z pogrzebami i cmentarzem. Ludzie oglądający ten portret czuli ciarki na plecach, mówiąc, że wygląda jak dziecko, które wie o życiu zbyt wiele smutnych rzeczy."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/03_03.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Portret malarza Paula Nauena",
+    "artist": "Olga Boznańska",
+    "year": "1893",
+    "curiosity": "Ten elegancki pan z zapalonym cygarem to niemiecki malarz i wielki przyjaciel Boznańskiej z czasów monachijskiej bohemy artystycznej. Portret przyniósł artystce złoty medal w Wiedniu i otworzył jej drogę do wielkiej europejskiej kariery."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/06_06.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Dzieci w ogrodzie",
+    "artist": "Władysław Podkowiński",
+    "year": "1892",
+    "curiosity": "Dwaj mali chłopcy w wielkich słomkowych kapeluszach i fartuszkach podlewają warzywa z metalowej konewki w potwornym upale. Malarz tak bardzo zafascynował się francuskim impresjonizmem, że namalował kapustę żółtymi i fioletowymi plamkami, za co krytycy w Warszawie uznali go niemal za wariata."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/07_07.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Szał uniesień",
+    "artist": "Władysław Podkowiński",
+    "year": "1894",
+    "curiosity": "Naga kobieta na wielkim, oszalałym czarnym koniu z pianą na pysku wywołała gigantyczny skandal w Krakowie – ludzie stali w długich kolejkach, żeby zobaczyć to zgorszenie. Malarz z powodu nieszczęśliwej miłości do zamężnej kobiety nie wytrzymał presji, przyszedł do galerii z nożem i pociął własne płótno na kawałki."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/09_09.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "W tumanie",
+    "artist": "Jacek Malczewski",
+    "year": "1893",
+    "curiosity": "Wiejski chłopiec gra na fujarce z wierzby, a w unoszącej się nad polem mgle wirują tajemnicze nagie postacie ze skrzydłami. Malczewski uwielbiał mieszać zwykłą polską wieś z mitami, pokazując, że w polskim krajobrazie ciągle błąkają się duchy dawnych powstańców."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/10_10.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Melancholia",
+    "artist": "Jacek Malczewski",
+    "year": "1894",
+    "curiosity": "Ze sztalugi w pokoju malarza wylewa się na podłogę dziki tłum kosynierów, żołnierzy z szablami i dzieci w kajdanach, pędzących do otwartego okna. W oknie stoi jednak tajemnicza postać w czerni, która nie pozwala im wyskoczyć, symbolizując niemoc Polaków pod zaborami."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/11_11.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Błędne koło",
+    "artist": "Jacek Malczewski",
+    "year": "1897",
+    "curiosity": "Mały chłopiec w czerwonej krakuskiej czapce siedzi na szczycie malarskiej drabiny, a wokół niego w powietrzu tańczy szalony krąg zmysłowych dziewczyn i cierpiących powstańców. To sam malarz pokazany jako dziecko, który musi wybrać, czy malować radosne piękno, czy cierpienie swojego narodu."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/12_12.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Thanatos",
+    "artist": "Jacek Malczewski",
+    "year": "1898–1899",
+    "curiosity": "Śmierć podkrada się nocą pod ganek polskiego dworku, ale nie jest kościotrupem w płachcie, tylko piękną, silną kobietą ze skrzydłami trzymającą ostrą kosę. Stary szlachcic w nocnej koszuli wychodzi jej na spotkanie ze spokojem, witając śmierć jako wyzwolenie z trudów życia."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/13_13.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Zatruta studnia I",
+    "artist": "Jacek Malczewski",
+    "year": "1905",
+    "curiosity": "Przy wiejskiej studni z drewnianym żurawiem stoi potwór ze skrzydłami owada oraz młody polski chłopak w rosyjskim mundurze wojskowym. Zatruta woda oznacza fałszywe obietnice zaborców, a żołnierz musi podjąć decyzję, czy wypić tę wodę, czy walczyć o wolną Polskę."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/14_14.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Autoportret z Muzą",
+    "artist": "Jacek Malczewski",
+    "year": "1906",
+    "curiosity": "Malarz stoi w roboczym fartuchu z pędzlami w ręku na tle dojrzałego zboża, a za jego plecami unosi się naga Muza ze skrzydłami w wianku z chabrów. Artysta uważał, że malarz w Polsce nie może być zwykłym rzemieślnikiem, lecz musi czerpać natchnienie wprost z ziemi i natury."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/16_16.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Chochoły (Planty o świcie)",
+    "artist": "Stanisław Wyspiański",
+    "year": "1898",
+    "curiosity": "Te dziwne garbate kukły w zimowym krakowskim parku to krzewy róż owinięte słomą na zimę, żeby nie zmarzły pod Wawelem. Wyspiański zrobił z nich słynnego Chochoła w dramacie „Wesele” – symbol uśpionych Polaków, którzy wyglądają na martwych ze słomy, ale pod spodem czekają na wiosnę wolności."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/17_17.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Autoportret z żoną",
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "curiosity": "Słynny krakowski dramaturg i artysta wywołał wielki skandal w eleganckim Krakowie, bo ożenił się z prostą, niepiśmienną wiejską dziewczyną Teodorą Pytko. Na portrecie dumny artysta pozuje w marynarce obok żony w ludowej chustce i wiejskich czerwonych koralach."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/18_18.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Śpiący Staś",
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "curiosity": "Mały synek artysty zasnął zmęczony z główką opartą na poduszce, a ojciec narysował go kolorowymi kredkami pastelowymi w kilka chwil, żeby go nie obudzić. Wyspiański uwielbiał malować swoje dzieci z wielką czułością, utrwalając ich ulotny dziecięcy spokój."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/19_19.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Portret Lizy Pareńskiej wśród pelargonii",
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "curiosity": "Zamyślona nastolatka z bogatej krakowskiej rodziny lekarskiej siedzi przy oknie zastawionym doniczkami z czerwonymi pelargoniami. W salonie jej rodziców spotykała się cała krakowska bohema, a artysta zakochał się w secesyjnych kształtach tych kwiatów."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/20_20.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Macierzyństwo",
+    "artist": "Stanisław Wyspiański",
+    "year": "1905",
+    "curiosity": "Żona artysty karmi piersią ich małe dziecko, ubrana w tradycyjny krakowski gorset wyszywany błyszczącymi koralikami. Wyspiański przedstawił swoją wiejską żonę niczym świętą Matkę Boską, pokazując, że w miłości matki do dziecka kryje się największa świętość."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/22_22.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Kuropatwy na śniegu",
+    "artist": "Józef Chełmoński",
+    "year": "1891",
+    "curiosity": "Stado małych dzikich ptaków stłoczyło się w ciasną gromadkę na śnieżnej zaspie, żeby ogrzewać się własnymi ciałami przed mrozem. Malarz uciekł z wielkiego Paryża na samotną mazowiecką wieś i całymi godzinami obserwował ptaki walczące o przetrwanie na bezkresnym polu."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/23_23.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Bociany",
+    "artist": "Józef Chełmoński",
+    "year": "1900",
+    "curiosity": "Oracz w zgrzebnej koszuli przerwał pracę w polu i razem z małym synkiem z zachwytem patrzy w niebo na pierwsze powracające bociany. Dla polskiego chłopa powrót bociana oznaczał koniec głodowej zimy, nadejście ciepła i nadzieję na dobre plony."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/25_25.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Dziwny ogród",
+    "artist": "Józef Mehoffer",
+    "year": "1903",
+    "curiosity": "W sielankowym, słonecznym ogrodzie z żoną i małym synkiem nagle wisi wielka, złota ważka. Malarz domalował tego gigantycznego owada, żeby pokazać, że nawet nad najszczęśliwszą chwilą zawsze wisi niepewny los."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/26_26.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Słońce majowe",
+    "artist": "Józef Mehoffer",
+    "year": "1911",
+    "curiosity": "Ciepłe wiosenne słońce wpada przez firanki do salonu dworku w Jankówce, gdzie na stole stoi świeżo zerwany pachnący bez. Artysta kupił ten stary dworek pod Krakowem, żeby stworzyć oazę rodzinnego spokoju z dala od miejskiego zgiełku."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/28_28.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Kopanie buraków",
+    "artist": "Leon Wyczółkowski",
+    "year": "1893",
+    "curiosity": "Kobiety pracują zgięte wpół na rozgrzanej ukraińskiej czarnej ziemi w palącym słońcu, wyrywając buraki z gleby. Malarz tak bardzo chciał oddać żar lejący się z nieba, że niemal oślepiał widza fioletowymi i żółtymi refleksami światła na spódnicach pracownic."
+  },
+  {
+    "filename": "assets/artworks/era4_mloda_polska/29_29.jpg",
+    "era_key": "era4_mloda_polska",
+    "era_name": "Młoda Polska",
+    "title": "Gra w krokieta",
+    "artist": "Leon Wyczółkowski",
+    "year": "1895",
+    "curiosity": "Młode panny w modnych, wielkich bufiastych sukniach i kapeluszach bawią się w ogrodzie, przetaczając drewniane kule młotkami przez druciane bramki. Gra w krokieta była wielkim hitem letnich spotkań towarzyskich w polskich dworach pod koniec XIX wieku."
+  }
+]

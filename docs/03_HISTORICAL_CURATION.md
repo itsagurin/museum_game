@@ -5,7 +5,7 @@
 > **Zasada przewodnia:** Opowiadamy o Polsce tak, jakbyśmy opowiadali zafascynowanemu przyjacielowi przy kawie.  
 > Żadnego suchego żargonu akademickiego. Skupiamy się na emocjach, symbolach, kulturze codziennej i uniwersalnych ludzkich historiach.
 
-> **Aktualny katalog (11.10.2026):** 83 reprodukcje z folderów Oświecenie (21), Romantyzm (18), Pozytywizm (22), Młoda Polska (22). Użytkownik nie ma jeszcze tytułów, autorów ani plansz; w grze stosujemy wyłącznie numery katalogowe. Nie przypisuj starszych tekstów poniżej do nowych plików na podstawie przypuszczeń. [Biblioteka i integracja](./10_FRONTEND_V1.md).
+> **Aktualny katalog (11.10.2026):** 83 reprodukcje z folderów Oświecenie (21), Romantyzm (18), Pozytywizm (22), Młoda Polska (22). Plansze 32×32 są dostarczone i podłączone do wszystkich dzieł. Tytuły, autorzy, daty, opisy stylu i dwie ciekawostki dla każdego dzieła są dostarczone w `src/data/artworks_qa.json` i podłączone według dokładnej ścieżki reprodukcji. Treści pliku są po polsku także w UI EN. Robocze „Mistrz Polski” / „XIX w.” z eksportów są zastąpione metadanymi zespołu. Nie przypisuj starszych tekstów poniżej do nowych plików na podstawie przypuszczeń. [Biblioteka i integracja](./10_FRONTEND_V1.md).
 
 ---
 

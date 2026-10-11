@@ -11,37 +11,37 @@ export const halls: HallLayout[] = [
   {
     image: "hall1",
     doors: {
-      "era-1": { x: 7, y: 24, width: 16.5, height: 64 },
-      "era-2": { x: 27.5, y: 37.5, width: 7, height: 32 },
-      "era-3": { x: 66, y: 37.5, width: 7.5, height: 32 },
-      "era-4": { x: 77, y: 24, width: 16.5, height: 64 },
+      "era-1": { x: 25.5, y: 39, width: 6.5, height: 29.5 },
+      "era-2": { x: 34.5, y: 44, width: 3.7, height: 16.5 },
+      "era-3": { x: 61.8, y: 44, width: 3.7, height: 16.5 },
+      "era-4": { x: 68.2, y: 39, width: 6.4, height: 29.5 },
     },
   },
   {
     image: "hall2",
     doors: {
-      "era-1": { x: 6.5, y: 23, width: 16, height: 65.5 },
-      "era-2": { x: 29, y: 37, width: 5.5, height: 29 },
-      "era-3": { x: 66, y: 37, width: 5.5, height: 29 },
-      "era-4": { x: 78, y: 23, width: 16, height: 65.5 },
+      "era-1": { x: 25.7, y: 39, width: 6.3, height: 27 },
+      "era-2": { x: 34.4, y: 44, width: 3.7, height: 17 },
+      "era-3": { x: 61.8, y: 44, width: 3.7, height: 17 },
+      "era-4": { x: 68.2, y: 39, width: 6.3, height: 27 },
     },
   },
   {
     image: "hall3",
     doors: {
-      "era-1": { x: 11, y: 25, width: 11.5, height: 65 },
-      "era-2": { x: 27, y: 36.5, width: 5, height: 36 },
-      "era-3": { x: 68, y: 36.5, width: 5, height: 36 },
-      "era-4": { x: 77.5, y: 25, width: 11.5, height: 65 },
+      "era-1": { x: 25.7, y: 36.8, width: 6, height: 29 },
+      "era-2": { x: 33.3, y: 42, width: 3.3, height: 18.5 },
+      "era-3": { x: 63.4, y: 42, width: 3.3, height: 18.5 },
+      "era-4": { x: 68.5, y: 36.8, width: 6, height: 29 },
     },
   },
   {
     image: "hall4",
     doors: {
-      "era-1": { x: 8.5, y: 18, width: 13, height: 73.5 },
-      "era-2": { x: 27.5, y: 33.5, width: 4.5, height: 39.5 },
-      "era-3": { x: 68, y: 33.5, width: 4.5, height: 39.5 },
-      "era-4": { x: 78.5, y: 18, width: 13, height: 73.5 },
+      "era-1": { x: 25.3, y: 36.7, width: 6.4, height: 30 },
+      "era-2": { x: 32.6, y: 42, width: 3.5, height: 19.5 },
+      "era-3": { x: 63.9, y: 42, width: 3.5, height: 19.5 },
+      "era-4": { x: 68.5, y: 36.7, width: 6.5, height: 30 },
     },
   },
 ];

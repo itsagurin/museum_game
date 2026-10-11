@@ -3,6 +3,7 @@ node_modules/
 out/
 public/art/
 src/data/asset-manifest.json
+src/data/decoration-geometry.json
 test-results/
 playwright-report/
 *.tsbuildinfo

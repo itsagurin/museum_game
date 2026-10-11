@@ -1,0 +1,36 @@
+.room-decorations { position: absolute; inset: 0; pointer-events: none; }
+.wall-artwork { transition: left .45s ease, top .45s ease, width .45s ease, height .45s ease, transform .45s ease; }
+.furnished-artwork .painting-frame::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max(100%, 44px); height: max(100%, 44px); }
+.furnished-artwork .painting-note { background-size: calc(54px * var(--scene-scale, 1)) calc(28px * var(--scene-scale, 1)); background-position: center 1px; align-items: flex-start; padding-top: calc(8px * var(--scene-scale, 1)); gap: 2px; font-size: max(7px, calc(8px * var(--scene-scale, 1))); }
+.furnished-artwork .painting-note svg { width: max(8px, calc(12px * var(--scene-scale, 1))); height: max(8px, calc(12px * var(--scene-scale, 1))); }
+.room-decoration { position: absolute; pointer-events: none; }
+.decoration-visual, .decoration-hit-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+.decoration-visual img { width: 100%; height: 100%; object-fit: fill; pointer-events: none; user-select: none; }
+.decoration-visual { transition: filter .18s ease; }
+.is-highlighted .decoration-visual { filter: drop-shadow(0 3px 5px #ffdf9b55) brightness(1.06); }
+.decoration-hit-map { overflow: visible; pointer-events: none; }
+.decoration-hit { fill: transparent; cursor: pointer; outline: none; }
+.room-decoration:has(.decoration-hit:focus-visible) .decoration-visual { filter: drop-shadow(0 0 3px #fff1bd) drop-shadow(0 0 7px #e4af50); }
+.is-unlocking .decoration-visual img { animation: decoration-glow 1.25s ease-out var(--unlock-delay) both; }
+@keyframes decoration-glow { 0%, 30% { filter: brightness(1.3) drop-shadow(0 0 12px #fff2bc) drop-shadow(0 0 25px #ffca7766); } 100% { filter: none; } }
+.decoration-bubble { position: fixed; z-index: 35; width: min(280px, calc(100vw - 24px)); border-radius: 18px; color: #433c30; background: rgba(250, 246, 233, .96); box-shadow: 0 12px 36px #211c2330; overflow: visible; }
+.decoration-bubble-content { padding: 10px 16px 15px; border-radius: inherit; max-height: inherit; overflow: auto; overscroll-behavior: contain; }
+.decoration-bubble::before { content: ""; position: absolute; left: var(--bubble-arrow-x, 50%); width: 12px; height: 12px; background: #f7f3e6; transform: translateX(-50%) rotate(45deg); }
+.decoration-bubble[data-side="above"]::before { bottom: -6px; }
+.decoration-bubble[data-side="below"]::before { top: -6px; }
+.decoration-bubble-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.decoration-bubble-top > span { display: flex; align-items: center; gap: 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: #827258; }
+.decoration-bubble .icon-button { width: 36px; height: 36px; min-width: 36px; }
+.decoration-bubble h2 { font-family: "Cormorant Garamond", serif; font-size: 26px; line-height: 1; margin: 0 0 10px; }
+.decoration-bubble p { font-size: 12px; line-height: 1.55; margin: 0; }
+.decoration-bubble h3 { font-size: 10px; color: #85745b; font-weight: 500; margin: 11px 0 3px; }
+.decoration-bubble a { display: inline-flex; gap: 5px; align-items: center; margin-top: 10px; font-size: 10px; color: #6c6b4c; min-height: 28px; text-decoration: underline; text-underline-offset: 3px; }
+.decoration-unlock-toast { position: fixed; z-index: 34; top: 136px; left: 50%; display: flex; align-items: center; gap: 11px; width: min(360px, calc(100vw - 24px)); margin-left: calc(min(360px, 100vw - 24px) / -2); padding: 13px 16px; border-radius: 18px; color: #51482e; background: rgba(248, 244, 224, .96); box-shadow: 0 8px 30px #36260f22; }
+.decoration-unlock-toast > svg { flex-shrink: 0; color: #a17d33; }
+.decoration-unlock-toast div { display: grid; gap: 4px; flex: 1; }
+.decoration-unlock-toast strong { font-weight: 500; font-size: 12px; }
+.decoration-unlock-toast span { font-size: 10px; line-height: 1.5; color: #84765e; }
+@media (max-height: 540px) { .decoration-unlock-toast { top: 82px; } }
+@media (prefers-reduced-motion: reduce) { .is-unlocking .decoration-visual img { animation: none; } .decoration-visual, .wall-artwork { transition: none; } }
+.gentle-motion .is-unlocking .decoration-visual img { animation: none; }
+.gentle-motion .wall-artwork { transition: none; }

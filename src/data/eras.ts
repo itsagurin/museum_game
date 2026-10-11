@@ -1,6 +1,9 @@
 import type { Artwork, ArtworkPlacement, ArtworkSlot, Era, EraId } from "@/types/game";
 import assetManifest from "./asset-manifest.json" with { type: "json" };
+import artworkMetadata from "./artworks_qa.json" with { type: "json" };
+import artworkCuriosities from "./artworks_curiosities.json" with { type: "json" };
 import { normalizeWallAssignments, type WallAssignments } from "../lib/wall-gallery";
+import { getColoringAssets } from "../lib/coloring-assets";
 
 export const assetUrl = (name: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/art/${name.split("/").map(encodeURIComponent).join("/")}`;
@@ -122,7 +125,7 @@ const placements: ArtworkPlacement[] = [
 ];
 
 // These five reproductions existed in the previous test catalog.
-// Retain their saved identities, without assigning coloring grids to new files.
+// Retain their saved identities when attaching the supplied coloring exports.
 const legacyCatalogIds: Record<string, string> = {
   "era2_romantyzm/22_22.jpg": "era-3-art-1",
   "era3_pozytywizm/17_17.jpg": "era-3-art-2",
@@ -131,19 +134,39 @@ const legacyCatalogIds: Record<string, string> = {
   "era4_mloda_polska/07_07.jpg": "era-3-art-5",
 };
 
-// Titles and artist metadata will be supplied by the team. Do not invent them.
+// Metadata paths refer to the same originals under a different asset root.
+const metadataByFile = new Map(artworkMetadata.map((entry) => [entry.filename.replace(/^assets\/artworks\//, ""), entry]));
+const curiosityByFile = new Map(artworkCuriosities.map((entry) => [entry.filename.replace(/^assets\/artworks\//, ""), entry.curiosity]));
+
 export const artworks: Artwork[] = eras.flatMap((era) =>
   assetManifest
     .filter((file) => file.startsWith(`${era.collectionFolder}/`) && /\.(jpg|jpeg|png|webp)$/i.test(file))
     .sort((a, b) => a.localeCompare(b, "pl", { numeric: true }))
-    .map((file, index) => ({
-      id: legacyCatalogIds[file] ?? `${era.id}-catalog-${encodeURIComponent(file.slice(era.collectionFolder.length + 1))}`,
-      eraId: era.id,
-      number: index + 1,
-      title: { pl: `Obraz ${String(index + 1).padStart(2, "0")}`, en: `Painting ${String(index + 1).padStart(2, "0")}` },
-      originalImage: assetUrl(file),
-      sourceFile: file,
-    })),
+    .map((file, index) => {
+      const coloring = getColoringAssets(file, assetManifest);
+      const metadata = metadataByFile.get(file);
+      const curiosity = curiosityByFile.get(file);
+      const title = `Obraz ${String(index + 1).padStart(2, "0")}`;
+      return {
+        id: legacyCatalogIds[file] ?? `${era.id}-catalog-${encodeURIComponent(file.slice(era.collectionFolder.length + 1))}`,
+        eraId: era.id,
+        number: index + 1,
+        title: metadata ? { pl: metadata.title, en: metadata.title } : { pl: title, en: `Painting ${String(index + 1).padStart(2, "0")}` },
+        artist: metadata?.artist,
+        year: metadata?.year,
+        style: metadata?.era_style,
+        // Keep the supplied Polish text until translations are delivered.
+        contentLanguage: metadata ? "pl" as const : undefined,
+        story: metadata ? { pl: metadata.style_description, en: metadata.style_description } : undefined,
+        funFact: curiosity ? { pl: curiosity, en: curiosity } : undefined,
+        originalImage: assetUrl(file),
+        sourceFile: file,
+        // Full relative paths keep repeated JSON IDs isolated between eras.
+        coloringArtworkId: coloring?.jsonFile,
+        coloringSource: coloring ? assetUrl(coloring.jsonFile) : undefined,
+        coloredPreview: coloring?.previewFile ? assetUrl(coloring.previewFile) : undefined,
+      };
+    }),
 );
 
 export const wallSlots: ArtworkSlot[] = eras.flatMap((era) => {

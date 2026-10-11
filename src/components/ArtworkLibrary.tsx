@@ -40,7 +40,7 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
   const previousSelection = useRef<string | null>(null);
   const selected = artworks.find((artwork) => artwork.id === selectedId);
   const collection = artworks.filter((artwork) => (!eraId || artwork.eraId === eraId) && (filter === "all" || artwork.eraId === filter));
-  const visible = collection.filter((artwork) => (!onlyCompleted || completed.includes(artwork.id)) && searchKey(`${artwork.title[language]} ${getEra(artwork.eraId).name[language]} ${artwork.sourceFile ?? ""}`).includes(searchKey(query.trim())));
+  const visible = collection.filter((artwork) => (!onlyCompleted || completed.includes(artwork.id)) && searchKey(`${artwork.title[language]} ${artwork.artist ?? ""} ${artwork.year ?? ""} ${getEra(artwork.eraId).name[language]} ${artwork.sourceFile ?? ""}`).includes(searchKey(query.trim())));
   const hangingIds = new Set(Object.values(assignments));
   const selectedSlots = selected ? wallSlots.filter((slot) => slot.eraId === selected.eraId) : [];
   const targetSlot = selectedSlots.find((slot) => slot.id === targetSlotId) ?? selectedSlots[0];
@@ -76,6 +76,8 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
                 <div className="library-detail-copy glass">
                   <span className="eyebrow">{getEra(selected.eraId).name[language]}</span>
                   <h2>{selected.title[language]}</h2>
+                  {selected.artist && <p className="artwork-credit">{selected.artist}{selected.year && ` · ${selected.year}`}</p>}
+                  {selected.style && <p className="library-artwork-style" lang={selected.contentLanguage}>{selected.style}</p>}
                   <span className={`library-state ${completed.includes(selected.id) ? "restored" : ""}`}>{completed.includes(selected.id) ? <Check size={14} /> : <Paintbrush size={14} />}{completed.includes(selected.id) ? t.restoredLabel : t.awaiting}</span>
                   <label className="library-slot-label">
                     {t.wallPosition}
@@ -104,7 +106,7 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
               {visible.length ? <div className="library-grid">
                 {visible.map((artwork) => <button key={artwork.id} className="library-artwork-card" data-artwork-id={artwork.id} aria-label={`${artwork.title[language]} — ${getEra(artwork.eraId).name[language]}`} onClick={() => { gridScrollRef.current = scrollRef.current?.scrollTop ?? 0; setSelectedId(artwork.id); setTargetSlotId(slotId ?? ""); }}>
                   <span className="library-card-image"><ArtworkPreview artwork={artwork} />{completed.includes(artwork.id) && <span className="library-card-restored"><Check size={12} />{t.restoredLabel}</span>}</span>
-                  <span className="library-card-copy"><strong>{artwork.title[language]}</strong><span>{getEra(artwork.eraId).name[language]}</span>{hangingIds.has(artwork.id) && <small>{t.libraryOnWall}</small>}</span>
+                  <span className="library-card-copy"><strong>{artwork.title[language]}</strong>{artwork.artist && <span className="artwork-credit">{artwork.artist}{artwork.year && ` · ${artwork.year}`}</span>}<span>{getEra(artwork.eraId).name[language]}</span>{hangingIds.has(artwork.id) && <small>{t.libraryOnWall}</small>}</span>
                 </button>)}
               </div> : <p className="library-empty glass">{t.libraryEmpty}</p>}
             </>
