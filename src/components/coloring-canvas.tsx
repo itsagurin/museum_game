@@ -12,11 +12,12 @@ type Origin = { x: number; y: number };
 type Pixel = { id: number; colorId: number; x: number; y: number };
 type Feedback = { key: number; kind: 'correct' | 'wrong'; pixel: Pixel };
 
-export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMotion, showColorNumbers = false, allowDevColorFill = false }: {
+export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMotion, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
   artwork: ColoringArtwork;
   onComplete: () => void;
   language?: Language;
   gentleMotion?: boolean;
+  autoFill?: boolean;
   showColorNumbers?: boolean;
   allowDevColorFill?: boolean;
 }) {
@@ -34,6 +35,10 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   const [revealed, setRevealed] = useState(false);
   const [mode, setMode] = useState<'original' | 'pixels'>('original');
   const [imageFailed, setImageFailed] = useState(false);
+  const [fillOrigin, setFillOrigin] = useState<Origin | null>(null);
+  const streak = useRef(0);
+  const filling = useRef(false);
+  const fillFrame = useRef<number | null>(null);
   const dragging = useRef(false);
   const lastPixel = useRef<number | null>(null);
   const paintedRef = useRef(painted);
@@ -45,6 +50,49 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   const svgRef = useRef<SVGSVGElement>(null);
   const { width, height } = artwork.grid;
   const ready = pixels.every(pixel => painted.has(pixel.id) && settled.has(pixel.id));
+
+  useEffect(() => () => {
+    if (fillFrame.current !== null) window.cancelAnimationFrame(fillFrame.current);
+  }, []);
+
+  const startAutoFill = (origin: Pixel) => {
+    const targets = pixels.filter(pixel => pixel.colorId === origin.colorId && !paintedRef.current.has(pixel.id))
+      .map(pixel => ({ pixel, distance: Math.hypot(pixel.x - origin.x, pixel.y - origin.y) }))
+      .sort((a, b) => a.distance - b.distance);
+    if (!targets.length) return;
+    // The fifth pixel and its colour wave form a single undo action.
+    paintActions.current.at(-1)!.push(...targets.map(({ pixel }) => pixel.id));
+    filling.current = true;
+    dragging.current = false;
+    setFillOrigin({ x: origin.x + .5, y: origin.y + .5 });
+    let started: number | null = null;
+    const radius = targets.at(-1)!.distance;
+    let cursor = 0;
+    let lastUpdate = 0;
+    const frame = (now: number) => {
+      started ??= now;
+      const progress = reduced ? 1 : Math.min(1, (now - started) / 1800);
+      if (now - lastUpdate >= 50 || progress === 1) {
+        lastUpdate = now;
+        const next = new Map(paintedRef.current);
+        while (cursor < targets.length && targets[cursor].distance <= radius * progress) {
+          const { pixel } = targets[cursor++];
+          next.set(pixel.id, { x: origin.x + .5, y: origin.y + .5 });
+        }
+        paintedRef.current = next;
+        setPainted(next);
+        if (reduced) setSettled(new Set(next.keys()));
+      }
+      if (progress < 1) fillFrame.current = window.requestAnimationFrame(frame);
+      else {
+        filling.current = false;
+        fillFrame.current = null;
+        setFillOrigin(null);
+        streak.current = 0;
+      }
+    };
+    fillFrame.current = window.requestAnimationFrame(frame);
+  };
 
   // Preload original image for instantaneous, zero-jank reveal transition
   useEffect(() => {
@@ -69,7 +117,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   }, [ready, reduced]);
 
   const paint = (pixel: Pixel) => {
-    if (ready) return;
+    if (ready || filling.current) return;
     const result = paintResult(pixel.colorId, selected, !devColorFill && paintedRef.current.has(pixel.id));
     if (result === 'ignored') return;
     const targets = result === 'correct'
@@ -86,6 +134,12 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
       paintActions.current.push(targets.map(target => target.id));
       paintedRef.current = next;
       setPainted(next);
+      if (autoFill && !devColorFill) {
+        streak.current += 1;
+        if (streak.current >= 5) startAutoFill(pixel);
+      }
+    } else {
+      streak.current = 0;
     }
   };
   const paintAt = (clientX: number, clientY: number) => {
@@ -108,6 +162,11 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
     }
   };
   const undo = () => {
+    if (fillFrame.current !== null) window.cancelAnimationFrame(fillFrame.current);
+    fillFrame.current = null;
+    filling.current = false;
+    setFillOrigin(null);
+    streak.current = 0;
     const last = paintActions.current.pop();
     if (!last) return;
     const next = new Map(paintedRef.current);
@@ -117,7 +176,9 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
     setFeedback(null);
     setRevealed(false);
   };
-  const message = revealed
+  const message = fillOrigin
+    ? t.autoFilling
+    : revealed
     ? mode === 'original'
       ? t.originalDescription(artwork.title, artwork.artist, artwork.year)
       : t.pixelsDescription
@@ -186,6 +247,13 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
           <AnimatePresence>
             {feedback && <motion.rect key={feedback.key} x={feedback.pixel.x} y={feedback.pixel.y} width="1" height="1" pointerEvents="none" fill={feedback.kind === 'wrong' ? '#d15e4c' : '#fff6da'} stroke={feedback.kind === 'wrong' ? '#ac3d30' : '#edd6a3'} strokeWidth=".12" initial={{ opacity: .8 }} animate={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? .15 : .5 }} />}
           </AnimatePresence>
+            {fillOrigin && !reduced && <motion.circle
+              className="auto-fill-wave" aria-hidden pointerEvents="none"
+              cx={fillOrigin.x} cy={fillOrigin.y} fill="none" stroke="#fff2c9" strokeWidth="1.2"
+              initial={{ r: 0, opacity: .9 }}
+              animate={{ r: Math.hypot(Math.max(fillOrigin.x, width - fillOrigin.x), Math.max(fillOrigin.y, height - fillOrigin.y)), opacity: 0 }}
+              transition={{ duration: 1.8, ease: 'linear' }}
+            />}
         </svg>
 
         <AnimatePresence>
@@ -217,7 +285,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
     <div className="numbered-palette" style={{ gridTemplateColumns: `repeat(${Math.min(artwork.palette.length, 6)}, minmax(0, 1fr))` }} role="group" aria-label={t.chooseColor}>{artwork.palette.map(color => {
       const fields = pixels.filter(pixel => pixel.colorId === color.id), filled = fields.filter(pixel => painted.has(pixel.id)).length;
       const done = fields.length > 0 && fields.length === filled;
-      return <button key={color.id} className={`paint-brush ${selected === color.id ? 'selected' : ''} ${done ? 'complete' : ''}`} aria-label={`${t.color}${showColorNumbers ? ` ${color.id}` : ''}: ${color.name}`} title={color.name} aria-pressed={selected === color.id} data-color-id={color.id} onClick={() => { setSelected(color.id); setPanning(false); setFeedback(null); playColoringSound('select'); }}>
+      return <button key={color.id} className={`paint-brush ${selected === color.id ? 'selected' : ''} ${done ? 'complete' : ''}`} aria-label={`${t.color}${showColorNumbers ? ` ${color.id}` : ''}: ${color.name}`} title={color.name} aria-pressed={selected === color.id} data-color-id={color.id} onClick={() => { if (selected !== color.id) { streak.current = 0; } setSelected(color.id); setPanning(false); setFeedback(null); playColoringSound('select'); }}>
         <span className="brush-swatch" style={{ backgroundColor: color.hex, color: [1, 3, 5].reduce((sum, offset) => sum + parseInt(color.hex.slice(offset, offset + 2), 16), 0) > 400 ? '#393225' : '#fff5e6' }}>{showColorNumbers ? <span className="brush-number">{color.id}</span> : selected === color.id && <Check size={16} aria-hidden />}</span><span className="brush-shape"><Paintbrush size={18} aria-hidden /></span><span className="brush-count sr-only">{done ? <Check size={12} aria-hidden /> : `${filled}/${fields.length}`}</span>
       </button>;
     })}</div>

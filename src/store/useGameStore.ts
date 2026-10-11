@@ -13,10 +13,12 @@ import type { Language } from "@/types/game";
 interface GameState {
   language: Language;
   gentleMotion: boolean;
+  autoFill: boolean;
   completedArtworkIds: string[];
   wallAssignments: WallAssignments;
   setLanguage: (language: Language) => void;
   toggleGentleMotion: () => void;
+  toggleAutoFill: () => void;
   completeArtwork: (id: string) => void;
   setWallArtwork: (slotId: string, artworkId: string) => void;
   resetProgress: () => void;
@@ -52,11 +54,13 @@ export const useGameStore = create<GameState>()(
     (set) => ({
       language: "pl",
       gentleMotion: false,
+      autoFill: true,
       completedArtworkIds: [],
       wallAssignments: normalizeWallAssignments({}, wallSlots, artworks),
       setLanguage: (language) => set({ language }),
       toggleGentleMotion: () =>
         set((state) => ({ gentleMotion: !state.gentleMotion })),
+      toggleAutoFill: () => set((state) => ({ autoFill: !state.autoFill })),
       completeArtwork: (id) => {
         if (!artworks.some((artwork) => artwork.id === id)) return;
         set((state) => ({
@@ -75,9 +79,10 @@ export const useGameStore = create<GameState>()(
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, gentleMotion, completedArtworkIds, wallAssignments }) => ({
+      partialize: ({ language, gentleMotion, autoFill, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
+        autoFill,
         completedArtworkIds,
         wallAssignments,
       }),
@@ -88,6 +93,7 @@ export const useGameStore = create<GameState>()(
           ...current,
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
+          autoFill: saved.autoFill !== false,
           wallAssignments: normalizeWallAssignments(saved.wallAssignments, wallSlots, artworks),
           completedArtworkIds: Array.isArray(saved.completedArtworkIds)
             ? [...new Set(saved.completedArtworkIds.filter(

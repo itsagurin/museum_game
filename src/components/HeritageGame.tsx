@@ -18,6 +18,7 @@ function ColoringStudio({ request, onComplete }: {
 }) {
   const language = useGameStore((state) => state.language);
   const gentleMotion = useGameStore((state) => state.gentleMotion);
+  const autoFill = useGameStore((state) => state.autoFill);
   const [painting, setPainting] = useState<ColoringArtwork | null>(null);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -45,6 +46,7 @@ function ColoringStudio({ request, onComplete }: {
           artwork={{ ...painting, title: request.artwork.title[language] }}
           language={language}
           gentleMotion={gentleMotion}
+          autoFill={autoFill}
           showColorNumbers
           allowDevColorFill={process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1"}
           onComplete={onComplete}

@@ -31,6 +31,8 @@ export async function fillCanvas(page: Page) {
     await page.locator(".pixel-hit.matching:not(.painted)").evaluateAll((pixels) => {
       for (const pixel of pixels) pixel.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
     });
+    // Assistance may finish this colour asynchronously before the next brush.
+    await expect(page.locator(".pixel-hit.matching:not(.painted)")).toHaveCount(0);
   }
   await expect(page.getByRole("button", { name: "Odkryj opowieść", exact: true })).toBeEnabled();
 }

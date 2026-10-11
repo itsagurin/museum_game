@@ -72,6 +72,7 @@
   color: #953e30;
   background: #edd5ce;
 }
+.auto-fill-wave { filter: drop-shadow(0 0 1px #fff2c9); }
 .heritage-coloring .coloring-frame {
   width: min(100%, max(240px, calc(100dvh - 410px)));
   margin-inline: auto;

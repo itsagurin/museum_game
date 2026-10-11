@@ -116,6 +116,8 @@ export function HeritageApp({
   const setWallArtwork = useGameStore((state) => state.setWallArtwork);
   const gentleMotion = useGameStore((state) => state.gentleMotion);
   const toggleGentleMotion = useGameStore((state) => state.toggleGentleMotion);
+  const autoFill = useGameStore((state) => state.autoFill);
+  const toggleAutoFill = useGameStore((state) => state.toggleAutoFill);
   const resetProgress = useGameStore((state) => state.resetProgress);
   const reducedMotion = useReducedMotion() || gentleMotion;
   const t = copy[language];
@@ -268,7 +270,6 @@ export function HeritageApp({
               </span>
               <span className="brand-type">
                 {t.brand}
-                <small>{t.tagline}</small>
               </span>
             </button>
           </div>
@@ -641,6 +642,20 @@ export function HeritageApp({
                       <span />
                     </button>
                   </div>
+                  <div className="setting-row">
+                    <span id="auto-fill-label">{t.autoFill}</span>
+                    <button
+                      role="switch"
+                      aria-checked={autoFill}
+                      aria-labelledby="auto-fill-label"
+                      aria-describedby="auto-fill-description"
+                      className={`toggle ${autoFill ? "on" : ""}`}
+                      onClick={toggleAutoFill}
+                    >
+                      <span />
+                    </button>
+                  </div>
+                  <p id="auto-fill-description" className="dialog-intro">{t.autoFillDescription}</p>
                   <p className="save-note">
                     <Check size={14} />
                     {storageUnavailable ? t.savedError : t.saved}
