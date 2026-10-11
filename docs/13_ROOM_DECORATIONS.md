@@ -25,13 +25,21 @@ Najpierw odblokowuje się podpora danego przedmiotu (stół, fortepian, pulpit),
 
 Romantyzm nawiązuje do `img/assets_romantyzm_wide.png`: fortepian z dodatkami po lewej, instrument na stoliku po prawej, kufer na pierwszym planie. Młoda Polska nawiązuje do `img/assets_mloda_polska_wide.png`: stół z przyborami, fotel i pulpit. Układy przystosowano do obecnych pustych teł oraz pięciu obrazów gracza. Dla oświecenia przyjęto gabinet kolekcjonera, dla pozytywizmu pracownię z biurkiem, książkami i mikroskopem.
 
-Po zdobyciu pierwszego poziomu pięć obrazów zajmuje górną część ścian, pozostawiając miejsce na całe wyposażenie. Zachowane są punkty zbiegu ścian, ID miejsc i wybór dzieł; ruch ramek ma łagodne przejście. Na poziomie 9 Młodej Polski prawy obraz gracza przesuwa się wyżej, aby zostawić miejsce na pejzaż górski po prawej zgodnie ze wzorcem. Wąskie ramy mają powiększony, niewidoczny obszar dotyku także w oddaleniu. Małe kartki dostosowują rozmiar ilustracji do skali sceny, zachowując obszar dotyku. Dekoracyjne portrety nie otwierają kolorowania ani biblioteki.
+Po zdobyciu pierwszego poziomu pięć obrazów zajmuje górną część ścian, pozostawiając miejsce na całe wyposażenie. Zachowane są punkty zbiegu ścian, ID miejsc i wybór dzieł; ruch ramek ma łagodne przejście. Pejzaż górski i portret mieszczą się między górną galerią a drzwiami; odblokowanie poziomu 9 nie przesuwa już pojedynczego obrazu gracza. Wąskie ramy mają powiększony, niewidoczny obszar dotyku także w oddaleniu. Małe kartki dostosowują rozmiar ilustracji do skali sceny, zachowując obszar dotyku. Dekoracyjne portrety nie otwierają kolorowania ani biblioteki.
 
 Hover lekko unosi przedmiot i pokazuje dymek. Kliknięcie lub tap przypina dymek przy nim; kolejne dotknięcie zamyka. Enter/Spacja otwierają opowieść, Escape zamyka. Dymek ma nazwę, ciekawostkę, wyjaśnienie związku z epoką i link do źródła, wszystko w PL/EN. Jego pozycja uwzględnia przesunięcie kamery, obrót telefonu, header, dolne menu i tryb fullscreen. Krótka zwłoka pozwala przenieść wskaźnik z przedmiotu do dymka.
 
 Nowa nagroda czeka na zamknięcie podsumowania ukończonego obrazu i załadowanie PNG. Pojawia się z poświatą oraz uniesieniem na miejsce; komunikat wymienia odkryte przedmioty. Malowanie z biblioteki odkłada prezentację do wejścia do właściwego pokoju. Przy odświeżeniu strony zdobyte dodatki są od razu widoczne bez odtwarzania nagrody. Spokojne animacje i `prefers-reduced-motion` wyłączają błysk oraz uniesienie.
 
 Zablokowane przedmioty nie są renderowane ani pobierane. Oryginalne PNG, w tym brązowe poświaty, pozostają bez zmian. Obszary interakcji powstają z nieprzezroczystej części obrazu, więc przezroczyste marginesy i otwory między nogami mebli przepuszczają kliknięcia.
+
+## Kalibracja kompozycji
+
+Skalę i pozycje wszystkich 47 dodatków dopasowano do pustych teł: meble i podstawy stoją na podłodze przy ścianach, lampy zaczynają się na suficie, dekoracje nie przekraczają narożnika ani przejść drzwiowych. Pięć ram w wyposażonym pokoju mieści się bliżej środka ścian.
+
+Przedmioty na blatach, półce, futerale i pulpicie mają `contact` oraz `supportId`. Dla nich `x`/`y` oznaczają procentowe położenie punktu styku na nieprzezroczystych granicach podpory; `contact.x`/`contact.y` określają punkt w samym przedmiocie (0–1). `getDecorationBounds` wylicza pozycję, a PNG i mapa dotyku korzystają z tej samej geometrii. Krzesła i taboret zachowują absolutne współrzędne: ich `supportId` określa wyłącznie kolejność nagród. Test weryfikuje, że punkty podparcia trafiają w faktycznie nieprzezroczyste piksele oraz że żaden dodatek nie zasłania drzwi.
+
+Podgląd DEV ma stały widok całego pokoju bez zoomu i kontrolek kamery, zachowany przy zmianie epoki. Wyłączenie podglądu przywraca zwykłe sterowanie kamerą.
 
 ## Edycja i sprawdzenia
 

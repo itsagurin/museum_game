@@ -27,6 +27,7 @@ interface GameViewportProps {
   focalY: number;
   label: string;
   lockCamera?: boolean;
+  fixedOverview?: boolean;
 }
 
 export function GameViewport({
@@ -35,6 +36,7 @@ export function GameViewport({
   focalY,
   label,
   lockCamera = false,
+  fixedOverview = false,
 }: GameViewportProps) {
   const ref = useRef<HTMLDivElement>(null);
   const drag = useRef<{
@@ -45,7 +47,8 @@ export function GameViewport({
     moved: boolean;
   } | null>(null);
   const suppressClick = useRef(false);
-  const [overview, setOverview] = useState(false);
+  const [selectedOverview, setOverview] = useState(false);
+  const overview = fixedOverview || selectedOverview;
   const [axis, setAxis] = useState<"x" | "y" | null>(null);
   const language = useGameStore((state) => state.language);
   const gentleMotion = useGameStore((state) => state.gentleMotion);
@@ -156,7 +159,7 @@ export function GameViewport({
       >
         <div className={`scene-canvas ${className}`}>{children}</div>
       </div>
-      {!lockCamera && <div className="camera-controls glass" aria-label={t.camera}>
+      {!lockCamera && !fixedOverview && <div className="camera-controls glass" aria-label={t.camera}>
         {axis && (
           <button
             className="icon-button"

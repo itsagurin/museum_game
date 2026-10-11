@@ -54,6 +54,7 @@ import { RoomDecorations } from "./RoomDecorations";
 import { getNewDecorations, getRoomArtworkPlacement } from "@/data/room-decorations";
 
 const noRewards: string[] = [];
+const devToolsEnabled = process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1";
 
 type Panel =
   | { type: "settings" | "info" }
@@ -124,6 +125,8 @@ export function HeritageApp({
   const [panel, setPanel] = useState<Panel | null>(null);
   const [resetConfirm, setResetConfirm] = useState(false);
   const [storageUnavailable, setStorageUnavailable] = useState(false);
+  const [previewFinishedRoom, setPreviewFinishedRoom] = useState(false);
+  const roomPreview = devToolsEnabled && previewFinishedRoom;
   const [pendingRewards, setPendingRewards] = useState<Partial<Record<EraId, string[]>>>({});
   const consumeRewards = useCallback((ids: string[]) => {
     setPendingRewards((current) => Object.fromEntries(Object.entries(current).map(([era, rewards]) => [era, rewards.filter((id) => !ids.includes(id))])));
@@ -147,6 +150,7 @@ export function HeritageApp({
     ? eras.findIndex((era) => era.id === activeEra.id)
     : -1;
   const roomProgress = activeEra ? getRoomProgress(activeEra.id, artworks, completed) : null;
+  const roomLevel = roomPreview ? MAX_ROOM_LEVEL : roomProgress?.level ?? 0;
   const completedRooms = eras.filter((era) => getRoomProgress(era.id, artworks, completed).isComplete).length;
   const hallStage = Math.min(completedRooms + 1, eras.length);
   const hallEra = eras[hallStage - 1];
@@ -215,7 +219,7 @@ export function HeritageApp({
     navigate("library");
   };
   const openArtwork = (artwork: Artwork, slotId: string) => {
-    if (completed.includes(artwork.id)) {
+    if (roomPreview || completed.includes(artwork.id)) {
       openLibrary(artwork.eraId, slotId);
       return;
     }
@@ -340,6 +344,8 @@ export function HeritageApp({
                 />
               ) : <>
               <GameViewport
+                key={roomPreview ? "preview" : "game"}
+                fixedOverview={Boolean(activeEra && roomPreview)}
                 lockCamera={view === "home" || view === "hall"}
                 className={
                   view === "home"
@@ -361,7 +367,7 @@ export function HeritageApp({
                   <RoomBackdrop
                     key={activeEra.id}
                     baseImage={activeEra.image}
-                    level={roomProgress.level}
+                    level={roomLevel}
                     alt={activeEra.name[language]}
                   />
                 ) : view === "hall" && !hallImageName ? (
@@ -414,15 +420,16 @@ export function HeritageApp({
                 ) : (
                   activeEra && (
                     <>
-                      <RoomDecorations eraId={activeEra.id} level={roomProgress?.level ?? 0} language={language} gentle={Boolean(reducedMotion)} active={!panel} pendingIds={pendingRewards[activeEra.id] ?? noRewards} onRewardsShown={consumeRewards} />
+                      <RoomDecorations eraId={activeEra.id} level={roomLevel} language={language} gentle={Boolean(reducedMotion)} active={!panel} pendingIds={roomPreview ? noRewards : pendingRewards[activeEra.id] ?? noRewards} onRewardsShown={consumeRewards} />
                       {getWallArtworks(activeEra.id, wallAssignments)
                         .map(({ artwork, slot }) => {
-                          const placement = getRoomArtworkPlacement(activeEra.id, slot.number, roomProgress?.level ?? 0);
+                          const placement = getRoomArtworkPlacement(activeEra.id, slot.number, roomLevel);
+                          const restored = roomPreview || completed.includes(artwork.id);
                           return (
                           <div
                             key={slot.id}
                             data-slot-id={slot.id}
-                            className={`wall-artwork wall-${placement.wall} ${(roomProgress?.level ?? 0) > 0 ? "furnished-artwork" : ""}`}
+                            className={`wall-artwork wall-${placement.wall} ${roomLevel > 0 ? "furnished-artwork" : ""}`}
                             style={{
                               ...regionStyle(placement),
                               ...artworkProjection(placement, activeEra.wallPerspective[placement.wall]),
@@ -431,16 +438,16 @@ export function HeritageApp({
                             <button
                               className="painting-frame"
                               onClick={() => openArtwork(artwork, slot.id)}
-                              aria-label={`${artwork.title[language]} — ${completed.includes(artwork.id) ? t.restoredLabel : t.awaiting}`}
+                              aria-label={`${artwork.title[language]} — ${restored ? t.restoredLabel : t.awaiting}`}
                             >
                               <span className="paper-crop">
-                                {completed.includes(artwork.id) && artwork.originalImage ? (
+                                {restored && artwork.originalImage ? (
                                   <RestoredArtwork key={artwork.id} artwork={artwork} />
                                 ) : (
                                   <img src={assetUrl("blank_paper_crossmark.jpg")} alt="" draggable={false} className="unrestored-paper" />
                                 )}
                               </span>
-                              {completed.includes(artwork.id) &&
+                              {restored &&
                                 artwork.originalImage && (
                                   <span className="completed-mark">
                                     <Check size={11} />
@@ -537,25 +544,37 @@ export function HeritageApp({
               ) : (
                 <>
                   {activeEra && roomProgress && (
-                    <div className="room-status glass">
-                      <Paintbrush size={15} />
-                      <span>
-                        {roomProgress.completedCount} / {roomProgress.totalCount}
-                      </span>
-                      <span className="status-label">{t.restored}</span>
-                      <span className="room-level-divider" aria-hidden="true" />
-                      <span className="room-level-label">{t.roomLevel} {roomProgress.level} / {MAX_ROOM_LEVEL}</span>
-                      <span
-                        className="room-level-meter"
-                        role="progressbar"
-                        aria-label={t.roomDevelopment}
-                        aria-valuemin={0}
-                        aria-valuemax={MAX_ROOM_LEVEL}
-                        aria-valuenow={roomProgress.level}
-                        aria-valuetext={`${t.roomLevel} ${roomProgress.level} / ${MAX_ROOM_LEVEL}`}
+                    <div className="room-status-group">
+                      <div className="room-status glass">
+                        <Paintbrush size={15} />
+                        <span>
+                          {roomProgress.completedCount} / {roomProgress.totalCount}
+                        </span>
+                        <span className="status-label">{t.restored}</span>
+                        <span className="room-level-divider" aria-hidden="true" />
+                        <span className="room-level-label">{t.roomLevel} {roomProgress.level} / {MAX_ROOM_LEVEL}</span>
+                        <span
+                          className="room-level-meter"
+                          role="progressbar"
+                          aria-label={t.roomDevelopment}
+                          aria-valuemin={0}
+                          aria-valuemax={MAX_ROOM_LEVEL}
+                          aria-valuenow={roomProgress.level}
+                          aria-valuetext={`${t.roomLevel} ${roomProgress.level} / ${MAX_ROOM_LEVEL}`}
+                        >
+                          {Array.from({ length: MAX_ROOM_LEVEL }, (_, index) => <i key={index} className={index < roomProgress.level ? "filled" : ""} />)}
+                        </span>
+                      </div>
+                      {devToolsEnabled && <button
+                        className={`room-dev-preview glass ${roomPreview ? "active" : ""}`}
+                        aria-label={t.devRoomPreview}
+                        aria-pressed={roomPreview}
+                        title={t.devRoomPreviewDescription}
+                        onClick={() => setPreviewFinishedRoom((current) => !current)}
                       >
-                        {Array.from({ length: MAX_ROOM_LEVEL }, (_, index) => <i key={index} className={index < roomProgress.level ? "filled" : ""} />)}
-                      </span>
+                        <Sparkles size={14} aria-hidden="true" />
+                        {roomPreview ? t.devRoomPreviewOff : t.devRoomPreview}
+                      </button>}
                     </div>
                   )}
                   <nav className="era-switcher glass" aria-label={t.rooms}>
@@ -674,6 +693,7 @@ export function HeritageApp({
                           className="danger-button"
                           onClick={() => {
                             resetProgress();
+                            setPreviewFinishedRoom(false);
                             setPendingRewards({});
                             closePanel();
                           }}

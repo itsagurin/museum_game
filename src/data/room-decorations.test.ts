@@ -46,4 +46,20 @@ describe("earned furniture and its interaction geometry", () => {
       }
     }
   });
+  it("attaches objects to opaque support surfaces and leaves doorways clear", () => {
+    for (const item of roomDecorations) {
+      const bounds = getDecorationBounds(item), era = eras.find(({ id }) => id === item.eraId)!;
+      expect(overlaps(bounds, era.doors.previous), item.id).toBe(false);
+      expect(overlaps(bounds, era.doors.next), item.id).toBe(false);
+      if (!item.contact) continue;
+      const support = roomDecorations.find(({ id }) => id === item.supportId)!;
+      const geometry = getDecorationGeometry(support);
+      const x = geometry.bounds.x + geometry.bounds.width * item.x / 100;
+      const y = Math.floor(geometry.bounds.y + geometry.bounds.height * item.y / 100);
+      const touchesMaterial = [...geometry.hitPath.matchAll(/M(\d+),(\d+)h(\d+)/g)].some(([, start, row, length]) =>
+        Number(row) === y && x >= Number(start) && x < Number(start) + Number(length),
+      );
+      expect(touchesMaterial, `${item.id} must rest on ${support.id}, not in a transparent gap`).toBe(true);
+    }
+  });
 });

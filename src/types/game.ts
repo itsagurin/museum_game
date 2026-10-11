@@ -45,7 +45,6 @@ export interface Artwork {
   coloredPreview?: string;
   sourceFile?: string;
 }
-/** Five wall positions are separate from the era's complete artwork collection. */
 export interface ArtworkSlot {
   id: string;
   eraId: EraId;

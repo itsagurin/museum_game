@@ -1,0 +1,1346 @@
+{
+  "tool": "built-in image_gen",
+  "use_case": "background-extraction",
+  "source_canvas": {
+    "width": 768,
+    "height": 1376
+  },
+  "description": "Separate transparent reconstructed assets for every supplied hall variant. Source bounds identify the original objects; reconstructed sprite canvases have their own dimensions.",
+  "assets": [
+    {
+      "id": "hall1/console_table",
+      "hall": 1,
+      "name": "console_table",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall1_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/console_table.png",
+      "source_bounds": {
+        "x": 295,
+        "y": 705,
+        "width": 180,
+        "height": 119
+      },
+      "subject": "the wooden console table at the far end of the hall",
+      "details": "Preserve its dark walnut finish, single broad drawer, small curved brass handle, gently scalloped carved lower apron and slim straight legs. Isolate the table only.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the wooden console table at the far end of the hall.\nSubject details: Preserve its dark walnut finish, single broad drawer, small curved brass handle, gently scalloped carved lower apron and slim straight legs. Isolate the table only.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-58e1f86f-768a-4233-9907-929c8722b8f5.png",
+      "validation": {
+        "id": "hall1/console_table",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/console_table.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-58e1f86f-768a-4233-9907-929c8722b8f5.png",
+        "width": 1822,
+        "height": 935,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.6573830250591405,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          99,
+          24,
+          1781,
+          888
+        ],
+        "visible_content_bounds": [
+          101,
+          58,
+          1719,
+          875
+        ],
+        "padding": 24,
+        "sha256": "ae706a36ac4789973e2edc5493c67a382678fec7a8d8c0d938442d057269d146"
+      },
+      "generation_history": [
+        {
+          "id": "hall1/console_table",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-58e1f86f-768a-4233-9907-929c8722b8f5.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/console_table.png"
+        }
+      ]
+    },
+    {
+      "id": "hall1/astronomy_picture",
+      "hall": 1,
+      "name": "astronomy_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall1_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/astronomy_picture.png",
+      "source_bounds": {
+        "x": 17,
+        "y": 516,
+        "width": 110,
+        "height": 177
+      },
+      "subject": "the framed astronomy illustration on the foreground left wall",
+      "details": "Keep the complete walnut frame, cream print, brass armillary sphere on the left and dark blue round star chart on the right. Preserve the existing slight perspective skew and illustrated markings.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the framed astronomy illustration on the foreground left wall.\nSubject details: Keep the complete walnut frame, cream print, brass armillary sphere on the left and dark blue round star chart on the right. Preserve the existing slight perspective skew and illustrated markings.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.\nCRITICAL TARGETED CORRECTION: The source object is a NARROW PORTRAIT frame, not a landscape picture. Its complete projected outer width is approximately 0.60 of its outer height. Keep that tall narrow silhouette and original slight perspective skew. Fit the armillary instrument and the blue circular star chart side by side inside this narrow portrait print, as in hall1. Do not widen or rotate the frame. Keep generous genuinely transparent margins and no glow.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-84450bd8-bc23-4230-bbb5-88c863a8096b.png",
+      "correction": true,
+      "validation": {
+        "id": "hall1/astronomy_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/astronomy_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-84450bd8-bc23-4230-bbb5-88c863a8096b.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.4509095149253731,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          31,
+          1001,
+          1559
+        ],
+        "visible_content_bounds": [
+          151,
+          86,
+          928,
+          1465
+        ],
+        "padding": 24,
+        "sha256": "03303286fb67e02914bf524301bbc2dcfaedcf4e16b8d87c2d793d032ac79d1f"
+      },
+      "generation_history": [
+        {
+          "id": "hall1/astronomy_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-01b551ab-31aa-4a66-aae2-036570b3e3b8.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/astronomy_picture.png"
+        },
+        {
+          "id": "hall1/astronomy_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-84450bd8-bc23-4230-bbb5-88c863a8096b.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/astronomy_picture.png",
+          "correction": true
+        }
+      ]
+    },
+    {
+      "id": "hall2/console_table",
+      "hall": 2,
+      "name": "console_table",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall2_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/console_table.png",
+      "source_bounds": {
+        "x": 317,
+        "y": 722,
+        "width": 142,
+        "height": 105
+      },
+      "subject": "the small wooden console table beneath the oval mirror at the far end",
+      "details": "Keep the dark walnut top, three small drawer fronts with round knobs, narrow shaped apron and slim turned legs. Empty table only; no mirror or wall paneling.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the small wooden console table beneath the oval mirror at the far end.\nSubject details: Keep the dark walnut top, three small drawer fronts with round knobs, narrow shaped apron and slim turned legs. Empty table only; no mirror or wall paneling.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-572c44a5-4184-4de1-87af-b3e6b947579e.png",
+      "validation": {
+        "id": "hall2/console_table",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/console_table.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-572c44a5-4184-4de1-87af-b3e6b947579e.png",
+        "width": 1822,
+        "height": 935,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.6814923953814637,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          73,
+          52,
+          1761,
+          885
+        ],
+        "visible_content_bounds": [
+          75,
+          55,
+          1746,
+          880
+        ],
+        "padding": 24,
+        "sha256": "f854008012765e0a504ebbfd43b8e9c689b029b687d807d212bbd7419e76a358"
+      },
+      "generation_history": [
+        {
+          "id": "hall2/console_table",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-572c44a5-4184-4de1-87af-b3e6b947579e.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/console_table.png"
+        }
+      ]
+    },
+    {
+      "id": "hall2/astronomy_picture",
+      "hall": 2,
+      "name": "astronomy_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall2_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/astronomy_picture.png",
+      "source_bounds": {
+        "x": 146,
+        "y": 518,
+        "width": 50,
+        "height": 173
+      },
+      "subject": "the smaller narrow astronomy print between the large ruins painting and the nearest left door",
+      "details": "Preserve the full walnut frame and cream paper containing a circular astronomical diagram above a geometric armillary instrument. Keep its strong side-wall perspective, not a frontal redesign.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the smaller narrow astronomy print between the large ruins painting and the nearest left door.\nSubject details: Preserve the full walnut frame and cream paper containing a circular astronomical diagram above a geometric armillary instrument. Keep its strong side-wall perspective, not a frontal redesign.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8b0998b-65b0-4f5a-a773-20bc72654a08.png",
+      "validation": {
+        "id": "hall2/astronomy_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/astronomy_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8b0998b-65b0-4f5a-a773-20bc72654a08.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5714579328735112,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          33,
+          985,
+          1559
+        ],
+        "visible_content_bounds": [
+          238,
+          63,
+          831,
+          1475
+        ],
+        "padding": 24,
+        "sha256": "fd73cda24baaeaa031821ee42607a12d2fdf28ce2202f91cb2d50048a8bd1d93"
+      },
+      "generation_history": [
+        {
+          "id": "hall2/astronomy_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8b0998b-65b0-4f5a-a773-20bc72654a08.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/astronomy_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "hall2/mirror",
+      "hall": 2,
+      "name": "mirror",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall2_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/mirror.png",
+      "source_bounds": {
+        "x": 343,
+        "y": 569,
+        "width": 91,
+        "height": 135
+      },
+      "subject": "the oval carved walnut mirror on the rear wall",
+      "details": "Preserve the complete ornamental oval frame with delicate scrollwork at top, sides and bottom. Keep the softly silver-beige glass and diagonal pale reflected streaks. No reflected room, doorway or human.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the oval carved walnut mirror on the rear wall.\nSubject details: Preserve the complete ornamental oval frame with delicate scrollwork at top, sides and bottom. Keep the softly silver-beige glass and diagonal pale reflected streaks. No reflected room, doorway or human.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4c6d4194-eb56-463f-b983-57f0e5320955.png",
+      "validation": {
+        "id": "hall2/mirror",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/mirror.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4c6d4194-eb56-463f-b983-57f0e5320955.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.4752080035428916,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          65,
+          75,
+          1041,
+          1515
+        ],
+        "visible_content_bounds": [
+          67,
+          78,
+          1007,
+          1480
+        ],
+        "padding": 24,
+        "sha256": "7b54264861a5905d99f0c77045c3ad47e98c478ccb006f195a298de8cdd6c88e"
+      },
+      "generation_history": [
+        {
+          "id": "hall2/mirror",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4c6d4194-eb56-463f-b983-57f0e5320955.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/mirror.png"
+        }
+      ]
+    },
+    {
+      "id": "hall2/ruins_painting",
+      "hall": 2,
+      "name": "ruins_painting",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall2_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/ruins_painting.png",
+      "source_bounds": {
+        "x": 18,
+        "y": 386,
+        "width": 123,
+        "height": 332
+      },
+      "subject": "the large framed moonlit ruins painting on the foreground left wall",
+      "details": "Keep the whole tall walnut frame and original moon, ruined tower, misty mountainous landscape, rocky foreground and tiny solitary traveler. Preserve its existing side-wall perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the large framed moonlit ruins painting on the foreground left wall.\nSubject details: Keep the whole tall walnut frame and original moon, ruined tower, misty mountainous landscape, rocky foreground and tiny solitary traveler. Preserve its existing side-wall perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-3a865cc6-1796-4b1f-9abe-6de54d2d93ef.png",
+      "validation": {
+        "id": "hall2/ruins_painting",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/ruins_painting.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-3a865cc6-1796-4b1f-9abe-6de54d2d93ef.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.4905509149329112,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          49,
+          1027,
+          1559
+        ],
+        "visible_content_bounds": [
+          180,
+          83,
+          896,
+          1501
+        ],
+        "padding": 24,
+        "sha256": "9fb10da73c8f5d86c362a3a709a3b8e7ed2f6ab9f4afb24d0f5c3d995a859a6c"
+      },
+      "generation_history": [
+        {
+          "id": "hall2/ruins_painting",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-3a865cc6-1796-4b1f-9abe-6de54d2d93ef.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/ruins_painting.png"
+        }
+      ]
+    },
+    {
+      "id": "hall3/console_table",
+      "hall": 3,
+      "name": "console_table",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/console_table.png",
+      "source_bounds": {
+        "x": 289,
+        "y": 693,
+        "width": 193,
+        "height": 135
+      },
+      "subject": "the walnut console table under the mirror on the rear wall",
+      "details": "Keep its single broad drawer with a small curved brass handle, rectangular top, plain apron and four slender tapered and lightly turned legs. Remove the mantel clock from the tabletop and reconstruct the complete empty wooden surface. No clock or mirror.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the walnut console table under the mirror on the rear wall.\nSubject details: Keep its single broad drawer with a small curved brass handle, rectangular top, plain apron and four slender tapered and lightly turned legs. Remove the mantel clock from the tabletop and reconstruct the complete empty wooden surface. No clock or mirror.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d7d89ee5-3b00-4ad8-be35-fc5bef948463.png",
+      "validation": {
+        "id": "hall3/console_table",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/console_table.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d7d89ee5-3b00-4ad8-be35-fc5bef948463.png",
+        "width": 1584,
+        "height": 1072,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.7141935917005879,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          49,
+          1539,
+          1020
+        ],
+        "visible_content_bounds": [
+          139,
+          134,
+          1444,
+          940
+        ],
+        "padding": 24,
+        "sha256": "8cb58181bcff32f5b1ebeb6f26988e886c48854281760456ba7d83e145673e2a"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/console_table",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d7d89ee5-3b00-4ad8-be35-fc5bef948463.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/console_table.png"
+        }
+      ]
+    },
+    {
+      "id": "hall3/astronomy_picture",
+      "hall": 3,
+      "name": "astronomy_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/astronomy_picture.png",
+      "source_bounds": {
+        "x": 17,
+        "y": 444,
+        "width": 88,
+        "height": 250
+      },
+      "subject": "the framed astronomical print nearest the foreground on the left wall",
+      "details": "Keep the entire narrow walnut frame, cream print, large circular star chart above an armillary sphere, and fine illustrative markings. Preserve the side-wall perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the framed astronomical print nearest the foreground on the left wall.\nSubject details: Keep the entire narrow walnut frame, cream print, large circular star chart above an armillary sphere, and fine illustrative markings. Preserve the side-wall perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8085bec-1213-449e-8caf-c8a67681c5a9.png",
+      "validation": {
+        "id": "hall3/astronomy_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/astronomy_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8085bec-1213-449e-8caf-c8a67681c5a9.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5385218792401628,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          24,
+          1029,
+          1535
+        ],
+        "visible_content_bounds": [
+          243,
+          32,
+          830,
+          1531
+        ],
+        "padding": 24,
+        "sha256": "03ccef0c48fe6a1e2294e360f8743ac0624b7cfc07564c6aaf99f7d7a95d1948"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/astronomy_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8085bec-1213-449e-8caf-c8a67681c5a9.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/astronomy_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "hall3/mirror",
+      "hall": 3,
+      "name": "mirror",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mirror.png",
+      "source_bounds": {
+        "x": 328,
+        "y": 496,
+        "width": 118,
+        "height": 179
+      },
+      "subject": "the oval mirror above the rear console table",
+      "details": "Keep the complete ornate walnut frame, crest and lower carved ornament and its softly silver-beige reflective glass with diagonal pale streaks. No reflected rooms or people.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the oval mirror above the rear console table.\nSubject details: Keep the complete ornate walnut frame, crest and lower carved ornament and its softly silver-beige reflective glass with diagonal pale streaks. No reflected rooms or people.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4186b805-b1cf-4b34-b345-f72fb4ebce25.png",
+      "validation": {
+        "id": "hall3/mirror",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mirror.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4186b805-b1cf-4b34-b345-f72fb4ebce25.png",
+        "width": 1195,
+        "height": 1420,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.5121138546761742,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          54,
+          1142,
+          1363
+        ],
+        "visible_content_bounds": [
+          140,
+          56,
+          1054,
+          1357
+        ],
+        "padding": 24,
+        "sha256": "528ce4c85290e345cb327eb22eb30eab72c10d86e31aae7bf4d231c1cf605542"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/mirror",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4186b805-b1cf-4b34-b345-f72fb4ebce25.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mirror.png"
+        }
+      ]
+    },
+    {
+      "id": "hall3/ruins_painting",
+      "hall": 3,
+      "name": "ruins_painting",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/ruins_painting.png",
+      "source_bounds": {
+        "x": 108,
+        "y": 490,
+        "width": 69,
+        "height": 196
+      },
+      "subject": "the smaller framed moonlit ruins painting next to the astronomy print on the left wall",
+      "details": "Preserve the full walnut frame, crescent or small bright moon, dark castle ruins, distant hills and tiny lone traveler. Keep the existing perspective and original painting.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the smaller framed moonlit ruins painting next to the astronomy print on the left wall.\nSubject details: Preserve the full walnut frame, crescent or small bright moon, dark castle ruins, distant hills and tiny lone traveler. Keep the existing perspective and original painting.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-886b44de-23e2-4cc3-9537-74a279b9c85b.png",
+      "validation": {
+        "id": "hall3/ruins_painting",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/ruins_painting.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-886b44de-23e2-4cc3-9537-74a279b9c85b.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5358947450248757,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          24,
+          1033,
+          1559
+        ],
+        "visible_content_bounds": [
+          214,
+          125,
+          886,
+          1466
+        ],
+        "padding": 24,
+        "sha256": "eff3ca0a9a880adf6d31a5477e53e1ddfb78305e66823889583a7e06e5c4b416"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/ruins_painting",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-886b44de-23e2-4cc3-9537-74a279b9c85b.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/ruins_painting.png"
+        }
+      ]
+    },
+    {
+      "id": "hall3/bench",
+      "hall": 3,
+      "name": "bench",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/bench.png",
+      "source_bounds": {
+        "x": 29,
+        "y": 856,
+        "width": 216,
+        "height": 280
+      },
+      "subject": "the olive upholstered wooden bench in the foreground on the left",
+      "details": "Keep its olive-green rectangular cushion, walnut rails, carved joints and slender turned legs, in the same three-quarter perspective. Reconstruct the occluded rear leg so it is a complete usable bench with exactly four structurally plausible legs and all feet inside the image. No floor or shadow patch.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the olive upholstered wooden bench in the foreground on the left.\nSubject details: Keep its olive-green rectangular cushion, walnut rails, carved joints and slender turned legs, in the same three-quarter perspective. Reconstruct the occluded rear leg so it is a complete usable bench with exactly four structurally plausible legs and all feet inside the image. No floor or shadow patch.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-a1513f9f-a465-4c17-8a86-ab4579546fd4.png",
+      "correction": false,
+      "validation": {
+        "id": "hall3/bench",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/bench.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-a1513f9f-a465-4c17-8a86-ab4579546fd4.png",
+        "width": 1496,
+        "height": 1134,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.720757410708391,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          53,
+          1449,
+          1091
+        ],
+        "visible_content_bounds": [
+          156,
+          116,
+          1357,
+          1068
+        ],
+        "padding": 24,
+        "sha256": "35c8c082ed0601fc36a898a5663ed5cf3ae92596dedbfe1864d1780604a5b3dc"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/bench",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-a1513f9f-a465-4c17-8a86-ab4579546fd4.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/bench.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall3/mantel_clock",
+      "hall": 3,
+      "name": "mantel_clock",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mantel_clock.png",
+      "source_bounds": {
+        "x": 313,
+        "y": 642,
+        "width": 45,
+        "height": 63
+      },
+      "subject": "the small mantel clock resting on the left side of the rear console",
+      "details": "Preserve its walnut case, arched top, cream round clock face, dark Roman-style hour markings, hands and stepped base. Only the clock, with its complete base; no table.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the small mantel clock resting on the left side of the rear console.\nSubject details: Preserve its walnut case, arched top, cream round clock face, dark Roman-style hour markings, hands and stepped base. Only the clock, with its complete base; no table.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-76bd92e4-4a59-4f4f-a772-10bb65da459d.png",
+      "correction": false,
+      "validation": {
+        "id": "hall3/mantel_clock",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mantel_clock.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-76bd92e4-4a59-4f4f-a772-10bb65da459d.png",
+        "width": 1262,
+        "height": 1343,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.4347618041780294,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          41,
+          45,
+          1180,
+          1296
+        ],
+        "visible_content_bounds": [
+          88,
+          94,
+          1173,
+          1267
+        ],
+        "padding": 24,
+        "sha256": "7a68783b745199e1993fecf6372eb399a78582dc19d6d5b3680340ae0b3e7107"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/mantel_clock",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-76bd92e4-4a59-4f4f-a772-10bb65da459d.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mantel_clock.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall3/railway_picture",
+      "hall": 3,
+      "name": "railway_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall3_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/railway_picture.png",
+      "source_bounds": {
+        "x": 606,
+        "y": 448,
+        "width": 134,
+        "height": 251
+      },
+      "subject": "the framed railway illustration on the foreground right wall",
+      "details": "Keep the complete walnut frame, pale green landscape, arched stone railway viaduct and steam locomotive, with the original existing side-wall perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the framed railway illustration on the foreground right wall.\nSubject details: Keep the complete walnut frame, pale green landscape, arched stone railway viaduct and steam locomotive, with the original existing side-wall perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.\nCRITICAL TARGETED CORRECTION: Preserve the source's narrow tall projected silhouette: the complete frame's outer width is approximately 0.54 of its outer height. It is a portrait-shaped frame viewed from the side on the RIGHT wall, with its top edge rising toward the right. Do not turn it into a broad landscape frame. Keep the steam locomotive below the tall stone viaduct as shown in hall3. Preserve the complete four frame edges and transparent margins.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-737d3bae-4377-43f7-9bed-ffb90e70fff8.png",
+      "correction": true,
+      "validation": {
+        "id": "hall3/railway_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/railway_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-737d3bae-4377-43f7-9bed-ffb90e70fff8.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.46909804669832655,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          56,
+          1028,
+          1559
+        ],
+        "visible_content_bounds": [
+          158,
+          58,
+          921,
+          1508
+        ],
+        "padding": 24,
+        "sha256": "435ad9af99e4e7a6f072d9b9722f99e909bfd627a3b94bf660b2167c3579a4ec"
+      },
+      "generation_history": [
+        {
+          "id": "hall3/railway_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-15d2cc0c-0bc2-4fda-96eb-f4f188e8e1d5.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/railway_picture.png",
+          "correction": false
+        },
+        {
+          "id": "hall3/railway_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-737d3bae-4377-43f7-9bed-ffb90e70fff8.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/railway_picture.png",
+          "correction": true
+        }
+      ]
+    },
+    {
+      "id": "hall4/console_table",
+      "hall": 4,
+      "name": "console_table",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/console_table.png",
+      "source_bounds": {
+        "x": 280,
+        "y": 732,
+        "width": 214,
+        "height": 131
+      },
+      "subject": "the walnut console table against the rear wall beneath the mirror",
+      "details": "Keep the single broad drawer with curved brass handle, rectangular top, lightly carved apron and four slender turned legs. Remove the clock and flower vase and reconstruct the full empty wooden tabletop. Table only; no clock, vase, mirror or wall paneling.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the walnut console table against the rear wall beneath the mirror.\nSubject details: Keep the single broad drawer with curved brass handle, rectangular top, lightly carved apron and four slender turned legs. Remove the clock and flower vase and reconstruct the full empty wooden tabletop. Table only; no clock, vase, mirror or wall paneling.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-190cf1a5-97a9-42c2-86fa-6a089aa5c470.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/console_table",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/console_table.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-190cf1a5-97a9-42c2-86fa-6a089aa5c470.png",
+        "width": 1822,
+        "height": 935,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.7122589620620227,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          65,
+          43,
+          1706,
+          888
+        ],
+        "visible_content_bounds": [
+          118,
+          93,
+          1703,
+          841
+        ],
+        "padding": 24,
+        "sha256": "56845bcc45b535b69a7d90b850e3da351c8adce220d0e8f53ac25761d96d1f53"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/console_table",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-190cf1a5-97a9-42c2-86fa-6a089aa5c470.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/console_table.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/astronomy_picture",
+      "hall": 4,
+      "name": "astronomy_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/astronomy_picture.png",
+      "source_bounds": {
+        "x": 13,
+        "y": 459,
+        "width": 76,
+        "height": 226
+      },
+      "subject": "the framed astronomy illustration on the foreground left wall",
+      "details": "Preserve the full walnut frame, cream paper, dark blue circular star chart in the upper portion and brass armillary sphere below. Keep its existing side-wall perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the framed astronomy illustration on the foreground left wall.\nSubject details: Preserve the full walnut frame, cream paper, dark blue circular star chart in the upper portion and brass armillary sphere below. Keep its existing side-wall perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-90b68e01-99eb-4245-9e39-07d315ab7241.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/astronomy_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/astronomy_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-90b68e01-99eb-4245-9e39-07d315ab7241.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5506988023895674,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          24,
+          1033,
+          1559
+        ],
+        "visible_content_bounds": [
+          233,
+          64,
+          834,
+          1493
+        ],
+        "padding": 24,
+        "sha256": "ed90b6f31d4d63fa412d66d110f2b40c05506342b12e2c2fe5a5699387387aac"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/astronomy_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-90b68e01-99eb-4245-9e39-07d315ab7241.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/astronomy_picture.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/mirror",
+      "hall": 4,
+      "name": "mirror",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mirror.png",
+      "source_bounds": {
+        "x": 323,
+        "y": 520,
+        "width": 126,
+        "height": 186
+      },
+      "subject": "the oval carved walnut mirror centered on the rear wall",
+      "details": "Preserve its ornate crest, carved side details, lower ornament and softly silver-blue glass. Remove the flowers overlapping its lower-right part and reconstruct the entire unbroken wooden frame and glass. Mirror only; no vase, flowers, sconces or console.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the oval carved walnut mirror centered on the rear wall.\nSubject details: Preserve its ornate crest, carved side details, lower ornament and softly silver-blue glass. Remove the flowers overlapping its lower-right part and reconstruct the entire unbroken wooden frame and glass. Mirror only; no vase, flowers, sconces or console.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-cce45145-2bea-490f-a41f-96057701d603.png",
+      "validation": {
+        "id": "hall4/mirror",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mirror.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-cce45145-2bea-490f-a41f-96057701d603.png",
+        "width": 1159,
+        "height": 1464,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.458867287137489,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          38,
+          1064,
+          1415
+        ],
+        "visible_content_bounds": [
+          99,
+          41,
+          1057,
+          1413
+        ],
+        "padding": 24,
+        "sha256": "04627b5e5977e9f6486dd411d6762544dd08e1906060a91caa760d64c91feaa8"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/mirror",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-cce45145-2bea-490f-a41f-96057701d603.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mirror.png"
+        }
+      ]
+    },
+    {
+      "id": "hall4/ruins_painting",
+      "hall": 4,
+      "name": "ruins_painting",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/ruins_painting.png",
+      "source_bounds": {
+        "x": 94,
+        "y": 524,
+        "width": 57,
+        "height": 161
+      },
+      "subject": "the small framed Romantic ruins painting beside the astronomy print on the left wall",
+      "details": "Preserve the complete walnut frame, small moon, ruined castle, dark rocky landscape and lone traveler, including its existing perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the small framed Romantic ruins painting beside the astronomy print on the left wall.\nSubject details: Preserve the complete walnut frame, small moon, ruined castle, dark rocky landscape and lone traveler, including its existing perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4ede3ee9-801b-4f47-a4cc-10ca9c75c34a.png",
+      "validation": {
+        "id": "hall4/ruins_painting",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/ruins_painting.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4ede3ee9-801b-4f47-a4cc-10ca9c75c34a.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5529602225614353,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          36,
+          1035,
+          1559
+        ],
+        "visible_content_bounds": [
+          228,
+          123,
+          869,
+          1404
+        ],
+        "padding": 24,
+        "sha256": "4646e4759ed2c4142002058122808adc1d8e2b65caafcc4c9896fae4119e8a4f"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/ruins_painting",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4ede3ee9-801b-4f47-a4cc-10ca9c75c34a.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/ruins_painting.png"
+        }
+      ]
+    },
+    {
+      "id": "hall4/bench",
+      "hall": 4,
+      "name": "bench",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/bench.png",
+      "source_bounds": {
+        "x": 32,
+        "y": 861,
+        "width": 210,
+        "height": 243
+      },
+      "subject": "the olive upholstered bench in the left foreground",
+      "details": "Preserve the olive cushion, warm walnut rails and slender turned legs in the existing three-quarter perspective. Reconstruct any hidden rear leg to create a complete bench with exactly four structurally plausible legs and full feet. No wall or floor.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the olive upholstered bench in the left foreground.\nSubject details: Preserve the olive cushion, warm walnut rails and slender turned legs in the existing three-quarter perspective. Reconstruct any hidden rear leg to create a complete bench with exactly four structurally plausible legs and full feet. No wall or floor.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-9ebf0d1c-c705-491c-b6d5-04da2b8e6f5a.png",
+      "validation": {
+        "id": "hall4/bench",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/bench.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-9ebf0d1c-c705-491c-b6d5-04da2b8e6f5a.png",
+        "width": 1584,
+        "height": 1072,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.691711895070104,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          49,
+          70,
+          1441,
+          1025
+        ],
+        "visible_content_bounds": [
+          159,
+          72,
+          1428,
+          1021
+        ],
+        "padding": 24,
+        "sha256": "50e03de629487ec83444d0a9747fe52271be126e9fc8e2f8e14b1a5f5107f01c"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/bench",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-9ebf0d1c-c705-491c-b6d5-04da2b8e6f5a.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/bench.png"
+        }
+      ]
+    },
+    {
+      "id": "hall4/mantel_clock",
+      "hall": 4,
+      "name": "mantel_clock",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mantel_clock.png",
+      "source_bounds": {
+        "x": 308,
+        "y": 681,
+        "width": 46,
+        "height": 63
+      },
+      "subject": "the walnut mantel clock on the left side of the rear console",
+      "details": "Keep its small arched walnut case, round cream clock dial, dark hour markings and hands, stepped wooden base and all edges. Clock only; no tabletop.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the walnut mantel clock on the left side of the rear console.\nSubject details: Keep its small arched walnut case, round cream clock dial, dark hour markings and hands, stepped wooden base and all edges. Clock only; no tabletop.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d34bd5ab-9f51-479f-a5f4-753d3d4d6710.png",
+      "validation": {
+        "id": "hall4/mantel_clock",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mantel_clock.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d34bd5ab-9f51-479f-a5f4-753d3d4d6710.png",
+        "width": 1294,
+        "height": 1311,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.4614774285353866,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          45,
+          1251,
+          1258
+        ],
+        "visible_content_bounds": [
+          94,
+          85,
+          1206,
+          1216
+        ],
+        "padding": 24,
+        "sha256": "b3bb8fb3042d213ba2951bb215427fea3cbab8f078d7d074a761aeb1d284cfe6"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/mantel_clock",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d34bd5ab-9f51-479f-a5f4-753d3d4d6710.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mantel_clock.png"
+        }
+      ]
+    },
+    {
+      "id": "hall4/railway_picture",
+      "hall": 4,
+      "name": "railway_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/railway_picture.png",
+      "source_bounds": {
+        "x": 618,
+        "y": 529,
+        "width": 67,
+        "height": 145
+      },
+      "subject": "the smaller framed railway illustration on the right wall between the nearest door and the large botanical picture",
+      "details": "Keep the complete walnut frame, arched stone viaduct, small steam locomotive and pale cream-green landscape. Preserve its existing side-wall perspective.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the smaller framed railway illustration on the right wall between the nearest door and the large botanical picture.\nSubject details: Keep the complete walnut frame, arched stone viaduct, small steam locomotive and pale cream-green landscape. Preserve its existing side-wall perspective.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-91364c38-6db7-46cf-954e-c2cdb19895b7.png",
+      "validation": {
+        "id": "hall4/railway_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/railway_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-91364c38-6db7-46cf-954e-c2cdb19895b7.png",
+        "width": 1191,
+        "height": 1424,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.4875653308050076,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          81,
+          87,
+          1115,
+          1399
+        ],
+        "visible_content_bounds": [
+          193,
+          94,
+          1038,
+          1348
+        ],
+        "padding": 24,
+        "sha256": "3e4b418aa2c205e3ec5787194537bf213a599c032fd6be83445e12d5db576f8b"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/railway_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-91364c38-6db7-46cf-954e-c2cdb19895b7.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/railway_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "hall4/sconce_left",
+      "hall": 4,
+      "name": "sconce_left",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_left.png",
+      "source_bounds": {
+        "x": 281,
+        "y": 576,
+        "width": 28,
+        "height": 55
+      },
+      "subject": "the single brass wall sconce on the rear wall to the left of the mirror",
+      "details": "Keep the complete aged brass mounting plate and curled support, small warm cream tapered fabric lampshade and lamp fittings. Exactly one left sconce, with no wall, floating light aura or room reflection.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the single brass wall sconce on the rear wall to the left of the mirror.\nSubject details: Keep the complete aged brass mounting plate and curled support, small warm cream tapered fabric lampshade and lamp fittings. Exactly one left sconce, with no wall, floating light aura or room reflection.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-f5952204-5c12-49a4-90db-36e1ba47ae9b.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/sconce_left",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_left.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-f5952204-5c12-49a4-90db-36e1ba47ae9b.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.663821635195236,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          53,
+          1029,
+          1559
+        ],
+        "visible_content_bounds": [
+          140,
+          121,
+          987,
+          1404
+        ],
+        "padding": 24,
+        "sha256": "de5c612e7a456f1dfa57bd86d8566c5a217d018b7ae4c9c6baaff45b3c10d365"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/sconce_left",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-f5952204-5c12-49a4-90db-36e1ba47ae9b.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_left.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/sconce_right",
+      "hall": 4,
+      "name": "sconce_right",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_right.png",
+      "source_bounds": {
+        "x": 462,
+        "y": 576,
+        "width": 31,
+        "height": 57
+      },
+      "subject": "the single brass wall sconce on the rear wall to the right of the mirror",
+      "details": "Keep the complete aged brass mounting plate and curled support, small warm cream tapered fabric lampshade and lamp fittings. Exactly one right sconce, matching its appearance in the source, without wall or floating light aura.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the single brass wall sconce on the rear wall to the right of the mirror.\nSubject details: Keep the complete aged brass mounting plate and curled support, small warm cream tapered fabric lampshade and lamp fittings. Exactly one right sconce, matching its appearance in the source, without wall or floating light aura.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-82b8920c-61eb-48d8-9c8d-2b80cac7bd17.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/sconce_right",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_right.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-82b8920c-61eb-48d8-9c8d-2b80cac7bd17.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.6786722165686718,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          53,
+          1044,
+          1559
+        ],
+        "visible_content_bounds": [
+          108,
+          139,
+          1003,
+          1399
+        ],
+        "padding": 24,
+        "sha256": "756a0eb805cf2ee3f689ea86ec7e3da3b3b12632b2b706068ead34a0f3e19d18"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/sconce_right",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-82b8920c-61eb-48d8-9c8d-2b80cac7bd17.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_right.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/flower_vase",
+      "hall": 4,
+      "name": "flower_vase",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/flower_vase.png",
+      "source_bounds": {
+        "x": 404,
+        "y": 643,
+        "width": 84,
+        "height": 102
+      },
+      "subject": "the complete ceramic vase and dried meadow flowers on the right side of the rear console",
+      "details": "Preserve the beige patterned ceramic vase with dark ornamental bands and its loose bouquet of fine stems, small dried blossoms and foliage. Keep flowers and vase together as one asset. Preserve fine stems with transparent gaps. No mirror, clock or console.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the complete ceramic vase and dried meadow flowers on the right side of the rear console.\nSubject details: Preserve the beige patterned ceramic vase with dark ornamental bands and its loose bouquet of fine stems, small dried blossoms and foliage. Keep flowers and vase together as one asset. Preserve fine stems with transparent gaps. No mirror, clock or console.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-b674636f-c53b-441b-8952-49eb6b754d7c.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/flower_vase",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/flower_vase.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-b674636f-c53b-441b-8952-49eb6b754d7c.png",
+        "width": 1286,
+        "height": 1319,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_fraction": 0.5887967108311707,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          47,
+          36,
+          1243,
+          1294
+        ],
+        "visible_content_bounds": [
+          56,
+          39,
+          1232,
+          1278
+        ],
+        "padding": 24,
+        "sha256": "407e196583ff4c0c69d2597b5d487f57af55a408d8659e90b3b327a078594395"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/flower_vase",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-b674636f-c53b-441b-8952-49eb6b754d7c.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/flower_vase.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/art_nouveau_picture",
+      "hall": 4,
+      "name": "art_nouveau_picture",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/art_nouveau_picture.png",
+      "source_bounds": {
+        "x": 688,
+        "y": 429,
+        "width": 80,
+        "height": 280
+      },
+      "subject": "the large framed Art Nouveau iris composition on the foreground right wall",
+      "details": "Keep the complete walnut frame, cream illustration, flowing green stems and ornamental curves, mauve iris flowers, and original side-wall perspective. Reconstruct any outer frame edge that touches the source boundary so the full frame has a clear transparent margin.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the large framed Art Nouveau iris composition on the foreground right wall.\nSubject details: Keep the complete walnut frame, cream illustration, flowing green stems and ornamental curves, mauve iris flowers, and original side-wall perspective. Reconstruct any outer frame edge that touches the source boundary so the full frame has a clear transparent margin.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c832a320-c6a2-45ce-bbfd-a80f598e9e16.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/art_nouveau_picture",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/art_nouveau_picture.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c832a320-c6a2-45ce-bbfd-a80f598e9e16.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.5645488231192523,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 0,
+        "alpha_preserved": true,
+        "content_bounds": [
+          177,
+          65,
+          985,
+          1498
+        ],
+        "visible_content_bounds": [
+          260,
+          94,
+          849,
+          1496
+        ],
+        "padding": 24,
+        "sha256": "28807c19cd57fbfb59edf3a0dca8233e7c595cf024ab716662b9f4016272416e"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/art_nouveau_picture",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c832a320-c6a2-45ce-bbfd-a80f598e9e16.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/art_nouveau_picture.png",
+          "correction": false
+        }
+      ]
+    },
+    {
+      "id": "hall4/runner_rug",
+      "hall": 4,
+      "name": "runner_rug",
+      "source": "/home/redsa/Documents/hackathon/museum_game/img/hall4_z_dodatkami.jpg",
+      "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/runner_rug.png",
+      "source_bounds": {
+        "x": 185,
+        "y": 875,
+        "width": 412,
+        "height": 433
+      },
+      "subject": "the burgundy and cream runner rug centered on the foreground floor",
+      "details": "Keep the entire flat woven rug, burgundy center, cream botanical border, fine dark outlines and its exact trapezoidal floor perspective: wider at the near end, narrower at the far end. All four corners and the entire near and far borders must be present. No floorboards, bench, furniture or floor shadow.",
+      "prompt": "Use case: background-extraction.\nAsset type: one standalone transparent PNG sprite for the museum game.\nInput image 1: supplied furnished hall, the edit target and sole visual reference.\nPrimary request: extract and carefully reconstruct ONLY the burgundy and cream runner rug centered on the foreground floor.\nSubject details: Keep the entire flat woven rug, burgundy center, cream botanical border, fine dark outlines and its exact trapezoidal floor perspective: wider at the near end, narrower at the far end. All four corners and the entire near and far borders must be present. No floorboards, bench, furniture or floor shadow.\nInvariants: preserve this particular source object's identity, silhouette, proportions, existing viewing direction and perspective, colors, delicate dark-brown drawn outlines, watercolor textures and hand-painted shading. Do not redesign it or introduce props. Reconstruct any occluded piece in the matching illustration style; for furniture make the full object structurally complete.\nComposition: show one complete object at useful resolution, centered and occupying most of the canvas with a clear transparent safety margin on all sides. Maintain the object's original viewpoint instead of rotating it into a front view.\nBackground: genuine RGBA transparency around the object and through all empty openings, including spaces between legs. Keep object surfaces opaque and all fine edges clean. Remove the entire hall, walls, doors, floor, ceiling, baseboards, other decorations and their cast shadows. No white or beige background, checkerboard drawing, labels, watermarks, extra objects, colored glow or large drop shadow. A framed picture stays together with its original frame; a mirror keeps its original glass.\nOutput: exactly this one isolated, complete asset on a truly transparent background.",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-bbe0defe-e0ad-4708-a5fd-5a68d79ede63.png",
+      "correction": false,
+      "validation": {
+        "id": "hall4/runner_rug",
+        "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/runner_rug.png",
+        "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-bbe0defe-e0ad-4708-a5fd-5a68d79ede63.png",
+        "width": 1072,
+        "height": 1584,
+        "has_alpha": true,
+        "alpha_min": 0,
+        "alpha_max": 254,
+        "transparent_fraction": 0.44439438696668176,
+        "edge_pixels": 0,
+        "source_edge_alpha_max": 1,
+        "alpha_preserved": true,
+        "content_bounds": [
+          24,
+          53,
+          1046,
+          1559
+        ],
+        "visible_content_bounds": [
+          50,
+          140,
+          1036,
+          1475
+        ],
+        "padding": 24,
+        "sha256": "d1b2470d77bbfbf67e2ad197b9dee95882c5a42dca6265c3a64b7be73d7b5a30"
+      },
+      "generation_history": [
+        {
+          "id": "hall4/runner_rug",
+          "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-bbe0defe-e0ad-4708-a5fd-5a68d79ede63.png",
+          "destination": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/runner_rug.png",
+          "correction": false
+        }
+      ]
+    }
+  ],
+  "asset_count": 25,
+  "delivery": "One independent RGBA PNG per decorative object; 24 pixels of transparent canvas padding, original generated alpha preserved."
+}

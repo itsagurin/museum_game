@@ -404,16 +404,35 @@ img {
 .journey-pill > span {
   font-size: 10px;
 }
-.room-status {
+.room-status-group {
   position: absolute;
   top: 100px;
   left: 22px;
+  max-width: calc(100% - 44px);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+.room-status {
   border-radius: 13px;
   padding: 11px 14px;
   font-size: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.room-dev-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font-size: 11px;
+}
+.room-dev-preview.active {
+  color: #4d452d;
+  border-color: #8b784c;
 }
 .status-label {
   font-size: 10px;
@@ -1056,9 +1075,12 @@ img {
   .journey-pill > span {
     font-size: 8px;
   }
-  .room-status {
+  .room-status-group {
     top: 85px;
     left: 12px;
+    max-width: calc(100% - 24px);
+  }
+  .room-status {
     padding: 9px 12px;
     font-size: 10px;
   }
@@ -1116,7 +1138,7 @@ img {
     top: 8px;
     height: 54px;
   }
-  .room-status,
+  .room-status-group,
   .journey-pill {
     top: 72px;
   }

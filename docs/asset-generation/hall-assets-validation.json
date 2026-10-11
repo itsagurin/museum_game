@@ -1,0 +1,707 @@
+{
+  "tool": "built-in image_gen",
+  "asset_count": 25,
+  "format": "RGBA PNG",
+  "validation": [
+    {
+      "id": "hall1/console_table",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/console_table.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-58e1f86f-768a-4233-9907-929c8722b8f5.png",
+      "width": 1822,
+      "height": 935,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.6573830250591405,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        99,
+        24,
+        1781,
+        888
+      ],
+      "visible_content_bounds": [
+        101,
+        58,
+        1719,
+        875
+      ],
+      "padding": 24,
+      "sha256": "ae706a36ac4789973e2edc5493c67a382678fec7a8d8c0d938442d057269d146"
+    },
+    {
+      "id": "hall1/astronomy_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall1_assets/astronomy_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-84450bd8-bc23-4230-bbb5-88c863a8096b.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.4509095149253731,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        31,
+        1001,
+        1559
+      ],
+      "visible_content_bounds": [
+        151,
+        86,
+        928,
+        1465
+      ],
+      "padding": 24,
+      "sha256": "03303286fb67e02914bf524301bbc2dcfaedcf4e16b8d87c2d793d032ac79d1f"
+    },
+    {
+      "id": "hall2/console_table",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/console_table.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-572c44a5-4184-4de1-87af-b3e6b947579e.png",
+      "width": 1822,
+      "height": 935,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.6814923953814637,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        73,
+        52,
+        1761,
+        885
+      ],
+      "visible_content_bounds": [
+        75,
+        55,
+        1746,
+        880
+      ],
+      "padding": 24,
+      "sha256": "f854008012765e0a504ebbfd43b8e9c689b029b687d807d212bbd7419e76a358"
+    },
+    {
+      "id": "hall2/astronomy_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/astronomy_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8b0998b-65b0-4f5a-a773-20bc72654a08.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5714579328735112,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        33,
+        985,
+        1559
+      ],
+      "visible_content_bounds": [
+        238,
+        63,
+        831,
+        1475
+      ],
+      "padding": 24,
+      "sha256": "fd73cda24baaeaa031821ee42607a12d2fdf28ce2202f91cb2d50048a8bd1d93"
+    },
+    {
+      "id": "hall2/mirror",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/mirror.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4c6d4194-eb56-463f-b983-57f0e5320955.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.4752080035428916,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        65,
+        75,
+        1041,
+        1515
+      ],
+      "visible_content_bounds": [
+        67,
+        78,
+        1007,
+        1480
+      ],
+      "padding": 24,
+      "sha256": "7b54264861a5905d99f0c77045c3ad47e98c478ccb006f195a298de8cdd6c88e"
+    },
+    {
+      "id": "hall2/ruins_painting",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall2_assets/ruins_painting.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-3a865cc6-1796-4b1f-9abe-6de54d2d93ef.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.4905509149329112,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        49,
+        1027,
+        1559
+      ],
+      "visible_content_bounds": [
+        180,
+        83,
+        896,
+        1501
+      ],
+      "padding": 24,
+      "sha256": "9fb10da73c8f5d86c362a3a709a3b8e7ed2f6ab9f4afb24d0f5c3d995a859a6c"
+    },
+    {
+      "id": "hall3/console_table",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/console_table.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d7d89ee5-3b00-4ad8-be35-fc5bef948463.png",
+      "width": 1584,
+      "height": 1072,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.7141935917005879,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        49,
+        1539,
+        1020
+      ],
+      "visible_content_bounds": [
+        139,
+        134,
+        1444,
+        940
+      ],
+      "padding": 24,
+      "sha256": "8cb58181bcff32f5b1ebeb6f26988e886c48854281760456ba7d83e145673e2a"
+    },
+    {
+      "id": "hall3/astronomy_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/astronomy_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c8085bec-1213-449e-8caf-c8a67681c5a9.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5385218792401628,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        24,
+        1029,
+        1535
+      ],
+      "visible_content_bounds": [
+        243,
+        32,
+        830,
+        1531
+      ],
+      "padding": 24,
+      "sha256": "03ccef0c48fe6a1e2294e360f8743ac0624b7cfc07564c6aaf99f7d7a95d1948"
+    },
+    {
+      "id": "hall3/mirror",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mirror.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4186b805-b1cf-4b34-b345-f72fb4ebce25.png",
+      "width": 1195,
+      "height": 1420,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5121138546761742,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        54,
+        1142,
+        1363
+      ],
+      "visible_content_bounds": [
+        140,
+        56,
+        1054,
+        1357
+      ],
+      "padding": 24,
+      "sha256": "528ce4c85290e345cb327eb22eb30eab72c10d86e31aae7bf4d231c1cf605542"
+    },
+    {
+      "id": "hall3/ruins_painting",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/ruins_painting.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-886b44de-23e2-4cc3-9537-74a279b9c85b.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5358947450248757,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        24,
+        1033,
+        1559
+      ],
+      "visible_content_bounds": [
+        214,
+        125,
+        886,
+        1466
+      ],
+      "padding": 24,
+      "sha256": "eff3ca0a9a880adf6d31a5477e53e1ddfb78305e66823889583a7e06e5c4b416"
+    },
+    {
+      "id": "hall3/bench",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/bench.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-a1513f9f-a465-4c17-8a86-ab4579546fd4.png",
+      "width": 1496,
+      "height": 1134,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.720757410708391,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        53,
+        1449,
+        1091
+      ],
+      "visible_content_bounds": [
+        156,
+        116,
+        1357,
+        1068
+      ],
+      "padding": 24,
+      "sha256": "35c8c082ed0601fc36a898a5663ed5cf3ae92596dedbfe1864d1780604a5b3dc"
+    },
+    {
+      "id": "hall3/mantel_clock",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/mantel_clock.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-76bd92e4-4a59-4f4f-a772-10bb65da459d.png",
+      "width": 1262,
+      "height": 1343,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4347618041780294,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        41,
+        45,
+        1180,
+        1296
+      ],
+      "visible_content_bounds": [
+        88,
+        94,
+        1173,
+        1267
+      ],
+      "padding": 24,
+      "sha256": "7a68783b745199e1993fecf6372eb399a78582dc19d6d5b3680340ae0b3e7107"
+    },
+    {
+      "id": "hall3/railway_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall3_assets/railway_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-737d3bae-4377-43f7-9bed-ffb90e70fff8.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.46909804669832655,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        56,
+        1028,
+        1559
+      ],
+      "visible_content_bounds": [
+        158,
+        58,
+        921,
+        1508
+      ],
+      "padding": 24,
+      "sha256": "435ad9af99e4e7a6f072d9b9722f99e909bfd627a3b94bf660b2167c3579a4ec"
+    },
+    {
+      "id": "hall4/console_table",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/console_table.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-190cf1a5-97a9-42c2-86fa-6a089aa5c470.png",
+      "width": 1822,
+      "height": 935,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.7122589620620227,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        65,
+        43,
+        1706,
+        888
+      ],
+      "visible_content_bounds": [
+        118,
+        93,
+        1703,
+        841
+      ],
+      "padding": 24,
+      "sha256": "56845bcc45b535b69a7d90b850e3da351c8adce220d0e8f53ac25761d96d1f53"
+    },
+    {
+      "id": "hall4/astronomy_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/astronomy_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-90b68e01-99eb-4245-9e39-07d315ab7241.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5506988023895674,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        24,
+        1033,
+        1559
+      ],
+      "visible_content_bounds": [
+        233,
+        64,
+        834,
+        1493
+      ],
+      "padding": 24,
+      "sha256": "ed90b6f31d4d63fa412d66d110f2b40c05506342b12e2c2fe5a5699387387aac"
+    },
+    {
+      "id": "hall4/mirror",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mirror.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-cce45145-2bea-490f-a41f-96057701d603.png",
+      "width": 1159,
+      "height": 1464,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.458867287137489,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        38,
+        1064,
+        1415
+      ],
+      "visible_content_bounds": [
+        99,
+        41,
+        1057,
+        1413
+      ],
+      "padding": 24,
+      "sha256": "04627b5e5977e9f6486dd411d6762544dd08e1906060a91caa760d64c91feaa8"
+    },
+    {
+      "id": "hall4/ruins_painting",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/ruins_painting.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-4ede3ee9-801b-4f47-a4cc-10ca9c75c34a.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5529602225614353,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        36,
+        1035,
+        1559
+      ],
+      "visible_content_bounds": [
+        228,
+        123,
+        869,
+        1404
+      ],
+      "padding": 24,
+      "sha256": "4646e4759ed2c4142002058122808adc1d8e2b65caafcc4c9896fae4119e8a4f"
+    },
+    {
+      "id": "hall4/bench",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/bench.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-9ebf0d1c-c705-491c-b6d5-04da2b8e6f5a.png",
+      "width": 1584,
+      "height": 1072,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.691711895070104,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        49,
+        70,
+        1441,
+        1025
+      ],
+      "visible_content_bounds": [
+        159,
+        72,
+        1428,
+        1021
+      ],
+      "padding": 24,
+      "sha256": "50e03de629487ec83444d0a9747fe52271be126e9fc8e2f8e14b1a5f5107f01c"
+    },
+    {
+      "id": "hall4/mantel_clock",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/mantel_clock.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-d34bd5ab-9f51-479f-a5f4-753d3d4d6710.png",
+      "width": 1294,
+      "height": 1311,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4614774285353866,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        45,
+        1251,
+        1258
+      ],
+      "visible_content_bounds": [
+        94,
+        85,
+        1206,
+        1216
+      ],
+      "padding": 24,
+      "sha256": "b3bb8fb3042d213ba2951bb215427fea3cbab8f078d7d074a761aeb1d284cfe6"
+    },
+    {
+      "id": "hall4/railway_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/railway_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-91364c38-6db7-46cf-954e-c2cdb19895b7.png",
+      "width": 1191,
+      "height": 1424,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.4875653308050076,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        81,
+        87,
+        1115,
+        1399
+      ],
+      "visible_content_bounds": [
+        193,
+        94,
+        1038,
+        1348
+      ],
+      "padding": 24,
+      "sha256": "3e4b418aa2c205e3ec5787194537bf213a599c032fd6be83445e12d5db576f8b"
+    },
+    {
+      "id": "hall4/sconce_left",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_left.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-f5952204-5c12-49a4-90db-36e1ba47ae9b.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.663821635195236,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        53,
+        1029,
+        1559
+      ],
+      "visible_content_bounds": [
+        140,
+        121,
+        987,
+        1404
+      ],
+      "padding": 24,
+      "sha256": "de5c612e7a456f1dfa57bd86d8566c5a217d018b7ae4c9c6baaff45b3c10d365"
+    },
+    {
+      "id": "hall4/sconce_right",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/sconce_right.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-82b8920c-61eb-48d8-9c8d-2b80cac7bd17.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.6786722165686718,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        53,
+        1044,
+        1559
+      ],
+      "visible_content_bounds": [
+        108,
+        139,
+        1003,
+        1399
+      ],
+      "padding": 24,
+      "sha256": "756a0eb805cf2ee3f689ea86ec7e3da3b3b12632b2b706068ead34a0f3e19d18"
+    },
+    {
+      "id": "hall4/flower_vase",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/flower_vase.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-b674636f-c53b-441b-8952-49eb6b754d7c.png",
+      "width": 1286,
+      "height": 1319,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_fraction": 0.5887967108311707,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        47,
+        36,
+        1243,
+        1294
+      ],
+      "visible_content_bounds": [
+        56,
+        39,
+        1232,
+        1278
+      ],
+      "padding": 24,
+      "sha256": "407e196583ff4c0c69d2597b5d487f57af55a408d8659e90b3b327a078594395"
+    },
+    {
+      "id": "hall4/art_nouveau_picture",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/art_nouveau_picture.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-c832a320-c6a2-45ce-bbfd-a80f598e9e16.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.5645488231192523,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 0,
+      "alpha_preserved": true,
+      "content_bounds": [
+        177,
+        65,
+        985,
+        1498
+      ],
+      "visible_content_bounds": [
+        260,
+        94,
+        849,
+        1496
+      ],
+      "padding": 24,
+      "sha256": "28807c19cd57fbfb59edf3a0dca8233e7c595cf024ab716662b9f4016272416e"
+    },
+    {
+      "id": "hall4/runner_rug",
+      "path": "/home/redsa/Documents/hackathon/museum_game/img/hall4_assets/runner_rug.png",
+      "generated": "/home/redsa/.codex/generated_images/01a127cb-0717-7350-875d-338dc04a0602/exec-bbe0defe-e0ad-4708-a5fd-5a68d79ede63.png",
+      "width": 1072,
+      "height": 1584,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_fraction": 0.44439438696668176,
+      "edge_pixels": 0,
+      "source_edge_alpha_max": 1,
+      "alpha_preserved": true,
+      "content_bounds": [
+        24,
+        53,
+        1046,
+        1559
+      ],
+      "visible_content_bounds": [
+        50,
+        140,
+        1036,
+        1475
+      ],
+      "padding": 24,
+      "sha256": "d1b2470d77bbfbf67e2ad197b9dee95882c5a42dca6265c3a64b7be73d7b5a30"
+    }
+  ]
+}

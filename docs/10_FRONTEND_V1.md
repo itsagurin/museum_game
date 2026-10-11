@@ -58,6 +58,12 @@ NEXT_PUBLIC_ENABLE_DEV_TOOLS=1 npm run build
 
 Testy `tests/dev-coloring.spec.ts` uruchamiaj na działającym dev (`PLAYWRIGHT_PORT=3000 npm run test:e2e -- tests/dev-coloring.spec.ts`) albo na eksporcie z tą flagą. W zwykłym eksporcie testy DEV są pomijane; na dev i buildzie z flagą sprawdzają dostarczoną planszę katalogu.
 
+### Podgląd gotowego pokoju do oceny assetów
+
+W każdym pokoju pod statusem postępu jest przycisk **„DEV: podgląd pokoju 9/9”**. Pokazuje wszystkie dekoracje danej epoki oraz pięć kolorowych obrazów w docelowym układzie. Przełącznik pozostaje włączony przy przechodzeniu między pokojami, więc można porównać wszystkie cztery kompozycje. **„DEV: zakończ podgląd 9/9”** przywraca rzeczywisty wygląd pokoju. Podgląd pokazuje całą scenę w każdym pokoju, bez zoomu i kontrolek kamery.
+
+Podgląd nie przyznaje ukończeń ani nagród, nie zmienia zapisanych przypisań obrazów, domu ani holu. Liczniki pokazują rzeczywisty postęp. Po odświeżeniu podgląd jest wyłączony. Obowiązuje ta sama dostępność co dla szybkiego kolorowania: `npm run dev` lub build z `NEXT_PUBLIC_ENABLE_DEV_TOOLS=1`. Test `tests/dev-room-preview.spec.ts` sprawdza cztery epoki, wczytanie assetów, powrót do zapisu i PL/EN na telefonie i komputerze.
+
 ## Uruchomienie
 
 ```bash
