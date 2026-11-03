@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
-import { catalogPaintings, fillCanvas, openCatalogStudio, savedCompletions } from "./helpers/catalog-coloring";
+import { dismissBadges, catalogPaintings, fillCanvas, openCatalogStudio, savedCompletions } from "./helpers/catalog-coloring";
 import { seedGame } from "./helpers/game-state";
 
 test.beforeEach(async ({ page }) => {
@@ -44,6 +44,7 @@ for (const era of eras) {
     await expect(page.getByRole("dialog")).toContainText(entry.artwork.title.pl);
     await expect(page.locator(".fun-fact p")).toHaveText(entry.artwork.funFact!.pl);
     await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
+  await dismissBadges(page);
     expect(await savedCompletions(page)).toEqual([entry.artwork.id]);
     await page.getByLabel("Miejsce na ścianie", { exact: true }).selectOption(`${era.id}-slot-2`);
     await page.getByRole("button", { name: "Zawieś w pokoju", exact: true }).click();
@@ -135,6 +136,7 @@ test("completed paint survives missing reproductions and replay without duplicat
   await expect(page.getByText("Reprodukcja jest niedostępna. Twój pokolorowany obraz został zachowany.", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
   await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
+  await dismissBadges(page);
   await page.getByLabel("Miejsce na ścianie", { exact: true }).selectOption("era-1-slot-2");
   await page.getByRole("button", { name: "Zawieś w pokoju", exact: true }).click();
   const wall = page.locator('[data-slot-id="era-1-slot-2"] .pixel-preview');
@@ -149,6 +151,7 @@ test("completed paint survives missing reproductions and replay without duplicat
   await fillCanvas(page);
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
   await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
+  await dismissBadges(page);
   expect(await savedCompletions(page)).toEqual([entry.artwork.id]);
 });
 
@@ -163,10 +166,12 @@ test("finishing the whole collection develops its room and changes the house and
   await fillCanvas(page);
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
   await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
+  await dismissBadges(page);
   const milestone = page.getByRole("dialog");
   await expect(milestone.getByRole("heading", { name: "Epoka ukończona", exact: true })).toBeVisible();
   await expect(milestone.locator(".milestone-house")).toHaveAttribute("src", "/art/house1.jpg");
   await milestone.getByRole("button", { name: "Zostań tutaj", exact: true }).click();
+  await dismissBadges(page);
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.locator(".room-status")).toContainText("21 / 21");
   await expect(page.getByRole("progressbar", { name: "Rozwój pokoju", exact: true })).toHaveAttribute("aria-valuenow", "9");

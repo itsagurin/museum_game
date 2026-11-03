@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { artworks } from "../src/data/eras";
 import { copy } from "../src/data/copy";
-import { fillCanvas } from "./helpers/catalog-coloring";
+import { dismissBadges, fillCanvas } from "./helpers/catalog-coloring";
 
 test("a new player gets three tips, a small board, a first decoration and no repeated tutorial", async ({page}) => {
   await page.emulateMedia({reducedMotion:"reduce"});
@@ -19,6 +19,7 @@ test("a new player gets three tips, a small board, a first decoration and no rep
   await fillCanvas(page);
   await page.getByRole("button",{name:"Odkryj opowieść",exact:true}).click();
   await page.getByRole("button",{name:"Wróć do pokoju",exact:true}).click();
+  await dismissBadges(page);
   await expect(page.locator(".room-level-label")).toContainText("1 / 9");
   await page.reload();
   await page.locator(".painting-frame").nth(1).click();

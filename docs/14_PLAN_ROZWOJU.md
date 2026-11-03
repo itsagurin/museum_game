@@ -267,7 +267,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] A7–A8: samouczek i dostępność.
 - [x] A9–A11: źródła, raport proporcji i opcje porządków binariów.
 - [x] B1: PWA.
-- [ ] B2–B3: obraz dnia, seria, album i odznaki.
+- [x] B2–B3: obraz dnia, seria, album i odznaki.
 - [ ] B4: karty i certyfikat.
 - [ ] B5: muzyka po zatwierdzeniu nagrań.
 - [ ] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
@@ -283,3 +283,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/a9-a11-content-review`:** recenzja i propozycje w docs/15; raport porównawczy pięciu panoram w docs/reports. Użytkownik zatwierdził bok 40 dla panoram; generator respektuje ustawienie w manifeście, nowe sygnatury odrzucają stare bitsety tych pięciu dzieł. Opis opcji LFS i migracji historii w docs/17, bez wykonania. Poszukiwanie brakujących źródeł nie zastępuje recenzji merytorycznej.
 
 **Stan `feat/b1-pwa`:** manifest, ikony (własna ilustracja), Workbox (135 plików / ok. 6 MB precache), runtime cache, komunikat aktualizacji z decyzją gracza i nagłówki Vercel. Przeładowanie offline pod `/museum` sprawdzone. Cztery e2e sprawdzają odwiedzoną planszę offline i oczekującą aktualizację na obu projektach. Pobieranie całej epoki offline było opcjonalne i pozostaje poza zakresem.
+
+**Stan `feat/b2-b3-collection`:** stały obraz dnia, ukończenie i ciekawostka na karcie, seria bez utraty nagród, zapis z walidacją 60 dat; album i 21 odznak z regułami artystów przez epoki. Vitest: 59. Audyt rozszerzony o album: 20 skanów bez serious/critical. Test z kontrolą zegara sprawdza stałość wyboru po ukończeniu/przeładowaniu oraz zmianę kolejnego dnia.

@@ -74,3 +74,5 @@ Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 1
 `npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma ok. 6 MB; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
 
 Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. Działanie z `NEXT_PUBLIC_BASE_PATH=/museum` sprawdzono osobnym buildem i przeładowaniem offline. Ręczna instalacja na fizycznym Androidzie/iOS pozostaje do wykonania przez zespół.
+
+Obraz dnia na ekranie domu wybiera nieukończone dzieło z otwartych epok i zachowuje je do końca lokalnego dnia. Historia 60 dat i łagodna seria pozostają na urządzeniu. Biblioteka ma zakładkę „Album”: postęp epok, artystów i 21 odznak. Definicje: `content/badges.json`; reguły: `src/lib/daily.ts`, `src/lib/badges.ts`.

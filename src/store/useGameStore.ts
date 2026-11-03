@@ -5,6 +5,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import { artworks, legacyArtworkIds, wallSlots } from "@/data/eras";
 import { normalizeWallAssignments, placeWallArtwork, type WallAssignments } from "@/lib/wall-gallery";
 import type { Language } from "@/types/game";
+import { isDateKey, localDateKey, normalizeDailyHistory } from "@/lib/daily";
 import { safeStorage } from "./safe-storage";
 
 interface GameState {
@@ -12,6 +13,10 @@ interface GameState {
   gentleMotion: boolean;
   highContrast: boolean;
   tutorialSeen: boolean;
+  dailyHistory: string[];
+  dailySelection: {dateKey: string; artworkId: string} | null;
+  selectDailyArtwork: (dateKey: string, artworkId: string) => void;
+  recordDailyCompletion: (artworkId: string) => void;
   toggleHighContrast: () => void;
   markTutorialSeen: () => void;
   autoFill: boolean;
@@ -35,6 +40,15 @@ export const useGameStore = create<GameState>()(
       gentleMotion: false,
       highContrast: typeof window !== "undefined" && window.matchMedia("(prefers-contrast: more)").matches,
       tutorialSeen: false,
+      dailyHistory: [], dailySelection: null,
+      selectDailyArtwork: (dateKey,artworkId) => {
+        if(isDateKey(dateKey) && artworks.some(artwork=>artwork.id===artworkId)) set({dailySelection:{dateKey,artworkId}});
+      },
+      recordDailyCompletion: artworkId => set(state => {
+        const today=localDateKey(new Date());
+        return state.dailySelection?.dateKey === today && state.dailySelection.artworkId === artworkId
+          ? {dailyHistory:normalizeDailyHistory([...state.dailyHistory,today])} : {};
+      }),
       toggleHighContrast: () => set(state => ({highContrast: !state.highContrast})),
       markTutorialSeen: () => set({tutorialSeen: true}),
       autoFill: true,
@@ -57,18 +71,20 @@ export const useGameStore = create<GameState>()(
       setWallArtwork: (slotId, artworkId) => set((state) => ({
         wallAssignments: placeWallArtwork(slotId, artworkId, wallSlots, artworks, state.wallAssignments),
       })),
-      resetProgress: () => set({ tutorialSeen: false, completedArtworkIds: [], wallAssignments: normalizeWallAssignments({}, wallSlots, artworks) }),
+      resetProgress: () => set({ tutorialSeen: false, dailyHistory: [], dailySelection: null, completedArtworkIds: [], wallAssignments: normalizeWallAssignments({}, wallSlots, artworks) }),
     }),
     {
       name: "heritage-hearth-ui-v1",
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, gentleMotion, highContrast, tutorialSeen, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
+      partialize: ({ language, dailyHistory, dailySelection, gentleMotion, highContrast, tutorialSeen, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
         highContrast,
         tutorialSeen,
+        dailyHistory,
+        dailySelection,
         autoFill,
         exploreAll,
         completedArtworkIds,
@@ -89,6 +105,12 @@ export const useGameStore = create<GameState>()(
           gentleMotion: saved.gentleMotion === true,
           highContrast: typeof saved.highContrast === "boolean" ? saved.highContrast : current.highContrast,
           tutorialSeen: saved.tutorialSeen === true,
+          dailyHistory: normalizeDailyHistory(saved.dailyHistory),
+          dailySelection: (() => {
+            const selection=saved.dailySelection as {dateKey?:unknown; artworkId?:unknown} | null;
+            return selection && isDateKey(selection.dateKey) && typeof selection.artworkId === "string" && artworks.some(artwork=>artwork.id===selection.artworkId)
+              ? {dateKey:selection.dateKey,artworkId:selection.artworkId} : null;
+          })(),
           autoFill: saved.autoFill !== false,
           exploreAll: saved.exploreAll === true,
           wallAssignments: normalizeWallAssignments(wallAssignments, wallSlots, artworks),

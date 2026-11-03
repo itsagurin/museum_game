@@ -1,7 +1,7 @@
 import { test, expect, type Page } from "@playwright/test";
 import { seedGame } from "./helpers/game-state";
 import { artworks } from "../src/data/eras";
-import { catalogPaintings } from "./helpers/catalog-coloring";
+import { dismissBadges, catalogPaintings } from "./helpers/catalog-coloring";
 
 const { painting, artwork: catalogEntry } = catalogPaintings[0];
 const matchingId = painting.grid.data[0][0];
@@ -80,6 +80,7 @@ test("one matching pixel per colour completes the painting and still supports un
   await expect(page.getByRole("dialog")).toHaveCount(1);
   await expect(page.getByRole("dialog")).toContainText(catalogEntry.title.pl);
   await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
+  await dismissBadges(page);
   await expect(page.locator(".room-status")).toContainText(`1 / ${collectionCount}`);
   await page.reload();
   await expect(page.locator(".room-status")).toContainText(`1 / ${collectionCount}`);
