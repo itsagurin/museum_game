@@ -1,13 +1,11 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
 import { seedGame } from "./helpers/game-state";
-import curiosities from "../src/data/artworks_curiosities.json" with { type: "json" };
-import metadata from "../src/data/artworks_qa.json" with { type: "json" };
 
 test("painting and curiosity fit the screen before optionally opening the history", async ({ page }) => {
   const samples = [
     artworks.find((artwork) => artwork.title.pl.startsWith("Stańczyk"))!,
-    artworks.find((artwork) => artwork.sourceFile === "era3_pozytywizm/07_07.jpg")!,
+    artworks.find((artwork) => artwork.id === "matejko-portret-zony-artysty-sukni")!,
   ];
   await page.goto("/");
   for (const artwork of samples) {
@@ -53,9 +51,7 @@ test("painting and curiosity fit the screen before optionally opening the histor
 });
 
 test("supplied titles, artists and stories work without losing saved progress", async ({ page }) => {
-  const artwork = artworks.find((entry) => entry.sourceFile === "era1_oswiecenie/01_canaletto_warszawa_praga.jpg")!;
-  const curiosity = curiosities.find((entry) => entry.filename === `assets/artworks/${artwork.sourceFile}`)!;
-  const oldMetadata = metadata.find((entry) => entry.filename === curiosity.filename)!;
+  const artwork = artworks.find((entry) => entry.id === "bellotto-widok-warszawy-strony-pragi")!;
   await page.addInitScript((id) => {
     if (!localStorage.getItem("heritage-hearth-ui-v1")) localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({ version: 1, state: { completedArtworkIds: [id], gentleMotion: true } }));
   }, artwork.id);
@@ -75,23 +71,21 @@ test("supplied titles, artists and stories work without losing saved progress", 
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
   await page.getByRole("button", { name: "Historia obrazu — Widok Warszawy od strony Pragi", exact: true }).click();
   await expect(page.locator(".story-body")).toHaveText(artwork.story!.pl);
-  await expect(page.locator(".fun-fact p")).toHaveText(curiosity.curiosity);
-  for (const pair of oldMetadata.qa_pairs) {
-    await expect(page.getByRole("dialog")).not.toContainText(pair.question);
-    await expect(page.getByRole("dialog")).not.toContainText(pair.answer);
-  }
+  await expect(page.locator(".fun-fact p")).toHaveText(artwork.funFact!.pl);
   await page.keyboard.press("Escape");
   await page.getByRole("button", { name: "Switch to English", exact: true }).click();
-  await page.getByRole("button", { name: "The painting’s story — Widok Warszawy od strony Pragi", exact: true }).click();
-  await expect(page.locator(".story-body")).toHaveAttribute("lang", "pl");
-  await expect(page.locator(".fun-fact p")).toHaveText(curiosity.curiosity);
-  await expect(page.locator(".fun-fact p")).toHaveAttribute("lang", "pl");
+  // English drafts replace the Polish texts; nothing is marked as Polish any more.
+  await page.getByRole("button", { name: `The painting’s story — ${artwork.title.en}`, exact: true }).click();
+  await expect(page.getByRole("dialog").getByRole("heading", { name: artwork.title.en, exact: true })).toBeVisible();
+  await expect(page.locator(".story-body")).toHaveText(artwork.story!.en);
+  await expect(page.locator(".story-body")).not.toHaveAttribute("lang", "pl");
+  await expect(page.locator(".fun-fact p")).toHaveText(artwork.funFact!.en);
   await page.getByRole("button", { name: "Paint again", exact: true }).click();
-  await expect(page.getByLabel("Painting: Widok Warszawy od strony Pragi", { exact: true })).toBeVisible();
+  await expect(page.getByLabel(`Painting: ${artwork.title.en}`, { exact: true })).toBeVisible();
   await expect(page.locator(".coloring-heading .artwork-credit")).toHaveText("Bernardo Bellotto (Canaletto) · 1770");
   await page.keyboard.press("Escape");
   await page.reload();
-  await expect(page.locator('[data-slot-id="era-1-slot-5"] .painting-frame')).toHaveAttribute("aria-label", "Widok Warszawy od strony Pragi — Restored");
+  await expect(page.locator('[data-slot-id="era-1-slot-5"] .painting-frame')).toHaveAttribute("aria-label", `${artwork.title.en} — Restored`);
   const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1")!).state);
   expect(saved.completedArtworkIds).toEqual([artwork.id]);
   expect(saved.wallAssignments["era-1-slot-5"]).toBe(artwork.id);

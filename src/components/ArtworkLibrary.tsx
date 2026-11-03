@@ -6,6 +6,7 @@ import { artworks, eras, getEra, getWallArtworks, wallSlots } from "@/data/eras"
 import { copy } from "@/data/copy";
 import { useGameStore } from "@/store/useGameStore";
 import type { Artwork, EraId } from "@/types/game";
+import { ArtworkSourceNote } from "./ArtworkSourceNote";
 
 function ArtworkPreview({ artwork, eager = false }: { artwork: Artwork; eager?: boolean }) {
   // Grid cards use the light thumbnail; the detail view and a missing thumbnail fall back to the original.
@@ -81,7 +82,8 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
                   <span className="eyebrow">{getEra(selected.eraId).name[language]}</span>
                   <h2>{selected.title[language]}</h2>
                   {selected.artist && <p className="artwork-credit">{selected.artist}{selected.year && ` · ${selected.year}`}</p>}
-                  {selected.style && <p className="library-artwork-style" lang={selected.contentLanguage}>{selected.style}</p>}
+                  {selected.style && <p className="library-artwork-style" lang={selected.untranslated && language === "en" ? "pl" : undefined}>{selected.style[language]}</p>}
+                  <ArtworkSourceNote artwork={selected} language={language} />
                   <span className={`library-state ${completed.includes(selected.id) ? "restored" : ""}`}>{completed.includes(selected.id) ? <Check size={14} /> : <Paintbrush size={14} />}{completed.includes(selected.id) ? t.restoredLabel : t.awaiting}</span>
                   <label className="library-slot-label">
                     {t.wallPosition}

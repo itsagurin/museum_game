@@ -8,7 +8,7 @@ test("dev preview shows all four finished rooms without changing saved progress"
   await page.addInitScript((completedArtworkIds) => {
     if (localStorage.getItem("heritage-hearth-ui-v1")) return;
     localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({
-      version: 1, state: { language: "pl", gentleMotion: true, completedArtworkIds },
+      version: 1, state: { language: "pl", exploreAll: true, gentleMotion: true, completedArtworkIds },
     }));
   }, completedArtworkIds);
   await page.goto("/#era-1");
@@ -31,7 +31,8 @@ test("dev preview shows all four finished rooms without changing saved progress"
     await expect(page.locator(".wall-artwork .original-artwork")).toHaveCount(5);
     await expect(page.locator(".unrestored-paper")).toHaveCount(0);
     await expect(page.locator(".decoration-unlock-toast")).toHaveCount(0);
-    await expect(page.getByRole("progressbar", { name: "Rozwój pokoju", exact: true })).toHaveAttribute("aria-valuenow", "0");
+    // The preview furnishes the room; the meter keeps the real level (the first painting reaches level 1).
+    await expect(page.getByRole("progressbar", { name: "Rozwój pokoju", exact: true })).toHaveAttribute("aria-valuenow", era.id === "era-1" ? "1" : "0");
     await expect.poll(() => page.locator(".room-decoration img, .wall-artwork img").evaluateAll((images) =>
       images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0),
     )).toBe(true);
@@ -44,9 +45,9 @@ test("dev preview shows all four finished rooms without changing saved progress"
   await page.getByRole("button", { name: eras[0].name.pl, exact: true }).first().click();
   await expect(preview).toHaveAttribute("aria-pressed", "true");
   await preview.click();
-  await expect(page.locator(".room-backdrop")).toHaveAttribute("data-room-level", "0");
+  await expect(page.locator(".room-backdrop")).toHaveAttribute("data-room-level", "1");
   await expect(page.getByRole("button", { name: "Pokaż całą scenę", exact: true })).toBeVisible();
-  await expect(page.locator(".room-decoration")).toHaveCount(0);
+  await expect(page.locator(".room-decoration")).toHaveCount(getRoomDecorations("era-1", 1).length);
   await expect(page.locator(".unrestored-paper")).toHaveCount(4);
   expect(await page.locator(".wall-artwork").evaluateAll((slots) => slots.map((slot) => slot.getAttribute("style")))).toEqual(positions);
   expect(await page.evaluate(() => localStorage.getItem("heritage-hearth-ui-v1"))).toBe(saved);

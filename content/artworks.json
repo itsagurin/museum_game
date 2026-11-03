@@ -1,0 +1,3316 @@
+[
+  {
+    "id": "bellotto-widok-warszawy-strony-pragi",
+    "legacyIds": [
+      "era-1-catalog-01_canaletto_warszawa_praga.jpg"
+    ],
+    "era": "era-1",
+    "order": 1,
+    "image": "era1_oswiecenie/bellotto-widok-warszawy-strony-pragi.jpg",
+    "puzzle": "puzzles/bellotto-widok-warszawy-strony-pragi.json",
+    "preview": "puzzles/bellotto-widok-warszawy-strony-pragi.png",
+    "title": {
+      "pl": "Widok Warszawy od strony Pragi",
+      "en": "View of Warsaw from Praga"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1770",
+    "style": {
+      "pl": "Weduta klasycystyczna / Malarstwo stanisławowskie",
+      "en": "Classicist veduta / Stanislavian painting"
+    },
+    "story": {
+      "pl": "Klasycystyczna weduta Canaletta ukazuje oświeceniowy kult racjonalnego ładu urbanistycznego i dokumentalny realizm w wiernym odtworzeniu panoramy Warszawy. Geometryczna perspektywa zbieżna oraz chłodne, przejrzyste światło podkreślają rozwój gospodarczy epoki stanisławowskiej, widoczny w ożywionym spławie zboża i krzątaninie na brzegach Wisły.",
+      "en": "Canaletto's classicist veduta reflects the Enlightenment's cult of rational urban order and a documentary realism that faithfully records the panorama of Warsaw. The geometric linear perspective and cool, clear light underline the economic growth of the Stanislavian era, visible in the busy grain rafting and the bustle on the banks of the Vistula."
+    },
+    "curiosity": {
+      "pl": "Drewniane wielkie łodzie na Wiśle to tak zwana szkuty i galary, którymi spławiano polskie zboże aż do Gdańska – to właśnie handel tym zbożem dawał wtedy Rzeczypospolitej największe bogactwo.",
+      "en": "The big wooden boats on the Vistula are called szkuty and galary. They carried Polish grain all the way to Gdańsk, and that grain trade was the greatest source of the Commonwealth's wealth at the time."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_View_of_Warsaw_from_Praga.jpg",
+      "title": "File:Bellotto View of Warsaw from Praga.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-krakowskie-przedmiescie-strone-placu",
+    "legacyIds": [
+      "era-1-catalog-02_canaletto_krakowskie_przedmiescie_plac_zamkowy.jpg"
+    ],
+    "era": "era-1",
+    "order": 2,
+    "image": "era1_oswiecenie/bellotto-krakowskie-przedmiescie-strone-placu.jpg",
+    "puzzle": "puzzles/bellotto-krakowskie-przedmiescie-strone-placu.json",
+    "preview": "puzzles/bellotto-krakowskie-przedmiescie-strone-placu.png",
+    "title": {
+      "pl": "Krakowskie Przedmieście w stronę Placu Zamkowego",
+      "en": "Krakowskie Przedmieście towards Castle Square"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1767–1768",
+    "style": {
+      "pl": "Weduta miejska / Oświeceniowy realizm dokumentalny",
+      "en": "Urban veduta / Enlightenment documentary realism"
+    },
+    "story": {
+      "pl": "Precyzyjnie wykreślona weduta odzwierciedla oświeceniowe zainteresowanie dynamiką życia miejskiego i strukturą nowoczesnego społeczeństwa. Zrównoważona kompozycja ujmuje barwny przekrój stolicy: tradycyjna szlachta w sarmackich żupanach sąsiaduje tu z kosmopolitycznymi elegantami we francuskich frakach, co doskonale ilustruje kulturowy przełom epoki rozumu.",
+      "en": "This precisely drawn veduta reflects the Enlightenment's interest in the dynamics of city life and the structure of a modern society. Its balanced composition captures a colourful cross-section of the capital: traditional nobles in Sarmatian żupans stand next to cosmopolitan dandies in French tailcoats, a perfect picture of the cultural turning point of the Age of Reason."
+    },
+    "curiosity": {
+      "pl": "Na tej ulicy widać zderzenie dwóch światów – tradycyjna polska szlachta z wąsami i wygolonymi głowami w żupanach mija się z modnisiami w perukach i francuskich frakach, którzy chcieli europejskich reform.",
+      "en": "This street shows two worlds colliding: traditional Polish nobles with moustaches and shaved heads, dressed in żupans, pass fashionable men in wigs and French tailcoats who wanted European reforms."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_Cracow_Suburb_leading_to_the_Castle_Square_(detail).jpg",
+      "title": "File:Bellotto Cracow Suburb leading to the Castle Square (detail).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-krakowskie-przedmiescie-kolumny-zygmunta",
+    "legacyIds": [
+      "era-1-catalog-03_canaletto_kolumna_zygmunta.jpg"
+    ],
+    "era": "era-1",
+    "order": 3,
+    "image": "era1_oswiecenie/bellotto-krakowskie-przedmiescie-kolumny-zygmunta.jpg",
+    "puzzle": "puzzles/bellotto-krakowskie-przedmiescie-kolumny-zygmunta.json",
+    "preview": "puzzles/bellotto-krakowskie-przedmiescie-kolumny-zygmunta.png",
+    "title": {
+      "pl": "Krakowskie Przedmieście od Kolumny Zygmunta",
+      "en": "Krakowskie Przedmieście from Sigismund's Column"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1768",
+    "style": {
+      "pl": "Weduta miejska / Klasycyzm stanisławowski",
+      "en": "Urban veduta / Stanislavian classicism"
+    },
+    "story": {
+      "pl": "Obraz łączy rygor perspektywy geometrycznej z oświeceniową pasją inwentaryzowania historycznej tkanki miasta przed wielkimi reformami urbanistycznymi. Zestawienie gotyckich murów dawnej Bramy Krakowskiej z rokokowymi fasadami i gwarem rzemieślniczych kramów stanowi dokumentalne świadectwo modernizującej się metropolii stanisławowskiej.",
+      "en": "The painting combines strict geometric perspective with the Enlightenment's passion for cataloguing the historic fabric of the city before the great urban reforms. The Gothic walls of the old Kraków Gate set against Rococo facades and noisy craftsmen's stalls make it a documentary record of the modernising Stanislavian metropolis."
+    },
+    "curiosity": {
+      "pl": "Tuż obok kolumny widać wielką ceglaną bramę, której dzisiaj w Warszawie w ogóle nie ma – to była średniowieczna Brama Krakowska, którą niedługo później rozebrano, bo blokowała ruch wozów i karet.",
+      "en": "Right next to the column stands a large brick gate that no longer exists in Warsaw. It was the medieval Kraków Gate, demolished soon afterwards because it blocked the traffic of carts and carriages."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_Cracow_Suburb_as_seen_from_the_Cracow_Gate.jpg",
+      "title": "File:Bellotto Cracow Suburb as seen from the Cracow Gate.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-plac-krasinskich-palacem-rzeczypospolitej",
+    "legacyIds": [
+      "era-1-catalog-05_canaletto_plac_krasinskich.jpg"
+    ],
+    "era": "era-1",
+    "order": 4,
+    "image": "era1_oswiecenie/bellotto-plac-krasinskich-palacem-rzeczypospolitej.jpg",
+    "puzzle": "puzzles/bellotto-plac-krasinskich-palacem-rzeczypospolitej.json",
+    "preview": "puzzles/bellotto-plac-krasinskich-palacem-rzeczypospolitej.png",
+    "title": {
+      "pl": "Plac Krasińskich z Pałacem Rzeczypospolitej",
+      "en": "Krasiński Square with the Palace of the Commonwealth"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1778",
+    "style": {
+      "pl": "Weduta architektoniczna / Klasycyzm",
+      "en": "Architectural veduta / Classicism"
+    },
+    "story": {
+      "pl": "Monumentalna kompozycja podporządkowana zasadom harmonii i symetrii eksponuje gmach Sądu Najwyższego jako symbol triumfu prawa i ładu państwowego epoki Oświecenia. Klarowny podział planów oraz precyzyjne oddanie postaci gwardzistów i patrycjuszy akcentują powagę instytucji Rzeczypospolitej w dobie reform stanisławowskich.",
+      "en": "A monumental composition governed by harmony and symmetry presents the Supreme Court building as a symbol of the triumph of law and state order in the Enlightenment. The clear division into planes and the precise rendering of guards and patricians stress the dignity of the Commonwealth's institutions in the time of the Stanislavian reforms."
+    },
+    "curiosity": {
+      "pl": "Przed tym ogromnym pałacem stoją uzbrojeni żołnierze w białych mundurach, bo mieścił się tu najwyższy sąd państwa. Magnaci przyjeżdżali tu złotymi karetami zaprzężonymi w czwórki koni załatwiać swoje najgrubsze spory majątkowe.",
+      "en": "Armed soldiers in white uniforms stand in front of this huge palace because it housed the highest court of the state. Magnates arrived in golden carriages drawn by four horses to settle their biggest property disputes."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_Krasi%C5%84ski_Square.jpg",
+      "title": "File:Bellotto Krasiński Square.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-kosciol-wizytek-warszawie",
+    "legacyIds": [
+      "era-1-catalog-07_canaletto_kosciol_wizytek.jpg"
+    ],
+    "era": "era-1",
+    "order": 5,
+    "image": "era1_oswiecenie/bellotto-kosciol-wizytek-warszawie.jpg",
+    "puzzle": "puzzles/bellotto-kosciol-wizytek-warszawie.json",
+    "preview": "puzzles/bellotto-kosciol-wizytek-warszawie.png",
+    "title": {
+      "pl": "Kościół Wizytek w Warszawie",
+      "en": "The Church of the Visitation Sisters in Warsaw"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1777",
+    "style": {
+      "pl": "Weduta miejska / Klasycyzm i późne rokoko",
+      "en": "Urban veduta / Classicism and late Rococo"
+    },
+    "story": {
+      "pl": "Malarz dokumentuje architektoniczne przejście od falującej, rokokowej plastyki fasady ku wczesnoklasycystycznemu porządkowi miejskiemu Warszawy schyłku XVIII wieku. Scena rodzajowa na pierwszym planie, ukazująca dostojne damy w lektykach i dworzan w perukach, oddaje wysublimowaną kulturę materialną i obyczajową epoki stanisławowskiej.",
+      "en": "The painter documents the architectural shift from the undulating Rococo sculpture of the facade towards the early classicist urban order of late eighteenth-century Warsaw. The genre scene in the foreground, with dignified ladies in sedan chairs and courtiers in wigs, conveys the refined material and social culture of the Stanislavian era."
+    },
+    "curiosity": {
+      "pl": "Na pierwszym planie widać służących w czerwonych mundurach niosących damę w zamykanej drewnianej skrzyni z oknami. Była to tak zwana lektyka – najwygodniejszy sposób podróżowania po warszawskim bruku, gdy na ulicach po deszczu stało po kolana błoto.",
+      "en": "In the foreground, servants in red uniforms carry a lady in a closed wooden box with windows. This was a sedan chair, the most comfortable way to travel over Warsaw's cobbles when the streets were knee-deep in mud after rain."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_Visitationist_Church_in_Warsaw.jpg",
+      "title": "File:Bellotto Visitationist Church in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-widok-warszawy-tarasu-zamku",
+    "legacyIds": [
+      "era-1-catalog-08_canaletto_kosciol_sakramentek.jpg"
+    ],
+    "era": "era-1",
+    "order": 6,
+    "image": "era1_oswiecenie/bellotto-widok-warszawy-tarasu-zamku.jpg",
+    "puzzle": "puzzles/bellotto-widok-warszawy-tarasu-zamku.json",
+    "preview": "puzzles/bellotto-widok-warszawy-tarasu-zamku.png",
+    "title": {
+      "pl": "Widok Warszawy z tarasu Zamku Królewskiego",
+      "en": "View of Warsaw from the Terrace of the Royal Castle"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1773",
+    "style": {
+      "pl": "Weduta krajobrazowa / Klasycyzm stanisławowski",
+      "en": "Landscape veduta / Stanislavian classicism"
+    },
+    "story": {
+      "pl": "Rozległa panorama o chłodnej, zniuansowanej tonacji odzwierciedla racjonalną estetykę Oświecenia, łączącą piękno natury z harmonijnym dziełem człowieka. Postacie dworzan kontemplujących rzekę z geometrycznego tarasu zamkowego ucieleśniają stanisławowski ideał intelektualnego dystansu i podziwu dla rozwoju cywilizacyjnego stolicy.",
+      "en": "This wide panorama in cool, subtle tones reflects the rational aesthetics of the Enlightenment, joining the beauty of nature with the harmonious work of human hands. The courtiers contemplating the river from the geometric castle terrace embody the Stanislavian ideal of intellectual distance and admiration for the capital's progress."
+    },
+    "curiosity": {
+      "pl": "Eleganccy panowie w perukach wyszli prosto z zamku na nowo zbudowany taras, żeby podziwiać widok na rzekę. W tym samym czasie w dole pod skarpą zwykli flisacy i przewoźnicy ciężko pracują przy rozładunku drewna na Wiśle.",
+      "en": "Elegant gentlemen in wigs have stepped out of the castle onto the newly built terrace to admire the view of the river. At the same time, below the escarpment, ordinary raftsmen and ferrymen are hard at work unloading timber on the Vistula."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bernardo_Bellotto_-_View_of_Warsaw_from_the_Terrace_of_the_Royal_Castle_-_MP_228_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Bernardo Bellotto - View of Warsaw from the Terrace of the Royal Castle - MP 228 - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bellotto-wjazd-jerzego-ossolinskiego-rzymu",
+    "legacyIds": [
+      "era-1-catalog-10_canaletto_wjazd_ossolinskiego.jpg"
+    ],
+    "era": "era-1",
+    "order": 7,
+    "image": "era1_oswiecenie/bellotto-wjazd-jerzego-ossolinskiego-rzymu.jpg",
+    "puzzle": "puzzles/bellotto-wjazd-jerzego-ossolinskiego-rzymu.json",
+    "preview": "puzzles/bellotto-wjazd-jerzego-ossolinskiego-rzymu.png",
+    "title": {
+      "pl": "Wjazd Jerzego Ossolińskiego do Rzymu w 1633 r.",
+      "en": "The Entry of Jerzy Ossoliński into Rome in 1633"
+    },
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": "1779",
+    "style": {
+      "pl": "Klasycystyczne malarstwo historyczne",
+      "en": "Classicist history painting"
+    },
+    "story": {
+      "pl": "Dzieło zrealizowane na zamówienie Stanisława Augusta wpisuje się w oświeceniowy program dydaktyzmu historycznego, przypominającego minioną potęgę państwa dla pokrzepienia reformatorów Sejmu Wielkiego. Rygorystyczny porządek kompozycyjny i klasycystyczna przejrzystość organizują bogaty barokowy splendor sarmackiego orszaku w logiczną, czytelną narrację ideową.",
+      "en": "Commissioned by Stanisław August, the work belongs to the Enlightenment programme of historical didacticism, recalling the state's past power to encourage the reformers of the Great Sejm. Strict compositional order and classicist clarity arrange the rich Baroque splendour of the Sarmatian procession into a logical, readable story of ideas."
+    },
+    "curiosity": {
+      "pl": "Polski poseł kazał specjalnie podbić konie luźnymi, złotymi podkowami, które same odpadały na rzymskim bruku. Ludzie rzucali się pod kopyta, żeby zbierać złoto, a cała Europa mówiła o bajecznym bogactwie Polski.",
+      "en": "The Polish envoy had his horses shod with loose golden horseshoes that fell off on the Roman cobbles. People threw themselves under the hooves to collect the gold, and all of Europe talked about Poland's fabulous wealth."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bellotto_Entry_of_Jerzy_Ossoli%C5%84ski_into_Rome_in_1633.png",
+      "title": "File:Bellotto Entry of Jerzy Ossoliński into Rome in 1633.png",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bacciarelli-portret-stanislawa-augusta-stroju",
+    "legacyIds": [
+      "era-1-catalog-11_bacciarelli_koronacyjny.jpg"
+    ],
+    "era": "era-1",
+    "order": 8,
+    "image": "era1_oswiecenie/bacciarelli-portret-stanislawa-augusta-stroju.jpg",
+    "puzzle": "puzzles/bacciarelli-portret-stanislawa-augusta-stroju.json",
+    "preview": "puzzles/bacciarelli-portret-stanislawa-augusta-stroju.png",
+    "title": {
+      "pl": "Portret Stanisława Augusta w stroju koronacyjnym",
+      "en": "Portrait of Stanisław August in Coronation Robes"
+    },
+    "artist": "Marcello Bacciarelli",
+    "year": "1768–1771",
+    "style": {
+      "pl": "Reprezentacyjny portret monarchiczny / Klasycyzm stanisławowski",
+      "en": "Ceremonial royal portrait / Stanislavian classicism"
+    },
+    "story": {
+      "pl": "Oficjalny wizerunek monarszy łączy tradycyjną pompę państwową ze stonowaną, klasycystyczną harmonią, kreując obraz króla-filozofa i mecenasa nauk. Jasne, równomierne światło oraz precyzja w oddaniu gronostajowego płaszcza i regaliów służą gloryfikacji oświeconego władcy prowadzącego naród ku odnowie ustrojowej.",
+      "en": "The official royal image combines traditional state pomp with restrained classicist harmony, creating the picture of a philosopher king and patron of learning. Bright, even light and the precise rendering of the ermine cloak and regalia glorify an enlightened ruler leading the nation towards political renewal."
+    },
+    "curiosity": {
+      "pl": "Król pozuje w hiszpańskim stroju ze srebrnego atłasu i wielkim płaszczu z gronostajów, ale ta korona leżąca na stoliku była ostatnią nową koroną w historii Polski. Król zamówił ten portret, żeby pokazać się Europie jako władca nowoczesny, ale wierny tradycji.",
+      "en": "The king poses in Spanish dress of silver satin and a great ermine cloak, but the crown lying on the table was the last new crown in Polish history. He commissioned the portrait to present himself to Europe as a modern ruler who was still faithful to tradition."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Marceli_Bacciarelli_-_Portret_Stanis%C5%82awa_Augusta_Poniatowskiego_w_stroju_koronacyjnym.jpg",
+      "title": "File:Marceli Bacciarelli - Portret Stanisława Augusta Poniatowskiego w stroju koronacyjnym.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bacciarelli-portret-stanislawa-augusta-poniatowskiego",
+    "legacyIds": [
+      "era-1-catalog-12_bacciarelli_z_klepsydra.jpg"
+    ],
+    "era": "era-1",
+    "order": 9,
+    "image": "era1_oswiecenie/bacciarelli-portret-stanislawa-augusta-poniatowskiego.jpg",
+    "puzzle": "puzzles/bacciarelli-portret-stanislawa-augusta-poniatowskiego.json",
+    "preview": "puzzles/bacciarelli-portret-stanislawa-augusta-poniatowskiego.png",
+    "title": {
+      "pl": "Portret Stanisława Augusta Poniatowskiego z klepsydrą",
+      "en": "Portrait of Stanisław August Poniatowski with an Hourglass"
+    },
+    "artist": "Marcello Bacciarelli",
+    "year": "1793",
+    "style": {
+      "pl": "Klasycystyczny portret intymny / Alegoryzm oświeceniowy",
+      "en": "Intimate classicist portrait / Enlightenment allegory"
+    },
+    "story": {
+      "pl": "Zrezygnowanie z insygniów władzy na rzecz skromnego surdutu i skupionej, filozoficznej zadumy jest manifestem oświeceniowego prymatu rozumu i refleksji moralnej nad pustym ceremoniałem. Obecność klepsydry wprowadza wymowny, racjonalistyczny symbol uciekającego czasu reform w dramatycznym momencie II rozbioru Polski.",
+      "en": "Giving up the insignia of power for a modest frock coat and focused, philosophical reflection is a manifesto of the Enlightenment's primacy of reason and moral thought over empty ceremony. The hourglass adds a telling rationalist symbol of the time for reform running out at the dramatic moment of the Second Partition of Poland."
+    },
+    "curiosity": {
+      "pl": "Król nie ma na sobie korony ani zbroi, tylko zwykły brązowy surdut, bo portret powstał tuż po przegranej wojnie z Rosją i drugim rozbiorze. Załamany władca patrzy na klepsydrę, wiedząc, że czas istnienia Polski jako państwa bezpowrotnie dobiega końca.",
+      "en": "The king wears neither crown nor armour, only a plain brown frock coat, because the portrait was painted just after the lost war with Russia and the Second Partition. The broken ruler looks at the hourglass, knowing that Poland's time as a state is irrevocably running out."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Marcello_Bacciarelli_-_Portrait_of_Stanis%C5%82aw_August_Poniatowski_with_hourglass_-_MP_3043_MNW_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Marcello Bacciarelli - Portrait of Stanisław August Poniatowski with hourglass - MP 3043 MNW - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bacciarelli-portret-izabeli-czartoryskich-lubomirskiej",
+    "legacyIds": [
+      "era-1-catalog-14_bacciarelli_lubomirska.jpg"
+    ],
+    "era": "era-1",
+    "order": 10,
+    "image": "era1_oswiecenie/bacciarelli-portret-izabeli-czartoryskich-lubomirskiej.jpg",
+    "puzzle": "puzzles/bacciarelli-portret-izabeli-czartoryskich-lubomirskiej.json",
+    "preview": "puzzles/bacciarelli-portret-izabeli-czartoryskich-lubomirskiej.png",
+    "title": {
+      "pl": "Portret Izabeli z Czartoryskich Lubomirskiej z pieskiem",
+      "en": "Portrait of Izabela Lubomirska née Czartoryska with a Dog"
+    },
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1775–1780",
+    "style": {
+      "pl": "Portret arystokratyczny / Rokoko i wczesny klasycyzm",
+      "en": "Aristocratic portrait / Rococo and early classicism"
+    },
+    "story": {
+      "pl": "Płótno ilustruje rokokowo-oświeceniową kulturę salonową polskiej arystokracji, cechującą się wytworną subtelnością, pastelową gamą barwną i swobodną elegancją. Wyrafinowany strój à la polonaise oraz obecność salonowego pieska dokumentują modę stanisławowskiej elity, łączącej paryski szyk z mecenatem nad sztuką i ideami epoki świateł.",
+      "en": "The canvas illustrates the Rococo and Enlightenment salon culture of the Polish aristocracy, marked by refined subtlety, a pastel palette and easy elegance. The sophisticated dress à la polonaise and the lapdog record the fashion of the Stanislavian elite, which combined Parisian chic with patronage of the arts and the ideas of the Age of Enlightenment."
+    },
+    "curiosity": {
+      "pl": "Ta arystokratka, zwana „Błękitną Markizą”, była jedną z najbogatszych kobiet w Europie i słynęła z tego, że nigdy nie rozstawała się ze swoimi miniaturowymi pieskami. Ma na sobie ogromną, pudrowaną mąką fryzurę, którą układano godzinami na drucianym stelażu.",
+      "en": "This aristocrat, known as the \"Blue Marquise\", was one of the richest women in Europe and was famous for never parting with her tiny dogs. She wears a huge hairstyle powdered with flour, built up for hours on a wire frame."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Marcello_Bacciarelli_-_Portret_ksi%C4%99%C5%BCnej_Izabeli_Lubomirskiej_1757.jpg",
+      "title": "File:Marcello Bacciarelli - Portret księżnej Izabeli Lubomirskiej 1757.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bacciarelli-portret-ksiecia-jozefa-poniatowskiego",
+    "legacyIds": [
+      "era-1-catalog-15_bacciarelli_jozef_poniatowski.jpg"
+    ],
+    "era": "era-1",
+    "order": 11,
+    "image": "era1_oswiecenie/bacciarelli-portret-ksiecia-jozefa-poniatowskiego.jpg",
+    "puzzle": "puzzles/bacciarelli-portret-ksiecia-jozefa-poniatowskiego.json",
+    "preview": "puzzles/bacciarelli-portret-ksiecia-jozefa-poniatowskiego.png",
+    "title": {
+      "pl": "Portret księcia Józefa Poniatowskiego w mundurze",
+      "en": "Portrait of Prince Józef Poniatowski in Uniform"
+    },
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1790",
+    "style": {
+      "pl": "Klasycystyczny portret wojskowy",
+      "en": "Classicist military portrait"
+    },
+    "story": {
+      "pl": "Wizerunek młodego dowódcy w regulaminowym mundurze Kawalerii Narodowej odzwierciedla oświeceniowy etos obywatela-żołnierza zrodzony podczas prac Sejmu Czteroletniego. Klasycystyczna powściągliwość formy, czyste linie i brak barokowej emfazy akcentują nowoczesny patriotyzm oraz gotowość do obrony zreformowanej ojczyzny.",
+      "en": "The image of the young commander in the regulation uniform of the National Cavalry reflects the Enlightenment ethos of the citizen soldier born during the Four-Year Sejm. Classicist restraint, clean lines and the absence of Baroque emphasis stress a modern patriotism and readiness to defend the reformed homeland."
+    },
+    "curiosity": {
+      "pl": "Młody książę Józef, bratanek króla i późniejszy bohater narodowy, ma na piersi zawieszony srebrny ryngraf z białym orłem. Jako dowódca nowej armii Sejmu Czteroletniego miał zerwać z wizerunkiem salonowego dandysa i stać się twardym obrońcą ojczyzny.",
+      "en": "Young Prince Józef, the king's nephew and later a national hero, wears a silver gorget with the white eagle on his chest. As a commander of the new army of the Four-Year Sejm he was meant to shed his image of a salon dandy and become a tough defender of his country."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Marcello_Bacciarelli_-_Portrait_of_Prince_J%C3%B3zef_Poniatowski_-_184493_MNW_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Marcello Bacciarelli - Portrait of Prince Józef Poniatowski - 184493 MNW - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "bacciarelli-portret-doktora-walentego-gagatkiewicza",
+    "legacyIds": [
+      "era-1-catalog-17_bacciarelli_akademia_krakowska.jpg"
+    ],
+    "era": "era-1",
+    "order": 12,
+    "image": "era1_oswiecenie/bacciarelli-portret-doktora-walentego-gagatkiewicza.jpg",
+    "puzzle": "puzzles/bacciarelli-portret-doktora-walentego-gagatkiewicza.json",
+    "preview": "puzzles/bacciarelli-portret-doktora-walentego-gagatkiewicza.png",
+    "title": {
+      "pl": "Portret doktora Walentego Gagatkiewicza",
+      "en": "Portrait of Doctor Walenty Gagatkiewicz"
+    },
+    "artist": "Marcello Bacciarelli",
+    "year": "ok. 1790",
+    "style": {
+      "pl": "Klasycystyczny portret uczonego",
+      "en": "Classicist portrait of a scholar"
+    },
+    "story": {
+      "pl": "Portret nadwornego lekarza ucieleśnia fundamentalną ideę Oświecenia – kult wiedzy empirycznej, medycyny i bezinteresownej pracy dla dobra publicznego. Skromny sukienny frak oraz biurko wypełnione traktatami medycznymi zastępują dawne symbole rodowe, ukazując nową elitę intelektualną epoki rozumu.",
+      "en": "The portrait of the court physician embodies a fundamental idea of the Enlightenment: the cult of empirical knowledge, medicine and selfless work for the public good. A plain cloth coat and a desk full of medical treatises replace the old family symbols, showing the new intellectual elite of the Age of Reason."
+    },
+    "curiosity": {
+      "pl": "Ten poważny pan na obrazie to nadworny lekarz króla, a portret przez ponad 200 lat uchodził za zaginiony i odnaleziono go dopiero niedawno na aukcji w Paryżu. Zamiast herbu szlacheckiego lekarz ma przy sobie książki medyczne, bo w tych czasach wiedza i rozum stawały się ważniejsze od pochodzenia.",
+      "en": "The serious gentleman in this painting is the king's court physician, and the portrait was thought lost for over 200 years until it turned up recently at an auction in Paris. Instead of a noble coat of arms he has medical books with him, because in those days knowledge and reason were becoming more important than birth."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-swieto-bielanach",
+    "legacyIds": [
+      "era-1-catalog-18_norblin_swieto_bielany.jpg"
+    ],
+    "era": "era-1",
+    "order": 13,
+    "image": "era1_oswiecenie/norblin-swieto-bielanach.jpg",
+    "puzzle": "puzzles/norblin-swieto-bielanach.json",
+    "preview": "puzzles/norblin-swieto-bielanach.png",
+    "title": {
+      "pl": "Święto na Bielanach",
+      "en": "Feast at Bielany"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1785",
+    "style": {
+      "pl": "Malarstwo rodzajowe / Sentymentalizm i rokoko",
+      "en": "Genre painting / Sentimentalism and Rococo"
+    },
+    "story": {
+      "pl": "Scena festynu podwarszawskiego reprezentuje oświeceniowy sentymentalizm i rosnące zainteresowanie demokratycznym życiem codziennym wszystkich stanów społecznych. Lekka, rokokowa plama barwna i swobodna kompozycja oddają radosną integrację mieszczan i szlachty na łonie natury w duchu filozofii Jana Jakuba Rousseau.",
+      "en": "The scene of a fair outside Warsaw represents Enlightenment sentimentalism and a growing interest in the everyday, democratic life of all social estates. Light Rococo colour and a free composition convey the joyful mingling of townspeople and nobles in the countryside, in the spirit of Jean-Jacques Rousseau's philosophy."
+    },
+    "curiosity": {
+      "pl": "Ten festyn na Bielanach to był jedyny dzień w roku, kiedy kobiety miały prawo wejść na teren surowego klasztoru mnichów kamedułów. Z tej okazji cała Warszawa – od arystokratów po miejską biedotę – zjeżdżała się do lasu pić, tańczyć i bujać się na wielkich huśtawkach.",
+      "en": "The fair at Bielany was the only day of the year when women were allowed onto the grounds of the strict Camaldolese monastery. All of Warsaw, from aristocrats to the city's poor, came to the forest to drink, dance and swing on huge swings."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-targ-pradze-warszawa",
+    "legacyIds": [
+      "era-1-catalog-20_norblin_targ_praga.jpg"
+    ],
+    "era": "era-1",
+    "order": 14,
+    "image": "era1_oswiecenie/norblin-targ-pradze-warszawa.jpg",
+    "puzzle": "puzzles/norblin-targ-pradze-warszawa.json",
+    "preview": "puzzles/norblin-targ-pradze-warszawa.png",
+    "title": {
+      "pl": "Targ na Pradze pod Warszawą",
+      "en": "Market at Praga near Warsaw"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1785–1790",
+    "style": {
+      "pl": "Realizm rodzajowy Oświecenia",
+      "en": "Enlightenment genre realism"
+    },
+    "story": {
+      "pl": "Norblin z reporterską dociekliwością rejestruje autentyczne realia handlowe i etnograficzne Mazowsza, odchodząc od akademickiej stylizacji na rzecz rzetelnej prawdy obyczajowej. Dynamiczny układ chłopskich wozów i sylwetek koni stanowi doskonały przykład oświeceniowego empiryzmu i fascynacji pracą wytwórczą prowincji.",
+      "en": "With a reporter's curiosity, Norblin records the real trading and ethnographic life of Mazovia, turning away from academic stylisation towards an honest truth about customs. The lively arrangement of peasant carts and horses is a perfect example of Enlightenment empiricism and its fascination with the productive work of the provinces."
+    },
+    "curiosity": {
+      "pl": "Praga była wtedy wielkim podmiejskim centrum handlu końmi i bydłem, gdzie panował potworny kurz, hałas i tłok. Chłopi zjeżdżali się tu prostymi wozami z całego Mazowsza, a szlachta i kupcy dobijali targu uderzeniem w dłoń i kieliszkiem wódki.",
+      "en": "Praga was then a large suburban centre of the horse and cattle trade, full of terrible dust, noise and crowds. Peasants came here in simple carts from all over Mazovia, while nobles and merchants sealed a deal with a handshake and a glass of vodka."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Norblin_-_Kr%C3%B3lewska_Street_horse_market.jpg",
+      "title": "File:Jean-Pierre Norblin - Królewska Street horse market.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-wybor-piasta-krola",
+    "legacyIds": [
+      "era-1-catalog-21_norblin_kawiarnia.jpg"
+    ],
+    "era": "era-1",
+    "order": 15,
+    "image": "era1_oswiecenie/norblin-wybor-piasta-krola.jpg",
+    "puzzle": "puzzles/norblin-wybor-piasta-krola.json",
+    "preview": "puzzles/norblin-wybor-piasta-krola.png",
+    "title": {
+      "pl": "Wybór Piasta na króla (Pierwszy Piast)",
+      "en": "Piast Chosen as King (The First Piast)"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1790",
+    "style": {
+      "pl": "Historyzm oświeceniowy / Nurt sentymentalno-etnograficzny",
+      "en": "Enlightenment historicism / Sentimental and ethnographic current"
+    },
+    "story": {
+      "pl": "Przedstawienie legendarnego protoplasty dynastii w otoczeniu wiejskiej chaty i narzędzi kołodziejskich manifestuje oświeceniowy mit cnotliwego, prostego władcy żyjącego z pracy własnych rąk. Norblin łączy historyczną przypowieść dydaktyczną z pietyzmem etnograficznym, afirmując ludowe korzenie polskiej tożsamości narodowej.",
+      "en": "Showing the legendary founder of the dynasty beside a village hut and a wheelwright's tools expresses the Enlightenment myth of a virtuous, simple ruler who lives by the work of his own hands. Norblin joins a didactic historical parable with ethnographic care, affirming the folk roots of Polish national identity."
+    },
+    "curiosity": {
+      "pl": "Obraz pokazuje legendarną scenę, gdy tłum ludzi przychodzi do prostej drewnianej chaty wiejskiego kołodzieja, żeby wybrać go na króla. Miało to przypominać szlachcie, że prawdziwa polska siła wywodzi się z prostej, uczciwej pracy na roli, a nie z kłótni w pałacach.",
+      "en": "The painting shows a legendary scene in which a crowd comes to the simple wooden hut of a village wheelwright to choose him as king. It was meant to remind the nobility that Poland's true strength comes from simple, honest work on the land, not from quarrels in palaces."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Piotr_Norblin_-_Piast_Being_Elected_as_the_King_-_MNK_XII-445_-_National_Museum_in_Krak%C3%B3w.jpg",
+      "title": "File:Jan Piotr Norblin - Piast Being Elected as the King - MNK XII-445 - National Museum in Kraków.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-sejmik-szlachecki-kosciele",
+    "legacyIds": [
+      "era-1-catalog-22_norblin_sejmik.jpg"
+    ],
+    "era": "era-1",
+    "order": 16,
+    "image": "era1_oswiecenie/norblin-sejmik-szlachecki-kosciele.jpg",
+    "puzzle": "puzzles/norblin-sejmik-szlachecki-kosciele.json",
+    "preview": "puzzles/norblin-sejmik-szlachecki-kosciele.png",
+    "title": {
+      "pl": "Sejmik szlachecki w kościele",
+      "en": "A Noblemen's Sejmik in a Church"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "ok. 1790",
+    "style": {
+      "pl": "Malarstwo satyryczno-rodzajowe Oświecenia",
+      "en": "Enlightenment satirical genre painting"
+    },
+    "story": {
+      "pl": "Karykaturalne i bezkompromisowe ujęcie sejmiku szlacheckiego jest malarskim odpowiednikiem oświeceniowej publicystyki politycznej krytykującej anarchię i wady sarmackiej demokracji. Dynamiczna, niemal reporterska kreska Norblina demaskuje przekupstwo i pijaństwo warchołów, wspierając sprawę reform Sejmu Wielkiego.",
+      "en": "This caricatured, uncompromising view of a sejmik of the nobility is the painted counterpart of Enlightenment political journalism that criticised anarchy and the flaws of Sarmatian democracy. Norblin's lively, almost reportorial line exposes the bribery and drunkenness of troublemakers, supporting the cause of the Great Sejm's reforms."
+    },
+    "curiosity": {
+      "pl": "Szlachta zebrała się wewnątrz kościoła na głosowanie, ale zamiast spokoju widać bijatykę, wymachiwanie szablami i picie wódki z butli. Magnaci celowo upijali biedniejszych szlachciców, żeby ci głosowali tak, jak im kazano, co często kończyło się krwawymi awanturami.",
+      "en": "The nobles have gathered inside a church to vote, but instead of calm we see a brawl, swinging sabres and vodka drunk from the bottle. Magnates deliberately got poorer nobles drunk so that they would vote as instructed, which often ended in bloody fights."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-wieszanie-zdrajcow-rynku-starego",
+    "legacyIds": [
+      "era-1-catalog-23_norblin_wieszanie_zdrajcow.jpg"
+    ],
+    "era": "era-1",
+    "order": 17,
+    "image": "era1_oswiecenie/norblin-wieszanie-zdrajcow-rynku-starego.jpg",
+    "puzzle": "puzzles/norblin-wieszanie-zdrajcow-rynku-starego.json",
+    "preview": "puzzles/norblin-wieszanie-zdrajcow-rynku-starego.png",
+    "title": {
+      "pl": "Wieszanie zdrajców na Rynku Starego Miasta (9 maja 1794)",
+      "en": "Hanging of Traitors in the Old Town Market Square (9 May 1794)"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "1794",
+    "style": {
+      "pl": "Reportaż historyczny / Rysunek dokumentalny Oświecenia",
+      "en": "Historical reportage / Enlightenment documentary drawing"
+    },
+    "story": {
+      "pl": "Wstrząsający, naoczny zapis rewolucyjnego samosądu ludu Warszawy reprezentuje nurt radykalnego dokumentaryzmu insurekcji kościuszkowskiej. Ostra, ekspresyjna kompozycja i dbałość o topograficzną prawdę Rynku oddają gwałtowny gniew społeczny przeciwko targowiczanom w imię suwerenności narodu.",
+      "en": "This shocking eyewitness record of the Warsaw people's revolutionary lynching belongs to the radical documentary current of the Kościuszko Uprising. A sharp, expressive composition and care for the topographical truth of the square convey the violent public anger against the Targowica confederates in the name of national sovereignty."
+    },
+    "curiosity": {
+      "pl": "Tłum mieszkańców Warszawy wpadł w taki szał z powodu zdrady ojczyzny, że wyciągnął przywódców zdrady targowickiej z aresztu i powiesił ich bez sądu na rynku. Wśród wisielców był hetman i biskupi, którzy brali od carycy Rosji stałe pensje za rozbicie Polski.",
+      "en": "The people of Warsaw were so enraged by the betrayal of their country that they dragged the leaders of the Targowica treason out of custody and hanged them in the square without trial. Among the hanged were a hetman and bishops who had taken regular pay from the Russian empress for breaking up Poland."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "norblin-starcie-kosynierow-wojskami-rosyjskimi",
+    "legacyIds": [
+      "era-1-catalog-24_norblin_raclawice.jpg"
+    ],
+    "era": "era-1",
+    "order": 18,
+    "image": "era1_oswiecenie/norblin-starcie-kosynierow-wojskami-rosyjskimi.jpg",
+    "puzzle": "puzzles/norblin-starcie-kosynierow-wojskami-rosyjskimi.json",
+    "preview": "puzzles/norblin-starcie-kosynierow-wojskami-rosyjskimi.png",
+    "title": {
+      "pl": "Starcie kosynierów z wojskami rosyjskimi (Racławice)",
+      "en": "Scythemen Clashing with Russian Troops (Racławice)"
+    },
+    "artist": "Jan Piotr Norblin",
+    "year": "1794",
+    "style": {
+      "pl": "Malarstwo batalistyczno-patriotyczne Oświecenia",
+      "en": "Enlightenment patriotic battle painting"
+    },
+    "story": {
+      "pl": "Scena ataku na rosyjskie armaty stanowi malarski manifest oświeceniowej idei walki całego ludu o niepodległość i prawa obywatelskie. Realistycznie ujęta improwizowana broń – kosy osadzone na sztorc – oraz sukmany kosynierów symbolizują sojusz chłopstwa ze sprawą wolności narodowej.",
+      "en": "The attack on the Russian cannons is a painted manifesto of the Enlightenment idea of the whole people fighting for independence and civil rights. The realistically shown improvised weapons, scythes straightened into spears, and the scythemen's peasant coats symbolise the alliance of the peasantry with the cause of national freedom."
+    },
+    "curiosity": {
+      "pl": "Polskim powstańcom tak bardzo brakowało karabinów, że wiejscy kowale musieli na szybko przekuwać zwykłe kosy do zboża na sztorc. Chłopi w białych sukmanach ruszyli z tymi kosami prosto pod ogień rosyjskich armat i zdobyli je w kilkanaście minut.",
+      "en": "The Polish insurgents were so short of rifles that village blacksmiths had to quickly turn ordinary grain scythes into straight blades. Peasants in white coats charged with these scythes straight into the fire of the Russian cannons and captured them in a matter of minutes."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "smuglewicz-przysiega-tadeusza-kosciuszki-rynku",
+    "legacyIds": [
+      "era-1-catalog-25_smuglewicz_przysiega_kosciuszki.jpg"
+    ],
+    "era": "era-1",
+    "order": 19,
+    "image": "era1_oswiecenie/smuglewicz-przysiega-tadeusza-kosciuszki-rynku.jpg",
+    "puzzle": "puzzles/smuglewicz-przysiega-tadeusza-kosciuszki-rynku.json",
+    "preview": "puzzles/smuglewicz-przysiega-tadeusza-kosciuszki-rynku.png",
+    "title": {
+      "pl": "Przysięga Tadeusza Kościuszki na Rynku w Krakowie",
+      "en": "Tadeusz Kościuszko's Oath in the Kraków Market Square"
+    },
+    "artist": "Franciszek Smuglewicz",
+    "year": "1797",
+    "style": {
+      "pl": "Klasycyzm historyczny",
+      "en": "Historical classicism"
+    },
+    "story": {
+      "pl": "Monumentalna, zrównoważona kompozycja o surowym rygorze klasycystycznym wznosi historyczne wydarzenie do rangi ponadczasowego rytu obywatelskiego braterstwa. Postać Naczelnika w chłopskiej sukmanie pośród wojska i mieszczan odzwierciedla dojrzałą myśl Oświecenia: państwo oparte na równości wszystkich obywateli.",
+      "en": "A monumental, balanced composition of strict classicist rigour raises a historical event to a timeless rite of civic brotherhood. The figure of the Commander in a peasant coat among soldiers and townspeople reflects the mature thought of the Enlightenment: a state founded on the equality of all citizens."
+    },
+    "curiosity": {
+      "pl": "Kościuszko na krakowskim rynku nie założył bogatego munduru ze złotem, tylko ubrał się w białą sukmanę, jaką nosili najbiedniejsi chłopi. Zrobił to celowo, żeby pokazać całemu narodowi, że bez udziału chłopów Polska nie ma szans wygrać walki o wolność.",
+      "en": "In the Kraków market square Kościuszko did not wear a rich uniform with gold. He dressed in the white coat worn by the poorest peasants, on purpose, to show the whole nation that Poland had no chance of winning its fight for freedom without the peasants."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Smuglewicz_Kosciuszko_2.jpg",
+      "title": "File:Smuglewicz Kosciuszko 2.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "smuglewicz-portret-rodziny-prozorow",
+    "legacyIds": [
+      "era-1-catalog-26_smuglewicz_rodzina_prozorow.jpg"
+    ],
+    "era": "era-1",
+    "order": 20,
+    "image": "era1_oswiecenie/smuglewicz-portret-rodziny-prozorow.jpg",
+    "puzzle": "puzzles/smuglewicz-portret-rodziny-prozorow.json",
+    "preview": "puzzles/smuglewicz-portret-rodziny-prozorow.png",
+    "title": {
+      "pl": "Portret rodziny Prozorów",
+      "en": "Portrait of the Prozor Family"
+    },
+    "artist": "Franciszek Smuglewicz",
+    "year": "1789",
+    "style": {
+      "pl": "Portret zbiorowy / Klasycyzm stanisławowski",
+      "en": "Group portrait / Stanislavian classicism"
+    },
+    "story": {
+      "pl": "Klasycystyczny porządek kompozycyjny oparty na geometrii i harmonii gestów gloryfikuje oświeceniowe cnoty rodzinne oraz patriotyczną pamięć o zmarłym wojewodzie. Dzieci w mundurkach Korpusu Kadetów i marmurowy nagrobek z urną manifestują wiarę epoki w wychowanie nowego pokolenia prawych obywateli.",
+      "en": "A classicist composition based on geometry and harmonious gestures glorifies the Enlightenment's family virtues and the patriotic memory of the late voivode. The children in Cadet Corps uniforms and the marble tomb with an urn express the era's faith in raising a new generation of upright citizens."
+    },
+    "curiosity": {
+      "pl": "Cała rodzina stoi w eleganckim salonie wokół marmurowego pomnika z urną, żeby uczcić zmarłego ojca patrioty. Chłopcy stojący po prawej stronie ubrani są już w mundury Szkoły Rycerskiej, bo od małego szkolono ich na obrońców reformowanego państwa.",
+      "en": "The whole family stands in an elegant salon around a marble monument with an urn to honour the late father, a patriot. The boys on the right already wear the uniforms of the Knights' School, because they were trained from childhood to defend the reformed state."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Smuglewicz_Prozor_Family.jpg",
+      "title": "File:Smuglewicz Prozor Family.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "vogel-lazienki-krolewskie-palac-wyspie",
+    "legacyIds": [
+      "era-1-catalog-29_vogel_lazienki.jpg"
+    ],
+    "era": "era-1",
+    "order": 21,
+    "image": "era1_oswiecenie/vogel-lazienki-krolewskie-palac-wyspie.jpg",
+    "puzzle": "puzzles/vogel-lazienki-krolewskie-palac-wyspie.json",
+    "preview": "puzzles/vogel-lazienki-krolewskie-palac-wyspie.png",
+    "title": {
+      "pl": "Łazienki Królewskie: Pałac Na Wyspie",
+      "en": "Royal Łazienki: The Palace on the Isle"
+    },
+    "artist": "Zygmunt Vogel",
+    "year": "1790",
+    "style": {
+      "pl": "Klasycystyczna weduta akwarelowa",
+      "en": "Classicist watercolour veduta"
+    },
+    "story": {
+      "pl": "Przejrzysta, subtelnie podkolorowana weduta Vogla ukazuje szczytowe osiągnięcie polskiego klasycyzmu – harmonijne zespolenie antykizującej architektury Merliniego ze stawem i parkiem krajobrazowym. Dzieło emanuje oświeceniowym spokojem, ładem przestrzennym i pogodną afirmacją piękna rezydencji królewskiej.",
+      "en": "Vogel's clear, delicately tinted veduta shows the peak achievement of Polish classicism: Merlini's antique-inspired architecture harmoniously joined with the pond and the landscape park. The work radiates Enlightenment calm, spatial order and a serene celebration of the beauty of the royal residence."
+    },
+    "curiosity": {
+      "pl": "Ten piękny pałac na wodzie był kiedyś zwykłą łaźnią magnacką, w której król Stanisław August urządził swoją letnią rezydencję. Po stawie pływały małe gondole, a król organizował tu słynne obiady czwartkowe dla poetów i uczonych.",
+      "en": "This beautiful palace on the water was once a magnate's bathhouse, which King Stanisław August turned into his summer residence. Small gondolas floated on the pond, and the king hosted his famous Thursday dinners for poets and scholars here."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "grottger-pozegnanie-powstanca",
+    "legacyIds": [
+      "era-2-catalog-01_01%20copy.jpg"
+    ],
+    "era": "era-2",
+    "order": 1,
+    "image": "era2_romantyzm/grottger-pozegnanie-powstanca.jpg",
+    "puzzle": "puzzles/grottger-pozegnanie-powstanca.json",
+    "preview": "puzzles/grottger-pozegnanie-powstanca.png",
+    "title": {
+      "pl": "Pożegnanie powstańca (z cyklu Polonia)",
+      "en": "The Insurgent's Farewell (from the cycle Polonia)"
+    },
+    "artist": "Artur Grottger",
+    "year": "1866",
+    "style": {
+      "pl": "Romantyzm martyrologiczny / Rysunek powstańczy",
+      "en": "Martyrological Romanticism / Insurgent drawing"
+    },
+    "story": {
+      "pl": "Przejmująca, intymna scena w dworku wyraża romantyczny tragizm pokolenia powstania styczniowego, w którym osobiste szczęście jednostki zostaje bezwzględnie złożone na ołtarzu ojczyzny. Czarna suknia patriotycznej żałoby narodowej i gest przypinania powstańczego orzełka skupiają w sobie całą duchową i moralną siłę romantycznego mesjanizmu.",
+      "en": "This moving, intimate scene in a manor house expresses the Romantic tragedy of the January Uprising generation, in which personal happiness is relentlessly sacrificed on the altar of the homeland. The black dress of national mourning and the gesture of pinning on the insurgent's eagle concentrate all the spiritual and moral force of Romantic messianism."
+    },
+    "curiosity": {
+      "pl": "Młoda dziewczyna ma na sobie całkowicie czarną suknię na znak żałoby narodowej i ze łzami żegna narzeczonego idącego do lasu na powstanie. Przypina mu do kurtki biało-czerwoną kokardę, wiedząc, że najpewniej widzi go żywego po raz ostatni w życiu.",
+      "en": "The young woman wears an entirely black dress as a sign of national mourning and, in tears, says goodbye to her fiancé, who is leaving for the forest to join the uprising. She pins a white-and-red cockade to his jacket, knowing she is most likely seeing him alive for the last time."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Powitanie_powstanca.jpg",
+      "title": "File:Powitanie powstanca.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wankowicz-portret-adama-mickiewicza-judahu",
+    "legacyIds": [
+      "era-2-catalog-01_01.jpg"
+    ],
+    "era": "era-2",
+    "order": 2,
+    "image": "era2_romantyzm/wankowicz-portret-adama-mickiewicza-judahu.jpg",
+    "puzzle": "puzzles/wankowicz-portret-adama-mickiewicza-judahu.json",
+    "preview": "puzzles/wankowicz-portret-adama-mickiewicza-judahu.png",
+    "title": {
+      "pl": "Portret Adama Mickiewicza na Judahu skale",
+      "en": "Portrait of Adam Mickiewicz on the Ayu-Dag Rock"
+    },
+    "artist": "Walenty Wańkowicz",
+    "year": "1827–1828",
+    "style": {
+      "pl": "Romantyczny portret natchniony / Malarstwo wieszcze",
+      "en": "Inspired Romantic portrait / Painting of the national bard"
+    },
+    "story": {
+      "pl": "Ikoniczny obraz polskiego Romantyzmu ukazuje poetę jako samotnego wieszcza i pielgrzyma na tle dzikiego morskiego żywiołu Krymu. Rozwiany wicher, kaukaska burka oraz wzrok utkwiony w nieskończoności natury symbolizują romantyczny prymat uczucia, poetyckiej transcendencji i melancholii wygnania.",
+      "en": "This iconic painting of Polish Romanticism shows the poet as a lonely bard and pilgrim against the wild sea of Crimea. The wind, the Caucasian felt cloak and the gaze fixed on the infinity of nature symbolise the Romantic primacy of feeling, poetic transcendence and the melancholy of exile."
+    },
+    "curiosity": {
+      "pl": "Mickiewicz stoi na stromej krymskiej skale z rozwianymi włosami, owinięty w wielką kaukaską pelerynę zwaną burką. Malarz przedstawił go jako samotnego geniusza i pielgrzyma, który tęskni za utraconą ojczyzną, patrząc na wzburzone morze.",
+      "en": "Mickiewicz stands on a steep Crimean rock with wind-blown hair, wrapped in a great Caucasian cape called a burka. The painter showed him as a lonely genius and pilgrim longing for his lost homeland as he looks at the stormy sea."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Wa%C5%84kowicz_Adam_Mickiewicz.jpg",
+      "title": "File:Wańkowicz Adam Mickiewicz.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "michalowski-szarza-wawozie-somosierra",
+    "legacyIds": [
+      "era-2-catalog-02_02.jpg"
+    ],
+    "era": "era-2",
+    "order": 3,
+    "image": "era2_romantyzm/michalowski-szarza-wawozie-somosierra.jpg",
+    "puzzle": "puzzles/michalowski-szarza-wawozie-somosierra.json",
+    "preview": "puzzles/michalowski-szarza-wawozie-somosierra.png",
+    "title": {
+      "pl": "Szarża w wąwozie Somosierra",
+      "en": "The Charge at Somosierra"
+    },
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1837",
+    "style": {
+      "pl": "Romantyzm batalistyczny / Ekspresjonizm romantyczny",
+      "en": "Romantic battle painting / Romantic expressionism"
+    },
+    "story": {
+      "pl": "Gwałtowna, niemal abstrakcyjna dynamika pędzla i dramatyczny światłocień Michałowskiego ucieleśniają romantyczną fascynację żywiołem walki oraz napoleońską legendą polskich szwoleżerów. Artysta rezygnuje z chłodnego opisu bitwy na rzecz czystej, malarskiej ekspresji brawurowego pędu koni przez dym i ogień dział w wąwozie.",
+      "en": "Michałowski's violent, almost abstract brushwork and dramatic chiaroscuro embody the Romantic fascination with the frenzy of battle and the Napoleonic legend of the Polish light horse. The artist gives up a cool description of the battle for pure painterly expression of horses rushing through the smoke and cannon fire of the gorge."
+    },
+    "curiosity": {
+      "pl": "Polscy kawalerzyści pędzą konno przez wąski hiszpański wąwóz prosto pod lufy hiszpańskich armat, które dziesiątkowały wojska Napoleona. Wjechali na tę przełęcz w zaledwie osiem minut pod gradem kul, dokonując ataku uznawanego za jedno z najbardziej szalonych zwycięstw w historii wojen.",
+      "en": "Polish cavalrymen gallop through a narrow Spanish mountain pass straight at the Spanish cannons that had been decimating Napoleon's army. They took the pass in just eight minutes under a hail of bullets, an attack regarded as one of the most daring victories in the history of warfare."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Battle_of_Somosierra_by_Piotr_Micha%C5%82owski.PNG",
+      "title": "File:Battle of Somosierra by Piotr Michałowski.PNG",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "michalowski-senko",
+    "legacyIds": [
+      "era-2-catalog-03_03.jpg"
+    ],
+    "era": "era-2",
+    "order": 4,
+    "image": "era2_romantyzm/michalowski-senko.jpg",
+    "puzzle": "puzzles/michalowski-senko.json",
+    "preview": "puzzles/michalowski-senko.png",
+    "title": {
+      "pl": "Seńko (Portret chłopa w kapeluszu)",
+      "en": "Seńko (Portrait of a Peasant in a Hat)"
+    },
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1846",
+    "style": {
+      "pl": "Romantyczny portret psychologiczny",
+      "en": "Romantic psychological portrait"
+    },
+    "story": {
+      "pl": "Głęboko humanistyczne i pełne powagi studium wiejskiego fornala ukazuje romantyczne odkrycie godności i tragizmu prostego człowieka z ludu. Surowa materia malarska, gruba faktura farby i przenikliwy światłocień wydobywają wewnętrzną siłę i zmęczenie pańszczyźnianego chłopa bez cienia sielankowej idealizacji.",
+      "en": "This deeply humane and serious study of a village farmhand shows the Romantic discovery of the dignity and tragedy of the common man. Raw paint handling, thick texture and penetrating chiaroscuro bring out the inner strength and weariness of a serf without any idyllic idealisation."
+    },
+    "curiosity": {
+      "pl": "To nie jest żaden król ani generał, tylko zwykły wiejski fornal Seńko ze wsi Krzysztoforzyce, który całe życie ciężko pracował na pańszczyźnie. Malarz namalował go z niezwykłą powagą i szacunkiem, pokazując zmęczenie i dumę na jego zniszczonej twarzy.",
+      "en": "This is no king or general, but an ordinary farmhand called Seńko from the village of Krzysztoforzyce, who worked hard as a serf all his life. The painter portrayed him with remarkable seriousness and respect, showing the weariness and pride in his worn face."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Piotr_Micha%C5%82owski_-_Se%C5%84ko_-_MNK_II-a-734_-_National_Museum_Krak%C3%B3w.jpg",
+      "title": "File:Piotr Michałowski - Seńko - MNK II-a-734 - National Museum Kraków.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "michalowski-starzec-siedzacy-stopniach",
+    "legacyIds": [
+      "era-2-catalog-08_08.jpg"
+    ],
+    "era": "era-2",
+    "order": 5,
+    "image": "era2_romantyzm/michalowski-starzec-siedzacy-stopniach.jpg",
+    "puzzle": "puzzles/michalowski-starzec-siedzacy-stopniach.json",
+    "preview": "puzzles/michalowski-starzec-siedzacy-stopniach.png",
+    "title": {
+      "pl": "Starzec siedzący na stopniach",
+      "en": "Old Man Sitting on Steps"
+    },
+    "artist": "Piotr Michałowski",
+    "year": "ok. 1840",
+    "style": {
+      "pl": "Romantyczny realizm egzystencjalny",
+      "en": "Romantic existential realism"
+    },
+    "story": {
+      "pl": "Porażające studium samotności i upadku człowieka wpisuje się w romantyczny nurt empatii dla wykluczonych i cierpiących istot. Zgaszona, niemal monochromatyczna paleta ziemistych barw oraz bezwzględna prawda w oddaniu łachmanów starca budują nastrój głębokiej egzystencjalnej melancholii.",
+      "en": "This striking study of human loneliness and decline belongs to the Romantic current of empathy for the excluded and the suffering. A muted, almost monochrome palette of earthy colours and the unflinching truth in rendering the old man's rags create a mood of deep existential melancholy."
+    },
+    "curiosity": {
+      "pl": "Zgarbiony, stary żebrak siedzi w poszarpanych łachmanach na zimnych kamiennych schodach bogatej kamienicy. Artysta pokazał ludzką biedę bez upiększania, używając szarych i ziemistych kolorów, żeby poruszyć sumienia bogatych mieszczan.",
+      "en": "A hunched old beggar in tattered rags sits on the cold stone steps of a wealthy townhouse. The artist showed human poverty without embellishment, using grey and earthy colours to stir the consciences of rich townspeople."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "zaleski-wziecie-arsenalu-nocy-29",
+    "legacyIds": [
+      "era-2-catalog-09_09.jpg"
+    ],
+    "era": "era-2",
+    "order": 6,
+    "image": "era2_romantyzm/zaleski-wziecie-arsenalu-nocy-29.jpg",
+    "puzzle": "puzzles/zaleski-wziecie-arsenalu-nocy-29.json",
+    "preview": "puzzles/zaleski-wziecie-arsenalu-nocy-29.png",
+    "title": {
+      "pl": "Wzięcie Arsenału w nocy 29 listopada 1830 r.",
+      "en": "The Capture of the Arsenal on the Night of 29 November 1830"
+    },
+    "artist": "Marcin Zaleski",
+    "year": "1831",
+    "style": {
+      "pl": "Romantyczny nokturn historyczny",
+      "en": "Romantic historical nocturne"
+    },
+    "story": {
+      "pl": "Zaleski po mistrzowsku wykorzystuje romantyczną poetykę nokturnu, gdzie mrok Nocy Listopadowej rozdzierają krwawe łuny pochodni i błyski karabinowych wystrzałów. Napięcie kompozycyjne i dramatyzm tłumu zdobywającego Arsenał oddają żywiołową erupcję niepodległościowego buntu przeciwko caratowi.",
+      "en": "Zaleski masterfully uses the Romantic poetics of the nocturne, in which the darkness of the November Night is torn by the bloody glow of torches and the flashes of musket fire. The tension of the composition and the drama of the crowd storming the Arsenal convey the spontaneous eruption of a rebellion for independence against the tsar."
+    },
+    "curiosity": {
+      "pl": "W ciemną listopadową noc tłum mieszkańców Warszawy i młodzi podchorążowie rzucili się na magazyn broni, wyłamując wrota siekierami. Wynoszono tysiące karabinów skałkowych i rozdawano każdemu na ulicy, co dało początek Powstaniu Listopadowemu.",
+      "en": "On a dark November night a crowd of Warsaw residents and young officer cadets rushed the weapons depot, breaking down the gates with axes. Thousands of flintlock muskets were carried out and handed to anyone in the street, which started the November Uprising."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Marcin_Zaleski,_Wzi%C4%99cie_Arsena%C5%82u.jpg",
+      "title": "File:Marcin Zaleski, Wzięcie Arsenału.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "zaleski-widok-placu-teatralnego-warszawie",
+    "legacyIds": [
+      "era-2-catalog-11_11.jpg"
+    ],
+    "era": "era-2",
+    "order": 7,
+    "image": "era2_romantyzm/zaleski-widok-placu-teatralnego-warszawie.jpg",
+    "puzzle": "puzzles/zaleski-widok-placu-teatralnego-warszawie.json",
+    "preview": "puzzles/zaleski-widok-placu-teatralnego-warszawie.png",
+    "title": {
+      "pl": "Widok Placu Teatralnego w Warszawie",
+      "en": "View of Theatre Square in Warsaw"
+    },
+    "artist": "Marcin Zaleski",
+    "year": "1838",
+    "style": {
+      "pl": "Malarstwo miejskie epoki międzypowstaniowej",
+      "en": "Urban painting between the uprisings"
+    },
+    "story": {
+      "pl": "Monumentalna bryła Teatru Wielkiego pod chmurnym, nastrojowym niebem odzwierciedla melancholijną atmosferę Warszawy lat trzydziestych XIX wieku pod carskim uciskiem. Klasycystyczna architektura Corazziego staje się w ujęciu Zaleskiego scenerią cichego, stłumionego trwania narodu pozbawionego wolności politycznej.",
+      "en": "The monumental mass of the Grand Theatre under a cloudy, atmospheric sky reflects the melancholy mood of Warsaw in the 1830s under tsarist oppression. In Zaleski's view, Corazzi's classicist architecture becomes the setting for the quiet, subdued endurance of a nation deprived of political freedom."
+    },
+    "curiosity": {
+      "pl": "Wielki gmach Teatru Wielkiego dopiero co został zbudowany i był dumą miasta, ale nad placem wisi ponure, szare niebo. Po klęsce powstania listopadowego Warszawa była pod twardą okupacją carską, a na placu widać patrole i powozy rosyjskich urzędników.",
+      "en": "The huge Grand Theatre building had only just been built and was the pride of the city, but a gloomy grey sky hangs over the square. After the defeat of the November Uprising, Warsaw was under harsh tsarist rule, and patrols and the carriages of Russian officials can be seen in the square."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "suchodolski-bitwa-raszynem-1809",
+    "legacyIds": [
+      "era-2-catalog-13_13.jpg"
+    ],
+    "era": "era-2",
+    "order": 8,
+    "image": "era2_romantyzm/suchodolski-bitwa-raszynem-1809.jpg",
+    "puzzle": "puzzles/suchodolski-bitwa-raszynem-1809.json",
+    "preview": "puzzles/suchodolski-bitwa-raszynem-1809.png",
+    "title": {
+      "pl": "Bitwa pod Raszynem 1809",
+      "en": "The Battle of Raszyn, 1809"
+    },
+    "artist": "January Suchodolski",
+    "year": "1855",
+    "style": {
+      "pl": "Romantyczne malarstwo batalistyczne",
+      "en": "Romantic battle painting"
+    },
+    "story": {
+      "pl": "Obraz buduje romantyczny mit rycerskiego wodza w osobie księcia Józefa Poniatowskiego, który z fajeczką w ustach osobiście prowadzi piechurów na bagnety przeciwko przeważającym siłom austriackim. Dynamiczny kłąb dymu prochowego i heroiczna postawa żołnierzy Księstwa Warszawskiego ucieleśniają nieugiętą wolę walki o wskrzeszenie państwa.",
+      "en": "The painting builds the Romantic myth of the chivalrous commander, Prince Józef Poniatowski, who leads his infantry in a bayonet charge with a pipe in his mouth against superior Austrian forces. The swirling gun smoke and the heroic stance of the soldiers of the Duchy of Warsaw embody an unbending will to fight for the rebirth of the state."
+    },
+    "curiosity": {
+      "pl": "Dowódca idzie na czele wojska prosto pod lufy armat z fajką w zębach. Zapalił ją specjalnie, żeby pokazać totalny spokój i powstrzymać panikę wśród swoich młodych, wystraszonych żołnierzy.",
+      "en": "The commander marches at the head of his troops straight at the cannon muzzles with a pipe between his teeth. He lit it on purpose to show complete calm and stop panic among his young, frightened soldiers."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "grassi-portret-ksiecia-jozefa-poniatowskiego",
+    "legacyIds": [
+      "era-2-catalog-14_14.jpg"
+    ],
+    "era": "era-2",
+    "order": 9,
+    "image": "era2_romantyzm/grassi-portret-ksiecia-jozefa-poniatowskiego.jpg",
+    "puzzle": "puzzles/grassi-portret-ksiecia-jozefa-poniatowskiego.json",
+    "preview": "puzzles/grassi-portret-ksiecia-jozefa-poniatowskiego.png",
+    "title": {
+      "pl": "Portret księcia Józefa Poniatowskiego",
+      "en": "Portrait of Prince Józef Poniatowski"
+    },
+    "artist": "Josef Grassi",
+    "year": "po 1810",
+    "style": {
+      "pl": "Portret heroiczny wczesnego Romantyzmu",
+      "en": "Heroic portrait of early Romanticism"
+    },
+    "story": {
+      "pl": "Heroizujący wizerunek naczelnego wodza łączy klasycystyczną szlachetność rysunku z romantycznym nimbem rycerza bez skazy i zmazy. Dumna poza, ordery za męstwo bojowe oraz melancholijny cień na twarzy kreują wzorzec narodowego bohatera epopei napoleońskiej.",
+      "en": "This heroic image of the commander-in-chief combines the classicist nobility of the drawing with the Romantic aura of a knight without fear or reproach. The proud pose, the orders for valour in battle and the melancholy shadow on his face create the model of a national hero of the Napoleonic epic."
+    },
+    "curiosity": {
+      "pl": "Książę Józef był wielkim ulubieńcem kobiet i symbolem elegancji, a na piersi nosi najwyższe odznaczenie wojenne Virtuti Militari, którego był pierwszym kawalerem w historii. Portret ten wisiał w niemal każdym polskim dworku jako znak nadziei na wolność u boku Napoleona.",
+      "en": "Prince Józef was a great favourite of women and a symbol of elegance, and on his chest he wears the highest military decoration, the Virtuti Militari, of which he was the first knight in history. This portrait hung in almost every Polish manor house as a sign of hope for freedom at Napoleon's side."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Grassi_Prince_J%C3%B3zef_Poniatowski.jpg",
+      "title": "File:Grassi Prince Józef Poniatowski.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "suchodolski-obrona-jasnej-gory-przed",
+    "legacyIds": [
+      "era-2-catalog-15_15.jpg"
+    ],
+    "era": "era-2",
+    "order": 10,
+    "image": "era2_romantyzm/suchodolski-obrona-jasnej-gory-przed.jpg",
+    "puzzle": "puzzles/suchodolski-obrona-jasnej-gory-przed.json",
+    "preview": "puzzles/suchodolski-obrona-jasnej-gory-przed.png",
+    "title": {
+      "pl": "Obrona Jasnej Góry przed Szwedami",
+      "en": "The Defence of Jasna Góra against the Swedes"
+    },
+    "artist": "January Suchodolski",
+    "year": "1845",
+    "style": {
+      "pl": "Romantyzm historyczno-patriotyczny",
+      "en": "Historical-patriotic Romanticism"
+    },
+    "story": {
+      "pl": "Dzieło odwołuje się do romantycznej idei Polski jako przedmurza chrześcijaństwa i mistycznego sanktuarium ocalonego dzięki niezłomnej wierze obrońców. Zestawienie białych habitów paulinów z hukiem spiżowych dział na murach klasztornych budziło ducha oporu w Polakach cierpiących pod zaborami.",
+      "en": "The work draws on the Romantic idea of Poland as the bulwark of Christendom and a mystical sanctuary saved by the unshakeable faith of its defenders. The white habits of the Pauline monks set against the roar of bronze cannons on the monastery walls stirred the spirit of resistance in Poles suffering under the partitions."
+    },
+    "curiosity": {
+      "pl": "Mnisi w białych habitach stoją na murach klasztoru ramię w ramię z żołnierzami przy huczących armatach. Obraz namalowano w czasach zaborów, żeby przypomnieć Polakom, że nawet garstka obrońców z wiarą potrafiła odeprzeć potężną szwedzką armię.",
+      "en": "Monks in white habits stand on the monastery walls shoulder to shoulder with soldiers beside the roaring cannons. The painting was made during the partitions to remind Poles that even a handful of defenders with faith could repel a powerful Swedish army."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jasna_G%C3%B3ra_1655.jpg",
+      "title": "File:Jasna Góra 1655.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "rodakowski-portret-generala-henryka-dembinskiego",
+    "legacyIds": [
+      "era-2-catalog-17_17.jpg"
+    ],
+    "era": "era-2",
+    "order": 11,
+    "image": "era2_romantyzm/rodakowski-portret-generala-henryka-dembinskiego.jpg",
+    "puzzle": "puzzles/rodakowski-portret-generala-henryka-dembinskiego.json",
+    "preview": "puzzles/rodakowski-portret-generala-henryka-dembinskiego.png",
+    "title": {
+      "pl": "Portret generała Henryka Dembińskiego",
+      "en": "Portrait of General Henryk Dembiński"
+    },
+    "artist": "Henryk Rodakowski",
+    "year": "1852",
+    "style": {
+      "pl": "Romantyczny portret psychologiczny",
+      "en": "Romantic psychological portrait"
+    },
+    "story": {
+      "pl": "Arcydzieło Rodakowskiego skupia w sobie cały dramat pokolenia Wielkiej Emigracji: starość wodza na wygnaniu, gorycz militarnych klęsk i niezłomną godność polskiego tułacza. Oszczędna, ciemna paleta z wyrazistym akcentem amarantowej podszewki opończy kieruje całą uwagę na pełną bolesnej mądrości twarz powstańca.",
+      "en": "Rodakowski's masterpiece concentrates the whole drama of the Great Emigration generation: the old age of a commander in exile, the bitterness of military defeats and the unbroken dignity of the Polish wanderer. A sparse, dark palette with a striking amaranth lining of the cloak directs all attention to the insurgent's face, full of painful wisdom."
+    },
+    "curiosity": {
+      "pl": "Siwy generał siedzi zamyślony na wygnaniu w Paryżu w wielkim czarnym płaszczu z czerwoną podszewką. Przegrał dwa wielkie powstania – w Polsce i na Węgrzech – a na jego twarzy widać cały ból tułacza, który wie, że już nigdy nie zobaczy wolnej ojczyzny.",
+      "en": "The grey-haired general sits lost in thought in exile in Paris, wrapped in a great black cloak with a red lining. He lost two great uprisings, in Poland and in Hungary, and his face shows all the pain of a wanderer who knows he will never see his homeland free."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:RodakowskiHenryk.PortretGeneralaHenrykaDembinskiego.1852.jpg",
+      "title": "File:RodakowskiHenryk.PortretGeneralaHenrykaDembinskiego.1852.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "simmler-smierc-barbary-radziwillowny",
+    "legacyIds": [
+      "era-2-catalog-20_20.jpg"
+    ],
+    "era": "era-2",
+    "order": 12,
+    "image": "era2_romantyzm/simmler-smierc-barbary-radziwillowny.jpg",
+    "puzzle": "puzzles/simmler-smierc-barbary-radziwillowny.json",
+    "preview": "puzzles/simmler-smierc-barbary-radziwillowny.png",
+    "title": {
+      "pl": "Śmierć Barbary Radziwiłłówny",
+      "en": "The Death of Barbara Radziwiłł"
+    },
+    "artist": "Józef Simmler",
+    "year": "1860",
+    "style": {
+      "pl": "Romantyzm akademicki / Historyzm nastrojowy",
+      "en": "Academic Romanticism / Atmospheric historicism"
+    },
+    "story": {
+      "pl": "Płótno Simmlera jest kwintesencją romantycznej elegii o potędze miłości pokonanej przez śmierć, zrealizowanej z olśniewającym kunsztem malarskim w przededniu powstania styczniowego. Zrozpaczony król Zygmunt August czuwający przy marach ukochanej żony poruszał współczesnych jako alegoria żałoby i wierności aż do grobu.",
+      "en": "Simmler's canvas is the quintessence of the Romantic elegy about the power of love defeated by death, painted with dazzling skill on the eve of the January Uprising. The grief-stricken King Sigismund Augustus keeping vigil by the bier of his beloved wife moved contemporaries as an allegory of mourning and faithfulness unto the grave."
+    },
+    "curiosity": {
+      "pl": "Młody król Zygmunt August siedzi zrozpaczony przy łożu i trzyma za rękę swoją zmarłą żonę Barbarę, którą poślubił z wielkiej miłości wbrew wściekłości matki i szlachty. Obraz wywołał łzy u tysięcy ludzi, bo Polacy pod zaborami widzieli w zmarłej królowej symbol umierającej Polski.",
+      "en": "The young King Sigismund Augustus sits in despair by the bed, holding the hand of his late wife Barbara, whom he married for love despite the fury of his mother and the nobility. The painting brought thousands of people to tears, because Poles under the partitions saw the dead queen as a symbol of a dying Poland."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Simmler_Death_of_Barbara_Radziwi%C5%82%C5%82.jpg",
+      "title": "File:Simmler Death of Barbara Radziwiłł.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "grottger-kucie-kos",
+    "legacyIds": [
+      "era-2-catalog-21_21.jpg"
+    ],
+    "era": "era-2",
+    "order": 13,
+    "image": "era2_romantyzm/grottger-kucie-kos.jpg",
+    "puzzle": "puzzles/grottger-kucie-kos.json",
+    "preview": "puzzles/grottger-kucie-kos.png",
+    "title": {
+      "pl": "Kucie kos (cykl Polonia)",
+      "en": "Forging Scythes (cycle Polonia)"
+    },
+    "artist": "Artur Grottger",
+    "year": "1863",
+    "style": {
+      "pl": "Romantyczna grafika powstańcza / Martyrologia narodowa",
+      "en": "Romantic insurgent print / National martyrology"
+    },
+    "story": {
+      "pl": "Mroczny, rozświetlony snopami kowalskich iskier nokturn Grottgera ucieleśnia mistyczną atmosferę podziemnej konspiracji i heroicznego przygotowania do powstania styczniowego. Przekuwanie lemieszy i kos na broń bojową staje się tu sakralnym obrzędem patriotycznym narodu gotowego na najwyższą ofiarę.",
+      "en": "Grottger's dark nocturne, lit by sheaves of sparks from the forge, embodies the mystical atmosphere of the underground conspiracy and the heroic preparations for the January Uprising. Reforging ploughshares and scythes into weapons becomes a sacred patriotic rite of a nation ready for the ultimate sacrifice."
+    },
+    "curiosity": {
+      "pl": "W ciemną noc w wiejskiej kuźni kowale przy blasku ognia i iskier przekuwają rolnicze kosy ze sztorcowych na pionowe ostrza. Za posiadanie broni groził wtedy Sybir, więc powstańcy styczniowi musieli potajemnie tworzyć broń z narzędzi rolniczych tuż przed wymarszem do lasu.",
+      "en": "On a dark night in a village forge, blacksmiths working by the light of fire and sparks turn farm scythes into upright blades. Owning weapons could mean exile to Siberia, so the January insurgents had to secretly make arms from farm tools just before leaving for the forest."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Kucie_kos_(5579011).jpg",
+      "title": "File:Kucie kos (5579011).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-stanczyk-czasie-balu-dworze",
+    "legacyIds": [
+      "era-3-art-1"
+    ],
+    "era": "era-2",
+    "order": 14,
+    "image": "era2_romantyzm/matejko-stanczyk-czasie-balu-dworze.jpg",
+    "puzzle": "puzzles/matejko-stanczyk-czasie-balu-dworze.json",
+    "preview": "puzzles/matejko-stanczyk-czasie-balu-dworze.png",
+    "title": {
+      "pl": "Stańczyk w czasie balu na dworze królowej Bony",
+      "en": "Stańczyk during a Ball at the Court of Queen Bona"
+    },
+    "artist": "Jan Matejko",
+    "year": "1862",
+    "style": {
+      "pl": "Wczesny historyzm romantyczny / Dramat psychologiczny",
+      "en": "Early Romantic historicism / Psychological drama"
+    },
+    "story": {
+      "pl": "Genialny obraz Matejki uderza potęgą romantycznego kontrastu: samotny, zrozpaczony błazen w purpurowym stroju przeżywa tragedię utraty Smoleńska, podczas gdy za ścianą dwór beztrosko wiruje w tańcu. Stańczyk staje się ucieleśnieniem sumienia i bólu całego narodu, zwiastując profetyczną przestrogę przed zgubą ojczyzny.",
+      "en": "Matejko's brilliant painting strikes with the force of Romantic contrast: the lonely, despairing jester in a crimson costume lives through the tragedy of the loss of Smolensk, while behind the wall the court whirls carelessly in dance. Stańczyk becomes the embodiment of the conscience and pain of the whole nation, a prophetic warning against the ruin of the homeland."
+    },
+    "curiosity": {
+      "pl": "Wszyscy na zamku świetnie bawią się na balu, a królewski błazen siedzi sam w ciemnym pokoju i załamuje ręce. Właśnie dostał list, że wrogowie zdobyli ważną polską twierdzę, ale dwór ma to gdzieś i woli dalej pić i tańczyć.",
+      "en": "Everyone in the castle is enjoying the ball, while the royal jester sits alone in a dark room, wringing his hands. He has just received a letter saying that enemies have taken an important Polish fortress, but the court does not care and keeps on drinking and dancing."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Matejko,_Sta%C5%84czyk.jpg",
+      "title": "File:Jan Matejko, Stańczyk.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "grottger-saskim-ogrodzie",
+    "legacyIds": [
+      "era-2-catalog-23_23.jpg"
+    ],
+    "era": "era-2",
+    "order": 15,
+    "image": "era2_romantyzm/grottger-saskim-ogrodzie.jpg",
+    "puzzle": "puzzles/grottger-saskim-ogrodzie.json",
+    "preview": "puzzles/grottger-saskim-ogrodzie.png",
+    "title": {
+      "pl": "W saskim ogrodzie (Żałoba narodowa)",
+      "en": "In the Saxon Garden (National Mourning)"
+    },
+    "artist": "Artur Grottger",
+    "year": "1863",
+    "style": {
+      "pl": "Romantyzm martyrologiczny / Symbolizm patriotyczny",
+      "en": "Martyrological Romanticism / Patriotic symbolism"
+    },
+    "story": {
+      "pl": "Grottger utrwala unikalny fenomen polskiego Romantyzmu – powszechną żałobę narodową kobiet warszawskich noszących czarne suknie i żelazną biżuterię po carskich masakrach patriotów. Spowite czernią sylwetki w jesiennym parku symbolizują moralną niezłomność społeczeństwa sprzeciwiającego się przemocy zaborcy.",
+      "en": "Grottger records a unique phenomenon of Polish Romanticism: the general national mourning of Warsaw women, who wore black dresses and iron jewellery after the tsarist massacres of patriots. The black-clad figures in the autumn park symbolise the moral steadfastness of a society opposing the occupier's violence."
+    },
+    "curiosity": {
+      "pl": "Te kobiety ubrane są od stóp do głów na czarno i nie mają żadnego złota, tylko czarne żelazne łańcuszki przypominające kajdany. Był to cichy protest warszawianek przeciwko carowi po tym, jak rosyjskie wojsko otworzyło ogień do bezbronnych demonstrantów.",
+      "en": "These women are dressed in black from head to toe and wear no gold, only black iron chains resembling shackles. It was a silent protest by Warsaw women against the tsar after Russian troops opened fire on unarmed demonstrators."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Artur_Grottger,_W_Saskim_Ogrodzie.jpg",
+      "title": "File:Artur Grottger, W Saskim Ogrodzie.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "grottger-bitwa",
+    "legacyIds": [
+      "era-2-catalog-27_27.jpg"
+    ],
+    "era": "era-2",
+    "order": 16,
+    "image": "era2_romantyzm/grottger-bitwa.jpg",
+    "puzzle": "puzzles/grottger-bitwa.json",
+    "preview": "puzzles/grottger-bitwa.png",
+    "title": {
+      "pl": "Bitwa (z cyklu Lithuania)",
+      "en": "Battle (from the cycle Lithuania)"
+    },
+    "artist": "Artur Grottger",
+    "year": "1864",
+    "style": {
+      "pl": "Romantyzm powstańczy / Rysunek narracyjny",
+      "en": "Insurgent Romanticism / Narrative drawing"
+    },
+    "story": {
+      "pl": "Dramatyczna scena potyczki w głębi prastarej litewskiej puszczy ukazuje nierówną, partyzancką walkę leśnych oddziałów powstańczych z regularną carską armią. Płynna, dynamiczna kreska i kłęby dymu prochowego oddają atmosferę heroizmu, desperacji i tragicznego przeznaczenia powstańców styczniowych.",
+      "en": "This dramatic scene of a skirmish deep in the ancient Lithuanian forest shows the unequal guerrilla fight of insurgent forest units against the regular tsarist army. Fluid, dynamic lines and clouds of gun smoke convey the heroism, desperation and tragic fate of the January insurgents."
+    },
+    "curiosity": {
+      "pl": "W gęstym dymie w środku litewskiego lasu powstańcy toczą ostatnią, desperacką walkę z przeważającymi siłami carskimi. Walczą myśliwskimi strzelbami i przekutymi kosami, wiedząc, że po klęsce czeka ich tylko szubienica albo dożywotnie katorgi na Syberii.",
+      "en": "In thick smoke in the middle of a Lithuanian forest, the insurgents fight a last, desperate battle against superior tsarist forces. They fight with hunting rifles and reforged scythes, knowing that defeat means only the gallows or lifelong hard labour in Siberia."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "kwiatkowski-ostatnie-chwile-fryderyka-chopina",
+    "legacyIds": [
+      "era-2-catalog-30_30.jpg"
+    ],
+    "era": "era-2",
+    "order": 17,
+    "image": "era2_romantyzm/kwiatkowski-ostatnie-chwile-fryderyka-chopina.jpg",
+    "puzzle": "puzzles/kwiatkowski-ostatnie-chwile-fryderyka-chopina.json",
+    "preview": "puzzles/kwiatkowski-ostatnie-chwile-fryderyka-chopina.png",
+    "title": {
+      "pl": "Ostatnie chwile Fryderyka Chopina",
+      "en": "The Last Moments of Fryderyk Chopin"
+    },
+    "artist": "Teofil Kwiatkowski",
+    "year": "1849–1850",
+    "style": {
+      "pl": "Romantyzm elegijny / Malarstwo Wielkiej Emigracji",
+      "en": "Elegiac Romanticism / Painting of the Great Emigration"
+    },
+    "story": {
+      "pl": "Płótno jest przejmującym, romantycznym trenem żałobnym na śmierć geniusza polskiej muzyki, który w paryskim łożu umiera z tęsknoty za zniewoloną ojczyzną. Intymny krąg modlących się emigracyjnych przyjaciół ucieleśnia ból wygnania i wspólnotę polskiego cierpienia na obcej ziemi.",
+      "en": "The canvas is a moving Romantic lament for the death of the genius of Polish music, dying in a Paris bed while longing for his enslaved homeland. The intimate circle of praying friends in exile embodies the pain of emigration and the shared Polish suffering on foreign soil."
+    },
+    "curiosity": {
+      "pl": "Wielki kompozytor umiera na gruźlicę w paryskim pokoju, a wokół łóżka klęczą jego siostra i najbliżsi przyjaciele z emigracji. Chopin tak bardzo tęsknił za Polską, że poprosił przed śmiercią, by po zgonie wyjęto z jego ciała serce i potajemnie przewieziono je w słoiku do Warszawy.",
+      "en": "The great composer is dying of tuberculosis in a Paris room, and his sister and closest friends from the emigration kneel around his bed. Chopin missed Poland so much that before he died he asked for his heart to be removed after his death and secretly taken in a jar to Warsaw."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Teofil_Kwiatkowski_-_Ostatnie_chwile_Chopina.jpg",
+      "title": "File:Teofil Kwiatkowski - Ostatnie chwile Chopina.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "suchodolski-smierc-ksiecia-jozefa-poniatowskiego",
+    "legacyIds": [
+      "era-2-catalog-romant1.jpg"
+    ],
+    "era": "era-2",
+    "order": 18,
+    "image": "era2_romantyzm/suchodolski-smierc-ksiecia-jozefa-poniatowskiego.jpg",
+    "puzzle": "puzzles/suchodolski-smierc-ksiecia-jozefa-poniatowskiego.json",
+    "preview": "puzzles/suchodolski-smierc-ksiecia-jozefa-poniatowskiego.png",
+    "title": {
+      "pl": "Śmierć księcia Józefa Poniatowskiego w Elsterze",
+      "en": "The Death of Prince Józef Poniatowski in the Elster"
+    },
+    "artist": "January Suchodolski",
+    "year": "1840",
+    "style": {
+      "pl": "Romantyzm batalistyczno-heroiczny",
+      "en": "Heroic Romantic battle painting"
+    },
+    "story": {
+      "pl": "Ikona romantycznego etosu rycerskiego utrwala moment heroicznej śmierci wodza, który wolał zginąć w odmętach wezbranej Elstery niż splamić honor polskiego żołnierza kapitulacją. Dramatyczna kompozycja konia skaczącego w nurt rzeki pod ostrzałem wroga uświęcała ofiarę krwi jako drogę do nieśmiertelności narodu.",
+      "en": "This icon of the Romantic chivalric ethos captures the heroic death of a commander who preferred to perish in the swollen Elster rather than stain the honour of a Polish soldier by surrendering. The dramatic composition of a horse leaping into the river under enemy fire sanctified the sacrifice of blood as a path to the nation's immortality."
+    },
+    "curiosity": {
+      "pl": "Ranny książę na spienionym koniu rzuca się w głąb wezbranej rzeki, uciekając przed niewolą po przegranej bitwie pod Lipskiem. Wolał utonąć w rzece niż oddać swoją szablę wrogom, krzycząc według legendy: „Bóg mi powierzył honor Polaków, Jemu samemu go oddam!”",
+      "en": "The wounded prince on a foaming horse plunges into the swollen river, escaping captivity after the lost Battle of Leipzig. He preferred to drown rather than surrender his sabre to the enemy, crying, according to legend: \"God entrusted me with the honour of the Poles; to Him alone will I return it!\""
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-rejtan-upadek-polski",
+    "legacyIds": [
+      "era-3-catalog-02_02.jpg"
+    ],
+    "era": "era-3",
+    "order": 1,
+    "image": "era3_pozytywizm/matejko-rejtan-upadek-polski.jpg",
+    "puzzle": "puzzles/matejko-rejtan-upadek-polski.json",
+    "preview": "puzzles/matejko-rejtan-upadek-polski.png",
+    "title": {
+      "pl": "Rejtan – Upadek Polski",
+      "en": "Rejtan – The Fall of Poland"
+    },
+    "artist": "Jan Matejko",
+    "year": "1866",
+    "style": {
+      "pl": "Historyzm pozytywistyczny / Malarstwo rozrachunkowe",
+      "en": "Positivist historicism / Painting of reckoning"
+    },
+    "story": {
+      "pl": "Matejko tworzy wielki pozytywistyczny rozrachunek z polską historią, demaskując egoizm i zdradę magnatów prowadzących do I rozbioru państwa w opozycji do samotnego krzyku Rejtana. Drobiazgowy, akademicki realizm detali kostiumowych i rozsypanych monet służy bezlitosnej diagnozie przyczyn narodowej katastrofy ku przestrodze potomnych.",
+      "en": "Matejko creates a great positivist reckoning with Polish history, exposing the selfishness and treason of the magnates that led to the First Partition, set against Rejtan's lonely cry. Meticulous academic realism in the costumes and scattered coins serves a merciless diagnosis of the causes of the national disaster as a warning to future generations."
+    },
+    "curiosity": {
+      "pl": "Ten facet na ziemi rozdarł na sobie koszulę i własnym ciałem blokuje drzwi. Krzyczy, że zdrajcy podpiszą rozbiór Polski tylko po jego trupie, podczas gdy posłowie uciekają z sali z kieszeniami wypchanymi rosyjskimi monetami.",
+      "en": "The man on the floor has torn open his shirt and is blocking the door with his own body. He shouts that the traitors will sign the partition of Poland only over his dead body, while the deputies flee the hall with pockets stuffed with Russian coins."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Matejko_-_Upadek_Polski_(Reytan).jpg",
+      "title": "File:Jan Matejko - Upadek Polski (Reytan).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-unia-lubelska",
+    "legacyIds": [
+      "era-3-catalog-03_03.jpg"
+    ],
+    "era": "era-3",
+    "order": 2,
+    "image": "era3_pozytywizm/matejko-unia-lubelska.jpg",
+    "puzzle": "puzzles/matejko-unia-lubelska.json",
+    "preview": "puzzles/matejko-unia-lubelska.png",
+    "title": {
+      "pl": "Unia Lubelska",
+      "en": "The Union of Lublin"
+    },
+    "artist": "Jan Matejko",
+    "year": "1869",
+    "style": {
+      "pl": "Monumentalny historyzm akademicki",
+      "en": "Monumental academic historicism"
+    },
+    "story": {
+      "pl": "Namalowany na trzechsetlecie unii polsko-litewskiej obraz realizuje pozytywistyczny program krzepienia serc poprzez unaocznienie mądrości politycznej i pokojowej integracji narodów. Niezwykłe bogactwo renesansowych materii, soboli i pergaminów oddaje potęgę prawną i kulturową dawnej Rzeczypospolitej Obojga Narodów.",
+      "en": "Painted for the three-hundredth anniversary of the Polish-Lithuanian union, the work follows the positivist programme of lifting spirits by showing political wisdom and the peaceful integration of nations. The extraordinary richness of Renaissance fabrics, sables and parchments conveys the legal and cultural power of the old Polish-Lithuanian Commonwealth."
+    },
+    "curiosity": {
+      "pl": "Król Zygmunt August unosi krzyż w sali pełnej senatorów w sobolich futrach, świętując zjednoczenie Polski i Litwy w jedno wielkie państwo. Matejko namalował ten obraz na 300-lecie unii, żeby przypomnieć Polakom pod zaborami, jak potężne potrafiło być ich państwo, gdy działało wspólnie.",
+      "en": "King Sigismund Augustus raises a cross in a hall full of senators in sable furs, celebrating the union of Poland and Lithuania into one great state. Matejko painted it for the 300th anniversary of the union to remind Poles under the partitions how powerful their state could be when it acted together."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Lublin_Union_1569.PNG",
+      "title": "File:Lublin Union 1569.PNG",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-astronom-kopernik-czyli-rozmowa",
+    "legacyIds": [
+      "era-3-catalog-04_04.jpg"
+    ],
+    "era": "era-3",
+    "order": 3,
+    "image": "era3_pozytywizm/matejko-astronom-kopernik-czyli-rozmowa.jpg",
+    "puzzle": "puzzles/matejko-astronom-kopernik-czyli-rozmowa.json",
+    "preview": "puzzles/matejko-astronom-kopernik-czyli-rozmowa.png",
+    "title": {
+      "pl": "Astronom Kopernik, czyli rozmowa z Bogiem",
+      "en": "Astronomer Copernicus, or Conversations with God"
+    },
+    "artist": "Jan Matejko",
+    "year": "1873",
+    "style": {
+      "pl": "Historyzm akademicki / Pozytywistyczny kult nauki",
+      "en": "Academic historicism / Positivist cult of science"
+    },
+    "story": {
+      "pl": "Dzieło jest hołdem dla pozytywistycznego kultu rozumu, empirii i wielkich dokonań polskiej myśli naukowej zmieniającej losy świata. Matejko ukazuje fromborskiego astronoma na wieży w chwili olśnienia badawczego, harmonijnie łącząc naukowy aparat pomiarowy z religijnym zachwytem nad porządkiem wszechświata.",
+      "en": "The work pays tribute to the positivist cult of reason, empiricism and the great achievements of Polish science that changed the course of the world. Matejko shows the Frombork astronomer on his tower at the moment of scientific revelation, harmoniously combining measuring instruments with religious wonder at the order of the universe."
+    },
+    "curiosity": {
+      "pl": "Kopernik klęczy na dachu wieży we Fromborku pod osłoną nocy i rozkłada ręce w zachwycie, patrząc w niebo. Właśnie zrozumiał, że to Ziemia krąży wokół Słońca, dokonując odkrycia za pomocą prostych drewnianych patyków i cyrkla, bez żadnego teleskopu.",
+      "en": "Copernicus kneels on the roof of the tower in Frombork under cover of night and spreads his arms in wonder as he looks at the sky. He has just understood that the Earth orbits the Sun, a discovery made with simple wooden rods and compasses, without any telescope."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg",
+      "title": "File:Jan Matejko-Astronomer Copernicus-Conversation with God.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-zawieszenie-dzwonu-zygmunta",
+    "legacyIds": [
+      "era-3-catalog-05_05.jpg"
+    ],
+    "era": "era-3",
+    "order": 4,
+    "image": "era3_pozytywizm/matejko-zawieszenie-dzwonu-zygmunta.jpg",
+    "puzzle": "puzzles/matejko-zawieszenie-dzwonu-zygmunta.json",
+    "preview": "puzzles/matejko-zawieszenie-dzwonu-zygmunta.png",
+    "title": {
+      "pl": "Zawieszenie dzwonu Zygmunta",
+      "en": "The Hanging of the Sigismund Bell"
+    },
+    "artist": "Jan Matejko",
+    "year": "1874",
+    "style": {
+      "pl": "Historyzm akademicki / Apoteoza pracy rzemieślniczej",
+      "en": "Academic historicism / Apotheosis of craftsmanship"
+    },
+    "story": {
+      "pl": "W duchu pozytywistycznej pracy organicznej Matejko gloryfikuje zbiorowy trud rzemieślników i inżynierów wznoszących olbrzymi dzwon wawelski wspólnie z dworem jagiellońskim. Precyzyjne odtworzenie drewnianych machin linowych i rusztowań stanowi pochwałę technicznego kunsztu i harmonii wszystkich stanów społecznych.",
+      "en": "In the spirit of positivist organic work, Matejko glorifies the collective effort of craftsmen and engineers raising the giant Wawel bell together with the Jagiellonian court. The precise reconstruction of wooden rope machines and scaffolding praises technical skill and the harmony of all social estates."
+    },
+    "curiosity": {
+      "pl": "Dziesiątki rzemieślników i robotników ciągną za grube liny, wciągając olbrzymi dzwon na sam szczyt wawelskiej wieży, a król z królową Boną przyglądają się temu z bliska. Nawet królewski Stańczyk bawi się sznurem od dzwonu, który do dziś bije w Krakowie tylko w najważniejsze święta narodowe.",
+      "en": "Dozens of craftsmen and labourers pull on thick ropes, hoisting the huge bell to the very top of the Wawel tower, while the king and Queen Bona watch from close by. Even the royal jester Stańczyk plays with the rope of the bell, which still rings in Kraków only on the most important national holidays."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Matejko,_Zawieszenie_dzwonu_Zygmunta_na_wie%C5%BCy_katedry_w_Krakowie_w_1521_roku.jpg",
+      "title": "File:Jan Matejko, Zawieszenie dzwonu Zygmunta na wieży katedry w Krakowie w 1521 roku.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-bitwa-grunwaldem",
+    "legacyIds": [
+      "era-3-catalog-06_06.jpg"
+    ],
+    "era": "era-3",
+    "order": 5,
+    "image": "era3_pozytywizm/matejko-bitwa-grunwaldem.jpg",
+    "puzzle": "puzzles/matejko-bitwa-grunwaldem.json",
+    "preview": "puzzles/matejko-bitwa-grunwaldem.png",
+    "title": {
+      "pl": "Bitwa pod Grunwaldem",
+      "en": "The Battle of Grunwald"
+    },
+    "artist": "Jan Matejko",
+    "year": "1878",
+    "style": {
+      "pl": "Monumentalny historyzm batalistyczny",
+      "en": "Monumental historical battle painting"
+    },
+    "story": {
+      "pl": "Monumetalne płótno jest apoteozą militarnego i cywilizacyjnego triumfu narodów słowiańskich nad ekspansją krzyżacką, namalowaną z naukową pasją rekonstrukcji uzbrojenia. Spiętrzona, dynamiczna kompozycja pełna zbroi, mieczy i sztandarów miała budzić poczucie potęgi w narodzie żyjącym pod pruskim i rosyjskim zaborem.",
+      "en": "This monumental canvas is an apotheosis of the military and civilisational triumph of the Slavic nations over the Teutonic expansion, painted with a scholar's passion for reconstructing weapons. The crowded, dynamic composition full of armour, swords and banners was meant to awaken a sense of strength in a nation living under Prussian and Russian rule."
+    },
+    "curiosity": {
+      "pl": "W samym centrum obrazu wódz Krzyżaków w białym płaszczu z czarnym krzyżem ginie powalony nie przez króla, lecz przez dwóch zwykłych pieszych wojowników z toporem i włócznią. W tle widać księcia Witolda pędzącego z uniesionym mieczem w czerwonym kubraku bez zbroi, zagrzewającego wojsko do ostatecznego rozbicia wroga.",
+      "en": "At the very centre of the painting, the Grand Master of the Teutonic Knights in a white cloak with a black cross is struck down not by the king, but by two ordinary foot soldiers with an axe and a spear. In the background, Grand Duke Vytautas gallops with his sword raised, in a red tunic and no armour, urging the army on to crush the enemy."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Matejko,_Bitwa_pod_Grunwaldem.jpg",
+      "title": "File:Jan Matejko, Bitwa pod Grunwaldem.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-portret-zony-artysty-sukni",
+    "legacyIds": [
+      "era-3-catalog-07_07.jpg"
+    ],
+    "era": "era-3",
+    "order": 6,
+    "image": "era3_pozytywizm/matejko-portret-zony-artysty-sukni.jpg",
+    "puzzle": "puzzles/matejko-portret-zony-artysty-sukni.json",
+    "preview": "puzzles/matejko-portret-zony-artysty-sukni.png",
+    "title": {
+      "pl": "Portret żony artysty w sukni ślubnej",
+      "en": "Portrait of the Artist's Wife in a Wedding Dress"
+    },
+    "artist": "Jan Matejko",
+    "year": "1879",
+    "style": {
+      "pl": "Realizm akademicki / Portret mieszczański",
+      "en": "Academic realism / Bourgeois portrait"
+    },
+    "story": {
+      "pl": "Płótno reprezentuje kunsztowny realizm dojrzałego mieszczaństwa epoki pozytywizmu, zafascynowanego rzetelnością rzemiosła i materialnym splendorem. Niezwykła iluzjonistyczna maestria w oddaniu ciężkiego atłasu sukni, krakowskich koronek klockowych i modlitewnika ukazuje potęgę warsztatową krakowskiego mistrza.",
+      "en": "The canvas represents the skilful realism of the mature middle class of the positivist era, fascinated by honest craftsmanship and material splendour. The extraordinary illusionistic mastery in rendering the heavy satin of the dress, Kraków bobbin lace and the prayer book shows the technical power of the Kraków master."
+    },
+    "curiosity": {
+      "pl": "Matejko namalował swoją żonę Teodorę w sukni ślubnej dopiero kilkanaście lat po ślubie, kiedy ich małżeństwo przechodziło potworne kryzysy i ciągłe awantury. Suknię z ciężkiego atłasu zaprojektował sam malarz, a Teodora była tak zazdrosna o inne modelki, że kazała mężowi malować niemal wszystkie kobiety z jej twarzą.",
+      "en": "Matejko painted his wife Teodora in her wedding dress only some fifteen years after the wedding, when their marriage was going through terrible crises and constant rows. The painter designed the heavy satin dress himself, and Teodora was so jealous of other models that she had her husband paint almost every woman with her face."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Matejko_Teodora_Giebu%C5%82towska.jpg",
+      "title": "File:Matejko Teodora Giebułtowska.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "matejko-hold-pruski",
+    "legacyIds": [
+      "era-3-catalog-08_08.jpg"
+    ],
+    "era": "era-3",
+    "order": 7,
+    "image": "era3_pozytywizm/matejko-hold-pruski.jpg",
+    "puzzle": "puzzles/matejko-hold-pruski.json",
+    "preview": "puzzles/matejko-hold-pruski.png",
+    "title": {
+      "pl": "Hołd pruski",
+      "en": "The Prussian Homage"
+    },
+    "artist": "Jan Matejko",
+    "year": "1882",
+    "style": {
+      "pl": "Monumentalny historyzm akademicki",
+      "en": "Monumental academic historicism"
+    },
+    "story": {
+      "pl": "Arcydzieło historyzmu przedstawia szczytowy moment polskiej hegemonii w Europie Środkowej, przypominając w epoce nasilonej germanizacji o wielkości zreformowanego państwa Zygmunta I. Mistrzowskie zróżnicowanie psychologiczne postaci oraz wierne odtworzenie renesansowego rynsztunku i szat cechowych służy budowaniu narodowej dumy.",
+      "en": "This masterpiece of historicism shows the peak of Polish dominance in Central Europe, recalling the greatness of Sigismund I's reformed state in an era of intensified Germanisation. The masterful psychological variety of the figures and the faithful reconstruction of Renaissance armour and guild costumes serve to build national pride."
+    },
+    "curiosity": {
+      "pl": "Niemiecki książę klęczy w zbroi przed polskim królem na krakowskim rynku i oddaje mu sztandar ze swoim herbem jako lennik. Matejko namalował to w czasach, gdy Prusacy brutalnie tępili język polski w szkołach, żeby przypomnieć im, kto komu kiedyś składał hołd na kolanach.",
+      "en": "A German duke in armour kneels before the Polish king in the Kraków market square and hands him a banner with his coat of arms as a vassal. Matejko painted it at a time when the Prussians were brutally suppressing the Polish language in schools, to remind them who once paid homage to whom on their knees."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Prussian_Homage.jpg",
+      "title": "File:Prussian Homage.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-patrol-powstanczy",
+    "legacyIds": [
+      "era-3-catalog-09_09.jpg"
+    ],
+    "era": "era-3",
+    "order": 8,
+    "image": "era3_pozytywizm/gierymski-patrol-powstanczy.jpg",
+    "puzzle": "puzzles/gierymski-patrol-powstanczy.json",
+    "preview": "puzzles/gierymski-patrol-powstanczy.png",
+    "title": {
+      "pl": "Patrol powstańczy (Pikieta)",
+      "en": "Insurgent Patrol (Picket)"
+    },
+    "artist": "Maksymilian Gierymski",
+    "year": "1872",
+    "style": {
+      "pl": "Realizm nastrojowy / Demitologizacja historii",
+      "en": "Atmospheric realism / Demythologising history"
+    },
+    "story": {
+      "pl": "Maksymilian Gierymski dokonuje pozytywistycznej demitologizacji powstania styczniowego, odrzucając patos na rzecz powściągliwej, psychologicznej prawdy o zwiadzie w jesiennym pejzażu. Zamglone światło, błotnista piaszczysta droga i zmęczenie zwiadowców tworzą arcydzieło polskiego realizmu pejzażowo-historycznego.",
+      "en": "Maksymilian Gierymski demythologises the January Uprising in a positivist spirit, rejecting pathos for a restrained, psychological truth about a reconnaissance party in an autumn landscape. Hazy light, a muddy sandy road and the scouts' weariness make it a masterpiece of Polish landscape and history realism."
+    },
+    "curiosity": {
+      "pl": "Powstańcy na koniach zatrzymali się na piaszczystej drodze obok krzyża i wypytują wieśniaka z wozu, czy w okolicy nie ma carskich kozaków. Nie ma tu żadnego patosu ani bohaterstwa – tylko strach, zmęczenie, chłód i nerwowe rozglądanie się po pustej drodze.",
+      "en": "Mounted insurgents have stopped on a sandy road next to a cross and are asking a peasant on a cart whether there are tsarist Cossacks nearby. There is no pathos or heroism here, only fear, weariness, cold and nervous glances along the empty road."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Maksymilian_Gierymski_-_Insurgent_patrol_-_MP_418_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Maksymilian Gierymski - Insurgent patrol - MP 418 - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-wiosna-malym-miasteczku",
+    "legacyIds": [
+      "era-3-catalog-11_11.jpg"
+    ],
+    "era": "era-3",
+    "order": 9,
+    "image": "era3_pozytywizm/gierymski-wiosna-malym-miasteczku.jpg",
+    "puzzle": "puzzles/gierymski-wiosna-malym-miasteczku.json",
+    "preview": "puzzles/gierymski-wiosna-malym-miasteczku.png",
+    "title": {
+      "pl": "Wiosna w małym miasteczku",
+      "en": "Spring in a Small Town"
+    },
+    "artist": "Maksymilian Gierymski",
+    "year": "1872",
+    "style": {
+      "pl": "Realizm prowincjonalny / Malarstwo nastrojowe",
+      "en": "Provincial realism / Atmospheric painting"
+    },
+    "story": {
+      "pl": "Płótno rejestruje z bezwzględną wiernością szarą codzienność zapomnianego prowincjonalnego miasteczka w dobie pozytywistycznej pracy u podstaw. Błotnista ulica, gontowe dachy i swobodnie brodzące gęsi ukazane są w chłodnym, wczesnowiosennym świetle bez cienia romantycznej poezji.",
+      "en": "The canvas records with unflinching fidelity the grey everyday life of a forgotten provincial town in the era of positivist grassroots work. The muddy street, shingle roofs and freely wading geese are shown in cool early-spring light without a trace of Romantic poetry."
+    },
+    "curiosity": {
+      "pl": "Ulica polskiego miasteczka po wiosennych roztopach zamieniła się w jedno wielkie grzęzawisko błota, po którym swobodnie spacerują gęsi. Zamiast pięknych pałaców malarz pokazał prawdziwą, biedną i zacofaną prowincję, którą pozytywiści chcieli uczyć i rozwijać.",
+      "en": "After the spring thaw, the street of a Polish small town has turned into one great swamp of mud, where geese wander freely. Instead of beautiful palaces, the painter showed the real, poor and backward provinces that the positivists wanted to educate and develop."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-zydowka-pomaranczami",
+    "legacyIds": [
+      "era-3-art-4"
+    ],
+    "era": "era-3",
+    "order": 10,
+    "image": "era3_pozytywizm/gierymski-zydowka-pomaranczami.jpg",
+    "puzzle": "puzzles/gierymski-zydowka-pomaranczami.json",
+    "preview": "puzzles/gierymski-zydowka-pomaranczami.png",
+    "title": {
+      "pl": "Żydówka z pomarańczami (Pomarańczarka)",
+      "en": "Jewish Woman Selling Oranges"
+    },
+    "artist": "Aleksander Gierymski",
+    "year": "1881",
+    "style": {
+      "pl": "Realizm krytyczny / Luminizm warszawski",
+      "en": "Critical realism / Warsaw luminism"
+    },
+    "story": {
+      "pl": "Szczytowe dzieło polskiego realizmu krytycznego ukazuje dramat ubóstwa na warszawskim Powiślu z bezkompromisową prawdą obserwacji społecznej. Staruszka o spracowanych dłoniach, dziergająca pończochę pośród koszy z owocami, ucieleśnia pozytywistyczny humanizm i walkę o godność najuboższych mieszkańców miasta.",
+      "en": "This high point of Polish critical realism shows the drama of poverty in Warsaw's Powiśle district with the uncompromising truth of social observation. The old woman with work-worn hands, knitting a stocking among baskets of fruit, embodies positivist humanism and the struggle for the dignity of the city's poorest inhabitants."
+    },
+    "curiosity": {
+      "pl": "Starsza uboga handlarka z warszawskiego Powiśla marznie na ulicy z koszami egzotycznych wtedy pomarańczy. W spracowanych, zniszczonych palcach trzyma druty i wełnę – robi pończochy w każdej wolnej minucie, żeby zarobić choć parę dodatkowych groszy na jedzenie.",
+      "en": "An old, poor street seller from Warsaw's Powiśle district freezes in the street with baskets of oranges, which were exotic at the time. In her worn, damaged fingers she holds needles and wool, knitting stockings in every spare minute to earn a few extra pennies for food."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Aleksander_Gierymski,_%C5%BByd%C3%B3wka_z_pomara%C5%84czami.jpg",
+      "title": "File:Aleksander Gierymski, Żydówka z pomarańczami.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-altanie",
+    "legacyIds": [
+      "era-3-catalog-13_13.jpg"
+    ],
+    "era": "era-3",
+    "order": 11,
+    "image": "era3_pozytywizm/gierymski-altanie.jpg",
+    "puzzle": "puzzles/gierymski-altanie.json",
+    "preview": "puzzles/gierymski-altanie.png",
+    "title": {
+      "pl": "W altanie",
+      "en": "In the Arbour"
+    },
+    "artist": "Aleksander Gierymski",
+    "year": "1882",
+    "style": {
+      "pl": "Realizm luministyczny / Studium światła",
+      "en": "Luminist realism / Study of light"
+    },
+    "story": {
+      "pl": "Obraz jest owocem wieloletnich, niemal naukowych studiów Gierymskiego nad problemem wibracji światła słonecznego przenikającego przez gęstą roślinność ogrodowej pergoli. Precyzja w oddaniu blasków na szkle karafek i sukniach stanowi pozytywistyczny triumf rzetelnej, empirycznej obserwacji praw optyki.",
+      "en": "The painting is the fruit of Gierymski's long, almost scientific study of how sunlight vibrates as it passes through the dense greenery of a garden pergola. The precision in rendering the glints on the glass carafes and the dresses is a positivist triumph of honest, empirical observation of the laws of optics."
+    },
+    "curiosity": {
+      "pl": "Ludzie przebrani w dawne stroje sprzed stu lat piją wino przy stole ogrodowym, ale malarz męczył się z tym obrazem przez całe lata. Malował go w plenerze w pełnym słońcu tak obsesyjnie, badając jak światło przenika przez liście, że niemal przypłacił to załamaniem nerwowym.",
+      "en": "People dressed in costumes from a hundred years earlier drink wine at a garden table, but the painter struggled with this picture for years. He painted it outdoors in full sun, studying so obsessively how light passes through leaves that it almost cost him a nervous breakdown."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Gierymski_In_the_arbour.png",
+      "title": "File:Gierymski In the arbour.png",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-swieto-trabek",
+    "legacyIds": [
+      "era-3-catalog-14_14.jpg"
+    ],
+    "era": "era-3",
+    "order": 12,
+    "image": "era3_pozytywizm/gierymski-swieto-trabek.jpg",
+    "puzzle": "puzzles/gierymski-swieto-trabek.json",
+    "preview": "puzzles/gierymski-swieto-trabek.png",
+    "title": {
+      "pl": "Święto Trąbek I",
+      "en": "Feast of Trumpets I"
+    },
+    "artist": "Aleksander Gierymski",
+    "year": "1884",
+    "style": {
+      "pl": "Realizm nastrojowy / Luminizm",
+      "en": "Atmospheric realism / Luminism"
+    },
+    "story": {
+      "pl": "Niezwykłe studium zmierzchu nad Wisłą łączy pozytywistyczną fascynację miejską etnografią z mistrzowskim operowaniem chłodnym światłem gasnącego dnia. Sylwetki modlących się chasydów na tle drewnianych barek i mostu tworzą nastrojowy, ale na wskroś realistyczny obraz wielokulturowej Warszawy.",
+      "en": "This remarkable study of dusk over the Vistula combines the positivist fascination with urban ethnography with masterful handling of the cool light of the fading day. The silhouettes of praying Hasidim against wooden barges and a bridge create an atmospheric yet thoroughly realistic image of multicultural Warsaw."
+    },
+    "curiosity": {
+      "pl": "O zmierzchu tłum żydowskich mieszkańców Warszawy zebrał się nad brzegiem Wisły przy drewnianych barkach, by odprawić modlitwę w Nowy Rok. Trzęsą kieszeniami nad wodą, symbolicznie wyrzucając do rzeki swoje grzechy z całego roku, by zacząć życie z czystym kontem.",
+      "en": "At dusk, a crowd of Warsaw's Jewish residents has gathered on the bank of the Vistula by the wooden barges to pray on the New Year. They shake their pockets over the water, symbolically casting the sins of the whole year into the river to start life with a clean slate."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Aleksander_Gierymski_-_Feast_of_Trumpets_I_-_MP_124_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Aleksander Gierymski - Feast of Trumpets I - MP 124 - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gierymski-piaskarze",
+    "legacyIds": [
+      "era-3-catalog-15_15.jpg"
+    ],
+    "era": "era-3",
+    "order": 13,
+    "image": "era3_pozytywizm/gierymski-piaskarze.jpg",
+    "puzzle": "puzzles/gierymski-piaskarze.json",
+    "preview": "puzzles/gierymski-piaskarze.png",
+    "title": {
+      "pl": "Piaskarze",
+      "en": "Sand Diggers"
+    },
+    "artist": "Aleksander Gierymski",
+    "year": "1887",
+    "style": {
+      "pl": "Realizm społeczny / Praca u podstaw",
+      "en": "Social realism / Grassroots work"
+    },
+    "story": {
+      "pl": "Monumentalizacja ciężkiej pracy fizycznej na brzegu Wisły stanowi manifest dojrzałego realizmu społecznego epoki pozytywizmu. Zmęczeni robotnicy przesypujący piasek pod żelazną konstrukcją mostu Kierbedzia symbolizują organiczną siłę napędową nowoczesnego rozwoju przemysłowego miasta.",
+      "en": "Monumentalising heavy physical labour on the banks of the Vistula, the painting is a manifesto of the mature social realism of the positivist era. Tired workers shovelling sand beneath the iron structure of the Kierbedź Bridge symbolise the organic driving force behind the city's modern industrial growth."
+    },
+    "curiosity": {
+      "pl": "Robotnicy stoją po pas w wodzie i ręcznymi wielkimi łopatami ładują mokry piasek z dna Wisły na drewniane łodzie, a w tle widać żelazny most. To był jeden z najcięższych zawodów w Warszawie – dzięki ich morderczej pracy rąk powstawały kamienice i fabryki rozwijającego się miasta.",
+      "en": "The workers stand waist-deep in water and use large hand shovels to load wet sand from the bottom of the Vistula onto wooden boats, with an iron bridge in the background. It was one of the hardest jobs in Warsaw: their back-breaking work built the townhouses and factories of the growing city."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Aleksander_Gierymski,_Piaskarze.jpg",
+      "title": "File:Aleksander Gierymski, Piaskarze.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-babie-lato",
+    "legacyIds": [
+      "era-3-art-2"
+    ],
+    "era": "era-3",
+    "order": 14,
+    "image": "era3_pozytywizm/chelmonski-babie-lato.jpg",
+    "puzzle": "puzzles/chelmonski-babie-lato.json",
+    "preview": "puzzles/chelmonski-babie-lato.png",
+    "title": {
+      "pl": "Babie lato",
+      "en": "Indian Summer"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1875",
+    "style": {
+      "pl": "Realizm wiejski / Naturalizm",
+      "en": "Rural realism / Naturalism"
+    },
+    "story": {
+      "pl": "Ikona polskiego realizmu zrywa z akademickimi konwenansami, ukazując bosą wiejską pasterkę leżącą na zaoranej miedzy w pełnej zgodzie z prawami natury. Chełmoński z zachwytem rejestruje surowe piękno mazowieckiego pejzażu, kurz ziemi i unoszące się w ciepłym powietrzu nitki babiego lata.",
+      "en": "This icon of Polish realism breaks with academic conventions, showing a barefoot village shepherd girl lying on a ploughed balk in full harmony with the laws of nature. Chełmoński records with delight the stark beauty of the Mazovian landscape, the dust of the earth and the gossamer threads floating in the warm air."
+    },
+    "curiosity": {
+      "pl": "Wiejska dziewczyna po prostu odpoczywa na polu i bawi się unoszącymi się nitkami, pilnując stada z psem. Kiedy wystawiono ten obraz w Warszawie, wybuchła afera – bogaci ludzie byli oburzeni, że malarz śmiał pokazać brudne, bose stopy zamiast eleganckiej panny.",
+      "en": "The village girl is simply resting in the field and playing with the floating threads while watching the herd with her dog. When the painting was exhibited in Warsaw it caused a scandal: wealthy viewers were outraged that the painter dared to show dirty bare feet instead of an elegant young lady."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Indian_summer_-_Google_Art_Project.jpg",
+      "title": "File:Józef Chełmoński - Indian summer - Google Art Project.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-sprawa-u-wojta",
+    "legacyIds": [
+      "era-3-catalog-18_18.jpg"
+    ],
+    "era": "era-3",
+    "order": 15,
+    "image": "era3_pozytywizm/chelmonski-sprawa-u-wojta.jpg",
+    "puzzle": "puzzles/chelmonski-sprawa-u-wojta.json",
+    "preview": "puzzles/chelmonski-sprawa-u-wojta.png",
+    "title": {
+      "pl": "Sprawa u wójta",
+      "en": "A Case before the Village Head"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1873",
+    "style": {
+      "pl": "Realizm rodzajowy / Studium obyczajowe wsi",
+      "en": "Genre realism / Study of village customs"
+    },
+    "story": {
+      "pl": "Obraz z fotograficzną wręcz wnikliwością dokumentuje pozytywistyczne realia wiejskiego samorządu i sporów prawnych w zaborze rosyjskim po uwłaszczeniu chłopów. Autentyzm chłopskich sukman, baranich czapek i zaciętych twarzy spierających się gospodarzy stanowi bezcenny dokument epoki.",
+      "en": "With almost photographic insight, the painting documents the positivist-era realities of village self-government and legal disputes in the Russian partition after the peasants were granted land. The authenticity of the peasants' coats, sheepskin hats and the set faces of the quarrelling farmers makes it an invaluable record of the period."
+    },
+    "curiosity": {
+      "pl": "W dusznej wiejskiej izbie chłopi kłócą się zawzięcie przed wójtem z carskim łańcuchem na szyi o kawałek zaoranej miedzy lub skradzioną kurę. Malarz idealnie podpatrzył autentyczne wiejskie charaktery – od cwaniaków i krzykaczy po wystraszonych starców w kożuchach.",
+      "en": "In a stuffy village room, peasants argue fiercely before the village head, who wears a tsarist chain around his neck, about a strip of ploughed land or a stolen hen. The painter captured real village characters perfectly, from sly dealers and loudmouths to frightened old men in sheepskin coats."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Sprawa_u_w%C3%B3jta.jpg",
+      "title": "File:Sprawa u wójta.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-czworka",
+    "legacyIds": [
+      "era-3-catalog-20_20.jpg"
+    ],
+    "era": "era-3",
+    "order": 16,
+    "image": "era3_pozytywizm/chelmonski-czworka.jpg",
+    "puzzle": "puzzles/chelmonski-czworka.json",
+    "preview": "puzzles/chelmonski-czworka.png",
+    "title": {
+      "pl": "Czwórka",
+      "en": "Four-in-Hand"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1881",
+    "style": {
+      "pl": "Realizm dynamiczny / Witalizm kresowy",
+      "en": "Dynamic realism / Borderland vitalism"
+    },
+    "story": {
+      "pl": "Monumentalne płótno jest eksplozją dzikiego witalizmu i potęgi natury, w której zaprzęg czterech koni pędzi przez błoto prosto na widza pod okiem ukraińskiego fornala. Niezrównany kunszt realistycznego oddania anatomii koni w galopie i błotnistej mazi stepowej uczynił z tego dzieła symbol siły ziemi.",
+      "en": "This monumental canvas is an explosion of wild vitality and the power of nature: a team of four horses races through the mud straight at the viewer, driven by a Ukrainian coachman. Unrivalled realism in rendering the anatomy of galloping horses and the muddy steppe made the work a symbol of the strength of the land."
+    },
+    "curiosity": {
+      "pl": "Cztery konie w szalonym pędzie galopują przez głębokie błoto prosto na widza, tak że niemal czuć pryskające spod kopyt grudy ziemi. Woźnica w wielkiej czapie ledwo trzyma lejce, popisując się brawurą na ukraińskim targu końskim.",
+      "en": "Four horses gallop at breakneck speed through deep mud straight at the viewer, so that you can almost feel the clods of earth flying from their hooves. The driver in a large hat barely holds the reins, showing off his daring at a Ukrainian horse fair."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J_Che%C5%82mo%C5%84ski_-_Czw%C3%B3rka_(1881).jpg",
+      "title": "File:J Chełmoński - Czwórka (1881).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-krzyz-zadymce",
+    "legacyIds": [
+      "era-3-catalog-21_21.jpg"
+    ],
+    "era": "era-3",
+    "order": 17,
+    "image": "era3_pozytywizm/chelmonski-krzyz-zadymce.jpg",
+    "puzzle": "puzzles/chelmonski-krzyz-zadymce.json",
+    "preview": "puzzles/chelmonski-krzyz-zadymce.png",
+    "title": {
+      "pl": "Krzyż w zadymce",
+      "en": "Cross in a Snowstorm"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1888",
+    "style": {
+      "pl": "Realizm syntetyczny / Pejzaż nastrojowy",
+      "en": "Synthetic realism / Atmospheric landscape"
+    },
+    "story": {
+      "pl": "Oszczędna, niemal ascetyczna kompozycja ukazuje samotny drewniany krzyż zmagający się ze śnieżną nawałnicą na mazowieckim pustkowiu. Chełmoński łączy tu bezwzględną prawdę obserwacji surowej zimy z głęboką duchową refleksją nad losem wędrowca w polskim krajobrazie.",
+      "en": "A spare, almost ascetic composition shows a lonely wooden cross battling a snowstorm in the Mazovian wilderness. Chełmoński combines an unflinching observation of a harsh winter with deep spiritual reflection on the fate of the traveller in the Polish landscape."
+    },
+    "curiosity": {
+      "pl": "Drewniany przydrożny krzyż stoi samotnie pośród szalejącej śnieżycy, a na jego ramionach przysiadły czarne wrony. Na pustych mazowieckich bezdrożach taki krzyż był dla zagubionych zimą wędrowców jedyną szansą na odnalezienie drogi i ocalenie przed zamarznięciem.",
+      "en": "A wooden wayside cross stands alone in the raging blizzard, with black crows perched on its arms. On the empty Mazovian back roads, such a cross was the only chance for travellers lost in winter to find their way and escape freezing to death."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Krzy%C5%BC_w_zadymce_(1907).jpg",
+      "title": "File:Józef Chełmoński - Krzyż w zadymce (1907).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "brandt-czarniecki-koldynga",
+    "legacyIds": [
+      "era-3-catalog-22_22.jpg"
+    ],
+    "era": "era-3",
+    "order": 18,
+    "image": "era3_pozytywizm/brandt-czarniecki-koldynga.jpg",
+    "puzzle": "puzzles/brandt-czarniecki-koldynga.json",
+    "preview": "puzzles/brandt-czarniecki-koldynga.png",
+    "title": {
+      "pl": "Czarniecki pod Koldyngą",
+      "en": "Czarniecki at Kolding"
+    },
+    "artist": "Józef Brandt",
+    "year": "1870",
+    "style": {
+      "pl": "Realizm historyczno-batalistyczny / Szkoła monachijska",
+      "en": "Historical battle realism / Munich school"
+    },
+    "story": {
+      "pl": "Mistrzowskie dzieło Brandta łączy epicki rozmach historyczny z naturalistyczną precyzją w ukazywaniu koni brodzących w morskiej wodzie u wybrzeży Danii. Brawura polskiej jazdy szesnastowiecznej została tu odtworzona z rygorystycznym pietyzmem wobec militariów, zbroi i rzędów końskich.",
+      "en": "Brandt's masterly work combines epic historical scope with naturalistic precision in showing horses wading in the sea off the coast of Denmark. The daring of sixteenth-century Polish cavalry is reconstructed here with rigorous care for weapons, armour and horse tack."
+    },
+    "curiosity": {
+      "pl": "Polscy husarze z końmi płyną na małych drewnianych łodziach przez lodowate morze, żeby zdobyć duńską twierdzę zajętą przez Szwedów. Konie płynęły wpław obok łodzi trzymane za uzdy – to o tej niezwykłej morskiej wyprawie śpiewamy do dziś w polskim hymnie: „jak Czarniecki do Poznania”.",
+      "en": "Polish hussars and their horses cross the icy sea in small wooden boats to capture a Danish fortress held by the Swedes. The horses swam alongside the boats, held by their bridles, and Poles still sing about this extraordinary sea expedition in the national anthem: \"like Czarniecki to Poznań\"."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Brandt,_Czarniecki_pod_Koldyng%C4%85.jpg",
+      "title": "File:Józef Brandt, Czarniecki pod Koldyngą.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "brandt-wyjazd-wilanowa-jana-iii",
+    "legacyIds": [
+      "era-3-catalog-23_23.jpg"
+    ],
+    "era": "era-3",
+    "order": 19,
+    "image": "era3_pozytywizm/brandt-wyjazd-wilanowa-jana-iii.jpg",
+    "puzzle": "puzzles/brandt-wyjazd-wilanowa-jana-iii.json",
+    "preview": "puzzles/brandt-wyjazd-wilanowa-jana-iii.png",
+    "title": {
+      "pl": "Wyjazd z Wilanowa Jana III i Marysieńki Sobieskich",
+      "en": "John III and Marysieńka Sobieski Leaving Wilanów"
+    },
+    "artist": "Józef Brandt",
+    "year": "1887",
+    "style": {
+      "pl": "Historyzm malarski szkoły monachijskiej",
+      "en": "Munich school historicism"
+    },
+    "story": {
+      "pl": "Złocista, rozświetlona słońcem kompozycja rekonstruuje świetność orszaku królewskiego Sobieskiego z wirtuozerską dbałością o każdy szczegół paradnej karocy i husarskich skrzydeł. Obraz wpisuje się w nurt pozytywistycznego historyzmu krzepiącego narodową dumę poprzez olśniewający kunszt malarski.",
+      "en": "This golden, sunlit composition reconstructs the splendour of Sobieski's royal procession with virtuoso care for every detail of the state carriage and the hussars' wings. The painting belongs to the positivist current of historicism that lifted national pride through dazzling painterly skill."
+    },
+    "curiosity": {
+      "pl": "Złota królewska karoca wyjeżdża z pałacowego dziedzińca w otoczeniu husarzy w lamparcich skórach i grającej orkiestry janczarskiej. Król Sobieski uwielbiał orientalny przepych, a malarz pokazał ten moment tak widowiskowo, jak kadr z wielkiego historycznego filmu.",
+      "en": "The golden royal carriage leaves the palace courtyard surrounded by hussars in leopard skins and a playing Janissary band. King Sobieski loved oriental splendour, and the painter showed this moment as spectacularly as a scene from a great historical film."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Brandt_-_Wyjazd_Marysie%C5%84ki_z_Wilanowa.jpg",
+      "title": "File:Józef Brandt - Wyjazd Marysieńki z Wilanowa.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "siemiradzki-pochodnie-nerona",
+    "legacyIds": [
+      "era-3-catalog-25_25.jpg"
+    ],
+    "era": "era-3",
+    "order": 20,
+    "image": "era3_pozytywizm/siemiradzki-pochodnie-nerona.jpg",
+    "puzzle": "puzzles/siemiradzki-pochodnie-nerona.json",
+    "preview": "puzzles/siemiradzki-pochodnie-nerona.png",
+    "title": {
+      "pl": "Pochodnie Nerona (Świeczniki chrześcijaństwa)",
+      "en": "Nero's Torches (Candlesticks of Christianity)"
+    },
+    "artist": "Henryk Siemiradzki",
+    "year": "1876",
+    "style": {
+      "pl": "Akademizm antykizujący / Monumentalizm",
+      "en": "Antique-inspired academicism / Monumentalism"
+    },
+    "story": {
+      "pl": "Wielkie akademickie płótno o olśniewającej śródziemnomorskiej kolorystyce konfrontuje moralną czystość pierwszych męczenników chrześcijańskich z cynicznym okrucieństwem cesarskiego Rzymu. Niezwykła erudycja w rekonstrukcji marmurowych pałaców i antycznych tkanin przyniosła artyście międzynarodowy triumf epoki akademizmu.",
+      "en": "This great academic canvas with dazzling Mediterranean colour confronts the moral purity of the first Christian martyrs with the cynical cruelty of imperial Rome. Remarkable erudition in reconstructing marble palaces and ancient fabrics brought the artist international triumph in the age of academicism."
+    },
+    "curiosity": {
+      "pl": "Rzymski cesarz Neron kazał owinąć pierwszych chrześcijan w słomę, oblać smołą i podpalić na słupach, żeby oświetlali mu nocny spacer po ogrodzie. Cesarz siedzi z kielichem w złotej lektyce niesionej przez niewolników i z uśmiechem przygląda się męce ludzi, których fałszywie oskarżył o podpalenie Rzymu.",
+      "en": "The Roman emperor Nero had the first Christians wrapped in straw, covered in tar and set alight on posts to light his night-time walk in the garden. The emperor sits with a goblet in a golden litter carried by slaves and smiles as he watches the torment of people he had falsely accused of setting Rome on fire."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Siemiradski_Fackeln.jpg",
+      "title": "File:Siemiradski Fackeln.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gottlieb-zydzi-modlacy-sie-synagodze",
+    "legacyIds": [
+      "era-3-catalog-27_27.jpg"
+    ],
+    "era": "era-3",
+    "order": 21,
+    "image": "era3_pozytywizm/gottlieb-zydzi-modlacy-sie-synagodze.jpg",
+    "puzzle": "puzzles/gottlieb-zydzi-modlacy-sie-synagodze.json",
+    "preview": "puzzles/gottlieb-zydzi-modlacy-sie-synagodze.png",
+    "title": {
+      "pl": "Żydzi modlący się w synagodze podczas Jom Kippur",
+      "en": "Jews Praying in the Synagogue on Yom Kippur"
+    },
+    "artist": "Maurycy Gottlieb",
+    "year": "1878",
+    "style": {
+      "pl": "Realizm psychologiczny / Malarstwo asymilacyjne",
+      "en": "Psychological realism / Painting of assimilation"
+    },
+    "story": {
+      "pl": "Arcydzieło Gottlieba ukazuje z głębokim pietyzmem i intymnym skupieniem najświętszy dzień pokuty w synagodze w Drohobyczu. Artysta połączył realistyczną dbałość o zwoje Tory i wełniane tałesy z humanistycznym przesłaniem braterstwa i duchowego dialogu polsko-żydowskiego epoki pozytywizmu.",
+      "en": "Gottlieb's masterpiece shows the holiest day of atonement in a synagogue in Drohobych with deep reverence and intimate concentration. The artist combined realistic care for the Torah scrolls and woollen prayer shawls with a humanist message of brotherhood and spiritual dialogue between Poles and Jews in the positivist era."
+    },
+    "curiosity": {
+      "pl": "Malarz przedstawił w świątyni samego siebie w trzech różnych momentach życia: jako małego chłopca, młodzieńca i dorosłego mężczyznę z medalionem. Zmarł tragicznie zaledwie rok po ukończeniu tego obrazu w wieku 23 lat, z powodu powikłań po zapaleniu gardła i złamanego serca.",
+      "en": "The painter depicted himself in the synagogue at three different moments of his life: as a little boy, a young man and an adult with a medallion. He died tragically just a year after finishing the painting, at the age of 23, from complications after a throat infection and a broken heart."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jews_Praying_in_the_Synagogue_on_Yom_Kippur.jpg",
+      "title": "File:Jews Praying in the Synagogue on Yom Kippur.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "gottlieb-pisarz-tory",
+    "legacyIds": [
+      "era-3-catalog-28_28.jpg"
+    ],
+    "era": "era-3",
+    "order": 22,
+    "image": "era3_pozytywizm/gottlieb-pisarz-tory.jpg",
+    "puzzle": "puzzles/gottlieb-pisarz-tory.json",
+    "preview": "puzzles/gottlieb-pisarz-tory.png",
+    "title": {
+      "pl": "Pisarz Tory",
+      "en": "The Torah Scribe"
+    },
+    "artist": "Maurycy Gottlieb",
+    "year": "1876",
+    "style": {
+      "pl": "Realizm intymny / Studium pracy",
+      "en": "Intimate realism / Study of work"
+    },
+    "story": {
+      "pl": "Kameralne studium sędziwego sofera pochylonego nad zwojem pergaminu stanowi pozytywistyczną pochwałę cierpliwej, skrupulatnej pracy rzemieślniczej i wierności tradycji. Ciepły, rembrandtowski światłocień buduje nastrój sakralnego skupienia nad przepisywanym ręcznie świętym tekstem.",
+      "en": "This intimate study of an aged scribe bent over a parchment scroll is a positivist tribute to patient, meticulous craftsmanship and faithfulness to tradition. Warm, Rembrandtesque chiaroscuro creates a mood of sacred concentration over the holy text being copied by hand."
+    },
+    "curiosity": {
+      "pl": "Starszy człowiek w wielkim skupieniu kaligrafuje święty tekst gęsim piórem na cielęcym pergaminie. Pisarz tory nie mógł popełnić ani jednej pomyłki – gdyby pomylił choćby jedną literę, cały kilkumetrowy pergamin musiał zostać zniszczony i zakopany w ziemi.",
+      "en": "An old man calligraphs the holy text with a goose quill on calfskin parchment in deep concentration. A Torah scribe could not make a single mistake: if he got even one letter wrong, the whole parchment, several metres long, had to be destroyed and buried in the ground."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Maurycy_Gottlieb_-_Torah_Scribe.jpg",
+      "title": "File:Maurycy Gottlieb - Torah Scribe.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "boznanska-pracowni",
+    "legacyIds": [
+      "era-4-catalog-01_01.jpg"
+    ],
+    "era": "era-4",
+    "order": 1,
+    "image": "era4_mloda_polska/boznanska-pracowni.jpg",
+    "puzzle": "puzzles/boznanska-pracowni.json",
+    "preview": "puzzles/boznanska-pracowni.png",
+    "title": {
+      "pl": "W pracowni",
+      "en": "In the Studio"
+    },
+    "artist": "Olga Boznańska",
+    "year": "1890",
+    "style": {
+      "pl": "Postimpresjonizm / Intymizm młodopolski",
+      "en": "Post-Impressionism / Young Poland intimism"
+    },
+    "story": {
+      "pl": "Wczesne dzieło Boznańskiej wprowadza widza w intymny, zgaszony świat młodopolskiej pracowni artystycznej, gdzie liczy się wyłącznie skupienie i prawda tworzenia. Szaro-ugrowa harmonia barwna oraz miękkie, przydymione światło zapowiadają jej słynną metodę dematerializowania przestrzeni na rzecz nastroju.",
+      "en": "Boznańska's early work takes the viewer into the intimate, muted world of a Young Poland studio, where only concentration and the truth of creation matter. A grey-ochre harmony and soft, smoky light foreshadow her famous method of dissolving space in favour of mood."
+    },
+    "curiosity": {
+      "pl": "Artystka uciekła z konserwatywnego Krakowa do Monachium, bo w Polsce kobietom nie pozwalano studiować na Akademii Sztuk Pięknych. Widać tu jej codzienne, surowe życie – zamiast modnych salonowych sukien nosiła zgrzebny fartuch i całymi dniami malowała pośród desek i blejtramów.",
+      "en": "The artist left conservative Kraków for Munich, because in Poland women were not allowed to study at the Academy of Fine Arts. Here we see her everyday, austere life: instead of fashionable salon dresses she wore a coarse apron and painted all day among boards and stretchers."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Olga_Bozna%C5%84ska_1890_W_pracowni_2.jpg",
+      "title": "File:Olga Boznańska 1890 W pracowni 2.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "boznanska-dziewczynka-chryzantemami",
+    "legacyIds": [
+      "era-4-catalog-02_02.jpg"
+    ],
+    "era": "era-4",
+    "order": 2,
+    "image": "era4_mloda_polska/boznanska-dziewczynka-chryzantemami.jpg",
+    "puzzle": "puzzles/boznanska-dziewczynka-chryzantemami.json",
+    "preview": "puzzles/boznanska-dziewczynka-chryzantemami.png",
+    "title": {
+      "pl": "Dziewczynka z chryzantemami",
+      "en": "Girl with Chrysanthemums"
+    },
+    "artist": "Olga Boznańska",
+    "year": "1894",
+    "style": {
+      "pl": "Modernizm młodopolski / Portret psychologiczny",
+      "en": "Young Poland modernism / Psychological portrait"
+    },
+    "story": {
+      "pl": "Arcydzieło młodopolskiego nastroju (stimmung) zachwyca subtelną, rozedrganą mgiełką szarości i hipnotyzującym, pełnym niepokoju spojrzeniem bladej dziewczynki. Bukiet białych chryzantem w bezbronnych dłoniach dziecka staje się secesyjnym symbolem melancholii, kruchości życia i samotności duszy w świecie fin de siècle.",
+      "en": "This masterpiece of Young Poland mood (Stimmung) enchants with a subtle, trembling haze of greys and the hypnotic, anxious gaze of a pale girl. The bunch of white chrysanthemums in the child's defenceless hands becomes an Art Nouveau symbol of melancholy, the fragility of life and the loneliness of the soul in the fin-de-siècle world."
+    },
+    "curiosity": {
+      "pl": "Ta mała blada dziewczynka z niesamowitymi, hipnotyzującymi oczami trzyma w dłoniach chryzantemy, które kojarzyły się wtedy wyłącznie z pogrzebami i cmentarzem. Ludzie oglądający ten portret czuli ciarki na plecach, mówiąc, że wygląda jak dziecko, które wie o życiu zbyt wiele smutnych rzeczy.",
+      "en": "This small pale girl with extraordinary, hypnotic eyes holds chrysanthemums, flowers that were then associated only with funerals and cemeteries. People looking at the portrait felt shivers down their spines and said she looked like a child who knew too many sad things about life."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Olga_Bozna%C5%84ska_-_Girl_with_Chrysanthemums_-_MNK_II-b-1032_-_National_Museum_Krak%C3%B3w.jpg",
+      "title": "File:Olga Boznańska - Girl with Chrysanthemums - MNK II-b-1032 - National Museum Kraków.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "boznanska-portret-malarza-paula-nauena",
+    "legacyIds": [
+      "era-4-catalog-03_03.jpg"
+    ],
+    "era": "era-4",
+    "order": 3,
+    "image": "era4_mloda_polska/boznanska-portret-malarza-paula-nauena.jpg",
+    "puzzle": "puzzles/boznanska-portret-malarza-paula-nauena.json",
+    "preview": "puzzles/boznanska-portret-malarza-paula-nauena.png",
+    "title": {
+      "pl": "Portret malarza Paula Nauena",
+      "en": "Portrait of the Painter Paul Nauen"
+    },
+    "artist": "Olga Boznańska",
+    "year": "1893",
+    "style": {
+      "pl": "Modernizm / Portret intymistyczny",
+      "en": "Modernism / Intimist portrait"
+    },
+    "story": {
+      "pl": "Wybitny portret monachijskiego przyjaciela artystki uosabia wyrafinowaną elegancję i dekadencki spleen europejskiej bohemy przełomu XIX i XX wieku. Mistrzowska gra zgaszonych czerni i aksamitnych brązów skupia całą ekspresję na zmęczonej, inteligentnej twarzy i cygarze dymiącym w dłoni twórcy.",
+      "en": "This outstanding portrait of the artist's Munich friend embodies the refined elegance and decadent spleen of the European bohemia at the turn of the twentieth century. A masterful play of muted blacks and velvety browns focuses all expression on the tired, intelligent face and the cigar smoking in the painter's hand."
+    },
+    "curiosity": {
+      "pl": "Ten elegancki pan z zapalonym cygarem to niemiecki malarz i wielki przyjaciel Boznańskiej z czasów monachijskiej bohemy artystycznej. Portret przyniósł artystce złoty medal w Wiedniu i otworzył jej drogę do wielkiej europejskiej kariery.",
+      "en": "This elegant gentleman with a lit cigar is a German painter and a close friend of Boznańska from her days in the Munich art bohemia. The portrait won the artist a gold medal in Vienna and opened the way to a major European career."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Olga_Bozna%C5%84ska_1893_Paul_Neuen.jpg",
+      "title": "File:Olga Boznańska 1893 Paul Neuen.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "podkowinski-dzieci-ogrodzie",
+    "legacyIds": [
+      "era-4-catalog-06_06.jpg"
+    ],
+    "era": "era-4",
+    "order": 4,
+    "image": "era4_mloda_polska/podkowinski-dzieci-ogrodzie.jpg",
+    "puzzle": "puzzles/podkowinski-dzieci-ogrodzie.json",
+    "preview": "puzzles/podkowinski-dzieci-ogrodzie.png",
+    "title": {
+      "pl": "Dzieci w ogrodzie",
+      "en": "Children in the Garden"
+    },
+    "artist": "Władysław Podkowiński",
+    "year": "1892",
+    "style": {
+      "pl": "Impresjonizm polski / Dywizjonizm",
+      "en": "Polish Impressionism / Divisionism"
+    },
+    "story": {
+      "pl": "Pionierskie dzieło polskiego impresjonizmu eksploduje wibrującym, czystym światłem letniego południa, rozbitym na tysiące migotliwych plamek czystego koloru. Sielankowa zabawa dzieci z konewką pośród soczystych liści kapusty stanowi triumf nowoczesnej estetyki chwytania ulotnej chwili.",
+      "en": "This pioneering work of Polish Impressionism bursts with the vibrating, pure light of a summer noon, broken into thousands of flickering dabs of pure colour. Children's idyllic play with a watering can among lush cabbage leaves is a triumph of the modern aesthetic of capturing a fleeting moment."
+    },
+    "curiosity": {
+      "pl": "Dwaj mali chłopcy w wielkich słomkowych kapeluszach i fartuszkach podlewają warzywa z metalowej konewki w potwornym upale. Malarz tak bardzo zafascynował się francuskim impresjonizmem, że namalował kapustę żółtymi i fioletowymi plamkami, za co krytycy w Warszawie uznali go niemal za wariata.",
+      "en": "Two little boys in big straw hats and pinafores water the vegetables from a metal watering can in terrible heat. The painter was so fascinated by French Impressionism that he painted the cabbages with yellow and purple dabs, for which critics in Warsaw considered him almost mad."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Podkowi%C5%84ski_Children_in_the_garden.jpg",
+      "title": "File:Podkowiński Children in the garden.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "podkowinski-szal-uniesien",
+    "legacyIds": [
+      "era-3-art-5"
+    ],
+    "era": "era-4",
+    "order": 5,
+    "image": "era4_mloda_polska/podkowinski-szal-uniesien.jpg",
+    "puzzle": "puzzles/podkowinski-szal-uniesien.json",
+    "preview": "puzzles/podkowinski-szal-uniesien.png",
+    "title": {
+      "pl": "Szał uniesień",
+      "en": "Frenzy of Exultations"
+    },
+    "artist": "Władysław Podkowiński",
+    "year": "1894",
+    "style": {
+      "pl": "Symbolizm młodopolski / Ekspresjonizm",
+      "en": "Young Poland symbolism / Expressionism"
+    },
+    "story": {
+      "pl": "Najgłośniejszy manifest polskiego symbolizmu ukazuje destrukcyjną, dionizyjską potęgę zmysłów porywającą nagą kobietę na grzbiecie oszalałego, czarnego rumaka. Dynamiczna kompozycja i mroczny erotyzm płótna wywołały skandal w Krakowie, stając się symbolem buntu artysty przeciwko mieszczańskiej pruderii.",
+      "en": "The most notorious manifesto of Polish symbolism shows the destructive, Dionysian power of the senses carrying a naked woman away on the back of a frenzied black steed. The dynamic composition and dark eroticism of the canvas caused a scandal in Kraków and became a symbol of the artist's revolt against bourgeois prudery."
+    },
+    "curiosity": {
+      "pl": "Naga kobieta na wielkim, oszalałym czarnym koniu z pianą na pysku wywołała gigantyczny skandal w Krakowie – ludzie stali w długich kolejkach, żeby zobaczyć to zgorszenie. Malarz z powodu nieszczęśliwej miłości do zamężnej kobiety nie wytrzymał presji, przyszedł do galerii z nożem i pociął własne płótno na kawałki.",
+      "en": "A naked woman on a huge, frenzied black horse foaming at the mouth caused a gigantic scandal in Kraków, and people queued for a long time to see the outrage. Suffering from unhappy love for a married woman, the painter could not bear the pressure, came to the gallery with a knife and slashed his own canvas."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:W%C5%82adys%C5%82aw_Podkowi%C5%84ski_-_Sza%C5%82_uniesie%C5%84.jpg",
+      "title": "File:Władysław Podkowiński - Szał uniesień.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-tumanie",
+    "legacyIds": [
+      "era-4-catalog-09_09.jpg"
+    ],
+    "era": "era-4",
+    "order": 6,
+    "image": "era4_mloda_polska/malczewski-tumanie.jpg",
+    "puzzle": "puzzles/malczewski-tumanie.json",
+    "preview": "puzzles/malczewski-tumanie.png",
+    "title": {
+      "pl": "W tumanie",
+      "en": "In the Mist"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1893",
+    "style": {
+      "pl": "Symbolizm młodopolski / Nurt patriotyczny",
+      "en": "Young Poland symbolism / Patriotic current"
+    },
+    "story": {
+      "pl": "Malczewski w unikalny dla Młodej Polski sposób stapia melancholię jesiennego pejzażu mazowieckiego z korowodem skrzydlatych chimer i zjaw unoszących się w gęstej mgle. Pastuszkowie grający na wierzbowych fujarkach stają się przewodnikami po świecie narodowych tęsknot i niepokojów zniewolonej ojczyzny.",
+      "en": "In a way unique to Young Poland, Malczewski fuses the melancholy of an autumn Mazovian landscape with a procession of winged chimeras and apparitions floating in thick mist. Shepherd boys playing willow pipes become guides to a world of national longings and the anxieties of an enslaved homeland."
+    },
+    "curiosity": {
+      "pl": "Wiejski chłopiec gra na fujarce z wierzby, a w unoszącej się nad polem mgle wirują tajemnicze nagie postacie ze skrzydłami. Malczewski uwielbiał mieszać zwykłą polską wieś z mitami, pokazując, że w polskim krajobrazie ciągle błąkają się duchy dawnych powstańców.",
+      "en": "A village boy plays a willow pipe, while mysterious naked winged figures swirl in the mist rising over the field. Malczewski loved to mix the ordinary Polish countryside with myths, showing that the ghosts of past insurgents still wander through the Polish landscape."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Malczewski_Jacek_W_tumanie.jpg",
+      "title": "File:Malczewski Jacek W tumanie.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-melancholia",
+    "legacyIds": [
+      "era-4-catalog-10_10.jpg"
+    ],
+    "era": "era-4",
+    "order": 7,
+    "image": "era4_mloda_polska/malczewski-melancholia.jpg",
+    "puzzle": "puzzles/malczewski-melancholia.json",
+    "preview": "puzzles/malczewski-melancholia.png",
+    "title": {
+      "pl": "Melancholia",
+      "en": "Melancholia"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1894",
+    "style": {
+      "pl": "Wielki symbolizm młodopolski",
+      "en": "Great Young Poland symbolism"
+    },
+    "story": {
+      "pl": "Monumentalna synteza XIX-wiecznych walk narodowych: z płótna na sztaludze wylewa się kłębowisko kosynierów, powstańców i sybiraków pędzących ku oknu pracowni. Tajemnicza postać w czerni zagradzająca drogę uosabia młodopolską niemoc i tragiczne uwięzienie w błędnym kole historii.",
+      "en": "A monumental synthesis of the national struggles of the nineteenth century: a swirling crowd of scythemen, insurgents and Siberian exiles pours out of the canvas on the easel towards the studio window. The mysterious figure in black blocking the way embodies the Young Poland sense of powerlessness and tragic entrapment in the vicious circle of history."
+    },
+    "curiosity": {
+      "pl": "Ze sztalugi w pokoju malarza wylewa się na podłogę dziki tłum kosynierów, żołnierzy z szablami i dzieci w kajdanach, pędzących do otwartego okna. W oknie stoi jednak tajemnicza postać w czerni, która nie pozwala im wyskoczyć, symbolizując niemoc Polaków pod zaborami.",
+      "en": "From the easel in the painter's room, a wild crowd of scythemen, soldiers with sabres and children in chains spills onto the floor, rushing towards the open window. But in the window stands a mysterious figure in black who will not let them leap out, symbolising the powerlessness of Poles under the partitions."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Malczewski_melancholia.jpg",
+      "title": "File:Malczewski melancholia.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-bledne-kolo",
+    "legacyIds": [
+      "era-4-catalog-11_11.jpg"
+    ],
+    "era": "era-4",
+    "order": 8,
+    "image": "era4_mloda_polska/malczewski-bledne-kolo.jpg",
+    "puzzle": "puzzles/malczewski-bledne-kolo.json",
+    "preview": "puzzles/malczewski-bledne-kolo.png",
+    "title": {
+      "pl": "Błędne koło",
+      "en": "Vicious Circle"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1897",
+    "style": {
+      "pl": "Symbolizm młodopolski",
+      "en": "Young Poland symbolism"
+    },
+    "story": {
+      "pl": "Wokół chłopca w czerwonej krakusce siedzącego na drabinie wiruje kosmiczny taniec bachantek, zmysłowych pokus i cierpiących męczenników narodowej niedoli. Obraz jest młodopolską alegorią powołania twórcy, rozdartego między ekstazą czystego piękna a obowiązkiem służby zniewolonemu narodowi.",
+      "en": "Around a boy in a red Kraków cap sitting on a ladder whirls a cosmic dance of bacchantes, sensual temptations and suffering martyrs of national misfortune. The painting is a Young Poland allegory of the artist's calling, torn between the ecstasy of pure beauty and the duty to serve an enslaved nation."
+    },
+    "curiosity": {
+      "pl": "Mały chłopiec w czerwonej krakuskiej czapce siedzi na szczycie malarskiej drabiny, a wokół niego w powietrzu tańczy szalony krąg zmysłowych dziewczyn i cierpiących powstańców. To sam malarz pokazany jako dziecko, który musi wybrać, czy malować radosne piękno, czy cierpienie swojego narodu.",
+      "en": "A little boy in a red Kraków cap sits at the top of a painter's ladder, while a wild circle of sensual girls and suffering insurgents dances in the air around him. It is the painter himself shown as a child, who must choose whether to paint joyful beauty or the suffering of his nation."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Bledne_kolo.jpg",
+      "title": "File:Bledne kolo.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-thanatos",
+    "legacyIds": [
+      "era-4-catalog-12_12.jpg"
+    ],
+    "era": "era-4",
+    "order": 9,
+    "image": "era4_mloda_polska/malczewski-thanatos.jpg",
+    "puzzle": "puzzles/malczewski-thanatos.json",
+    "preview": "puzzles/malczewski-thanatos.png",
+    "title": {
+      "pl": "Thanatos",
+      "en": "Thanatos"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1898–1899",
+    "style": {
+      "pl": "Symbolizm młodopolski / Mitologizm",
+      "en": "Young Poland symbolism / Mythologism"
+    },
+    "story": {
+      "pl": "Malczewski redefiniuje motyw śmierci w duchu młodopolskiego modernizmu, ukazując Thanatosa nie jako kościotrupa, lecz jako zmysłową, skrzydlatą niewiastę z kosą przynoszącą ukojenie. Nocna poświata księżyca nad gankiem polskiego dworku nadaje pożegnaniu starego szlachcica wymiar metafizycznego spokoju.",
+      "en": "Malczewski redefines the theme of death in the spirit of Young Poland modernism, showing Thanatos not as a skeleton but as a sensual winged woman with a scythe who brings relief. The night-time moonlight over the porch of a Polish manor gives the old nobleman's farewell a sense of metaphysical peace."
+    },
+    "curiosity": {
+      "pl": "Śmierć podkrada się nocą pod ganek polskiego dworku, ale nie jest kościotrupem w płachcie, tylko piękną, silną kobietą ze skrzydłami trzymającą ostrą kosę. Stary szlachcic w nocnej koszuli wychodzi jej na spotkanie ze spokojem, witając śmierć jako wyzwolenie z trudów życia.",
+      "en": "Death creeps up at night to the porch of a Polish manor house, but she is not a skeleton in a shroud: she is a beautiful, strong woman with wings, holding a sharp scythe. An old nobleman in a nightshirt calmly goes out to meet her, welcoming death as release from the hardships of life."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Jacek_Malczewski_-_Thanatos.jpg",
+      "title": "File:Jacek Malczewski - Thanatos.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-zatruta-studnia",
+    "legacyIds": [
+      "era-4-catalog-13_13.jpg"
+    ],
+    "era": "era-4",
+    "order": 10,
+    "image": "era4_mloda_polska/malczewski-zatruta-studnia.jpg",
+    "puzzle": "puzzles/malczewski-zatruta-studnia.json",
+    "preview": "puzzles/malczewski-zatruta-studnia.png",
+    "title": {
+      "pl": "Zatruta studnia I",
+      "en": "The Poisoned Well I"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1905",
+    "style": {
+      "pl": "Symbolizm młodopolski",
+      "en": "Young Poland symbolism"
+    },
+    "story": {
+      "pl": "Zwykła drewniana studnia z żurawiem staje się w ujęciu Malczewskiego głęboką metaforą zatrutych źródeł narodowej tradycji i zniewolenia pod carskim zaborcą. Postać żołnierza w szynelu i towarzysząca mu chimera wyrażają młodopolski nakaz duchowego oczyszczenia i odzyskania wewnętrznej wolności.",
+      "en": "In Malczewski's view, an ordinary wooden well with a sweep becomes a deep metaphor for the poisoned sources of national tradition and enslavement under the tsarist occupier. The soldier in a greatcoat and the chimera beside him express the Young Poland call for spiritual cleansing and the recovery of inner freedom."
+    },
+    "curiosity": {
+      "pl": "Przy wiejskiej studni z drewnianym żurawiem stoi potwór ze skrzydłami owada oraz młody polski chłopak w rosyjskim mundurze wojskowym. Zatruta woda oznacza fałszywe obietnice zaborców, a żołnierz musi podjąć decyzję, czy wypić tę wodę, czy walczyć o wolną Polskę.",
+      "en": "By a village well with a wooden sweep stand a monster with insect wings and a young Polish man in a Russian military uniform. The poisoned water stands for the occupiers' false promises, and the soldier must decide whether to drink it or fight for a free Poland."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Malczewski_Jacek_Zatruta_studnia_I.jpg",
+      "title": "File:Malczewski Jacek Zatruta studnia I.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "malczewski-autoportret-muza",
+    "legacyIds": [
+      "era-4-catalog-14_14.jpg"
+    ],
+    "era": "era-4",
+    "order": 11,
+    "image": "era4_mloda_polska/malczewski-autoportret-muza.jpg",
+    "puzzle": "puzzles/malczewski-autoportret-muza.json",
+    "preview": "puzzles/malczewski-autoportret-muza.png",
+    "title": {
+      "pl": "Autoportret z Muzą",
+      "en": "Self-Portrait with a Muse"
+    },
+    "artist": "Jacek Malczewski",
+    "year": "1906",
+    "style": {
+      "pl": "Symbolizm młodopolski / Autotematyzm",
+      "en": "Young Poland symbolism / Self-reflection"
+    },
+    "story": {
+      "pl": "Malarz w skromnym fartuchu z paletą stoi dumnie na tle rodzinnego dworu i dojrzałych kłosów zbóż, strzeżony przez skrzydlatą Muzę w wianku z polnych kwiatów. Płótno jest manifestem młodopolskiego kultu sztuki jako najwyższej siły łączącej pierwiastek boski z rodzimą tradycją i ziemią.",
+      "en": "The painter, in a modest smock and with his palette, stands proudly against his family manor and ripe ears of grain, guarded by a winged Muse in a wreath of wild flowers. The canvas is a manifesto of the Young Poland cult of art as the highest force joining the divine with native tradition and the land."
+    },
+    "curiosity": {
+      "pl": "Malarz stoi w roboczym fartuchu z pędzlami w ręku na tle dojrzałego zboża, a za jego plecami unosi się naga Muza ze skrzydłami w wianku z chabrów. Artysta uważał, że malarz w Polsce nie może być zwykłym rzemieślnikiem, lecz musi czerpać natchnienie wprost z ziemi i natury.",
+      "en": "The painter stands in a work smock with brushes in his hand against ripe grain, while behind him floats a naked winged Muse in a wreath of cornflowers. The artist believed that a painter in Poland could not be a mere craftsman, but had to draw inspiration directly from the land and nature."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Malczewski_Jacek_Autoportret_z_muza_1.jpg",
+      "title": "File:Malczewski Jacek Autoportret z muza 1.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyspianski-chocholy",
+    "legacyIds": [
+      "era-4-catalog-16_16.jpg"
+    ],
+    "era": "era-4",
+    "order": 12,
+    "image": "era4_mloda_polska/wyspianski-chocholy.jpg",
+    "puzzle": "puzzles/wyspianski-chocholy.json",
+    "preview": "puzzles/wyspianski-chocholy.png",
+    "title": {
+      "pl": "Chochoły (Planty o świcie)",
+      "en": "Straw-Wrapped Rose Bushes (Planty Park at Dawn)"
+    },
+    "artist": "Stanisław Wyspiański",
+    "year": "1898",
+    "style": {
+      "pl": "Młodopolski symbolizm nastrojowy / Pastel",
+      "en": "Young Poland atmospheric symbolism / Pastel"
+    },
+    "story": {
+      "pl": "Tajemnicze krzaki róż otulone zimową słomą na krakowskich Plantach pod Wawelem tworzą jeden z najbardziej poruszających symboli Młodej Polski, znany z dramatu 'Wesele'. Sinoniebieska, pastelowa szarówka poranka skrywa w uśpionych chochołach nadzieję na odrodzenie życia i wolności narodu wraz z nadejściem wiosny.",
+      "en": "Mysterious rose bushes wrapped in winter straw in Kraków's Planty park beneath Wawel form one of the most moving symbols of Young Poland, known from the drama 'The Wedding'. The bluish-grey pastel dusk of the morning hides in the dormant straw figures the hope for the rebirth of life and the nation's freedom with the coming of spring."
+    },
+    "curiosity": {
+      "pl": "Te dziwne garbate kukły w zimowym krakowskim parku to krzewy róż owinięte słomą na zimę, żeby nie zmarzły pod Wawelem. Wyspiański zrobił z nich słynnego Chochoła w dramacie „Wesele” – symbol uśpionych Polaków, którzy wyglądają na martwych ze słomy, ale pod spodem czekają na wiosnę wolności.",
+      "en": "These strange hunched figures in a winter Kraków park are rose bushes wrapped in straw so that they would not freeze beneath Wawel. Wyspiański turned them into the famous Chochoł, the straw man of his drama \"The Wedding\": a symbol of dormant Poles who look like dead straw but underneath are waiting for the spring of freedom."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Wyspia%C5%84ski_-_The_Mulchs_-_Google_Art_Project.jpg",
+      "title": "File:Stanisław Wyspiański - The Mulchs - Google Art Project.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyspianski-autoportret-zona",
+    "legacyIds": [
+      "era-4-catalog-17_17.jpg"
+    ],
+    "era": "era-4",
+    "order": 13,
+    "image": "era4_mloda_polska/wyspianski-autoportret-zona.jpg",
+    "puzzle": "puzzles/wyspianski-autoportret-zona.json",
+    "preview": "puzzles/wyspianski-autoportret-zona.png",
+    "title": {
+      "pl": "Autoportret z żoną",
+      "en": "Self-Portrait with Wife"
+    },
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "style": {
+      "pl": "Secesja krakowska / Nurt chłopomański",
+      "en": "Kraków Art Nouveau / Peasant-mania current"
+    },
+    "story": {
+      "pl": "Pastelowy podwójny portret ilustruje młodopolską fascynację folklorem i autentyzmem wiejskiego ludu (chłopomania), łącząc miejskiego artystę z Teodorą Pytko w krakowskiej chustce. Giętka, secesyjna linia konturu i sznury czerwonych korali celebrują piękno tradycji regionalnej jako źródła narodowej odnowy.",
+      "en": "This pastel double portrait illustrates the Young Poland fascination with folklore and the authenticity of village people (chłopomania), joining the city artist with Teodora Pytko in a Kraków headscarf. The supple Art Nouveau contour and strings of red coral celebrate the beauty of regional tradition as a source of national renewal."
+    },
+    "curiosity": {
+      "pl": "Słynny krakowski dramaturg i artysta wywołał wielki skandal w eleganckim Krakowie, bo ożenił się z prostą, niepiśmienną wiejską dziewczyną Teodorą Pytko. Na portrecie dumny artysta pozuje w marynarce obok żony w ludowej chustce i wiejskich czerwonych koralach.",
+      "en": "The famous Kraków playwright and artist caused a great scandal in elegant Kraków by marrying a simple, illiterate village girl, Teodora Pytko. In the portrait the proud artist poses in a jacket beside his wife in a folk headscarf and red village coral beads."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Portret_z_zona.jpg",
+      "title": "File:Portret z zona.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyspianski-spiacy-stas",
+    "legacyIds": [
+      "era-4-catalog-18_18.jpg"
+    ],
+    "era": "era-4",
+    "order": 14,
+    "image": "era4_mloda_polska/wyspianski-spiacy-stas.jpg",
+    "puzzle": "puzzles/wyspianski-spiacy-stas.json",
+    "preview": "puzzles/wyspianski-spiacy-stas.png",
+    "title": {
+      "pl": "Śpiący Staś",
+      "en": "Sleeping Staś"
+    },
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "style": {
+      "pl": "Secesja krakowska / Pastelowy portret intymny",
+      "en": "Kraków Art Nouveau / Intimate pastel portrait"
+    },
+    "story": {
+      "pl": "Mistrzostwo miękkiej, falistej linii secesyjnej i czułość obserwacji rodzicielskiej czynią z tego pastelu arcydzieło młodopolskiego intymizmu. Spokojny sen małego synka artysty na puszystych poduszkach emanuje bezbronną czystością i ukojeniem w domowym zaciszu.",
+      "en": "Mastery of the soft, wavy Art Nouveau line and the tenderness of a parent's observation make this pastel a masterpiece of Young Poland intimism. The peaceful sleep of the artist's little son on fluffy pillows radiates defenceless purity and comfort in the quiet of home."
+    },
+    "curiosity": {
+      "pl": "Mały synek artysty zasnął zmęczony z główką opartą na poduszce, a ojciec narysował go kolorowymi kredkami pastelowymi w kilka chwil, żeby go nie obudzić. Wyspiański uwielbiał malować swoje dzieci z wielką czułością, utrwalając ich ulotny dziecięcy spokój.",
+      "en": "The artist's little son has fallen asleep, tired, with his head on a pillow, and his father drew him with coloured pastels in a few moments so as not to wake him. Wyspiański loved to portray his children with great tenderness, capturing their fleeting childhood calm."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Wyspia%C5%84ski_%C5%9Api%C4%85cy_Sta%C5%9B_1902.jpg",
+      "title": "File:Stanisław Wyspiański Śpiący Staś 1902.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyspianski-portret-lizy-parenskiej-wsrod",
+    "legacyIds": [
+      "era-4-catalog-19_19.jpg"
+    ],
+    "era": "era-4",
+    "order": 15,
+    "image": "era4_mloda_polska/wyspianski-portret-lizy-parenskiej-wsrod.jpg",
+    "puzzle": "puzzles/wyspianski-portret-lizy-parenskiej-wsrod.json",
+    "preview": "puzzles/wyspianski-portret-lizy-parenskiej-wsrod.png",
+    "title": {
+      "pl": "Portret Lizy Pareńskiej wśród pelargonii",
+      "en": "Portrait of Liza Pareńska among Geraniums"
+    },
+    "artist": "Stanisław Wyspiański",
+    "year": "1904",
+    "style": {
+      "pl": "Secesja krakowska / Portret psychologiczny",
+      "en": "Kraków Art Nouveau / Psychological portrait"
+    },
+    "story": {
+      "pl": "Pastelowy portret panienki z krakowskiej inteligencji otoczonej krwistoczerwonymi kwiatami pelargonii jest kwintesencją secesyjnej dekoracyjności i melancholijnego nastroju epoki. Falista linia łodyg i zamyślone spojrzenie modelki splatają motyw młodzieńczej niewinności z dojrzałym niepokojem fin de siècle.",
+      "en": "This pastel portrait of a young lady of the Kraków intelligentsia surrounded by blood-red geraniums is the quintessence of Art Nouveau decorativeness and the melancholy mood of the era. The wavy line of the stems and the model's thoughtful gaze interweave youthful innocence with the mature anxiety of the fin de siècle."
+    },
+    "curiosity": {
+      "pl": "Zamyślona nastolatka z bogatej krakowskiej rodziny lekarskiej siedzi przy oknie zastawionym doniczkami z czerwonymi pelargoniami. W salonie jej rodziców spotykała się cała krakowska bohema, a artysta zakochał się w secesyjnych kształtach tych kwiatów.",
+      "en": "A thoughtful teenager from a wealthy Kraków family of doctors sits by a window crowded with pots of red geraniums. All of Kraków's bohemia met in her parents' salon, and the artist fell in love with the Art Nouveau shapes of these flowers."
+    },
+    "source": null,
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyspianski-macierzynstwo",
+    "legacyIds": [
+      "era-4-catalog-20_20.jpg"
+    ],
+    "era": "era-4",
+    "order": 16,
+    "image": "era4_mloda_polska/wyspianski-macierzynstwo.jpg",
+    "puzzle": "puzzles/wyspianski-macierzynstwo.json",
+    "preview": "puzzles/wyspianski-macierzynstwo.png",
+    "title": {
+      "pl": "Macierzyństwo",
+      "en": "Motherhood"
+    },
+    "artist": "Stanisław Wyspiański",
+    "year": "1905",
+    "style": {
+      "pl": "Secesja krakowska / Symbolizm sakralno-ludowy",
+      "en": "Kraków Art Nouveau / Sacred and folk symbolism"
+    },
+    "story": {
+      "pl": "Karmiąca matka w bogato haftowanym gorsecie krakowskim zostaje podniesiona przez Wyspiańskiego do rangi świeckiej, ludowej Madonny. Płynny, wirtuozerski kontur pastelowy i ciepła harmonia barw celebrują świętość i czułość macierzyństwa w duchu młodopolskiego humanizmu.",
+      "en": "Wyspiański raises a nursing mother in a richly embroidered Kraków bodice to the rank of a secular, folk Madonna. A fluid, virtuoso pastel contour and a warm harmony of colours celebrate the holiness and tenderness of motherhood in the spirit of Young Poland humanism."
+    },
+    "curiosity": {
+      "pl": "Żona artysty karmi piersią ich małe dziecko, ubrana w tradycyjny krakowski gorset wyszywany błyszczącymi koralikami. Wyspiański przedstawił swoją wiejską żonę niczym świętą Matkę Boską, pokazując, że w miłości matki do dziecka kryje się największa świętość.",
+      "en": "The artist's wife breastfeeds their little child, dressed in a traditional Kraków bodice embroidered with shiny beads. Wyspiański portrayed his village-born wife like the Holy Mother of God, showing that the greatest holiness lies in a mother's love for her child."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Macierzynstwo_1905.jpg",
+      "title": "File:Macierzynstwo 1905.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-kuropatwy-sniegu",
+    "legacyIds": [
+      "era-4-catalog-22_22.jpg"
+    ],
+    "era": "era-4",
+    "order": 17,
+    "image": "era4_mloda_polska/chelmonski-kuropatwy-sniegu.jpg",
+    "puzzle": "puzzles/chelmonski-kuropatwy-sniegu.json",
+    "preview": "puzzles/chelmonski-kuropatwy-sniegu.png",
+    "title": {
+      "pl": "Kuropatwy na śniegu",
+      "en": "Partridges in the Snow"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1891",
+    "style": {
+      "pl": "Syntetyczny pejzaż młodopolski / Panteizm",
+      "en": "Young Poland synthetic landscape / Pantheism"
+    },
+    "story": {
+      "pl": "Późne dzieło Chełmońskiego ewoluuje od dawnego realizmu ku młodopolskiemu panteizmowi i głębokiej poezji bezkresnego, zimowego pejzażu mazowieckiego. Skulone w zaspach ptaki pod szarym niebem stają się poruszającym symbolem cierpliwego trwania i walki o przetrwanie rodzimej przyrody.",
+      "en": "Chełmoński's late work moves from his earlier realism towards Young Poland pantheism and the deep poetry of the boundless winter landscape of Mazovia. The birds huddled in the snowdrifts under a grey sky become a moving symbol of patient endurance and the struggle for survival of native nature."
+    },
+    "curiosity": {
+      "pl": "Stado małych dzikich ptaków stłoczyło się w ciasną gromadkę na śnieżnej zaspie, żeby ogrzewać się własnymi ciałami przed mrozem. Malarz uciekł z wielkiego Paryża na samotną mazowiecką wieś i całymi godzinami obserwował ptaki walczące o przetrwanie na bezkresnym polu.",
+      "en": "A flock of small wild birds has huddled tightly together on a snowdrift to warm each other against the frost. The painter left the great city of Paris for a lonely Mazovian village and spent hours watching birds fighting to survive in the endless fields."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Partridges_-_MP_424_MNW_-_National_Museum_in_Warsaw.jpg",
+      "title": "File:Józef Chełmoński - Partridges - MP 424 MNW - National Museum in Warsaw.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "chelmonski-bociany",
+    "legacyIds": [
+      "era-3-art-3"
+    ],
+    "era": "era-4",
+    "order": 18,
+    "image": "era4_mloda_polska/chelmonski-bociany.jpg",
+    "puzzle": "puzzles/chelmonski-bociany.json",
+    "preview": "puzzles/chelmonski-bociany.png",
+    "title": {
+      "pl": "Bociany",
+      "en": "Storks"
+    },
+    "artist": "Józef Chełmoński",
+    "year": "1900",
+    "style": {
+      "pl": "Młodopolski syntetyzm pejzażowy / Panteizm ludowy",
+      "en": "Young Poland landscape synthesism / Folk pantheism"
+    },
+    "story": {
+      "pl": "Prosta scena oracza i wiejskiego chłopca z zachwytem obserwujących powrót bocianów urasta do rangi sakralnego hymnu na cześć wiosennego odrodzenia polskiej ziemi. Syntetyczne ujęcie zaoranego pola, chat krytych strzechą i błękitnego nieba oddaje głęboką harmonię człowieka z rytmem ojczystej natury.",
+      "en": "The simple scene of a ploughman and a village boy delightedly watching the storks return grows into a sacred hymn to the spring rebirth of the Polish land. The synthetic rendering of the ploughed field, thatched cottages and blue sky conveys a deep harmony between people and the rhythm of their native nature."
+    },
+    "curiosity": {
+      "pl": "Oracz w zgrzebnej koszuli przerwał pracę w polu i razem z małym synkiem z zachwytem patrzy w niebo na pierwsze powracające bociany. Dla polskiego chłopa powrót bociana oznaczał koniec głodowej zimy, nadejście ciepła i nadzieję na dobre plony.",
+      "en": "A ploughman in a coarse shirt has paused his work in the field and, together with his little son, looks up in delight at the first returning storks. For a Polish peasant, the return of the storks meant the end of a hungry winter, the coming of warmth and hope for a good harvest."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Bociany_-_01_(MP_561_MNW).jpg",
+      "title": "File:Józef Chełmoński - Bociany - 01 (MP 561 MNW).jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "mehoffer-dziwny-ogrod",
+    "legacyIds": [
+      "era-4-catalog-25_25.jpg"
+    ],
+    "era": "era-4",
+    "order": 19,
+    "image": "era4_mloda_polska/mehoffer-dziwny-ogrod.jpg",
+    "puzzle": "puzzles/mehoffer-dziwny-ogrod.json",
+    "preview": "puzzles/mehoffer-dziwny-ogrod.png",
+    "title": {
+      "pl": "Dziwny ogród",
+      "en": "Strange Garden"
+    },
+    "artist": "Józef Mehoffer",
+    "year": "1903",
+    "style": {
+      "pl": "Secesja dekoracyjna / Młodopolski symbolizm słoneczny",
+      "en": "Decorative Art Nouveau / Young Poland sunlit symbolism"
+    },
+    "story": {
+      "pl": "Olśniewający słońcem kwitnący sad w podkrakowskich Siedlcach łączy secesyjną dekoracyjność rodzinnej idylli z tajemniczym, gigantycznym symbolem złotej ważki szybującej nad postaciami. Obraz celebruje zmysłową radość życia i bujność lata, podbitą melancholijną świadomością ulotności chwili.",
+      "en": "A blossoming orchard flooded with sun in Siedlce near Kraków combines the Art Nouveau decorativeness of a family idyll with the mysterious, gigantic symbol of a golden dragonfly gliding above the figures. The painting celebrates the sensual joy of life and the abundance of summer, tinged with a melancholy awareness of how fleeting the moment is."
+    },
+    "curiosity": {
+      "pl": "W sielankowym, słonecznym ogrodzie z żoną i małym synkiem nagle wisi wielka, złota ważka. Malarz domalował tego gigantycznego owada, żeby pokazać, że nawet nad najszczęśliwszą chwilą zawsze wisi niepewny los.",
+      "en": "In an idyllic, sunny garden with the painter's wife and little son, a huge golden dragonfly suddenly hangs in the air. The painter added this giant insect to show that even over the happiest moment an uncertain fate always hovers."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Mehoffer_Strange_garden.jpg",
+      "title": "File:Mehoffer Strange garden.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "mehoffer-slonce-majowe",
+    "legacyIds": [
+      "era-4-catalog-26_26.jpg"
+    ],
+    "era": "era-4",
+    "order": 20,
+    "image": "era4_mloda_polska/mehoffer-slonce-majowe.jpg",
+    "puzzle": "puzzles/mehoffer-slonce-majowe.json",
+    "preview": "puzzles/mehoffer-slonce-majowe.png",
+    "title": {
+      "pl": "Słońce majowe",
+      "en": "May Sun"
+    },
+    "artist": "Józef Mehoffer",
+    "year": "1911",
+    "style": {
+      "pl": "Secesja / Postimpresjonizm dworkowy",
+      "en": "Art Nouveau / Manor-house Post-Impressionism"
+    },
+    "story": {
+      "pl": "Zalany wiosennym słońcem salon dworku w Jankówce jest manifestem młodopolskiej tęsknoty za harmonią, tradycją ziemiańską i pięknem codziennego otoczenia. Gra promieni słonecznych na muślinowych firankach i bukiet świeżych bzów budują atmosferę sielskiego spokoju i zmysłowego ukojenia.",
+      "en": "The sunlit drawing room of the manor house in Jankówka is a manifesto of the Young Poland longing for harmony, the landed tradition and the beauty of everyday surroundings. The play of sunbeams on muslin curtains and a bunch of fresh lilac create an atmosphere of rustic calm and sensual comfort."
+    },
+    "curiosity": {
+      "pl": "Ciepłe wiosenne słońce wpada przez firanki do salonu dworku w Jankówce, gdzie na stole stoi świeżo zerwany pachnący bez. Artysta kupił ten stary dworek pod Krakowem, żeby stworzyć oazę rodzinnego spokoju z dala od miejskiego zgiełku.",
+      "en": "Warm spring sunlight falls through the curtains into the drawing room of the manor house in Jankówka, where freshly picked, fragrant lilac stands on the table. The artist bought this old manor near Kraków to create an oasis of family peace far from the noise of the city."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_S%C5%82o%C5%84ce_majowe.jpg",
+      "title": "File:Józef Mehoffer - Słońce majowe.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyczolkowski-kopanie-burakow",
+    "legacyIds": [
+      "era-4-catalog-28_28.jpg"
+    ],
+    "era": "era-4",
+    "order": 21,
+    "image": "era4_mloda_polska/wyczolkowski-kopanie-burakow.jpg",
+    "puzzle": "puzzles/wyczolkowski-kopanie-burakow.json",
+    "preview": "puzzles/wyczolkowski-kopanie-burakow.png",
+    "title": {
+      "pl": "Kopanie buraków",
+      "en": "Digging Beetroots"
+    },
+    "artist": "Leon Wyczółkowski",
+    "year": "1893",
+    "style": {
+      "pl": "Młodopolski impresjonizm / Realizm luministyczny",
+      "en": "Young Poland Impressionism / Luminist realism"
+    },
+    "story": {
+      "pl": "Wyczółkowski w genialny sposób łączy bezwzględną prawdę o morderczym trudzie ukraińskich kobiet na czarnoziemach z impresjonistyczną wibracją palącego słońca. Ostre refleksy światła i rozżarzone błękity cieni na ciemnej glebie zamieniają polową pracę w olśniewający spektakl czystej energii malarskiej.",
+      "en": "Wyczółkowski brilliantly combines the unflinching truth about the gruelling toil of Ukrainian women on the black earth with the Impressionist vibration of the scorching sun. Sharp reflections of light and glowing blue shadows on the dark soil turn field work into a dazzling spectacle of pure painterly energy."
+    },
+    "curiosity": {
+      "pl": "Kobiety pracują zgięte wpół na rozgrzanej ukraińskiej czarnej ziemi w palącym słońcu, wyrywając buraki z gleby. Malarz tak bardzo chciał oddać żar lejący się z nieba, że niemal oślepiał widza fioletowymi i żółtymi refleksami światła na spódnicach pracownic.",
+      "en": "Women work bent double on the hot black Ukrainian soil in the scorching sun, pulling beetroots out of the ground. The painter wanted so much to convey the heat pouring from the sky that he almost blinds the viewer with purple and yellow reflections of light on the workers' skirts."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Leon_Wycz%C3%B3%C5%82kowski_-_Kopanie_burak%C3%B3w.jpg",
+      "title": "File:Leon Wyczółkowski - Kopanie buraków.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "Public domain",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  },
+  {
+    "id": "wyczolkowski-gra-krokieta",
+    "legacyIds": [
+      "era-4-catalog-29_29.jpg"
+    ],
+    "era": "era-4",
+    "order": 22,
+    "image": "era4_mloda_polska/wyczolkowski-gra-krokieta.jpg",
+    "puzzle": "puzzles/wyczolkowski-gra-krokieta.json",
+    "preview": "puzzles/wyczolkowski-gra-krokieta.png",
+    "title": {
+      "pl": "Gra w krokieta",
+      "en": "A Game of Croquet"
+    },
+    "artist": "Leon Wyczółkowski",
+    "year": "1895",
+    "style": {
+      "pl": "Impresjonizm polski / Malarstwo plenerowe",
+      "en": "Polish Impressionism / Plein-air painting"
+    },
+    "story": {
+      "pl": "Migotliwa letnia scena dworskiej zabawy na zielonym trawniku jest popisem impresjonistycznej techniki rozbijania barw pod wpływem słońca przenikającego przez korony drzew. Jasne, bufiaste suknie dam i kapelusze kanotiery tworzą lekki, beztroski kadr z życia ziemiańskiego przełomu wieków.",
+      "en": "This shimmering summer scene of a manor-house game on a green lawn is a showcase of the Impressionist technique of breaking up colour under the sunlight that filters through the treetops. The ladies' light, puffed dresses and boater hats create a light, carefree glimpse of landed-gentry life at the turn of the century."
+    },
+    "curiosity": {
+      "pl": "Młode panny w modnych, wielkich bufiastych sukniach i kapeluszach bawią się w ogrodzie, przetaczając drewniane kule młotkami przez druciane bramki. Gra w krokieta była wielkim hitem letnich spotkań towarzyskich w polskich dworach pod koniec XIX wieku.",
+      "en": "Young ladies in fashionable, big puffed dresses and hats play in the garden, knocking wooden balls with mallets through wire hoops. Croquet was a great hit at summer social gatherings in Polish manor houses at the end of the nineteenth century."
+    },
+    "source": {
+      "url": "https://commons.wikimedia.org/wiki/File:Leon_Wycz%C3%B3%C5%82kowski_%27Gra_w_krokieta%27.jpg",
+      "title": "File:Leon Wyczółkowski 'Gra w krokieta'.jpg",
+      "institution": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "author": "Zorro2212",
+      "match": "image",
+      "retrieved": "2026-11-03"
+    },
+    "review": {
+      "content": "unverified",
+      "translation": "draft"
+    }
+  }
+]

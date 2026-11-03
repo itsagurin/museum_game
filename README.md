@@ -29,14 +29,14 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 
 - **Next.js 16 (eksport statyczny), React 19, TypeScript, Tailwind 4, Zustand, Framer Motion.** Bez backendu; postęp w `localStorage`.
 - **Grafiki źródłowe** leżą w `img/`. `scripts/prepare-assets.mjs` publikuje do `public/art/` tylko używane pliki, zmniejsza je, tworzy miniatury biblioteki i manifest `src/data/asset-manifest.json`. `public/art/` jest generowany i ignorowany przez Git.
-- **Kolekcja** powstaje z folderów `img/eraN_<epoka>/`; plansze z `img/eraN_<epoka>_kolorowanie/json/*_grid32.json`, metadane z `src/data/artworks_qa.json` i `artworks_curiosities.json` (dopasowanie po dokładnej nazwie pliku).
-- **Plansze** generuje silnik Python (K-Means w CIELAB) z repozytorium `image_generation`.
+- **Kolekcja** jest opisana w `content/artworks.json`: stałe ID, kolejność, reprodukcja w `img/eraN_<epoka>/`, plansza i podgląd w `img/puzzles/`, teksty PL/EN, źródło z licencją i status recenzji. `npm run content:validate` sprawdza manifest.
+- **Plansze** generuje `tools/pixel-engine/` (Python, K-Means w CIELAB, proporcje obrazu, 6–10 kolorów): `npm run content:puzzles`. Kod pochodzi z repozytorium `wojgww/image_generation` i jest dołączony z historią.
 
 | Obszar | Pliki |
 | --- | --- |
 | Nawigacja i sceny | `src/components/HeritageApp.tsx`, `GameViewport.tsx`, `src/hooks/useSceneNavigation.ts` |
 | Pracownia kolorowania | `src/components/HeritageGame.tsx`, `coloring-canvas.tsx`, `src/lib/coloring.ts` |
-| Epoki, kolekcja, hol | `src/data/eras.ts`, `src/data/halls.ts` |
+| Epoki, kolekcja, hol | `content/artworks.json`, `src/data/eras.ts`, `src/data/halls.ts` |
 | Rozwój pokoju i dekoracje | `src/lib/room-development.ts`, `src/data/room-decorations.ts`, `RoomDecorations.tsx` |
 | Biblioteka i ściany | `src/components/ArtworkLibrary.tsx`, `src/lib/wall-gallery.ts` |
 | Zapis i ustawienia | `src/store/useGameStore.ts` (klucz `heritage-hearth-ui-v1`) |
@@ -44,7 +44,7 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 
 ## CI i wdrożenie
 
-`.github/workflows/ci.yml` uruchamia lint, typecheck, testy, build i Playwright dla każdego PR i pusha na `main`. Wdrożenie prowadzi Vercel podłączony do repozytorium: `main` trafia na produkcję, a pull requesty dostają podglądy.
+`.github/workflows/ci.yml` uruchamia lint, typecheck, testy (w tym walidację treści), build, Playwright i testy generatora plansz dla każdego PR i pusha na `main`. Wdrożenie prowadzi Vercel podłączony do repozytorium: `main` trafia na produkcję, a pull requesty dostają podglądy.
 
 ## Dokumentacja
 
@@ -52,6 +52,8 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 | --- | --- |
 | [`docs/14_PLAN_ROZWOJU.md`](./docs/14_PLAN_ROZWOJU.md) | **Plan rozwoju po hackathonie**: diagnoza, decyzje, fazy 0–4 |
 | [`AI_MEMORY.md`](./AI_MEMORY.md) | Aktualne reguły i decyzje dla ludzi i agentów AI |
+| [`docs/15_RECENZJA_TRESCI.md`](./docs/15_RECENZJA_TRESCI.md) | Recenzja treści: instrukcja, uwagi i tabela 83 dzieł ze źródłami |
+| [`docs/16_PROMPT_POPRAWKI_I_FAZA_3.md`](./docs/16_PROMPT_POPRAWKI_I_FAZA_3.md) | Gotowy prompt dla agenta: poprawki po fazach 0–2 i Faza 3 |
 | [`docs/10_FRONTEND_V1.md`](./docs/10_FRONTEND_V1.md) | Szczegóły frontendu, grafik i integracji kolorowania |
 | [`docs/13_ROOM_DECORATIONS.md`](./docs/13_ROOM_DECORATIONS.md) | Dekoracje pokojów, poziomy i źródła |
 | [`docs/07_CURRENT_PROJECT_PLAN.md`](./docs/07_CURRENT_PROJECT_PLAN.md) | Decyzje produktowe z hackathonu (ekrany, reguły progresji) |

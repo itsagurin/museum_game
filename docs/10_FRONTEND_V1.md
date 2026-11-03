@@ -1,5 +1,7 @@
 # Frontend v1 — uruchomienie, grafiki i integracja
 
+> **Aktualizacja 3.11.2026 (faza 2):** kolekcję opisuje teraz `content/artworks.json` (stałe ID, teksty PL/EN, źródła), a plansze v2 leżą w `img/puzzles/` i powstają w `tools/pixel-engine`. Fragmenty poniżej o katalogach `img/eraN_*_kolorowanie/`, plikach `artworks_qa.json` / `artworks_curiosities.json`, dopasowaniu po nazwie pliku i siatkach 32×32 opisują stan z hackathonu. Aktualne reguły: `AI_MEMORY.md`.
+
 ## Zakres
 
 Działająca gra mobile-first na całym ekranie: dom z zewnątrz, hol i cztery pokoje, animowane przejścia, header i kontrolki glass nałożone na scenę, PL domyślnie / EN, pięć obrazów w każdym pokoju, kartki otwierające historię i ciekawostkę. Nawigacja obsługuje przycisk wstecz przeglądarki i bezpośrednie adresy `/#hall`, `/#era-1`–`/#era-4` oraz `/#library`.

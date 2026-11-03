@@ -6,14 +6,13 @@
 
 - Pełnoekranowa gra mobile-first: dom z zewnątrz → hol z czterema drzwiami → pokoje epok I–IV (Oświecenie, Romantyzm, Pozytywizm, Młoda Polska) → pracownia kolorowania.
 - Nieukończony obraz to przetarta kartka z czerwonym krzyżykiem (`blank_paper_crossmark.jpg`). Po ukończeniu planszy odsłania się zachowana reprodukcja (nie rekonstrukcja z pikseli), a karta pokazuje ciekawostkę.
-- Polski domyślnie, przełącznik EN. Treści dzieł są na razie tylko po polsku (`contentLanguage: "pl"`).
+- Polski domyślnie, przełącznik EN. Tytuły, opisy i ciekawostki mają szkic tłumaczenia EN (`review.translation: "draft"`); brakujące EN wraca do polskiego tekstu oznaczonego `lang="pl"`.
 - Lokalny zapis wystarcza; bez kont i backendu, dopóki plan tego nie zmieni.
 
 ## Reguły, których nie wolno łamać
 
-- **Siatki 32×32 i palety z JSON-ów są nienaruszalne** w aplikacji. Nie przeliczaj ich do 20×20 i nie zmieniaj kolorów. Zmiany plansz robi generator.
-- **ID dzieł zależą od ścieżki pliku** w `img/eraN_<epoka>/` (`eras.ts`). Zmiana nazwy pliku bez migracji kasuje ukończenia i obsadę ścian graczy. Pięć dawnych reprodukcji ma ID z `legacyCatalogIds`.
-- Metadane i ciekawostki dopasowujemy po dokładnym `filename` (bez prefiksu `assets/artworks/`), nigdy po numerze ani kolejności. `01_01 copy.jpg` to osobne dzieło.
+- **Plansze generuje `tools/pixel-engine`** (`npm run content:puzzles`): v2 zachowuje proporcje obrazu (dłuższy bok 32 pola) i ma 6–10 kolorów. Aplikacja nie zmienia siatek ani palet. Nowa plansza unieważnia rozpoczęty obraz (`gridSignature`), ukończenia zostają.
+- **Jedno źródło prawdy: `content/artworks.json`.** Stałe ID (slugi), kolejność w epoce, ścieżki do reprodukcji/planszy/podglądu, teksty PL/EN, źródło z licencją i status recenzji. Stare ID z czasów hackathonu są w `legacyIds` i mapowane przy wczytaniu zapisu (`legacyArtworkIds`), więc nazwy plików można zmieniać, aktualizując manifest. Walidacja: `npm run content:validate`.
 - **Progresja pokoju:** poziomy 0–9 z nieliniowych progów `getLevelThresholds` (`src/lib/room-development.ts`): pierwszy obraz daje poziom 1, poziom 9 wymaga całej kolekcji epoki. Ponowne ukończenie nic nie przyznaje.
 - **Blokady epok:** epoka I otwarta; każda następna otwiera się po poziomie `ERA_UNLOCK_LEVEL` (3) w poprzedniej (`getEraAccess`). Dotyczy holu, drzwi w pokojach, przełącznika epok, adresów `/#era-N` (przekierowanie do holu) i biblioteki. Ustawienie `exploreAll` („Otwórz wszystkie epoki”) zdejmuje blokady.
 - **Kamienie milowe** (nowa epoka, ukończona epoka, finał) pokazują się po zamknięciu karty obrazu. Stan jest zapisany wcześniej; okna tylko go prezentują.

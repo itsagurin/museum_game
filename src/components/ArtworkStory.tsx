@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen, ChevronDown, ImageOff, Paintbrush, Sparkles } fro
 import { copy } from "@/data/copy";
 import { getEra } from "@/data/eras";
 import type { Artwork, Language } from "@/types/game";
+import { ArtworkSourceNote } from "./ArtworkSourceNote";
 
 export function ArtworkStory({ artwork, language, completed, onRestore, onClose }: {
   artwork: Artwork;
@@ -15,6 +16,7 @@ export function ArtworkStory({ artwork, language, completed, onRestore, onClose 
 }) {
   const [imageFailed, setImageFailed] = useState(false);
   const t = copy[language];
+  const contentLanguage = artwork.untranslated && language === "en" ? "pl" : undefined;
 
   return (
     <div className="artwork-discovery">
@@ -37,12 +39,13 @@ export function ArtworkStory({ artwork, language, completed, onRestore, onClose 
       </div>
       <div className="fun-fact">
         <Sparkles size={18} aria-hidden="true" />
-        <p lang={artwork.contentLanguage}>{artwork.funFact?.[language] || t.emptyFact}</p>
+        <p lang={contentLanguage}>{artwork.funFact?.[language] || t.emptyFact}</p>
       </div>
       <details className="story-history">
         <summary><BookOpen size={16} aria-hidden="true" />{t.story}<ChevronDown size={16} aria-hidden="true" /></summary>
-        {artwork.style && <p className="story-style" lang={artwork.contentLanguage}>{artwork.style}</p>}
-        <p className="story-body" lang={artwork.contentLanguage}>{artwork.story?.[language] || t.emptyStory}</p>
+        {artwork.style && <p className="story-style" lang={contentLanguage}>{artwork.style[language]}</p>}
+        <p className="story-body" lang={contentLanguage}>{artwork.story?.[language] || t.emptyStory}</p>
+        <ArtworkSourceNote artwork={artwork} language={language} />
       </details>
       <div className="story-actions">
         {artwork.coloringArtworkId && onRestore && (

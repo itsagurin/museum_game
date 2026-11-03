@@ -1230,3 +1230,13 @@ img {
   object-fit: cover;
   border-radius: 14px;
 }
+.artwork-source {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.artwork-source a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
