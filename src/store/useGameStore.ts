@@ -12,6 +12,8 @@ interface GameState {
   language: Language;
   gentleMotion: boolean;
   highContrast: boolean;
+  musicEnabled: boolean; musicVolume:number; brushSounds:boolean;
+  toggleMusic:()=>void; setMusicVolume:(volume:number)=>void; toggleBrushSounds:()=>void;
   tutorialSeen: boolean;
   dailyHistory: string[];
   dailySelection: {dateKey: string; artworkId: string} | null;
@@ -39,6 +41,10 @@ export const useGameStore = create<GameState>()(
       language: "pl",
       gentleMotion: false,
       highContrast: typeof window !== "undefined" && window.matchMedia("(prefers-contrast: more)").matches,
+      musicEnabled:false,musicVolume:.35,brushSounds:true,
+      toggleMusic:()=>set(state=>({musicEnabled:!state.musicEnabled})),
+      setMusicVolume:volume=>{if(Number.isFinite(volume))set({musicVolume:Math.max(0,Math.min(1,volume))});},
+      toggleBrushSounds:()=>set(state=>({brushSounds:!state.brushSounds})),
       tutorialSeen: false,
       dailyHistory: [], dailySelection: null,
       selectDailyArtwork: (dateKey,artworkId) => {
@@ -78,11 +84,12 @@ export const useGameStore = create<GameState>()(
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, dailyHistory, dailySelection, gentleMotion, highContrast, tutorialSeen, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
+      partialize: ({ language, musicEnabled, musicVolume, brushSounds, dailyHistory, dailySelection, gentleMotion, highContrast, tutorialSeen, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
         highContrast,
         tutorialSeen,
+        musicEnabled,musicVolume,brushSounds,
         dailyHistory,
         dailySelection,
         autoFill,
@@ -104,6 +111,9 @@ export const useGameStore = create<GameState>()(
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
           highContrast: typeof saved.highContrast === "boolean" ? saved.highContrast : current.highContrast,
+          musicEnabled:saved.musicEnabled===true,
+          musicVolume:typeof saved.musicVolume === "number" && Number.isFinite(saved.musicVolume) ? Math.max(0,Math.min(1,saved.musicVolume)) : .35,
+          brushSounds:saved.brushSounds!==false,
           tutorialSeen: saved.tutorialSeen === true,
           dailyHistory: normalizeDailyHistory(saved.dailyHistory),
           dailySelection: (() => {

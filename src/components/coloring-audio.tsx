@@ -1,5 +1,6 @@
 'use client';
 
+import { useGameStore } from '@/store/useGameStore';
 import { useEffect } from 'react';
 import { useIsPresent } from 'framer-motion';
 import { coloringSoundEvent, type ColoringSound } from '@/lib/audio';
@@ -7,8 +8,9 @@ import { coloringSoundEvent, type ColoringSound } from '@/lib/audio';
 /** Only the two selected painting effects; scoped to the open studio. */
 export function ColoringAudio() {
   const present = useIsPresent();
+  const brushSounds = useGameStore(state=>state.brushSounds);
   useEffect(() => {
-    if (!present) return;
+    if (!present || !brushSounds) return;
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
     const makeAudio = (file: string, volume: number) => {
       const audio = new Audio(`${basePath}/audio/${file}`);
@@ -50,6 +52,6 @@ export function ColoringAudio() {
         audio.load();
       });
     };
-  }, [present]);
+  }, [present,brushSounds]);
   return null;
 }

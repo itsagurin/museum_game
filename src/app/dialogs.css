@@ -314,3 +314,5 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+.music-credits { font-size:12px; line-height:1.6; }.music-credits ul { padding-left:18px; }.music-credits li { margin:8px 0; }.music-credits a { color:#6d3c2d; text-decoration:underline; }

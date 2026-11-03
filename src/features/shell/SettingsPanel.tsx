@@ -6,11 +6,12 @@ import { Check } from "lucide-react";
 import { useState } from "react";
 import { useGameStore } from "@/store/useGameStore";
 
-export function SettingsPanel({ language, storageUnavailable, onReset }: {
+export function SettingsPanel({ language, storageUnavailable, onReset, onInfo }: {
+  onInfo:()=>void;
   language: Language; storageUnavailable: boolean; onReset: () => void;
 }) {
   const t = copy[language];
-  const { setLanguage, highContrast, toggleHighContrast, gentleMotion, toggleGentleMotion, autoFill, toggleAutoFill, exploreAll, toggleExploreAll } = useGameStore();
+  const { setLanguage, musicEnabled, musicVolume, brushSounds, toggleMusic, setMusicVolume, toggleBrushSounds, highContrast, toggleHighContrast, gentleMotion, toggleGentleMotion, autoFill, toggleAutoFill, exploreAll, toggleExploreAll } = useGameStore();
   const [resetConfirm, setResetConfirm] = useState(false);
   return (<>
                   <p className="dialog-intro">{t.preferences}</p>
@@ -75,6 +76,10 @@ export function SettingsPanel({ language, storageUnavailable, onReset }: {
                     <span>{t.highContrast}</span>
                     <button role="switch" aria-label={t.highContrast} aria-checked={highContrast} className={`toggle ${highContrast ? "on" : ""}`} onClick={toggleHighContrast}><span /></button>
                   </div>
+                  <div className="setting-row"><span>{t.music}</span><button role="switch" aria-label={t.music} aria-checked={musicEnabled} className={`toggle ${musicEnabled ? "on" : ""}`} onClick={toggleMusic}><span/></button></div>
+                  <label className="setting-row"><span>{t.musicVolume}</span><input type="range" min="0" max="100" step="5" value={Math.round(musicVolume*100)} aria-label={t.musicVolume} onChange={event=>setMusicVolume(Number(event.target.value)/100)}/></label>
+                  <div className="setting-row"><span>{t.brushSounds}</span><button role="switch" aria-label={t.brushSounds} aria-checked={brushSounds} className={`toggle ${brushSounds ? "on" : ""}`} onClick={toggleBrushSounds}><span/></button></div>
+                  <button className="secondary-button full-width" onClick={onInfo}>{t.info}</button>
                   <p className="save-note">
                     <Check size={14} />
                     {storageUnavailable ? t.savedError : t.saved}
