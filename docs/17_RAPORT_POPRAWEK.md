@@ -65,6 +65,10 @@ Pobrane PNG mają dokładnie 1080×1350 (karta) i 1754×1240 (certyfikat). Spraw
 
 Zestaw pięciu wykonań CC0 został zatwierdzony w rozmowie. Faktyczne długości, bitrate i rozmiary potwierdzono ffprobe: 10 572 599 bajtów łącznie, największy plik 2 458 270 bajtów. Vitest: 66; pełne e2e 144 zaliczone / 6 pominiętych; DEV 6. Muzyka domyślnie wyłączona, wymaga gestu i zatrzymuje się w tle.
 
+## B6: analityka gotowa do późniejszej aktywacji
+
+Użytkownik zdecydował pozostawić integrację bez produkcyjnej konfiguracji. Vercel custom events wymaga Pro/Enterprise; planu ani usługi nie zmieniano. Testy: 70 Vitest, 152 e2e zaliczone / 6 pominiętych, DEV 6. Adapter w sześciu testach lokalnych przechwytuje skrypt i żądania; sprawdza brak danych bez konfiguracji i po opt-out, dozwolone właściwości i czyszczenie URL. Axe obejmuje również okno informacji: 22 skany bez serious/critical.
+
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.

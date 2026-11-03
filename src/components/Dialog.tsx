@@ -24,6 +24,8 @@ export function Dialog({
 }: DialogProps) {
   const ref = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  const closeHandler = useRef(onClose);
+  useEffect(() => {closeHandler.current=onClose;},[onClose]);
   const present = useIsPresent();
   const reduced = useReducedMotion() || gentle;
   useEffect(() => {
@@ -36,7 +38,7 @@ export function Dialog({
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        onClose();
+        closeHandler.current();
       }
       if (event.key !== "Tab") return;
       const elements = Array.from(ref.current?.querySelectorAll<HTMLElement>(
@@ -44,6 +46,7 @@ export function Dialog({
       ) || []).filter((element) => element.getClientRects().length > 0);
       if (!elements?.length) return;
       const first = elements[0];
+      if(!ref.current?.contains(document.activeElement)){event.preventDefault();first.focus();return;}
       const last = elements[elements.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
@@ -59,7 +62,11 @@ export function Dialog({
       document.removeEventListener("keydown", handleKey);
       if (dialogElement?.contains(document.activeElement)) previousFocus?.focus();
     };
-  }, [onClose, present]);
+  }, [present]);
+
+  useEffect(() => {
+    if(present && !ref.current?.contains(document.activeElement)) ref.current?.querySelector<HTMLButtonElement>("button")?.focus();
+  },[title,present]);
 
   return createPortal(
     <motion.div

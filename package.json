@@ -35,6 +35,7 @@
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/dm-sans": "^5.2.0",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "14.1.0",
     "lucide-react": "^1.55.0",
     "next": "^16.4.4",

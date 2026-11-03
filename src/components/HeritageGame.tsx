@@ -10,6 +10,8 @@ import type { ColoringArtwork } from "@/lib/coloring";
 import { gridSignature } from "@/lib/painting-progress";
 import { usePaintingProgress } from "@/store/usePaintingProgress";
 import type { RestoreArtworkRequest } from "@/types/game";
+import { AnalyticsController } from "@/features/shell/AnalyticsController";
+import { usePaintingTelemetry } from "@/features/painting/usePaintingTelemetry";
 import { MusicController } from "@/features/shell/MusicController";
 import { HeritageApp } from "./HeritageApp";
 import { ColoringCanvas } from "./coloring-canvas";
@@ -46,6 +48,7 @@ function ColoringStudio({ request, onComplete }: {
   useEffect(() => {
     if (board) usePaintingProgress.getState().load(artworkId, board.signature, board.total);
   }, [artworkId, board]);
+  const {paint:trackPainted,complete:trackComplete} = usePaintingTelemetry(request.artwork,board?.total ?? 0,initialPainted.length,completed.length===0);
   const pendingCells = useRef<number[] | null>(null);
   const saveTimer = useRef<number | null>(null);
   const finished = useRef(false);
@@ -57,10 +60,11 @@ function ColoringStudio({ request, onComplete }: {
     pendingCells.current = null;
   }, [artworkId, board]);
   const savePainted = useCallback((cellIds: number[]) => {
+    trackPainted(cellIds);
     pendingCells.current = cellIds;
     // Strokes arrive many times per second; one write per pause is enough.
     if (saveTimer.current === null) saveTimer.current = window.setTimeout(flush, 800);
-  }, [flush]);
+  }, [flush,trackPainted]);
   useEffect(() => {
     window.addEventListener("pagehide", flush);
     return () => {
@@ -102,6 +106,7 @@ function ColoringStudio({ request, onComplete }: {
           onPaintedChange={savePainted}
           onComplete={() => {
             // A finished board is recorded as completed; its cells are no longer needed.
+            trackComplete();
             useGameStore.getState().markTutorialSeen();
             finished.current = true;
             pendingCells.current = null;
@@ -146,6 +151,7 @@ export function HeritageGame() {
     <>
       <HeritageApp onRestoreArtwork={setRequest} />
       <MusicController studioEra={request?.artwork.eraId} />
+      <AnalyticsController />
       <AnimatePresence>
         {request && (
           <Dialog title={request.artwork.title[language]} closeLabel={t.returnRoom} onClose={closeStudio} gentle={gentleMotion} variant="coloring">

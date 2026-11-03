@@ -9,6 +9,8 @@ describe("save compatibility", () => {
     const entry = content[1], slot = wallSlots[0];
     const saved = {completedArtworkIds: [entry.legacyIds[0]], wallAssignments: {[slot.id]:entry.legacyIds[0]}};
     const merged = useGameStore.persist.getOptions().merge!(saved, useGameStore.getState());
+    expect(merged.analyticsEnabled).toBe(true);
+    expect(merged.firstPlayedAt).toBeNull();
     expect(merged.musicEnabled).toBe(false);
     expect(merged.musicVolume).toBe(.35);
     expect(merged.brushSounds).toBe(true);

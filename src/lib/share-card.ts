@@ -1,3 +1,4 @@
+import { track } from "./analytics";
 import { copy } from "@/data/copy";
 import { getEra } from "@/data/eras";
 import { loadColoringArtwork } from "@/data/coloring-library";
@@ -84,9 +85,10 @@ export async function renderCertificate(count:number,language:Language,name="",d
 export async function deliverPng(blob:Blob,filename:string):Promise<"share"|"download"|null> {
   const file=new File([blob],filename,{type:"image/png"});
   if(navigator.share && navigator.canShare?.({files:[file]})) {
-    try {await navigator.share({files:[file]});return "share";} catch(error) {if(error instanceof DOMException && error.name==="AbortError")return null;}
+    try {await navigator.share({files:[file]});void track("share",{kind:filename==="dziedzictwo-certificate.png" ? "certificate" : "card",method:"share"});return "share";} catch(error) {if(error instanceof DOMException && error.name==="AbortError")return null;}
   }
   const url=URL.createObjectURL(file),link=document.createElement("a");link.href=url;link.download=filename;
   document.body.append(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+  void track("share",{kind:filename==="dziedzictwo-certificate.png" ? "certificate" : "card",method:"download"});
   return "download";
 }

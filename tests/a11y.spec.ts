@@ -1,16 +1,18 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 import { seedGame } from "./helpers/game-state";
+import { copy } from "../src/data/copy";
 import { artworks } from "../src/data/eras";
 import { fillCanvas } from "./helpers/catalog-coloring";
 
-for (const scene of ["home","hall","era-1","studio","library","album","detail","settings","locked","milestone"]) {
+for (const scene of ["home","hall","era-1","studio","library","album","detail","settings","info","locked","milestone"]) {
   test(`WCAG 2.2 AA: ${scene}`, async ({page},info) => {
     await page.emulateMedia({reducedMotion:"reduce"});
     if(scene !== "locked") await seedGame(page, scene === "milestone" ? {exploreAll:false,completedArtworkIds:artworks.filter(a=>a.eraId==="era-1" && a.id!==artworks[0].id).map(a=>a.id)} : {});
-    const hash = ["studio","milestone"].includes(scene) ? "era-1" : ["settings"].includes(scene) ? "home" : scene === "locked" ? "hall" : ["detail","album"].includes(scene) ? "library" : scene;
+    const hash = ["studio","milestone"].includes(scene) ? "era-1" : ["settings","info"].includes(scene) ? "home" : scene === "locked" ? "hall" : ["detail","album"].includes(scene) ? "library" : scene;
     await page.goto(`/#${hash}`);
     await expect(page.locator(".site-header")).toBeVisible();
+    if(scene === "info") { await page.getByRole("button",{name:copy.pl.settings,exact:true}).click();await page.getByRole("dialog").getByRole("button",{name:copy.pl.info,exact:true}).click(); }
     if(scene === "settings") await page.getByRole("button",{name:"Ustawienia",exact:true}).click();
     if(scene === "locked") await page.locator('.hall-door-hit[data-era="era-2"]').click();
     if(scene === "album") await page.getByRole("button",{name:"Album",exact:true}).click();

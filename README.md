@@ -80,3 +80,7 @@ Obraz dnia na ekranie domu wybiera nieukończone dzieło z otwartych epok i zach
 Ukończone dzieło ma przycisk „Udostępnij”, a finał certyfikat PNG z opcjonalnym imieniem. Oba pliki powstają lokalnie na canvas, z fontami gry; bez wysyłania obrazu ani imienia na serwer. Brak Web Share powoduje pobranie. Reguły tekstu i eksportu: `src/lib/share-card.ts`.
 
 Muzyka: pięć zatwierdzonych nagrań CC0, razem ok. 10,6 MB; domyślnie wyłączona. Ustawienia pozwalają sterować muzyką, głośnością i osobno efektami pędzla. Nagrania i licencje: `content/audio.json`, wybór: `docs/19_MUZYKA_PROPOZYCJE.md`. Przenikanie dwóch kanałów trwa 1,5 s; muzyka pauzuje po ukryciu karty i jest ciszej w pracowni. Audio nie trafia do cache PWA.
+
+## Statystyki (gotowe do późniejszej aktywacji)
+
+Integracja Vercel jest domyślnie nieaktywna bez konfiguracji. Właściciel z planem Pro/Enterprise może włączyć Web Analytics i ustawić zmienne z `.env.example`; ta praca nie aktywuje usługi ani płatnego planu. Preferencja gracza pozwala wyłączyć statystyki. Wysyłane mogą być wyłącznie enumy i flagi gry, bez imienia certyfikatu i wolnego tekstu. Definicje, budżety czasów i ograniczenia retencji: `docs/18_METRYKI.md`. Testy `tests/analytics.spec.ts` przechwytują dostawcę lokalnie.
