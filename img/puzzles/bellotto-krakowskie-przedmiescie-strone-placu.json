@@ -5,32 +5,38 @@
     {
       "id": 1,
       "hex": "#1F2F35",
-      "name": "Ciemny antracyt"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 2,
       "hex": "#494B3F",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 3,
       "hex": "#6C6043",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 4,
       "hex": "#8A693E",
-      "name": "Ciemna sepia"
+      "name": "Brunatny orzech",
+      "nameEn": "Walnut brown"
     },
     {
       "id": 5,
       "hex": "#A29A6C",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 6,
       "hex": "#A5B9AC",
-      "name": "Srebrzysty szary"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     }
   ],
   "grid": {

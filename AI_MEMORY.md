@@ -36,3 +36,6 @@
 - Sceny: `src/features/scenes/`; nagłówek i panele: `src/features/shell/`; hooki progresji: `src/features/progression/`. `HeritageApp` tylko je składa. Komponenty mają do 300 linii.
 - CSS obszarów jest importowany z `layout.tsx`: globals → shell → scenes → room → dialogs → progress → coloring → library → decorations. Po zmianie kaskady porównaj telefon i desktop.
 - E2E eksportu uruchamiaj na osobnym porcie (`PLAYWRIGHT_PORT=3102`), a DEV na 3000. Równoczesne przebiegi wymagają osobnych `--output`, inaczej Playwright usuwa raport drugiego przebiegu. Nie buduj i nie edytuj źródeł podczas testów DEV (HMR przeładowuje karty).
+
+- A2: przed wczytaniem obu magazynów pokazujemy neutralne tło z `aria-busy`; hash jest źródłem widoku przez `useSyncExternalStore`. `noscript` zachowuje wyśrodkowany dom dla przeglądarek bez JS. Nawigacja zachowuje metadane historii Next.
+- A4–A5: plansze v2 mają unikalne nazwy `name` PL / `nameEn` EN. Manifest zawiera `puzzleVersion` zgodne z FNV-1a `gridSignature`; merge odrzuca niezgodne postępy, ale zachowuje ukończenia i ściany. Same nazwy nie zmieniają sygnatury. Zestaw sygnatur Fazy 2 chroni 83 siatki i palety przed przypadkową zmianą.

@@ -51,6 +51,23 @@ def write_report(path: Path, root: Path, results: list) -> None:
     )
 
 
+def grid_signature(board: dict) -> str:
+    """Match the unsigned 32-bit FNV-1a sequence used by painting-progress.ts."""
+    values = [board["grid"]["width"], board["grid"]["height"]]
+    values.extend(value for row in board["grid"]["data"] for value in row)
+    for color in board["palette"]:
+        values.extend([color["id"], int(color["hex"][1:], 16)])
+    value = 0x811C9DC5
+    for item in values:
+        value = ((value ^ item) * 0x01000193) & 0xFFFFFFFF
+    alphabet = "0123456789abcdefghijklmnopqrstuvwxyz"
+    result = ""
+    while value:
+        value, remainder = divmod(value, 36)
+        result = alphabet[remainder] + result
+    return result or "0"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--root", default="../..", help="Game repository root")
@@ -65,12 +82,14 @@ def main() -> None:
     for entry in selected:
         with Image.open(root / "img" / entry["image"]) as image:
             board = build_board(image, entry["id"])
+        entry["puzzleVersion"] = grid_signature(board)
         puzzle = root / "img" / entry["puzzle"]
         puzzle.parent.mkdir(parents=True, exist_ok=True)
         puzzle.write_text(to_json(board), encoding="utf-8")
         render_preview(board).save(root / "img" / entry["preview"], optimize=True)
         results.append((entry, board))
         print(f'{entry["id"]}: {board["grid"]["width"]}x{board["grid"]["height"]}, {len(board["palette"])} colors')
+    (root / "content" / "artworks.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.report:
         write_report(Path(args.report).resolve(), root, results)
         print(f"Report: {Path(args.report).resolve()}")

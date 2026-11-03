@@ -118,52 +118,52 @@ def lab_to_rgb(lab_array: np.ndarray) -> np.ndarray:
 
 # Rich Polish artistic and cultural color reference palette
 POLISH_ART_COLOR_REFERENCE = [
-    ("#7A141A", "Czerwień szkarłatna"),
-    ("#8B0000", "Głęboki karmin"),
-    ("#B22222", "Ceglasta czerwień"),
-    ("#CD5C5C", "Rdzawy koral"),
-    ("#1F1A24", "Czerń nocy"),
-    ("#121212", "Czerń węglowa"),
-    ("#2F4F4F", "Grafit bazaltowy"),
-    ("#3B3B3B", "Ciemny antracyt"),
-    ("#5A5A5A", "Szary stalowy"),
-    ("#808080", "Średni popiel"),
-    ("#C0C0C0", "Srebrzysty szary"),
-    ("#E3D5C5", "Kremowy pergamin"),
-    ("#F5F5DC", "Kość słoniowa"),
-    ("#FFF8DC", "Jasny alabaster"),
-    ("#FFFFFF", "Biel antyczna"),
-    ("#C69C55", "Złoto wawelskie"),
-    ("#DAA520", "Złoty ugier"),
-    ("#B8860B", "Stare złoto"),
-    ("#D4AF37", "Czyste złoto"),
-    ("#F4A460", "Ciepły piaskowiec"),
-    ("#D2B48C", "Jasna terakota"),
-    ("#8B4513", "Mahoń królewski"),
-    ("#4B2E1E", "Ciemny brąz ziemisty"),
-    ("#654321", "Ciemna sepia"),
-    ("#A0522D", "Brunatny orzech"),
-    ("#002366", "Błękit pruski"),
-    ("#191970", "Granat wawelski"),
-    ("#4682B4", "Stalowy błękit"),
-    ("#5F9EA0", "Morski lazur"),
-    ("#87CEEB", "Błękit nieba"),
-    ("#B0E0E6", "Jasny kobalt"),
-    ("#1B4D3E", "Zieleń butelkowa"),
-    ("#2E8B57", "Zieleń mchowa"),
-    ("#556B2F", "Oliwka leśna"),
-    ("#6B8E23", "Zieleń polna"),
-    ("#8FBC8F", "Jasna szałwia"),
-    ("#4A0E4E", "Biskupia purpura"),
-    ("#800080", "Ciemny fiolet"),
-    ("#DDA0DD", "Liliowy pastel"),
-    ("#FF8C00", "Ciemny bursztyn"),
-    ("#FFA500", "Ciepły bursztyn"),
-    ("#FFD700", "Słoneczna żółć"),
+    ("#7A141A", "Czerwień szkarłatna", "Scarlet red"),
+    ("#8B0000", "Głęboki karmin", "Deep carmine"),
+    ("#B22222", "Ceglasta czerwień", "Brick red"),
+    ("#CD5C5C", "Rdzawy koral", "Rusty coral"),
+    ("#1F1A24", "Czerń nocy", "Night black"),
+    ("#121212", "Czerń węglowa", "Charcoal black"),
+    ("#2F4F4F", "Grafit bazaltowy", "Basalt graphite"),
+    ("#3B3B3B", "Ciemny antracyt", "Dark anthracite"),
+    ("#5A5A5A", "Szary stalowy", "Steel grey"),
+    ("#808080", "Średni popiel", "Ash grey"),
+    ("#C0C0C0", "Srebrzysty szary", "Silver grey"),
+    ("#E3D5C5", "Kremowy pergamin", "Cream parchment"),
+    ("#F5F5DC", "Kość słoniowa", "Ivory"),
+    ("#FFF8DC", "Jasny alabaster", "Light alabaster"),
+    ("#FFFFFF", "Biel antyczna", "Antique white"),
+    ("#C69C55", "Złoto wawelskie", "Wawel gold"),
+    ("#DAA520", "Złoty ugier", "Golden ochre"),
+    ("#B8860B", "Stare złoto", "Old gold"),
+    ("#D4AF37", "Czyste złoto", "Pure gold"),
+    ("#F4A460", "Ciepły piaskowiec", "Warm sandstone"),
+    ("#D2B48C", "Jasna terakota", "Light terracotta"),
+    ("#8B4513", "Mahoń królewski", "Royal mahogany"),
+    ("#4B2E1E", "Ciemny brąz ziemisty", "Dark earth brown"),
+    ("#654321", "Ciemna sepia", "Dark sepia"),
+    ("#A0522D", "Brunatny orzech", "Walnut brown"),
+    ("#002366", "Błękit pruski", "Prussian blue"),
+    ("#191970", "Granat wawelski", "Wawel navy"),
+    ("#4682B4", "Stalowy błękit", "Steel blue"),
+    ("#5F9EA0", "Morski lazur", "Sea azure"),
+    ("#87CEEB", "Błękit nieba", "Sky blue"),
+    ("#B0E0E6", "Jasny kobalt", "Light cobalt"),
+    ("#1B4D3E", "Zieleń butelkowa", "Bottle green"),
+    ("#2E8B57", "Zieleń mchowa", "Moss green"),
+    ("#556B2F", "Oliwka leśna", "Forest olive"),
+    ("#6B8E23", "Zieleń polna", "Field green"),
+    ("#8FBC8F", "Jasna szałwia", "Light sage"),
+    ("#4A0E4E", "Biskupia purpura", "Bishop purple"),
+    ("#800080", "Ciemny fiolet", "Dark violet"),
+    ("#DDA0DD", "Liliowy pastel", "Pastel lilac"),
+    ("#FF8C00", "Ciemny bursztyn", "Dark amber"),
+    ("#FFA500", "Ciepły bursztyn", "Warm amber"),
+    ("#FFD700", "Słoneczna żółć", "Sunshine yellow"),
 ]
 
 # Precompute LAB for the reference palette for fast lookup
-_REF_RGB = np.array([hex_to_rgb(h) for h, _ in POLISH_ART_COLOR_REFERENCE], dtype=np.float64)
+_REF_RGB = np.array([hex_to_rgb(h) for h, _, _ in POLISH_ART_COLOR_REFERENCE], dtype=np.float64)
 _REF_LAB = rgb_to_lab(_REF_RGB)
 
 
@@ -176,3 +176,20 @@ def get_polish_color_name(r: int, g: int, b: int) -> str:
     distances = np.linalg.norm(_REF_LAB - target_lab, axis=1)
     closest_idx = int(np.argmin(distances))
     return POLISH_ART_COLOR_REFERENCE[closest_idx][1]
+
+
+def name_palette(palette: list, grid: dict) -> list:
+    """Assign bilingual names, reserving the closest unused name for dominant colours first."""
+    counts = {color["id"]: 0 for color in palette}
+    for row in grid["data"]:
+        for value in row:
+            counts[value] += 1
+    unused = set(range(len(POLISH_ART_COLOR_REFERENCE)))
+    names = {}
+    for color in sorted(palette, key=lambda color: (-counts[color["id"]], color["id"])):
+        target = rgb_to_lab(np.array([hex_to_rgb(color["hex"])], dtype=np.float64))[0]
+        index = min(unused, key=lambda index: (float(np.linalg.norm(_REF_LAB[index] - target)), index))
+        unused.remove(index)
+        _, name, name_en = POLISH_ART_COLOR_REFERENCE[index]
+        names[color["id"]] = {**color, "name": name, "nameEn": name_en}
+    return [names[color["id"]] for color in palette]

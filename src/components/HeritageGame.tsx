@@ -31,7 +31,14 @@ function ColoringStudio({ request, onComplete }: {
     signature: gridSignature(painting),
     total: painting.grid.width * painting.grid.height,
   }, [painting]);
-  const initialPainted = useMemo(() => board ? usePaintingProgress.getState().load(artworkId, board.signature, board.total) : [], [artworkId, board]);
+  const initialPainted = useMemo(() => {
+    const saved = usePaintingProgress.getState().paintings[artworkId];
+    return board && saved?.signature === board.signature && saved.total === board.total
+      ? usePaintingProgress.getState().load(artworkId, board.signature, board.total) : [];
+  }, [artworkId, board]);
+  useEffect(() => {
+    if (board) usePaintingProgress.getState().load(artworkId, board.signature, board.total);
+  }, [artworkId, board]);
   const pendingCells = useRef<number[] | null>(null);
   const saveTimer = useRef<number | null>(null);
   const finished = useRef(false);

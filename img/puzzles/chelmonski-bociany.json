@@ -5,37 +5,44 @@
     {
       "id": 1,
       "hex": "#503722",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 2,
       "hex": "#57531F",
-      "name": "Oliwka leśna"
+      "name": "Oliwka leśna",
+      "nameEn": "Forest olive"
     },
     {
       "id": 3,
       "hex": "#6C4F2B",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 4,
       "hex": "#725C4B",
-      "name": "Szary stalowy"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 5,
       "hex": "#61767A",
-      "name": "Średni popiel"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 6,
       "hex": "#9F8157",
-      "name": "Złoto wawelskie"
+      "name": "Złoto wawelskie",
+      "nameEn": "Wawel gold"
     },
     {
       "id": 7,
       "hex": "#868C83",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     }
   ],
   "grid": {

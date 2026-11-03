@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#3A3028",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 2,
       "hex": "#5D3B31",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 3,
       "hex": "#645947",
-      "name": "Szary stalowy"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 4,
       "hex": "#606869",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 5,
       "hex": "#87795F",
-      "name": "Średni popiel"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 6,
       "hex": "#909797",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 7,
       "hex": "#76A2DD",
-      "name": "Stalowy błękit"
+      "name": "Stalowy błękit",
+      "nameEn": "Steel blue"
     },
     {
       "id": 8,
       "hex": "#A7C4EA",
-      "name": "Błękit nieba"
+      "name": "Błękit nieba",
+      "nameEn": "Sky blue"
     },
     {
       "id": 9,
       "hex": "#CAC4B5",
-      "name": "Kremowy pergamin"
+      "name": "Kremowy pergamin",
+      "nameEn": "Cream parchment"
     }
   ],
   "grid": {

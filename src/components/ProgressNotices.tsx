@@ -18,7 +18,7 @@ export function EraLockedNotice({ eraName, requiredEra, remaining, language, onG
   onGo: (eraId: EraId) => void;
 }) {
   const t = copy[language];
-  const required = requiredEra ? getEra(requiredEra).name[language] : "";
+  const required = requiredEra ? getEra(requiredEra).inEra[language] : "";
   return (
     <div className="progress-notice">
       <div className="dialog-illustration">

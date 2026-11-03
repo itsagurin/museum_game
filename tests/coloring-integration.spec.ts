@@ -120,6 +120,8 @@ test("English painting and browser back stay connected to room navigation", asyn
   await page.getByRole("button", { name: `${entry.artwork.title.en} — Waiting for colour`, exact: true }).click();
   await expect(page.getByLabel(`Painting: ${entry.artwork.title.en}`, { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Finish your canvas", exact: true })).toBeDisabled();
+  const color = entry.painting.palette[2];
+  await expect(page.getByRole("button", { name: `Colour 3: ${color.nameEn}`, exact: true })).toBeVisible();
   await page.goBack();
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Hall");

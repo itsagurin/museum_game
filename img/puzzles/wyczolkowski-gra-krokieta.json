@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#25262B",
-      "name": "Czerń nocy"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 2,
       "hex": "#422F2D",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 3,
       "hex": "#734139",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 4,
       "hex": "#5F5B56",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 5,
       "hex": "#6A7887",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 6,
       "hex": "#937553",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 7,
       "hex": "#989687",
-      "name": "Średni popiel"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     },
     {
       "id": 8,
       "hex": "#859FAC",
-      "name": "Morski lazur"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 9,
       "hex": "#C9B88A",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     }
   ],
   "grid": {

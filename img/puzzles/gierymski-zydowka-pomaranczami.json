@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#31241C",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 2,
       "hex": "#502F1F",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 3,
       "hex": "#4C4033",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 4,
       "hex": "#525553",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 5,
       "hex": "#715337",
-      "name": "Ciemna sepia"
+      "name": "Brunatny orzech",
+      "nameEn": "Walnut brown"
     },
     {
       "id": 6,
       "hex": "#976713",
-      "name": "Stare złoto"
+      "name": "Stare złoto",
+      "nameEn": "Old gold"
     },
     {
       "id": 7,
       "hex": "#757774",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 8,
       "hex": "#8F9A9F",
-      "name": "Średni popiel"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 9,
       "hex": "#CBCCC2",
-      "name": "Srebrzysty szary"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     }
   ],
   "grid": {

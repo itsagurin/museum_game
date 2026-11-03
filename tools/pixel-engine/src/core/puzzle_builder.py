@@ -13,7 +13,7 @@ import numpy as np
 from PIL import Image
 from sklearn.cluster import KMeans
 
-from src.core.color_utils import get_polish_color_name, lab_to_rgb, rgb_to_hex, rgb_to_lab
+from src.core.color_utils import get_polish_color_name, name_palette, lab_to_rgb, rgb_to_hex, rgb_to_lab
 
 SCHEMA_VERSION = 2
 
@@ -108,12 +108,15 @@ def build_board(image: Image.Image, artwork_id: str, settings: BoardSettings = B
         r, g, b = (int(value) for value in colors_rgb[index])
         palette.append({"id": position, "hex": rgb_to_hex(r, g, b), "name": get_polish_color_name(r, g, b)})
 
-    return {
+    result = {
         "schemaVersion": SCHEMA_VERSION,
         "id": artwork_id,
         "grid": {"width": width, "height": height, "data": (rank[grid] + 1).tolist()},
         "palette": palette,
     }
+
+    result["palette"] = name_palette(result["palette"], result["grid"])
+    return result
 
 
 def render_preview(board: Dict[str, Any], cell: int = 8) -> Image.Image:

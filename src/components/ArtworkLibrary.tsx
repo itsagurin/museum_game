@@ -91,7 +91,7 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
                       {getWallArtworks(selected.eraId, assignments).map(({ slot, artwork }) => <option key={slot.id} value={slot.id}>{t.wallSlot} {slot.number} — {artwork.title[language]}</option>)}
                     </select>
                   </label>
-                  {selectedLocked && <p className="library-detail-hint library-locked-hint"><LockKeyhole size={14} />{t.libraryLocked(requiredEra?.name[language] ?? "")}</p>}
+                  {selectedLocked && <p className="library-detail-hint library-locked-hint"><LockKeyhole size={14} />{t.libraryLocked(requiredEra?.inEra[language] ?? "")}</p>}
                   {!completed.includes(selected.id) && !selectedLocked && <p className="library-detail-hint">{t.unpaintedHang}</p>}
                   {hangingIds.has(selected.id) && !alreadyHere && <p className="library-detail-hint">{t.hangingSwap}</p>}
                   <button className="primary-button full-width" disabled={Boolean(alreadyHere) || !targetSlot || selectedLocked} onClick={() => targetSlot && onHang(targetSlot.id, selected)}>{alreadyHere ? t.alreadyHanging : t.hangPainting}<ArrowUpRight size={18} /></button>

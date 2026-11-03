@@ -1,6 +1,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import phase2Signatures from "./phase2-board-signatures.json";
 import { content, eras } from "./eras";
+import { gridSignature } from "../lib/painting-progress";
 import { parseColoringBoard } from "../lib/coloring";
 
 // `npm run content:validate` runs this file; CI runs it with the other unit tests.
@@ -23,6 +25,11 @@ describe("content/artworks.json", () => {
       expect(Math.max(board.grid.width, board.grid.height), entry.id).toBeLessThanOrEqual(48);
       expect(board.palette.length, entry.id).toBeGreaterThanOrEqual(2);
       expect(board.palette.length, entry.id).toBeLessThanOrEqual(10);
+      expect(entry.puzzleVersion, entry.id).toBe(gridSignature(board));
+      expect(gridSignature(board), entry.id).toBe((phase2Signatures as Record<string,string>)[entry.id]);
+      expect(new Set(board.palette.map(color => color.name)).size, entry.id).toBe(board.palette.length);
+      expect(new Set(board.palette.map(color => color.nameEn)).size, entry.id).toBe(board.palette.length);
+      for (const color of board.palette) expect(color.nameEn?.trim(), entry.id).toBeTruthy();
       const used = new Set(board.grid.data.flat());
       for (const color of board.palette) expect(used.has(color.id), `${entry.id} colour ${color.id}`).toBe(true);
     }

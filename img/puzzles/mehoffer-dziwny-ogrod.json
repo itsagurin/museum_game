@@ -5,52 +5,62 @@
     {
       "id": 1,
       "hex": "#0B1928",
-      "name": "Czerń nocy"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 2,
       "hex": "#132B14",
-      "name": "Zieleń butelkowa"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 3,
       "hex": "#0A2751",
-      "name": "Błękit pruski"
+      "name": "Błękit pruski",
+      "nameEn": "Prussian blue"
     },
     {
       "id": 4,
       "hex": "#393825",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 5,
       "hex": "#34451F",
-      "name": "Zieleń butelkowa"
+      "name": "Zieleń butelkowa",
+      "nameEn": "Bottle green"
     },
     {
       "id": 6,
       "hex": "#683E23",
-      "name": "Ciemna sepia"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 7,
       "hex": "#4E5F26",
-      "name": "Oliwka leśna"
+      "name": "Oliwka leśna",
+      "nameEn": "Forest olive"
     },
     {
       "id": 8,
       "hex": "#7B6629",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 9,
       "hex": "#657F2D",
-      "name": "Zieleń polna"
+      "name": "Zieleń polna",
+      "nameEn": "Field green"
     },
     {
       "id": 10,
       "hex": "#B6AC61",
-      "name": "Złoto wawelskie"
+      "name": "Złoto wawelskie",
+      "nameEn": "Wawel gold"
     }
   ],
   "grid": {

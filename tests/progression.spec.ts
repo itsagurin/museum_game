@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { copy } from "../src/data/copy";
 import { artworks } from "../src/data/eras";
 import { ERA_UNLOCK_LEVEL, getLevelThresholds } from "../src/lib/room-development";
-import { catalogPaintings, fillCanvas } from "./helpers/catalog-coloring";
+import { catalogPaintings, fillCanvas, openCatalogStudio } from "./helpers/catalog-coloring";
 import { seedGame } from "./helpers/game-state";
 
 const firstEra = artworks.filter((artwork) => artwork.eraId === "era-1");
@@ -18,8 +18,8 @@ test("a new game opens only the first era and explains every locked entrance", a
   await expect(page.locator(".hall-door-hit.locked")).toHaveCount(3);
   await page.locator('.hall-door-hit[data-era="era-2"]').click();
   const dialog = page.getByRole("dialog");
-  await expect(dialog).toContainText(copy.pl.lockedBody("Romantyzm", "Oświecenie", unlockAt));
-  await dialog.getByRole("button", { name: "Przejdź do epoki Oświecenie", exact: true }).click();
+  await expect(dialog).toContainText(copy.pl.lockedBody("Romantyzm", "w Oświeceniu", unlockAt));
+  await dialog.getByRole("button", { name: copy.pl.lockedGo("w Oświeceniu"), exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Oświecenie");
 
   await page.getByRole("button", { name: "Następna epoka: Romantyzm — zamknięte", exact: true }).click();
@@ -29,14 +29,14 @@ test("a new game opens only the first era and explains every locked entrance", a
   // Typed or bookmarked addresses cannot skip the order, and the redirect stays out of history.
   await page.goto("/#era-3");
   await expect(page).toHaveURL(/#hall$/);
-  await expect(page.getByRole("dialog")).toContainText(copy.pl.lockedBody("Pozytywizm", "Romantyzm", 0));
+  await expect(page.getByRole("dialog")).toContainText(copy.pl.lockedBody("Pozytywizm", "w Romantyzmie", 0));
   await page.keyboard.press("Escape");
 
   await page.goto("/#library");
   await page.getByRole("button", { name: `${romantic.title.pl} — Romantyzm`, exact: true }).click();
   await expect(page.getByRole("button", { name: "Otwórz pracownię", exact: true })).toBeDisabled();
   await expect(page.getByRole("button", { name: "Zawieś w pokoju", exact: true })).toBeDisabled();
-  await expect(page.locator(".library-locked-hint")).toContainText(copy.pl.libraryLocked("Oświecenie"));
+  await expect(page.locator(".library-locked-hint")).toContainText(copy.pl.libraryLocked("w Oświeceniu"));
 });
 
 test(`level ${ERA_UNLOCK_LEVEL} in an era opens the next one with a notice, once`, async ({ page }) => {
@@ -90,4 +90,18 @@ test("exploration mode opens every era from the settings", async ({ page }) => {
   await expect(page.locator(".hall-door-hit.locked")).toHaveCount(0);
   await page.locator('.hall-door-hit[data-era="era-4"]').click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Młoda Polska");
+});
+
+test("undo starts disabled after resuming and becomes available after a new stroke", async ({page}) => {
+  const entry = catalogPaintings[0];
+  await openCatalogStudio(page, entry);
+  await page.locator(".paint-brush").first().click();
+  await page.locator(".pixel-hit.matching").first().press("Enter");
+  await page.keyboard.press("Escape");
+  await page.reload();
+  await openCatalogStudio(page, entry);
+  await expect(page.getByRole("button", {name:"Cofnij",exact:true})).toBeDisabled();
+  await page.locator(".paint-brush").first().click();
+  await page.locator(".pixel-hit.matching:not(.painted)").first().press("Enter");
+  await expect(page.getByRole("button", {name:"Cofnij",exact:true})).toBeEnabled();
 });

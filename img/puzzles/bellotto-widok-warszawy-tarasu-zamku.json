@@ -5,32 +5,38 @@
     {
       "id": 1,
       "hex": "#342A1C",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 2,
       "hex": "#524328",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 3,
       "hex": "#747155",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 4,
       "hex": "#78887D",
-      "name": "Średni popiel"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 5,
       "hex": "#9B8B63",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 6,
       "hex": "#8E9276",
-      "name": "Średni popiel"
+      "name": "Jasna szałwia",
+      "nameEn": "Light sage"
     }
   ],
   "grid": {
