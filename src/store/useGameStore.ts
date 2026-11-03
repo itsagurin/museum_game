@@ -1,53 +1,28 @@
 "use client";
 
 import { create } from "zustand";
-import {
-  persist,
-  createJSONStorage,
-  type StateStorage,
-} from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import { artworks, wallSlots } from "@/data/eras";
 import { normalizeWallAssignments, placeWallArtwork, type WallAssignments } from "@/lib/wall-gallery";
 import type { Language } from "@/types/game";
+import { safeStorage } from "./safe-storage";
 
 interface GameState {
   language: Language;
   gentleMotion: boolean;
   autoFill: boolean;
+  /** Opens every era regardless of progress, e.g. in a classroom or to browse the collection. */
+  exploreAll: boolean;
   completedArtworkIds: string[];
   wallAssignments: WallAssignments;
   setLanguage: (language: Language) => void;
   toggleGentleMotion: () => void;
   toggleAutoFill: () => void;
+  toggleExploreAll: () => void;
   completeArtwork: (id: string) => void;
   setWallArtwork: (slotId: string, artworkId: string) => void;
   resetProgress: () => void;
 }
-
-// Storage restrictions must never prevent navigating the house.
-const safeStorage: StateStorage = {
-  getItem: (name) => {
-    try {
-      return window.localStorage.getItem(name);
-    } catch {
-      return null;
-    }
-  },
-  setItem: (name, value) => {
-    try {
-      window.localStorage.setItem(name, value);
-    } catch {
-      window.dispatchEvent(new Event("heritage:storage-unavailable"));
-    }
-  },
-  removeItem: (name) => {
-    try {
-      window.localStorage.removeItem(name);
-    } catch {
-      /* In-memory state still works. */
-    }
-  },
-};
 
 export const useGameStore = create<GameState>()(
   persist(
@@ -55,12 +30,14 @@ export const useGameStore = create<GameState>()(
       language: "pl",
       gentleMotion: false,
       autoFill: true,
+      exploreAll: false,
       completedArtworkIds: [],
       wallAssignments: normalizeWallAssignments({}, wallSlots, artworks),
       setLanguage: (language) => set({ language }),
       toggleGentleMotion: () =>
         set((state) => ({ gentleMotion: !state.gentleMotion })),
       toggleAutoFill: () => set((state) => ({ autoFill: !state.autoFill })),
+      toggleExploreAll: () => set((state) => ({ exploreAll: !state.exploreAll })),
       completeArtwork: (id) => {
         if (!artworks.some((artwork) => artwork.id === id)) return;
         set((state) => ({
@@ -79,10 +56,11 @@ export const useGameStore = create<GameState>()(
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, gentleMotion, autoFill, completedArtworkIds, wallAssignments }) => ({
+      partialize: ({ language, gentleMotion, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
         autoFill,
+        exploreAll,
         completedArtworkIds,
         wallAssignments,
       }),
@@ -94,6 +72,7 @@ export const useGameStore = create<GameState>()(
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
           autoFill: saved.autoFill !== false,
+          exploreAll: saved.exploreAll === true,
           wallAssignments: normalizeWallAssignments(saved.wallAssignments, wallSlots, artworks),
           completedArtworkIds: Array.isArray(saved.completedArtworkIds)
             ? [...new Set(saved.completedArtworkIds.filter(

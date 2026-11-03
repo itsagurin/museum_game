@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
+import { seedGame } from "./helpers/game-state";
 import curiosities from "../src/data/artworks_curiosities.json" with { type: "json" };
 import metadata from "../src/data/artworks_qa.json" with { type: "json" };
 
@@ -14,13 +15,14 @@ test("painting and curiosity fit the screen before optionally opening the histor
       localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({
         version: 1,
         state: {
-          language: "pl", gentleMotion: true, completedArtworkIds: [artwork.id],
+          language: "pl", exploreAll: true, gentleMotion: true, completedArtworkIds: [artwork.id],
           wallAssignments: { [`${artwork.eraId}-slot-1`]: artwork.id },
         },
       }));
     }, artwork);
-    await page.goto(`/#${artwork.eraId}`);
+    // Reload first so the seeded save, not the previous in-memory state, decides access to the era.
     await page.reload();
+    await page.goto(`/#${artwork.eraId}`);
     await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
     await page.getByRole("button", { name: `Historia obrazu — ${artwork.title.pl}`, exact: true }).click();
     const dialog = page.getByRole("dialog");
@@ -124,6 +126,7 @@ test("landing page opens all uploaded paintings, era filters and search", async 
 for (const era of eras) test(`${era.name.pl}: room picker stays in its era and saves an unpainted replacement`, async ({ page }) => {
   const collection = artworks.filter((artwork) => artwork.eraId === era.id);
   const replacement = collection.at(-1)!;
+  await seedGame(page);
   await page.goto(`/#${era.id}`);
   await page.getByRole("button", { name: "Zmień obrazy", exact: true }).click();
   await expect(page.locator(".library-era-filters")).toHaveCount(0);

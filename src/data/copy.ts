@@ -1,3 +1,7 @@
+// 1 obraz, 2–4 obrazy, 5–21 obrazów, 22–24 obrazy…
+const plPaintings = (count: number) =>
+  count === 1 ? "obraz" : count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 12 || count % 100 > 14) ? "obrazy" : "obrazów";
+
 export const copy = {
   pl: {
     brand: "Dziedzictwo",
@@ -103,6 +107,25 @@ export const copy = {
     coloringLoading: "Przygotowujemy Twoje płótno…",
     coloringLoadError: "Nie udało się przygotować obrazu.",
     coloringRetry: "Spróbuj ponownie",
+    locked: "zamknięte",
+    lockedTitle: "Te drzwi są jeszcze zamknięte",
+    lockedBody: (era: string, required: string, remaining: number) => remaining > 0
+      ? `Epoka ${era} otworzy się, gdy odnowisz jeszcze ${remaining} ${plPaintings(remaining)} w epoce ${required}.`
+      : `Najpierw otwórz epokę ${required}.`,
+    lockedGo: (era: string) => `Przejdź do epoki ${era}`,
+    libraryLocked: (required: string) => `Ta epoka jest jeszcze zamknięta. Odnów najpierw obrazy w epoce ${required}.`,
+    exploreAll: "Otwórz wszystkie epoki",
+    exploreAllDescription: "Tryb zwiedzania: wszystkie pokoje są dostępne bez względu na postęp, np. na lekcji lub do przeglądania kolekcji.",
+    inProgress: "W trakcie",
+    unlockTitle: "Nowa epoka otwarta",
+    unlockBody: (era: string) => `Drzwi do epoki ${era} są otwarte. Czekają tam nowe obrazy do odnowienia.`,
+    enterEra: (era: string) => `Wejdź do epoki ${era}`,
+    stayHere: "Zostań tutaj",
+    eraCompleteTitle: "Epoka ukończona",
+    eraCompleteBody: (era: string) => `Wszystkie obrazy epoki ${era} są odnowione. Dom i hol zmieniają wygląd.`,
+    seeHouse: "Zobacz dom",
+    finaleTitle: "Dom jest gotowy",
+    finaleBody: (count: number) => `Wszystkie ${count} ${plPaintings(count)} z czterech epok są odnowione. Twoja kolekcja czeka w bibliotece.`,
   },
   en: {
     brand: "Dziedzictwo",
@@ -208,5 +231,24 @@ export const copy = {
     coloringLoading: "Preparing your canvas…",
     coloringLoadError: "We couldn't prepare this painting.",
     coloringRetry: "Try again",
+    locked: "locked",
+    lockedTitle: "This door is still locked",
+    lockedBody: (era: string, required: string, remaining: number) => remaining > 0
+      ? `${era} opens once you restore ${remaining} more ${remaining === 1 ? "painting" : "paintings"} in ${required}.`
+      : `Open ${required} first.`,
+    lockedGo: (era: string) => `Go to ${era}`,
+    libraryLocked: (required: string) => `This era is still locked. Restore paintings in ${required} first.`,
+    exploreAll: "Open all eras",
+    exploreAllDescription: "Exploration mode: every room is open regardless of progress, e.g. in a lesson or to browse the collection.",
+    inProgress: "In progress",
+    unlockTitle: "A new era is open",
+    unlockBody: (era: string) => `The door to ${era} is open. New paintings are waiting to be restored.`,
+    enterEra: (era: string) => `Enter ${era}`,
+    stayHere: "Stay here",
+    eraCompleteTitle: "Era complete",
+    eraCompleteBody: (era: string) => `Every painting of ${era} is restored. The house and the hall change their look.`,
+    seeHouse: "See the house",
+    finaleTitle: "The house is complete",
+    finaleBody: (count: number) => `All ${count} paintings from the four eras are restored. Your collection is waiting in the library.`,
   },
 };

@@ -1,12 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { loadColoringArtwork } from "@/data/coloring-library";
 import { copy } from "@/data/copy";
 import { useGameStore } from "@/store/useGameStore";
 import type { ColoringArtwork } from "@/lib/coloring";
+import { gridSignature } from "@/lib/painting-progress";
+import { usePaintingProgress } from "@/store/usePaintingProgress";
 import type { RestoreArtworkRequest } from "@/types/game";
 import { HeritageApp } from "./HeritageApp";
 import { ColoringCanvas } from "./coloring-canvas";
@@ -24,6 +26,34 @@ function ColoringStudio({ request, onComplete }: {
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const t = copy[language];
+  const artworkId = request.artwork.id;
+  const board = useMemo(() => painting && {
+    signature: gridSignature(painting),
+    total: painting.grid.width * painting.grid.height,
+  }, [painting]);
+  const initialPainted = useMemo(() => board ? usePaintingProgress.getState().load(artworkId, board.signature, board.total) : [], [artworkId, board]);
+  const pendingCells = useRef<number[] | null>(null);
+  const saveTimer = useRef<number | null>(null);
+  const finished = useRef(false);
+  const flush = useCallback(() => {
+    if (saveTimer.current !== null) window.clearTimeout(saveTimer.current);
+    saveTimer.current = null;
+    if (!board || finished.current || !pendingCells.current) return;
+    usePaintingProgress.getState().save(artworkId, board.signature, board.total, pendingCells.current);
+    pendingCells.current = null;
+  }, [artworkId, board]);
+  const savePainted = useCallback((cellIds: number[]) => {
+    pendingCells.current = cellIds;
+    // Strokes arrive many times per second; one write per pause is enough.
+    if (saveTimer.current === null) saveTimer.current = window.setTimeout(flush, 800);
+  }, [flush]);
+  useEffect(() => {
+    window.addEventListener("pagehide", flush);
+    return () => {
+      window.removeEventListener("pagehide", flush);
+      flush();
+    };
+  }, [flush]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -51,7 +81,15 @@ function ColoringStudio({ request, onComplete }: {
           autoFill={autoFill}
           showColorNumbers
           allowDevColorFill={process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1"}
-          onComplete={onComplete}
+          initialPainted={initialPainted}
+          onPaintedChange={savePainted}
+          onComplete={() => {
+            // A finished board is recorded as completed; its cells are no longer needed.
+            finished.current = true;
+            pendingCells.current = null;
+            usePaintingProgress.getState().clear(artworkId);
+            onComplete();
+          }}
         />
       ) : (
         <div className="coloring-loading" role="status" aria-busy={!error}>

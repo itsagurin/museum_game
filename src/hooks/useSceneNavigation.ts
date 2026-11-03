@@ -22,9 +22,10 @@ export function useSceneNavigation() {
       window.removeEventListener("popstate", update);
     };
   }, []);
-  const navigate = useCallback((next: View) => {
+  const navigate = useCallback((next: View, { replace = false }: { replace?: boolean } = {}) => {
     if (next === viewFromHash()) return;
-    window.history.pushState(null, "", `#${next}`);
+    // Replacing keeps redirects, such as away from a locked era, out of the back button.
+    window.history[replace ? "replaceState" : "pushState"](null, "", `#${next}`);
     setView(next);
   }, []);
   return { view, navigate };

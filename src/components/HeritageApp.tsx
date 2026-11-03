@@ -26,6 +26,7 @@ import {
   DoorOpen,
   House,
   Info,
+  LockKeyhole,
   Maximize,
   Minimize,
   Paintbrush,
@@ -47,10 +48,12 @@ import { GameViewport } from "./GameViewport";
 import { artworkProjection } from "@/lib/scene-projection";
 import { RestoredArtwork } from "./RestoredArtwork";
 import { RoomBackdrop } from "./RoomBackdrop";
-import { getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
+import { getEraAccess, getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
+import { usePaintingProgress } from "@/store/usePaintingProgress";
 import { ArtworkLibrary } from "./ArtworkLibrary";
 import { ArtworkStory } from "./ArtworkStory";
 import { RoomDecorations } from "./RoomDecorations";
+import { EraLockedNotice, MilestoneNotice, type Milestone } from "./ProgressNotices";
 import { getNewDecorations, getRoomArtworkPlacement } from "@/data/room-decorations";
 
 const noRewards: string[] = [];
@@ -58,7 +61,10 @@ const devToolsEnabled = process.env.NODE_ENV === "development" || process.env.NE
 
 type Panel =
   | { type: "settings" | "info" }
-  | { type: "story" | "studio"; artwork: Artwork };
+  | { type: "story" | "studio"; artwork: Artwork }
+  | { type: "locked"; eraId: EraId }
+  | { type: "milestone"; milestone: Milestone };
+const eraIds = eras.map((era) => era.id);
 const regionStyle = (region: Region): CSSProperties => ({
   left: `${region.x}%`,
   top: `${region.y}%`,
@@ -119,7 +125,13 @@ export function HeritageApp({
   const toggleGentleMotion = useGameStore((state) => state.toggleGentleMotion);
   const autoFill = useGameStore((state) => state.autoFill);
   const toggleAutoFill = useGameStore((state) => state.toggleAutoFill);
+  const exploreAll = useGameStore((state) => state.exploreAll);
+  const toggleExploreAll = useGameStore((state) => state.toggleExploreAll);
   const resetProgress = useGameStore((state) => state.resetProgress);
+  const savedPaintings = usePaintingProgress((state) => state.paintings);
+  const [hydrated, setHydrated] = useState(false);
+  const [milestones, setMilestones] = useState<Milestone[]>([]);
+  const lockedRedirect = useRef<EraId | null>(null);
   const reducedMotion = useReducedMotion() || gentleMotion;
   const t = copy[language];
   const [panel, setPanel] = useState<Panel | null>(null);
@@ -152,6 +164,8 @@ export function HeritageApp({
   const roomProgress = activeEra ? getRoomProgress(activeEra.id, artworks, completed) : null;
   const roomLevel = roomPreview ? MAX_ROOM_LEVEL : roomProgress?.level ?? 0;
   const completedRooms = eras.filter((era) => getRoomProgress(era.id, artworks, completed).isComplete).length;
+  const eraAccess = getEraAccess(eraIds, artworks, completed);
+  const isEraOpen = (eraId: EraId) => exploreAll || eraAccess[eraId].unlocked;
   const hallStage = Math.min(completedRooms + 1, eras.length);
   const hallEra = eras[hallStage - 1];
   const hallLayout = halls[hallStage - 1];
@@ -168,7 +182,7 @@ export function HeritageApp({
       : houseImage;
 
   useEffect(() => {
-    void useGameStore.persist.rehydrate();
+    void Promise.all([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => setHydrated(true));
   }, []);
   useEffect(() => {
     document.documentElement.lang = language;
@@ -184,8 +198,19 @@ export function HeritageApp({
       closePanel();
       mainRef.current?.focus({ preventScroll: true });
       previousView.current = view;
+      if (lockedRedirect.current) {
+        setPanel({ type: "locked", eraId: lockedRedirect.current });
+        lockedRedirect.current = null;
+      }
     }
   }, [view, closePanel]);
+  const blockedEraId = hydrated && activeEra && !isEraOpen(activeEra.id) ? activeEra.id : null;
+  useEffect(() => {
+    // A bookmarked or typed address must not skip the era order.
+    if (!blockedEraId) return;
+    lockedRedirect.current = blockedEraId;
+    navigate("hall", { replace: true });
+  }, [blockedEraId, navigate]);
 
   const toggleFullscreen = async () => {
     try {
@@ -195,24 +220,52 @@ export function HeritageApp({
       /* The viewport remains immersive when the browser declines fullscreen. */
     }
   };
+  const goToEra = (eraId: EraId) => {
+    if (isEraOpen(eraId)) navigate(eraId);
+    else setPanel({ type: "locked", eraId });
+  };
   const restoreArtwork = (artwork: Artwork) => {
     closePanel();
+    if (!isEraOpen(artwork.eraId)) {
+      setPanel({ type: "locked", eraId: artwork.eraId });
+      return;
+    }
     if (onRestoreArtwork && artwork.coloringArtworkId)
       onRestoreArtwork({
         artwork,
         era: getEra(artwork.eraId),
         language,
         onComplete: () => {
-          const before = getRoomProgress(artwork.eraId, artworks, useGameStore.getState().completedArtworkIds).level;
+          const completedBefore = useGameStore.getState().completedArtworkIds;
+          const before = getRoomProgress(artwork.eraId, artworks, completedBefore);
+          const accessBefore = getEraAccess(eraIds, artworks, completedBefore);
           completeArtwork(artwork.id);
-          const after = getRoomProgress(artwork.eraId, artworks, useGameStore.getState().completedArtworkIds).level;
-          const newObjects = getNewDecorations(artwork.eraId, before, after).map(({ id }) => id);
+          const completedAfter = useGameStore.getState().completedArtworkIds;
+          const after = getRoomProgress(artwork.eraId, artworks, completedAfter);
+          const accessAfter = getEraAccess(eraIds, artworks, completedAfter);
+          const newObjects = getNewDecorations(artwork.eraId, before.level, after.level).map(({ id }) => id);
           if (newObjects.length) setPendingRewards((current) => ({ ...current, [artwork.eraId]: [...new Set([...(current[artwork.eraId] ?? []), ...newObjects])] }));
+          // Shown one by one after the story; the progress itself is already saved.
+          const reached: Milestone[] = [];
+          if (!before.isComplete && after.isComplete) {
+            const finale = eraIds.every((eraId) => getRoomProgress(eraId, artworks, completedAfter).isComplete);
+            reached.push(finale ? { type: "finale" } : { type: "eraComplete", eraId: artwork.eraId });
+          }
+          if (!exploreAll) for (const eraId of eraIds) if (!accessBefore[eraId].unlocked && accessAfter[eraId].unlocked) reached.push({ type: "unlock", eraId });
+          if (reached.length) setMilestones((current) => [...current, ...reached]);
           setPanel({ type: "story", artwork });
         },
         onClose: closePanel,
       });
     else setPanel({ type: "studio", artwork });
+  };
+  const dismissPanel = () => {
+    const [next, ...rest] = milestones;
+    if (next && panel?.type !== "settings" && panel?.type !== "info") {
+      setResetConfirm(false);
+      setMilestones(rest);
+      setPanel({ type: "milestone", milestone: next });
+    } else closePanel();
   };
   const openLibrary = (eraId?: EraId, slotId?: string) => {
     setLibraryContext({ eraId, slotId, returnView: activeEra?.id ?? (view === "hall" ? "hall" : "home") });
@@ -337,6 +390,7 @@ export function HeritageApp({
                   eraId={libraryContext.eraId}
                   slotId={libraryContext.slotId}
                   onRestore={restoreArtwork}
+                  isEraOpen={isEraOpen}
                   onHang={(slotId, artwork) => {
                     setWallArtwork(slotId, artwork.id);
                     navigate(artwork.eraId);
@@ -401,7 +455,7 @@ export function HeritageApp({
                   eras.map((era, index) => (
                     <button
                       key={era.id}
-                      className="hall-door-hit"
+                      className={`hall-door-hit ${isEraOpen(era.id) ? "" : "locked"}`}
                       data-era={era.id}
                       data-depth={index === 1 || index === 2 ? "far" : "near"}
                       style={hallDoorStyle(
@@ -409,11 +463,11 @@ export function HeritageApp({
                           ? hallLayout.doors[era.id]
                           : fallbackHallDoors[era.id],
                       )}
-                      onClick={() => navigate(era.id)}
-                      aria-label={era.name[language]}
+                      onClick={() => goToEra(era.id)}
+                      aria-label={isEraOpen(era.id) ? era.name[language] : `${era.name[language]} — ${t.locked}`}
                     >
                       <span className="era-door-number glass">
-                        {era.numeral}
+                        {isEraOpen(era.id) ? era.numeral : <LockKeyhole size={13} aria-hidden="true" />}
                       </span>
                     </button>
                   ))
@@ -425,6 +479,8 @@ export function HeritageApp({
                         .map(({ artwork, slot }) => {
                           const placement = getRoomArtworkPlacement(activeEra.id, slot.number, roomLevel);
                           const restored = roomPreview || completed.includes(artwork.id);
+                          const started = restored ? undefined : savedPaintings[artwork.id];
+                          const startedPercent = started ? Math.max(1, Math.floor(started.painted * 100 / started.total)) : 0;
                           return (
                           <div
                             key={slot.id}
@@ -438,7 +494,7 @@ export function HeritageApp({
                             <button
                               className="painting-frame"
                               onClick={() => openArtwork(artwork, slot.id)}
-                              aria-label={`${artwork.title[language]} — ${restored ? t.restoredLabel : t.awaiting}`}
+                              aria-label={`${artwork.title[language]} — ${restored ? t.restoredLabel : started ? `${t.inProgress} ${startedPercent}%` : t.awaiting}`}
                             >
                               <span className="paper-crop">
                                 {restored && artwork.originalImage ? (
@@ -453,6 +509,11 @@ export function HeritageApp({
                                     <Check size={11} />
                                   </span>
                                 )}
+                              {started && (
+                                <span className="paper-progress" aria-hidden="true">
+                                  {startedPercent}%
+                                </span>
+                              )}
                             </button>
                             <button
                               className="painting-note"
@@ -492,23 +553,19 @@ export function HeritageApp({
                         className="room-door-hit"
                         style={regionStyle(activeEra.doors.next)}
                         onClick={() =>
-                          navigate(
-                            eraIndex === eras.length - 1
-                              ? "hall"
-                              : eras[eraIndex + 1].id,
-                          )
+                          eraIndex === eras.length - 1 ? navigate("hall") : goToEra(eras[eraIndex + 1].id)
                         }
                         aria-label={
                           eraIndex === eras.length - 1
                             ? t.toHall
-                            : `${t.next}: ${eras[eraIndex + 1].name[language]}`
+                            : `${t.next}: ${eras[eraIndex + 1].name[language]}${isEraOpen(eras[eraIndex + 1].id) ? "" : ` — ${t.locked}`}`
                         }
                       >
                         <span className="door-route glass">
                           {eraIndex === eras.length - 1
                             ? t.hall
                             : eras[eraIndex + 1].numeral}
-                          <ChevronRight size={15} />
+                          {eraIndex < eras.length - 1 && !isEraOpen(eras[eraIndex + 1].id) ? <LockKeyhole size={13} aria-hidden="true" /> : <ChevronRight size={15} />}
                         </span>
                       </button>
                     </>
@@ -591,10 +648,10 @@ export function HeritageApp({
                     {eras.map((era) => (
                       <button
                         key={era.id}
-                        className={`era-switch ${view === era.id ? "selected" : ""}`}
-                        aria-label={era.name[language]}
+                        className={`era-switch ${view === era.id ? "selected" : ""} ${isEraOpen(era.id) ? "" : "locked"}`}
+                        aria-label={isEraOpen(era.id) ? era.name[language] : `${era.name[language]} — ${t.locked}`}
                         aria-current={view === era.id ? "page" : undefined}
-                        onClick={() => navigate(era.id)}
+                        onClick={() => goToEra(era.id)}
                       >
                         {era.numeral}
                       </button>
@@ -622,10 +679,14 @@ export function HeritageApp({
                     ? t.info
                     : panel.type === "story"
                       ? t.fact
-                      : t.studioTitle
+                      : panel.type === "locked"
+                        ? t.lockedTitle
+                        : panel.type === "milestone"
+                          ? panel.milestone.type === "unlock" ? t.unlockTitle : panel.milestone.type === "eraComplete" ? t.eraCompleteTitle : t.finaleTitle
+                          : t.studioTitle
               }
               closeLabel={t.close}
-              onClose={closePanel}
+              onClose={dismissPanel}
               gentle={gentleMotion}
               variant={panel.type === "story" ? "story" : "default"}
             >
@@ -675,6 +736,20 @@ export function HeritageApp({
                     </button>
                   </div>
                   <p id="auto-fill-description" className="dialog-intro">{t.autoFillDescription}</p>
+                  <div className="setting-row">
+                    <span id="explore-all-label">{t.exploreAll}</span>
+                    <button
+                      role="switch"
+                      aria-checked={exploreAll}
+                      aria-labelledby="explore-all-label"
+                      aria-describedby="explore-all-description"
+                      className={`toggle ${exploreAll ? "on" : ""}`}
+                      onClick={toggleExploreAll}
+                    >
+                      <span />
+                    </button>
+                  </div>
+                  <p id="explore-all-description" className="dialog-intro">{t.exploreAllDescription}</p>
                   <p className="save-note">
                     <Check size={14} />
                     {storageUnavailable ? t.savedError : t.saved}
@@ -693,8 +768,10 @@ export function HeritageApp({
                           className="danger-button"
                           onClick={() => {
                             resetProgress();
+                            usePaintingProgress.getState().reset();
                             setPreviewFinishedRoom(false);
                             setPendingRewards({});
+                            setMilestones([]);
                             closePanel();
                           }}
                         >
@@ -736,7 +813,29 @@ export function HeritageApp({
                   language={language}
                   completed={completed.includes(panel.artwork.id)}
                   onRestore={onRestoreArtwork ? () => restoreArtwork(panel.artwork) : undefined}
-                  onClose={closePanel}
+                  onClose={dismissPanel}
+                />
+              ) : panel.type === "locked" ? (
+                <EraLockedNotice
+                  eraName={getEra(panel.eraId).name[language]}
+                  requiredEra={eraAccess[panel.eraId].requiredEraId}
+                  remaining={eraAccess[panel.eraId].remaining}
+                  language={language}
+                  onGo={(eraId) => (eraId === view ? closePanel() : goToEra(eraId))}
+                />
+              ) : panel.type === "milestone" ? (
+                <MilestoneNotice
+                  milestone={panel.milestone}
+                  language={language}
+                  houseImage={houseImage}
+                  collectionSize={artworks.length}
+                  onNavigate={(next) => {
+                    setMilestones([]);
+                    if (next === "library") openLibrary();
+                    else if (next === view) closePanel();
+                    else navigate(next);
+                  }}
+                  onClose={dismissPanel}
                 />
               ) : panel.type === "studio" ? (
                 <>

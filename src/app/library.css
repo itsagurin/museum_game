@@ -91,3 +91,5 @@
   .library-detail-copy { padding: 20px; }
   .library-detail-image { padding: 8px; }
 }
+.library-card-locked { position: absolute; top: 7px; right: 7px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: rgba(251, 242, 218, .92); color: #6d6452; }
+.library-locked-hint { display: flex; align-items: center; gap: 6px; }

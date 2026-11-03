@@ -108,6 +108,19 @@ Cel: gra, którą można przejść od zera do końca bez frustracji.
 
 **Gotowe, gdy:** nowy gracz przechodzi samouczek w < 5 min i dostaje pierwszą nagrodę w pokoju, postęp przetrwa odświeżenie w każdym momencie, epoki 2–4 są zablokowane do spełnienia warunku, istnieje ekran finału, a e2e pokrywa całą ścieżkę z zapisem (z narzędziem DEV do szybkiego wypełniania).
 
+**Stan na gałęzi `feat/faza-1` (3 listopada 2026):**
+
+- [x] Zapis postępu planszy: bitset w `localStorage` (`heritage-paintings-v1`, ok. 172 znaki na obraz) zamiast IndexedDB. Przy 83 obrazach to ok. 15 KB, więc dodatkowa biblioteka nie była potrzebna. Kartka pokazuje procent rozpoczętego obrazu.
+- [x] Blokady epok na poziomie 3 poprzedniej epoki (decyzja 3.11), w holu, drzwiach pokojów, przełączniku, adresach `/#era-N` i bibliotece. Ustawienie „Otwórz wszystkie epoki” jako tryb zwiedzania.
+- [x] Progi nieliniowe: pierwszy obraz zawsze daje poziom 1 (decyzja 3.11).
+- [x] Okna „Nowa epoka otwarta”, „Epoka ukończona” (z nowym wyglądem domu) i finał.
+- [x] Numery na polach przy przybliżeniu i widoczne liczniki pozostałych pól w palecie.
+- [x] Testy: 32 jednostkowe, 100 e2e (nowy `tests/progression.spec.ts`).
+- [ ] Samouczek na planszy 16×16: wymaga generatora v2 (faza 2).
+- [ ] Krótkie podpowiedzi przy pierwszym kolorowaniu, tryb wysokiego kontrastu, audyt WCAG.
+- [ ] Certyfikat PNG w finale.
+- [ ] Refaktor `HeritageApp.tsx`: po zmianach ma 870 linii, więc podział na sceny jest pilniejszy niż wcześniej.
+
 ### Faza 2 — Treści, wiarygodność i generator (tydzień 6–10: 8 grudnia – 16 stycznia)
 
 Cel: treści, którym można zaufać, i powtarzalny proces dodawania nowych dzieł.
