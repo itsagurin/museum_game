@@ -8,7 +8,7 @@ export default defineConfig({
   fullyParallel: true,
   timeout: 40000,
   workers: 4,
-  use: { baseURL, trace: "retain-on-failure" },
+  use: { baseURL, serviceWorkers: "block", trace: "retain-on-failure" },
   projects: [
     {
       name: "mobile",

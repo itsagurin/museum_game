@@ -45,3 +45,6 @@
 
 - A10: po obejrzeniu raportu użytkownik zatwierdził bok 40 dla pięciu panoram >2:1. Ich `puzzleSettings.longEdge=40` musi być respektowane przy standardowym `content:puzzles`. Nowe sygnatury są w `panorama-board-signatures.json`; 78 pozostałych pełnych plansz chroni wzorzec Fazy 2. Zmienione panoramy tracą rozpoczęty bitset, nigdy ukończenia ani ściany.
 - A9: dopasowanie obrazu do źródła nie jest recenzją treści. Propozycje korekt wpisuj do docs/15. A11 opisuje opcje migracji binariów; nic nie wykonano.
+
+- B1: produkcyjny build uruchamia Workbox po eksporcie. Sceny, miniatury, fonty i shell są precache; reprodukcje/dekoracje CacheFirst, plansze SWR. Adres planszy zawiera `?v=puzzleVersion`, aby nowy manifest nie dostał starej siatki z cache. Audio poza cache.
+- Service worker nie aktywuje nowej wersji automatycznie: komunikat → SKIP_WAITING → reload dopiero po kliknięciu. E2E bazowo blokują SW, aby sterować błędami fetch; `pwa.spec` jawnie je włącza i sprawdza prawdziwy offline.

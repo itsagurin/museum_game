@@ -266,7 +266,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] A2–A6: renderowanie początkowe, odmiana nazw, nazwy palety, sygnatury plansz i cofanie.
 - [x] A7–A8: samouczek i dostępność.
 - [x] A9–A11: źródła, raport proporcji i opcje porządków binariów.
-- [ ] B1: PWA.
+- [x] B1: PWA.
 - [ ] B2–B3: obraz dnia, seria, album i odznaki.
 - [ ] B4: karty i certyfikat.
 - [ ] B5: muzyka po zatwierdzeniu nagrań.
@@ -281,3 +281,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/a7-a8-onboarding`:** plansza intro 16×12, trzy podpowiedzi i trwałe pomijanie po pierwszej pracowni; wysoki kontrast, zoom 1,5 na telefonie, nawigacja strzałkami. Axe dla 9 widoków × 2 projekty: zero serious/critical; samouczek i kontrast: 4 e2e; razem 22/22 testy audytu. Generator: 30 zaliczonych / 4 pominięte. Rzeczywisty czas pierwszego przejścia pozostaje do pomiaru podczas badania użytkowników.
 
 **Stan `feat/a9-a11-content-review`:** recenzja i propozycje w docs/15; raport porównawczy pięciu panoram w docs/reports. Użytkownik zatwierdził bok 40 dla panoram; generator respektuje ustawienie w manifeście, nowe sygnatury odrzucają stare bitsety tych pięciu dzieł. Opis opcji LFS i migracji historii w docs/17, bez wykonania. Poszukiwanie brakujących źródeł nie zastępuje recenzji merytorycznej.
+
+**Stan `feat/b1-pwa`:** manifest, ikony (własna ilustracja), Workbox (135 plików / ok. 6 MB precache), runtime cache, komunikat aktualizacji z decyzją gracza i nagłówki Vercel. Przeładowanie offline pod `/museum` sprawdzone. Cztery e2e sprawdzają odwiedzoną planszę offline i oczekującą aktualizację na obu projektach. Pobieranie całej epoki offline było opcjonalne i pozostaje poza zakresem.

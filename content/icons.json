@@ -1,0 +1,6 @@
+{
+  "source": "img/house4.jpg",
+  "author": "Zespół Dziedzictwo",
+  "license": "Własna ilustracja zespołu, wygenerowana na potrzeby gry; użycie w Dziedzictwie.",
+  "process": "scripts/make-icons.mjs: crop and resize using sharp; maskable icon with a safe central image."
+}
