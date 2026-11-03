@@ -30,3 +30,9 @@
 - Każda zmiana zachowania ma test: jednostkowy dla reguł, Playwright dla przepływu (projekty mobile i desktop).
 - Przed oddaniem zmiany: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:e2e`.
 - Zmiana formatu zapisu wymaga podbicia `version` w `persist` i funkcji `migrate` z testem.
+
+## Poprawki po fazie 2
+
+- Sceny: `src/features/scenes/`; nagłówek i panele: `src/features/shell/`; hooki progresji: `src/features/progression/`. `HeritageApp` tylko je składa. Komponenty mają do 300 linii.
+- CSS obszarów jest importowany z `layout.tsx`: globals → shell → scenes → room → dialogs → progress → coloring → library → decorations. Po zmianie kaskady porównaj telefon i desktop.
+- E2E eksportu uruchamiaj na osobnym porcie (`PLAYWRIGHT_PORT=3102`), a DEV na 3000. Równoczesne przebiegi wymagają osobnych `--output`, inaczej Playwright usuwa raport drugiego przebiegu. Nie buduj i nie edytuj źródeł podczas testów DEV (HMR przeładowuje karty).

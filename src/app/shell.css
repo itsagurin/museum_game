@@ -1,0 +1,327 @@
+.site-header {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(20px, env(safe-area-inset-left));
+  right: max(20px, env(safe-area-inset-right));
+  height: 68px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  z-index: 20;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  text-align: left;
+}
+.brand-symbol {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(93, 101, 76, 0.28);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.brand-symbol span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  right: 3px;
+  bottom: 5px;
+  border: 1px solid var(--cream);
+}
+.brand-type {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.4px;
+}
+.brand-type small {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+.header-controls {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.language-button,
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px;
+  border-radius: 13px;
+}
+.language-button {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.icon-button:hover,
+.language-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+.header-navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(77, 87, 57, 0.08);
+  padding: 4px;
+  border-radius: 20px;
+}
+.header-navigation button {
+  min-height: 40px;
+  padding: 10px 22px;
+  font-size: 12px;
+  border-radius: 16px;
+}
+.header-navigation button.active {
+  background: rgba(255, 255, 241, 0.67);
+}
+.header-context {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 45%;
+}
+.eyebrow {
+  display: block;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+  color: #6e755e;
+}
+.header-context h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.05;
+  margin: 4px 0 0;
+}
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 56px;
+  width: 100%;
+  background: var(--red);
+  color: #fff7eb;
+  padding: 16px 22px;
+  border: 1px solid rgba(255, 236, 201, 0.25);
+  border-radius: 17px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow:
+    0 5px 24px rgba(77, 36, 24, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.primary-button:hover {
+  background: #88402f;
+  transform: translateY(-2px);
+}
+.era-switcher {
+  position: absolute;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px 8px;
+  border-radius: 18px;
+  z-index: 5;
+}
+.switcher-divider {
+  height: 18px;
+  width: 1px;
+  background: rgba(72, 80, 56, 0.17);
+  margin: 0 5px;
+}
+.era-switch {
+  width: 44px;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  border-radius: 12px;
+  color: #646d53;
+}
+.era-switch.selected,
+.era-switcher > button[aria-current="page"] {
+  background: #5d654e;
+  color: #f2f0e3;
+}
+.storage-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 14px;
+  border-radius: 15px;
+  font-size: 11px;
+  max-width: calc(100% - 32px);
+  width: 360px;
+}
+.skip-link {
+  position: fixed;
+  top: -90px;
+  left: 20px;
+  z-index: 200;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--cream);
+  color: var(--ink);
+}
+.skip-link:focus {
+  top: 15px;
+}
+@media (max-width: 850px) {
+  .header-navigation {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .header-context {
+    max-width: 43%;
+  }
+}
+@media (max-width: 850px) {
+  .view-interior .brand-type {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .info-button {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    top: max(12px, env(safe-area-inset-top));
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    height: 60px;
+    padding: 0 10px;
+    border-radius: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .brand {
+    gap: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .brand-symbol {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .brand-symbol svg {
+    width: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .brand-type {
+    font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .brand-type small {
+    font-size: 6px;
+    letter-spacing: 1.25px;
+  }
+}
+@media (max-width: 600px) {
+  .header-left {
+    gap: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .view-interior .brand {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .header-context {
+    position: static;
+    transform: none;
+    max-width: none;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    margin: 0 6px;
+  }
+}
+@media (max-width: 600px) {
+  .header-context h1 {
+    font-size: 19px;
+    margin: 4px 0 0;
+  }
+}
+@media (max-width: 600px) {
+  .header-context .eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 600px) {
+  .header-controls {
+    gap: 0;
+  }
+}
+@media (max-width: 600px) {
+  .header-controls .icon-button,
+  .header-controls .language-button {
+    min-width: 36px;
+    padding: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .fullscreen-button {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .era-switcher {
+    gap: 2px;
+    padding: 4px 6px;
+  }
+}
+@media (max-width: 600px) {
+  .era-switch {
+    font-size: 18px;
+  }
+}
+@media (max-height: 540px) {
+  .site-header {
+    top: 8px;
+    height: 54px;
+  }
+}
