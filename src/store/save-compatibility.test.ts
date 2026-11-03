@@ -9,6 +9,8 @@ describe("save compatibility", () => {
     const entry = content[1], slot = wallSlots[0];
     const saved = {completedArtworkIds: [entry.legacyIds[0]], wallAssignments: {[slot.id]:entry.legacyIds[0]}};
     const merged = useGameStore.persist.getOptions().merge!(saved, useGameStore.getState());
+    expect(merged.tutorialSeen).toBe(false);
+    expect(typeof merged.highContrast).toBe("boolean");
     expect(merged.completedArtworkIds).toEqual([entry.id]);
     expect(merged.wallAssignments[slot.id]).toBe(entry.id);
   });

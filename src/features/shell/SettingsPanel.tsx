@@ -10,7 +10,7 @@ export function SettingsPanel({ language, storageUnavailable, onReset }: {
   language: Language; storageUnavailable: boolean; onReset: () => void;
 }) {
   const t = copy[language];
-  const { setLanguage, gentleMotion, toggleGentleMotion, autoFill, toggleAutoFill, exploreAll, toggleExploreAll } = useGameStore();
+  const { setLanguage, highContrast, toggleHighContrast, gentleMotion, toggleGentleMotion, autoFill, toggleAutoFill, exploreAll, toggleExploreAll } = useGameStore();
   const [resetConfirm, setResetConfirm] = useState(false);
   return (<>
                   <p className="dialog-intro">{t.preferences}</p>
@@ -71,6 +71,10 @@ export function SettingsPanel({ language, storageUnavailable, onReset }: {
                     </button>
                   </div>
                   <p id="explore-all-description" className="dialog-intro">{t.exploreAllDescription}</p>
+                  <div className="setting-row">
+                    <span>{t.highContrast}</span>
+                    <button role="switch" aria-label={t.highContrast} aria-checked={highContrast} className={`toggle ${highContrast ? "on" : ""}`} onClick={toggleHighContrast}><span /></button>
+                  </div>
                   <p className="save-note">
                     <Check size={14} />
                     {storageUnavailable ? t.savedError : t.saved}

@@ -301,3 +301,11 @@
   font-variant-numeric: tabular-nums;
   color: var(--muted);
 }
+
+.tutorial-hint { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 12px; font-size: 12px; }
+.tutorial-hint p { margin: 0; }
+.high-contrast .glass { --glass: rgba(255, 253, 240, .97); }
+.high-contrast .pixel-hit:not(.painted) { stroke: #393225; stroke-opacity: .8; stroke-width: .06; }
+.high-contrast .pixel-hit.matching:not(.painted) { stroke: #000; stroke-opacity: 1; stroke-width: .12; }
+.high-contrast .pixel-number { fill: #151515; paint-order: stroke; stroke: #fff; stroke-width: .07px; }
+.high-contrast .home-copy { background: rgba(255,253,240,.95); border-radius: 16px; padding: 12px; }

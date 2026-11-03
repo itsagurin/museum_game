@@ -22,6 +22,12 @@ function ColoringStudio({ request, onComplete }: {
   const language = useGameStore((state) => state.language);
   const gentleMotion = useGameStore((state) => state.gentleMotion);
   const autoFill = useGameStore((state) => state.autoFill);
+  const highContrast = useGameStore(state => state.highContrast);
+  const tutorialSeen = useGameStore(state => state.tutorialSeen);
+  const completed = useGameStore(state => state.completedArtworkIds);
+  const saved = usePaintingProgress.getState().paintings[request.artwork.id];
+  const [useIntro] = useState(() => Boolean(request.artwork.introPuzzle && completed.length === 0 && (!tutorialSeen || saved?.signature === request.artwork.introPuzzleVersion) && (!saved || saved.signature !== request.artwork.puzzleVersion)));
+  const tutorialActive = !tutorialSeen && completed.length === 0;
   const [painting, setPainting] = useState<ColoringArtwork | null>(null);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -64,13 +70,13 @@ function ColoringStudio({ request, onComplete }: {
 
   useEffect(() => {
     const controller = new AbortController();
-    void loadColoringArtwork(request.artwork, controller.signal).then((payload) => {
+    void loadColoringArtwork(useIntro ? {...request.artwork, coloringSource: request.artwork.introPuzzle} : request.artwork, controller.signal).then((payload) => {
       if (!controller.signal.aborted) setPainting(payload);
     }).catch(() => {
       if (!controller.signal.aborted) setError(true);
     });
     return () => controller.abort();
-  }, [request.artwork, attempt]);
+  }, [request.artwork, attempt, useIntro]);
 
   return (
     <>
@@ -86,12 +92,16 @@ function ColoringStudio({ request, onComplete }: {
           language={language}
           gentleMotion={gentleMotion}
           autoFill={autoFill}
+          highContrast={highContrast}
+          showBaseNumbers={useIntro}
+          tutorialActive={tutorialActive}
           showColorNumbers
           allowDevColorFill={process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1"}
           initialPainted={initialPainted}
           onPaintedChange={savePainted}
           onComplete={() => {
             // A finished board is recorded as completed; its cells are no longer needed.
+            useGameStore.getState().markTutorialSeen();
             finished.current = true;
             pendingCells.current = null;
             usePaintingProgress.getState().clear(artworkId);
@@ -116,6 +126,7 @@ export function HeritageGame() {
   const gentleMotion = useGameStore((state) => state.gentleMotion);
   const t = copy[language];
   const closeStudio = useCallback(() => {
+    useGameStore.getState().markTutorialSeen();
     request?.onClose();
     setRequest(null);
   }, [request]);

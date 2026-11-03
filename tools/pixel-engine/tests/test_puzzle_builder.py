@@ -87,3 +87,28 @@ def test_palette_names_are_unique_and_bilingual():
 def test_signature_matches_the_game_fixture():
     from src.build_puzzles import grid_signature
     assert grid_signature({"grid": {"width": 2, "height": 1, "data": [[1, 2]]}, "palette": [{"id": 1, "hex": "#123456"}, {"id": 2, "hex": "#abcdef"}]}) == "ntz2s7"
+
+
+def test_introductory_board_uses_the_requested_long_edge():
+    from src.core.puzzle_builder import BoardSettings, grid_size
+    assert grid_size(1600, 1000, BoardSettings(long_edge=16)) == (16, 12)
+    assert grid_size(1000, 1600, BoardSettings(long_edge=16)) == (12, 16)
+
+
+def test_long_edge_cli_writes_intro_without_replacing_the_full_board(tmp_path, monkeypatch):
+    import json
+    from PIL import Image
+    from src.build_puzzles import main
+    (tmp_path / "content").mkdir()
+    (tmp_path / "img").mkdir()
+    Image.new("RGB", (160, 100), "#123456").save(tmp_path / "img" / "source.png")
+    entry = {"id":"intro-test", "image":"source.png", "puzzle":"full.json", "preview":"full.png", "title":{"pl":"Test"}, "artist":"Test", "puzzleVersion":"keep"}
+    (tmp_path / "content" / "artworks.json").write_text(json.dumps([entry]))
+    (tmp_path / "img" / "full.json").write_text("keep full board")
+    monkeypatch.setattr("sys.argv", ["build_puzzles", "--root", str(tmp_path), "--long-edge", "16"])
+    main()
+    result = json.loads((tmp_path / "content" / "artworks.json").read_text())[0]
+    board = json.loads((tmp_path / "img" / result["introPuzzle"]).read_text())
+    assert max(board["grid"]["width"], board["grid"]["height"]) == 16
+    assert result["puzzleVersion"] == "keep"
+    assert (tmp_path / "img" / "full.json").read_text() == "keep full board"
