@@ -258,3 +258,20 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 | Faza 3 | `dataviz` | Dashboard metryk retencji |
 | Faza 4 | `anthropic-skills:pptx` / `pdf` | Pitch dla muzeów i szkół |
 | Przed publikacją | `/security-review` | Przegląd przed dodaniem backendu i kont |
+
+## Stan poprawek po Fazie 2 — `refactor/a1-scenes-shell` (3 listopada 2026)
+
+- [x] Faza 2 zapisana osobno i otwarta jako PR #3, bazujący na `feat/faza-1`. Materiały prezentacji i lokalna zmiana workflow poza commitem.
+- [x] A1: sceny, panele, hooki progresji i CSS wydzielone; `HeritageApp` ma 125 linii; wszystkie komponenty mieszczą się w 300 liniach.
+- [ ] A2–A6: renderowanie początkowe, odmiana nazw, nazwy palety, sygnatury plansz i cofanie.
+- [ ] A7–A8: samouczek i dostępność.
+- [ ] A9–A11: źródła, raport proporcji i opcje porządków binariów.
+- [ ] B1: PWA.
+- [ ] B2–B3: obraz dnia, seria, album i odznaki.
+- [ ] B4: karty i certyfikat.
+- [ ] B5: muzyka po zatwierdzeniu nagrań.
+- [ ] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
+- [ ] B7: wydajność i osobny job LHCI.
+- [ ] B8: materiały do badań.
+
+Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez etykiety treści), B1=a (zwykła plansza dnia), B2=a (seria), B3=Vercel, B4=a (domyślnie włączone), B6=a (ikona z domu), B7=a (LHCI). Nagrania muzyczne i zmiany proporcji plansz wymagają osobnej decyzji. Przepisanie historii Git pozostaje poza zakresem bez decyzji zespołu.

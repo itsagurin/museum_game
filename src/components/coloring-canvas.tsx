@@ -1,9 +1,10 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowUpRight, Check, Eye, Grid, Hand, Paintbrush, PaintBucket, RotateCcw, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
+import { ArrowUpRight, Check, Hand, Paintbrush, PaintBucket, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { paintResult, type ColoringArtwork } from '@/lib/coloring';
 import { playColoringSound } from '@/lib/audio';
+import { RevealBanner } from '@/features/painting/RevealBanner';
 import { coloringCopy } from '@/data/coloring-copy';
 import type { Language } from '@/types/game';
 
@@ -208,34 +209,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
   return <div className="coloring-workspace numbered-workspace">
     <div className={`sr-only coloring-instruction ${feedback?.kind === 'wrong' ? 'is-wrong' : ''}`} role="status" aria-live="polite"><Paintbrush size={15} aria-hidden /><span>{message}</span></div>
 
-    {revealed && (
-      <div className="revealed-banner" role="region" aria-label={t.restored}>
-        <div className="revealed-badge">
-          <Sparkles size={14} aria-hidden />
-          <span>{t.restoredBadge}</span>
-        </div>
-        <div className="revealed-switch" role="group" aria-label={t.view}>
-          <button
-            type="button"
-            className={`switch-tab ${mode === 'original' ? 'is-active' : ''}`}
-            onClick={() => setMode('original')}
-            aria-pressed={mode === 'original'}
-          >
-            <Eye size={12} aria-hidden style={{ display: 'inline', marginRight: 4 }} />
-            {t.original}
-          </button>
-          <button
-            type="button"
-            className={`switch-tab ${mode === 'pixels' ? 'is-active' : ''}`}
-            onClick={() => setMode('pixels')}
-            aria-pressed={mode === 'pixels'}
-          >
-            <Grid size={12} aria-hidden style={{ display: 'inline', marginRight: 4 }} />
-            {t.pixels}
-          </button>
-        </div>
-      </div>
-    )}
+    {revealed && <RevealBanner language={language} mode={mode} setMode={setMode} />}
 
     <div className={`coloring-frame numbered-frame ${ready ? 'is-complete' : ''} ${revealed ? 'is-revealed' : ''}`}>
       <div className="coloring-viewport" style={{ aspectRatio: `${width}/${height}` }}>

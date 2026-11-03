@@ -34,7 +34,7 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 
 | Obszar | Pliki |
 | --- | --- |
-| Nawigacja i sceny | `src/components/HeritageApp.tsx`, `GameViewport.tsx`, `src/hooks/useSceneNavigation.ts` |
+| Nawigacja i sceny | `src/components/HeritageApp.tsx`, `src/features/scenes/`, `src/features/shell/`, `GameViewport.tsx`, `src/hooks/useSceneNavigation.ts` |
 | Pracownia kolorowania | `src/components/HeritageGame.tsx`, `coloring-canvas.tsx`, `src/lib/coloring.ts` |
 | Epoki, kolekcja, hol | `content/artworks.json`, `src/data/eras.ts`, `src/data/halls.ts` |
 | Rozwój pokoju i dekoracje | `src/lib/room-development.ts`, `src/data/room-decorations.ts`, `RoomDecorations.tsx` |
@@ -60,3 +60,5 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 | [`docs/08`](./docs/08_ASSET_PROMPTS_GOOGLE_FLOW.md), [`09`](./docs/09_ROOM_PROMPTS_CORNER_VIEW.md), [`11`](./docs/11_HALL_PROMPTS_FOUR_ERAS.md) | Prompty do generowania grafik w Google Flow |
 | [`docs/ONE_PAGER.md`](./docs/ONE_PAGER.md) | One-pager z hackathonu |
 | [`docs/archive/`](./docs/archive/) | Pierwotna koncepcja, harmonogram hackathonu i opis usuniętego prototypu |
+
+Testowanie eksportu przy działającym dev: `PLAYWRIGHT_PORT=3102 npx playwright test`. Testy DEV: `PLAYWRIGHT_PORT=3000 npx playwright test tests/dev-coloring.spec.ts tests/dev-room-preview.spec.ts --output=/tmp/dziedzictwo-dev-results`. Nie uruchamiaj buildu podczas testów DEV.
