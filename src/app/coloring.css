@@ -281,3 +281,23 @@
     transition: none;
   }
 }
+.heritage-coloring .pixel-number {
+  font-size: .46px;
+  font-weight: 600;
+  fill: #4a3b2a;
+  fill-opacity: .72;
+  text-anchor: middle;
+  dominant-baseline: central;
+  user-select: none;
+}
+.heritage-coloring .paint-brush {
+  position: relative;
+}
+.heritage-coloring .brush-remaining {
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}

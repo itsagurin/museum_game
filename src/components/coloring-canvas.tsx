@@ -11,9 +11,13 @@ type Origin = { x: number; y: number };
 type Pixel = { id: number; colorId: number; x: number; y: number };
 type Feedback = { key: number; kind: 'correct' | 'wrong'; pixel: Pixel };
 
-export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMotion = false, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
+export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedChange, language = 'pl', gentleMotion = false, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
   artwork: ColoringArtwork;
   onComplete: () => void;
+  /** Cells restored from an earlier visit; they count as painted and settled. */
+  initialPainted?: readonly number[];
+  /** Receives every painted cell after each change, for saving. */
+  onPaintedChange?: (cellIds: number[]) => void;
   language?: Language;
   gentleMotion?: boolean;
   autoFill?: boolean;
@@ -25,8 +29,8 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   const colors = useMemo(() => new Map(artwork.palette.map(color => [color.id, color])), [artwork]);
   const colorLabel = (id: number) => `${showColorNumbers ? `${id} · ` : ''}${colors.get(id)!.name}`;
   const [selected, setSelected] = useState<number | null>(null);
-  const [painted, setPainted] = useState<Map<number, Origin>>(new Map());
-  const [settled, setSettled] = useState<Set<number>>(new Set());
+  const [painted, setPainted] = useState<Map<number, Origin>>(() => new Map((initialPainted ?? []).filter(id => id >= 0 && id < pixels.length).map(id => [id, { x: pixels[id].x + .5, y: pixels[id].y + .5 }])));
+  const [settled, setSettled] = useState<Set<number>>(() => new Set(painted.keys()));
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [zoom, setZoom] = useState(1);
   const [panning, setPanning] = useState(false);
@@ -52,6 +56,15 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   useEffect(() => () => {
     if (fillFrame.current !== null) window.cancelAnimationFrame(fillFrame.current);
   }, []);
+
+  const reportPainted = useRef(onPaintedChange);
+  useEffect(() => { reportPainted.current = onPaintedChange; }, [onPaintedChange]);
+  const restoredState = useRef(true);
+  useEffect(() => {
+    // The restored state is already saved; report only what this visit changes.
+    if (restoredState.current) { restoredState.current = false; return; }
+    reportPainted.current?.([...painted.keys()]);
+  }, [painted]);
 
   const startAutoFill = (origin: Pixel) => {
     const targets = pixels.filter(pixel => pixel.colorId === origin.colorId && !paintedRef.current.has(pixel.id))
@@ -238,6 +251,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
             const filled = painted.has(pixel.id), matching = selected === pixel.colorId;
             return <g key={pixel.id}>
               <rect x={pixel.x} y={pixel.y} width="1" height="1" fill={color.hex} opacity={filled ? 1 : matching ? .48 : .2} shapeRendering="crispEdges" />
+              {zoom > 1 && !filled && <text x={pixel.x + .5} y={pixel.y + .5} className="pixel-number" aria-hidden pointerEvents="none">{pixel.colorId}</text>}
               {filled && <motion.rect x={pixel.x} y={pixel.y} width="1" height="1" fill="#fff6da" pointerEvents="none" initial={{ opacity: .65 }} animate={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .35 }} onAnimationComplete={() => setSettled(previous => previous.has(pixel.id) ? previous : new Set(previous).add(pixel.id))} />}
               <rect x={pixel.x} y={pixel.y} width="1" height="1" className={`pixel-hit ${matching ? 'matching' : ''} ${filled ? 'painted' : ''}`} role="button" tabIndex={filled ? -1 : 0} aria-pressed={filled} aria-label={`${t.pixel} ${pixel.x + 1}, ${pixel.y + 1}: ${color.name}${filled ? ` — ${t.painted}` : ''}`} data-color-id={pixel.colorId} fill="transparent" stroke="#fff8e9" strokeOpacity={filled ? .05 : .35} strokeWidth=".035"
                 onClick={event => { if (event.detail === 0) paint(pixel); }}
@@ -286,7 +300,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
       const fields = pixels.filter(pixel => pixel.colorId === color.id), filled = fields.filter(pixel => painted.has(pixel.id)).length;
       const done = fields.length > 0 && fields.length === filled;
       return <button key={color.id} className={`paint-brush ${selected === color.id ? 'selected' : ''} ${done ? 'complete' : ''}`} aria-label={`${t.color}${showColorNumbers ? ` ${color.id}` : ''}: ${color.name}`} title={color.name} aria-pressed={selected === color.id} data-color-id={color.id} onClick={() => { if (selected !== color.id) { streak.current = 0; } setSelected(color.id); setPanning(false); setFeedback(null); playColoringSound('select'); }}>
-        <span className="brush-swatch" style={{ backgroundColor: color.hex, color: [1, 3, 5].reduce((sum, offset) => sum + parseInt(color.hex.slice(offset, offset + 2), 16), 0) > 400 ? '#393225' : '#fff5e6' }}>{showColorNumbers ? <span className="brush-number">{color.id}</span> : selected === color.id && <Check size={16} aria-hidden />}</span><span className="brush-shape"><Paintbrush size={18} aria-hidden /></span><span className="brush-count sr-only">{done ? <Check size={12} aria-hidden /> : `${filled}/${fields.length}`}</span>
+        <span className="brush-swatch" style={{ backgroundColor: color.hex, color: [1, 3, 5].reduce((sum, offset) => sum + parseInt(color.hex.slice(offset, offset + 2), 16), 0) > 400 ? '#393225' : '#fff5e6' }}>{showColorNumbers ? <span className="brush-number">{color.id}</span> : selected === color.id && <Check size={16} aria-hidden />}</span><span className="brush-shape"><Paintbrush size={18} aria-hidden /></span><span className="brush-remaining" aria-hidden>{done ? '' : fields.length - filled}</span><span className="brush-count sr-only">{done ? <Check size={12} aria-hidden /> : `${filled}/${fields.length}`}</span>
       </button>;
     })}</div>
     <div className="coloring-progress"><div className="coloring-progress-track"><span style={{ transform: `scaleX(${painted.size / pixels.length})` }} /></div><span className="sr-only" role="status" aria-live="polite">{t.progress}: {painted.size} / {pixels.length}</span></div>
