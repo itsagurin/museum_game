@@ -160,6 +160,7 @@ export const artworks: Artwork[] = eras.flatMap((era) =>
         story: metadata ? { pl: metadata.style_description, en: metadata.style_description } : undefined,
         funFact: curiosity ? { pl: curiosity, en: curiosity } : undefined,
         originalImage: assetUrl(file),
+        thumbnailImage: assetUrl(`_thumbs/${file.replace(/\.[^/.]+$/, "")}.webp`),
         sourceFile: file,
         // Full relative paths keep repeated JSON IDs isolated between eras.
         coloringArtworkId: coloring?.jsonFile,

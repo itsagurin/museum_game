@@ -44,7 +44,7 @@ Po prawdziwym ukończeniu wszystkich pól odsłania się **lokalna reprodukcja z
 
 Wczytywanie pokazuje stan oczekiwania i **„Spróbuj ponownie”** przy uszkodzonym lub niedostępnym JSON-ie. Wyjście z pracowni anuluje pobieranie, więc spóźniona odpowiedź nie zastępuje planszy z innej epoki. Brak reprodukcji nie blokuje ukończenia: pracownia zachowuje pokolorowane piksele, a ściana ma lokalny fallback `previews/<nazwa>_grid32_art.png`.
 
-JSON-y zawierają automatyczne tytuły, autora „Mistrz Polski”, wspólną datę „XIX w.” oraz powtarzalne teksty kulturowe. To robocze dane generatora; UI nie pokazuje ich jako zweryfikowanych opisów. Zastępujemy je metadanymi zespołu z `src/data/artworks_qa.json`. Dopasowanie używa dokładnej ścieżki `filename` po usunięciu prefiksu `assets/artworks/`; tytuł nie wpływa na ID ani zapis. Karta obrazu pokazuje najpierw reprodukcję i aktualną ciekawostkę z `src/data/artworks_curiosities.json`, mieszczące się na jednym ekranie telefonu. Historię i opis stylu można opcjonalnie rozwinąć pod ciekawostką; domyślnie są zwinięte. Jego 83 wpisy dopasowujemy po dokładnym `filename`; pole `curiosity` zastępuje wcześniejsze pytania i odpowiedzi również w danych pracowni. Plik zawiera wyłącznie polskie treści: przy EN zachowujemy te same tytuły/opisy, z oznaczeniem `lang="pl"` dla opisów. Tłumaczenia można uzupełnić później. Baza `src/data/artworks_db.json` jest zachowana, a oddzielny prototyp `/prototype/` nadal używa swoich trzech plansz.
+JSON-y zawierają automatyczne tytuły, autora „Mistrz Polski”, wspólną datę „XIX w.” oraz powtarzalne teksty kulturowe. To robocze dane generatora; UI nie pokazuje ich jako zweryfikowanych opisów. Zastępujemy je metadanymi zespołu z `src/data/artworks_qa.json`. Dopasowanie używa dokładnej ścieżki `filename` po usunięciu prefiksu `assets/artworks/`; tytuł nie wpływa na ID ani zapis. Karta obrazu pokazuje najpierw reprodukcję i aktualną ciekawostkę z `src/data/artworks_curiosities.json`, mieszczące się na jednym ekranie telefonu. Historię i opis stylu można opcjonalnie rozwinąć pod ciekawostką; domyślnie są zwinięte. Jego 83 wpisy dopasowujemy po dokładnym `filename`; pole `curiosity` zastępuje wcześniejsze pytania i odpowiedzi również w danych pracowni. Plik zawiera wyłącznie polskie treści: przy EN zachowujemy te same tytuły/opisy, z oznaczeniem `lang="pl"` dla opisów. Tłumaczenia można uzupełnić później.
 
 ### Szybkie kolorowanie do testów
 
@@ -71,7 +71,7 @@ npm ci
 npm run dev
 ```
 
-Adres: `http://localhost:3000`. Po scaleniu main wymagany jest Node.js 22.12 lub nowszy i zgodna z nim wersja npm. Prototyp kolegi działa osobno pod `/prototype/`; główny frontend pozostaje pod `/`.
+Adres: `http://localhost:3000`. Po scaleniu main wymagany jest Node.js 22.12 lub nowszy i zgodna z nim wersja npm. Prototyp „Dom Opowieści” spod `/prototype/` usunięto w listopadzie 2026; jego opis jest w `docs/archive/12_MAIN_PROTOTYPE.md`.
 
 ```bash
 npm run typecheck
@@ -83,7 +83,7 @@ Build tworzy katalog `out/`, gotowy do skopiowania na własny hosting statyczny.
 
 ## Grafiki
 
-Źródłem jest istniejący katalog `img/`. Skrypt `scripts/prepare-assets.mjs` rekurencyjnie kopiuje obrazy i JSON-y do `public/art/`, zachowując podfoldery, i przygotowuje manifest przed startem oraz buildem. `npm run dev` dodatkowo obserwuje `img/` i jego podfoldery: nowe warianty pojawiają się bez restartu serwera. Przy serwerze uruchomionym starszym skryptem można uruchomić osobno `npm run assets:watch`. Nie modyfikuje oryginałów. Pliki wynikowe są ignorowane przez Git. Na hostingu statycznym dodanie grafiki wymaga nowego buildu i skopiowania `out/`.
+Źródłem jest istniejący katalog `img/`. Skrypt `scripts/prepare-assets.mjs` publikuje do `public/art/` tylko pliki używane przez grę (sceny, reprodukcje epok, JSON-y i podglądy `_art.png`, dekoracje `*_assets`), zachowując podfoldery i nazwy. Reprodukcje są zmniejszane do 1600 px, dekoracje do 768 px, a JPG-i kompresowane mozjpeg; dla biblioteki powstają miniatury `public/art/_thumbs/*.webp`. Pliki usunięte z `img/` znikają z `public/art/`. Cache `public/art/.prepared.json` pomija niezmienione pliki; zmiana ustawień kodowania wymaga podbicia `PIPELINE_VERSION`. Skrypt przygotowuje też manifest przed startem oraz buildem. `npm run dev` dodatkowo obserwuje `img/` i jego podfoldery: nowe warianty pojawiają się bez restartu serwera. Przy serwerze uruchomionym starszym skryptem można uruchomić osobno `npm run assets:watch`. Nie modyfikuje oryginałów. Pliki wynikowe są ignorowane przez Git. Na hostingu statycznym dodanie grafiki wymaga nowego buildu i skopiowania `out/`.
 
 | Plik | Zastosowanie |
 | --- | --- |
@@ -155,7 +155,7 @@ Adapter jest komponentem klienta (`"use client"`), który otwiera właściwą mi
 
 Nowe ID dzieł są oparte na epoce i nazwie pliku, więc dopisanie reprodukcji lub zmiana kolejności nie przenosi ukończenia na inny obraz. Nie zmieniaj nazwy źródłowego pliku po rozpoczęciu gry. Pięć rozpoznanych reprodukcji zachowuje historyczne ID `era-3-art-1`–`era-3-art-5`, aby nie utracić rzeczywistego wcześniejszego ukończenia; ich epoka wynika teraz z folderu, a nie z prefiksu ID. Te reprodukcje mają teraz własne dostarczone JSON-y. Pozostałe dawne placeholdery nie są częścią katalogu.
 
-Miejsca mają osobne ID `era-N-slot-1`–`era-N-slot-5`. `coloringArtworkId` identyfikuje planszę przez ścieżkę, `coloringSource` podaje jej URL, a `coloredPreview` lokalny fallback pikselowy. `src/lib/coloring-assets.ts` podłącza eksport automatycznie na podstawie `sourceFile`. Dopisanie dzieła wyłącznie do dawnego `artworks_db.json` nie przypisuje go do katalogu. Metadane uzupełniaj w `src/data/artworks_qa.json`; `src/data/eras.ts` przypisuje je do `title`, `artist`, `year`, `style` i `story`. Ciekawostki uzupełniaj w `src/data/artworks_curiosities.json`; pole `curiosity` zasila `funFact`. Callback ukończenia odrzuca nieznane ID i nie nalicza powtórnych ukończeń.
+Miejsca mają osobne ID `era-N-slot-1`–`era-N-slot-5`. `coloringArtworkId` identyfikuje planszę przez ścieżkę, `coloringSource` podaje jej URL, a `coloredPreview` lokalny fallback pikselowy. `src/lib/coloring-assets.ts` podłącza eksport automatycznie na podstawie `sourceFile`. Metadane uzupełniaj w `src/data/artworks_qa.json`; `src/data/eras.ts` przypisuje je do `title`, `artist`, `year`, `style` i `story`. Ciekawostki uzupełniaj w `src/data/artworks_curiosities.json`; pole `curiosity` zasila `funFact`. Callback ukończenia odrzuca nieznane ID i nie nalicza powtórnych ukończeń.
 
 `HeritageApp` nie implementuje algorytmu ani logiki malowania. Adapter przekazuje do istniejącego renderera wymiary, dane i paletę z JSON-a. Dekoracje są osobnymi przezroczystymi PNG, odblokowywanymi na dziesięciu poziomach. Blokowanie epok wymaga osobnego podłączenia.
 

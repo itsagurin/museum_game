@@ -20,12 +20,12 @@
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.4",
     "serve": "^14.2.6",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.0",
-    "sharp": "^0.35.5",
     "vitest": "^5.0.3"
   },
   "dependencies": {
@@ -33,13 +33,10 @@
     "@fontsource/dm-sans": "^5.2.0",
     "framer-motion": "14.1.0",
     "lucide-react": "^1.55.0",
-    "next": "^16.4.0",
+    "next": "^16.4.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "zustand": "^5.0.15",
-    "@fontsource/manrope": "^5.3.0",
-    "@fontsource/plus-jakarta-sans": "^5.3.0",
-    "motion": "^14.1.0"
+    "zustand": "^5.0.15"
   },
   "overrides": {
     "compression": "^1.8.2"
