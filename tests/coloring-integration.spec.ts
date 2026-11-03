@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
-import curiosities from "../src/data/artworks_curiosities.json" with { type: "json" };
 import { catalogPaintings, fillCanvas, openCatalogStudio, savedCompletions } from "./helpers/catalog-coloring";
 import { seedGame } from "./helpers/game-state";
 
@@ -13,7 +12,7 @@ for (const era of eras) {
   const collection = catalogPaintings.filter((entry) => entry.artwork.eraId === era.id);
   test(`${era.name.pl}: supplied grids and palettes open from the library`, async ({ page }) => {
     const requested: string[] = [];
-    page.on("request", (request) => { if (request.url().includes("/json/")) requested.push(request.url()); });
+    page.on("request", (request) => { if (/\/puzzles\/[^/]+\.json$/.test(new URL(request.url()).pathname)) requested.push(request.url()); });
     await page.goto("/#library");
     expect(requested).toEqual([]);
     for (const entry of [collection[0], collection.at(-1)!]) {
@@ -43,8 +42,7 @@ for (const era of eras) {
     await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
     await expect(page.getByRole("dialog")).toHaveCount(1);
     await expect(page.getByRole("dialog")).toContainText(entry.artwork.title.pl);
-    const curiosity = curiosities.find((item) => item.filename === `assets/artworks/${entry.artwork.sourceFile}`)!;
-    await expect(page.locator(".fun-fact p")).toHaveText(curiosity.curiosity);
+    await expect(page.locator(".fun-fact p")).toHaveText(entry.artwork.funFact!.pl);
     await page.getByRole("button", { name: "Wróć do pokoju", exact: true }).click();
     expect(await savedCompletions(page)).toEqual([entry.artwork.id]);
     await page.getByLabel("Miejsce na ścianie", { exact: true }).selectOption(`${era.id}-slot-2`);

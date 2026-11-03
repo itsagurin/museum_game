@@ -12,7 +12,9 @@
     "lint": "eslint .",
     "typecheck": "node scripts/prepare-assets.mjs && tsc --noEmit",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "content:validate": "vitest run src/data/content.test.ts",
+    "content:puzzles": "cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --report outputs/puzzle-report.html"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.0",

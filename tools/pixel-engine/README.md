@@ -1,4 +1,22 @@
-# Pixel Coloring Engine — Code for Culture
+# Pixel Coloring Engine — generator plansz gry Dziedzictwo
+
+> **W repozytorium gry (od listopada 2026).** Kod pochodzi z [wojgww/image_generation](https://github.com/wojgww/image_generation) i został dołączony z historią (`git subtree`, katalog `tools/pixel-engine/`). Plansze gry powstają tutaj z manifestu `content/artworks.json`.
+>
+> ```bash
+> cd tools/pixel-engine
+> python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+> cd ../.. && npm run content:puzzles      # img/puzzles/<id>.json i .png + raport outputs/puzzle-report.html
+> ```
+>
+> **Plansze v2** (`src/core/puzzle_builder.py`, `src/build_puzzles.py`): dłuższy bok ma 32 pola, krótszy wynika z proporcji obrazu (bez wycinania kwadratu); paleta 6–10 kolorów z K-Means w CIELAB, łączenie kolorów bliższych niż ΔE 12 i zajmujących mniej niż 1,2% pól; schemat `{schemaVersion: 2, id, grid, palette}` bez tekstów, które należą do manifestu. Wynik jest deterministyczny.
+>
+> **Źródła reprodukcji** (`src/content_sources.py`): wyszukuje każde dzieło w Wikimedia Commons i przyjmuje kandydata tylko wtedy, gdy hash jego miniatury zgadza się z naszym plikiem; zapisuje stronę pliku i licencję w `source` manifestu (`--write`). Niedopasowane dzieła wypisuje do ręcznego uzupełnienia.
+>
+> Testy: `.venv/bin/python -m pytest -q` (też w CI). API i galeria poniżej pochodzą z hackathonu i nie są używane przez grę.
+
+---
+
+## Pierwotny opis (hackathon, Code for Culture)
 
 Serwis backendowy i silnik przetwarzania obrazów dla aplikacji hackathonowej **Code for Culture** (TikTok-style culture feed).
 

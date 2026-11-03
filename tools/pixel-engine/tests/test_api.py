@@ -4,12 +4,24 @@ Verifies OpenAPI compliance, dynamic 'n' parameter, and ADR-003 schema validatio
 """
 
 import io
+from pathlib import Path
 import base64
 import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
 from src.api.main import app
+
+# These endpoints rebuild boards from originals or serve a generated gallery,
+# neither of which is committed. Fetch them first to run the tests.
+needs_originals = pytest.mark.skipif(
+    not (Path("data/heritage").exists() and any(Path("data/heritage").iterdir())),
+    reason="originals missing: run python -m src.data.download_heritage",
+)
+needs_gallery = pytest.mark.skipif(
+    not Path("outputs/before_after/index.html").exists(),
+    reason="gallery missing: run python -m src.core.generate_gallery",
+)
 
 client = TestClient(app)
 
@@ -40,6 +52,7 @@ def test_get_artworks_default():
     assert "historical_context" in first["cultural_data"]
 
 
+@needs_originals
 def test_get_artworks_dynamic_n():
     """Verify that requesting ?n=16 dynamically recalculates grid to 16x16!"""
     response = client.get("/api/artworks?n=16")
@@ -63,6 +76,7 @@ def test_get_artwork_by_id():
     assert len(art["palette"]) == 5
 
 
+@needs_originals
 def test_get_artwork_by_id_dynamic_n():
     response = client.get("/api/artworks/stanczyk-matejko?n=48")
     assert response.status_code == 200
@@ -109,6 +123,7 @@ def test_convert_upload_file():
     assert len(res["palette"]) == 5
 
 
+@needs_gallery
 def test_gallery_endpoint():
     response = client.get("/gallery")
     assert response.status_code == 200

@@ -8,12 +8,11 @@ import { prepareDecorationGeometry } from "./decoration-geometry.mjs";
 // Only files the game references are published; everything else in img/ stays source material.
 const publishedAssets = [
   /^(house\d|hall\d?|room\d|blank_paper_crossmark)\.(jpe?g|png|webp)$/i,
-  /^era\d_(?![a-z_]*_kolorowanie\/)[a-z_]+\/[^/]+\.(jpe?g|png|webp)$/i,
-  /^era\d_[a-z_]+_kolorowanie\/json\/[^/]+\.json$/i,
-  /^era\d_[a-z_]+_kolorowanie\/previews\/[^/]+_art\.png$/i,
+  /^era\d_[a-z_]+\/[^/]+\.(jpe?g|png|webp)$/i,
+  /^puzzles\/[^/]+\.(json|png)$/i,
   /^(oswiecenie|romantyzm|pozytywizm|mloda_polska)_assets\/(?!1[234]-rama-)[^/]+\.png$/i,
 ];
-const isReproduction = (name) => /^era\d_(?![a-z_]*_kolorowanie\/)[a-z_]+\/[^/]+$/i.test(name);
+const isReproduction = (name) => /^era\d_[a-z_]+\/[^/]+$/i.test(name);
 const isDecoration = (name) => /_assets\/[^/]+\.png$/i.test(name);
 // Bump when encoder settings change so cached outputs are rebuilt.
 const PIPELINE_VERSION = 1;
@@ -38,7 +37,8 @@ async function publish(root, output, name) {
   const source = join(root, "img", name);
   const target = join(output, name);
   await mkdir(dirname(target), { recursive: true });
-  if (/\.json$/i.test(name) || /_kolorowanie\/previews\//.test(name)) {
+  // Boards and their previews come from tools/pixel-engine already sized for the game.
+  if (/^puzzles\//.test(name)) {
     await copyFile(source, target);
   } else {
     const original = await readFile(source);

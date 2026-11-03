@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { artworks, wallSlots } from "@/data/eras";
+import { artworks, legacyArtworkIds, wallSlots } from "@/data/eras";
 import { normalizeWallAssignments, placeWallArtwork, type WallAssignments } from "@/lib/wall-gallery";
 import type { Language } from "@/types/game";
 import { safeStorage } from "./safe-storage";
@@ -67,15 +67,21 @@ export const useGameStore = create<GameState>()(
       merge: (persisted, current) => {
         if (!persisted || typeof persisted !== "object") return current;
         const saved = persisted as Record<string, unknown>;
+        // Saves from before content/artworks.json used file-path IDs; map them to the stable ones.
+        const currentId = (id: unknown) => (typeof id === "string" ? legacyArtworkIds.get(id) ?? id : id);
+        const wallAssignments = saved.wallAssignments && typeof saved.wallAssignments === "object"
+          ? Object.fromEntries(Object.entries(saved.wallAssignments).map(([slot, id]) => [slot, currentId(id)]))
+          : saved.wallAssignments;
+        const completedArtworkIds = Array.isArray(saved.completedArtworkIds) ? saved.completedArtworkIds.map(currentId) : saved.completedArtworkIds;
         return {
           ...current,
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
           autoFill: saved.autoFill !== false,
           exploreAll: saved.exploreAll === true,
-          wallAssignments: normalizeWallAssignments(saved.wallAssignments, wallSlots, artworks),
-          completedArtworkIds: Array.isArray(saved.completedArtworkIds)
-            ? [...new Set(saved.completedArtworkIds.filter(
+          wallAssignments: normalizeWallAssignments(wallAssignments, wallSlots, artworks),
+          completedArtworkIds: Array.isArray(completedArtworkIds)
+            ? [...new Set(completedArtworkIds.filter(
                 (id): id is string =>
                   typeof id === "string" &&
                   artworks.some((artwork) => artwork.id === id),

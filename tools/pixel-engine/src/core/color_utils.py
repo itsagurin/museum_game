@@ -26,15 +26,16 @@ def hex_to_rgb(hex_str: str) -> Tuple[int, int, int]:
     return int(hex_str[0:2], 16), int(hex_str[2:4], 16), int(hex_str[4:6], 16)
 
 
-def rgb_to_lab(rgb_array: np.ndarray) -> np.ndarray:
+def rgb_to_lab(rgb_array: np.ndarray, max_value: float = 255.0) -> np.ndarray:
     """
-    Convert RGB image or array (values 0-255 or 0-1) to CIELAB.
-    Input shape: (..., 3)
+    Convert RGB image or array to CIELAB.
+    Input shape: (..., 3) with channels in 0..max_value (255 for 8-bit images).
     Output shape: (..., 3) where L in [0, 100], a in [-128, 127], b in [-128, 127]
+
+    The scale is explicit: guessing it from the maximum value turned very dark
+    8-bit images such as (1, 1, 1) into white.
     """
-    rgb = np.asarray(rgb_array, dtype=np.float64)
-    if rgb.max() > 1.0:
-        rgb = rgb / 255.0
+    rgb = np.asarray(rgb_array, dtype=np.float64) / max_value
 
     # sRGB to linear RGB
     linear_mask = rgb > 0.04045

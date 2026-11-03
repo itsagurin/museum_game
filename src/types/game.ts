@@ -1,3 +1,5 @@
+import type { ArtworkSource } from "./content";
+
 export type Language = "pl" | "en";
 export type Localized = Record<Language, string>;
 export type EraId = "era-1" | "era-2" | "era-3" | "era-4";
@@ -35,8 +37,9 @@ export interface Artwork {
   title: Localized;
   artist?: string;
   year?: string;
-  style?: string;
-  contentLanguage?: Language;
+  style?: Localized;
+  /** English UI shows the Polish story and curiosity until they are translated. */
+  untranslated?: boolean;
   story?: Localized;
   funFact?: Localized;
   originalImage?: string;
@@ -46,6 +49,7 @@ export interface Artwork {
   coloringSource?: string;
   coloredPreview?: string;
   sourceFile?: string;
+  source?: ArtworkSource;
 }
 export interface ArtworkSlot {
   id: string;

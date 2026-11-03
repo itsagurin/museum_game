@@ -58,17 +58,18 @@ test("one matching pixel per colour completes the painting and still supports un
   const dev = await openStudio(page);
   await dev.click();
   const canvas = page.getByLabel(`Kolorowanie: ${catalogEntry.title.pl}`, { exact: true });
+  const cellCount = painting.grid.width * painting.grid.height;
   for (const color of painting.palette) {
     await page.getByRole("button", { name: `Kolor ${color.id}: ${color.name}`, exact: true }).click();
     await canvas.locator(`.pixel-hit[data-color-id="${color.id}"]`).first().press("Enter");
     await expect(canvas.locator(`.pixel-hit.painted[data-color-id="${color.id}"]`)).toHaveCount(countFor(color.id));
   }
-  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(1024);
+  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(cellCount);
   await expect(page.getByRole("button", { name: "Odkryj opowieść", exact: true })).toBeEnabled();
   await expect(page.getByRole("region", { name: "Odrodzone arcydzieło", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Cofnij", exact: true }).click();
   const last = painting.palette.at(-1)!;
-  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(1024 - countFor(last.id));
+  await expect(canvas.locator(".pixel-hit.painted")).toHaveCount(cellCount - countFor(last.id));
   await expect(page.getByRole("button", { name: "Dokończ swoje płótno", exact: true })).toBeDisabled();
   await expect(page.getByRole("region", { name: "Odrodzone arcydzieło", exact: true })).toHaveCount(0);
   await canvas.locator(`.pixel-hit[data-color-id="${last.id}"]`).first().press("Enter");
