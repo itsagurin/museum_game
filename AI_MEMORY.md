@@ -48,3 +48,6 @@
 
 - B1: produkcyjny build uruchamia Workbox po eksporcie. Sceny, miniatury, fonty i shell są precache; reprodukcje/dekoracje CacheFirst, plansze SWR. Adres planszy zawiera `?v=puzzleVersion`, aby nowy manifest nie dostał starej siatki z cache. Audio poza cache.
 - Service worker nie aktywuje nowej wersji automatycznie: komunikat → SKIP_WAITING → reload dopiero po kliknięciu. E2E bazowo blokują SW, aby sterować błędami fetch; `pwa.spec` jawnie je włącza i sprawdza prawdziwy offline.
+
+- B2: wybór dnia jest deterministyczny dla lokalnej daty i otwartych epok, a `dailySelection` utrwala go także po ukończeniu. `dailyHistory` waliduje rzeczywiste daty, usuwa duplikaty i zachowuje 60 wpisów. Przerwa nie odbiera nagród.
+- B3: 21 odznak w `content/badges.json` (4 epok, 12 artystów, 4 progów i całość). Reguły działają na unikalnych znanych ukończeniach; artyści liczą się przez epoki. Nowe odznaki trafiają do kolejki po historii. E2E jawnie potwierdzają odznaki przed dalszą nawigacją; asercje starych nagród pozostają.

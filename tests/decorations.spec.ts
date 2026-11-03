@@ -1,7 +1,7 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
 import { getRoomDecorations } from "../src/data/room-decorations";
-import { catalogPaintings, fillCanvas, openCatalogStudio } from "./helpers/catalog-coloring";
+import { dismissBadges, catalogPaintings, fillCanvas, openCatalogStudio } from "./helpers/catalog-coloring";
 
 async function seed(page: Page, completed: string[], gentleMotion = true) {
   await page.addInitScript(({ completedArtworkIds, gentleMotion }) => {
@@ -78,6 +78,7 @@ test("a real painting unlocks an era reward once, including from the library", a
   await fillCanvas(page);
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();
   await page.keyboard.press("Escape");
+  await dismissBadges(page);
   await page.getByRole("button", { name: "Wróć", exact: true }).click();
   await page.locator(".primary-button").click();
   await page.getByRole("button", { name: "Romantyzm", exact: true }).first().click();

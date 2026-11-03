@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, type Page } from "@playwright/test";
+import { copy } from "../../src/data/copy";
 import { seedGame } from "./game-state";
 import { artworks, getEra } from "../../src/data/eras";
 import type { ColoringArtwork } from "../../src/lib/coloring";
@@ -48,3 +49,13 @@ export async function fillCanvas(page: Page) {
 }
 
 export const savedCompletions = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1") ?? '{"state":{}}').state.completedArtworkIds ?? []);
+
+/** Acknowledge newly earned badges while leaving era/finale notices for their own assertions. */
+export async function dismissBadges(page: Page) {
+  for(let index=0;index<30;index++) {
+    const title=page.getByRole("dialog").getByRole("heading",{name:copy.pl.badgeTitle,exact:true});
+    if(!await title.waitFor({state:"visible",timeout:500}).then(()=>true,()=>false)) return;
+    await page.getByRole("dialog").getByRole("button",{name:copy.pl.stayHere,exact:true}).click();
+  }
+  throw new Error("Badge queue did not finish");
+}

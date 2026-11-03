@@ -1,13 +1,15 @@
 "use client";
 
 import { ArrowRight, DoorOpen, Images, House, LockKeyhole, Sparkles } from "lucide-react";
+import { badgeDefinitions } from "@/lib/badges";
 import { copy } from "@/data/copy";
 import { getEra } from "@/data/eras";
 import type { EraId, Language, View } from "@/types/game";
 
 export type Milestone =
   | { type: "unlock" | "eraComplete"; eraId: EraId }
-  | { type: "finale" };
+  | { type: "finale" }
+  | { type: "badge"; badgeId: string };
 
 /** Explains why a door is closed and leads to the era that opens it. */
 export function EraLockedNotice({ eraName, requiredEra, remaining, language, onGo }: {
@@ -45,6 +47,10 @@ export function MilestoneNotice({ milestone, language, houseImage, collectionSiz
   onClose: () => void;
 }) {
   const t = copy[language];
+  if(milestone.type === "badge") {
+    const badge=badgeDefinitions.find(badge=>badge.id===milestone.badgeId);
+    return <div className="progress-notice"><div className="dialog-illustration"><Sparkles size={40}/></div><h3>{badge?.title[language]}</h3><p>{badge?.description[language]}</p><button className="primary-button full-width" onClick={()=>onNavigate("library")}>{t.library}</button><button className="secondary-button full-width" onClick={onClose}>{t.stayHere}</button></div>;
+  }
   if (milestone.type === "unlock") {
     const era = getEra(milestone.eraId);
     return (

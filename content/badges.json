@@ -1,0 +1,328 @@
+[
+  {
+    "id": "era-1",
+    "title": {
+      "pl": "Kolekcja: Oświecenie",
+      "en": "Era collection 1"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła tej epoki.",
+      "en": "Restore every artwork in this era."
+    },
+    "rule": {
+      "type": "era",
+      "era": "era-1"
+    }
+  },
+  {
+    "id": "era-2",
+    "title": {
+      "pl": "Kolekcja: Romantyzm",
+      "en": "Era collection 2"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła tej epoki.",
+      "en": "Restore every artwork in this era."
+    },
+    "rule": {
+      "type": "era",
+      "era": "era-2"
+    }
+  },
+  {
+    "id": "era-3",
+    "title": {
+      "pl": "Kolekcja: Pozytywizm",
+      "en": "Era collection 3"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła tej epoki.",
+      "en": "Restore every artwork in this era."
+    },
+    "rule": {
+      "type": "era",
+      "era": "era-3"
+    }
+  },
+  {
+    "id": "era-4",
+    "title": {
+      "pl": "Kolekcja: Młoda Polska",
+      "en": "Era collection 4"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła tej epoki.",
+      "en": "Restore every artwork in this era."
+    },
+    "rule": {
+      "type": "era",
+      "era": "era-4"
+    }
+  },
+  {
+    "id": "artist-aleksander-gierymski",
+    "title": {
+      "pl": "Kolekcja: Aleksander Gierymski",
+      "en": "Collection: Aleksander Gierymski"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (4).",
+      "en": "Restore all 4 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Aleksander Gierymski",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-artur-grottger",
+    "title": {
+      "pl": "Kolekcja: Artur Grottger",
+      "en": "Collection: Artur Grottger"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (4).",
+      "en": "Restore all 4 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Artur Grottger",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-bernardo-bellotto-canaletto",
+    "title": {
+      "pl": "Kolekcja: Bernardo Bellotto (Canaletto)",
+      "en": "Collection: Bernardo Bellotto (Canaletto)"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (7).",
+      "en": "Restore all 7 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Bernardo Bellotto (Canaletto)",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-jacek-malczewski",
+    "title": {
+      "pl": "Kolekcja: Jacek Malczewski",
+      "en": "Collection: Jacek Malczewski"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (6).",
+      "en": "Restore all 6 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Jacek Malczewski",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-jan-matejko",
+    "title": {
+      "pl": "Kolekcja: Jan Matejko",
+      "en": "Collection: Jan Matejko"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (8).",
+      "en": "Restore all 8 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Jan Matejko",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-jan-piotr-norblin",
+    "title": {
+      "pl": "Kolekcja: Jan Piotr Norblin",
+      "en": "Collection: Jan Piotr Norblin"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (6).",
+      "en": "Restore all 6 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Jan Piotr Norblin",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-january-suchodolski",
+    "title": {
+      "pl": "Kolekcja: January Suchodolski",
+      "en": "Collection: January Suchodolski"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (3).",
+      "en": "Restore all 3 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "January Suchodolski",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-jozef-chelmonski",
+    "title": {
+      "pl": "Kolekcja: Józef Chełmoński",
+      "en": "Collection: Józef Chełmoński"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (6).",
+      "en": "Restore all 6 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Józef Chełmoński",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-marcello-bacciarelli",
+    "title": {
+      "pl": "Kolekcja: Marcello Bacciarelli",
+      "en": "Collection: Marcello Bacciarelli"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (5).",
+      "en": "Restore all 5 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Marcello Bacciarelli",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-olga-boznanska",
+    "title": {
+      "pl": "Kolekcja: Olga Boznańska",
+      "en": "Collection: Olga Boznańska"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (3).",
+      "en": "Restore all 3 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Olga Boznańska",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-piotr-michalowski",
+    "title": {
+      "pl": "Kolekcja: Piotr Michałowski",
+      "en": "Collection: Piotr Michałowski"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (3).",
+      "en": "Restore all 3 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Piotr Michałowski",
+      "count": "all"
+    }
+  },
+  {
+    "id": "artist-stanislaw-wyspianski",
+    "title": {
+      "pl": "Kolekcja: Stanisław Wyspiański",
+      "en": "Collection: Stanisław Wyspiański"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła artysty w kolekcji (5).",
+      "en": "Restore all 5 artworks by this artist."
+    },
+    "rule": {
+      "type": "artist",
+      "artist": "Stanisław Wyspiański",
+      "count": "all"
+    }
+  },
+  {
+    "id": "count-1",
+    "title": {
+      "pl": "Kolekcja 1",
+      "en": "Collection of 1"
+    },
+    "description": {
+      "pl": "Odnowione obrazy: 1.",
+      "en": "Restored paintings: 1."
+    },
+    "rule": {
+      "type": "count",
+      "count": 1
+    }
+  },
+  {
+    "id": "count-10",
+    "title": {
+      "pl": "Kolekcja 10",
+      "en": "Collection of 10"
+    },
+    "description": {
+      "pl": "Odnowione obrazy: 10.",
+      "en": "Restored paintings: 10."
+    },
+    "rule": {
+      "type": "count",
+      "count": 10
+    }
+  },
+  {
+    "id": "count-25",
+    "title": {
+      "pl": "Kolekcja 25",
+      "en": "Collection of 25"
+    },
+    "description": {
+      "pl": "Odnowione obrazy: 25.",
+      "en": "Restored paintings: 25."
+    },
+    "rule": {
+      "type": "count",
+      "count": 25
+    }
+  },
+  {
+    "id": "count-50",
+    "title": {
+      "pl": "Kolekcja 50",
+      "en": "Collection of 50"
+    },
+    "description": {
+      "pl": "Odnowione obrazy: 50.",
+      "en": "Restored paintings: 50."
+    },
+    "rule": {
+      "type": "count",
+      "count": 50
+    }
+  },
+  {
+    "id": "all",
+    "title": {
+      "pl": "Opieka nad Dziedzictwem",
+      "en": "Guardian of Heritage"
+    },
+    "description": {
+      "pl": "Odnów wszystkie dzieła kolekcji.",
+      "en": "Restore the whole collection."
+    },
+    "rule": {
+      "type": "all"
+    }
+  }
+]

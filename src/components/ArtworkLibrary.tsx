@@ -1,5 +1,6 @@
 "use client";
 
+import { CollectionAlbum } from "@/features/collection/CollectionAlbum";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, ImageOff, LockKeyhole, Paintbrush, Search, X } from "lucide-react";
 import { artworks, eras, getEra, getWallArtworks, wallSlots } from "@/data/eras";
@@ -35,6 +36,7 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
   const [filter, setFilter] = useState<EraId | "all">(eraId ?? "all");
   const [onlyCompleted, setOnlyCompleted] = useState(false);
   const [query, setQuery] = useState("");
+  const [tab,setTab]=useState<"collection"|"album">("collection");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [targetSlotId, setTargetSlotId] = useState(slotId ?? "");
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -73,7 +75,8 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
             <span className="library-count">{collection.length} {t.paintings} <span>·</span> {collection.filter((artwork) => completed.includes(artwork.id)).length} {t.restored}</span>
           </div>
 
-          {selected ? (
+          <nav className="collection-tabs" aria-label={t.library}><button aria-pressed={tab==="collection"} onClick={()=>setTab("collection")}>{t.library}</button><button aria-pressed={tab==="album"} onClick={()=>setTab("album")}>{t.album}</button></nav>
+          {tab === "album" ? <CollectionAlbum language={language} completed={completed} /> : selected ? (
             <section className="library-detail" aria-label={`${selected.title[language]} — ${getEra(selected.eraId).name[language]}`} data-artwork-id={selected.id}>
               <button ref={detailBackRef} className="library-back-button" onClick={() => setSelectedId(null)}><ArrowLeft size={16} />{t.libraryBack}</button>
               <div className="library-detail-layout">

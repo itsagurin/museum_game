@@ -1,0 +1,31 @@
+import {test,expect} from "@playwright/test";
+import {seedGame} from "./helpers/game-state";
+import {fillCanvas} from "./helpers/catalog-coloring";
+import {getDailyArtwork} from "../src/lib/daily";
+import {copy} from "../src/data/copy";
+import {artworks} from "../src/data/eras";
+
+test("a daily painting stays selected, records today and a badge, then changes tomorrow",async({page})=>{
+ await page.clock.setFixedTime(new Date("2026-11-03T12:00:00Z"));
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await seedGame(page,{exploreAll:false});
+ await page.goto("/");
+ const expected=getDailyArtwork("2026-11-03",artworks,[],id=>id==="era-1")!;
+ await expect(page.locator(".daily-card")).toHaveAttribute("data-artwork-id",expected.id);
+ await page.locator(".daily-card").getByRole("button",{name:"Maluj",exact:true}).click();
+ await fillCanvas(page);
+ await page.getByRole("button",{name:"Odkryj opowieść",exact:true}).click();
+ await page.getByRole("button",{name:"Wróć do pokoju",exact:true}).click();
+ await expect(page.getByRole("dialog")).toContainText("Nowa odznaka");
+ await page.getByRole("button",{name:"Zostań tutaj",exact:true}).click();
+ await expect(page.locator(".daily-card")).toContainText("Odnowione dziś");
+ await expect(page.locator(".daily-card")).toHaveAttribute("data-artwork-id",expected.id);
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem("heritage-hearth-ui-v1")!).state.dailyHistory)).toEqual(["2026-11-03"]);
+ await page.reload();await expect(page.locator(".daily-card")).toHaveAttribute("data-artwork-id",expected.id);
+ await page.getByRole("button",{name:copy.pl.library,exact:true}).filter({visible:true}).first().click();
+ await page.getByRole("button",{name:"Album",exact:true}).click();
+ await expect(page.locator('[data-badge="count-1"]')).toHaveAttribute("data-earned","true");
+ await page.clock.setFixedTime(new Date("2026-11-04T12:00:00Z"));
+ await page.goto("/#home");await page.reload();
+ await expect(page.locator(".daily-card")).not.toHaveAttribute("data-artwork-id",expected.id);
+});

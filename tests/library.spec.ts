@@ -8,6 +8,8 @@ test("painting and curiosity fit the screen before optionally opening the histor
     artworks.find((artwork) => artwork.id === "matejko-portret-zony-artysty-sukni")!,
   ];
   await page.goto("/");
+  // Finish the automatic daily-selection save before replacing localStorage in this fixture.
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1") ?? "{}").state?.dailySelection?.artworkId)).toBeTruthy();
   for (const artwork of samples) {
     await page.evaluate((artwork) => {
       localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({

@@ -17,6 +17,7 @@ import "./room.css";
 import "./dialogs.css";
 import "./progress.css";
 import "./coloring.css";
+import "./collection.css";
 import "./library.css";
 import "./decorations.css";
 

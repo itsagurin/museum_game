@@ -1,14 +1,17 @@
 "use client";
 
+import { DailyCard } from "../collection/DailyCard";
+import type { Artwork } from "@/types/game";
 import { copy } from "@/data/copy";
-import type { Language, View } from "@/types/game";
+import type { Language, EraId, View } from "@/types/game";
 import { GameViewport } from "@/components/GameViewport";
 import { SceneImage } from "@/components/SceneImage";
 import { regionStyle } from "./geometry";
 import { ArrowRight, ArrowUpRight, DoorOpen, Images, Paintbrush } from "lucide-react";
 import { artworks } from "@/data/eras";
 
-export function HouseScene({ language, houseImage, completedCount, navigate, openLibrary }: {
+export function HouseScene({ language, houseImage, completedCount, navigate, openLibrary, isEraOpen, onPaint }: {
+  isEraOpen?: (id:EraId)=>boolean; onPaint?: (artwork:Artwork)=>void;
   language: Language; houseImage: string; completedCount: number;
   navigate: (view: View) => void; openLibrary: () => void;
 }) {
@@ -51,5 +54,6 @@ export function HouseScene({ language, houseImage, completedCount, navigate, ope
                     </button>
                     <button className="home-library-button glass" onClick={() => openLibrary()}><Images size={18} />{t.library}<ArrowRight size={16} /></button>
                   </div>
+    {isEraOpen && onPaint && <DailyCard language={language} isEraOpen={isEraOpen} onPaint={onPaint} />}
   </>);
 }

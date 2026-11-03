@@ -107,7 +107,7 @@ export function HeritageApp({ onRestoreArtwork }: {
                   eraId={libraryContext.eraId} slotId={libraryContext.slotId} onRestore={restoreArtwork} isEraOpen={isEraOpen}
                   onHang={(slotId, artwork) => { setWallArtwork(slotId, artwork.id); navigate(artwork.eraId); }} />
               ) : view === "home" ? (
-                <HouseScene language={language} houseImage={houseImage} completedCount={completed.length} navigate={navigate} openLibrary={openLibrary} />
+                <HouseScene language={language} houseImage={houseImage} completedCount={completed.length} navigate={navigate} openLibrary={openLibrary} isEraOpen={isEraOpen} onPaint={restoreArtwork} />
               ) : view === "hall" ? (
                 <HallScene language={language} completedRooms={completedRooms} navigate={navigate} openLibrary={openLibrary} isEraOpen={isEraOpen} goToEra={goToEra} />
               ) : activeEra && roomProgress ? (

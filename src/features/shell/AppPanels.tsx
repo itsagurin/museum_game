@@ -35,7 +35,7 @@ export function AppPanels({ panel, language, gentleMotion, storageUnavailable, o
                       : panel.type === "locked"
                         ? t.lockedTitle
                         : panel.type === "milestone"
-                          ? panel.milestone.type === "unlock" ? t.unlockTitle : panel.milestone.type === "eraComplete" ? t.eraCompleteTitle : t.finaleTitle
+                          ? panel.milestone.type === "badge" ? t.badgeTitle : panel.milestone.type === "unlock" ? t.unlockTitle : panel.milestone.type === "eraComplete" ? t.eraCompleteTitle : t.finaleTitle
                           : t.studioTitle
               }
               closeLabel={t.close}
