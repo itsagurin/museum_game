@@ -73,9 +73,9 @@ def main() -> None:
     parser.add_argument("--root", default="../..", help="Game repository root")
     parser.add_argument("--only", nargs="*", help="Artwork IDs to rebuild")
     parser.add_argument("--report", help="Optional HTML comparison report")
-    parser.add_argument("--long-edge", type=int, default=32, help="Longer grid edge (16 for the introductory board)")
+    parser.add_argument("--long-edge", type=int, default=None, help="Longer grid edge (16 for the introductory board)")
     args = parser.parse_args()
-    if not 12 <= args.long_edge <= 128: parser.error("--long-edge must be between 12 and 128")
+    if args.long_edge is not None and not 12 <= args.long_edge <= 128: parser.error("--long-edge must be between 12 and 128")
 
     root = Path(args.root).resolve()
     manifest = json.loads((root / "content" / "artworks.json").read_text(encoding="utf-8"))
@@ -83,7 +83,7 @@ def main() -> None:
     results = []
     for entry in selected:
         with Image.open(root / "img" / entry["image"]) as image:
-            board = build_board(image, entry["id"], BoardSettings(long_edge=args.long_edge))
+            board = build_board(image, entry["id"], BoardSettings(long_edge=args.long_edge or entry.get("puzzleSettings", {}).get("longEdge", 32)))
         intro = args.long_edge == 16
         if intro:
             entry["introPuzzle"] = f'puzzles/{entry["id"]}.intro.json'

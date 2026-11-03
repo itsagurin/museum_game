@@ -1770,7 +1770,10 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "1asq0z0"
+    "puzzleVersion": "143uey4",
+    "puzzleSettings": {
+      "longEdge": 40
+    }
   },
   {
     "id": "matejko-portret-zony-artysty-sukni",
@@ -1854,7 +1857,10 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "1t4qm6n"
+    "puzzleVersion": "7ylu8x",
+    "puzzleSettings": {
+      "longEdge": 40
+    }
   },
   {
     "id": "gierymski-patrol-powstanczy",
@@ -2183,7 +2189,10 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "11u4t07"
+    "puzzleVersion": "lj8zis",
+    "puzzleSettings": {
+      "longEdge": 40
+    }
   },
   {
     "id": "chelmonski-czworka",
@@ -2225,7 +2234,10 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "1i3k18t"
+    "puzzleVersion": "11qlysf",
+    "puzzleSettings": {
+      "longEdge": 40
+    }
   },
   {
     "id": "chelmonski-krzyz-zadymce",
@@ -2309,7 +2321,10 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "rv41nb"
+    "puzzleVersion": "1ux8etp",
+    "puzzleSettings": {
+      "longEdge": 40
+    }
   },
   {
     "id": "brandt-wyjazd-wilanowa-jana-iii",

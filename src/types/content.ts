@@ -27,6 +27,7 @@ export interface ContentEntry {
   /** Paths under img/. */
   image: string;
   puzzle: string;
+  puzzleSettings?: { longEdge: number };
   introPuzzle?: string;
   introPuzzleVersion?: string;
   puzzleVersion: string;

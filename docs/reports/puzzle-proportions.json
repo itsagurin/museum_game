@@ -1,0 +1,137 @@
+[
+  {
+    "id": "matejko-bitwa-grunwaldem",
+    "ratio": 2.254,
+    "variants": [
+      {
+        "label": "Obecnie: bok 32, minimum 12",
+        "width": 32,
+        "height": 14,
+        "cells": 448,
+        "signature": "1asq0z0"
+      },
+      {
+        "label": "Bok 32, minimum 16",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "1mhz6go"
+      },
+      {
+        "label": "Bok 40, minimum 12",
+        "width": 40,
+        "height": 18,
+        "cells": 720,
+        "signature": "143uey4"
+      }
+    ]
+  },
+  {
+    "id": "matejko-hold-pruski",
+    "ratio": 2.015,
+    "variants": [
+      {
+        "label": "Obecnie: bok 32, minimum 12",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "1t4qm6n"
+      },
+      {
+        "label": "Bok 32, minimum 16",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "1t4qm6n"
+      },
+      {
+        "label": "Bok 40, minimum 12",
+        "width": 40,
+        "height": 20,
+        "cells": 800,
+        "signature": "7ylu8x"
+      }
+    ]
+  },
+  {
+    "id": "chelmonski-sprawa-u-wojta",
+    "ratio": 2.265,
+    "variants": [
+      {
+        "label": "Obecnie: bok 32, minimum 12",
+        "width": 32,
+        "height": 14,
+        "cells": 448,
+        "signature": "11u4t07"
+      },
+      {
+        "label": "Bok 32, minimum 16",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "s33pt8"
+      },
+      {
+        "label": "Bok 40, minimum 12",
+        "width": 40,
+        "height": 18,
+        "cells": 720,
+        "signature": "lj8zis"
+      }
+    ]
+  },
+  {
+    "id": "chelmonski-czworka",
+    "ratio": 2.362,
+    "variants": [
+      {
+        "label": "Obecnie: bok 32, minimum 12",
+        "width": 32,
+        "height": 14,
+        "cells": 448,
+        "signature": "1i3k18t"
+      },
+      {
+        "label": "Bok 32, minimum 16",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "lhsixg"
+      },
+      {
+        "label": "Bok 40, minimum 12",
+        "width": 40,
+        "height": 17,
+        "cells": 680,
+        "signature": "11qlysf"
+      }
+    ]
+  },
+  {
+    "id": "brandt-czarniecki-koldynga",
+    "ratio": 2.148,
+    "variants": [
+      {
+        "label": "Obecnie: bok 32, minimum 12",
+        "width": 32,
+        "height": 15,
+        "cells": 480,
+        "signature": "rv41nb"
+      },
+      {
+        "label": "Bok 32, minimum 16",
+        "width": 32,
+        "height": 16,
+        "cells": 512,
+        "signature": "sye7fh"
+      },
+      {
+        "label": "Bok 40, minimum 12",
+        "width": 40,
+        "height": 19,
+        "cells": 760,
+        "signature": "1ux8etp"
+      }
+    ]
+  }
+]
