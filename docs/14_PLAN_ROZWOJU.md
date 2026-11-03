@@ -272,7 +272,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] B5: muzyka po zatwierdzeniu nagrań.
 - [x] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
 - [ ] B7: wydajność i osobny job LHCI.
-- [ ] B8: materiały do badań.
+- [x] B8: materiały do badań.
 
 Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez etykiety treści), B1=a (zwykła plansza dnia), B2=a (seria), B3=Vercel, B4=a (domyślnie włączone), B6=a (ikona z domu), B7=a (LHCI). Nagrania muzyczne i zmiany proporcji plansz wymagają osobnej decyzji. Przepisanie historii Git pozostaje poza zakresem bez decyzji zespołu.
 
@@ -291,3 +291,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/b5-music`:** zatwierdzone pięć nagrań CC0, 10,6 MB łącznie, atrybucja w „O grze” dostępna z ustawień na telefonie. Dwa kanały, 1,5 s przenikania, obniżenie głośności w pracowni, pauza w tle, domyślnie wyłączone. Vitest: 66, w tym wybór utworu, gest, miksowanie i budżet plików. Dwa e2e potwierdzają ustawienie domyślne, źródło utworu epoki i pauzę w tle.
 
 **Stan `feat/b6-analytics`:** warstwa Vercel track(), odczyt zgody po hydratacji, lista dopuszczonych właściwości, anonimowe przedziały, zdarzenia gry i przełącznik prywatności. Kod pozostaje bez produkcyjnej konfiguracji na życzenie użytkownika; aktywacja przez właściciela później, Pro/Enterprise dla custom events. Vitest: 70, lokalne e2e dostawcy: 6 przypadków. Dokument metryk wyjaśnia przybliżenia D1 i brak dokładnego D7 z d7_plus.
+
+**Stan `docs/b8-user-testing`:** siedem materiałów PL do badania 5–8 osób (w tym dwie rzadko grające), około 25 minut, quiz po tygodniu. Formularz zgody ma puste dane administratora/kontaktu i osobne zgody na nagranie i kontakt. SUS zawiera 10 pozycji i sposób liczenia; oznaczono robocze tłumaczenie. Zespół prowadzi badanie i uzupełnia rzeczywiste wyniki. Kod gry bez zmian względem zweryfikowanego B6.
