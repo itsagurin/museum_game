@@ -29,7 +29,7 @@ const without = (paintings: Record<string, SavedPainting>, artworkId: string) =>
   delete rest[artworkId];
   return rest;
 };
-const puzzleVersions = new Map(artworks.map(artwork => [artwork.id, artwork.puzzleVersion]));
+const puzzleVersions = new Map(artworks.map(artwork => [artwork.id, [artwork.puzzleVersion, artwork.introPuzzleVersion]]));
 const isSavedPainting = (value: unknown): value is SavedPainting => {
   if (!value || typeof value !== "object") return false;
   const entry = value as Record<string, unknown>;
@@ -73,7 +73,7 @@ export const usePaintingProgress = create<PaintingProgressState>()(
         const saved = (persisted as { paintings?: unknown } | null)?.paintings;
         if (!saved || typeof saved !== "object") return current;
         // One damaged entry must not discard the rest of the saved paintings.
-        const paintings = Object.fromEntries(Object.entries(saved).map(([id, entry]) => [legacyArtworkIds.get(id) ?? id, entry] as const).filter(([id, entry]) => puzzleVersions.has(id) && isSavedPainting(entry) && entry.signature === puzzleVersions.get(id)));
+        const paintings = Object.fromEntries(Object.entries(saved).map(([id, entry]) => [legacyArtworkIds.get(id) ?? id, entry] as const).filter(([id, entry]) => puzzleVersions.has(id) && isSavedPainting(entry) && puzzleVersions.get(id)?.includes(entry.signature)));
         return { ...current, paintings };
       },
     },

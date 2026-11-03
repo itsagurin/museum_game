@@ -30,6 +30,13 @@ describe("content/artworks.json", () => {
       expect(new Set(board.palette.map(color => color.name)).size, entry.id).toBe(board.palette.length);
       expect(new Set(board.palette.map(color => color.nameEn)).size, entry.id).toBe(board.palette.length);
       for (const color of board.palette) expect(color.nameEn?.trim(), entry.id).toBeTruthy();
+      if (entry.introPuzzle) {
+        const intro = parseColoringBoard(JSON.parse(readFileSync(`img/${entry.introPuzzle}`, "utf8")));
+        expect(Math.max(intro.grid.width,intro.grid.height),entry.id).toBe(16);
+        expect(entry.era).toBe("era-1");
+        expect(entry.order).toBe(1);
+        expect(entry.introPuzzleVersion).toBe(gridSignature(intro));
+      }
       const used = new Set(board.grid.data.flat());
       for (const color of board.palette) expect(used.has(color.id), `${entry.id} colour ${color.id}`).toBe(true);
     }

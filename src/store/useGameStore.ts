@@ -10,6 +10,10 @@ import { safeStorage } from "./safe-storage";
 interface GameState {
   language: Language;
   gentleMotion: boolean;
+  highContrast: boolean;
+  tutorialSeen: boolean;
+  toggleHighContrast: () => void;
+  markTutorialSeen: () => void;
   autoFill: boolean;
   /** Opens every era regardless of progress, e.g. in a classroom or to browse the collection. */
   exploreAll: boolean;
@@ -29,6 +33,10 @@ export const useGameStore = create<GameState>()(
     (set) => ({
       language: "pl",
       gentleMotion: false,
+      highContrast: typeof window !== "undefined" && window.matchMedia("(prefers-contrast: more)").matches,
+      tutorialSeen: false,
+      toggleHighContrast: () => set(state => ({highContrast: !state.highContrast})),
+      markTutorialSeen: () => set({tutorialSeen: true}),
       autoFill: true,
       exploreAll: false,
       completedArtworkIds: [],
@@ -49,16 +57,18 @@ export const useGameStore = create<GameState>()(
       setWallArtwork: (slotId, artworkId) => set((state) => ({
         wallAssignments: placeWallArtwork(slotId, artworkId, wallSlots, artworks, state.wallAssignments),
       })),
-      resetProgress: () => set({ completedArtworkIds: [], wallAssignments: normalizeWallAssignments({}, wallSlots, artworks) }),
+      resetProgress: () => set({ tutorialSeen: false, completedArtworkIds: [], wallAssignments: normalizeWallAssignments({}, wallSlots, artworks) }),
     }),
     {
       name: "heritage-hearth-ui-v1",
       version: 1,
       storage: createJSONStorage(() => safeStorage),
       skipHydration: true,
-      partialize: ({ language, gentleMotion, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
+      partialize: ({ language, gentleMotion, highContrast, tutorialSeen, autoFill, exploreAll, completedArtworkIds, wallAssignments }) => ({
         language,
         gentleMotion,
+        highContrast,
+        tutorialSeen,
         autoFill,
         exploreAll,
         completedArtworkIds,
@@ -77,6 +87,8 @@ export const useGameStore = create<GameState>()(
           ...current,
           language: saved.language === "en" ? "en" : "pl",
           gentleMotion: saved.gentleMotion === true,
+          highContrast: typeof saved.highContrast === "boolean" ? saved.highContrast : current.highContrast,
+          tutorialSeen: saved.tutorialSeen === true,
           autoFill: saved.autoFill !== false,
           exploreAll: saved.exploreAll === true,
           wallAssignments: normalizeWallAssignments(wallAssignments, wallSlots, artworks),

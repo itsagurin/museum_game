@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, type Page } from "@playwright/test";
+import { seedGame } from "./game-state";
 import { artworks, getEra } from "../../src/data/eras";
 import type { ColoringArtwork } from "../../src/lib/coloring";
 
@@ -11,7 +12,16 @@ export const catalogPaintings = artworks.map((artwork) => ({
 export type CatalogPainting = (typeof catalogPaintings)[number];
 
 export async function openCatalogStudio(page: Page, entry: CatalogPainting) {
+  await seedGame(page, {tutorialSeen:true});
+  // Catalogue tests exercise full boards; onboarding has its own first-session flow.
+  await page.addInitScript(() => {
+    const key="heritage-hearth-ui-v1";
+    const saved=JSON.parse(localStorage.getItem(key) ?? '{"version":1,"state":{}}');
+    saved.state.tutorialSeen=true;
+    localStorage.setItem(key,JSON.stringify(saved));
+  });
   await page.goto("/#library");
+  await page.reload();
   await expect(page.locator(".library-scroll")).toBeVisible();
   const backToCollection = page.getByRole("button", { name: "Wróć do kolekcji", exact: true });
   if (await backToCollection.isVisible()) await backToCollection.click();

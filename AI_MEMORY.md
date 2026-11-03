@@ -39,3 +39,6 @@
 
 - A2: przed wczytaniem obu magazynów pokazujemy neutralne tło z `aria-busy`; hash jest źródłem widoku przez `useSyncExternalStore`. `noscript` zachowuje wyśrodkowany dom dla przeglądarek bez JS. Nawigacja zachowuje metadane historii Next.
 - A4–A5: plansze v2 mają unikalne nazwy `name` PL / `nameEn` EN. Manifest zawiera `puzzleVersion` zgodne z FNV-1a `gridSignature`; merge odrzuca niezgodne postępy, ale zachowuje ukończenia i ściany. Same nazwy nie zmieniają sygnatury. Zestaw sygnatur Fazy 2 chroni 83 siatki i palety przed przypadkową zmianą.
+
+- A7: pierwsza pracownia pokazuje trzy zamykane podpowiedzi. `tutorialSeen` zapisywane przy zamknięciu pracowni, ukończeniu lub odrzuceniu podpowiedzi. Zapisane intro ma własną sygnaturę; zapis pełnej planszy ma pierwszeństwo. Testy katalogu świadomie ustawiają `tutorialSeen`, aby sprawdzać pełne plansze; samouczek ma osobny e2e nowego gracza.
+- A8: `highContrast` respektuje `prefers-contrast: more`, jest walidowane w merge i ustawiane na `html` (dialogi są portalami). Pracownia obsługuje strzałki. `tests/a11y.spec.ts` nie dopuszcza serious/critical, bez wyłączeń reguł.

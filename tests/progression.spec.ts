@@ -58,6 +58,7 @@ test(`level ${ERA_UNLOCK_LEVEL} in an era opens the next one with a notice, once
 });
 
 test("a started painting survives leaving the studio and a reload, with numbers when zoomed", async ({ page }) => {
+  await seedGame(page, {exploreAll:false});
   await page.goto("/#era-1");
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
   await page.getByRole("button", { name: `${first.artwork.title.pl} — Czeka na kolory`, exact: true }).click();

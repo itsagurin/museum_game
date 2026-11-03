@@ -16,7 +16,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from src.core.puzzle_builder import build_board, render_preview
+from src.core.puzzle_builder import BoardSettings, build_board, render_preview
 
 
 def to_json(board: dict) -> str:
@@ -73,7 +73,9 @@ def main() -> None:
     parser.add_argument("--root", default="../..", help="Game repository root")
     parser.add_argument("--only", nargs="*", help="Artwork IDs to rebuild")
     parser.add_argument("--report", help="Optional HTML comparison report")
+    parser.add_argument("--long-edge", type=int, default=32, help="Longer grid edge (16 for the introductory board)")
     args = parser.parse_args()
+    if not 12 <= args.long_edge <= 128: parser.error("--long-edge must be between 12 and 128")
 
     root = Path(args.root).resolve()
     manifest = json.loads((root / "content" / "artworks.json").read_text(encoding="utf-8"))
@@ -81,12 +83,17 @@ def main() -> None:
     results = []
     for entry in selected:
         with Image.open(root / "img" / entry["image"]) as image:
-            board = build_board(image, entry["id"])
-        entry["puzzleVersion"] = grid_signature(board)
-        puzzle = root / "img" / entry["puzzle"]
+            board = build_board(image, entry["id"], BoardSettings(long_edge=args.long_edge))
+        intro = args.long_edge == 16
+        if intro:
+            entry["introPuzzle"] = f'puzzles/{entry["id"]}.intro.json'
+            entry["introPuzzleVersion"] = grid_signature(board)
+        else:
+            entry["puzzleVersion"] = grid_signature(board)
+        puzzle = root / "img" / (entry["introPuzzle"] if intro else entry["puzzle"])
         puzzle.parent.mkdir(parents=True, exist_ok=True)
         puzzle.write_text(to_json(board), encoding="utf-8")
-        render_preview(board).save(root / "img" / entry["preview"], optimize=True)
+        render_preview(board).save(root / "img" / (f'puzzles/{entry["id"]}.intro.png' if intro else entry["preview"]), optimize=True)
         results.append((entry, board))
         print(f'{entry["id"]}: {board["grid"]["width"]}x{board["grid"]["height"]}, {len(board["palette"])} colors')
     (root / "content" / "artworks.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

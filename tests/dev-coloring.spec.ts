@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import { seedGame } from "./helpers/game-state";
 import { artworks } from "../src/data/eras";
 import { catalogPaintings } from "./helpers/catalog-coloring";
 
@@ -10,6 +11,7 @@ const collectionCount = artworks.filter((artwork) => artwork.eraId === catalogEn
 const countFor = (id: number) => painting.grid.data.flat().filter((color) => color === id).length;
 
 async function openStudio(page: Page) {
+  await seedGame(page, {tutorialSeen:true,exploreAll:false});
   await page.goto(`/#${catalogEntry!.eraId}`);
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
   await page.getByRole("button", { name: `${catalogEntry!.title.pl} — Czeka na kolory`, exact: true }).click();

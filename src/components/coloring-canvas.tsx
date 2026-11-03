@@ -4,6 +4,7 @@ import { ArrowUpRight, Check, Hand, Paintbrush, PaintBucket, RotateCcw, ZoomIn, 
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { paintResult, type ColoringArtwork } from '@/lib/coloring';
 import { playColoringSound } from '@/lib/audio';
+import { TutorialHint } from '@/features/painting/TutorialHint';
 import { RevealBanner } from '@/features/painting/RevealBanner';
 import { coloringCopy } from '@/data/coloring-copy';
 import type { Language } from '@/types/game';
@@ -12,7 +13,7 @@ type Origin = { x: number; y: number };
 type Pixel = { id: number; colorId: number; x: number; y: number };
 type Feedback = { key: number; kind: 'correct' | 'wrong'; pixel: Pixel };
 
-export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedChange, language = 'pl', gentleMotion = false, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
+export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedChange, language = 'pl', gentleMotion = false, autoFill = false, showColorNumbers = false, highContrast = false, showBaseNumbers = false, tutorialActive = false, allowDevColorFill = false }: {
   artwork: ColoringArtwork;
   onComplete: () => void;
   /** Cells restored from an earlier visit; they count as painted and settled. */
@@ -23,6 +24,9 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
   gentleMotion?: boolean;
   autoFill?: boolean;
   showColorNumbers?: boolean;
+  highContrast?: boolean;
+  showBaseNumbers?: boolean;
+  tutorialActive?: boolean;
   allowDevColorFill?: boolean;
 }) {
   const t = coloringCopy[language];
@@ -30,12 +34,13 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
   const colors = useMemo(() => new Map(artwork.palette.map(color => [color.id, color])), [artwork]);
   const paletteName = (color: ColoringArtwork['palette'][number]) => language === 'en' ? color.nameEn ?? color.name : color.name;
   const colorLabel = (id: number) => `${showColorNumbers ? `${id} · ` : ''}${paletteName(colors.get(id)!)}`;
+  const [tutorialHits, setTutorialHits] = useState(0);
   const [canUndo, setCanUndo] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
   const [painted, setPainted] = useState<Map<number, Origin>>(() => new Map((initialPainted ?? []).filter(id => id >= 0 && id < pixels.length).map(id => [id, { x: pixels[id].x + .5, y: pixels[id].y + .5 }])));
   const [settled, setSettled] = useState<Set<number>>(() => new Set(painted.keys()));
   const [feedback, setFeedback] = useState<Feedback | null>(null);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(() => highContrast && typeof window !== "undefined" && window.innerWidth < 650 ? 1.5 : 1);
   const [panning, setPanning] = useState(false);
   const [devColorFill, setDevColorFill] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -144,6 +149,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
     setFeedback({ key: ++feedbackKey.current, kind: result, pixel });
     playColoringSound(result);
     if (result === 'correct') {
+      if (tutorialActive) setTutorialHits(value => value + 1);
       const next = new Map(paintedRef.current);
       for (const target of targets) next.set(target.id, { x: target.x + .5, y: target.y + .5 });
       paintActions.current.push(targets.map(target => target.id));
@@ -213,6 +219,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
   return <div className="coloring-workspace numbered-workspace">
     <div className={`sr-only coloring-instruction ${feedback?.kind === 'wrong' ? 'is-wrong' : ''}`} role="status" aria-live="polite"><Paintbrush size={15} aria-hidden /><span>{message}</span></div>
 
+    {tutorialActive && !revealed && <TutorialHint language={language} selected={selected} hits={tutorialHits} />}
     {revealed && <RevealBanner language={language} mode={mode} setMode={setMode} />}
 
     <div className={`coloring-frame numbered-frame ${ready ? 'is-complete' : ''} ${revealed ? 'is-revealed' : ''}`}>
@@ -229,11 +236,11 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
             const filled = painted.has(pixel.id), matching = selected === pixel.colorId;
             return <g key={pixel.id}>
               <rect x={pixel.x} y={pixel.y} width="1" height="1" fill={color.hex} opacity={filled ? 1 : matching ? .48 : .2} shapeRendering="crispEdges" />
-              {zoom > 1 && !filled && <text x={pixel.x + .5} y={pixel.y + .5} className="pixel-number" aria-hidden pointerEvents="none">{pixel.colorId}</text>}
+              {(showBaseNumbers || zoom > 1 || (highContrast && zoom >= 1.5)) && !filled && <text x={pixel.x + .5} y={pixel.y + .5} className="pixel-number" aria-hidden pointerEvents="none">{pixel.colorId}</text>}
               {filled && <motion.rect x={pixel.x} y={pixel.y} width="1" height="1" fill="#fff6da" pointerEvents="none" initial={{ opacity: .65 }} animate={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .35 }} onAnimationComplete={() => setSettled(previous => previous.has(pixel.id) ? previous : new Set(previous).add(pixel.id))} />}
               <rect x={pixel.x} y={pixel.y} width="1" height="1" className={`pixel-hit ${matching ? 'matching' : ''} ${filled ? 'painted' : ''}`} role="button" tabIndex={filled ? -1 : 0} aria-pressed={filled} aria-label={`${t.pixel} ${pixel.x + 1}, ${pixel.y + 1}: ${paletteName(color)}${filled ? ` — ${t.painted}` : ''}`} data-color-id={pixel.colorId} fill="transparent" stroke="#fff8e9" strokeOpacity={filled ? .05 : .35} strokeWidth=".035"
                 onClick={event => { if (event.detail === 0) paint(pixel); }}
-                onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); paint(pixel); } }} />
+                onKeyDown={event => { if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) { event.preventDefault(); const delta = {ArrowLeft:-1,ArrowRight:1,ArrowUp:-width,ArrowDown:width}[event.key as 'ArrowLeft']; const next = Math.max(0,Math.min(pixels.length-1,pixel.id+delta)); svgRef.current?.querySelectorAll<SVGRectElement>('.pixel-hit')[next]?.focus(); } if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); paint(pixel); } }} />
             </g>;
           })}
           <AnimatePresence>

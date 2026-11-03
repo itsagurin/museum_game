@@ -39,7 +39,9 @@
       "content": "unverified",
       "translation": "draft"
     },
-    "puzzleVersion": "o1wfu4"
+    "puzzleVersion": "o1wfu4",
+    "introPuzzle": "puzzles/bellotto-widok-warszawy-strony-pragi.intro.json",
+    "introPuzzleVersion": "1dwl3v0"
   },
   {
     "id": "bellotto-krakowskie-przedmiescie-strone-placu",

@@ -17,6 +17,7 @@
     "content:puzzles": "cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --report outputs/puzzle-report.html"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.64.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.6.5",

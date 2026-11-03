@@ -33,7 +33,7 @@ export function HeritageApp({ onRestoreArtwork }: {
   onRestoreArtwork?: (request: RestoreArtworkRequest) => void;
 }) {
   const { view, navigate } = useSceneNavigation();
-  const { language, completedArtworkIds: completed, wallAssignments, setWallArtwork, gentleMotion, exploreAll, resetProgress } = useGameStore();
+  const { language, completedArtworkIds: completed, wallAssignments, setWallArtwork, highContrast, gentleMotion, exploreAll, resetProgress } = useGameStore();
   const savedPaintings = usePaintingProgress(state => state.paintings);
   const [hydrated, setHydrated] = useState(false);
   const [previewFinishedRoom, setPreviewFinishedRoom] = useState(false);
@@ -60,6 +60,7 @@ export function HeritageApp({ onRestoreArtwork }: {
     void Promise.all([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => setHydrated(true));
   }, []);
   useEffect(() => { document.documentElement.lang = language; }, [language]);
+  useEffect(() => { document.documentElement.classList.toggle("high-contrast", highContrast); }, [highContrast]);
 
   const goToEra = (eraId: EraId) => {
     if (isEraOpen(eraId)) navigate(eraId);

@@ -4,7 +4,7 @@
 
 Przeglądarkowa gra mobile-first o polskim malarstwie. Gracz wchodzi do domu, wybiera jeden z czterech pokojów epok (Oświecenie, Romantyzm, Pozytywizm, Młoda Polska) i odnawia obrazy, kolorując je piksel po pikselu. Ukończone dzieło odsłania oryginał i ciekawostkę, trafia na ścianę, a pokój zyskuje kolejne wyposażenie. Projekt powstał na BEST Hacks 2026 (Code for Culture) i jest dalej rozwijany.
 
-**83 dzieła · 4 epoki · 47 dekoracji · plansze 32×32 · PL/EN**
+**83 dzieła · 4 epoki · 47 dekoracji · plansze o proporcjach obrazów · PL/EN**
 
 ## Uruchomienie
 
@@ -64,3 +64,5 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 Testowanie eksportu przy działającym dev: `PLAYWRIGHT_PORT=3102 npx playwright test`. Testy DEV: `PLAYWRIGHT_PORT=3000 npx playwright test tests/dev-coloring.spec.ts tests/dev-room-preview.spec.ts --output=/tmp/dziedzictwo-dev-results`. Nie uruchamiaj buildu podczas testów DEV.
 
 Plansze v2 mają nazwy kolorów PL/EN i `puzzleVersion` w manifeście. Zapis postępu jest wczytywany tylko przy zgodnej sygnaturze; zmiana nazwy koloru nie unieważnia zapisu. Nieznane i uszkodzone wpisy są pomijane osobno.
+
+Pierwszy obraz ma krótką planszę 16×12 z podpowiedziami. Ustawienia obejmują wysoki kontrast. Audyt: `npx playwright test tests/a11y.spec.ts tests/tutorial.spec.ts`; generator intro: `cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --only bellotto-widok-warszawy-strony-pragi --long-edge 16`.

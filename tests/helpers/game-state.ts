@@ -9,6 +9,6 @@ export const gameStorageKey = "heritage-hearth-ui-v1";
 export async function seedGame(page: Page, state: Record<string, unknown> = {}) {
   await page.addInitScript(({ key, state }) => {
     if (localStorage.getItem(key)) return;
-    localStorage.setItem(key, JSON.stringify({ version: 1, state: { language: "pl", exploreAll: true, ...state } }));
+    localStorage.setItem(key, JSON.stringify({ version: 1, state: { language: "pl", tutorialSeen: true, exploreAll: true, ...state } }));
   }, { key: gameStorageKey, state });
 }
