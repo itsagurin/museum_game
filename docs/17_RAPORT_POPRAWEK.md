@@ -57,6 +57,10 @@ Osobny build pod `/museum` i przeładowanie pokoju offline zakończyły się pow
 
 Obraz dnia zachowuje wybór po ukończeniu i przeładowaniu, a kalendarz jest lokalny. Album ma 21 odznak, w tym 12 artystów policzonych z manifestu. Testy: 59 Vitest, 138 e2e zaliczonych / 6 pominiętych, DEV 6. Axe rozszerzono do 20 skanów bez serious/critical. Zrzuty: `/tmp/museum-b23-screens`, `/tmp/museum-b23-*-album.png`.
 
+## B4: lokalny eksport
+
+Pobrane PNG mają dokładnie 1080×1350 (karta) i 1754×1240 (certyfikat). Sprawdzono układ plików wizualnie i pobranie na obu projektach bez błędów konsoli. Imię nie trafia do zapisu. Web Share wymaga rzeczywistego systemowego okna na obsługującym urządzeniu; fallback pobierania sprawdzono automatycznie.
+
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.

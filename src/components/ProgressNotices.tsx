@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, DoorOpen, Images, House, LockKeyhole, Sparkles } from "lucide-react";
+import { CertificateDownload } from "@/features/collection/CertificateDownload";
 import { badgeDefinitions } from "@/lib/badges";
 import { copy } from "@/data/copy";
 import { getEra } from "@/data/eras";
@@ -81,6 +82,7 @@ export function MilestoneNotice({ milestone, language, houseImage, collectionSiz
         {finale ? <Images size={18} /> : <House size={18} />}
       </button>
       <button className="secondary-button full-width" onClick={onClose}>{t.stayHere}</button>
+      {finale && <CertificateDownload count={collectionSize} language={language} />}
     </div>
   );
 }

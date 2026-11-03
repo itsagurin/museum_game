@@ -76,3 +76,5 @@ Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 1
 Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. Działanie z `NEXT_PUBLIC_BASE_PATH=/museum` sprawdzono osobnym buildem i przeładowaniem offline. Ręczna instalacja na fizycznym Androidzie/iOS pozostaje do wykonania przez zespół.
 
 Obraz dnia na ekranie domu wybiera nieukończone dzieło z otwartych epok i zachowuje je do końca lokalnego dnia. Historia 60 dat i łagodna seria pozostają na urządzeniu. Biblioteka ma zakładkę „Album”: postęp epok, artystów i 21 odznak. Definicje: `content/badges.json`; reguły: `src/lib/daily.ts`, `src/lib/badges.ts`.
+
+Ukończone dzieło ma przycisk „Udostępnij”, a finał certyfikat PNG z opcjonalnym imieniem. Oba pliki powstają lokalnie na canvas, z fontami gry; bez wysyłania obrazu ani imienia na serwer. Brak Web Share powoduje pobranie. Reguły tekstu i eksportu: `src/lib/share-card.ts`.
