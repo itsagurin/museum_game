@@ -151,10 +151,10 @@ export const artworks: Artwork[] = eras.flatMap((era) =>
       sourceFile: entry.image,
       source: entry.source ?? undefined,
       puzzleVersion: entry.puzzleVersion,
-      introPuzzle: entry.introPuzzle ? assetUrl(entry.introPuzzle) : undefined,
+      introPuzzle: entry.introPuzzle ? `${assetUrl(entry.introPuzzle)}?v=${entry.introPuzzleVersion}` : undefined,
       introPuzzleVersion: entry.introPuzzleVersion,
       coloringArtworkId: entry.puzzle,
-      coloringSource: assetUrl(entry.puzzle),
+      coloringSource: `${assetUrl(entry.puzzle)}?v=${entry.puzzleVersion}`,
       coloredPreview: assetUrl(entry.preview),
     })),
 );

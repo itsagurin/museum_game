@@ -68,3 +68,9 @@ Plansze v2 mają nazwy kolorów PL/EN i `puzzleVersion` w manifeście. Zapis pos
 Pierwszy obraz ma krótką planszę 16×12 z podpowiedziami. Ustawienia obejmują wysoki kontrast. Audyt: `npx playwright test tests/a11y.spec.ts tests/tutorial.spec.ts`; generator intro: `cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --only bellotto-widok-warszawy-strony-pragi --long-edge 16`.
 
 Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 16. Raport proporcji: `docs/reports/puzzle-proportions.html`; odtworzenie: `cd tools/pixel-engine && .venv/bin/python -m src.compare_proportions --root ../.. --report outputs/proportions.html`. Raport postępu: `docs/17_RAPORT_POPRAWEK.md`.
+
+## PWA
+
+`npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma ok. 6 MB; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
+
+Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. Działanie z `NEXT_PUBLIC_BASE_PATH=/museum` sprawdzono osobnym buildem i przeładowaniem offline. Ręczna instalacja na fizycznym Androidzie/iOS pozostaje do wykonania przez zespół.

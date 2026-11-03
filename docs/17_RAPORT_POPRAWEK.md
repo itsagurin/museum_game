@@ -49,6 +49,10 @@ Tabela 83 dzieł pozostaje w [dokumencie recenzji](15_RECENZJA_TRESCI.md). Statu
 
 Proponowana kolejność po decyzji: kopia bezpieczeństwa → lista plików i gałęzi → ustalenie okna bez pushowania → migracja na kopii → porównanie buildów → dopiero publikacja i nowe klony. Nie uruchomiono migracji, nie usunięto archiwów i nie zmieniono materiałów prezentacji w indeksie.
 
+## B1: PWA
+
+Osobny build pod `/museum` i przeładowanie pokoju offline zakończyły się powodzeniem. Manifest ma względne start_url/scope; Workbox tworzy 135 wpisów precache (ok. 6 MB). Cztery testy e2e sprawdzają realny offline i zatwierdzanie aktualizacji. Fizyczne urządzenia pozostają do sprawdzenia przez zespół.
+
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.

@@ -327,3 +327,5 @@
 }
 
 .hydration-screen, .hydration-screen .ambient-backdrop { background: #e8e4d8; }
+
+.pwa-update { position: fixed; z-index: 300; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 16px; max-width: calc(100vw - 24px); font-size: 12px; }
