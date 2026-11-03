@@ -270,7 +270,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] B2–B3: obraz dnia, seria, album i odznaki.
 - [x] B4: karty i certyfikat.
 - [x] B5: muzyka po zatwierdzeniu nagrań.
-- [ ] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
+- [x] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
 - [ ] B7: wydajność i osobny job LHCI.
 - [ ] B8: materiały do badań.
 
@@ -289,3 +289,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/b4-sharing`:** lokalna karta 1080×1350 i certyfikat finału 1754×1240, pobranie zamiast niedostępnego Web Share, imię bez zapisu i wysyłki, atrybucja źródła na karcie. Vitest: 62. Cztery e2e pobierają pliki, sprawdzają wymiary i brak błędów konsoli; zrzuty/PNG do przeglądu w `/tmp/museum-b4`.
 
 **Stan `feat/b5-music`:** zatwierdzone pięć nagrań CC0, 10,6 MB łącznie, atrybucja w „O grze” dostępna z ustawień na telefonie. Dwa kanały, 1,5 s przenikania, obniżenie głośności w pracowni, pauza w tle, domyślnie wyłączone. Vitest: 66, w tym wybór utworu, gest, miksowanie i budżet plików. Dwa e2e potwierdzają ustawienie domyślne, źródło utworu epoki i pauzę w tle.
+
+**Stan `feat/b6-analytics`:** warstwa Vercel track(), odczyt zgody po hydratacji, lista dopuszczonych właściwości, anonimowe przedziały, zdarzenia gry i przełącznik prywatności. Kod pozostaje bez produkcyjnej konfiguracji na życzenie użytkownika; aktywacja przez właściciela później, Pro/Enterprise dla custom events. Vitest: 70, lokalne e2e dostawcy: 6 przypadków. Dokument metryk wyjaśnia przybliżenia D1 i brak dokładnego D7 z d7_plus.

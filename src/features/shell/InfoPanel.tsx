@@ -15,6 +15,7 @@ export function InfoPanel({ language, onExplore }: {
                     <Sparkles size={19} />
                   </div>
                   <p className="dialog-intro">{t.infoBody}</p>
+                  <section className="privacy-note"><h3>{t.privacy}</h3><p>{t.privacyBody}</p><a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noreferrer">{t.providerPrivacy}</a></section>
                   <section className="music-credits"><h3>{t.music}</h3><ul>{musicTracks.map(track=><li key={track.id}><strong>{track.title[language]}</strong> · {track.composer} · {track.performer} · <a href={track.source} target="_blank" rel="noreferrer">{t.recordingSource}</a> · <a href={track.licenseUrl} target="_blank" rel="noreferrer">CC0</a></li>)}</ul></section>
                   <button
                     className="primary-button full-width"

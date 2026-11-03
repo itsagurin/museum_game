@@ -57,7 +57,7 @@ export function HeritageApp({ onRestoreArtwork }: {
   const t = copy[language];
 
   useEffect(() => {
-    void Promise.all([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => setHydrated(true));
+    void Promise.all([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => { useGameStore.getState().recordFirstPlay(); setHydrated(true); });
   }, []);
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   useEffect(() => { document.documentElement.classList.toggle("high-contrast", highContrast); }, [highContrast]);

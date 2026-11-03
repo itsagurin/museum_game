@@ -55,3 +55,6 @@
 - B4: karta 1080×1350 i certyfikat 1754×1240 powstają na canvas lokalnie po załadowaniu fontów. Web Share obsługuje plik, inaczej pobranie PNG. Anulowanie udostępniania nie pobiera pliku. Imię certyfikatu jest tylko stanem komponentu; nie zapisuj go i nie wysyłaj w zdarzeniach. Karta zachowuje autora reprodukcji, źródło, licencję i opis zmniejszenia.
 
 - B5: użytkownik zatwierdził pięć konkretnych wykonań CC0 z docs/19. MP3 w public/audio/music (96 kb/s, razem 10,6 MB), metadane i zmiany w content/audio.json. Dwa kanały, crossfade 1,5 s dopiero po starcie nowego audio, studio ×0,6, pauza w ukrytej karcie. Domyślnie wyłączone i start wyłącznie po zaufanym geście; efekty pędzla mają osobny przełącznik.
+
+- B6: wybrano Vercel, ale użytkownik zostawił kod do późniejszej aktywacji (custom events wymagają Pro/Enterprise). Bez obu NEXT_PUBLIC_ANALYTICS_* brak SDK/skryptu/żądań. Domyślna preferencja true z opt-out, odczytywana dopiero po hydratacji. Dopuszczone tylko enumy/flagi, URL bez query/hash, imię i dowolny tekst zawsze odrzucane.
+- firstPlayedAt i lastAnalyticsDay są lokalne i walidowane w merge; app_open najwyżej raz dziennie. Metryki i ograniczenia kohort: docs/18. Testy adaptera jawnie włączają go tylko lokalnie i przechwytują dostawcę. Dialog zachowuje fokus przy aktualizacji ustawień i zapisów.

@@ -2,6 +2,7 @@
 import { artworks, content, eras, getEra } from "@/data/eras";
 import { getEraAccess, getRoomProgress } from "@/lib/room-development";
 import { getNewDecorations } from "@/data/room-decorations";
+import { track } from "@/lib/analytics";
 import { getBadges } from "@/lib/badges";
 import { useGameStore } from "@/store/useGameStore";
 import type { Artwork, EraId, Language, RestoreArtworkRequest } from "@/types/game";
@@ -40,12 +41,16 @@ export function useArtworkRestoration({language, exploreAll, closePanel, setPane
           // Shown one by one after the story; the progress itself is already saved.
           const reached: Milestone[] = [];
           if (!before.isComplete && after.isComplete) {
+            void track("era_complete",{era:artwork.eraId});
             const finale = eraIds.every((eraId) => getRoomProgress(eraId, artworks, completedAfter).isComplete);
             reached.push(finale ? { type: "finale" } : { type: "eraComplete", eraId: artwork.eraId });
           }
+          for(const eraId of eraIds)if(!accessBefore[eraId].unlocked && accessAfter[eraId].unlocked)void track("era_unlock",{era:eraId});
           if (!exploreAll) for (const eraId of eraIds) if (!accessBefore[eraId].unlocked && accessAfter[eraId].unlocked) reached.push({ type: "unlock", eraId });
           const previousBadges=new Set(getBadges(content,completedBefore).filter(badge=>badge.earned).map(badge=>badge.id));
-          reached.push(...getBadges(content,completedAfter).filter(badge=>badge.earned && !previousBadges.has(badge.id)).map(badge=>({type:"badge" as const,badgeId:badge.id})));
+          const newBadges=getBadges(content,completedAfter).filter(badge=>badge.earned && !previousBadges.has(badge.id));
+          newBadges.forEach(badge=>{void track("badge_earned",{badge:badge.id});});
+          reached.push(...newBadges.map(badge=>({type:"badge" as const,badgeId:badge.id})));
           addMilestones(reached);
           setPanel({ type: "story", artwork });
         },
