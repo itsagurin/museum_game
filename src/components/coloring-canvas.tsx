@@ -1,10 +1,9 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpRight, Check, Eye, Grid, Hand, Paintbrush, PaintBucket, RotateCcw, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { paintResult, type ColoringArtwork } from '@/lib/coloring';
 import { playColoringSound } from '@/lib/audio';
-import { useProgress } from '@/store/use-progress';
 import { coloringCopy } from '@/data/coloring-copy';
 import type { Language } from '@/types/game';
 
@@ -12,7 +11,7 @@ type Origin = { x: number; y: number };
 type Pixel = { id: number; colorId: number; x: number; y: number };
 type Feedback = { key: number; kind: 'correct' | 'wrong'; pixel: Pixel };
 
-export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMotion, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
+export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMotion = false, autoFill = false, showColorNumbers = false, allowDevColorFill = false }: {
   artwork: ColoringArtwork;
   onComplete: () => void;
   language?: Language;
@@ -45,8 +44,7 @@ export function ColoringCanvas({ artwork, onComplete, language = 'pl', gentleMot
   const paintActions = useRef<number[][]>([]);
   const feedbackKey = useRef(0);
   const systemReduced = useReducedMotion();
-  const prototypeReduced = useProgress(state => state.progress.reducedMotion);
-  const reduced = (gentleMotion ?? prototypeReduced) || systemReduced;
+  const reduced = gentleMotion || systemReduced;
   const svgRef = useRef<SVGSVGElement>(null);
   const { width, height } = artwork.grid;
   const ready = pixels.every(pixel => painted.has(pixel.id) && settled.has(pixel.id));
