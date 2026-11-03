@@ -10,6 +10,7 @@ import type { ColoringArtwork } from "@/lib/coloring";
 import { gridSignature } from "@/lib/painting-progress";
 import { usePaintingProgress } from "@/store/usePaintingProgress";
 import type { RestoreArtworkRequest } from "@/types/game";
+import { MusicController } from "@/features/shell/MusicController";
 import { HeritageApp } from "./HeritageApp";
 import { ColoringCanvas } from "./coloring-canvas";
 import { ColoringAudio } from "./coloring-audio";
@@ -144,6 +145,7 @@ export function HeritageGame() {
   return (
     <>
       <HeritageApp onRestoreArtwork={setRequest} />
+      <MusicController studioEra={request?.artwork.eraId} />
       <AnimatePresence>
         {request && (
           <Dialog title={request.artwork.title[language]} closeLabel={t.returnRoom} onClose={closeStudio} gentle={gentleMotion} variant="coloring">

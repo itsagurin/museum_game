@@ -1,6 +1,6 @@
 # 19. Propozycja muzyki do zatwierdzenia
 
-Stan: 3 listopada 2026. Sprawdzono metadane konkretnych plików Commons, w tym wykonawcę, długość oraz licencję nagrania. Nie pobrano plików dźwiękowych. Wszystkie poniższe nagrania mają [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+Stan: 3 listopada 2026. Sprawdzono metadane konkretnych plików Commons, w tym wykonawcę, długość oraz licencję nagrania. Użytkownik zatwierdził cały zestaw w rozmowie 3 listopada 2026; pliki pobrano i przygotowano w pakiecie B5. Wszystkie poniższe nagrania mają [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 To zestaw tymczasowy. Bach w pokoju Pozytywizmu jest neutralnym tłem, a Satie reprezentuje europejską muzykę końca XIX wieku. Dobór nie jest rekonstrukcją polskiego repertuaru epok. Poszukiwania nagrań Ogińskiego, Szymanowskiej, Moniuszki i Paderewskiego nie przyniosły zestawu spełniającego równocześnie wymagania czasu, wskazanego wykonawcy i CC0/PDM. Dostępne pliki MIDI, krótkie próbki oraz nagrania CC BY/CC BY-SA nie zostały dodane do rekomendacji.
 
@@ -13,3 +13,7 @@ To zestaw tymczasowy. Bach w pokoju Pozytywizmu jest neutralnym tłem, a Satie r
 | Młoda Polska | Gymnopédie nr 1 / Erik Satie | Teknopazzo | 3:25 | całość 3:25 | [plik Commons](https://commons.wikimedia.org/wiki/File:Gymnopedie_No._1..ogg), CC0 |
 
 Plan konwersji po zgodzie: MP3 96 kb/s, krótki fade przy krawędziach fragmentów, maksymalnie ok. 2,5 MB na plik i ok. 10,6 MB łącznie. Przenikanie odtwarzacza trwa 1,5 s. Muzyka domyślnie wyłączona, efekty pędzla mają osobny przełącznik. Zatwierdzenie dotyczy tych konkretnych wykonań i opisanych fragmentów.
+
+## Wynik konwersji B5
+
+Pięć MP3 stereo 96 kb/s zajmuje łącznie 10 572 599 bajtów (ok. 10,6 MB). Największy plik ma 2 458 270 bajtów; długości potwierdzono ffprobe. Muzyka jest domyślnie wyłączona, startuje po geście i pauzuje po ukryciu karty. Atrybucje znajdują się w „O grze”, dostępnym także z ustawień na telefonie. Metadane: `content/audio.json`.

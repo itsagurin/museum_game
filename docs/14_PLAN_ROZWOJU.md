@@ -269,7 +269,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] B1: PWA.
 - [x] B2–B3: obraz dnia, seria, album i odznaki.
 - [x] B4: karty i certyfikat.
-- [ ] B5: muzyka po zatwierdzeniu nagrań.
+- [x] B5: muzyka po zatwierdzeniu nagrań.
 - [ ] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
 - [ ] B7: wydajność i osobny job LHCI.
 - [ ] B8: materiały do badań.
@@ -287,3 +287,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/b2-b3-collection`:** stały obraz dnia, ukończenie i ciekawostka na karcie, seria bez utraty nagród, zapis z walidacją 60 dat; album i 21 odznak z regułami artystów przez epoki. Vitest: 59. Audyt rozszerzony o album: 20 skanów bez serious/critical. Test z kontrolą zegara sprawdza stałość wyboru po ukończeniu/przeładowaniu oraz zmianę kolejnego dnia.
 
 **Stan `feat/b4-sharing`:** lokalna karta 1080×1350 i certyfikat finału 1754×1240, pobranie zamiast niedostępnego Web Share, imię bez zapisu i wysyłki, atrybucja źródła na karcie. Vitest: 62. Cztery e2e pobierają pliki, sprawdzają wymiary i brak błędów konsoli; zrzuty/PNG do przeglądu w `/tmp/museum-b4`.
+
+**Stan `feat/b5-music`:** zatwierdzone pięć nagrań CC0, 10,6 MB łącznie, atrybucja w „O grze” dostępna z ustawień na telefonie. Dwa kanały, 1,5 s przenikania, obniżenie głośności w pracowni, pauza w tle, domyślnie wyłączone. Vitest: 66, w tym wybór utworu, gest, miksowanie i budżet plików. Dwa e2e potwierdzają ustawienie domyślne, źródło utworu epoki i pauzę w tle.

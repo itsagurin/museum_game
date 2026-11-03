@@ -53,3 +53,5 @@
 - B3: 21 odznak w `content/badges.json` (4 epok, 12 artystów, 4 progów i całość). Reguły działają na unikalnych znanych ukończeniach; artyści liczą się przez epoki. Nowe odznaki trafiają do kolejki po historii. E2E jawnie potwierdzają odznaki przed dalszą nawigacją; asercje starych nagród pozostają.
 
 - B4: karta 1080×1350 i certyfikat 1754×1240 powstają na canvas lokalnie po załadowaniu fontów. Web Share obsługuje plik, inaczej pobranie PNG. Anulowanie udostępniania nie pobiera pliku. Imię certyfikatu jest tylko stanem komponentu; nie zapisuj go i nie wysyłaj w zdarzeniach. Karta zachowuje autora reprodukcji, źródło, licencję i opis zmniejszenia.
+
+- B5: użytkownik zatwierdził pięć konkretnych wykonań CC0 z docs/19. MP3 w public/audio/music (96 kb/s, razem 10,6 MB), metadane i zmiany w content/audio.json. Dwa kanały, crossfade 1,5 s dopiero po starcie nowego audio, studio ×0,6, pauza w ukrytej karcie. Domyślnie wyłączone i start wyłącznie po zaufanym geście; efekty pędzla mają osobny przełącznik.

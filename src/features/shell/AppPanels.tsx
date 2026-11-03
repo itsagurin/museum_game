@@ -13,7 +13,8 @@ import type { Panel } from "./panels";
 import { SettingsPanel } from "./SettingsPanel";
 import { InfoPanel } from "./InfoPanel";
 
-export function AppPanels({ panel, language, gentleMotion, storageUnavailable, onReset, completed, canRestore, restoreArtwork, dismissPanel, closePanel, eraAccess, view, goToEra, houseImage, resetMilestones, openLibrary, navigate }: {
+export function AppPanels({ panel, language, gentleMotion, storageUnavailable, onReset, completed, canRestore, restoreArtwork, dismissPanel, closePanel, eraAccess, view, goToEra, houseImage, resetMilestones, openLibrary, navigate, openInfo }: {
+  openInfo:()=>void;
   panel: Panel | null; language: Language; gentleMotion: boolean; storageUnavailable: boolean; onReset: () => void;
   completed: string[]; canRestore: boolean; restoreArtwork: (artwork: Artwork) => void;
   dismissPanel: () => void; closePanel: () => void; eraAccess: ReturnType<typeof getEraAccess>; view: View;
@@ -44,7 +45,7 @@ export function AppPanels({ panel, language, gentleMotion, storageUnavailable, o
               variant={panel.type === "story" ? "story" : "default"}
             >
               {panel.type === "settings" ? (
-                <SettingsPanel language={language} storageUnavailable={storageUnavailable} onReset={onReset} />
+                <SettingsPanel language={language} storageUnavailable={storageUnavailable} onReset={onReset} onInfo={openInfo} />
               ) : panel.type === "info" ? (
                 <InfoPanel language={language} onExplore={() => { closePanel(); navigate("hall"); }} />
               ) : panel.type === "story" ? (

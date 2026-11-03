@@ -78,3 +78,5 @@ Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. 
 Obraz dnia na ekranie domu wybiera nieukończone dzieło z otwartych epok i zachowuje je do końca lokalnego dnia. Historia 60 dat i łagodna seria pozostają na urządzeniu. Biblioteka ma zakładkę „Album”: postęp epok, artystów i 21 odznak. Definicje: `content/badges.json`; reguły: `src/lib/daily.ts`, `src/lib/badges.ts`.
 
 Ukończone dzieło ma przycisk „Udostępnij”, a finał certyfikat PNG z opcjonalnym imieniem. Oba pliki powstają lokalnie na canvas, z fontami gry; bez wysyłania obrazu ani imienia na serwer. Brak Web Share powoduje pobranie. Reguły tekstu i eksportu: `src/lib/share-card.ts`.
+
+Muzyka: pięć zatwierdzonych nagrań CC0, razem ok. 10,6 MB; domyślnie wyłączona. Ustawienia pozwalają sterować muzyką, głośnością i osobno efektami pędzla. Nagrania i licencje: `content/audio.json`, wybór: `docs/19_MUZYKA_PROPOZYCJE.md`. Przenikanie dwóch kanałów trwa 1,5 s; muzyka pauzuje po ukryciu karty i jest ciszej w pracowni. Audio nie trafia do cache PWA.

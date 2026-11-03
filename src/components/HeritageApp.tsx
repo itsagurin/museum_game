@@ -123,7 +123,7 @@ export function HeritageApp({ onRestoreArtwork }: {
           </AnimatePresence>
         </main>
         {storageUnavailable && <StorageNotice language={language} />}
-        <AppPanels panel={panel} language={language} gentleMotion={gentleMotion} storageUnavailable={storageUnavailable}
+        <AppPanels openInfo={()=>setPanel({type:"info"})} panel={panel} language={language} gentleMotion={gentleMotion} storageUnavailable={storageUnavailable}
           onReset={onReset} completed={completed} canRestore={Boolean(onRestoreArtwork)} restoreArtwork={restoreArtwork}
           dismissPanel={dismissPanel} closePanel={closePanel} eraAccess={eraAccess} view={view} goToEra={goToEra}
           houseImage={houseImage} resetMilestones={resetMilestones} openLibrary={openLibrary} navigate={navigate} />

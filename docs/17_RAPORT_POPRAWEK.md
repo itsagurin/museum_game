@@ -61,6 +61,10 @@ Obraz dnia zachowuje wybór po ukończeniu i przeładowaniu, a kalendarz jest lo
 
 Pobrane PNG mają dokładnie 1080×1350 (karta) i 1754×1240 (certyfikat). Sprawdzono układ plików wizualnie i pobranie na obu projektach bez błędów konsoli. Imię nie trafia do zapisu. Web Share wymaga rzeczywistego systemowego okna na obsługującym urządzeniu; fallback pobierania sprawdzono automatycznie.
 
+## B5: muzyka po zatwierdzeniu
+
+Zestaw pięciu wykonań CC0 został zatwierdzony w rozmowie. Faktyczne długości, bitrate i rozmiary potwierdzono ffprobe: 10 572 599 bajtów łącznie, największy plik 2 458 270 bajtów. Vitest: 66; pełne e2e 144 zaliczone / 6 pominiętych; DEV 6. Muzyka domyślnie wyłączona, wymaga gestu i zatrzymuje się w tle.
+
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.

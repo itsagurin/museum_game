@@ -1,0 +1,102 @@
+[
+  {
+    "id": "home",
+    "scene": "home",
+    "file": "music/home.mp3",
+    "title": {
+      "pl": "Aria, BWV 988",
+      "en": "Aria, BWV 988"
+    },
+    "composer": "Johann Sebastian Bach",
+    "performer": "Kimiko Ishizaka",
+    "duration": 180,
+    "source": "https://commons.wikimedia.org/wiki/File:Kimiko_Ishizaka_-_01_-_Aria.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": {
+      "pl": "Konwersja do MP3 96 kb/s, fragment zgodny z zatwierdzoną listą, łagodne wyciszenie początku i końca.",
+      "en": "Converted to 96 kb/s MP3; excerpt approved in the track list, with short fades at both ends."
+    },
+    "approved": "2026-11-03"
+  },
+  {
+    "id": "era-1",
+    "scene": "era-1",
+    "file": "music/era-1.mp3",
+    "title": {
+      "pl": "Wariacja 12, BWV 988",
+      "en": "Variation 12, BWV 988"
+    },
+    "composer": "Johann Sebastian Bach",
+    "performer": "Kimiko Ishizaka",
+    "duration": 135.94,
+    "source": "https://commons.wikimedia.org/wiki/File:Goldberg_Variations_13_Variatio_12_Canone_alla_Quarta.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": {
+      "pl": "Konwersja do MP3 96 kb/s, fragment zgodny z zatwierdzoną listą, łagodne wyciszenie początku i końca.",
+      "en": "Converted to 96 kb/s MP3; excerpt approved in the track list, with short fades at both ends."
+    },
+    "approved": "2026-11-03"
+  },
+  {
+    "id": "era-2",
+    "scene": "era-2",
+    "file": "music/era-2.mp3",
+    "title": {
+      "pl": "Nokturn Es-dur op. 9 nr 2",
+      "en": "Nocturne in E-flat major, Op. 9 No. 2"
+    },
+    "composer": "Fryderyk Chopin",
+    "performer": "Peter Johnston",
+    "duration": 180,
+    "source": "https://commons.wikimedia.org/wiki/File:Chopin_Nocturne_No._2_in_E_Flat_Major,_Op._9.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": {
+      "pl": "Konwersja do MP3 96 kb/s, fragment zgodny z zatwierdzoną listą, łagodne wyciszenie początku i końca.",
+      "en": "Converted to 96 kb/s MP3; excerpt approved in the track list, with short fades at both ends."
+    },
+    "approved": "2026-11-03"
+  },
+  {
+    "id": "era-3",
+    "scene": "era-3",
+    "file": "music/era-3.mp3",
+    "title": {
+      "pl": "Wariacja 13, BWV 988",
+      "en": "Variation 13, BWV 988"
+    },
+    "composer": "Johann Sebastian Bach",
+    "performer": "Kimiko Ishizaka",
+    "duration": 180,
+    "source": "https://commons.wikimedia.org/wiki/File:Goldberg_Variations_14_Variatio_13_a_2_Clav.ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": {
+      "pl": "Konwersja do MP3 96 kb/s, fragment zgodny z zatwierdzoną listą, łagodne wyciszenie początku i końca.",
+      "en": "Converted to 96 kb/s MP3; excerpt approved in the track list, with short fades at both ends."
+    },
+    "approved": "2026-11-03"
+  },
+  {
+    "id": "era-4",
+    "scene": "era-4",
+    "file": "music/era-4.mp3",
+    "title": {
+      "pl": "Gymnopédie nr 1",
+      "en": "Gymnopédie No. 1"
+    },
+    "composer": "Erik Satie",
+    "performer": "Teknopazzo",
+    "duration": 204.8,
+    "source": "https://commons.wikimedia.org/wiki/File:Gymnopedie_No._1..ogg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": {
+      "pl": "Konwersja do MP3 96 kb/s, fragment zgodny z zatwierdzoną listą, łagodne wyciszenie początku i końca.",
+      "en": "Converted to 96 kb/s MP3; excerpt approved in the track list, with short fades at both ends."
+    },
+    "approved": "2026-11-03"
+  }
+]
