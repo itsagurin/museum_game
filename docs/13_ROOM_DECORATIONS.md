@@ -2,7 +2,7 @@
 
 Obowiązuje nowa decyzja zespołu: używamy obecnych pustych `room1.jpg`–`room4.jpg` oraz osobnych PNG. Poziom 0 nie ma wyposażenia. Portrety i pejzaże z folderów dodatków są dekoracjami, niezależnymi od pięciu obrazów do kolorowania. Trzy puste ramy oświecenia są pominięte. Pozostałe **47 przedmiotów** pojawia się wyłącznie we własnej epoce.
 
-Progresja pozostaje `floor(9 × unikalne ukończone dzieła / cała kolekcja epoki)`. Obrazy spoza ściany również dają postęp, a powtórne kolorowanie nie daje dodatkowej nagrody. Poziom 9 wymaga całej kolekcji; stan wyposażenia wyliczamy z zapisanego postępu. Dotychczasowe ID obrazów i przypisania do ścian są zachowane.
+Progresja: nieliniowe progi z `getLevelThresholds` w `src/lib/room-development.ts`: pierwszy obraz zawsze daje poziom 1, kolejne poziomy wymagają coraz więcej obrazów, a poziom 9 całej kolekcji. Dla 21/18/22 obrazów progi to 1, 2, 4, 6, 9, 11, 14, 18, 21 / 1, 2, 3, 5, 7, 10, 12, 15, 18 / 1, 2, 4, 7, 9, 12, 15, 18, 22 (decyzja z 3 listopada 2026, zastępuje `floor(9 × ukończone / wszystkie)`). Obrazy spoza ściany również dają postęp, a powtórne kolorowanie nie daje dodatkowej nagrody. Poziom 9 wymaga całej kolekcji; stan wyposażenia wyliczamy z zapisanego postępu. Dotychczasowe ID obrazów i przypisania do ścian są zachowane.
 
 ## Nagrody
 
