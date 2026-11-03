@@ -58,3 +58,5 @@
 
 - B6: wybrano Vercel, ale użytkownik zostawił kod do późniejszej aktywacji (custom events wymagają Pro/Enterprise). Bez obu NEXT_PUBLIC_ANALYTICS_* brak SDK/skryptu/żądań. Domyślna preferencja true z opt-out, odczytywana dopiero po hydratacji. Dopuszczone tylko enumy/flagi, URL bez query/hash, imię i dowolny tekst zawsze odrzucane.
 - firstPlayedAt i lastAnalyticsDay są lokalne i walidowane w merge; app_open najwyżej raz dziennie. Metryki i ograniczenia kohort: docs/18. Testy adaptera jawnie włączają go tylko lokalnie i przechwytują dostawcę. Dialog zachowuje fokus przy aktualizacji ustawień i zapisów.
+
+- B8: badanie prowadzi zespół, nie agent. Materiały w docs/user-testing obejmują 25-minutowy scenariusz, moderatora, zgodę z pustymi danymi organizatora, obserwacje, roboczą polską wersję SUS, quiz z odnowionych dzieł i szablon wyników. Nie wpisuj fikcyjnych wyników; klucz faktów do quizu wymaga recenzji treści.

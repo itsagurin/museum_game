@@ -84,3 +84,5 @@ Muzyka: pięć zatwierdzonych nagrań CC0, razem ok. 10,6 MB; domyślnie wyłąc
 ## Statystyki (gotowe do późniejszej aktywacji)
 
 Integracja Vercel jest domyślnie nieaktywna bez konfiguracji. Właściciel z planem Pro/Enterprise może włączyć Web Analytics i ustawić zmienne z `.env.example`; ta praca nie aktywuje usługi ani płatnego planu. Preferencja gracza pozwala wyłączyć statystyki. Wysyłane mogą być wyłącznie enumy i flagi gry, bez imienia certyfikatu i wolnego tekstu. Definicje, budżety czasów i ograniczenia retencji: `docs/18_METRYKI.md`. Testy `tests/analytics.spec.ts` przechwytują dostawcę lokalnie.
+
+Materiały do badań 5–8 osób: `docs/user-testing/` (scenariusz, moderator, zgoda, obserwacje, SUS, quiz po tygodniu, szablon wyników). Przed użyciem zespół uzupełnia dane administratora i terminy retencji, uzgadnia kontakt oraz klucz quizu. Pliki są szablonami, nie raportem rzeczywistych badań.

@@ -69,6 +69,10 @@ Zestaw pięciu wykonań CC0 został zatwierdzony w rozmowie. Faktyczne długośc
 
 Użytkownik zdecydował pozostawić integrację bez produkcyjnej konfiguracji. Vercel custom events wymaga Pro/Enterprise; planu ani usługi nie zmieniano. Testy: 70 Vitest, 152 e2e zaliczone / 6 pominiętych, DEV 6. Adapter w sześciu testach lokalnych przechwytuje skrypt i żądania; sprawdza brak danych bez konfiguracji i po opt-out, dozwolone właściwości i czyszczenie URL. Axe obejmuje również okno informacji: 22 skany bez serious/critical.
 
+## B8: materiały do badania
+
+Siedem dokumentów w `docs/user-testing/` przygotowano do sesji 5–8 osób. Zawierają kryteria sukcesu, osobne pomiary z pomocą, kwestionariusz SUS i dobrowolny quiz po tygodniu z faktycznie odnowionych dzieł. Dane administratora, kontakt i retencja wymagają wypełnienia przez organizatora. Wyniki pozostają puste. Kod i testy identyczne z B6 (d4733f3); nie powtarzano całego przebiegu dla zmian wyłącznie dokumentacyjnych.
+
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.
