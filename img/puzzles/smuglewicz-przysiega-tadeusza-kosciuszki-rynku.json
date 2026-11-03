@@ -5,52 +5,62 @@
     {
       "id": 1,
       "hex": "#1A1E1D",
-      "name": "Czerń węglowa"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 2,
       "hex": "#403521",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 3,
       "hex": "#5D2F19",
-      "name": "Ciemna sepia"
+      "name": "Mahoń królewski",
+      "nameEn": "Royal mahogany"
     },
     {
       "id": 4,
       "hex": "#505349",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 5,
       "hex": "#695330",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 6,
       "hex": "#8A7758",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 7,
       "hex": "#9F9683",
-      "name": "Średni popiel"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 8,
       "hex": "#ADCAD7",
-      "name": "Jasny kobalt"
+      "name": "Jasny kobalt",
+      "nameEn": "Light cobalt"
     },
     {
       "id": 9,
       "hex": "#DED1BD",
-      "name": "Kremowy pergamin"
+      "name": "Kremowy pergamin",
+      "nameEn": "Cream parchment"
     },
     {
       "id": 10,
       "hex": "#D4D9D7",
-      "name": "Srebrzysty szary"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     }
   ],
   "grid": {

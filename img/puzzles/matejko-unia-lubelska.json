@@ -5,52 +5,62 @@
     {
       "id": 1,
       "hex": "#1A1916",
-      "name": "Czerń węglowa"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 2,
       "hex": "#3C1D19",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 3,
       "hex": "#42332A",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 4,
       "hex": "#782A22",
-      "name": "Czerwień szkarłatna"
+      "name": "Czerwień szkarłatna",
+      "nameEn": "Scarlet red"
     },
     {
       "id": 5,
       "hex": "#62422A",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 6,
       "hex": "#4C505C",
-      "name": "Szary stalowy"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 7,
       "hex": "#804C1E",
-      "name": "Mahoń królewski"
+      "name": "Mahoń królewski",
+      "nameEn": "Royal mahogany"
     },
     {
       "id": 8,
       "hex": "#655853",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 9,
       "hex": "#8A715B",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 10,
       "hex": "#B7A075",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     }
   ],
   "grid": {

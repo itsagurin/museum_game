@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#2C2536",
-      "name": "Czerń nocy"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 2,
       "hex": "#47373E",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 3,
       "hex": "#654B47",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 4,
       "hex": "#9B6D5A",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 5,
       "hex": "#837574",
-      "name": "Średni popiel"
+      "name": "Grafit bazaltowy",
+      "nameEn": "Basalt graphite"
     },
     {
       "id": 6,
       "hex": "#9A95A7",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 7,
       "hex": "#B3A19E",
-      "name": "Srebrzysty szary"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     },
     {
       "id": 8,
       "hex": "#BDB2D2",
-      "name": "Srebrzysty szary"
+      "name": "Liliowy pastel",
+      "nameEn": "Pastel lilac"
     },
     {
       "id": 9,
       "hex": "#D7D1D8",
-      "name": "Srebrzysty szary"
+      "name": "Kremowy pergamin",
+      "nameEn": "Cream parchment"
     }
   ],
   "grid": {

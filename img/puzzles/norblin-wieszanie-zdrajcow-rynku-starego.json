@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#2A160B",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 2,
       "hex": "#4F361F",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 3,
       "hex": "#614013",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 4,
       "hex": "#5E5A5E",
-      "name": "Szary stalowy"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 5,
       "hex": "#6B5A43",
-      "name": "Ciemna sepia"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 6,
       "hex": "#806423",
-      "name": "Ciemna sepia"
+      "name": "Złoto wawelskie",
+      "nameEn": "Wawel gold"
     },
     {
       "id": 7,
       "hex": "#7183A5",
-      "name": "Stalowy błękit"
+      "name": "Stalowy błękit",
+      "nameEn": "Steel blue"
     },
     {
       "id": 8,
       "hex": "#8A8F9C",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 9,
       "hex": "#A9BFE8",
-      "name": "Błękit nieba"
+      "name": "Błękit nieba",
+      "nameEn": "Sky blue"
     }
   ],
   "grid": {

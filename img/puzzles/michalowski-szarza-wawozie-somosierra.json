@@ -5,32 +5,38 @@
     {
       "id": 1,
       "hex": "#1C130D",
-      "name": "Czerń węglowa"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 2,
       "hex": "#352419",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 3,
       "hex": "#4D2D1B",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 4,
       "hex": "#534739",
-      "name": "Ciemny antracyt"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 5,
       "hex": "#72543A",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 6,
       "hex": "#726656",
-      "name": "Szary stalowy"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     }
   ],
   "grid": {

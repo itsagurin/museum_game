@@ -5,52 +5,62 @@
     {
       "id": 1,
       "hex": "#3C4A38",
-      "name": "Zieleń butelkowa"
+      "name": "Zieleń butelkowa",
+      "nameEn": "Bottle green"
     },
     {
       "id": 2,
       "hex": "#705F3A",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 3,
       "hex": "#5F6A53",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 4,
       "hex": "#878261",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 5,
       "hex": "#9A7F4E",
-      "name": "Złoto wawelskie"
+      "name": "Złoto wawelskie",
+      "nameEn": "Wawel gold"
     },
     {
       "id": 6,
       "hex": "#908F81",
-      "name": "Średni popiel"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 7,
       "hex": "#B3A078",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 8,
       "hex": "#CD9F54",
-      "name": "Złoto wawelskie"
+      "name": "Ciepły piaskowiec",
+      "nameEn": "Warm sandstone"
     },
     {
       "id": 9,
       "hex": "#BAB49E",
-      "name": "Srebrzysty szary"
+      "name": "Srebrzysty szary",
+      "nameEn": "Silver grey"
     },
     {
       "id": 10,
       "hex": "#D8C8A1",
-      "name": "Jasna terakota"
+      "name": "Kremowy pergamin",
+      "nameEn": "Cream parchment"
     }
   ],
   "grid": {

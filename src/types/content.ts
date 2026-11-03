@@ -27,6 +27,7 @@ export interface ContentEntry {
   /** Paths under img/. */
   image: string;
   puzzle: string;
+  puzzleVersion: string;
   preview: string;
   title: Localized;
   artist: string;

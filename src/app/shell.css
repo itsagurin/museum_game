@@ -325,3 +325,5 @@
     height: 54px;
   }
 }
+
+.hydration-screen, .hydration-screen .ambient-backdrop { background: #e8e4d8; }

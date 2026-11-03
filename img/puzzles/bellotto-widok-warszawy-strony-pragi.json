@@ -5,37 +5,44 @@
     {
       "id": 1,
       "hex": "#3A3A2E",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 2,
       "hex": "#5A5B48",
-      "name": "Szary stalowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 3,
       "hex": "#747C64",
-      "name": "Średni popiel"
+      "name": "Średni popiel",
+      "nameEn": "Ash grey"
     },
     {
       "id": 4,
       "hex": "#6D9999",
-      "name": "Morski lazur"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 5,
       "hex": "#9A9D7E",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     },
     {
       "id": 6,
       "hex": "#A2C9C5",
-      "name": "Jasny kobalt"
+      "name": "Jasny kobalt",
+      "nameEn": "Light cobalt"
     },
     {
       "id": 7,
       "hex": "#D3DABC",
-      "name": "Kremowy pergamin"
+      "name": "Kremowy pergamin",
+      "nameEn": "Cream parchment"
     }
   ],
   "grid": {

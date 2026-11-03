@@ -43,6 +43,7 @@ export const eras: Era[] = [
     id: "era-1",
     numeral: "I",
     name: { pl: "Oświecenie", en: "Enlightenment" },
+    inEra: { pl: "w Oświeceniu", en: "in the Enlightenment" },
     period: { pl: "Rozum i nowe spojrzenie", en: "Reason and a new perspective" },
     description: {
       pl: "Pierwszy rozdział kolekcji: odkryj obrazy Oświecenia i urządź nimi swój pokój.",
@@ -61,6 +62,7 @@ export const eras: Era[] = [
     id: "era-2",
     numeral: "II",
     name: { pl: "Romantyzm", en: "Romanticism" },
+    inEra: { pl: "w Romantyzmie", en: "in Romanticism" },
     period: { pl: "Wyobraźnia i emocje", en: "Imagination and emotion" },
     description: {
       pl: "Ciepłe ściany, stare drewno i miejsce na kolejne historie. Odkryj drugi rozdział domu.",
@@ -79,6 +81,7 @@ export const eras: Era[] = [
     id: "era-3",
     numeral: "III",
     name: { pl: "Pozytywizm", en: "Positivism" },
+    inEra: { pl: "w Pozytywizmie", en: "in Positivism" },
     period: { pl: "Codzienność w nowym świetle", en: "Everyday life in a new light" },
     description: {
       pl: "Delikatne zdobienia i ślady upływu czasu. Ten pokój czeka na odzyskanie swoich barw.",
@@ -97,6 +100,7 @@ export const eras: Era[] = [
     id: "era-4",
     numeral: "IV",
     name: { pl: "Młoda Polska", en: "Young Poland" },
+    inEra: { pl: "w Młodej Polsce", en: "in Young Poland" },
     period: { pl: "Kolor i ekspresja", en: "Colour and expression" },
     description: {
       pl: "Ostatni rozdział kolekcji. Odkryj obrazy Młodej Polski i przywróć kolory wnętrzu.",
@@ -146,6 +150,7 @@ export const artworks: Artwork[] = eras.flatMap((era) =>
       thumbnailImage: assetUrl(`_thumbs/${entry.image.replace(/\.[^/.]+$/, "")}.webp`),
       sourceFile: entry.image,
       source: entry.source ?? undefined,
+      puzzleVersion: entry.puzzleVersion,
       coloringArtworkId: entry.puzzle,
       coloringSource: assetUrl(entry.puzzle),
       coloredPreview: assetUrl(entry.preview),

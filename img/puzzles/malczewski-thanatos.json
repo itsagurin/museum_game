@@ -5,52 +5,62 @@
     {
       "id": 1,
       "hex": "#1F1914",
-      "name": "Czerń węglowa"
+      "name": "Czerń węglowa",
+      "nameEn": "Charcoal black"
     },
     {
       "id": 2,
       "hex": "#4F2418",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 3,
       "hex": "#555133",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 4,
       "hex": "#774520",
-      "name": "Ciemna sepia"
+      "name": "Mahoń królewski",
+      "nameEn": "Royal mahogany"
     },
     {
       "id": 5,
       "hex": "#A5692A",
-      "name": "Brunatny orzech"
+      "name": "Brunatny orzech",
+      "nameEn": "Walnut brown"
     },
     {
       "id": 6,
       "hex": "#91883D",
-      "name": "Złoto wawelskie"
+      "name": "Zieleń polna",
+      "nameEn": "Field green"
     },
     {
       "id": 7,
       "hex": "#93905F",
-      "name": "Jasna terakota"
+      "name": "Oliwka leśna",
+      "nameEn": "Forest olive"
     },
     {
       "id": 8,
       "hex": "#C39D50",
-      "name": "Złoto wawelskie"
+      "name": "Czyste złoto",
+      "nameEn": "Pure gold"
     },
     {
       "id": 9,
       "hex": "#D6C46D",
-      "name": "Złoto wawelskie"
+      "name": "Złoto wawelskie",
+      "nameEn": "Wawel gold"
     },
     {
       "id": 10,
       "hex": "#E6D89A",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     }
   ],
   "grid": {

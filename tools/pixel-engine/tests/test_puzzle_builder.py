@@ -71,3 +71,19 @@ def test_preview_matches_the_board():
     board = build_board(striped(640, 480, PAINTERLY), "preview")
     preview = render_preview(board, cell=4)
     assert preview.size == (board["grid"]["width"] * 4, board["grid"]["height"] * 4)
+
+
+def test_palette_names_are_unique_and_bilingual():
+    from src.core.color_utils import name_palette
+    palette = [{"id": i, "hex": "#654321", "name": "old"} for i in range(1, 9)]
+    grid = {"data": [[1, 1, 1, 2, 3, 4, 5, 6, 7, 8]]}
+    result = name_palette(palette, grid)
+    assert result[0]["name"] == "Ciemna sepia"
+    assert len({c["name"] for c in result}) == len(result)
+    assert len({c["nameEn"] for c in result}) == len(result)
+    assert [(c["id"], c["hex"]) for c in result] == [(c["id"], c["hex"]) for c in palette]
+
+
+def test_signature_matches_the_game_fixture():
+    from src.build_puzzles import grid_signature
+    assert grid_signature({"grid": {"width": 2, "height": 1, "data": [[1, 2]]}, "palette": [{"id": 1, "hex": "#123456"}, {"id": 2, "hex": "#abcdef"}]}) == "ntz2s7"

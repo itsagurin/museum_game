@@ -62,3 +62,5 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 | [`docs/archive/`](./docs/archive/) | Pierwotna koncepcja, harmonogram hackathonu i opis usuniętego prototypu |
 
 Testowanie eksportu przy działającym dev: `PLAYWRIGHT_PORT=3102 npx playwright test`. Testy DEV: `PLAYWRIGHT_PORT=3000 npx playwright test tests/dev-coloring.spec.ts tests/dev-room-preview.spec.ts --output=/tmp/dziedzictwo-dev-results`. Nie uruchamiaj buildu podczas testów DEV.
+
+Plansze v2 mają nazwy kolorów PL/EN i `puzzleVersion` w manifeście. Zapis postępu jest wczytywany tylko przy zgodnej sygnaturze; zmiana nazwy koloru nie unieważnia zapisu. Nieznane i uszkodzone wpisy są pomijane osobno.

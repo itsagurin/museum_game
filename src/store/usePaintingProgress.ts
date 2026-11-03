@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { artworks } from "@/data/eras";
+import { artworks, legacyArtworkIds } from "@/data/eras";
 import { decodeCells, encodeCells } from "@/lib/painting-progress";
 import { safeStorage } from "./safe-storage";
 
@@ -29,7 +29,7 @@ const without = (paintings: Record<string, SavedPainting>, artworkId: string) =>
   delete rest[artworkId];
   return rest;
 };
-const knownArtworkIds = new Set(artworks.map((artwork) => artwork.id));
+const puzzleVersions = new Map(artworks.map(artwork => [artwork.id, artwork.puzzleVersion]));
 const isSavedPainting = (value: unknown): value is SavedPainting => {
   if (!value || typeof value !== "object") return false;
   const entry = value as Record<string, unknown>;
@@ -55,7 +55,10 @@ export const usePaintingProgress = create<PaintingProgressState>()(
       }),
       load: (artworkId, signature, total) => {
         const saved = get().paintings[artworkId];
-        return saved && saved.signature === signature && saved.total === total ? decodeCells(saved.cells, total) : [];
+        if (!saved) return [];
+        if (saved.signature === signature && saved.total === total) return decodeCells(saved.cells, total);
+        set(state => ({ paintings: without(state.paintings, artworkId) }));
+        return [];
       },
       clear: (artworkId) => set((state) => ({ paintings: without(state.paintings, artworkId) })),
       reset: () => set({ paintings: {} }),
@@ -70,7 +73,7 @@ export const usePaintingProgress = create<PaintingProgressState>()(
         const saved = (persisted as { paintings?: unknown } | null)?.paintings;
         if (!saved || typeof saved !== "object") return current;
         // One damaged entry must not discard the rest of the saved paintings.
-        const paintings = Object.fromEntries(Object.entries(saved).filter(([id, entry]) => knownArtworkIds.has(id) && isSavedPainting(entry)));
+        const paintings = Object.fromEntries(Object.entries(saved).map(([id, entry]) => [legacyArtworkIds.get(id) ?? id, entry] as const).filter(([id, entry]) => puzzleVersions.has(id) && isSavedPainting(entry) && entry.signature === puzzleVersions.get(id)));
         return { ...current, paintings };
       },
     },

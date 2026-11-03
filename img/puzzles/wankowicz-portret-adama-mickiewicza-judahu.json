@@ -5,47 +5,56 @@
     {
       "id": 1,
       "hex": "#14161E",
-      "name": "Czerń nocy"
+      "name": "Czerń nocy",
+      "nameEn": "Night black"
     },
     {
       "id": 2,
       "hex": "#2A2A1F",
-      "name": "Ciemny antracyt"
+      "name": "Ciemny antracyt",
+      "nameEn": "Dark anthracite"
     },
     {
       "id": 3,
       "hex": "#562C20",
-      "name": "Ciemny brąz ziemisty"
+      "name": "Ciemny brąz ziemisty",
+      "nameEn": "Dark earth brown"
     },
     {
       "id": 4,
       "hex": "#32463F",
-      "name": "Grafit bazaltowy"
+      "name": "Zieleń butelkowa",
+      "nameEn": "Bottle green"
     },
     {
       "id": 5,
       "hex": "#225971",
-      "name": "Grafit bazaltowy"
+      "name": "Szary stalowy",
+      "nameEn": "Steel grey"
     },
     {
       "id": 6,
       "hex": "#3E6567",
-      "name": "Grafit bazaltowy"
+      "name": "Grafit bazaltowy",
+      "nameEn": "Basalt graphite"
     },
     {
       "id": 7,
       "hex": "#7B6243",
-      "name": "Ciemna sepia"
+      "name": "Ciemna sepia",
+      "nameEn": "Dark sepia"
     },
     {
       "id": 8,
       "hex": "#5E8879",
-      "name": "Morski lazur"
+      "name": "Morski lazur",
+      "nameEn": "Sea azure"
     },
     {
       "id": 9,
       "hex": "#B2A378",
-      "name": "Jasna terakota"
+      "name": "Jasna terakota",
+      "nameEn": "Light terracotta"
     }
   ],
   "grid": {

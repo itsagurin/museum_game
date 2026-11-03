@@ -82,6 +82,13 @@ export function HeritageApp({ onRestoreArtwork }: {
     closePanel();
   };
 
+  if (!hydrated) return (
+    <div className="heritage-app hydration-screen" aria-busy="true">
+      <div className="ambient-backdrop" aria-hidden="true" />
+      <noscript><HouseScene language="pl" houseImage={assetUrl("house0.jpg")} completedCount={0} navigate={() => {}} openLibrary={() => {}} /></noscript>
+    </div>
+  );
+
   return (
     <MotionConfig reducedMotion={reducedMotion ? "always" : "user"}>
       <div ref={appRef} className={`heritage-app view-${view === "home" ? "home" : "interior"} ${gentleMotion ? "gentle-motion" : ""}`}

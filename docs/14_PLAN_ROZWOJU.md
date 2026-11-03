@@ -263,7 +263,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 
 - [x] Faza 2 zapisana osobno i otwarta jako PR #3, bazujący na `feat/faza-1`. Materiały prezentacji i lokalna zmiana workflow poza commitem.
 - [x] A1: sceny, panele, hooki progresji i CSS wydzielone; `HeritageApp` ma 125 linii; wszystkie komponenty mieszczą się w 300 liniach.
-- [ ] A2–A6: renderowanie początkowe, odmiana nazw, nazwy palety, sygnatury plansz i cofanie.
+- [x] A2–A6: renderowanie początkowe, odmiana nazw, nazwy palety, sygnatury plansz i cofanie.
 - [ ] A7–A8: samouczek i dostępność.
 - [ ] A9–A11: źródła, raport proporcji i opcje porządków binariów.
 - [ ] B1: PWA.
@@ -275,3 +275,5 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [ ] B8: materiały do badań.
 
 Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez etykiety treści), B1=a (zwykła plansza dnia), B2=a (seria), B3=Vercel, B4=a (domyślnie włączone), B6=a (ikona z domu), B7=a (LHCI). Nagrania muzyczne i zmiany proporcji plansz wymagają osobnej decyzji. Przepisanie historii Git pozostaje poza zakresem bez decyzji zespołu.
+
+**Stan `fix/a2-a6-painting`:** neutralny start do hydratacji obu store, odmienione nazwy epok, unikalne palety PL/EN, sygnatury w manifeście i poprawne cofanie po wznowieniu. Porównanie 83 plansz potwierdziło identyczne siatki, ID palety i HEX. Testy jednostkowe: 44; generator: 28 zaliczonych / 4 pominięte.
