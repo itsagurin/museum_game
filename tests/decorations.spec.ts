@@ -6,7 +6,7 @@ import { catalogPaintings, fillCanvas, openCatalogStudio } from "./helpers/catal
 async function seed(page: Page, completed: string[], gentleMotion = true) {
   await page.addInitScript(({ completedArtworkIds, gentleMotion }) => {
     if (localStorage.getItem("heritage-hearth-ui-v1")) return;
-    localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({ version: 1, state: { language: "pl", gentleMotion, completedArtworkIds } }));
+    localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({ version: 1, state: { language: "pl", exploreAll: true, gentleMotion, completedArtworkIds } }));
   }, { completedArtworkIds: completed, gentleMotion });
 }
 async function objectPoint(object: Locator) {
@@ -73,7 +73,7 @@ test("object bubbles work on tap and hover, remain on screen, translate and clos
 test("a real painting unlocks an era reward once, including from the library", async ({ page }) => {
   const eraEntries = catalogPaintings.filter(({ artwork }) => artwork.eraId === "era-2");
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await seed(page, [eraEntries[0].artwork.id], false); // Two completed artworks reach level 1 in the 18-artwork era.
+  await seed(page, [], false); // The first completed artwork always reaches level 1.
   await openCatalogStudio(page, eraEntries[1]);
   await fillCanvas(page);
   await page.getByRole("button", { name: "Odkryj opowieść", exact: true }).click();

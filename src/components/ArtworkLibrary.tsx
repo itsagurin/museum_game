@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Check, ImageOff, Paintbrush, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, ImageOff, LockKeyhole, Paintbrush, Search, X } from "lucide-react";
 import { artworks, eras, getEra, getWallArtworks, wallSlots } from "@/data/eras";
 import { copy } from "@/data/copy";
 import { useGameStore } from "@/store/useGameStore";
@@ -20,11 +20,12 @@ function ArtworkPreview({ artwork, eager = false }: { artwork: Artwork; eager?: 
 
 const searchKey = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/gi, "l").toLowerCase();
 
-export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
+export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = () => true }: {
   eraId?: EraId;
   slotId?: string;
   onHang: (slotId: string, artwork: Artwork) => void;
   onRestore: (artwork: Artwork) => void;
+  isEraOpen?: (eraId: EraId) => boolean;
 }) {
   const language = useGameStore((state) => state.language);
   const completed = useGameStore((state) => state.completedArtworkIds);
@@ -46,6 +47,8 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
   const selectedSlots = selected ? wallSlots.filter((slot) => slot.eraId === selected.eraId) : [];
   const targetSlot = selectedSlots.find((slot) => slot.id === targetSlotId) ?? selectedSlots[0];
   const alreadyHere = selected && targetSlot && assignments[targetSlot.id] === selected.id;
+  const selectedLocked = selected ? !isEraOpen(selected.eraId) : false;
+  const requiredEra = selected ? eras[eras.findIndex((era) => era.id === selected.eraId) - 1] : undefined;
 
   useEffect(() => {
     if (selectedId) {
@@ -86,10 +89,11 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
                       {getWallArtworks(selected.eraId, assignments).map(({ slot, artwork }) => <option key={slot.id} value={slot.id}>{t.wallSlot} {slot.number} — {artwork.title[language]}</option>)}
                     </select>
                   </label>
-                  {!completed.includes(selected.id) && <p className="library-detail-hint">{t.unpaintedHang}</p>}
+                  {selectedLocked && <p className="library-detail-hint library-locked-hint"><LockKeyhole size={14} />{t.libraryLocked(requiredEra?.name[language] ?? "")}</p>}
+                  {!completed.includes(selected.id) && !selectedLocked && <p className="library-detail-hint">{t.unpaintedHang}</p>}
                   {hangingIds.has(selected.id) && !alreadyHere && <p className="library-detail-hint">{t.hangingSwap}</p>}
-                  <button className="primary-button full-width" disabled={Boolean(alreadyHere) || !targetSlot} onClick={() => targetSlot && onHang(targetSlot.id, selected)}>{alreadyHere ? t.alreadyHanging : t.hangPainting}<ArrowUpRight size={18} /></button>
-                  {selected.coloringArtworkId ? <button className="secondary-button full-width" onClick={() => onRestore(selected)}><Paintbrush size={16} />{completed.includes(selected.id) ? t.repaint : t.restore}</button> : <p className="library-studio-note">{t.coloringSoon}</p>}
+                  <button className="primary-button full-width" disabled={Boolean(alreadyHere) || !targetSlot || selectedLocked} onClick={() => targetSlot && onHang(targetSlot.id, selected)}>{alreadyHere ? t.alreadyHanging : t.hangPainting}<ArrowUpRight size={18} /></button>
+                  {selected.coloringArtworkId ? <button className="secondary-button full-width" disabled={selectedLocked} onClick={() => onRestore(selected)}><Paintbrush size={16} />{completed.includes(selected.id) ? t.repaint : t.restore}</button> : <p className="library-studio-note">{t.coloringSoon}</p>}
                 </div>
               </div>
             </section>
@@ -106,7 +110,7 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore }: {
               <div className="library-results" aria-live="polite">{visible.length} {t.paintings}</div>
               {visible.length ? <div className="library-grid">
                 {visible.map((artwork) => <button key={artwork.id} className="library-artwork-card" data-artwork-id={artwork.id} aria-label={`${artwork.title[language]} — ${getEra(artwork.eraId).name[language]}`} onClick={() => { gridScrollRef.current = scrollRef.current?.scrollTop ?? 0; setSelectedId(artwork.id); setTargetSlotId(slotId ?? ""); }}>
-                  <span className="library-card-image"><ArtworkPreview artwork={artwork} />{completed.includes(artwork.id) && <span className="library-card-restored"><Check size={12} />{t.restoredLabel}</span>}</span>
+                  <span className="library-card-image"><ArtworkPreview artwork={artwork} />{completed.includes(artwork.id) && <span className="library-card-restored"><Check size={12} />{t.restoredLabel}</span>}{!isEraOpen(artwork.eraId) && <span className="library-card-locked" aria-label={t.locked}><LockKeyhole size={12} /></span>}</span>
                   <span className="library-card-copy"><strong>{artwork.title[language]}</strong>{artwork.artist && <span className="artwork-credit">{artwork.artist}{artwork.year && ` · ${artwork.year}`}</span>}<span>{getEra(artwork.eraId).name[language]}</span>{hangingIds.has(artwork.id) && <small>{t.libraryOnWall}</small>}</span>
                 </button>)}
               </div> : <p className="library-empty glass">{t.libraryEmpty}</p>}

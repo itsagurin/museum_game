@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
+import { seedGame } from "./helpers/game-state";
 
 const youngPolandFirst = artworks.find((artwork) => artwork.eraId === "era-4")!;
 
@@ -62,6 +63,7 @@ test("home, hall, four rooms, stories and browser back work", async ({
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  await seedGame(page);
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Przywróć kolor",
@@ -119,6 +121,7 @@ test("home, hall, four rooms, stories and browser back work", async ({
 test("language, reduced motion, progress and deep links survive reload", async ({
   page,
 }) => {
+  await seedGame(page);
   await page.goto("/#era-2");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Romantyzm",
@@ -180,6 +183,15 @@ test("blocked storage and a missing scene image keep navigation usable", async (
   await page.getByRole("button", { name: "Switch to English" }).click();
   await expect(page.getByRole("status")).toContainText("Saving is unavailable");
   await page
+    .getByRole("button", { name: "Next era: Romanticism — locked", exact: true })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText("This door is still locked");
+  await page.getByRole("button", { name: "Close", exact: true }).click();
+  // Exploration mode still works for this visit without storage.
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await page.getByRole("switch", { name: "Open all eras" }).click();
+  await page.getByRole("button", { name: "Close", exact: true }).click();
+  await page
     .getByRole("button", { name: "Next era: Romanticism", exact: true })
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
@@ -191,6 +203,7 @@ test("narrow phones fill the screen and can pan or show the entire room", async 
   page,
 }) => {
   await page.setViewportSize({ width: 320, height: 700 });
+  await seedGame(page);
   await page.goto("/#era-4");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Młoda Polska",
@@ -258,7 +271,7 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
         "heritage-hearth-ui-v1",
         JSON.stringify({
           version: 1,
-          state: { language: "pl", completedArtworkIds },
+          state: { language: "pl", exploreAll: true, completedArtworkIds },
         }),
       );
     }, artworks.filter((artwork) => eras.slice(0, completedRooms).some((era) => era.id === artwork.eraId)).map((artwork) => artwork.id));
