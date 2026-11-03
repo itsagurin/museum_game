@@ -19,3 +19,7 @@
 .album-badge h3 { margin:0 0 8px; font-size:15px; }
 .album-badge p,.album-badge span { font-size:12px; }
 @media(max-height:540px) { .daily-card { left:16px; bottom:80px; transform:none; width:min(260px,31vw); grid-template-columns:1fr; }.daily-card>img { display:none; }.daily-card h2 { font-size:16px; } }
+
+.share-action { grid-column:1/-1; }.share-button { width:100%; }.share-action p { font-size:12px; }
+.certificate-download { display:grid; gap:8px; padding-top:12px; border-top:1px solid #a4ab95; }
+.certificate-download label { font-size:12px; }.certificate-download input { padding:10px; border:1px solid #78816b; border-radius:8px; background:#fffdf3; font:inherit; min-height:44px; }

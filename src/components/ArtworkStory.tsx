@@ -1,5 +1,6 @@
 "use client";
 
+import { ShareButton } from "@/features/collection/ShareButton";
 import { useState } from "react";
 import { ArrowRight, BookOpen, ChevronDown, ImageOff, Paintbrush, Sparkles } from "lucide-react";
 import { copy } from "@/data/copy";
@@ -54,6 +55,7 @@ export function ArtworkStory({ artwork, language, completed, onRestore, onClose 
           </button>
         )}
         <button className="secondary-button" onClick={onClose}>{t.returnRoom}<ArrowRight size={16} /></button>
+        {completed && <ShareButton artwork={artwork} language={language} />}
       </div>
     </div>
   );
