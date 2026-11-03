@@ -8,12 +8,13 @@ import { useGameStore } from "@/store/useGameStore";
 import type { Artwork, EraId } from "@/types/game";
 
 function ArtworkPreview({ artwork, eager = false }: { artwork: Artwork; eager?: boolean }) {
-  const [failed, setFailed] = useState(false);
+  // Grid cards use the light thumbnail; the detail view and a missing thumbnail fall back to the original.
+  const [src, setSrc] = useState(eager ? artwork.originalImage : artwork.thumbnailImage ?? artwork.originalImage);
   const language = useGameStore((state) => state.language);
-  if (failed || !artwork.originalImage) return <span className="library-image-fallback" role="img" aria-label={copy[language].imageError}><ImageOff size={28} /></span>;
+  if (!src) return <span className="library-image-fallback" role="img" aria-label={copy[language].imageError}><ImageOff size={28} /></span>;
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={artwork.originalImage} alt="" loading={eager ? "eager" : "lazy"} draggable={false} onError={() => setFailed(true)} />
+    <img src={src} alt="" loading={eager ? "eager" : "lazy"} draggable={false} onError={() => setSrc(src === artwork.originalImage ? undefined : artwork.originalImage)} />
   );
 }
 

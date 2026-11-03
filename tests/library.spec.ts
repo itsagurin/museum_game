@@ -107,7 +107,7 @@ test("landing page opens all uploaded paintings, era filters and search", async 
   for (const [index, era] of eras.entries()) {
     await page.locator(".library-era-filters").getByRole("button", { name: era.name.pl, exact: true }).click();
     await expect(page.locator(".library-artwork-card")).toHaveCount([21, 18, 22, 22][index]);
-    expect(await page.locator(".library-card-image img").evaluateAll((images, eraNumber) => images.every((image) => image.getAttribute("src")!.startsWith(`/art/era${eraNumber}_`)), index + 1)).toBe(true);
+    expect(await page.locator(".library-card-image img").evaluateAll((images, eraNumber) => images.every((image) => image.getAttribute("src")!.startsWith(`/art/_thumbs/era${eraNumber}_`)), index + 1)).toBe(true);
   }
   await page.locator(".library-era-filters").getByRole("button", { name: "Wszystkie", exact: true }).click();
   await page.getByRole("searchbox", { name: "Szukaj obrazu", exact: true }).fill("mloda polska");
