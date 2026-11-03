@@ -66,3 +66,5 @@ Testowanie eksportu przy działającym dev: `PLAYWRIGHT_PORT=3102 npx playwright
 Plansze v2 mają nazwy kolorów PL/EN i `puzzleVersion` w manifeście. Zapis postępu jest wczytywany tylko przy zgodnej sygnaturze; zmiana nazwy koloru nie unieważnia zapisu. Nieznane i uszkodzone wpisy są pomijane osobno.
 
 Pierwszy obraz ma krótką planszę 16×12 z podpowiedziami. Ustawienia obejmują wysoki kontrast. Audyt: `npx playwright test tests/a11y.spec.ts tests/tutorial.spec.ts`; generator intro: `cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --only bellotto-widok-warszawy-strony-pragi --long-edge 16`.
+
+Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 16. Raport proporcji: `docs/reports/puzzle-proportions.html`; odtworzenie: `cd tools/pixel-engine && .venv/bin/python -m src.compare_proportions --root ../.. --report outputs/proportions.html`. Raport postępu: `docs/17_RAPORT_POPRAWEK.md`.

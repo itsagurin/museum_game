@@ -16,7 +16,7 @@ Nie zmieniaj `id`, `legacyIds` ani ścieżek: od nich zależą zapisy graczy.
 
 1. **`brandt-czarniecki-koldynga`:** opis mówi o „polskiej jeździe szesnastowiecznej” („Brawura polskiej jazdy szesnastowiecznej…”), a przeprawa pod Koldyngą miała miejsce w 1658 r. (XVII w.). Ten sam błąd jest w szkicu EN („sixteenth-century”).
 2. **`bacciarelli-portret-doktora-walentego-gagatkiewicza`:** brak dopasowania w Commons. Stara nazwa pliku `17_bacciarelli_akademia_krakowska.jpg` nie pasuje do tytułu, a ciekawostka mówi o portrecie odnalezionym na aukcji w Paryżu. Porównaj obraz z tytułem i znajdź źródło.
-3. **Źródła bez dopasowania (13 dzieł):** skrypt `tools/pixel-engine/src/content_sources.py` nie znalazł w Commons pliku o zgodnym obrazie. Dla każdego trzeba znaleźć źródło ręcznie (muzeum, Polona, Commons z inną nazwą) i wpisać `source` z `match: "title"` albo uruchomić skrypt z innym zapytaniem:
+3. **Źródła bez dopasowania (13 dzieł):** skrypt `tools/pixel-engine/src/content_sources.py` nie znalazł w Commons pliku o zgodnym obrazie. Dla każdego trzeba znaleźć źródło ręcznie (muzeum, Polona, Commons z inną nazwą) i dopiero po ręcznym porównaniu wpisać `source` z `match: "title"` (z notatką poniżej) albo uruchomić skrypt z innym zapytaniem:
    - `bacciarelli-portret-doktora-walentego-gagatkiewicza`
    - `norblin-swieto-bielanach`
    - `norblin-sejmik-szlachecki-kosciele`
@@ -123,3 +123,12 @@ Kolumna „treść” to `review.content`, kolumna „EN” to `review.translati
 | IV.20 | `mehoffer-slonce-majowe` | Słońce majowe | Józef Mehoffer, 1911 | [Commons](https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Mehoffer_-_S%C5%82o%C5%84ce_majowe.jpg) | Public domain | unverified | draft |
 | IV.21 | `wyczolkowski-kopanie-burakow` | Kopanie buraków | Leon Wyczółkowski, 1893 | [Commons](https://commons.wikimedia.org/wiki/File:Leon_Wycz%C3%B3%C5%82kowski_-_Kopanie_burak%C3%B3w.jpg) | Public domain | unverified | draft |
 | IV.22 | `wyczolkowski-gra-krokieta` | Gra w krokieta | Leon Wyczółkowski, 1895 | [Commons](https://commons.wikimedia.org/wiki/File:Leon_Wycz%C3%B3%C5%82kowski_%27Gra_w_krokieta%27.jpg) | CC BY-SA 3.0, fot. Zorro2212 | unverified | draft |
+
+## Uzupełnienie A9 (3 listopada 2026)
+
+- Ponowne wyszukiwanie zachowuje warunek zgodnego hasha reprodukcji, uwzględnia także tytuły EN i warianty nazwisk. Sama zgodność tytułu nie upoważnia do dopisania źródła.
+- Ręcznie obejrzano portret opisany jako Gagatkiewicz: popiersie mężczyzny w ciemnym surducie, z białym żabotem, owalna kompozycja. Sam wygląd nie potwierdza tożsamości modela. Stara nazwa pliku nie jest dowodem błędu. Brak zmiany tytułu i statusu.
+- **Propozycja dla recenzenta:** w opisie `brandt-czarniecki-koldynga` zastąpić „szesnastowiecznej” przez „siedemnastowiecznej”, a w EN „sixteenth-century” przez „seventeenth-century”, po potwierdzeniu kontekstu. Materiał do porównania: [audioprzewodnik MNW, pozycja „Czarniecki pod Koldyngą”](https://www.mnw.art.pl/multimedia/audioprzewodniki/archiwum--wystawy-czasowe/archiwum/wystawa-czasowa-jozef-brandt-1841-1915/). To propozycja, nie zatwierdzona korekta manifestu.
+- Nie dodano żadnego dopasowania `match: "title"` bez ręcznego potwierdzenia. Atrybucja fotografii „Gry w krokieta” pozostaje zachowana.
+
+Ponowne wyszukiwanie A9 zakończone: nadal **70/83** dopasowań. Dla 13 wskazanych dzieł sprawdzono także tytuły EN i warianty nazwisk, bez reprodukcji spełniającej warunek hasha. Dodatkowa kwerenda katalogów MNW/MNK/Polony dla portretu Gagatkiewicza nie dała potwierdzonego dopasowania; wpis pozostaje otwarty. Nie oznaczono żadnej treści jako zweryfikowanej.

@@ -42,3 +42,6 @@
 
 - A7: pierwsza pracownia pokazuje trzy zamykane podpowiedzi. `tutorialSeen` zapisywane przy zamknięciu pracowni, ukończeniu lub odrzuceniu podpowiedzi. Zapisane intro ma własną sygnaturę; zapis pełnej planszy ma pierwszeństwo. Testy katalogu świadomie ustawiają `tutorialSeen`, aby sprawdzać pełne plansze; samouczek ma osobny e2e nowego gracza.
 - A8: `highContrast` respektuje `prefers-contrast: more`, jest walidowane w merge i ustawiane na `html` (dialogi są portalami). Pracownia obsługuje strzałki. `tests/a11y.spec.ts` nie dopuszcza serious/critical, bez wyłączeń reguł.
+
+- A10: po obejrzeniu raportu użytkownik zatwierdził bok 40 dla pięciu panoram >2:1. Ich `puzzleSettings.longEdge=40` musi być respektowane przy standardowym `content:puzzles`. Nowe sygnatury są w `panorama-board-signatures.json`; 78 pozostałych pełnych plansz chroni wzorzec Fazy 2. Zmienione panoramy tracą rozpoczęty bitset, nigdy ukończenia ani ściany.
+- A9: dopasowanie obrazu do źródła nie jest recenzją treści. Propozycje korekt wpisuj do docs/15. A11 opisuje opcje migracji binariów; nic nie wykonano.

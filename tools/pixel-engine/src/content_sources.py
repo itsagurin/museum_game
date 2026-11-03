@@ -94,7 +94,9 @@ def queries(entry: dict) -> List[str]:
     artist = re.sub(r"\(.*?\)", "", entry["artist"]).strip()
     surname = artist.split()[-1]
     title = re.sub(r"\(.*?\)", "", entry["title"]["pl"]).strip()
-    return [f"{surname} {title}", f"{artist} {title}", f"{surname} {' '.join(title.split()[:3])}"]
+    english = re.sub(r"\(.*?\)", "", entry["title"].get("en", "")).strip()
+    aliases = {"Norblin": "Jean Pierre Norblin", "Bacciarelli": "Marcello Bacciarelli", "Michałowski": "Piotr Michalowski", "Zaleski": "Marcin Zaleski"}
+    return list(dict.fromkeys([f"{surname} {title}", f"{artist} {title}", f"{surname} {' '.join(title.split()[:3])}", f"{surname} {english}", f"{aliases.get(surname,surname)} {english}"]))
 
 
 def find_source(commons: Commons, entry: dict, ours: np.ndarray, aspect: float) -> Optional[dict]:
