@@ -1,0 +1,127 @@
+{
+  "sourceCommit": "9aafbb8",
+  "results": [
+    {
+      "scene": "home",
+      "runs": 3,
+      "performance": 96,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "lcpMs": 900.335,
+      "cls": 0
+    },
+    {
+      "scene": "hall",
+      "runs": 3,
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "lcpMs": 900.2745,
+      "cls": 0
+    },
+    {
+      "scene": "era-1",
+      "runs": 3,
+      "performance": 94,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "lcpMs": 2279.1125,
+      "cls": 0
+    },
+    {
+      "scene": "library",
+      "runs": 3,
+      "performance": 91,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "lcpMs": 2409.8785,
+      "cls": 0
+    }
+  ],
+  "runs": [
+    {
+      "scene": "home",
+      "performance": 97,
+      "lcpMs": 900.466,
+      "cls": 0,
+      "benchmarkIndex": 1324.5
+    },
+    {
+      "scene": "home",
+      "performance": 93,
+      "lcpMs": 900.224,
+      "cls": 0,
+      "benchmarkIndex": 1045.5
+    },
+    {
+      "scene": "home",
+      "performance": 96,
+      "lcpMs": 900.335,
+      "cls": 0,
+      "benchmarkIndex": 1714
+    },
+    {
+      "scene": "hall",
+      "performance": 100,
+      "lcpMs": 900.2745,
+      "cls": 0,
+      "benchmarkIndex": 2255.5
+    },
+    {
+      "scene": "hall",
+      "performance": 100,
+      "lcpMs": 900.1455,
+      "cls": 0,
+      "benchmarkIndex": 1704.5
+    },
+    {
+      "scene": "hall",
+      "performance": 99,
+      "lcpMs": 900.534,
+      "cls": 0,
+      "benchmarkIndex": 2320.5
+    },
+    {
+      "scene": "era-1",
+      "performance": 96,
+      "lcpMs": 2197.5295,
+      "cls": 0,
+      "benchmarkIndex": 1956
+    },
+    {
+      "scene": "era-1",
+      "performance": 86,
+      "lcpMs": 2487.765,
+      "cls": 0,
+      "benchmarkIndex": 1595.5
+    },
+    {
+      "scene": "era-1",
+      "performance": 94,
+      "lcpMs": 2279.1125,
+      "cls": 0,
+      "benchmarkIndex": 1595
+    },
+    {
+      "scene": "library",
+      "performance": 91,
+      "lcpMs": 2434.0365,
+      "cls": 0,
+      "benchmarkIndex": 2084
+    },
+    {
+      "scene": "library",
+      "performance": 88,
+      "lcpMs": 2409.8785,
+      "cls": 0,
+      "benchmarkIndex": 1957
+    },
+    {
+      "scene": "library",
+      "performance": 91,
+      "lcpMs": 2339.1525,
+      "cls": 0,
+      "benchmarkIndex": 2483.5
+    }
+  ]
+}

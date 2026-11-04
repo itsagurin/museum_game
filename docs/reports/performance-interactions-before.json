@@ -1,0 +1,479 @@
+{
+  "artwork": "wyspianski-portret-lizy-parenskiej-wsrod",
+  "cells": 992,
+  "painted": 25,
+  "numberedCells": 967,
+  "viewport": "375×812",
+  "cpuSlowdown": 4,
+  "method": "41 trusted interactions: zoom, palette, keyboard paint, undo; Event Timing (16ms threshold)",
+  "measuredInteractions": 41,
+  "maxMs": 200,
+  "p98Ms": 200,
+  "timings": [
+    {
+      "name": "pointerdown",
+      "duration": 200,
+      "id": 9907
+    },
+    {
+      "name": "pointerup",
+      "duration": 200,
+      "id": 9907
+    },
+    {
+      "name": "click",
+      "duration": 200,
+      "id": 9907
+    },
+    {
+      "name": "pointerdown",
+      "duration": 112,
+      "id": 9914
+    },
+    {
+      "name": "pointerup",
+      "duration": 112,
+      "id": 9914
+    },
+    {
+      "name": "click",
+      "duration": 112,
+      "id": 9914
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 9921
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 9921
+    },
+    {
+      "name": "keydown",
+      "duration": 144,
+      "id": 9928
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 9928
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 9935
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 9935
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 9942
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 9942
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 9949
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 9949
+    },
+    {
+      "name": "keydown",
+      "duration": 88,
+      "id": 9956
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 9956
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 9963
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 9963
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 9963
+    },
+    {
+      "name": "pointerdown",
+      "duration": 120,
+      "id": 9970
+    },
+    {
+      "name": "pointerup",
+      "duration": 120,
+      "id": 9970
+    },
+    {
+      "name": "click",
+      "duration": 120,
+      "id": 9970
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 9977
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 9977
+    },
+    {
+      "name": "keydown",
+      "duration": 88,
+      "id": 9984
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 9984
+    },
+    {
+      "name": "keydown",
+      "duration": 128,
+      "id": 9991
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 9991
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 9998
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 9998
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10005
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 10005
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10012
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 10012
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 10019
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 10019
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 10019
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 10026
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 10026
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 10026
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10033
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10033
+    },
+    {
+      "name": "keydown",
+      "duration": 144,
+      "id": 10040
+    },
+    {
+      "name": "keyup",
+      "duration": 96,
+      "id": 10040
+    },
+    {
+      "name": "keydown",
+      "duration": 136,
+      "id": 10047
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10047
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10054
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 10054
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 10061
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10061
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10068
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10068
+    },
+    {
+      "name": "pointerdown",
+      "duration": 96,
+      "id": 10075
+    },
+    {
+      "name": "pointerup",
+      "duration": 96,
+      "id": 10075
+    },
+    {
+      "name": "click",
+      "duration": 96,
+      "id": 10075
+    },
+    {
+      "name": "pointerdown",
+      "duration": 120,
+      "id": 10082
+    },
+    {
+      "name": "pointerup",
+      "duration": 120,
+      "id": 10082
+    },
+    {
+      "name": "click",
+      "duration": 120,
+      "id": 10082
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 10089
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10089
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10096
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10096
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10103
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10103
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10110
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10110
+    },
+    {
+      "name": "keydown",
+      "duration": 112,
+      "id": 10117
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10117
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10124
+    },
+    {
+      "name": "keyup",
+      "duration": 72,
+      "id": 10124
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 10131
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 10131
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 10131
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 10138
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 10138
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 10138
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10145
+    },
+    {
+      "name": "keyup",
+      "duration": 88,
+      "id": 10145
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10152
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10152
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10159
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10159
+    },
+    {
+      "name": "keydown",
+      "duration": 128,
+      "id": 10166
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10166
+    },
+    {
+      "name": "keydown",
+      "duration": 96,
+      "id": 10173
+    },
+    {
+      "name": "keyup",
+      "duration": 64,
+      "id": 10173
+    },
+    {
+      "name": "keydown",
+      "duration": 104,
+      "id": 10180
+    },
+    {
+      "name": "keyup",
+      "duration": 80,
+      "id": 10180
+    },
+    {
+      "name": "pointerdown",
+      "duration": 104,
+      "id": 10187
+    },
+    {
+      "name": "pointerup",
+      "duration": 104,
+      "id": 10187
+    },
+    {
+      "name": "click",
+      "duration": 104,
+      "id": 10187
+    }
+  ]
+}

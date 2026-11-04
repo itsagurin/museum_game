@@ -1,6 +1,6 @@
 # 17. Raport poprawek i Fazy 3
 
-Stan roboczy: 3 listopada 2026. Kolejne PR-y bazują na poprzednich, dopóki ich bazy nie zostaną scalone.
+Prace: 3–4 listopada 2026. Kolejne PR-y bazują na poprzednich, dopóki ich bazy nie zostaną scalone.
 
 | Pakiet | PR | Sprawdzenie |
 | --- | --- | --- |
@@ -8,6 +8,14 @@ Stan roboczy: 3 listopada 2026. Kolejne PR-y bazują na poprzednich, dopóki ich
 | A1: podział kodu i CSS | [#4](https://github.com/itsagurin/museum_game/pull/4) | 100 e2e / 6 DEV pominiętych, DEV 6, 12/12 identycznych par zrzutów |
 | A2–A6: start i zapisy | [#5](https://github.com/itsagurin/museum_game/pull/5) | 44 Vitest, 108 e2e / 6 pominiętych, DEV 6, pytest 28 / 4 pominięte; 83 siatki i palety HEX zachowane |
 | A7–A8: samouczek i dostępność | [#6](https://github.com/itsagurin/museum_game/pull/6) | 44 Vitest, 130 e2e / 6 pominiętych, DEV 6, pytest 30 / 4 pominięte; 18 skanów axe bez serious/critical |
+| A9–A11: recenzja i panoramy | [#7](https://github.com/itsagurin/museum_game/pull/7) | 44 Vitest, 130 e2e / 6 pominiętych, DEV 6, pytest 32 / 4 pominięte |
+| B1: PWA | [#8](https://github.com/itsagurin/museum_game/pull/8) | 49 Vitest, 134 e2e / 6 pominiętych, DEV 6; offline także pod /museum |
+| B2–B3: powroty i kolekcja | [#9](https://github.com/itsagurin/museum_game/pull/9) | 59 Vitest, 138 e2e / 6 pominiętych, DEV 6; 20 skanów axe |
+| B4: karta i certyfikat | [#10](https://github.com/itsagurin/museum_game/pull/10) | 62 Vitest; PNG w obu wymaganych wymiarach; pełny przebieg 141 zaliczonych, 1 fluktuacja hover zaliczona osobno |
+| B5: muzyka | [#11](https://github.com/itsagurin/museum_game/pull/11) | 66 Vitest, 144 e2e / 6 pominiętych, DEV 6 |
+| B6: analityka do aktywacji później | [#12](https://github.com/itsagurin/museum_game/pull/12) | 70 Vitest, 152 e2e / 6 pominiętych, DEV 6; 22 skany axe |
+| B8: materiały badawcze | [#13](https://github.com/itsagurin/museum_game/pull/13) | Siedem szablonów; kod i sprawdzenie z B6 |
+| B7: wydajność i stabilność | [#14](https://github.com/itsagurin/museum_game/pull/14) | 75 Vitest, 178 e2e / 6 pominiętych, DEV 6, 24 skany axe; pełny audyt mobile zakończony kodem 0 |
 
 W każdym pakiecie kodu wykonano lint, typecheck, walidację treści i build. Ostrzeżenia ESLint (3) pochodzą z JS w venv sklearn, nie z gry. Cztery pomijane testy Python potrzebują danych spoza repo. Raporty, trace i zrzuty są lokalnie w `/tmp/museum-a1`, `/tmp/museum-a2-*`, `/tmp/museum-a7-*`.
 
@@ -18,7 +26,8 @@ W każdym pakiecie kodu wykonano lint, typecheck, walidację treści i build. Os
 - D-B3: Vercel Analytics; D-B4: domyślnie włączone z możliwością wyłączenia.
 - D-B6: tymczasowa ikona z `house4.jpg`; D-B7: osobny job LHCI.
 - A10: bok 40 dla pięciu panoram. Użytkownik otrzymał raport i informację o utracie pomalowanych pól rozpoczętych plansz objętych zmianą. Ukończenia i obsada ścian pozostają.
-- Muzyka: dopiero po zatwierdzeniu konkretnych nagrań. Historia Git: bez zmian.
+- Muzyka: zatwierdzone pięć konkretnych nagrań CC0 z docs/19. Historia Git: bez migracji i bez przepisywania.
+- Vercel: kod do późniejszej aktywacji; konfiguracji produkcyjnej ani planu konta nie zmieniano.
 
 ## A9: recenzja treści
 
@@ -76,3 +85,27 @@ Siedem dokumentów w `docs/user-testing/` przygotowano do sesji 5–8 osób. Zaw
 ## Ograniczenia sprawdzenia
 
 Nie przeprowadzono jeszcze badań z uczestnikami ani instalacji na fizycznym Androidzie/iOS. Pomiar czasu do pierwszej nagrody i test czytnika ekranu wymagają tych sesji. Automatyczne testy i emulacja nie zastępują tych pomiarów.
+
+## B7: końcowe pomiary i regresje
+
+[Raport przed/po z danymi JSON](reports/performance.md) opisuje metodę, wszystkie przebiegi i ograniczenia. Stan kodu: `9aafbb8`. Mediany Performance pięciu widoków: dom 97, hol 99, pokój 97, kolekcja 95, pracownia 92. Accessibility i Best Practices: po 100. LCP pokoju: 3,793 → 2,226 s, biblioteki: 3,858 → 2,286 s; CLS wszystkich widoków: 0. Dom: 369 954 B transferu strony; osobny cache offline ma około 3,91 MiB przed kompresją transportową.
+
+Niezależny LHCI sprawdził cztery adresy × trzy przebiegi: wszystkie progi przeszły, największa mediana LCP 2,410 s. Całe `npm run audit` obejmuje 27 nawigacji Lighthouse, interakcje i CDP. Maksymalny Event Timing przy 992 polach i CPU ×4: 200 → 120 ms w próbce 41 interakcji. Instalowalność i manifest: po 0 błędów. To pomiar laboratoryjny, wymagający późniejszego potwierdzenia terenowego INP.
+
+Pracownia pobiera kod i planszę równolegle. Lżejsze sceny, fonty, ikony i warstwa SVG ograniczają koszt startu. Biblioteka odracza miniatury i opisy oraz zachowuje pozycję i fokus. Zapis pędzla jest opróżniany przed zamknięciem i szybkim ponownym otwarciem. Nieczytelny JSON nie blokuje startu; poprawne ukończenia i obsada ścian pozostają. Testy obejmują też długi tytuł/ciekawostkę dnia w sześciu rozmiarach oraz eksport EN z polskim imieniem i opóźnionym fontem. Imię pozostaje poza zapisem i URL.
+
+Sprawdzenie: lint 0 błędów, typy, 75 Vitest (w tym 5 treści), build, **178 e2e / 6 DEV pominiętych**, prawdziwy DEV **6/6**, **24 skany axe bez serious/critical**, pytest **32 / 4 pominięte**. Ręcznie obejrzano 12 widoków w 375×812 i 1440×1000, dwa komunikaty błędu i PNG. Osobny build `/museum` wznowił offline 1 pomalowane pole z planszy 672 pól i pokazał 83 karty, bez błędów skryptów ani adresów poza prefiksem. Komponenty mają do 295 linii, `HeritageApp` 157. Manifest, obrazy źródłowe i plansze nie zmieniły się w B7.
+
+## Workflow i kroki właściciela
+
+Job Lighthouse jest przygotowany w `.github/workflows/ci.yml`, z zachowaniem istniejącej lokalnej definicji testów generatora. Zgodnie z pkt 4.11 dokumentu 16 token gh nie ma uprawnienia `workflow`, więc ostatni commit należy wypchnąć z terminala właściciela przez SSH:
+
+```bash
+git push -u origin perf/b7-lighthouse
+```
+
+Do tego kroku nowy job nie jest uruchomiony zdalnie. Repozytorium pozostaje stosem PR #1–#14; należy scalać od najwcześniejszej zależności. Nie scalano `main` i nie zmieniano produkcyjnej konfiguracji Vercela. Analityka pozostaje nieaktywna na życzenie użytkownika.
+
+W sesji nie udostępniono narzędzi `get_status`/`bind_pr`; powiązanie PR w aplikacji pozostaje ręczne. Po powiązaniu można rozważyć Auto-fix. Materiały prezentacji w indeksie pozostały nietknięte.
+
+Po stronie zespołu pozostają recenzja treści i szkiców EN (w tym 13 brakujących źródeł), fizyczne urządzenia i czytnik ekranu oraz badanie 5–8 osób z przygotowanych materiałów. Faza 4: nowe epoki, kolekcje z muzeami i tryb szkolny, po wynikach badania. Nie wpisywano fikcyjnych wyników ani metryk retencji.
