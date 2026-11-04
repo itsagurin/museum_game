@@ -147,6 +147,9 @@
   z-index: 5;
 }
 .camera-hint {
+  background: rgba(25, 23, 17, 0.78);
+  padding: 4px 8px;
+  border-radius: 8px;
   position: absolute;
   bottom: calc(max(24px, env(safe-area-inset-bottom)) + 130px);
   left: 50%;
@@ -196,6 +199,7 @@
   }
 }
 .era-door-number {
+  font-weight: 600;
   position: absolute;
   top: -6px;
   left: 50%;
@@ -329,3 +333,6 @@
     right: 16px;
   }
 }
+
+@keyframes scene-enter { from { opacity: 0; } to { opacity: 1; } }
+.scene-enter { animation: scene-enter 280ms ease-out; }

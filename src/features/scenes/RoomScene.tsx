@@ -4,7 +4,8 @@ import { copy } from "@/data/copy";
 import type { Language, EraId, View } from "@/types/game";
 import { GameViewport } from "@/components/GameViewport";
 import { RoomBackdrop } from "@/components/RoomBackdrop";
-import { RoomDecorations } from "@/components/RoomDecorations";
+import dynamic from "next/dynamic";
+const RoomDecorations = dynamic(() => import("@/components/RoomDecorations").then(module => module.RoomDecorations));
 import { ChevronLeft, ChevronRight, LockKeyhole, Paintbrush, Sparkles } from "lucide-react";
 import { eras, getWallArtworks } from "@/data/eras";
 import { getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
@@ -32,7 +33,7 @@ export function RoomScene({ activeEra, language, roomLevel, roomProgress, roomPr
     <GameViewport key={roomPreview ? "preview" : "game"} fixedOverview={roomPreview} className="room-canvas" focalY={0.43} label={activeEra.name[language]}>
       <RoomBackdrop key={activeEra.id} baseImage={activeEra.image} level={roomLevel} alt={activeEra.name[language]} />
       <div className="scene-light" aria-hidden="true" />
-      <RoomDecorations eraId={activeEra.id} level={roomLevel} language={language} gentle={reducedMotion} active={!panelOpen} pendingIds={roomPreview ? noRewards : pendingRewards} onRewardsShown={consumeRewards} />
+      {roomLevel > 0 && <RoomDecorations eraId={activeEra.id} level={roomLevel} language={language} gentle={reducedMotion} active={!panelOpen} pendingIds={roomPreview ? noRewards : pendingRewards} onRewardsShown={consumeRewards} />}
       {getWallArtworks(activeEra.id, wallAssignments).map(({artwork,slot}) => <WallArtwork key={slot.id} artwork={artwork} slot={slot} activeEra={activeEra} roomLevel={roomLevel} roomPreview={roomPreview} completed={completed} savedPaintings={savedPaintings} language={language} openArtwork={openArtwork} openStory={openStory} />)}
                       <button
                         className="room-door-hit"

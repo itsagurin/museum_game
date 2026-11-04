@@ -37,3 +37,42 @@ jobs:
           path: test-results/
           retention-days: 7
 
+  pixel-engine:
+    name: Board generator tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/pixel-engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tools/pixel-engine/requirements.txt
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+
+  lighthouse:
+    name: Mobile Lighthouse and studio interactions
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run audit
+      - name: Upload Lighthouse and interaction reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-performance
+          path: .lighthouseci/
+          include-hidden-files: true
+          retention-days: 14

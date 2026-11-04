@@ -159,11 +159,11 @@ Cel: sprawdzić, czy ludzie wracają, i dać im powód do powrotu.
 
 1. **PWA**: manifest, ikony, service worker (np. Serwist) z cache scen i aktualnie otwartych plansz. Instalacja na ekran główny i gra offline.
 2. **Mechaniki powrotu** (zgodne z cozy, bez presji):
-   - „Obraz dnia” z krótką planszą i ciekawostką.
+   - „Obraz dnia” ze zwykłą planszą z otwartych epok i ciekawostką (zatwierdzona decyzja D-B1).
    - Album kolekcji: postęp per artysta/epoka, odznaki (np. „Wszystkie Canaletta”).
    - Karta do udostępnienia: PNG „przed/po” z tytułem i linkiem (Web Share API).
-3. **Dźwięk i atmosfera**: muzyka tła per epoka (domena publiczna: Chopin, Moniuszko, Szymanowska; nagrania z licencją CC), suwak głośności, domyślnie wyciszone.
-4. **Analityka szanująca prywatność** (Plausible / Umami, bez cookies): ukończenie samouczka, czas do pierwszej nagrody, ukończone obrazy na sesję, powroty D1/D7, porzucone plansze.
+3. **Dźwięk i atmosfera**: zatwierdzony tymczasowy zestaw pięciu nagrań CC0 z docs/19, suwak głośności, domyślnie wyciszone.
+4. **Analityka szanująca prywatność** (wybrano Vercel, aktywacja odroczona przez użytkownika): ukończenie samouczka, czas do pierwszej nagrody, ukończone obrazy na sesję, powroty D1/D7, porzucone plansze. Definicje i ograniczenia: docs/18.
 5. **Testy z użytkownikami**: 5–8 osób z grupy docelowej, scenariusz z one-pagera (ukończenie pierwszego obrazu, chęć powrotu, zapamiętanie ciekawostki). Po tygodniu krótki quiz: czy pamiętają autora i ciekawostkę.
 6. **Wydajność**: Lighthouse mobile ≥ 90 (Performance, Accessibility). Wirtualizacja siatki biblioteki przy większej kolekcji.
 
@@ -259,7 +259,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 | Faza 4 | `anthropic-skills:pptx` / `pdf` | Pitch dla muzeów i szkół |
 | Przed publikacją | `/security-review` | Przegląd przed dodaniem backendu i kont |
 
-## Stan poprawek po Fazie 2 — `refactor/a1-scenes-shell` (3 listopada 2026)
+## Stan poprawek po Fazie 2 i Fazy 3 (4 listopada 2026)
 
 - [x] Faza 2 zapisana osobno i otwarta jako PR #3, bazujący na `feat/faza-1`. Materiały prezentacji i lokalna zmiana workflow poza commitem.
 - [x] A1: sceny, panele, hooki progresji i CSS wydzielone; `HeritageApp` ma 125 linii; wszystkie komponenty mieszczą się w 300 liniach.
@@ -270,11 +270,12 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] B2–B3: obraz dnia, seria, album i odznaki.
 - [x] B4: karty i certyfikat.
 - [x] B5: muzyka po zatwierdzeniu nagrań.
-- [x] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
-- [ ] B7: wydajność i osobny job LHCI.
+- [x] B6: kod Vercel Analytics do późniejszej aktywacji; preferencja domyślnie włączona z możliwością wyłączenia, integracja obecnie nieaktywna.
+- [x] B7: wydajność, lokalne progi LHCI i przygotowany osobny job.
+- [ ] Właściciel: wypchnąć ostatni commit workflow przez SSH i uruchomić nowy job w GitHub Actions.
 - [x] B8: materiały do badań.
 
-Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez etykiety treści), B1=a (zwykła plansza dnia), B2=a (seria), B3=Vercel, B4=a (domyślnie włączone), B6=a (ikona z domu), B7=a (LHCI). Nagrania muzyczne i zmiany proporcji plansz wymagają osobnej decyzji. Przepisanie historii Git pozostaje poza zakresem bez decyzji zespołu.
+Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez etykiety treści), B1=a (zwykła plansza dnia), B2=a (seria), B3=Vercel, B4=a (domyślnie włączone), B6=a (ikona z domu), B7=a (LHCI). Osobno zatwierdzono pięć nagrań CC0 i bok 40 dla pięciu panoram. Przepisanie historii Git pozostaje poza zakresem bez decyzji zespołu.
 
 **Stan `fix/a2-a6-painting`:** neutralny start do hydratacji obu store, odmienione nazwy epok, unikalne palety PL/EN, sygnatury w manifeście i poprawne cofanie po wznowieniu. Porównanie 83 plansz potwierdziło identyczne siatki, ID palety i HEX. Testy jednostkowe: 44; generator: 28 zaliczonych / 4 pominięte.
 
@@ -293,3 +294,5 @@ Decyzje z sekcji 5 dokumentu 16 zatwierdzone: A1=a (samouczek 16), A2=a (bez ety
 **Stan `feat/b6-analytics`:** warstwa Vercel track(), odczyt zgody po hydratacji, lista dopuszczonych właściwości, anonimowe przedziały, zdarzenia gry i przełącznik prywatności. Kod pozostaje bez produkcyjnej konfiguracji na życzenie użytkownika; aktywacja przez właściciela później, Pro/Enterprise dla custom events. Vitest: 70, lokalne e2e dostawcy: 6 przypadków. Dokument metryk wyjaśnia przybliżenia D1 i brak dokładnego D7 z d7_plus.
 
 **Stan `docs/b8-user-testing`:** siedem materiałów PL do badania 5–8 osób (w tym dwie rzadko grające), około 25 minut, quiz po tygodniu. Formularz zgody ma puste dane administratora/kontaktu i osobne zgody na nagranie i kontakt. SUS zawiera 10 pozycji i sposób liczenia; oznaczono robocze tłumaczenie. Zespół prowadzi badanie i uzupełnia rzeczywiste wyniki. Kod gry bez zmian względem zweryfikowanego B6.
+
+**Stan `perf/b7-lighthouse` — PR #14:** 75 Vitest, 178 e2e / 6 DEV pominiętych, DEV 6/6, 24 skany axe bez serious/critical, pytest 32 / 4 pominięte. Lokalne mediany pięciu widoków spełniają budżety: Performance 92–99, Accessibility/Best Practices 100, LCP do 2,286 s, CLS 0; niezależny LHCI również przeszedł. Event Timing 992 pól: maks. 120 ms. Dane i ograniczenia w [raporcie](reports/performance.md). Kod w `9aafbb8`; ostatni commit workflow oczekuje na push SSH właściciela. Badanie ludzi, urządzenia fizyczne i aktywacja statystyk pozostają odroczone.

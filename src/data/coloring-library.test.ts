@@ -1,6 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { artworks, content, legacyArtworkIds } from "./eras";
+import { artworks as summaries, legacyArtworkIds } from "./eras";
+import content from "../../content/artworks.json" with { type: "json" };
+import { getArtworkDetails } from "./artwork-details";
+const artworks = summaries.map(getArtworkDetails);
 import { loadColoringArtwork } from "./coloring-library";
 
 afterEach(() => vi.unstubAllGlobals());

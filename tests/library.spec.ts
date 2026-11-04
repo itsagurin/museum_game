@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { artworks, eras } from "../src/data/eras";
+import { artworks } from "./helpers/catalog";
+import { eras } from "../src/data/eras";
 import { seedGame } from "./helpers/game-state";
 
 test("painting and curiosity fit the screen before optionally opening the history", async ({ page }) => {
@@ -75,7 +76,7 @@ test("supplied titles, artists and stories work without losing saved progress", 
   await expect(page.locator(".story-body")).toHaveText(artwork.story!.pl);
   await expect(page.locator(".fun-fact p")).toHaveText(artwork.funFact!.pl);
   await page.keyboard.press("Escape");
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   // English drafts replace the Polish texts; nothing is marked as Polish any more.
   await page.getByRole("button", { name: `The painting’s story — ${artwork.title.en}`, exact: true }).click();
   await expect(page.getByRole("dialog").getByRole("heading", { name: artwork.title.en, exact: true })).toBeVisible();
@@ -174,7 +175,7 @@ test("library works in English, survives browser back and fits a 320px phone", a
   await page.setViewportSize({ width: 320, height: 640 });
   await page.goto("/");
   await page.locator(".home-library-button").click();
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Painting library");
   await page.locator(".library-era-filters").getByRole("button", { name: "Romanticism", exact: true }).click();
   const lastRomantic = artworks.filter((artwork) => artwork.eraId === "era-2").at(-1)!;

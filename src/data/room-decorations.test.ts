@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import manifest from "./asset-manifest.json";
 import { eras } from "./eras";
-import { getDecorationBounds, getDecorationGeometry, getDecorationImageRegion, getNewDecorations, getRoomArtworkPlacement, getRoomDecorations, roomDecorations } from "./room-decorations";
+import { getDecorationBounds, getDecorationGeometry, getDecorationImageRegion } from "./decoration-regions";
+import { getNewDecorations, getRoomArtworkPlacement, getRoomDecorations, roomDecorations } from "./room-decorations";
 import type { Region } from "../types/game";
 
 const overlaps = (a: Region, b: Region) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;

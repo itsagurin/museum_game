@@ -109,7 +109,7 @@
   height: 122%;
   left: -15%;
   top: -11%;
-  object-fit: fill;
+  object-fit: cover;
 }
 .original-artwork {
   width: 100%;

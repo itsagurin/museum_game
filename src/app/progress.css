@@ -1,10 +1,10 @@
 /* Era locks, started paintings and progress notices */
 .hall-door-hit.locked .era-door-number {
-  color: #7a705e;
+  color: #514b3c;
   background: rgba(236, 229, 211, 0.72);
 }
 .era-switch.locked {
-  color: #a39a86;
+  color: #514b3c;
 }
 .paper-progress {
   position: absolute;

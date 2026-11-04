@@ -1,137 +1,27 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { loadColoringArtwork } from "@/data/coloring-library";
-import { copy } from "@/data/copy";
-import { useGameStore } from "@/store/useGameStore";
-import type { ColoringArtwork } from "@/lib/coloring";
-import { gridSignature } from "@/lib/painting-progress";
+import { usesIntroBoard } from "@/lib/intro-board";
 import { usePaintingProgress } from "@/store/usePaintingProgress";
+import { StudioLoading, StudioLoadingContext } from "@/features/painting/StudioLoading";
+import { flushPaintingSession } from "@/lib/painting-session";
+import { useGameStore } from "@/store/useGameStore";
 import type { RestoreArtworkRequest } from "@/types/game";
 import { AnalyticsController } from "@/features/shell/AnalyticsController";
-import { usePaintingTelemetry } from "@/features/painting/usePaintingTelemetry";
 import { MusicController } from "@/features/shell/MusicController";
 import { HeritageApp } from "./HeritageApp";
-import { ColoringCanvas } from "./coloring-canvas";
-import { ColoringAudio } from "./coloring-audio";
-import { Dialog } from "./Dialog";
 
-function ColoringStudio({ request, onComplete }: {
-  request: RestoreArtworkRequest;
-  onComplete: () => void;
-}) {
-  const language = useGameStore((state) => state.language);
-  const gentleMotion = useGameStore((state) => state.gentleMotion);
-  const autoFill = useGameStore((state) => state.autoFill);
-  const highContrast = useGameStore(state => state.highContrast);
-  const tutorialSeen = useGameStore(state => state.tutorialSeen);
-  const completed = useGameStore(state => state.completedArtworkIds);
-  const saved = usePaintingProgress.getState().paintings[request.artwork.id];
-  const [useIntro] = useState(() => Boolean(request.artwork.introPuzzle && completed.length === 0 && (!tutorialSeen || saved?.signature === request.artwork.introPuzzleVersion) && (!saved || saved.signature !== request.artwork.puzzleVersion)));
-  const tutorialActive = !tutorialSeen && completed.length === 0;
-  const [painting, setPainting] = useState<ColoringArtwork | null>(null);
-  const [error, setError] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-  const t = copy[language];
-  const artworkId = request.artwork.id;
-  const board = useMemo(() => painting && {
-    signature: gridSignature(painting),
-    total: painting.grid.width * painting.grid.height,
-  }, [painting]);
-  const initialPainted = useMemo(() => {
-    const saved = usePaintingProgress.getState().paintings[artworkId];
-    return board && saved?.signature === board.signature && saved.total === board.total
-      ? usePaintingProgress.getState().load(artworkId, board.signature, board.total) : [];
-  }, [artworkId, board]);
-  useEffect(() => {
-    if (board) usePaintingProgress.getState().load(artworkId, board.signature, board.total);
-  }, [artworkId, board]);
-  const {paint:trackPainted,complete:trackComplete} = usePaintingTelemetry(request.artwork,board?.total ?? 0,initialPainted.length,completed.length===0);
-  const pendingCells = useRef<number[] | null>(null);
-  const saveTimer = useRef<number | null>(null);
-  const finished = useRef(false);
-  const flush = useCallback(() => {
-    if (saveTimer.current !== null) window.clearTimeout(saveTimer.current);
-    saveTimer.current = null;
-    if (!board || finished.current || !pendingCells.current) return;
-    usePaintingProgress.getState().save(artworkId, board.signature, board.total, pendingCells.current);
-    pendingCells.current = null;
-  }, [artworkId, board]);
-  const savePainted = useCallback((cellIds: number[]) => {
-    trackPainted(cellIds);
-    pendingCells.current = cellIds;
-    // Strokes arrive many times per second; one write per pause is enough.
-    if (saveTimer.current === null) saveTimer.current = window.setTimeout(flush, 800);
-  }, [flush,trackPainted]);
-  useEffect(() => {
-    window.addEventListener("pagehide", flush);
-    return () => {
-      window.removeEventListener("pagehide", flush);
-      flush();
-    };
-  }, [flush]);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    void loadColoringArtwork(useIntro ? {...request.artwork, coloringSource: request.artwork.introPuzzle} : request.artwork, controller.signal).then((payload) => {
-      if (!controller.signal.aborted) setPainting(payload);
-    }).catch(() => {
-      if (!controller.signal.aborted) setError(true);
-    });
-    return () => controller.abort();
-  }, [request.artwork, attempt, useIntro]);
-
-  return (
-    <>
-      <ColoringAudio />
-      <div className="coloring-heading">
-        <span className="eyebrow">{request.era.name[language]}</span>
-        {request.artwork.artist && <p className="artwork-credit">{request.artwork.artist}{request.artwork.year && ` · ${request.artwork.year}`}</p>}
-      </div>
-      {painting ? (
-        <ColoringCanvas
-          key={painting.id}
-          artwork={{ ...painting, title: request.artwork.title[language] }}
-          language={language}
-          gentleMotion={gentleMotion}
-          autoFill={autoFill}
-          highContrast={highContrast}
-          showBaseNumbers={useIntro}
-          tutorialActive={tutorialActive}
-          showColorNumbers
-          allowDevColorFill={process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1"}
-          initialPainted={initialPainted}
-          onPaintedChange={savePainted}
-          onComplete={() => {
-            // A finished board is recorded as completed; its cells are no longer needed.
-            trackComplete();
-            useGameStore.getState().markTutorialSeen();
-            finished.current = true;
-            pendingCells.current = null;
-            usePaintingProgress.getState().clear(artworkId);
-            onComplete();
-          }}
-        />
-      ) : (
-        <div className="coloring-loading" role="status" aria-busy={!error}>
-          <Sparkles size={25} strokeWidth={1} aria-hidden="true" />
-          <p>{error ? t.coloringLoadError : t.coloringLoading}</p>
-          {error && <button className="secondary-button" onClick={() => { setError(false); setAttempt((value) => value + 1); }}>{t.coloringRetry}</button>}
-        </div>
-      )}
-    </>
-  );
-}
+const ColoringOverlay = dynamic(() => import("@/features/painting/ColoringOverlay").then(module => module.ColoringOverlay), { loading: StudioLoading });
 
 /** Connect the team's pixel painter to the house without using prototype progress. */
 export function HeritageGame() {
   const [request, setRequest] = useState<RestoreArtworkRequest | null>(null);
-  const language = useGameStore((state) => state.language);
-  const gentleMotion = useGameStore((state) => state.gentleMotion);
-  const t = copy[language];
+  const [studioLoaded, setStudioLoaded] = useState(false);
+  const session = useRef(0);
   const closeStudio = useCallback(() => {
+    flushPaintingSession();
     useGameStore.getState().markTutorialSeen();
     request?.onClose();
     setRequest(null);
@@ -144,28 +34,32 @@ export function HeritageGame() {
     return () => {
       window.removeEventListener("hashchange", closeStudio);
       window.removeEventListener("popstate", closeStudio);
+      request.preloadedBoard?.controller.abort();
     };
   }, [request, closeStudio]);
 
+  const restore = (next: RestoreArtworkRequest) => {
+    flushPaintingSession();
+    const state = useGameStore.getState();
+    const intro = usesIntroBoard(next.artwork, state.completedArtworkIds.length, state.tutorialSeen, usePaintingProgress.getState().paintings[next.artwork.id]?.signature);
+    const controller = new AbortController();
+    const promise = loadColoringArtwork(intro ? { ...next.artwork, coloringSource: next.artwork.introPuzzle } : next.artwork, controller.signal);
+    void promise.catch(() => {}); // The studio presents the error once its code is ready.
+    setStudioLoaded(true);
+    setRequest({ ...next, sessionKey: ++session.current, preloadedBoard: { intro, promise, controller } });
+  };
   return (
     <>
-      <HeritageApp onRestoreArtwork={setRequest} />
+      <HeritageApp onRestoreArtwork={restore} />
       <MusicController studioEra={request?.artwork.eraId} />
       <AnalyticsController />
-      <AnimatePresence>
-        {request && (
-          <Dialog title={request.artwork.title[language]} closeLabel={t.returnRoom} onClose={closeStudio} gentle={gentleMotion} variant="coloring">
-            <ColoringStudio
-              key={request.artwork.id}
-              request={request}
-              onComplete={() => {
-                setRequest(null);
-                request.onComplete();
-              }}
-            />
-          </Dialog>
-        )}
-      </AnimatePresence>
+      <StudioLoadingContext.Provider value={request ? { title: request.artwork.title, close: closeStudio } : null}>
+      {studioLoaded && <ColoringOverlay request={request} onClose={closeStudio} onComplete={() => {
+        if (!request) return;
+        setRequest(null);
+        request.onComplete();
+      }} />}
+      </StudioLoadingContext.Provider>
     </>
   );
 }

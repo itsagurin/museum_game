@@ -5,11 +5,11 @@ import { copy } from "../src/data/copy";
 import { artworks } from "../src/data/eras";
 import { fillCanvas } from "./helpers/catalog-coloring";
 
-for (const scene of ["home","hall","era-1","studio","library","album","detail","settings","info","locked","milestone"]) {
+for (const scene of ["home","hall","era-1","new-room","studio","library","album","detail","settings","info","locked","milestone"]) {
   test(`WCAG 2.2 AA: ${scene}`, async ({page},info) => {
     await page.emulateMedia({reducedMotion:"reduce"});
-    if(scene !== "locked") await seedGame(page, scene === "milestone" ? {exploreAll:false,completedArtworkIds:artworks.filter(a=>a.eraId==="era-1" && a.id!==artworks[0].id).map(a=>a.id)} : {});
-    const hash = ["studio","milestone"].includes(scene) ? "era-1" : ["settings","info"].includes(scene) ? "home" : scene === "locked" ? "hall" : ["detail","album"].includes(scene) ? "library" : scene;
+    if(scene !== "locked") await seedGame(page, scene === "new-room" ? {exploreAll:false} : scene === "milestone" ? {exploreAll:false,completedArtworkIds:artworks.filter(a=>a.eraId==="era-1" && a.id!==artworks[0].id).map(a=>a.id)} : {});
+    const hash = ["studio","milestone","new-room"].includes(scene) ? "era-1" : ["settings","info"].includes(scene) ? "home" : scene === "locked" ? "hall" : ["detail","album"].includes(scene) ? "library" : scene;
     await page.goto(`/#${hash}`);
     await expect(page.locator(".site-header")).toBeVisible();
     if(scene === "info") { await page.getByRole("button",{name:copy.pl.settings,exact:true}).click();await page.getByRole("dialog").getByRole("button",{name:copy.pl.info,exact:true}).click(); }

@@ -28,7 +28,7 @@ test("all four rooms keep their empty background, show only earned decorations a
     await page.goto(`/#${era.id}`);
     await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
     await expect(page.locator(".room-decoration")).toHaveCount(getRoomDecorations(era.id, 9).length);
-    await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", `/art/${era.image}`);
+    await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", `/art/_scenes/${era.image.replace(".jpg", ".avif")}`);
     await expect(page.locator(".wall-artwork")).toHaveCount(5);
     await expect(page.locator(".decoration-unlock-toast")).toHaveCount(0);
     await expect.poll(() => page.locator(".room-decoration img").evaluateAll((images) => images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
@@ -47,7 +47,9 @@ test("object bubbles work on tap and hover, remain on screen, translate and clos
   await seed(page, artworks.filter(({ eraId }) => eraId === "era-2").map(({ id }) => id));
   await page.goto("/#era-2");
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
-  await expect.poll(() => page.locator(".room-decoration img").evaluateAll((images) => images.every((image) => (image as HTMLImageElement).complete))).toBe(true);
+  await expect(page.locator(".room-decoration")).toHaveCount(getRoomDecorations("era-2", 9).length);
+  await expect.poll(() => page.locator(".room-decoration img").evaluateAll((images) => images.length > 0 && images.every((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
   const piano = page.getByRole("button", { name: "Poznaj przedmiot: Fortepian", exact: true });
   const p = await objectPoint(piano);
   if (isMobile) await page.touchscreen.tap(p.x, p.y); else await page.mouse.move(p.x, p.y);
@@ -58,12 +60,12 @@ test("object bubbles work on tap and hover, remain on screen, translate and clos
   expect(box.y).toBeGreaterThan(60); expect(box.y + box.height).toBeLessThan(page.viewportSize()!.height - 50);
   await page.screenshot({ path: `/tmp/heritage-decor/${test.info().project.name}-bubble.png` });
   if (!isMobile) {
-    await page.mouse.move(box.x + 30, box.y + 80);
+    await bubble.hover({position:{x:30,y:80}});
     await expect(bubble).toBeVisible();
   }
   await page.getByRole("button", { name: "Zamknij ciekawostkę", exact: true }).click();
   await expect(bubble).toHaveCount(0);
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   await page.getByRole("button", { name: "Discover object: Piano", exact: true }).press("Enter");
   await expect(page.getByRole("dialog")).toContainText("Why this era?");
   await page.keyboard.press("Escape");
@@ -112,6 +114,7 @@ test("a pinned bubble follows the camera and stays usable on a small phone", asy
   await page.keyboard.press("Escape");
   if (!isMobile) {
     await page.getByRole("button", { name: "Pełny ekran", exact: true }).click();
+    await expect.poll(() => page.evaluate(() => Boolean(document.fullscreenElement))).toBe(true);
     await piano.press("Enter");
     await expect(bubble).toBeVisible();
     expect(await bubble.evaluate((element) => document.fullscreenElement?.contains(element))).toBe(true);

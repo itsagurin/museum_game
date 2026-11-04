@@ -5,7 +5,7 @@
 }
 :root {
   --ink: #34382c;
-  --muted: #6b6e60;
+  --muted: #525a48;
   --cream: #f2f0e6;
   --red: #9b4939;
   --glass: rgba(249, 249, 238, 0.65);
@@ -86,6 +86,7 @@ img {
   z-index: -1;
   pointer-events: none;
 }
+.heritage-app:has(.game-viewport:not(.overview)) > .ambient-backdrop { display: none; }
 .status-label {
   font-size: 10px;
 }

@@ -1,0 +1,42 @@
+{
+  "installabilityErrors": [],
+  "manifestErrors": [],
+  "manifest": {
+    "name": "Dziedzictwo",
+    "short_name": "Dziedzictwo",
+    "lang": "pl",
+    "description": "Odnawiaj polskie malarstwo i odkrywaj historie czterech epok.",
+    "id": "./",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#e8e4d8",
+    "theme_color": "#e8e4d8",
+    "categories": [
+      "education",
+      "games"
+    ],
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/maskable-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  },
+  "note": "Chromium installability check; physical Android/iOS installation remains manual"
+}

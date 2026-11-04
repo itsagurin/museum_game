@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
-import { AnimatePresence, MotionConfig, useReducedMotion } from "framer-motion";
+import { useShallow } from "zustand/react/shallow";
+import { useCallback, useEffect, useState, useSyncExternalStore, type CSSProperties } from "react";
+import { useMotionPreference } from "@/hooks/useMotionPreference";
+import type { Panel } from "@/features/shell/panels";
 import { copy } from "@/data/copy";
 import { artworks, assetUrl, eras, getEra, isEraId } from "@/data/eras";
 import { useGameStore } from "@/store/useGameStore";
@@ -9,14 +11,15 @@ import { usePaintingProgress } from "@/store/usePaintingProgress";
 import { useSceneNavigation } from "@/hooks/useSceneNavigation";
 import { getRoomProgress, MAX_ROOM_LEVEL } from "@/lib/room-development";
 import type { Artwork, EraId, RestoreArtworkRequest, View } from "@/types/game";
-import { ArtworkLibrary } from "./ArtworkLibrary";
+import dynamic from "next/dynamic";
 import { HouseScene } from "@/features/scenes/HouseScene";
 import { HallScene } from "@/features/scenes/HallScene";
 import { RoomScene } from "@/features/scenes/RoomScene";
 import { GameScene } from "@/features/scenes/GameScene";
 import { getSceneAssets } from "@/features/scenes/scene-assets";
 import { AppHeader } from "@/features/shell/AppHeader";
-import { AppPanels } from "@/features/shell/AppPanels";
+import { ArtworkLibrary } from "./ArtworkLibrary";
+
 import { StorageNotice, useStorageUnavailable } from "@/features/shell/StorageNotice";
 import { useFullscreen } from "@/features/shell/useFullscreen";
 import { useEraAccess } from "@/features/progression/useEraAccess";
@@ -25,24 +28,49 @@ import { useMilestones } from "@/features/progression/useMilestones";
 import { useLockedRedirect } from "@/features/progression/useLockedRedirect";
 import { useArtworkRestoration } from "@/features/progression/useArtworkRestoration";
 
+const AppPanels = dynamic(() => import("@/features/shell/AppPanels").then(module => module.AppPanels));
+
 const noRewards: string[] = [];
 const devToolsEnabled = process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === "1";
+let hydrationSettled = false;
+const hydrationListeners = new Set<() => void>();
+// A rejected/unreadable save must release the neutral screen too, keeping the healthy store.
+if (typeof window !== "undefined") void Promise.allSettled([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => {
+  hydrationSettled = true;
+  hydrationListeners.forEach(notify => notify());
+});
+const subscribeHydration = (notify: () => void) => {
+  hydrationListeners.add(notify);
+  return () => { hydrationListeners.delete(notify); };
+};
+const readHydration = () => hydrationSettled;
+const serverHydration = () => false;
 
 /** Compose the house scenes, shell and progression without owning their presentation. */
 export function HeritageApp({ onRestoreArtwork }: {
   onRestoreArtwork?: (request: RestoreArtworkRequest) => void;
 }) {
   const { view, navigate } = useSceneNavigation();
-  const { language, completedArtworkIds: completed, wallAssignments, setWallArtwork, highContrast, gentleMotion, exploreAll, resetProgress } = useGameStore();
+  const { language, completedArtworkIds: completed, wallAssignments, setWallArtwork, highContrast, gentleMotion, exploreAll, resetProgress } = useGameStore(useShallow(state => ({language:state.language,completedArtworkIds:state.completedArtworkIds,wallAssignments:state.wallAssignments,setWallArtwork:state.setWallArtwork,highContrast:state.highContrast,gentleMotion:state.gentleMotion,exploreAll:state.exploreAll,resetProgress:state.resetProgress})));
   const savedPaintings = usePaintingProgress(state => state.paintings);
-  const [hydrated, setHydrated] = useState(false);
+  const hydrated = useSyncExternalStore(subscribeHydration, readHydration, serverHydration);
+  const readError = hydrated && (!useGameStore.persist.hasHydrated() || !usePaintingProgress.persist.hasHydrated());
   const [previewFinishedRoom, setPreviewFinishedRoom] = useState(false);
   const [libraryContext, setLibraryContext] = useState<{ eraId?: EraId; slotId?: string; returnView: Exclude<View, "library"> }>({ returnView: "home" });
   const roomPreview = devToolsEnabled && previewFinishedRoom;
-  const reducedMotion = Boolean(useReducedMotion() || gentleMotion);
+  const reducedMotion = Boolean(useMotionPreference() || gentleMotion);
   const storageUnavailable = useStorageUnavailable();
   const { appRef, fullscreenAvailable, fullscreen, toggleFullscreen } = useFullscreen();
-  const { panel, setPanel, closePanel, dismissPanel, addMilestones, resetMilestones } = useMilestones();
+  const [panelsLoaded, setPanelsLoaded] = useState(false);
+  const [animateScenes, setAnimateScenes] = useState(false);
+  const { panel, setPanel: changePanel, closePanel, dismissPanel, addMilestones, resetMilestones } = useMilestones();
+  const setPanel = useCallback((next: Panel) => { setPanelsLoaded(true); changePanel(next); }, [changePanel]);
+  useEffect(() => {
+    if (!hydrated) return;
+    const animate = () => setAnimateScenes(true);
+    for (const event of ["hashchange", "popstate", "heritage:navigate"]) window.addEventListener(event, animate);
+    return () => { for (const event of ["hashchange", "popstate", "heritage:navigate"]) window.removeEventListener(event, animate); };
+  }, [hydrated]);
   const { pendingRewards, consumeRewards, addRewards, resetRewards } = useRewardsQueue();
   const { eraAccess, isEraOpen } = useEraAccess(completed, exploreAll);
   const activeEra = isEraId(view) ? getEra(view) : null;
@@ -57,8 +85,8 @@ export function HeritageApp({ onRestoreArtwork }: {
   const t = copy[language];
 
   useEffect(() => {
-    void Promise.all([useGameStore.persist.rehydrate(), usePaintingProgress.persist.rehydrate()]).then(() => { useGameStore.getState().recordFirstPlay(); setHydrated(true); });
-  }, []);
+    if (hydrated) useGameStore.getState().recordFirstPlay();
+  }, [hydrated]);
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   useEffect(() => { document.documentElement.classList.toggle("high-contrast", highContrast); }, [highContrast]);
 
@@ -91,17 +119,15 @@ export function HeritageApp({ onRestoreArtwork }: {
   );
 
   return (
-    <MotionConfig reducedMotion={reducedMotion ? "always" : "user"}>
       <div ref={appRef} className={`heritage-app view-${view === "home" ? "home" : "interior"} ${gentleMotion ? "gentle-motion" : ""}`}
         style={{ "--era-accent": activeEra?.accent || hallEra.accent } as CSSProperties}>
         <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); mainRef.current?.focus(); }}>{t.skip}</a>
-        <div className="ambient-backdrop" style={{ backgroundImage: `url(${sceneImage})` }} aria-hidden="true" />
+        <div className="ambient-backdrop" style={view === "library" ? undefined : { backgroundImage: `url(${sceneImage})` }} aria-hidden="true" />
         <AppHeader view={view} activeEra={activeEra} hallEra={hallEra} language={language} returnView={libraryContext.returnView}
           navigate={navigate} openLibrary={openLibrary} fullscreenAvailable={fullscreenAvailable} fullscreen={fullscreen}
           toggleFullscreen={toggleFullscreen} openPanel={type => setPanel({type})} />
         <main id="main" ref={mainRef} tabIndex={-1}>
-          <AnimatePresence mode="wait" initial={false}>
-            <GameScene key={view} reducedMotion={reducedMotion}>
+            <GameScene key={view} reducedMotion={reducedMotion} animate={animateScenes}>
               {view === "library" ? (
                 <ArtworkLibrary key={`${libraryContext.eraId ?? "all"}-${libraryContext.slotId ?? "all"}`}
                   eraId={libraryContext.eraId} slotId={libraryContext.slotId} onRestore={restoreArtwork} isEraOpen={isEraOpen}
@@ -120,14 +146,12 @@ export function HeritageApp({ onRestoreArtwork }: {
                   togglePreview={() => setPreviewFinishedRoom(current => !current)} />
               ) : null}
             </GameScene>
-          </AnimatePresence>
         </main>
-        {storageUnavailable && <StorageNotice language={language} />}
-        <AppPanels openInfo={()=>setPanel({type:"info"})} panel={panel} language={language} gentleMotion={gentleMotion} storageUnavailable={storageUnavailable}
+        {(storageUnavailable || readError) && <StorageNotice key={storageUnavailable ? "write" : "read"} language={language} readError={!storageUnavailable && readError} />}
+        {panelsLoaded && <AppPanels openInfo={()=>setPanel({type:"info"})} panel={panel} language={language} gentleMotion={gentleMotion} storageUnavailable={storageUnavailable}
           onReset={onReset} completed={completed} canRestore={Boolean(onRestoreArtwork)} restoreArtwork={restoreArtwork}
           dismissPanel={dismissPanel} closePanel={closePanel} eraAccess={eraAccess} view={view} goToEra={goToEra}
-          houseImage={houseImage} resetMilestones={resetMilestones} openLibrary={openLibrary} navigate={navigate} />
+          houseImage={houseImage} resetMilestones={resetMilestones} openLibrary={openLibrary} navigate={navigate} />}
       </div>
-    </MotionConfig>
   );
 }

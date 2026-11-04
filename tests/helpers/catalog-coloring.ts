@@ -1,8 +1,11 @@
 import { readFileSync } from "node:fs";
 import { expect, type Page } from "@playwright/test";
 import { copy } from "../../src/data/copy";
+import { coloringCopy } from "../../src/data/coloring-copy";
+import type { Language } from "../../src/types/game";
 import { seedGame } from "./game-state";
-import { artworks, getEra } from "../../src/data/eras";
+import { artworks } from "./catalog";
+import { getEra } from "../../src/data/eras";
 import type { ColoringArtwork } from "../../src/lib/coloring";
 
 export const catalogPaintings = artworks.map((artwork) => ({
@@ -12,8 +15,8 @@ export const catalogPaintings = artworks.map((artwork) => ({
 }));
 export type CatalogPainting = (typeof catalogPaintings)[number];
 
-export async function openCatalogStudio(page: Page, entry: CatalogPainting) {
-  await seedGame(page, {tutorialSeen:true});
+export async function openCatalogStudio(page: Page, entry: CatalogPainting, language: Language = "pl") {
+  await seedGame(page, {tutorialSeen:true,language});
   // Catalogue tests exercise full boards; onboarding has its own first-session flow.
   await page.addInitScript(() => {
     const key="heritage-hearth-ui-v1";
@@ -24,17 +27,17 @@ export async function openCatalogStudio(page: Page, entry: CatalogPainting) {
   await page.goto("/#library");
   await page.reload();
   await expect(page.locator(".library-scroll")).toBeVisible();
-  const backToCollection = page.getByRole("button", { name: "Wróć do kolekcji", exact: true });
+  const backToCollection = page.getByRole("button", { name: copy[language].libraryBack, exact: true });
   if (await backToCollection.isVisible()) await backToCollection.click();
-  await page.getByRole("button", { name: `${entry.artwork.title.pl} — ${entry.era.name.pl}`, exact: true }).click();
-  await page.getByRole("button", { name: "Otwórz pracownię", exact: true }).click();
-  const canvas = page.getByLabel(`Kolorowanie: ${entry.artwork.title.pl}`, { exact: true });
+  await page.getByRole("button", { name: `${entry.artwork.title[language]} — ${entry.era.name[language]}`, exact: true }).click();
+  await page.getByRole("button", { name: copy[language].restore, exact: true }).click();
+  const canvas = page.getByLabel(`${coloringCopy[language].canvas}: ${entry.artwork.title[language]}`, { exact: true });
   await expect(canvas).toBeVisible();
   return canvas;
 }
 
-export async function fillCanvas(page: Page) {
-  const palette = page.getByRole("group", { name: "Wybierz kolor", exact: true });
+export async function fillCanvas(page: Page, language: Language = "pl") {
+  const palette = page.getByRole("group", { name: coloringCopy[language].chooseColor, exact: true });
   await expect(palette).toBeVisible();
   for (const brush of await palette.getByRole("button").all()) {
     await brush.click();
@@ -45,7 +48,7 @@ export async function fillCanvas(page: Page) {
     // Assistance may finish this colour asynchronously before the next brush.
     await expect(page.locator(".pixel-hit.matching:not(.painted)")).toHaveCount(0);
   }
-  await expect(page.getByRole("button", { name: "Odkryj opowieść", exact: true })).toBeEnabled();
+  await expect(page.getByRole("button", { name: coloringCopy[language].discover, exact: true })).toBeEnabled();
 }
 
 export const savedCompletions = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1") ?? '{"state":{}}').state.completedArtworkIds ?? []);

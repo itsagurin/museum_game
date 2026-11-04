@@ -21,7 +21,7 @@ for (const era of eras) {
       expect(await canvas.locator(".pixel-hit").evaluateAll((pixels) => pixels.map((pixel) => Number(pixel.getAttribute("data-color-id"))))).toEqual(entry.painting.grid.data.flat());
       for (const color of entry.painting.palette) {
         await expect(page.getByRole("button", { name: `Kolor ${color.id}: ${color.name}`, exact: true })).toHaveAttribute("data-color-id", String(color.id));
-        await expect(canvas.locator(`.pixel-hit[data-color-id="${color.id}"]`).first().locator("..").locator("rect").first()).toHaveAttribute("fill", color.hex);
+        await expect(canvas.locator(`.pixel-color-layer[data-color-id="${color.id}"]`)).toHaveAttribute("fill", color.hex);
       }
       await expect(page.getByRole("dialog")).not.toContainText("Mistrz Polski");
       await expect(page.getByRole("button", { name: "Dokończ swoje płótno", exact: true })).toBeDisabled();
@@ -116,7 +116,7 @@ test("English painting and browser back stay connected to room navigation", asyn
   const entry = catalogPaintings.find((item) => item.artwork.eraId === "era-2")!;
   await page.goto("/#hall");
   await page.getByRole("navigation", { name: "Pokoje" }).last().getByRole("button", { name: "Romantyzm", exact: true }).click();
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   await page.getByRole("button", { name: "Show the whole scene", exact: true }).click();
   await page.getByRole("button", { name: `${entry.artwork.title.en} — Waiting for colour`, exact: true }).click();
   await expect(page.getByLabel(`Painting: ${entry.artwork.title.en}`, { exact: true })).toBeVisible();
@@ -169,16 +169,16 @@ test("finishing the whole collection develops its room and changes the house and
   await dismissBadges(page);
   const milestone = page.getByRole("dialog");
   await expect(milestone.getByRole("heading", { name: "Epoka ukończona", exact: true })).toBeVisible();
-  await expect(milestone.locator(".milestone-house")).toHaveAttribute("src", "/art/house1.jpg");
+  await expect(milestone.locator(".milestone-house")).toHaveAttribute("src", "/art/_scenes/house1.avif");
   await milestone.getByRole("button", { name: "Zostań tutaj", exact: true }).click();
   await dismissBadges(page);
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.locator(".room-status")).toContainText("21 / 21");
   await expect(page.getByRole("progressbar", { name: "Rozwój pokoju", exact: true })).toHaveAttribute("aria-valuenow", "9");
   await page.locator(".back-button").click();
-  await expect(page.locator(".hall-canvas > img")).toHaveAttribute("src", "/art/hall2.jpg");
+  await expect(page.locator(".hall-canvas > img")).toHaveAttribute("src", "/art/_scenes/hall2.avif");
   await page.locator(".back-button").click();
-  await expect(page.locator(".home-canvas > img")).toHaveAttribute("src", "/art/house1.jpg");
+  await expect(page.locator(".home-canvas > img")).toHaveAttribute("src", "/art/_scenes/house1.avif");
 });
 
 test("the painting dialog and local reveal stay within browser fullscreen", async ({ page }) => {

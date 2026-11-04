@@ -113,7 +113,7 @@
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 1.7px;
-  color: #6e755e;
+  color: #4f5944;
 }
 .header-context h1 {
   font-family: var(--font-display);
@@ -167,9 +167,10 @@
   width: 44px;
   min-height: 44px;
   font-family: var(--font-display);
+  font-weight: 600;
   font-size: 20px;
   border-radius: 12px;
-  color: #646d53;
+  color: #4f5944;
 }
 .era-switch.selected,
 .era-switcher > button[aria-current="page"] {
@@ -177,6 +178,9 @@
   color: #f2f0e3;
 }
 .storage-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -188,6 +192,7 @@
   max-width: calc(100% - 32px);
   width: 360px;
 }
+.storage-notice-close { flex-shrink: 0; min-width: 44px; min-height: 44px; }
 .skip-link {
   position: fixed;
   top: -90px;

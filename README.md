@@ -8,7 +8,9 @@ Przeglądarkowa gra mobile-first o polskim malarstwie. Gracz wchodzi do domu, wy
 
 ## Uruchomienie
 
-Wymagany Node.js 22.12+ (`.nvmrc`).
+Wymagany Node.js 22.19+ (`.nvmrc`).
+
+CI używa Node 22/npm 10. Po zmianie zależności sprawdź czystą instalację `npm ci` również w tym środowisku; sama aktualizacja lockfile przez npm 12 nie wystarcza.
 
 ```bash
 npm ci
@@ -21,6 +23,7 @@ npm run dev        # http://localhost:3000, obserwuje img/
 | `npm run preview` | Serwuje `out/` lokalnie |
 | `npm test` | Testy jednostkowe (Vitest) |
 | `npm run test:e2e` | Testy przeglądarkowe (Playwright, mobile + desktop) na `out/` |
+| `npm run audit` | LHCI (3 przebiegi), pięć widoków, interakcje 992 pól i kontrola instalowalności PWA |
 | `npm run lint`, `npm run typecheck` | ESLint i TypeScript |
 
 Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm run dev` lub w buildzie z `NEXT_PUBLIC_ENABLE_DEV_TOOLS=1`. Hosting pod podścieżką: `NEXT_PUBLIC_BASE_PATH=/nazwa npm run build`.
@@ -28,7 +31,7 @@ Narzędzia DEV (szybkie kolorowanie, podgląd pokoju 9/9) są widoczne w `npm ru
 ## Jak to działa
 
 - **Next.js 16 (eksport statyczny), React 19, TypeScript, Tailwind 4, Zustand, Framer Motion.** Bez backendu; postęp w `localStorage`.
-- **Grafiki źródłowe** leżą w `img/`. `scripts/prepare-assets.mjs` publikuje do `public/art/` tylko używane pliki, zmniejsza je, tworzy miniatury biblioteki i manifest `src/data/asset-manifest.json`. `public/art/` jest generowany i ignorowany przez Git.
+- **Grafiki źródłowe** leżą w `img/`. `scripts/prepare-assets.mjs` publikuje do `public/art/` tylko używane pliki, zmniejsza je, tworzy AVIF scen, miniatury biblioteki, wymiary obrazów i manifest `src/data/asset-manifest.json`. `public/art/` jest generowany i ignorowany przez Git.
 - **Kolekcja** jest opisana w `content/artworks.json`: stałe ID, kolejność, reprodukcja w `img/eraN_<epoka>/`, plansza i podgląd w `img/puzzles/`, teksty PL/EN, źródło z licencją i status recenzji. `npm run content:validate` sprawdza manifest.
 - **Plansze** generuje `tools/pixel-engine/` (Python, K-Means w CIELAB, proporcje obrazu, 6–10 kolorów): `npm run content:puzzles`. Kod pochodzi z repozytorium `wojgww/image_generation` i jest dołączony z historią.
 
@@ -71,7 +74,7 @@ Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 1
 
 ## PWA
 
-`npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma ok. 6 MB; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
+`npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma 143 pliki / ok. 3,91 MiB przed kompresją transportową; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
 
 Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. Działanie z `NEXT_PUBLIC_BASE_PATH=/museum` sprawdzono osobnym buildem i przeładowaniem offline. Ręczna instalacja na fizycznym Androidzie/iOS pozostaje do wykonania przez zespół.
 
@@ -86,3 +89,11 @@ Muzyka: pięć zatwierdzonych nagrań CC0, razem ok. 10,6 MB; domyślnie wyłąc
 Integracja Vercel jest domyślnie nieaktywna bez konfiguracji. Właściciel z planem Pro/Enterprise może włączyć Web Analytics i ustawić zmienne z `.env.example`; ta praca nie aktywuje usługi ani płatnego planu. Preferencja gracza pozwala wyłączyć statystyki. Wysyłane mogą być wyłącznie enumy i flagi gry, bez imienia certyfikatu i wolnego tekstu. Definicje, budżety czasów i ograniczenia retencji: `docs/18_METRYKI.md`. Testy `tests/analytics.spec.ts` przechwytują dostawcę lokalnie.
 
 Materiały do badań 5–8 osób: `docs/user-testing/` (scenariusz, moderator, zgoda, obserwacje, SUS, quiz po tygodniu, szablon wyników). Przed użyciem zespół uzupełnia dane administratora i terminy retencji, uzgadnia kontakt oraz klucz quizu. Pliki są szablonami, nie raportem rzeczywistych badań.
+
+## Wydajność i pliki generowane
+
+`npm run build` → `npx playwright install chromium` → `npm run audit` (Node 22.19+, OpenSSL). LHCI ma progi Performance 90, Accessibility/Best Practices 95, LCP 2,5 s, CLS 0,1 i transfer 1,5 MB. LHCI i `audit:scenes` używają lokalnego serwera HTTP/2 z prekompresją Brotli 11 i tymczasowym certyfikatem. Wyjątek certyfikatu dotyczy wyłącznie narzędzi pomiarowych na localhost. `audit:scenes` uruchamia własny serwer eksportu; istniejący można wskazać przez `AUDIT_URL=http://127.0.0.1:3101`. Raporty HTML/JSON i czasy interakcji trafiają do `.lighthouseci/`; nie są commitowane. Wyniki i spełnienie poszczególnych celów: [raport pomiarów](docs/reports/performance.md).
+
+Pracownia, panele i dekoracje są ładowane oddzielnie. Lekki interfejs biblioteki jest w głównym pakiecie, aby usunąć dodatkowe żądanie na ścieżce do LCP; opisy, reprodukcje i miniatury poza ekranem są odroczone. Sceny mają łagodne wejście CSS, a silnik animacji jest dołączany z panelami i pracownią. Kod pracowni i JSON planszy pobierają się równolegle po wyborze obrazu; dostępny ekran oczekiwania pozwala zamknąć okno i zachowuje fokus. `content-summaries.json` oraz `image-sizes.json` powstają z manifestu i obrazów w `prepare-assets`; nie edytuj ich. Atrybucja jest dostępna w metadanych początkowych; opisy są w osobnym pakiecie otwieranym z kartą. Eksport PNG czeka na pełne metadane i fonty dla rysowanego tekstu. `npm run dev` obserwuje `img/`, `content/` i źródła tekstów.
+
+Sceny są publikowane w `public/art/_scenes/` jako AVIF; `assetUrl()` mapuje na nie nazwy źródłowych JPEG. Oryginały w `img/` pozostają bez zmian. `public/fonts/` i `fonts-generated.css` powstają z lokalnych paczek @fontsource: wyłącznie WOFF2 Latin/Latin Extended z zakresami Unicode. Waga 600 zawiera znaki z tekstów UI i manifestu; pozostałe podzbiory, w tym font imienia certyfikatu, pozostają pełne. DM Sans: [źródło](https://github.com/googlefonts/dm-fonts), [OFL](content/licenses/DM-Sans-OFL.txt); Cormorant Garamond: [źródło](https://github.com/CatharsisFonts/Cormorant), [OFL](content/licenses/Cormorant-Garamond-OFL.txt). Kopie licencji są też w eksporcie.

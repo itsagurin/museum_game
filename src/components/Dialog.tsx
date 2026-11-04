@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useId } from "react";
 import { createPortal } from "react-dom";
-import { motion, useIsPresent, useReducedMotion } from "framer-motion";
+import { m as motion, useIsPresent, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 
 interface DialogProps {

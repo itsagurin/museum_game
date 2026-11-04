@@ -40,7 +40,7 @@ test("dev preview shows all four finished rooms without changing saved progress"
   }
   expect(await page.evaluate(() => localStorage.getItem("heritage-hearth-ui-v1"))).toBe(saved);
   await page.locator(".era-switcher").getByRole("button", { name: "Wróć do holu", exact: true }).click();
-  await expect(page.locator(".hall-canvas .scene-image")).toHaveAttribute("src", "/art/hall1.jpg");
+  await expect(page.locator(".hall-canvas .scene-image")).toHaveAttribute("src", "/art/_scenes/hall1.avif");
   await expect(preview).toHaveCount(0);
   await page.getByRole("button", { name: eras[0].name.pl, exact: true }).first().click();
   await expect(preview).toHaveAttribute("aria-pressed", "true");
@@ -55,7 +55,7 @@ test("dev preview shows all four finished rooms without changing saved progress"
   await page.reload();
   await expect(preview).toHaveAttribute("aria-pressed", "false");
   await expect(page.locator(".unrestored-paper")).toHaveCount(4);
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   const englishPreview = page.getByRole("button", { name: "DEV: preview room 9/9", exact: true });
   await englishPreview.click();
   await expect(englishPreview).toHaveAttribute("aria-pressed", "true");

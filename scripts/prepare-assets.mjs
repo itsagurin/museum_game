@@ -3,6 +3,7 @@ import { watch } from "node:fs";
 import { dirname, join, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { fontTextSources, prepareFonts } from "./prepare-fonts.mjs";
 import { prepareDecorationGeometry } from "./decoration-geometry.mjs";
 
 // Only files the game references are published; everything else in img/ stays source material.
@@ -13,9 +14,11 @@ const publishedAssets = [
   /^(oswiecenie|romantyzm|pozytywizm|mloda_polska)_assets\/(?!1[234]-rama-)[^/]+\.png$/i,
 ];
 const isReproduction = (name) => /^era\d_[a-z_]+\/[^/]+$/i.test(name);
+const isScene = name => /^(house\d|hall\d|room\d)\.jpg$/i.test(name);
+const scenePath = name => `_scenes/${name.replace(/\.jpg$/i, ".avif")}`;
 const isDecoration = (name) => /_assets\/[^/]+\.png$/i.test(name);
 // Bump when encoder settings change so cached outputs are rebuilt.
-const PIPELINE_VERSION = 1;
+const PIPELINE_VERSION = 6;
 const CACHE_FILE = ".prepared.json";
 const THUMBS_DIR = "_thumbs";
 
@@ -23,7 +26,7 @@ export const thumbnailPath = (name) => `${THUMBS_DIR}/${name.replace(/\.[^/.]+$/
 
 function encoder(name) {
   // Reproductions stay sharp in the full-screen reveal; decorations never exceed a third of the scene.
-  const maxSize = isReproduction(name) ? 1600 : isDecoration(name) ? 768 : null;
+  const maxSize = isReproduction(name) ? 1600 : isDecoration(name) ? 768 : /^blank_paper_/.test(name) ? 384 : null;
   return (input) => {
     let image = sharp(input).rotate();
     if (maxSize) image = image.resize({ width: maxSize, height: maxSize, fit: "inside", withoutEnlargement: true });
@@ -46,10 +49,15 @@ async function publish(root, output, name) {
     // Re-encoding an already small file can grow it; keep whichever is lighter.
     await writeFile(target, optimized.length < original.length ? optimized : original);
   }
+  if (isScene(name)) {
+    const scene = join(output, scenePath(name));
+    await mkdir(dirname(scene), { recursive: true });
+    await sharp(source).rotate().avif({ quality: 35, effort: 4 }).toFile(scene);
+  }
   if (isReproduction(name)) {
     const thumbnail = join(output, thumbnailPath(name));
     await mkdir(dirname(thumbnail), { recursive: true });
-    await sharp(source).rotate().resize({ width: 480, height: 480, fit: "inside", withoutEnlargement: true }).webp({ quality: 72 }).toFile(thumbnail);
+    await sharp(source).rotate().resize({ width: 480, height: 480, fit: "inside", withoutEnlargement: true }).webp({ quality: 55 }).toFile(thumbnail);
   }
 }
 
@@ -96,13 +104,14 @@ export async function prepareAssets(root = process.cwd()) {
   for (const name of files) {
     const fresh = entries[name] === signatures[name]
       && await exists(join(output, name))
+      && (!isScene(name) || await exists(join(output, scenePath(name))))
       && (!isReproduction(name) || await exists(join(output, thumbnailPath(name))));
     if (!fresh) stale.push(name);
   }
   await runPool(stale, 4, (name) => publish(root, output, name));
 
   // Files removed or renamed in img/ must not linger in the static export.
-  const expected = new Set([CACHE_FILE, ...files, ...files.filter(isReproduction).map(thumbnailPath)]);
+  const expected = new Set([CACHE_FILE, ...files, ...files.filter(isReproduction).map(thumbnailPath), ...files.filter(isScene).map(scenePath)]);
   const removed = (await listFiles(output)).filter((name) => !expected.has(name));
   await Promise.all(removed.map((name) => rm(join(output, name))));
   if (removed.length) await removeEmptyDirectories(output);
@@ -116,23 +125,39 @@ export async function prepareAssets(root = process.cwd()) {
   if (await readFile(manifestPath, "utf8").catch(() => null) !== manifest) {
     await writeFile(manifestPath, manifest);
   }
+  const content = JSON.parse(await readFile(join(root, "content", "artworks.json"), "utf8"));
+  const summaries = content.map(entry => Object.fromEntries(Object.entries(entry).filter(([key]) => !["story", "curiosity", "style"].includes(key))));
+  const summariesPath = join(root, "src", "data", "content-summaries.json");
+  const summariesJson = JSON.stringify(summaries) + "\n";
+  if (await readFile(summariesPath, "utf8").catch(() => null) !== summariesJson) await writeFile(summariesPath, summariesJson);
+  const imageSizes = Object.fromEntries(await Promise.all(files.filter(isReproduction).map(async name => {
+    const { width, height } = await sharp(join(output, thumbnailPath(name))).metadata();
+    return [name, { width, height }];
+  })));
+  const sizesPath = join(root, "src", "data", "image-sizes.json");
+  const sizesJson = JSON.stringify(imageSizes) + "\n";
+  if (await readFile(sizesPath, "utf8").catch(() => null) !== sizesJson) await writeFile(sizesPath, sizesJson);
+  await prepareFonts(root);
   await prepareDecorationGeometry(root, files);
 }
 
 export function watchAssets(root = process.cwd()) {
   let timer;
   let pending = Promise.resolve();
-  const watcher = watch(join(root, "img"), { recursive: true }, () => {
+  const refresh = () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       pending = pending.then(() => prepareAssets(root)).catch((error) => {
         console.error("Could not refresh scene assets:", error.message);
       });
     }, 250);
-  });
+  };
+  const watchers = ["img", "content"].map(directory => watch(join(root, directory), { recursive: true }, refresh));
+  const fontFiles = new Set(fontTextSources.filter(file => file.startsWith("src/data/")).map(file => posix.basename(file)));
+  watchers.push(watch(join(root, "src/data"), (_event, file) => { if (fontFiles.has(String(file))) refresh(); }));
   return () => {
     clearTimeout(timer);
-    watcher.close();
+    watchers.forEach(watcher => watcher.close());
   };
 }
 

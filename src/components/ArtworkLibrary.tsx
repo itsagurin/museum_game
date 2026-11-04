@@ -1,24 +1,16 @@
 "use client";
 
+import { useArtworkDetails } from "@/hooks/useArtworkDetails";
 import { CollectionAlbum } from "@/features/collection/CollectionAlbum";
-import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Check, ImageOff, LockKeyhole, Paintbrush, Search, X } from "lucide-react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowUpRight, Check, LockKeyhole, Paintbrush, Search, X } from "lucide-react";
 import { artworks, eras, getEra, getWallArtworks, wallSlots } from "@/data/eras";
 import { copy } from "@/data/copy";
 import { useGameStore } from "@/store/useGameStore";
 import type { Artwork, EraId } from "@/types/game";
 import { ArtworkSourceNote } from "./ArtworkSourceNote";
 
-function ArtworkPreview({ artwork, eager = false }: { artwork: Artwork; eager?: boolean }) {
-  // Grid cards use the light thumbnail; the detail view and a missing thumbnail fall back to the original.
-  const [src, setSrc] = useState(eager ? artwork.originalImage : artwork.thumbnailImage ?? artwork.originalImage);
-  const language = useGameStore((state) => state.language);
-  if (!src) return <span className="library-image-fallback" role="img" aria-label={copy[language].imageError}><ImageOff size={28} /></span>;
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt="" loading={eager ? "eager" : "lazy"} draggable={false} onError={() => setSrc(src === artwork.originalImage ? undefined : artwork.originalImage)} />
-  );
-}
+import { ArtworkPreview, LibraryArtworkCard } from "./LibraryArtworkCard";
 
 const searchKey = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/gi, "l").toLowerCase();
 
@@ -38,14 +30,16 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
   const [query, setQuery] = useState("");
   const [tab,setTab]=useState<"collection"|"album">("collection");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [seenCards, setSeenCards] = useState<Set<string>>(() => new Set());
   const [targetSlotId, setTargetSlotId] = useState(slotId ?? "");
   const scrollRef = useRef<HTMLDivElement>(null);
   const detailBackRef = useRef<HTMLButtonElement>(null);
   const gridScrollRef = useRef(0);
   const previousSelection = useRef<string | null>(null);
-  const selected = artworks.find((artwork) => artwork.id === selectedId);
+  const { artwork: selected } = useArtworkDetails(artworks.find((artwork) => artwork.id === selectedId));
   const collection = artworks.filter((artwork) => (!eraId || artwork.eraId === eraId) && (filter === "all" || artwork.eraId === filter));
   const visible = collection.filter((artwork) => (!onlyCompleted || completed.includes(artwork.id)) && searchKey(`${artwork.title[language]} ${artwork.artist ?? ""} ${artwork.year ?? ""} ${getEra(artwork.eraId).name[language]} ${artwork.sourceFile ?? ""}`).includes(searchKey(query.trim())));
+  const visibleKey = visible.map(artwork => artwork.id).join("|");
   const hangingIds = new Set(Object.values(assignments));
   const selectedSlots = selected ? wallSlots.filter((slot) => slot.eraId === selected.eraId) : [];
   const targetSlot = selectedSlots.find((slot) => slot.id === targetSlotId) ?? selectedSlots[0];
@@ -53,7 +47,32 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
   const selectedLocked = selected ? !isEraOpen(selected.eraId) : false;
   const requiredEra = selected ? eras[eras.findIndex((era) => era.id === selected.eraId) - 1] : undefined;
 
+  const revealCard = useCallback((id: string) => setSeenCards(previous => previous.has(id) ? previous : new Set(previous).add(id)), []);
+  const selectCard = useCallback((id: string) => {
+    gridScrollRef.current = scrollRef.current?.scrollTop ?? 0;
+    setSelectedId(id);
+    setTargetSlotId(slotId ?? "");
+  }, [slotId]);
+
   useEffect(() => {
+    if (selectedId || tab !== "collection") return;
+    const observer = new IntersectionObserver(entries => {
+      setSeenCards(previous => {
+        let next = previous;
+        for (const entry of entries) {
+          const id = (entry.target as HTMLElement).dataset.artworkId;
+          if (!entry.isIntersecting || !id || next.has(id)) continue;
+          if (next === previous) next = new Set(previous);
+          next.add(id);
+        }
+        return next;
+      });
+    }, { root: scrollRef.current, rootMargin: "250px" });
+    scrollRef.current?.querySelectorAll(".library-artwork-card").forEach((card, index) => { if (index >= 8) observer.observe(card); });
+    return () => observer.disconnect();
+  }, [selectedId, tab, visibleKey]);
+
+  useLayoutEffect(() => {
     if (selectedId) {
       scrollRef.current?.scrollTo(0, 0);
       detailBackRef.current?.focus({ preventScroll: true });
@@ -114,10 +133,9 @@ export function ArtworkLibrary({ eraId, slotId, onHang, onRestore, isEraOpen = (
               </div>
               <div className="library-results" aria-live="polite">{visible.length} {t.paintings}</div>
               {visible.length ? <div className="library-grid">
-                {visible.map((artwork) => <button key={artwork.id} className="library-artwork-card" data-artwork-id={artwork.id} aria-label={`${artwork.title[language]} — ${getEra(artwork.eraId).name[language]}`} onClick={() => { gridScrollRef.current = scrollRef.current?.scrollTop ?? 0; setSelectedId(artwork.id); setTargetSlotId(slotId ?? ""); }}>
-                  <span className="library-card-image"><ArtworkPreview artwork={artwork} />{completed.includes(artwork.id) && <span className="library-card-restored"><Check size={12} />{t.restoredLabel}</span>}{!isEraOpen(artwork.eraId) && <span className="library-card-locked" aria-label={t.locked}><LockKeyhole size={12} /></span>}</span>
-                  <span className="library-card-copy"><strong>{artwork.title[language]}</strong>{artwork.artist && <span className="artwork-credit">{artwork.artist}{artwork.year && ` · ${artwork.year}`}</span>}<span>{getEra(artwork.eraId).name[language]}</span>{hangingIds.has(artwork.id) && <small>{t.libraryOnWall}</small>}</span>
-                </button>)}
+                {visible.map((artwork, index) => <LibraryArtworkCard key={artwork.id} artwork={artwork} language={language}
+                  completed={completed.includes(artwork.id)} hanging={hangingIds.has(artwork.id)} locked={!isEraOpen(artwork.eraId)}
+                  showImage={index < 8 || seenCards.has(artwork.id)} priority={index < 2} onReveal={revealCard} onSelect={selectCard} />)}
               </div> : <p className="library-empty glass">{t.libraryEmpty}</p>}
             </>
           )}

@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { motion } from "framer-motion";
+import { m as motion, LazyMotion, domAnimation } from "framer-motion";
 import { ExternalLink, Sparkles, X } from "lucide-react";
 import { assetUrl } from "@/data/eras";
-import { getDecorationGeometry, getDecorationImageRegion, getRoomDecorations, roomDecorations, type RoomDecoration } from "@/data/room-decorations";
+import { getDecorationGeometry, getDecorationImageRegion } from "@/data/decoration-regions";
+import { getRoomDecorations, roomDecorations, type RoomDecoration } from "@/data/room-decorations";
 import type { EraId, Language } from "@/types/game";
 
 const text = {
@@ -88,7 +89,7 @@ export function RoomDecorations({ eraId, level, language, gentle, active, pendin
   useEffect(() => { if (!toastIds) return; const timeout = setTimeout(() => setToastIds(null), 6500); return () => clearTimeout(timeout); }, [toastIds]);
 
   const visibleSelection = active && selection && objects.some(({ id }) => id === selection.item.id) ? selection : null;
-  return <>
+  return <LazyMotion features={domAnimation} strict>
     <div ref={captureRoot} className="room-decorations" data-era={eraId}>
       {objects.map((item, index) => {
         const geometry = getDecorationGeometry(item), region = getDecorationImageRegion(item);
@@ -121,5 +122,5 @@ export function RoomDecorations({ eraId, level, language, gentle, active, pendin
     {active && toastIds && portalTarget && createPortal(<motion.div className="decoration-unlock-toast glass" role="status" initial={{ opacity: 0, y: gentle ? 0 : -10 }} animate={{ opacity: 1, y: 0 }}>
       <Sparkles size={19} /><div><strong>{t.unlocked}</strong><span>{roomDecorations.filter(({ id }) => toastIds.includes(id)).map((item) => item.name[language]).join(" · ")}</span></div><button className="icon-button" aria-label={t.dismiss} onClick={() => setToastIds(null)}><X size={15} /></button>
     </motion.div>, portalTarget)}
-  </>;
+  </LazyMotion>;
 }

@@ -38,6 +38,8 @@ export const copy = {
     fact: "Ciekawostka",
     emptyStory:
       "Ten obraz czeka na swoją opowieść. Wkrótce znajdziesz tutaj historię dzieła i jego twórcy.",
+    contentLoading: "Wczytywanie opowieści…",
+    contentUnavailable: "Opowieść jest chwilowo niedostępna. Wróci po połączeniu z siecią.",
     emptyFact: "Przywróć kolory, żeby odkryć więcej.",
     awaiting: "Czeka na kolory",
     studioTitle: "Tu zaczyna się kolor",
@@ -84,6 +86,8 @@ export const copy = {
     menu: "Otwórz menu",
     savedError:
       "Zapis na tym urządzeniu jest niedostępny. Możesz dalej zwiedzać dom.",
+    saveReadError: "Nie udało się odczytać części zapisu. Gra korzysta z danych, które udało się wczytać.",
+    dismissSaveNotice: "Zamknij komunikat o zapisie",
     skip: "Przejdź do treści",
     camera: "Widok sceny",
     overview: "Pokaż całą scenę",
@@ -182,6 +186,8 @@ export const copy = {
     fact: "Did you know?",
     emptyStory:
       "This painting is waiting for its story. Soon you will find the history of the artwork and its artist here.",
+    contentLoading: "Loading the story…",
+    contentUnavailable: "The story is temporarily unavailable. It will return when you reconnect.",
     emptyFact: "Restore its colours to discover more.",
     awaiting: "Waiting for colour",
     studioTitle: "Colour begins here",
@@ -228,6 +234,8 @@ export const copy = {
     menu: "Open menu",
     savedError:
       "Saving is unavailable on this device. You can still explore the house.",
+    saveReadError: "Part of the save could not be read. The game is using the data it could restore.",
+    dismissSaveNotice: "Dismiss save notice",
     skip: "Skip to content",
     camera: "Scene view",
     overview: "Show the whole scene",
