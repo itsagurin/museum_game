@@ -270,7 +270,7 @@ Każde zadanie to osobny commit/PR, sprawdzony przez CI. Stan na gałęzi `chore
 - [x] B2–B3: obraz dnia, seria, album i odznaki.
 - [x] B4: karty i certyfikat.
 - [x] B5: muzyka po zatwierdzeniu nagrań.
-- [x] B6: Vercel Analytics, domyślnie włączone z możliwością wyłączenia.
+- [x] B6: kod Vercel Analytics do późniejszej aktywacji; preferencja domyślnie włączona z możliwością wyłączenia, integracja obecnie nieaktywna.
 - [x] B7: wydajność, lokalne progi LHCI i przygotowany osobny job.
 - [ ] Właściciel: wypchnąć ostatni commit workflow przez SSH i uruchomić nowy job w GitHub Actions.
 - [x] B8: materiały do badań.

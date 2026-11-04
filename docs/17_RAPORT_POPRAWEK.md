@@ -100,6 +100,10 @@ Sprawdzenie: lint 0 błędów, typy, 75 Vitest (w tym 5 treści), build, **178 e
 
 Końcowa kontrola zdalnego CI wykryła brak opcjonalnych zależności peer Puppeteer w lockfile zapisanym npm 12. Uzupełniono je npm 10.9.9, bez aktualizacji istniejących wersji pakietów. Czyste `npm ci` na Node 22.23.4/npm 10.9.9 przeszło. Starsze PR #4, #5, #6, #9 i #13 miały błędy e2e (hover lub timeout); ich nieudane joby uruchomiono ponownie jednokrotnie. Nie oznacza to potwierdzenia zielonego CI dla całego stosu.
 
+CI i podgląd Vercel kodu B7 po poprawce lockfile (`7c1065a`) zakończyły się powodzeniem: [przebieg CI](https://github.com/itsagurin/museum_game/actions/runs/41809174950). Po czystej instalacji lokalnej Node 22 powtórzono również lint, typy, 75 Vitest, walidację treści, build i 178 e2e / 6 DEV pominiętych.
+
+Ponowienie PR #13 ujawniło zasłanianie drzwi przez tytuł obrazu dnia wybranego 4 listopada. Poprawka B7 już obejmuje ten przypadek; przeniesiono te same 10 linii CSS do PR #9 (`d64329b`) i #13 (`d2fa919`), bez pozostałych zmian B7. Osobna instalacja wcześniejszego kodu B8 z poprawką: 70 Vitest, build i 28 testów Playwright (nawigacja i karta w sześciu rozmiarach, mobile/desktop) zaliczonych. Logi: `/tmp/museum-b7-daily-backport-*.log`. Nowe przebiegi tych PR-ów są odrębne od zielonego wyniku B7.
+
 Job Lighthouse jest przygotowany w `.github/workflows/ci.yml`, z zachowaniem istniejącej lokalnej definicji testów generatora. Zgodnie z pkt 4.11 dokumentu 16 token gh nie ma uprawnienia `workflow`, więc ostatni commit należy wypchnąć z terminala właściciela przez SSH:
 
 ```bash
