@@ -1,6 +1,6 @@
 "use client";
+import { AnimatePresence, LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 
-import { AnimatePresence } from "framer-motion";
 import { ArrowRight, Paintbrush } from "lucide-react";
 import { copy } from "@/data/copy";
 import { artworks, assetUrl, getEra } from "@/data/eras";
@@ -23,7 +23,7 @@ export function AppPanels({ panel, language, gentleMotion, storageUnavailable, o
 }) {
   const t = copy[language];
   return (
-        <AnimatePresence>
+        <LazyMotion features={domAnimation} strict><MotionConfig reducedMotion={gentleMotion ? "always" : "user"}><AnimatePresence>
           {panel && (
             <Dialog
               title={
@@ -80,7 +80,7 @@ export function AppPanels({ panel, language, gentleMotion, storageUnavailable, o
                   onClose={dismissPanel}
                 />
               ) : panel.type === "studio" ? (
-                <>
+                <LazyMotion features={domAnimation} strict><MotionConfig reducedMotion={gentleMotion ? "always" : "user"}><AnimatePresence>
                   <div className="studio-preview">
                     <span className="studio-paper">
                       <img src={assetUrl("blank_paper_crossmark.jpg")} alt="" />
@@ -101,10 +101,10 @@ export function AppPanels({ panel, language, gentleMotion, storageUnavailable, o
                     {t.returnRoom}
                     <ArrowRight size={18} />
                   </button>
-                </>
+                </AnimatePresence></MotionConfig></LazyMotion>
               ) : null}
             </Dialog>
           )}
-        </AnimatePresence>
+        </AnimatePresence></MotionConfig></LazyMotion>
   );
 }

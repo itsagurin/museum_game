@@ -1,5 +1,6 @@
 "use client";
 
+import { useArtworkDetails } from "@/hooks/useArtworkDetails";
 import { ShareButton } from "@/features/collection/ShareButton";
 import { useState } from "react";
 import { ArrowRight, BookOpen, ChevronDown, ImageOff, Paintbrush, Sparkles } from "lucide-react";
@@ -8,13 +9,14 @@ import { getEra } from "@/data/eras";
 import type { Artwork, Language } from "@/types/game";
 import { ArtworkSourceNote } from "./ArtworkSourceNote";
 
-export function ArtworkStory({ artwork, language, completed, onRestore, onClose }: {
+export function ArtworkStory({ artwork: summary, language, completed, onRestore, onClose }: {
   artwork: Artwork;
   language: Language;
   completed: boolean;
   onRestore?: () => void;
   onClose: () => void;
 }) {
+  const { artwork, loading, error } = useArtworkDetails(summary);
   const [imageFailed, setImageFailed] = useState(false);
   const t = copy[language];
   const contentLanguage = artwork.untranslated && language === "en" ? "pl" : undefined;
@@ -40,12 +42,12 @@ export function ArtworkStory({ artwork, language, completed, onRestore, onClose 
       </div>
       <div className="fun-fact">
         <Sparkles size={18} aria-hidden="true" />
-        <p lang={contentLanguage}>{artwork.funFact?.[language] || t.emptyFact}</p>
+        <p lang={contentLanguage}>{loading ? t.contentLoading : error ? t.contentUnavailable : artwork.funFact?.[language] || t.emptyFact}</p>
       </div>
       <details className="story-history">
         <summary><BookOpen size={16} aria-hidden="true" />{t.story}<ChevronDown size={16} aria-hidden="true" /></summary>
         {artwork.style && <p className="story-style" lang={contentLanguage}>{artwork.style[language]}</p>}
-        <p className="story-body" lang={contentLanguage}>{artwork.story?.[language] || t.emptyStory}</p>
+        <p className="story-body" lang={contentLanguage}>{loading ? t.contentLoading : error ? t.contentUnavailable : artwork.story?.[language] || t.emptyStory}</p>
         <ArtworkSourceNote artwork={artwork} language={language} />
       </details>
       <div className="story-actions">

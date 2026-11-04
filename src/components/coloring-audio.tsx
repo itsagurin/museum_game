@@ -14,7 +14,7 @@ export function ColoringAudio() {
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
     const makeAudio = (file: string, volume: number) => {
       const audio = new Audio(`${basePath}/audio/${file}`);
-      audio.preload = 'auto';
+      audio.preload = 'none';
       audio.volume = volume;
       return audio;
     };

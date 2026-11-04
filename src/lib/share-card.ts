@@ -23,9 +23,10 @@ export function wrapText(text: string, measure: (text:string)=>number, width: nu
   }
   return lines;
 }
-async function fonts() {
+async function fonts(text: string) {
   await document.fonts.ready;
-  await Promise.all([document.fonts.load('500 48px "Cormorant Garamond"'),document.fonts.load('400 26px "DM Sans"')]);
+  const sample = `ĄĆĘŁŃÓŚŹŻ ąćęłńóśźż ${text}`;
+  await Promise.all([document.fonts.load('500 48px "Cormorant Garamond"', sample),document.fonts.load('400 26px "DM Sans"', sample)]);
 }
 function canvas(width:number,height:number) {
   const element=document.createElement("canvas");element.width=width;element.height=height;
@@ -45,7 +46,8 @@ function contain(ctx:CanvasRenderingContext2D,image:CanvasImageSource,width:numb
   ctx.drawImage(image,x+(boxWidth-width*scale)/2,y+(boxHeight-height*scale)/2,width*scale,height*scale);
 }
 export async function renderShareCard(artwork:Artwork,language:Language):Promise<Blob> {
-  await fonts();
+  artwork=(await import("@/data/artwork-details")).getArtworkDetails(artwork);
+  await fonts(JSON.stringify(artwork));
   const board=await loadColoringArtwork(artwork).catch(error=>artwork.introPuzzle ? loadColoringArtwork({...artwork,coloringSource:artwork.introPuzzle}) : Promise.reject(error));
   const image=await loadLocalImage(artwork.thumbnailImage ?? artwork.originalImage!);
   const pixels=document.createElement("canvas");pixels.width=board.grid.width;pixels.height=board.grid.height;
@@ -72,7 +74,7 @@ export async function renderShareCard(artwork:Artwork,language:Language):Promise
   return png(element);
 }
 export async function renderCertificate(count:number,language:Language,name="",date=new Date()):Promise<Blob> {
-  await fonts();const {element,ctx}=canvas(1754,1240),t=copy[language];
+  await fonts(name);const {element,ctx}=canvas(1754,1240),t=copy[language];
   ctx.textAlign="center";ctx.font='400 30px "DM Sans"';ctx.fillText("Dziedzictwo",877,150);
   ctx.font='500 100px "Cormorant Garamond"';ctx.fillText(t.certificateTitle,877,340);
   ctx.font='500 68px "Cormorant Garamond"';wrapText(name.trim(),s=>ctx.measureText(s).width,1500,2).forEach((line,i)=>ctx.fillText(line,877,505+i*82));

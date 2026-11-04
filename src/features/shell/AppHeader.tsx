@@ -62,7 +62,7 @@ export function AppHeader({ view, activeEra, hallEra, language, returnView, navi
             <button
               className="language-button"
               onClick={() => setLanguage(language === "pl" ? "en" : "pl")}
-              aria-label={t.language}
+              aria-label={`${language.toUpperCase()} — ${t.language}`}
             >
               {language.toUpperCase()}
             </button>

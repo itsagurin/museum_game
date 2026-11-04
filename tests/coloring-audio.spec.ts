@@ -16,7 +16,7 @@ test('painting plays the selected local effects and stops them on undo and close
   const entry = catalogPaintings[0];
   await openCatalogStudio(page, entry);
   await expect.poll(() => page.evaluate(() => (Reflect.get(window, 'paintingAudio') as HTMLAudioElement[])
-    .filter(audio => audio.readyState >= 2).length)).toBe(5);
+    .filter(audio => /message-pop-alert\.mp3$|light-spell\.wav$/.test(audio.src) && audio.preload === 'none' && audio.readyState === 0).length)).toBe(5);
   const color = entry.painting.palette.find(candidate => entry.painting.grid.data.flat().filter(id => id === candidate.id).length > 5)!;
   const calls = () => page.evaluate(() => Reflect.get(window, 'paintingAudioCalls') as string[]);
   await page.getByRole('button', { name: `Kolor ${color.id}: ${color.name}`, exact: true }).click();

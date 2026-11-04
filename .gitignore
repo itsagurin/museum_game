@@ -13,3 +13,9 @@ coverage/
 .superpowers/
 .DS_Store
 .env*.local
+
+src/data/image-sizes.json
+.lighthouseci/
+src/data/content-summaries.json
+public/fonts/
+src/app/fonts-generated.css

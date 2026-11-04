@@ -14,10 +14,14 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "content:validate": "vitest run src/data/content.test.ts",
-    "content:puzzles": "cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --report outputs/puzzle-report.html"
+    "content:puzzles": "cd tools/pixel-engine && .venv/bin/python -m src.build_puzzles --root ../.. --report outputs/puzzle-report.html",
+    "audit:lhci": "lhci autorun --config=lighthouserc.cjs",
+    "audit:scenes": "node scripts/audit-site.mjs",
+    "audit": "node scripts/audit-all.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
+    "@lhci/cli": "^0.16.0",
     "@playwright/test": "^1.64.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.6.5",
@@ -25,8 +29,11 @@
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.4",
+    "lighthouse": "^13.6.0",
+    "puppeteer-core": "^25.16.0",
     "serve": "^14.2.6",
     "sharp": "^0.35.5",
+    "subset-font": "^2.9.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vitest": "^5.0.3",
@@ -47,6 +54,6 @@
     "compression": "^1.8.2"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.19.0"
   }
 }

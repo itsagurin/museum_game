@@ -2,7 +2,7 @@
 
 import {
   useCallback,
-  useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type PointerEvent,
@@ -83,15 +83,14 @@ export function GameViewport({
     );
   }, [focalY, lockCamera, overview]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const viewport = ref.current;
     if (!viewport) return;
+    centerCamera();
     const observer = new ResizeObserver(centerCamera);
     observer.observe(viewport);
-    const frame = requestAnimationFrame(centerCamera);
     return () => {
       observer.disconnect();
-      cancelAnimationFrame(frame);
     };
   }, [centerCamera]);
 

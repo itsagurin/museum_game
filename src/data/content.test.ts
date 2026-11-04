@@ -1,8 +1,9 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import panoramaSignatures from "./panorama-board-signatures.json";
-import phase2Signatures from "./phase2-board-signatures.json";
-import { content, eras } from "./eras";
+import panoramaSignatures from "./panorama-board-signatures.json" with { type: "json" };
+import phase2Signatures from "./phase2-board-signatures.json" with { type: "json" };
+import { eras } from "./eras";
+import content from "../../content/artworks.json" with { type: "json" };
 import { gridSignature } from "../lib/painting-progress";
 import { parseColoringBoard } from "../lib/coloring";
 

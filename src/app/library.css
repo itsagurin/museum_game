@@ -22,7 +22,7 @@
 .library-scroll { height: 100%; overflow-y: auto; overscroll-behavior: contain; }
 .library-content { width: min(1100px, 100%); margin: auto; padding: 5px 32px max(40px, env(safe-area-inset-bottom)); }
 .library-intro { margin-bottom: 24px; }
-.library-intro p { font-family: var(--font-display); font-size: clamp(25px, 3vw, 34px); line-height: 1.15; margin: 10px 0 12px; max-width: 670px; }
+.library-intro p { font-family: var(--font-display); font-weight: 600; font-size: clamp(25px, 3vw, 34px); line-height: 1.15; margin: 10px 0 12px; max-width: 670px; }
 .library-count { display: flex; align-items: center; gap: 12px; font-size: 11px; color: var(--muted); }
 .library-era-filters { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; padding: 2px 2px 8px; margin-bottom: 14px; }
 .library-filter { flex-shrink: 0; border: 1px solid rgba(99, 109, 84, 0.18); border-radius: 13px; padding: 9px 17px; min-height: 44px; font-size: 12px; background: rgba(255, 255, 242, 0.42); }

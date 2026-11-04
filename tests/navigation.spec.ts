@@ -1,8 +1,31 @@
 import { test, expect } from "@playwright/test";
 import { artworks, eras } from "../src/data/eras";
 import { seedGame } from "./helpers/game-state";
+import { copy } from "../src/data/copy";
 
 const youngPolandFirst = artworks.find((artwork) => artwork.eraId === "era-4")!;
+
+for (const brokenKey of ["heritage-hearth-ui-v1", "heritage-paintings-v1"]) {
+  test(`an unreadable ${brokenKey} releases loading and preserves the healthy save`, async ({ page }) => {
+    const completed = artworks[0].id, assigned = artworks[1].id;
+    await page.addInitScript(({ brokenKey, completed, assigned }) => {
+      localStorage.setItem("heritage-hearth-ui-v1", JSON.stringify({ version: 1, state: { language: "pl", tutorialSeen: true, exploreAll: true, completedArtworkIds: [completed], wallAssignments: { "era-1-slot-1": assigned } } }));
+      localStorage.setItem(brokenKey, "{unreadable-json");
+    }, { brokenKey, completed, assigned });
+    await page.goto("/#home");
+    await expect(page.locator(".home-canvas")).toBeVisible();
+    await expect(page.getByRole("status")).toHaveText(copy.pl.saveReadError);
+    await page.getByRole("status").getByRole("button", { name: copy.pl.dismissSaveNotice, exact: true }).click();
+    await expect(page.getByRole("status")).toHaveCount(0);
+    await page.locator(".house-door-hit").click();
+    await expect(page).toHaveURL(/#hall$/);
+    if (brokenKey === "heritage-paintings-v1") {
+      const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("heritage-hearth-ui-v1")!).state);
+      expect(saved.completedArtworkIds).toContain(completed);
+      expect(saved.wallAssignments["era-1-slot-1"]).toBe(assigned);
+    }
+  });
+}
 
 test("home stays centered before hydration, on reload and after rotation", async ({
   page,
@@ -126,7 +149,7 @@ test("language, reduced motion, progress and deep links survive reload", async (
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Romantyzm",
   );
-  await page.getByRole("button", { name: "Switch to English" }).click();
+  await page.getByRole("button", { name: "PL — Switch to English" }).click();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page.getByRole("switch", { name: "Gentle animations" }).click();
@@ -142,11 +165,14 @@ test("language, reduced motion, progress and deep links survive reload", async (
     saved.state.completedArtworkIds = completedIds;
     localStorage.setItem(key, JSON.stringify(saved));
   }, artworks.filter((artwork) => artwork.eraId === "era-1").map((artwork) => artwork.id));
+  // Rehydrate the fixture before a new scene can persist its daily selection.
+  await page.reload();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Romanticism");
   await page.goto("/#home");
   await page.reload();
   await expect(page.locator(".home-canvas > img")).toHaveAttribute(
     "src",
-    "/art/house1.jpg",
+    "/art/_scenes/house1.avif",
   );
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page
@@ -158,7 +184,7 @@ test("language, reduced motion, progress and deep links survive reload", async (
   await page.getByRole("button", { name: "Reset", exact: true }).click();
   await expect(page.locator(".home-canvas > img")).toHaveAttribute(
     "src",
-    "/art/house0.jpg",
+    "/art/_scenes/house0.avif",
   );
 });
 
@@ -172,7 +198,7 @@ test("blocked storage and a missing scene image keep navigation usable", async (
       },
     });
   });
-  await page.route("**/art/room1.jpg", (route) => route.abort());
+  await page.route("**/art/_scenes/room1.avif", (route) => route.abort());
   await page.goto("/#era-1");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Oświecenie",
@@ -180,7 +206,7 @@ test("blocked storage and a missing scene image keep navigation usable", async (
   await expect(
     page.getByText("Ta ilustracja jest chwilowo niedostępna."),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Switch to English" }).click();
+  await page.getByRole("button", { name: "PL — Switch to English" }).click();
   await expect(page.getByRole("status")).toContainText("Saving is unavailable");
   await page
     .getByRole("button", { name: "Next era: Romanticism — locked", exact: true })
@@ -278,7 +304,7 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
     await page.goto("/#hall");
     const stage = Math.min(completedRooms + 1, 4);
     const hallImage = page.locator(".hall-canvas > img");
-    await expect(hallImage).toHaveAttribute("src", `/art/hall${stage}.jpg`);
+    await expect(hallImage).toHaveAttribute("src", `/art/_scenes/hall${stage}.avif`);
     await expect.poll(() => hallImage.evaluate((image) =>
       (image as HTMLImageElement).naturalWidth,
     )).toBe(896);
@@ -315,7 +341,7 @@ for (const completedRooms of [0, 1, 2, 3, 4]) {
       await expect(page.getByRole("heading", { level: 1 })).toHaveText(rooms[index]);
       await expect(page.locator(".room-canvas")).toBeVisible();
       await page.locator(".back-button").click();
-      await expect(hallImage).toHaveAttribute("src", `/art/hall${stage}.jpg`);
+      await expect(hallImage).toHaveAttribute("src", `/art/_scenes/hall${stage}.avif`);
     }
   });
 }

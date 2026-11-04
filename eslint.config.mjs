@@ -9,5 +9,5 @@ export default defineConfig([
     files: ['src/components/HeritageApp.tsx', 'src/components/SceneImage.tsx', 'src/features/scenes/WallArtwork.tsx', 'src/features/shell/AppPanels.tsx'],
     rules: { '@next/next/no-img-element': 'off' },
   },
-  globalIgnores(['.next/**', 'out/**', '.superpowers/**', 'next-env.d.ts', 'test-results/**', 'playwright-report/**']),
+  globalIgnores(['.next/**', 'out/**', '.superpowers/**', 'next-env.d.ts', 'test-results/**', 'playwright-report/**', '.lighthouseci/**']),
 ]);

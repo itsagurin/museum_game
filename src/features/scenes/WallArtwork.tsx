@@ -41,7 +41,7 @@ export function WallArtwork({ artwork, slot, activeEra, roomLevel, roomPreview, 
                                 {restored && artwork.originalImage ? (
                                   <RestoredArtwork key={artwork.id} artwork={artwork} />
                                 ) : (
-                                  <img src={assetUrl("blank_paper_crossmark.jpg")} alt="" draggable={false} className="unrestored-paper" />
+                                  <img src={assetUrl("blank_paper_crossmark.jpg")} alt="" draggable={false} className="unrestored-paper" fetchPriority="high" />
                                 )}
                               </span>
                               {restored &&

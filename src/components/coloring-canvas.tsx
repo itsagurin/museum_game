@@ -1,7 +1,8 @@
 'use client';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUpRight, Check, Hand, Paintbrush, PaintBucket, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, m as motion, useReducedMotion } from 'framer-motion';
+import { coloringPaths } from '@/lib/coloring-paths';
 import { paintResult, type ColoringArtwork } from '@/lib/coloring';
 import { playColoringSound } from '@/lib/audio';
 import { TutorialHint } from '@/features/painting/TutorialHint';
@@ -31,6 +32,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
 }) {
   const t = coloringCopy[language];
   const pixels = useMemo(() => artwork.grid.data.flatMap((row, y) => row.map((colorId, x) => ({ id: y * artwork.grid.width + x, colorId, x, y }))), [artwork]);
+  const paths = useMemo(() => coloringPaths(artwork.grid), [artwork.grid]);
   const colors = useMemo(() => new Map(artwork.palette.map(color => [color.id, color])), [artwork]);
   const paletteName = (color: ColoringArtwork['palette'][number]) => language === 'en' ? color.nameEn ?? color.name : color.name;
   const colorLabel = (id: number) => `${showColorNumbers ? `${id} · ` : ''}${paletteName(colors.get(id)!)}`;
@@ -67,12 +69,11 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
 
   const reportPainted = useRef(onPaintedChange);
   useEffect(() => { reportPainted.current = onPaintedChange; }, [onPaintedChange]);
-  const restoredState = useRef(true);
-  useEffect(() => {
-    // The restored state is already saved; report only what this visit changes.
-    if (restoredState.current) { restoredState.current = false; return; }
-    reportPainted.current?.([...painted.keys()]);
-  }, [painted]);
+  const updatePainted = (next: Map<number, Origin>) => {
+    paintedRef.current = next;
+    setPainted(next);
+    reportPainted.current?.([...next.keys()]);
+  };
 
   const startAutoFill = (origin: Pixel) => {
     const targets = pixels.filter(pixel => pixel.colorId === origin.colorId && !paintedRef.current.has(pixel.id))
@@ -99,8 +100,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
           const { pixel } = targets[cursor++];
           next.set(pixel.id, { x: origin.x + .5, y: origin.y + .5 });
         }
-        paintedRef.current = next;
-        setPainted(next);
+        updatePainted(next);
         if (reduced) setSettled(new Set(next.keys()));
       }
       if (progress < 1) fillFrame.current = window.requestAnimationFrame(frame);
@@ -114,12 +114,13 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
     fillFrame.current = window.requestAnimationFrame(frame);
   };
 
-  // Preload original image for instantaneous, zero-jank reveal transition
+  const shouldPreload = painted.size >= pixels.length * .8;
+  // Fetch the reproduction near completion, after the interactive board has priority.
   useEffect(() => {
-    if (!artwork.original_image_url) return;
+    if (!artwork.original_image_url || !shouldPreload) return;
     const img = new Image();
     img.src = artwork.original_image_url;
-  }, [artwork.original_image_url]);
+  }, [artwork.original_image_url, shouldPreload]);
 
   // When all pixels are painted, wait a fraction of a second, then play animation and reveal the original
   useEffect(() => {
@@ -154,8 +155,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
       for (const target of targets) next.set(target.id, { x: target.x + .5, y: target.y + .5 });
       paintActions.current.push(targets.map(target => target.id));
       setCanUndo(true);
-      paintedRef.current = next;
-      setPainted(next);
+      updatePainted(next);
       if (autoFill && !devColorFill) {
         streak.current += 1;
         if (streak.current >= 5) startAutoFill(pixel);
@@ -195,7 +195,7 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
     if (!last) return;
     const next = new Map(paintedRef.current);
     for (const id of last) next.delete(id);
-    paintedRef.current = next; setPainted(next);
+    updatePainted(next);
     setSettled(previous => { const next = new Set(previous); for (const id of last) next.delete(id); return next; });
     setFeedback(null);
     setRevealed(false);
@@ -231,17 +231,18 @@ export function ColoringCanvas({ artwork, onComplete, initialPainted, onPaintedC
           onPointerCancel={() => { dragging.current = false; lastPixel.current = null; }}
           onLostPointerCapture={() => { dragging.current = false; lastPixel.current = null; }}>
           <rect width={width} height={height} fill="#f3eddf" />
+          {paths.map(path => <path key={path.id} className="pixel-color-layer" data-color-id={path.id} d={path.d} fill={colors.get(path.id)!.hex} opacity={selected === path.id ? .48 : .2} shapeRendering="crispEdges" />)}
           {pixels.map(pixel => {
             const color = colors.get(pixel.colorId)!;
             const filled = painted.has(pixel.id), matching = selected === pixel.colorId;
-            return <g key={pixel.id}>
-              <rect x={pixel.x} y={pixel.y} width="1" height="1" fill={color.hex} opacity={filled ? 1 : matching ? .48 : .2} shapeRendering="crispEdges" />
+            return <Fragment key={pixel.id}>
+              {filled && <rect x={pixel.x} y={pixel.y} width="1" height="1" fill={color.hex} opacity="1" shapeRendering="crispEdges" />}
               {(showBaseNumbers || zoom > 1 || (highContrast && zoom >= 1.5)) && !filled && <text x={pixel.x + .5} y={pixel.y + .5} className="pixel-number" aria-hidden pointerEvents="none">{pixel.colorId}</text>}
               {filled && <motion.rect x={pixel.x} y={pixel.y} width="1" height="1" fill="#fff6da" pointerEvents="none" initial={{ opacity: .65 }} animate={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .35 }} onAnimationComplete={() => setSettled(previous => previous.has(pixel.id) ? previous : new Set(previous).add(pixel.id))} />}
               <rect x={pixel.x} y={pixel.y} width="1" height="1" className={`pixel-hit ${matching ? 'matching' : ''} ${filled ? 'painted' : ''}`} role="button" tabIndex={filled ? -1 : 0} aria-pressed={filled} aria-label={`${t.pixel} ${pixel.x + 1}, ${pixel.y + 1}: ${paletteName(color)}${filled ? ` — ${t.painted}` : ''}`} data-color-id={pixel.colorId} fill="transparent" stroke="#fff8e9" strokeOpacity={filled ? .05 : .35} strokeWidth=".035"
                 onClick={event => { if (event.detail === 0) paint(pixel); }}
                 onKeyDown={event => { if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) { event.preventDefault(); const delta = {ArrowLeft:-1,ArrowRight:1,ArrowUp:-width,ArrowDown:width}[event.key as 'ArrowLeft']; const next = Math.max(0,Math.min(pixels.length-1,pixel.id+delta)); svgRef.current?.querySelectorAll<SVGRectElement>('.pixel-hit')[next]?.focus(); } if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); paint(pixel); } }} />
-            </g>;
+            </Fragment>;
           })}
           <AnimatePresence>
             {feedback && <motion.rect key={feedback.key} x={feedback.pixel.x} y={feedback.pixel.y} width="1" height="1" pointerEvents="none" fill={feedback.kind === 'wrong' ? '#d15e4c' : '#fff6da'} stroke={feedback.kind === 'wrong' ? '#ac3d30' : '#edd6a3'} strokeWidth=".12" initial={{ opacity: .8 }} animate={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? .15 : .5 }} />}

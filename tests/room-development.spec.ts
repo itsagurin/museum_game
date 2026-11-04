@@ -14,7 +14,7 @@ test("room levels survive reload, keep the empty background and reset the furnit
   await expect(progress).toHaveAttribute("aria-valuenow", "4");
   await expect(page.locator(".room-status")).toContainText("8 / 22");
   await expect(page.locator(".room-backdrop")).toHaveAttribute("data-room-level", "4");
-  await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", "/art/room3.jpg");
+  await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", "/art/_scenes/room3.avif");
   await expect(page.locator(".wall-artwork")).toHaveCount(5);
   const positions = await page.locator(".wall-artwork").evaluateAll((slots) => slots.map((slot) => slot.getAttribute("style")));
   await page.getByRole("button", { name: "Pokaż całą scenę", exact: true }).click();
@@ -24,7 +24,7 @@ test("room levels survive reload, keep the empty background and reset the furnit
   await page.reload();
   await expect(progress).toHaveAttribute("aria-valuenow", "4");
   await expect(page.locator(".wall-artwork")).toHaveCount(5);
-  await page.getByRole("button", { name: "Switch to English", exact: true }).click();
+  await page.getByRole("button", { name: "PL — Switch to English", exact: true }).click();
   await expect(page.getByRole("progressbar", { name: "Room development", exact: true })).toHaveAttribute("aria-valuetext", "Level 4 / 9");
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page.getByRole("button", { name: "Reset progress", exact: true }).click();
@@ -32,7 +32,7 @@ test("room levels survive reload, keep the empty background and reset the furnit
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByRole("progressbar", { name: "Room development", exact: true })).toHaveAttribute("aria-valuenow", "0");
   await expect(page.locator(".room-status")).toContainText("0 / 22");
-  await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", "/art/room3.jpg");
+  await expect(page.locator(".room-backdrop .scene-image")).toHaveAttribute("src", "/art/_scenes/room3.avif");
   await expect(page.locator(".room-decoration")).toHaveCount(0);
   expect(await page.locator(".wall-artwork").evaluateAll((slots) => slots.map((slot) => slot.getAttribute("style")))).not.toEqual(positions);
   const box = (await page.locator(".room-status").boundingBox())!;
@@ -43,7 +43,7 @@ test("room levels survive reload, keep the empty background and reset the furnit
 test("broken room images leave level progress and wall interactions available", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
-  await page.route("**/art/room*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", (route) => route.abort());
+  await page.route("**/art/_scenes/room*.avif", (route) => route.abort());
   await page.goto("/#era-1");
   await expect(page.locator(".room-backdrop .image-fallback")).toBeVisible();
   await expect(page.getByRole("progressbar", { name: "Rozwój pokoju", exact: true })).toHaveAttribute("aria-valuenow", "0");

@@ -1,10 +1,11 @@
 import type { Artwork, ArtworkPlacement, ArtworkSlot, Era, EraId, Localized } from "@/types/game";
-import type { ContentEntry } from "@/types/content";
-import contentManifest from "../../content/artworks.json" with { type: "json" };
+import type { ContentSummary } from "@/types/content";
+import imageSizes from "./image-sizes.json" with { type: "json" };
+import contentManifest from "./content-summaries.json" with { type: "json" };
 import { normalizeWallAssignments, type WallAssignments } from "../lib/wall-gallery";
 
 export const assetUrl = (name: string) =>
-  `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/art/${name.split("/").map(encodeURIComponent).join("/")}`;
+  `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/art/${(/^(house\d|hall\d|room\d)\.jpg$/i.test(name) ? `_scenes/${name.replace(/\.jpg$/i, ".avif")}` : name).split("/").map(encodeURIComponent).join("/")}`;
 
 export const hallThemes = [
   {
@@ -126,7 +127,7 @@ const placements: ArtworkPlacement[] = [
   { x: 54, y: 43, width: 13, height: 11, wall: "right" },
 ];
 
-export const content = contentManifest as ContentEntry[];
+export const content = contentManifest as ContentSummary[];
 
 /** Missing translations fall back to the Polish text, which the UI then marks as Polish. */
 const localized = (text: Localized): Localized => ({ pl: text.pl, en: text.en || text.pl });
@@ -142,11 +143,8 @@ export const artworks: Artwork[] = eras.flatMap((era) =>
       title: localized(entry.title),
       artist: entry.artist,
       year: entry.year,
-      style: localized(entry.style),
-      story: localized(entry.story),
-      funFact: localized(entry.curiosity),
-      untranslated: !entry.story.en || !entry.curiosity.en,
       originalImage: assetUrl(entry.image),
+      imageSize: (imageSizes as Record<string, {width:number;height:number}>)[entry.image],
       thumbnailImage: assetUrl(`_thumbs/${entry.image.replace(/\.[^/.]+$/, "")}.webp`),
       sourceFile: entry.image,
       source: entry.source ?? undefined,

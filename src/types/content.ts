@@ -44,3 +44,6 @@ export interface ContentEntry {
     translation: "missing" | "draft" | "reviewed";
   };
 }
+
+/** Small generated catalogue used before any story is opened. */
+export type ContentSummary = Omit<ContentEntry, "story" | "curiosity" | "style">;
