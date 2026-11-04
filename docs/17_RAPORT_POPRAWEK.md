@@ -98,6 +98,8 @@ Sprawdzenie: lint 0 błędów, typy, 75 Vitest (w tym 5 treści), build, **178 e
 
 ## Workflow i kroki właściciela
 
+Końcowa kontrola zdalnego CI wykryła brak opcjonalnych zależności peer Puppeteer w lockfile zapisanym npm 12. Uzupełniono je npm 10.9.9, bez aktualizacji istniejących wersji pakietów. Czyste `npm ci` na Node 22.23.4/npm 10.9.9 przeszło. Starsze PR #4, #5, #6, #9 i #13 miały błędy e2e (hover lub timeout); ich nieudane joby uruchomiono ponownie jednokrotnie. Nie oznacza to potwierdzenia zielonego CI dla całego stosu.
+
 Job Lighthouse jest przygotowany w `.github/workflows/ci.yml`, z zachowaniem istniejącej lokalnej definicji testów generatora. Zgodnie z pkt 4.11 dokumentu 16 token gh nie ma uprawnienia `workflow`, więc ostatni commit należy wypchnąć z terminala właściciela przez SSH:
 
 ```bash

@@ -10,6 +10,8 @@ Przeglądarkowa gra mobile-first o polskim malarstwie. Gracz wchodzi do domu, wy
 
 Wymagany Node.js 22.19+ (`.nvmrc`).
 
+CI używa Node 22/npm 10. Po zmianie zależności sprawdź czystą instalację `npm ci` również w tym środowisku; sama aktualizacja lockfile przez npm 12 nie wystarcza.
+
 ```bash
 npm ci
 npm run dev        # http://localhost:3000, obserwuje img/
@@ -72,7 +74,7 @@ Pięć panoram >2:1 ma bok 40 (ustawienie w manifeście), reszta bok 32, intro 1
 
 ## PWA
 
-`npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma ok. 6 MB; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
+`npm run build` tworzy ikony z własnej ilustracji domu i service workera Workbox w `out/`. Instalacja wymaga HTTPS lub localhost. Cache startowy ma 143 pliki / ok. 3,91 MiB przed kompresją transportową; reprodukcje i plansze są pobierane przy otwieraniu. Odwiedzona plansza działa offline. Aktualizacja czeka na przycisk „Odśwież”. Ikony: `content/icons.json`; pliki: `scripts/make-icons.mjs`, `scripts/build-sw.mjs`.
 
 Na Vercelu `sw.js` ma nagłówek `Cache-Control: no-cache` przez `vercel.json`. Działanie z `NEXT_PUBLIC_BASE_PATH=/museum` sprawdzono osobnym buildem i przeładowaniem offline. Ręczna instalacja na fizycznym Androidzie/iOS pozostaje do wykonania przez zespół.
 

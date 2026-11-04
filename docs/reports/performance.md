@@ -50,6 +50,7 @@ Zapis pędzla jest opróżniany synchronicznie przed zamknięciem i ponownym otw
 ## Sprawdzenie
 
 - Lint: 0 błędów (3 istniejące ostrzeżenia JS w venv sklearn); typy, build, 75 Vitest, w tym 5 walidacji treści.
+- Kontrola CI wykryła niepełny lockfile utworzony npm 12: npm 10.9.9 odrzucił brakujące opcjonalne zależności peer narzędzia Puppeteer. Lockfile uzupełniono npm 10 bez zmiany wersji i integralności istniejących pakietów; czysta instalacja na Node 22.23.4/npm 10.9.9 przeszła. Kod i artefakt pomiarowy pozostają z `9aafbb8`.
 - Eksport: **178 e2e zaliczonych, 6 DEV pominiętych**. Prawdziwy serwer DEV: **6/6**. **24 skany axe** bez serious/critical. Pytest: **32 zaliczone / 4 pominięte** z powodu danych spoza repo.
 - Ręczny przegląd 12 ekranów domu, holu, pokoju, pracowni, kolekcji i ustawień w 375×812 oraz 1440×1000, dwóch komunikatów uszkodzonego zapisu i PNG certyfikatu z polskim imieniem w EN. Zrzuty lokalnie: `/tmp/museum-b7-verified-screens/` oraz `/tmp/museum-b4/`.
 - Osobny build `/museum`: 672 pola, zachowany jeden pomalowany piksel po przeładowaniu offline, 83 karty kolekcji offline, brak błędów skryptów i żądań poza prefiksem.
